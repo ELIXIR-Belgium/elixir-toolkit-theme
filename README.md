@@ -2,6 +2,17 @@
 
 This repository is used to build a flexible Jekyll theme using bootstrap 5 as CSS framework.
 
+## Used packages:
+
+- [Bootstrap5](https://github.com/twbs/bootstrap)
+- [DataTables](https://datatables.net/examples/styling/bootstrap5.html)
+- [AnchorJS](https://www.bryanbraun.com/anchorjs/)
+- [lunr.js](https://lunrjs.com/)
+- [jQuery](https://jquery.com/)
+- [jekyll-table-of-contents](https://github.com/ghiculescu/jekyll-table-of-contents)
+- [jQuery Navgoco Menus](https://github.com/tefra/navgoco)
+
+
 ## Using Jekyll
 
 The website is build on GitHub using Jekyll, a simple, static site generator based on ruby. When you have a local copy cloned onto your computer, it is possible to generate the website based on this repo. This makes it possible to preview changes live, every time you save a file from within the GitHub rdmkit repo. Follow these steps to deploy the website based on your local clone (copy) of the rdmkit repo:
@@ -51,14 +62,3 @@ If you have never installed or run a Jekyll site locally on your computer, follo
 
 Additional information can be found at the following link: [https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll)
 
-
-
-## Used packages:
-
-- [Bootstrap5](https://github.com/twbs/bootstrap)
-- [DataTables](https://datatables.net/examples/styling/bootstrap5.html)
-- [AnchorJS](https://www.bryanbraun.com/anchorjs/)
-- [lunr.js](https://lunrjs.com/)
-- [jQuery](https://jquery.com/)
-- [jekyll-table-of-contents](https://github.com/ghiculescu/jekyll-table-of-contents)
-- [jQuery Navgoco Menus](https://github.com/tefra/navgoco)
