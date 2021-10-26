@@ -2,32 +2,31 @@
 ---
 
 /*-----Theme colors-----*/
-$white: #fff;
-$primary: #c23669;
-$blue: #376ac3;
-$light: #f3f1f2;
-$dark: #2a2e3d;
+// $white: #fff;
+// $primary: #c23669;
+// $blue: #376ac3;
+// $light: #f3f1f2;
+// $dark: #2a2e3d;
 
 /*-----Custom bootstrap values-----*/
-$component-active-bg: $primary;
-$navbar-dark-color: $white;
-$navbar-dark-hover-color: $primary;
-$navbar-dark-toggler-border-color: transparent;
-$border-radius: 0.3rem;
-$card-border-width: 0;
-$link-color: $blue;
-$info: $blue;
-$link-decoration: none;
-$body-bg: $white;
-$body-color: $dark;
-$font-family-sans-serif: "Open Sans", sans-serif;
+// $component-active-bg: $primary;
+// $navbar-dark-color: $white;
+// $navbar-dark-hover-color: $primary;
+// $navbar-dark-toggler-border-color: transparent;
+// $border-radius: 0.3rem;
+// $card-border-width: 0;
+// $link-color: $blue;
+// $info: $blue;
+// $link-decoration: none;
+// $body-bg: $white;
+// $body-color: $dark;
+// $font-family-sans-serif: "Open Sans", sans-serif;
 
 @import "bootstrap/bootstrap";
 
 /*-----General styling-----*/
 
 h1 {
-    font-family: "Exo 2", sans-serif;
     font-size: 3.5em;
     font-weight: 400;
     margin-bottom: 0.5em;
@@ -40,7 +39,6 @@ h1 {
 }
 
 main h2 {
-    font-family: "Exo 2", sans-serif;
     font-weight: 700;
     color: $primary;
     margin: 40px 0 10px;
@@ -300,17 +298,22 @@ pre code {
 }
 
 .menu ul li a {
-    padding-left: 30px;
+    padding-left: 40px;
     background-color: transparent;
 }
 
 .menu ul li ul li a {
-    padding-left: 60px;
+    padding-left: 80px;
 }
 
 .menu li.active:not(.parent) > a {
     background-color: $primary !important;
     color: $white;
+}
+
+.menu li.parent.active li.parent.active>a {
+    background-color: tint-color($component-active-bg, 70%);
+    color:var(--main-text-color);
 }
 
 .menu li > a > span {

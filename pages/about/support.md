@@ -1,6 +1,5 @@
 ---
 title: Support
-sidebar: about
 ---
 
 ## Funders

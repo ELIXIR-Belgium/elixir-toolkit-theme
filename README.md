@@ -15,12 +15,12 @@ This repository is used to build a flexible Jekyll theme using bootstrap 5 as CS
 
 ## Using Jekyll
 
-The website is build on GitHub using Jekyll, a simple, static site generator based on ruby. When you have a local copy cloned onto your computer, it is possible to generate the website based on this repo. This makes it possible to preview changes live, every time you save a file from within the GitHub rdmkit repo. Follow these steps to deploy the website based on your local clone (copy) of the rdmkit repo:
+The website is build on GitHub using Jekyll, a simple, static site generator based on ruby. When you have a local copy cloned onto your computer, it is possible to generate the website based on this repo. This makes it possible to preview changes live, every time you save a file from within the GitHub jekyll-bootstrap-theme repo. Follow these steps to deploy the website based on your local clone (copy) of the jekyll-bootstrap-theme repo:
 
-Make sure you have cloned the rdmkit repo:
+Make sure you have cloned the jekyll-bootstrap-theme repo:
 
-    git clone git@github.com:USERNAME/rdmkit.git
-    cd rdmkit
+    git clone git@github.com:USERNAME/jekyll-bootstrap-theme.git
+    cd jekyll-bootstrap-theme
 
 
 To run the website locally, you can either use [Docker](https://www.docker.com/) or use Jekyll directly after installing various dependencies.

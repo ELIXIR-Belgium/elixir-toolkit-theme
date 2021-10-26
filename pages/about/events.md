@@ -1,6 +1,5 @@
 ---
 title: Events
-sidebar: about
 ---
 
 

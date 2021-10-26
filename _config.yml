@@ -1,0 +1,51 @@
+url: rdmkit.elixir-europe.org
+repository: elixir-europe/rdmkit
+
+topnav_title: Jekyll bootstrap theme
+# this appears on the top navigation bar next to the home button
+
+title: RDMkit
+# this appears in the html browser tab for the site title (seen mostly by search engines, not users)
+
+git_editme_path: https://github.com/elixir-europe/rdmkit/blob/master/
+# if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
+
+description: "Find the answers to your Research Data Management questions in Life Sciences."
+# Metadata description of the website
+
+# gtag: G-RXQ55EFTTH
+# Google analytics tag
+
+
+exclude:
+  - .gitignore
+  - var/
+  - README.md
+  - vendor
+  - Gemfile*
+  - LICENSE
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+ input: GFM
+ auto_ids: true
+ hard_wrap: false
+
+sass:
+  sass_dir: assets/css
+  style: compressed
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      permalink: /:basename:output_ext
+      layout: "page"
+      sidebar: main
+      topnav: topnav
+
+plugins:
+  - jemoji
