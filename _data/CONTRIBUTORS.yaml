@@ -1,0 +1,18 @@
+# List of contributors
+#
+# reference maintainers/contributors by their name used in contributors metadata section on the pages.
+# Extra metadata that is possible to add:
+# Full Name:
+#    git: github id
+#    email: email adress
+#    orcid: ocrid id
+#    role: the role of the contributor
+#    affiliation: affiliation
+#    image_url: absolute path to image (default image from github)
+
+Bert Droesbeke:
+    git: bedroesb
+    email: bedro@psb.ugent.be
+    orcid: 0000-0003-0522-5674
+    role: editor
+    affiliation: VIB-UGent / ELIXIR-BE
