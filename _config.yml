@@ -47,7 +47,6 @@ defaults:
       permalink: /:basename:output_ext
       layout: "page"
       sidebar: main
-      topnav: topnav
 
 plugins:
   - jemoji
