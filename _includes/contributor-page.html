@@ -13,7 +13,11 @@
 {%- endif  %}
 {%- endfor %}
 {%- for contr in contributors %}
+{%- if allcontrstr %}
 {%- assign allcontrstr = allcontrstr | append: ", " | append: contr[0] %}
+{%- else %}
+{%- assign allcontrstr = allcontrstr | append: contr[0] %}
+{%- endif  %}
 {%- endfor %}
 {%- assign allcontributors = allcontrstr | split: ", " | uniq | sort %}
 {%- endif  %}
