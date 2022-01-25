@@ -13,18 +13,14 @@
 {%- endif  %}
 {%- endfor %}
 {%- for contr in contributors %}
-{%- if allcontrstr %}
 {%- assign allcontrstr = allcontrstr | append: ", " | append: contr[0] %}
-{%- else %}
-{%- assign allcontrstr = allcontrstr | append: contr[0] %}
-{%- endif  %}
 {%- endfor %}
 {%- assign allcontributors = allcontrstr | split: ", " | uniq | sort %}
 {%- endif  %}
 <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-xl-5 g-4 contributor-cards">
     {%- for contributor in allcontributors %}
     <div class="col">
-      <div class="card h-100">
+      <div class="card bg-light h-100">
         {%- assign id = contributors[contributor].git | default: 'no_github' %}
         <div class="position-relative">
           {%- if contributors[contributor].image_url %}
