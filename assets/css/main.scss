@@ -1,72 +1,55 @@
 ---
 ---
 
-/*-----Theme colors-----*/
-// $white: #fff;
-// $primary: #c23669;
-// $blue: #376ac3;
-// $light: #f3f1f2;
-// $dark: #2a2e3d;
-
-/*-----Custom bootstrap values-----*/
-// $component-active-bg: $primary;
-// $navbar-dark-color: $white;
-// $navbar-dark-hover-color: $primary;
-// $navbar-dark-toggler-border-color: transparent;
-// $border-radius: 0.3rem;
-// $card-border-width: 0;
-// $link-color: $blue;
-// $info: $blue;
-// $link-decoration: none;
-// $body-bg: $white;
-// $body-color: $dark;
-// $font-family-sans-serif: "Open Sans", sans-serif;
+$font-family-theme: sans-serif;
 
 @import "bootstrap/bootstrap";
 
 /*-----General styling-----*/
 
 h1 {
-    font-size: 3.5em;
+    font-family: $font-family-theme;
     font-weight: 400;
-    margin-bottom: 0.5em;
+    margin-bottom: $spacer * 1.5;
 }
 
-@media (max-width: 992px) {
-    h1 {
-        font-size: 3em;
-    }
-}
-
-main h2 {
+main h2,
+.h2-like {
+    font-family: $font-family-theme;
     font-weight: 700;
     color: $primary;
-    margin: 40px 0 10px;
+    margin-top: $spacer * 2;
 }
 
 main h3 {
     font-weight: 700;
-    font-size: 1.2em;
-    margin-top: 20px;
+    margin-top: $spacer * 1.5;
 }
 
 main h4 {
     font-weight: 700;
-    font-size: 1.1em;
-    color: $gray-600;
-    margin-top: 20px;
+    color: $secondary;
+    margin-top: $spacer * 1.5;
 }
 
 main h2 + h3 {
-    margin-top: 12px;
+    margin-top: $spacer * 0.5;
 }
 
 main h3 + h4 {
-    margin-top: 15px;
+    margin-top: $spacer * 0.25;
 }
 
 main a:not(.btn):hover {
     text-decoration: underline;
+}
+
+.ff-body {
+    font-family: $font-family-sans-serif!important;
+}
+
+.ff-theme {
+    font-family: $font-family-theme!important;
 }
 
 blockquote {
@@ -75,21 +58,6 @@ blockquote {
     padding-left: 10px;
     color: $gray-600;
     border-radius: $border-radius;
-}
-
-
-main a:not([role="button"]):not(.btn)[target="_blank"]:not(.no-icon):after {
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f35d";
-    font-size: 70%;
-    margin-left: 5px;
-    vertical-align: middle;
 }
 
 /* Selection color */
@@ -152,6 +120,12 @@ pre code {
 }
 
 /*-----Top navigation-----*/
+
+.navbar-nav .nav-item > a.active {
+    color: $white;
+    background-color: $primary;
+    border-radius: $border-radius;
+}
 
 .navbar-brand img {
     height: 40px;
@@ -289,22 +263,17 @@ pre code {
 }
 
 .menu ul li a {
-    padding-left: 40px;
+    padding-left: 30px;
     background-color: transparent;
 }
 
 .menu ul li ul li a {
-    padding-left: 80px;
+    padding-left: 60px;
 }
 
 .menu li.active:not(.parent) > a {
     background-color: $primary !important;
     color: $white;
-}
-
-.menu li.parent.active li.parent.active>a {
-    background-color: tint-color($component-active-bg, 70%);
-    color:var(--main-text-color);
 }
 
 .menu li > a > span {
@@ -385,6 +354,10 @@ pre code {
 
 .dataTables_wrapper {
     margin: $btn-focus-width $btn-focus-width 0 0;
+}
+
+table {
+    @extend .table;
 }
 
 /* Name and description column improvements */
@@ -474,10 +447,6 @@ h2.card-title {
 }
 
 /*-----Contributors cards-----*/
-
-.contributor-cards .card {
-    background-color: $light;
-}
 
 .contributor-cards .badge {
     background-color: $primary;
@@ -572,72 +541,4 @@ h2.card-title {
 .text-hover-primary:focus {
     transition: $btn-transition;
     color: $primary !important;
-}
-
-/*--------------Custom classes--------------*/
-/* ---------------------------------------- */
-
-
-/* Events and news homepage */
-
-li.upcoming-event,
-li.past-event,
-.events {
-    display: none;
-}
-
-.events li,
-.news li {
-    border-left: $light 5px solid;
-    border-radius: $border-radius;
-    padding: 0px 11px;
-}
-
-.events i,
-.news i {
-    width: 20px;
-    text-align: center;
-}
-
-.events .title,
-.news .title {
-    background-color: $primary;
-    font-weight: 600;
-    color: $white;
-    padding: 0px 11px;
-    border-radius: 0px 4px 4px 0px;
-    margin-left: -11px;
-    border: 1px solid $primary;
-    display: inline-block;
-}
-
-/* Counters on landing page */
-
-.count-number {
-    font-size: 4em;
-    font-weight: 700;
-}
-
-// Scaling presentations and videos
-
-iframe.scale {
-    height: 500px;
-    width: 100%;
-    margin: 40px 0;
-}
-
-// More information cards
-
-.info-card {
-    a:hover {
-        .text-muted {
-            transition: $btn-transition;
-            color: $white !important;
-        }
-
-        i {
-            transition: $btn-transition;
-            color: $white !important;
-        }
-    }
 }
