@@ -7,10 +7,6 @@ topnav_title: Jekyll bootstrap theme
 description: "Find the answers to your Research Data Management questions in Life Sciences."
 # Metadata description of the website
 
-# gtag: G-RXQ55EFTTH
-# Google analytics tag
-
-
 exclude:
   - .gitignore
   - var/

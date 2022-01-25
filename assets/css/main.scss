@@ -1,8 +1,6 @@
 ---
 ---
-
-$font-family-theme: sans-serif;
-
+@import "custom_variables";
 @import "bootstrap/bootstrap";
 
 /*-----General styling-----*/
@@ -542,3 +540,5 @@ h2.card-title {
     transition: $btn-transition;
     color: $primary !important;
 }
+
+@import "custom_classes";
