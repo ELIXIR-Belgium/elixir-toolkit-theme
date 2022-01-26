@@ -1,18 +1,18 @@
 <footer id="footer" class="bg-{{site.footer.background}} text-{{site.footer.font}}">
     <div class="container py-1 py-4">
-        <div class="row g-4">
-            <div class="col-lg-3 col-sm-6">
-                <img class="company-image" width="120px;" src="{{ 'assets/img/jekyll_theme_question.svg' | relative_url }}" alt="ELIXIR converge logo"/>
+        <div class="row g-4 d-flex justify-content-between">
+            <div class="col-lg-2 col-sm-6 d-flex justify-content-center">
+                <img class="my-auto" width="120px;" src="{{ 'assets/img/jekyll_theme_question.svg' | relative_url }}" alt="ELIXIR converge logo"/>
             </div>
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-2 col-sm-6">
                 <ul class="mb-0">
                     <li><a class="link-{{site.footer.font}}" href="{{ '/contributors.html' | relative_url }}">Contributors</a></li>
                     <li><a class="link-{{site.footer.font}}" href="https://elixir-europe.org/about-us/how-funded/eu-projects/converge">ELIXIR-CONVERGE</a></li>
-                    <li>Contributions from the 23 ELIXIR Nodes<br></li>
+                    <li>Contributions from the 23 ELIXIR Nodes</li>
                     <li><a class="link-{{site.footer.font}}" href="{{ '/support.html' | relative_url }}">Institutes, projects and funders</a></li>
                 </ul>
             </div>
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-2 col-sm-6">
                 <ul class="mb-0">
                     <li><a class="link-{{site.footer.font}}" href="{{ '/about.html' | relative_url }}">About</a></li>
                     <li><a class="link-{{site.footer.font}}" href="{{ '/contact.html' | relative_url }}">Contact</a></li>
@@ -21,25 +21,24 @@
                 </ul>
 
             </div>
-            <div class="col-lg-3 col-sm-6 d-flex justify-content-between align-items-center">
-                <img src="{{ 'assets/img/Flag_of_Europe.svg' | relative_url }}" alt="European flag" height="70px"/>
-                <img src="{{ 'assets/img/main_logo_condesed.svg' | relative_url }}" alt="{{site.title}} logo condensed" width="88px">
+            <div class="col-lg-2 col-sm-6 d-flex justify-content-center">
+                <img class="my-auto" src="{{ 'assets/img/Flag_of_Europe.svg' | relative_url }}" alt="European flag" height="70px"/>
+            </div>
+            <div class="col-lg-2 col-sm-6 d-flex justify-content-center">
+                <img class="my-auto" src="{{ 'assets/img/main_logo_condesed.svg' | relative_url }}" alt="{{site.title}} logo condensed" width="88px">
             </div>
         </div>
+        {%- if site.footer.extra_line %}
         <div class="row">
-            <div class="text-center pt-4">
-                <p class="mb-0">Recommended in the <a class="link-{{site.footer.font}}" href="https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/guidance/programme-guide_horizon_en.pdf">Horizon Europe Program Guide</a> as the "resource for Data Management guidelines and good practices for the Life Sciences"</p>
+            <div class="text-center pt-4 mb-0">
+                {{footer.extra_line}}
             </div>
         </div>
+        {%- endif %}
     </div>
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License"
-        width="70px" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
-        <span
-        xmlns:dct="http://purl.org/dc/terms/" property="dct:title">RDMkit</span> by <a
-        xmlns:cc="http://creativecommons.org/ns#"
-        href="https://elixir-europe.org/about-us/how-funded/eu-projects/converge"
-        property="cc:attributionName" class="link-{{site.footer.font}}"  rel="cc:attributionURL">ELIXIR-CONVERGE</a> is licensed under a <a
-        rel="license" class="link-{{site.footer.font}}" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons
-        Attribution 4.0 International License</a>, except where otherwise noted.
+    {%- if site.footer.copyright %}
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+        {{site.footer.copyright}}
     </div>
+    {%- endif %}
 </footer>
