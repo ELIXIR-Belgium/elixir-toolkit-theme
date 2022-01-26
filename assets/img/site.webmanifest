@@ -1,4 +1,6 @@
 ---
+layout: none
+permalink: assets/img/site.webmanifest
 ---
 {
     "name": "{{site.title}}",
@@ -14,7 +16,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#c23669",
-    "background_color": "#c23669",
+    "theme_color": "#{{site.theme_color}}",
+    "background_color": "#fff",
     "display": "standalone"
 }
