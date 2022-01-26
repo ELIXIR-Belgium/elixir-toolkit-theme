@@ -1,6 +1,7 @@
+---
+---
 {
-    "name": "jekyll-bootstrap-theme",
-    "short_name": "",
+    "name": "{{site.title}}",
     "icons": [
         {
             "src": "android-chrome-192x192.png",

@@ -1,34 +1,34 @@
-<footer id="footer" class="bg-dark text-white">
+<footer id="footer" class="bg-{{site.footer.background}} text-{{site.footer.font}}">
     <div class="container py-1 py-4">
         <div class="row g-4">
             <div class="col-lg-3 col-sm-6">
-                <img class="company-image" width="120px;" src="{{ 'assets/img/converge_logo_inverted.svg' | relative_url }}" alt="ELIXIR converge logo"/>
+                <img class="company-image" width="120px;" src="{{ 'assets/img/jekyll_theme_question.svg' | relative_url }}" alt="ELIXIR converge logo"/>
             </div>
             <div class="col-lg-3 col-sm-6">
                 <ul class="mb-0">
-                    <li><a href="{{ '/contributors.html' | relative_url }}">Contributors</a></li>
-                    <li><a href="https://elixir-europe.org/about-us/how-funded/eu-projects/converge">ELIXIR-CONVERGE</a></li>
+                    <li><a class="link-{{site.footer.font}}" href="{{ '/contributors.html' | relative_url }}">Contributors</a></li>
+                    <li><a class="link-{{site.footer.font}}" href="https://elixir-europe.org/about-us/how-funded/eu-projects/converge">ELIXIR-CONVERGE</a></li>
                     <li>Contributions from the 23 ELIXIR Nodes<br></li>
-                    <li><a href="{{ '/support.html' | relative_url }}">Institutes, projects and funders</a></li>
+                    <li><a class="link-{{site.footer.font}}" href="{{ '/support.html' | relative_url }}">Institutes, projects and funders</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-sm-6">
                 <ul class="mb-0">
-                    <li><a href="{{ '/about.html' | relative_url }}">About</a></li>
-                    <li><a href="{{ '/contact.html' | relative_url }}">Contact</a></li>
-                    <li><a href="{{ '/accessibility.html' | relative_url }}">Accessibility</a></li>
-                    <li><a href="{{ '/privacy.html' | relative_url }}">Privacy</a></li>
+                    <li><a class="link-{{site.footer.font}}" href="{{ '/about.html' | relative_url }}">About</a></li>
+                    <li><a class="link-{{site.footer.font}}" href="{{ '/contact.html' | relative_url }}">Contact</a></li>
+                    <li><a class="link-{{site.footer.font}}" href="{{ '/accessibility.html' | relative_url }}">Accessibility</a></li>
+                    <li><a class="link-{{site.footer.font}}" href="{{ '/privacy.html' | relative_url }}">Privacy</a></li>
                 </ul>
 
             </div>
             <div class="col-lg-3 col-sm-6 d-flex justify-content-between align-items-center">
                 <img src="{{ 'assets/img/Flag_of_Europe.svg' | relative_url }}" alt="European flag" height="70px"/>
-                <img src="{{ 'assets/img/RDMkit_logo_condensed_inverted.svg' | relative_url }}" alt="RDMkit logo condensed" width="88px">
+                <img src="{{ 'assets/img/main_logo_condesed.svg' | relative_url }}" alt="{{site.title}} logo condensed" width="88px">
             </div>
         </div>
         <div class="row">
             <div class="text-center pt-4">
-                <p class="mb-0">Recommended in the <a href="https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/guidance/programme-guide_horizon_en.pdf">Horizon Europe Program Guide</a> as the "resource for Data Management guidelines and good practices for the Life Sciences"</p>
+                <p class="mb-0">Recommended in the <a class="link-{{site.footer.font}}" href="https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/guidance/programme-guide_horizon_en.pdf">Horizon Europe Program Guide</a> as the "resource for Data Management guidelines and good practices for the Life Sciences"</p>
             </div>
         </div>
     </div>
@@ -38,8 +38,8 @@
         xmlns:dct="http://purl.org/dc/terms/" property="dct:title">RDMkit</span> by <a
         xmlns:cc="http://creativecommons.org/ns#"
         href="https://elixir-europe.org/about-us/how-funded/eu-projects/converge"
-        property="cc:attributionName" rel="cc:attributionURL">ELIXIR-CONVERGE</a> is licensed under a <a
-        rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+        property="cc:attributionName" class="link-{{site.footer.font}}"  rel="cc:attributionURL">ELIXIR-CONVERGE</a> is licensed under a <a
+        rel="license" class="link-{{site.footer.font}}" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons
         Attribution 4.0 International License</a>, except where otherwise noted.
     </div>
 </footer>

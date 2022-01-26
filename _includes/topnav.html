@@ -2,9 +2,9 @@
 <header>
     <a class="visually-hidden-focusable" href='#main'>Skip to content</a>
     <a class="visually-hidden-focusable" href='#footer'>Skip to footer</a>
-    <nav class="navbar navbar-expand-lg mb-3 mb-lg-5 bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-lg mb-3 mb-lg-5 bg-{{site.navbar.theme}} navbar-{{site.navbar.theme}}">
         <div class="container">
-            <a class="navbar-brand" href="{{ 'index.html' | relative_url }}"><img alt="ELIXIR logo" src="{{ 'assets/img/RDMkit_logo_inverted.svg' | relative_url }}">{% if site.topnav_title %}{{site.topnav_title}}{% endif %}</a>
+            <a class="navbar-brand" href="{{ 'index.html' | relative_url }}"><img class="me-3" alt="{{site.title}} logo" src="{{ 'assets/img/main_logo.svg' | relative_url }}">{% if site.topnav_title %}<span>{{site.topnav_title}}</span>{% endif %}</a>
             <button class="navbar-toggler text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <i title="navbar-toggler" class="fa fa-bars"></i>
             </button>
