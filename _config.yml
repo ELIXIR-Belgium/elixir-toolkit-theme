@@ -1,8 +1,8 @@
 title: RDMkit
-# this appears in the html browser tab for the site title (seen mostly by search engines, not users)
+# This appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
 topnav_title: Jekyll bootstrap theme
-# this appears on the top navigation bar next to the home button
+# Optional: this appears on the top navigation bar next to the home button
 
 description: "Find the answers to your Research Data Management questions in Life Sciences."
 # Metadata description of the website
@@ -38,4 +38,13 @@ defaults:
 plugins:
   - jemoji
   - jekyll-github-metadata
-  
+
+
+navbar:
+  theme: light
+
+footer:
+  background: light
+  font: dark
+
+theme_color: 
