@@ -1,44 +1,39 @@
 <footer id="footer" class="bg-{{site.footer.background}} text-{{site.footer.font}}">
     <div class="container py-1 py-4">
         <div class="row g-4 d-flex justify-content-between">
-            <div class="col-lg-2 col-sm-6 d-flex justify-content-center">
-                <img class="my-auto" width="120px;" src="{{ 'assets/img/jekyll_theme_question.svg' | relative_url }}" alt="ELIXIR converge logo"/>
+            {%- for column in site.data.footer.columns %}
+            {%- if column.type == "image" %}
+            <div class="col-lg-{{column.width}} col-sm-6 d-flex justify-content-center">
+                <img class="my-auto" width="{{column.image_width}}" src="{{ column.src | relative_url }}" alt="{{column.alt}}"/>
             </div>
-            <div class="col-lg-2 col-sm-6">
+            {%- elsif column.type == "links" %}
+            <div class="col-lg-{{column.width}} col-sm-6">
                 <ul class="mb-0">
-                    <li><a class="link-{{site.footer.font}}" href="{{ '/contributors.html' | relative_url }}">Contributors</a></li>
-                    <li><a class="link-{{site.footer.font}}" href="https://elixir-europe.org/about-us/how-funded/eu-projects/converge">ELIXIR-CONVERGE</a></li>
-                    <li>Contributions from the 23 ELIXIR Nodes</li>
-                    <li><a class="link-{{site.footer.font}}" href="{{ '/support.html' | relative_url }}">Institutes, projects and funders</a></li>
+                    {%- for link in column.children %}
+                    {%- if link.url != blank and link.external_url == blank%}
+                    <li><a href="{{ link.url | relative_url }}">{{link.url_text}}</a></li>
+                    {%- elsif link.external_url != blank and link.url == blank %}
+                    <li><a href="{{link.external_url}}">{{link.url_text}}</a></li>
+                    {%- else %}
+                    <li>{{link.url_text}}</li>
+                    {%- endif %}
+                    {%- endfor %}
                 </ul>
             </div>
-            <div class="col-lg-2 col-sm-6">
-                <ul class="mb-0">
-                    <li><a class="link-{{site.footer.font}}" href="{{ '/about.html' | relative_url }}">About</a></li>
-                    <li><a class="link-{{site.footer.font}}" href="{{ '/contact.html' | relative_url }}">Contact</a></li>
-                    <li><a class="link-{{site.footer.font}}" href="{{ '/accessibility.html' | relative_url }}">Accessibility</a></li>
-                    <li><a class="link-{{site.footer.font}}" href="{{ '/privacy.html' | relative_url }}">Privacy</a></li>
-                </ul>
-
-            </div>
-            <div class="col-lg-2 col-sm-6 d-flex justify-content-center">
-                <img class="my-auto" src="{{ 'assets/img/Flag_of_Europe.svg' | relative_url }}" alt="European flag" height="70px"/>
-            </div>
-            <div class="col-lg-2 col-sm-6 d-flex justify-content-center">
-                <img class="my-auto" src="{{ 'assets/img/main_logo_condesed.svg' | relative_url }}" alt="{{site.title}} logo condensed" width="88px">
-            </div>
+            {%- endif %}
+            {%- endfor %}
         </div>
-        {%- if site.footer.extra_line %}
+        {%- unless site.data.footer.extra_line == blank %}
         <div class="row">
             <div class="text-center pt-4 mb-0">
-                {{footer.extra_line}}
+                {{site.data.footer.extra_line | markdownify }}
             </div>
         </div>
-        {%- endif %}
+        {%- endunless %}
     </div>
-    {%- if site.footer.copyright %}
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
-        {{site.footer.copyright}}
+    {%- unless site.data.footer.copyright == blank %}
+    <div class="text-center p-4 link-{{site.footer.font}}" style="background-color: rgba(0, 0, 0, 0.2);">
+        {{ site.data.footer.copyright | markdownify }}
     </div>
-    {%- endif %}
+    {%- endunless %}
 </footer>

@@ -1,1 +1,43 @@
 copyright: 
+extra_line: Recommended in the <a href="https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/guidance/programme-guide_horizon_en.pdf">Horizon Europe Program Guide</a> as the "resource for Data Management guidelines and good practices for the Life Sciences"
+columns:
+  - type: image
+    image_width: 120px
+    width: 2
+    src: 'assets/img/jekyll_theme_question.svg'
+    alt: Logo
+  - type: links
+    width: 3
+    children: 
+      - url_text: Contributors
+        url: /contributors.html
+        external_url: 
+      - url_text: Institutes, projects and funders
+        url: /support.html
+        external_url: 
+  - type: links
+    width: 3
+    children: 
+      - url_text: About
+        url: /about.html
+        external_url: 
+      - url_text: Contact
+        url: /contact.html
+        external_url: 
+      - url_text: Accessibility
+        url: /accessibility.html
+        external_url: 
+      - url_text: Privacy
+        url: /privacy.html
+        external_url: 
+  - type: image
+    image_width: 100px
+    width: 1
+    src: 'assets/img/Flag_of_Europe.svg'
+    alt: European flag
+  - type: image
+    image_width: 88px
+    width: 1
+    src: 'assets/img/main_logo_condesed.svg'
+    alt: Jekyll Bootstrap theme logo
+

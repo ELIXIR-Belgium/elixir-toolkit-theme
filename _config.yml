@@ -42,9 +42,12 @@ plugins:
 
 navbar:
   theme: light
+  # Can be light, dark, white, primary, secondary
 
 footer:
   background: light
+  # Can be light, dark, white, primary, secondary
   font: dark
+  # Can be light, dark, white, primary, secondary
 
 theme_color: 0d6efd
