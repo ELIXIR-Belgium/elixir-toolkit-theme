@@ -12,6 +12,7 @@
     {%- if page.related_pages %}
     <!-- Related pages -->
     {%- for section in page.related_pages %}
+    <span>{{section}}</span>
     {%- unless section[1] == nil or section[1] == [] %}
     <div class="col">
         <div class="card h-100 info-card bg-light">
