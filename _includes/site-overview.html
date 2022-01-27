@@ -3,7 +3,7 @@
 {%- for sections in sidebar %}
 {%- assign section = sections.title | downcase | replace: " ", "_" %}
 {%- assign section_pages = site.pages | where:"type", section %}
-{%- unless section_pages == blank %}
+{%- unless section_pages == nil %}
 <h2>{{sections.title}}</h2>
 <div class="table-responsive">
     <table class="table ">

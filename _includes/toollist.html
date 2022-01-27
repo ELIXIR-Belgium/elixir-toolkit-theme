@@ -1,5 +1,5 @@
 {%- assign tools = site.data.tool_and_resource_list.Tools | where:"related_pages", include.tag %}
-{%- unless tools == blank %}
+{%- unless tools == nil %}
 <a class="visually-hidden-focusable" href='#skip-tool-table'>Skip tool table</a>
 <div class="table-responsive mt-4 mb-5">
     <table id="tooltable" class="table display">
@@ -29,10 +29,10 @@
                 {%- for country_page in country_pages %}
                 {%- assign instance_matches = country_page.resources | where: "instance_of", tool.name | where: query, include.tag %}
                 {%- assign tool_matches = country_page.resources | where: query, include.tag %}
-                {%- unless tool_matches == blank %}
+                {%- unless tool_matches == nil %}
                 {%- assign total_county_tools = total_county_tools | plus: tool_matches.size %}
                 {%- endunless %}
-                {%- unless instance_matches == blank %}
+                {%- unless instance_matches == nil %}
                 {%- assign instances_tool = instances_tool | plus: instance_matches.size %}
                 {%- endunless %}
                 {%- endfor %}
@@ -81,7 +81,7 @@
                 </td> 
             </tr>
             {%- endfor %}
-            {%- unless total_county_tools == 0 or include.tag == blank %}
+            {%- unless total_county_tools == 0 or include.tag == nil %}
             <tr class="collapse multi-collapse bg-light" id="resource_title"><td colspan="4"><b>National resources</b></td></tr>
             {%- endunless %}
             {%- assign hide_ids = "resource_title" %}
