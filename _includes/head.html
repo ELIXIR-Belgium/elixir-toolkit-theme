@@ -22,7 +22,7 @@
     <meta name="robots" content="noindex" />
     {%- endif %}
     {%- assign subtitle = page.type | replace: "_", " " | capitalize %}
-    <title>{% if page.title %}{% unless subtitle == nil %}{{subtitle}}: {% endunless %}{{ page.title }} | {{ site.title }}{%- else %}{{ site.title }}{% endif %}</title>
+    <title>{% if page.title %}{% unless subtitle == nil or subtitle == blank %}{{subtitle}}: {% endunless %}{{ page.title }} | {{ site.title }}{%- else %}{{ site.title }}{% endif %}</title>
     <!-- Syntax highlighting  -->
     <link rel="stylesheet" href="{{ 'assets/css/syntax.css' | relative_url }}">
     <!-- Country flags  -->
