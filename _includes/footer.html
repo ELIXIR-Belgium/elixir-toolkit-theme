@@ -10,7 +10,7 @@
             <div class="col-lg-{{column.width}} col-sm-6">
                 <ul class="mb-0">
                     {%- for link in column.children %}
-                    <span>{{test}}</span>
+                    <span>{{link}}</span>
                     {%- if link.url != nill and link.external_url == nill%}
                     <li><a href="{{ link.url | relative_url }}">{{link.url_text}}</a></li>
                     {%- elsif link.external_url != nill and link.url == nill %}
