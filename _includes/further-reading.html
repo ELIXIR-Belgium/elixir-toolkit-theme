@@ -12,7 +12,7 @@
     {%- if page.related_pages %}
     <!-- Related pages -->
     {%- for section in page.related_pages %}
-    {%- unless section[1] == nil  %}
+    {%- unless section[1] == nil or unless section[1] == [] %}
     <div class="col">
         <div class="card h-100 info-card bg-light">
             <div class="card-header bg-dark fw-bold text-white">Related RDMkit pages in "{{ section[0] | replace: "_", " " | capitalize }}"</div>
