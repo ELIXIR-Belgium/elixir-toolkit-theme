@@ -10,9 +10,9 @@
             <div class="col-lg-{{column.width}} col-sm-6">
                 <ul class="mb-0">
                     {%- for link in column.children %}
-                    {%- if link.url != nill and link.external_url == nill%}
+                    {%- if link.url != nil and link.external_url == nil%}
                     <li><a href="{{ link.url | relative_url }}">{{link.url_text}}</a></li>
-                    {%- elsif link.external_url != nill and link.url == nill %}
+                    {%- elsif link.external_url != nil and link.url == nil %}
                     <li><a href="{{link.external_url}}">{{link.url_text}}</a></li>
                     {%- else %}
                     <li>{{link.url_text}}</li>
@@ -23,7 +23,7 @@
             {%- endif %}
             {%- endfor %}
         </div>
-        {%- unless site.data.footer.extra_line == nill %}
+        {%- unless site.data.footer.extra_line == nil %}
         <div class="row">
             <div class="text-center pt-4 mb-0">
                 {{site.data.footer.extra_line | markdownify }}
@@ -31,7 +31,7 @@
         </div>
         {%- endunless %}
     </div>
-    {%- unless site.data.footer.copyright == nill %}
+    {%- unless site.data.footer.copyright == nil %}
     <div class="text-center p-4 link-{{site.footer.font}}" style="background-color: rgba(0, 0, 0, 0.2);">
         {{ site.data.footer.copyright | markdownify }}
     </div>
