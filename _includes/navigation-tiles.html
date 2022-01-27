@@ -1,4 +1,4 @@
-{%- unless include.affiliations == nill and include.search == nill and include.related_pages == nill %}
+{%- unless include.affiliations == nil and include.search == nil and include.related_pages == nil %}
 {%- assign allcountries = site.data.countries %}
 {%- for current_page in site.pages | sorted %}
 {%- if current_page.affiliations and current_page.search_exclude != true and current_page.type == include.type %}
@@ -12,7 +12,7 @@
 {%- endfor %}
 {%- assign allaffiliations = allaffiliations | split: ", " | uniq | sort %}
 <div class="row g-4 row-cols-1 row-cols-md-2 my-4">
-    {%- unless include.affiliations == nill %}
+    {%- unless include.affiliations == nil %}
     <div class="col">
         <div class="input-group">
             <label class="input-group-text" for="affiliations-input">Filter by affiliation</label>
@@ -33,7 +33,7 @@
         </div>
     </div>
     {%- endunless %}
-    {%- unless include.search == nill %}
+    {%- unless include.search == nil %}
     <div class="col">
         <div class="input-group">
             <span class="input-group-text" id="search-label">Search</span>
@@ -71,7 +71,7 @@
                 {%- endif %}
                 {%- if current_page.related_pages %}
                 {%- for section in current_page.related_pages %}
-                {%- unless section[1] == blank  %}
+                {%- unless section[1] == nil  %}
                 <div>
                     <span><b><small>{{ section[0] | replace: "_", " " | capitalize }}: </small></b></span>
                     {%- for page_id in section[1] %}

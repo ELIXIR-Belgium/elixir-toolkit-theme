@@ -399,49 +399,6 @@ footer h2 {
     font-size: 1em;
 }
 
-footer a {
-    font-weight: bold;
-}
-
-footer a:hover {
-    color: $primary;
-    text-decoration: none;
-}
-
-/* -----Homepage----- */
-
-.blurb-title {
-    font-family: "Exo 2", sans-serif;
-    font-size: 1.3em;
-    margin-bottom: 18px;
-    font-weight: 600;
-}
-
-/* ----- Home dropdown boxes ------ */
-
-h2.card-title {
-    margin: 0 0 0.5rem 0;
-}
-
-/* Arrow in button */
-
-.btn.arrow::after {
-    float: right;
-    width: 15px;
-    text-align: center;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f078";
-    transition: transform 0.2s ease-in-out;
-}
-
-.btn.arrow:not(.collapsed)::after {
-    transform: rotate(-180deg);
-}
 
 /*-----Contributors cards-----*/
 
@@ -475,7 +432,7 @@ h2.card-title {
     }
 }
 
-/*-----Social icons-----*/
+/*-----------Social icons----------*/
 
 .social-icons {
     line-height: 4ex;
@@ -492,7 +449,7 @@ h2.card-title {
     }
 }
 
-/*-----Contributor list-----*/
+/*--------Contributor list---------*/
 
 .contributor-badge {
     width: 130px;
@@ -525,7 +482,6 @@ h2.card-title {
 }
 
 /*--------------Hover classes--------------*/
-/* ---------------------------------------- */
 
 .hover-primary:hover,
 .hover-primary:focus {
@@ -539,5 +495,77 @@ h2.card-title {
     transition: $btn-transition;
     color: $primary !important;
 }
+
+/*--------------News and events--------------*/
+
+li.upcoming-event,
+li.past-event,
+.events {
+    display: none;
+}
+
+.events li,
+.news li {
+    border-left: $light 5px solid;
+    border-radius: $border-radius;
+    padding: 0px 11px;
+}
+
+.events i,
+.news i {
+    width: 20px;
+    text-align: center;
+}
+
+.events .title,
+.news .title {
+    background-color: $primary;
+    font-weight: 600;
+    color: $white;
+    padding: 0px 11px;
+    border-radius: 0px 4px 4px 0px;
+    margin-left: -11px;
+    border: 1px solid $primary;
+    display: inline-block;
+}
+
+/*--------------More information-------------*/
+
+
+.info-card {
+    a:hover {
+        .text-muted {
+            transition: $btn-transition;
+            color: $white !important;
+        }
+
+        i {
+            transition: $btn-transition;
+            color: $white !important;
+        }
+    }
+}
+
+/*--------------Navigation tiles-------------*/
+
+
+.navigation-tiles {
+    .h-30px {
+        height: 24px;
+    }
+
+    .card .card-text {
+        min-height: 4.5em;
+    }
+}
+
+/*--------------Scaling presentations and videos-------------*/
+
+iframe.scale {
+    height: 500px;
+    width: 100%;
+    margin: 40px 0;
+}
+
 
 @import "custom_classes";
