@@ -387,10 +387,14 @@ table {
 footer {
     font-size: 0.9em;
     line-height: 24px;
-}
 
-footer h2 {
-    font-size: 1em;
+    h2 {
+        font-size: 1em;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
 }
 
 
