@@ -54,7 +54,7 @@ faircookbook:
 
 * `page_id`: Unique identifier of a page. It is usually a shortened version of the page name or title, with small letters and spaces, or an acronym, with capital and small letters. Used to list Related pages.
 
-* `related_pages`: List here the `page_id` of RDMkit pages that you want to display as Related pages, grouped by section (Your tasks, Your domain, Tool assembly).
+* `related_pages`: List here the `page_id` of {{site.title}} pages that you want to display as Related pages, grouped by section.
 
   If you want pages from the specific section (Your tasks, Your domain, Tool assembly) to be shown here as Related pages, list their `page_id`. If you want to list multiple related pages, make sure to put them in a list like this: [page_id1, page_id2]. The specific sections allowed in each page are specified in each page template. Please, do not add extra sections in the metadata of the page.
   ```yml
@@ -64,7 +64,7 @@ faircookbook:
     - tool_assembly: [page_id1, page_id2]
   ``` 
 
-* `training`: List here training material relevant for the page. We recommend to add your training material in TeSS. However, you can also list here training material that is not yet present in TeSS. Each training item will be automatically added as an entry to the table in the [All training resources page](https://rdmkit.elixir-europe.org/all_training_resources.html).
+* `training`: List here training material relevant for the page. We recommend to add your training material in TeSS. However, you can also list here training material that is not yet present in TeSS.
   ```yml
   training:
     - name: Training in TeSS
@@ -371,7 +371,7 @@ Text
 
 If you want pages from the specific sections Your tasks, Your domain and Tool assembly to be shown as Related pages, list their `page_id`. If you want to list multiple related pages, make sure to put them in a list like this: [page_id1, page_id2]. 
 
-An overview of all RDMkit pages (belonging to the sections listed above) and their `page_id` can be found in the [Website overview page](website_overview).
+An overview of all of the page_id's can be found in the [Website overview page](website_overview).
 
 
 ```yml
@@ -382,7 +382,7 @@ related_pages:
 ```
 
 ## Listing training material
-You can list training material by using the metadata fields as in the example below. Each training item will be automatically added as an entry to the table in the [All training resources page](https://rdmkit.elixir-europe.org/all_training_resources.html).
+You can list training material by using the metadata fields as in the example below.
 
 ```yml
 training:

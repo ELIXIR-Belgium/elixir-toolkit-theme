@@ -3,15 +3,15 @@
 subitems:
 - title: Home
   url: index.html
-- title: Privacy
-  url: /privacy.html
-- title: Some stuff
+- title: About
+  url: /about.html
+- title: Example dropdown
   subitems:
-  - title: Accessibility
-    url: /accessibility.html
+  - title: Events
+    url: /events.html
   - title: News
     url: /news.html
   - hr: true
-  - title: Events
-    url: /events.html
+  - title: Contributors
+    url: /contributors.html
     

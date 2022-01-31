@@ -1,12 +1,12 @@
-- name: Contentathon
-  startDate: 2021-06-23
+- name: Test event 2
+  startDate: 2025-06-23
   startTime: '9:00'
-  endDate: 2021-06-24
+  endDate: 2025-06-24
   endTime: 13:30 CET
-  description: We would like to invite you to highlight your set of data management tools as a tool assembly in the RDMkit and describe how to use it, so others can do the same (two half days). <a href="https://nettskjema.no/a/rdmkit-tool-assemblies#/page/1">Sign up here</a>.
+  description: The description of this event
   location: Online
-- name: BioHackathon Europe
+- name: Test event 2
   startDate: 2021-11-08
   endDate: 2021-11-12
-  description: Highlight your data management tool assembly in the RDMkit! <a href="Highlight your data management tools assembly in the RDMkit!">Sign up here</a>.
+  description: Test event with [link](about)
   location: Barcelona

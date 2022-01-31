@@ -19,5 +19,7 @@
       {%- endif %}
       {%- endfor %}
   </ul>
+  {%- unless include.limit == nil %}
   <small>For more news please visit our <a href="/news.html">news page</a>.</small>
+  {%- endunless %}
 </div>

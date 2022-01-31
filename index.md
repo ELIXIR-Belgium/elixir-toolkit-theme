@@ -1,6 +1,5 @@
 ---
 toc: false
-search_exclude: true
 layout: page
 title: Welcome!
 ---
