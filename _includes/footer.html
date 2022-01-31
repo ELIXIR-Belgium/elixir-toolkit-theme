@@ -1,4 +1,4 @@
-<footer id="footer" class="bg-{{site.footer.background}} text-{{site.footer.font}}">
+<footer id="footer" class="bg-{{site.theme_variables.footer.background_color}} text-{{site.theme_variables.footer.color}}">
     <div class="container py-1 py-4">
         <div class="row g-4 d-flex justify-content-between">
             {%- for column in site.data.footer.columns %}
@@ -32,7 +32,7 @@
         {%- endunless %}
     </div>
     {%- unless site.data.footer.copyright == nil %}
-    <div class="text-center p-4 link-{{site.footer.font}}" style="background-color: rgba(0, 0, 0, 0.2);">
+    <div class="text-center p-4 link-{{site.theme_variables.footer.color}}" style="background-color: rgba(0, 0, 0, 0.2);">
         {{ site.data.footer.copyright | markdownify }}
     </div>
     {%- endunless %}

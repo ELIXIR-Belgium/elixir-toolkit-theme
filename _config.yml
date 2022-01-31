@@ -42,15 +42,13 @@ plugins:
   - jemoji
   - jekyll-github-metadata
 
-
-navbar:
-  theme: light
-  # Can be light, dark, white, primary, secondary
-
-footer:
-  background: light
-  # Can be light, dark, white, primary, secondary
-  font: dark
-  # Can be light, dark, white, primary, secondary
-
-theme_color: 0d6efd
+theme_variables: 
+  theme_color: 0d6efd
+  navbar:
+    theme: light
+    # Can be light, dark, white, primary, secondary
+  footer:
+    background_color: light
+    # Can be light, dark, white, primary, secondary
+    color: dark
+    # Can be light, dark, white, primary, secondary

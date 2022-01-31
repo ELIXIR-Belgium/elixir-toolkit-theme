@@ -16,7 +16,7 @@ permalink: assets/img/site.webmanifest
             "type": "image/png"
         }
     ],
-    "theme_color": "#{{site.theme_color}}",
+    "theme_color": "#{{site.theme_variables.theme_color}}",
     "background_color": "#fff",
     "display": "standalone"
 }
