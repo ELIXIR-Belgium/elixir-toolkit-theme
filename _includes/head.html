@@ -21,8 +21,10 @@
     {%- if page.search_exclude == true and page.url != "/index.html" %}
     <meta name="robots" content="noindex" />
     {%- endif %}
+    {%- if page.type %}
     {%- assign subtitle = page.type | replace: "_", " " | capitalize %}
-    <title>{% if page.title %}{% unless subtitle == nil or subtitle == blank %}{{subtitle}}: {% endunless %}{{ page.title }} | {{ site.title }}{%- else %}{{ site.title }}{% endif %}</title>
+    {%- endif %}
+    <title>{% if page.title %}{% if subtitle %}{{subtitle}}: {% endif %}{{ page.title }} | {{ site.title }}{%- else %}{{ site.title }}{% endif %}</title>
     <!-- Syntax highlighting  -->
     <link rel="stylesheet" href="{{ 'assets/css/syntax.css' | relative_url }}">
     <!-- Country flags  -->
