@@ -7,6 +7,9 @@ topnav_title: Jekyll bootstrap theme
 description: "Flexible Jekyll theme using bootstrap 5 as CSS framework."
 # Metadata description of the website
 
+dsw_deep_link_prefix:
+# prefix for DSW deep links to a certain question
+
 exclude:
   - .gitignore
   - var/

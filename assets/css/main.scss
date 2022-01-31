@@ -453,6 +453,13 @@ footer h2 {
     height: 1.7em;
 }
 
+.coordinator-badge {
+    font-size: 0.7em;
+    width: 1.9em;
+    height: 1.9em;
+    line-height: 1.7;
+}
+
 /* ----- Cookie consent ----- */
 
 .cookiealert {
@@ -489,6 +496,18 @@ footer h2 {
     transition: $btn-transition;
     color: $primary !important;
 }
+
+/*-------------- Fixed sizes --------------*/
+
+
+.h-40px {
+    height: 40px;
+}
+
+.h-30px {
+    height: 24px;
+}
+
 
 /*--------------News and events--------------*/
 
@@ -544,9 +563,6 @@ li.past-event,
 
 
 .navigation-tiles {
-    .h-30px {
-        height: 24px;
-    }
 
     .card .card-text {
         min-height: 4.5em;
