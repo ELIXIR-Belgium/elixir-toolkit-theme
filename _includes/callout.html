@@ -1,0 +1,9 @@
+{%- if include.type == "tip" %}
+<div markdown="span" class="alert alert-success" role="alert"><i class="fas fa-check-square"></i> <b>Tip:</b> {{include.content}}</div>
+{%- elsif include.type == "important" %}
+<div markdown="span" class="alert alert-warning" role="alert"><i class="fas fa-exclamation-triangle"></i> <b>Important:</b> {{include.content}}</div>
+{%- elsif include.type == "note" %}
+<div markdown="span" class="alert alert-info" role="alert"><i class="fas fa-info-circle"></i> <b>Note:</b> {{include.content}}</div>
+{%- elsif include.type == "warning" %}
+<div markdown="span" class="alert alert-danger" role="alert"><i class="fas fa-exclamation-circle"></i> <b>Warning:</b> {{include.content}}</div>
+{%- endif %}
