@@ -351,7 +351,8 @@ pre code {
 
 table {
     @extend .table;
-}
+
+
 
 /* Name and description column improvements */
 
@@ -364,6 +365,10 @@ table {
     }
     td:nth-child(2) {
         font-size: 0.9em;
+    }
+
+    p {
+        margin-bottom: 0;
     }
 }
 

@@ -43,7 +43,7 @@
                 {%- endif %}
                 <td>{{tool.description}}
                 {%- unless instances_tool == 0 or total_county_tools == 0 %}
-                <a href="#national-resources-button" class="d-block">
+                <a href="#national-resources-button" class="d-block mt-1">
                 <span class="badge text-white bg-primary"><i class="fas fa-arrow-circle-down me-2"></i>Different instances available</span>
                 </a>
                 {%- endunless %}
@@ -98,7 +98,7 @@
                 {%- endif %}
                 <td>{{tool.description | markdownify }}
                     {%- if tool.instance_of or tool.how_to_access %}
-                    <div class="d-block">
+                    <div class="d-block mt-1">
                         <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="This resource is an instance of {{tool.instance_of}}"><span class="badge text-primary border border-primary">{{tool.instance_of}}</span></span>
                         {%- if tool.how_to_access %}
                         <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="{{tool.how_to_access}}"><span class="badge text-primary border border-primary">  <i class="fas fa-key"></i></span></span>
