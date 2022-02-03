@@ -9,6 +9,10 @@ subitems:
     subitems:
       - title: Markdown cheat sheet
         url: /markdown_cheat_sheet.html
+      - title: Navigation structures
+        url: /navigation_structures.html
+      - title: Page mechanics
+        url: /page_mechanics.html
   - title: Example pages
     subitems:
       - title: Contributor page
@@ -26,6 +30,8 @@ subitems:
             url: /general_page.html
           - title: General page 2
             url: /general_page_2.html
+          - title: General page 3
+            url: /general_page_3.html
   - title: 404 page not found
     url: /404.html
   
