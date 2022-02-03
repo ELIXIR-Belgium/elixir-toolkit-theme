@@ -151,3 +151,87 @@
     {%- endif %}
     {%- endfor %}
 </div>
+
+
+<script type="text/javascript">
+/** 
+ * Filter cards by affiliation
+ */
+
+$(document).ready(function () {
+    var affiliations = document.getElementById('affiliations-input');
+    if (affiliations) {
+        affiliations.addEventListener("change", function () {
+            var search = document.getElementById('title-search')
+            if (search) {
+                search.value = '';
+            }
+            const cols = document.querySelectorAll(".navigation-tiles .col");
+            for (col of cols) {
+                const colCategories = col.getAttribute("data-affiliations").split(" ");
+                if (colCategories.indexOf(this.value) != -1 || this.value === "reset") {
+                    col.classList.remove("d-none");
+                } else {
+                    col.classList.add("d-none");
+                }
+            }
+        });
+    }
+    var clearaffiliations = document.getElementById("clearfilter");
+    if (clearaffiliations) {
+        clearaffiliations.addEventListener("click", function () {
+            var affiliations = document.getElementById('affiliations-input');
+            if (affiliations) {
+                document.getElementById("affiliations-input").selectedIndex = null;
+                const cols = document.querySelectorAll(".navigation-tiles .col");
+                for (col of cols) {
+                    const colCategories = col.getAttribute("data-affiliations").split(" ");
+                    col.classList.remove("d-none");
+                }
+            }
+        });
+
+    }
+});
+
+/** 
+ * Search cards
+ */
+
+var buttonUp = () => {
+    const input = document.getElementById("title-search");
+    if (input) {
+        const cols = document.querySelectorAll(".navigation-tiles .col");
+        let filter = input.value.toLowerCase();
+        var affiliations = document.getElementById('affiliations-input');
+        if (affiliations) {
+            document.getElementById("affiliations-input").selectedIndex = null;
+        }
+        for (let i = 0; i < cols.length; i++) {
+            let body = cols[i].querySelector(".card-body");
+            let title = cols[i].querySelector(".card-header");
+            if (title.innerText.toLowerCase().indexOf(filter) > -1 || body.innerText.toLowerCase().indexOf(filter) > -1) {
+                cols[i].classList.remove("d-none");
+            } else {
+                cols[i].classList.add("d-none");
+            }
+        }
+    }
+}
+$(document).ready(function () {
+    var clearsearch = document.getElementById("clearsearch");
+    if (clearsearch) {
+        clearsearch.addEventListener("click", function () {
+            var search = document.getElementById('title-search')
+            if (search) {
+                search.value = ''
+                const cols = document.querySelectorAll(".navigation-tiles .col");
+                for (col of cols) {
+                    col.classList.remove("d-none");
+                }
+            }
+        });
+    }
+});
+
+</script>

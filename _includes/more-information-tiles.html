@@ -128,9 +128,5 @@
 {%- endif %}
 {%- if page.page_id %}
 <!-- Tool table -->
-{%- assign main_related_pages = site.data.tool_and_resource_list.Tools | where:"related_pages", page.page_id -%}
-{%- unless main_related_pages == nil %}
-<h2>Relevant tools and resources</h2>
 {% include resource-table-all.html tag=page.page_id %}
-{%- endunless %}
 {%- endif %}
