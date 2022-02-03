@@ -1,6 +1,6 @@
 {%- if page.contributors and page.contributors.size != 0 %}
 <span class="d-block h2-like fs-2 text-dark">Contributors</span>
-<div class="p-4 bg-light rounded mt-4">
+<div class="p-4 rounded mt-4 page-contributors">
     {%- assign contributors = site.data.CONTRIBUTORS %}
     {%- assign page_contributors = page.contributors | sort %}
     {%- for contributor in page_contributors %}
@@ -9,9 +9,9 @@
     {%- assign stripped_name = contributor | replace: "'", " " %}
     <div class="d-flex justify-content-center">
         {%- if contributors[contributor].image_url %}
-        <img class="img-fluid rounded-circle contributor-badge" src="{{ contributors[contributor].image_url }}" alt="Avatar of the contributor {{ stripped_name }}">
+        <img class="img-fluid rounded-circle contributor-img" src="{{ contributors[contributor].image_url }}" alt="Avatar of the contributor {{ stripped_name }}">
         {%- else %}
-        <img class="img-fluid rounded-circle contributor-badge" src="https://avatars.githubusercontent.com/{{ id }}" alt="Avatar of the contributor {{ stripped_name }}">
+        <img class="img-fluid rounded-circle contributor-img" src="https://avatars.githubusercontent.com/{{ id }}" alt="Avatar of the contributor {{ stripped_name }}">
         {%- endif %}
     </div>
     <div class="d-flex mt-3 justify-content-center">
@@ -26,13 +26,13 @@
         {%- endif %}
     </div>
     {%- endcapture %}
-    <a tabindex="0" role="button" class="btn bg-white hover-primary m-1 position-relative" data-bs-trigger="focus" data-bs-html="true" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content='{{html_code}}' title="{{contributor}}"> 
+    <a tabindex="0" role="button" class="btn contributor-link hover-primary m-1 position-relative" data-bs-trigger="focus" data-bs-html="true" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content='{{html_code}}' title="{{contributor}}"> 
         <div class="d-flex align-items-center">
             <div class="flex-shrink-0">  
                 {%- if contributors[contributor].image_url %}
-                <img class="img-fluid rounded-circle contributor-badge-sm" src="{{ contributors[contributor].image_url }}" alt="Avatar of the contributor {{ stripped_name }}">
+                <img class="img-fluid rounded-circle contributor-img-sm" src="{{ contributors[contributor].image_url }}" alt="Avatar of the contributor {{ stripped_name }}">
                 {%- else %}
-                <img class="img-fluid rounded-circle contributor-badge-sm" src="https://avatars.githubusercontent.com/{{ id }}" alt="Avatar of the contributor {{ stripped_name }}">
+                <img class="img-fluid rounded-circle contributor-img-sm" src="https://avatars.githubusercontent.com/{{ id }}" alt="Avatar of the contributor {{ stripped_name }}">
                 {%- endif %}
             </div>
             <div class="flex-grow-1 ms-2">
@@ -43,8 +43,8 @@
             {%- if page.coordinators %}
             {%- for coordinator in page.coordinators %}
             {%- if coordinator == contributor %}
-            <div class="rounded-circle bg-dark coordinator-badge">
-                <i class="fa fa-crown text-white"></i>
+            <div class="rounded-circle coordinator-crown">
+                <i class="fa fa-crown"></i>
             </div>
             {%- endif %}
             {%- endfor %}

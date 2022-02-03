@@ -44,13 +44,3 @@ plugins:
 
 theme_variables: 
   theme_color: 0d6efd
-  navbar:
-    theme: light
-    # Can be light, dark, white, primary, secondary
-  sidebar:
-    background_color: light
-  footer:
-    background_color: light
-    # Can be light, dark, white, primary, secondary
-    color: dark
-    # Can be light, dark, white, primary, secondary

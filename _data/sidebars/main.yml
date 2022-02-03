@@ -17,6 +17,11 @@ subitems:
         url: /events.html
       - title: News page
         url: /news.html
-      - title: General page
-        url: /general_page.html
-
+      - title: Section overview
+        url: /overview_tiles.html
+        subitems:
+          - title: General page
+            url: /general_page.html
+          - title: General page 2
+            url: /general_page_2.html
+  

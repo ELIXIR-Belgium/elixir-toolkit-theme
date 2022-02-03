@@ -61,9 +61,9 @@
     {%- endcapture -%}
     {%- endif %}
     <div class="col" data-affiliations="{{affiliations_classes}}" related-pages="{{related_pages_classes}}">
-        <div class="card bg-light h-100">
-            <div class="card-header bg-dark">
-                <a class="text-white" aria-label="Go to the {{current_page.title}} page" href="{{ current_page.url | relative_url }}"><h3 class="card-title m-0">{{current_page.title}}</h3></a>
+        <div class="card h-100">
+            <div class="card-header">
+                <a aria-label="Go to the {{current_page.title}} page" href="{{ current_page.url | relative_url }}"><h3 class="card-title m-0">{{current_page.title}}</h3></a>
             </div>
             <div class="card-body">
                 {%- if current_page.description %}

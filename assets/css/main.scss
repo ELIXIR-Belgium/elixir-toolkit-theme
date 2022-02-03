@@ -1,8 +1,9 @@
 ---
 ---
 
-@import "custom_variables";
+@import "bootstrap_variables";
 @import "bootstrap/bootstrap";
+@import "custom_variables";
 
 /*-----General styling-----*/
 
@@ -16,7 +17,7 @@ main {
     .h2-like {
         font-family: $font-family-theme;
         font-weight: 700;
-        color: $primary;
+        color: $h2-color;
         margin-top: $spacer * 2;
     }
 
@@ -121,8 +122,14 @@ pre code {
 
 /*-----Top navigation-----*/
 
-.navbar-brand img {
-    height: 40px;
+header .navbar {
+    background-color: $topnav-bg;
+    .navbar-brand {
+        color: $topnav-title-color;
+        img {
+            height: 40px;
+        }
+    }
 }
 
 /*-----Search box top navigation-----*/
@@ -185,7 +192,7 @@ pre code {
 
 .search-result-section {
     word-wrap: break-word;
-    color: $primary;
+    color: $search-result-color;
 }
 
 .search-result-rel-url {
@@ -232,15 +239,18 @@ pre code {
     }
 }
 
-.sidebar-collapse i {
-    font-size: 1.25rem;
-    float: right;
-    line-height: 1.25em;
+.sidebar-collapse {
+    background-color: $sidebar-bg;
+    i {
+        font-size: 1.25rem;
+        float: right;
+        line-height: 1.25em;
+    }
 }
 
 .sidebar-collapse:not(.collapsed) {
-    color: $white;
-    background-color: $primary !important;
+    color: $sidebar-color-active;
+    background-color: $sidebar-bg-active;
 }
 
 .sidebar-title {
@@ -249,46 +259,46 @@ pre code {
     font-size: 1.3em;
 }
 
-.menu {
-    ul {
-        display: none;
-        padding-left: 0;
-
-        li a {
-            padding-left: 30px;
-            background-color: transparent;
-        }
-        li ul li a {
-            padding-left: 60px;
+ul#menu li {
+    > a {
+        background-color: $sidebar-bg;
+        color: $sidebar-color;
+        > span {
+            float: right;
+            width: 15px;
+            text-align: center;
         }
 
-        li.active:not(.parent) > a {
-            background-color: $primary !important;
-            color: $white;
+        > span:after {
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f078";
+            transition: transform 0.2s ease-in-out;
         }
     }
-}
+    li.active:not(.parent) > a {
+        background-color: $sidebar-bg-active;
+        color: $sidebar-color-active;
+    }
+    ul li {
+        a {
+            display: none;
+            background-color: transparent;
+            padding-left: 30px;
+        }
+        ul li a {
+            padding-left: 60px;
+        }
+    }
 
-.menu li > a > span {
-    float: right;
-    width: 15px;
-    text-align: center;
-}
-
-.menu li > a > span:after {
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f078";
-    transition: transform 0.2s ease-in-out;
-}
-
-.menu li.active > a > span:after {
-    transform: rotate(-180deg);
+    &.active > a > span:after {
+        transform: rotate(-180deg);
+    }
 }
 
 /*-----Summary under page title-----*/
@@ -307,36 +317,39 @@ pre code {
 
 /*-----TOC-----*/
 
-/* Indent the lists and reset any other padding */
+#toc {
+    background-color: $toc-bg;
+    /* Indent the lists and reset any other padding */
 
-#toc ul {
-    padding: 0 0 0 20px;
-}
+    ul {
+        padding: 0 0 0 20px;
+    }
 
-/* Consistent vertical space between list items */
+    /* Consistent vertical space between list items */
 
-#toc li,
-#toc ul ul li {
-    margin: 8px 0 0 0;
-}
+    li,
+    ul ul li {
+        margin: 8px 0 0 0;
+    }
 
-/* Sublists */
+    /* Sublists */
 
-#toc ul ul {
-    list-style: circle outside;
+    ul ul {
+        list-style: circle outside;
+    }
 }
 
 /* ---- Theme Badges-------- */
 
 .default-badge {
     font-weight: inherit;
-    background-color: $light;
-    color: $body-color;
+    background-color: $badge-bg;
+    color: $badge-color;
 }
 
 .default-badge:hover {
-    color: $white;
-    background-color: $primary;
+    color: $badge-color-hover;
+    background-color: $badge-bg-hover;
 }
 
 /*-----General table properties-----*/
@@ -351,7 +364,6 @@ pre code {
 
 table {
     @extend .table;
-
 }
 
 /* Name and description column improvements */
@@ -393,6 +405,17 @@ table {
 footer {
     font-size: 0.9em;
     line-height: 24px;
+    background-color: $footer-bg;
+    color: $footer-color;
+
+    a {
+        color: $footer-link-color !important;
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: $footer-link-color-hover !important;
+    }
 
     h2 {
         font-size: 1em;
@@ -401,11 +424,18 @@ footer {
     p {
         margin-bottom: 0;
     }
+
+    .copyright {
+        background-color: $footer-copyright-bg;
+    }
 }
 
 /*-----Contributors cards-----*/
 
 .contributor-cards {
+    .card {
+        background-color: $contr-card-bg;
+    }
     .badge {
         background-color: $primary;
         margin: 10px 10px 0px 0px;
@@ -453,26 +483,36 @@ footer {
 }
 
 /*--------Contributor list---------*/
+.page-contributors {
+    background-color: $contr-bg;
+    .contributor-link {
+        background-color: $contr-link-bg;
+        .contributor-img {
+            width: 130px;
+        }
 
-.contributor-badge {
-    width: 130px;
+        .contributor-img-sm {
+            height: 1.7em;
+        }
+
+        .coordinator-crown {
+            font-size: 0.7em;
+            width: 1.9em;
+            height: 1.9em;
+            line-height: 1.7;
+            background-color: $contr-crown-bg;
+
+            .fa {
+                color: $contr-crown-color;
+            }
+        }
+    }
 }
-
-.contributor-badge-sm {
-    height: 1.7em;
-}
-
-.coordinator-badge {
-    font-size: 0.7em;
-    width: 1.9em;
-    height: 1.9em;
-    line-height: 1.7;
-}
-
 /* ----- Cookie consent ----- */
 
 .cookiealert {
     position: fixed;
+    background-color: $cookie-alert-bg;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -495,9 +535,9 @@ footer {
 
 .hover-primary:hover,
 .hover-primary:focus {
-    background-color: $primary !important;
+    background-color: $btn-primary-bg-hover !important;
     transition: $btn-transition;
-    color: $white !important;
+    color: $btn-primary-color-hover !important;
 }
 
 .text-hover-primary:hover,
@@ -538,19 +578,24 @@ li.past-event,
     }
 
     .title {
-        background-color: $primary;
+        background-color: $news-title-bg;
         font-weight: 600;
         color: $white;
         padding: 0px 11px;
         border-radius: 0px 4px 4px 0px;
         margin-left: -11px;
-        border: 1px solid $primary;
+        border: 1px solid $news-title-bg;
         display: inline-block;
     }
 }
 /*--------------More information-------------*/
 
 .info-card {
+    background-color: $info-card-bg;
+    .card-header {
+        background-color: $info-card-header-bg;
+        color: $info-card-header-color;
+    }
     a:hover {
         .text-muted {
             transition: $btn-transition;
@@ -567,6 +612,9 @@ li.past-event,
 /*--------------Navigation tiles-------------*/
 
 .navigation-tiles {
+    .card {
+        background-color: $nav-card-bg;
+    }
     .card .card-text {
         min-height: 4.5em;
     }
