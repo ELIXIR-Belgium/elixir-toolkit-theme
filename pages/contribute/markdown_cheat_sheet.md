@@ -180,19 +180,18 @@ note can be replaced with tip, warning, important, depending on the type of mess
 
 ## Images
 
-{% include image.html file="exampleImage.png" caption="Figure 1. Say something about this pic." alt="Servers" %}
+{% include image.html file="infrastructures/ELIXIR-logo.svg" caption="Figure 1. Say something about this pic." alt="ELIXIR logo" %}
 
 This image is inserted in the markdown using following snippet:
 
 {% raw %}
 ```
-{% include image.html file="exampleImage.png" caption="Figure 1. Say something about this pic." alt="Servers" %}
+{% include image.html file="infrastructures/ELIXIR-logo.svg" caption="Figure 1. Say something about this pic." alt="ELIXIR logo" %}
 ```
 {% endraw %}
 
 Make sure that you add the image to the `images` directory and give it an understanding filename. Adapt the snippet so it points towards you image (only the filename is needed). In the case of the example, the image exampleImage.png is loaded. Supported attributes are:
 
-* `max-width` : an integer between 1 and 50 to define the relative width of the image
 * `click`: if true, the image will be clickable -> the image will be loaded in another tab
 * `url`: f you want the image to link to anther page
 * `alt`: describes the image and is used for people that are visually impaired
