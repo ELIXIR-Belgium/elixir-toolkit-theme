@@ -1,4 +1,4 @@
-- name: Test event 2
+- name: Test event 1
   startDate: 2025-06-23
   startTime: '9:00'
   endDate: 2025-06-24
@@ -8,5 +8,5 @@
 - name: Test event 2
   startDate: 2021-11-08
   endDate: 2021-11-12
-  description: "Test event with [link](about)"
+  description: Example Description with [link](about)
   location: "[Barcelona](test)"

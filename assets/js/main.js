@@ -92,10 +92,10 @@ function nowToDateString() {
     return new Date().toISOString().substring(0, 10);
 };
 
-function showUpcomingEvents() {
+function show_upcoming_events() {
     var dstr = nowToDateString();
-    var events_block = $(document.getElementsByClassName("upcoming-events"));
-    var elements = $('li.upcoming-event').filter(function () {
+    var events_block = $(document.getElementsByClassName("upcoming_events"));
+    var elements = $('li.upcoming_event').filter(function () {
         return $(this).data('start') >= dstr;
     });
     if ($(elements).length > 0) {
@@ -104,10 +104,10 @@ function showUpcomingEvents() {
     elements.show();
 };
 
-function showPastEvents() {
+function show_past_events() {
     var dstr = nowToDateString();
-    var events_block = $(document.getElementsByClassName("past-events"));
-    var elements = $('li.past-event').filter(function () {
+    var events_block = $(document.getElementsByClassName("past_events"));
+    var elements = $('li.past_event').filter(function () {
         return $(this).data('start') < dstr;
     });
     if ($(elements).length > 0) {
