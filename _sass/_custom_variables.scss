@@ -28,6 +28,10 @@ $toc-bg: $light;
 $nav-card-bg: $white;
 $nav-card-header-bg: $dark;
 $nav-card-header-color: $white;
+$nav-card-badge-color: $body-color;
+$nav-card-badge-bg: $light;
+$nav-card-badge-color-hover: $white;
+$nav-card-badge-bg-hover: $primary;
 
 /*-----More information tiles-----*/
 $info-card-bg: $light;
@@ -52,8 +56,8 @@ $cookie-alert-bg: $light;
 /*-----Default badge-----*/
 $badge-color: $body-color;
 $badge-bg: $light;
-$badge-color-hover: $primary;
-$badge-bg-hover: $white;
+$badge-color-hover: $white;
+$badge-bg-hover: $primary;
 
 /*-----Footer-----*/
 $footer-bg: $light;

@@ -281,7 +281,7 @@ ul#menu li {
             transition: transform 0.2s ease-in-out;
         }
     }
-    li.active:not(.parent) > a {
+    &.active:not(.parent) > a {
         background-color: $sidebar-bg-active;
         color: $sidebar-color-active;
     }
@@ -487,10 +487,6 @@ footer {
     background-color: $contr-bg;
     .contributor-link {
         background-color: $contr-link-bg;
-        .contributor-img {
-            width: 130px;
-        }
-
         .contributor-img-sm {
             height: 1.7em;
         }
@@ -508,6 +504,11 @@ footer {
         }
     }
 }
+
+.contributor-img {
+    width: 130px;
+}
+
 /* ----- Cookie consent ----- */
 
 .cookiealert {
@@ -614,9 +615,27 @@ li.past-event,
 .navigation-tiles {
     .card {
         background-color: $nav-card-bg;
-    }
-    .card .card-text {
-        min-height: 4.5em;
+        .card-text {
+            min-height: 4.5em;
+        }
+        .card-header {
+            background-color: $nav-card-header-bg;
+            
+            a {
+                color: $nav-card-header-color;
+            }
+        }
+        .badge {
+            font-weight: inherit;
+            background-color: $nav-card-badge-bg;
+            color: $nav-card-badge-color;
+        }
+        
+        .badge:hover {
+            color: $nav-card-badge-color-hover;
+            background-color: $nav-card-badge-bg-hover;
+        }
+        
     }
 }
 

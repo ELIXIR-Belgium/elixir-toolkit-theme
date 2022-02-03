@@ -78,7 +78,7 @@
                     {%- assign section_pages = site.pages | where:"type", section[0] %}
                     {%- assign metadata = section_pages | where:"page_id", page_id %}
                     {%- for page_hit in metadata %}
-                    <a href="{{ page_hit.url | relative_url }}"><span class="badge fw-normal text-dark bg-white hover-primary">{{page_hit.title | truncate: 20 }}</span></a>
+                    <a href="{{ page_hit.url | relative_url }}"><span class="badge">{{page_hit.title | truncate: 20 }}</span></a>
                     {%- endfor %}
                     {%- endfor %}
                 </div>
