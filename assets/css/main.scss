@@ -285,14 +285,16 @@ ul#menu li {
         background-color: $sidebar-bg-active;
         color: $sidebar-color-active;
     }
-    ul li {
-        a {
-            display: none;
-            background-color: transparent;
-            padding-left: 30px;
-        }
-        ul li a {
-            padding-left: 60px;
+    ul {
+        display: none;
+        li {
+            a {
+                background-color: transparent;
+                padding-left: 30px;
+            }
+            ul li a {
+                padding-left: 60px;
+            }
         }
     }
 
@@ -620,7 +622,7 @@ li.past-event,
         }
         .card-header {
             background-color: $nav-card-header-bg;
-            
+
             a {
                 color: $nav-card-header-color;
             }
@@ -630,12 +632,11 @@ li.past-event,
             background-color: $nav-card-badge-bg;
             color: $nav-card-badge-color;
         }
-        
+
         .badge:hover {
             color: $nav-card-badge-color-hover;
             background-color: $nav-card-badge-bg-hover;
         }
-        
     }
 }
 
