@@ -259,10 +259,12 @@ header .navbar {
     font-size: 1.3em;
 }
 
-ul#menu li {
-    > a {
+ul#menu {
+    > li > a {
         background-color: $sidebar-bg;
         color: $sidebar-color;
+    }
+    li > a {
         > span {
             float: right;
             width: 15px;
@@ -281,7 +283,7 @@ ul#menu li {
             transition: transform 0.2s ease-in-out;
         }
     }
-    &.active:not(.parent) > a {
+    li.active:not(.parent) > a {
         background-color: $sidebar-bg-active;
         color: $sidebar-color-active;
     }
@@ -289,7 +291,6 @@ ul#menu li {
         display: none;
         li {
             a {
-                background-color: transparent;
                 padding-left: 30px;
             }
             ul li a {
