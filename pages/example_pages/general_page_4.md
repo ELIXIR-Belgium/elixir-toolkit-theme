@@ -1,22 +1,8 @@
 ---
-title: General page example 3
+title: General page example 4
 type: example_pages
-description: This page has page level resources
-page_id: gp3
-resources:
-  - name: Resource name
-    description: A general description about the resource
-    how_to_access: explantation on how you can access this resource
-    instance_of: based on
-    related_pages:
-      example_pages: [gp3, gp1, gp2]
-  - name: Resource name 2
-    description: A general description about the resource
-    how_to_access: 
-    instance_of: 
-    related_pages:
-      example_pages: [gp3]
-
+description: This page has no more information
+page_id: gp4
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis fermentum velit, at vulputate sapien. Suspendisse efficitur id elit sed volutpat. Etiam luctus sem id finibus pulvinar. Morbi sit amet purus a velit pretium imperdiet ut et elit. Maecenas eleifend, urna a aliquam lobortis, erat ligula efficitur velit, aliquam accumsan odio turpis nec nibh. Suspendisse placerat porttitor neque, vitae consequat massa aliquam eu. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin sed velit vitae tellus egestas condimentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris pretium scelerisque dignissim. Maecenas ipsum nisl, pretium non mollis ac, varius pulvinar nibh. Donec venenatis pulvinar arcu, vitae interdum purus dictum in. Proin sed tempus mi.
