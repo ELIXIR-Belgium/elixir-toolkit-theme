@@ -43,6 +43,11 @@ main {
     a:not(.btn):hover {
         text-decoration: underline;
     }
+
+    ol li,
+    ul li {
+        margin: 10px 0px;
+    }
 }
 
 .ff-body {
@@ -53,6 +58,8 @@ main {
     font-family: $font-family-theme !important;
 }
 
+/*-----Blockquote-----*/
+
 blockquote {
     margin-left: 20px;
     border-left: 5px solid $gray-600;
@@ -61,10 +68,9 @@ blockquote {
     border-radius: $border-radius;
 }
 
-/* Selection color */
+/*-----Selection color-----*/
 
 ::-moz-selection {
-    /* Code for Firefox */
     color: $white;
     background: $primary;
 }
@@ -74,20 +80,13 @@ blockquote {
     background: $primary;
 }
 
-/* End - Selection color */
-
-main ol li,
-main ul li {
-    margin: 10px 0px;
-}
-
-/* list circles colored */
+/*-----Color list marker-----*/
 
 ul li::marker {
     color: $primary;
 }
 
-/* position and size emoji */
+/*-----Emoji styling-----*/
 
 main img.emoji {
     margin: 0px 0px 0.2em 0px;
@@ -124,10 +123,11 @@ pre code {
 
 header .navbar {
     background-color: $topnav-bg;
+    border-bottom: $topnav-border;
     .navbar-brand {
         color: $topnav-title-color;
         img {
-            height: 40px;
+            height: $topnav-brand-height;
         }
     }
 }
@@ -268,6 +268,7 @@ ul#menu {
         > span {
             float: right;
             width: 15px;
+            margin-left: $btn-padding-x;
             text-align: center;
         }
 
@@ -283,24 +284,29 @@ ul#menu {
             transition: transform 0.2s ease-in-out;
         }
     }
-    li.active:not(.parent) > a {
-        background-color: $sidebar-bg-active;
-        color: $sidebar-color-active;
+    li.active {
+        &:not(.parent) > a {
+            background-color: $sidebar-bg-active;
+            color: $sidebar-color-active;
+        }
+        > a > span:after {
+            transform: rotate(-180deg);
+        }
     }
     ul {
         display: none;
         li {
             a {
-                padding-left: 30px;
+                margin-left: 30px;
+                background-color: $sidebar-lvl2-bg;
+                color: $sidebar-lvl2-color;
             }
             ul li a {
-                padding-left: 60px;
+                margin-left: 60px;
+                background-color: $sidebar-lvl3-bg;
+                color: $sidebar-lvl3-color;
             }
         }
-    }
-
-    &.active > a > span:after {
-        transform: rotate(-180deg);
     }
 }
 
@@ -322,27 +328,28 @@ ul#menu {
 
 #toc {
     background-color: $toc-bg;
-    /* Indent the lists and reset any other padding */
+    border-bottom: $toc-border;
+    // Indent the lists and reset any other padding
 
     ul {
         padding: 0 0 0 20px;
     }
 
-    /* Consistent vertical space between list items */
+    //Consistent vertical space between list items
 
     li,
     ul ul li {
         margin: 8px 0 0 0;
     }
 
-    /* Sublists */
+    // Sublists
 
     ul ul {
         list-style: circle outside;
     }
 }
 
-/* ---- Theme Badges-------- */
+/*-----Default badge-----*/
 
 .default-badge {
     font-weight: inherit;
@@ -369,7 +376,7 @@ table {
     @extend .table;
 }
 
-/* Name and description column improvements */
+// Tool table column width optimizations
 
 #tooltable {
     tr th:nth-child(1) {
@@ -392,23 +399,13 @@ table {
     font-weight: bold;
 }
 
-/*-----Registries in tool table------*/
-
-.registry_badge {
-    background-color: $dark;
-    color: $white;
-}
-
-.registry_badge:hover {
-    background-color: $primary;
-}
-
 /*-----Footer-----*/
 
 footer {
     font-size: 0.9em;
     line-height: 24px;
     background-color: $footer-bg;
+    border-top: $footer-border;
     color: $footer-color;
 
     a {
@@ -485,7 +482,7 @@ footer {
     }
 }
 
-/*--------Contributor list---------*/
+/*--------Page contributors---------*/
 .page-contributors {
     background-color: $contr-bg;
     .contributor-link {
@@ -512,7 +509,7 @@ footer {
     width: 130px;
 }
 
-/* ----- Cookie consent ----- */
+/*-----Cookie consent banner-----*/
 
 .cookiealert {
     position: fixed;
@@ -535,7 +532,7 @@ footer {
     transition-delay: 1000ms;
 }
 
-/*--------------Hover classes--------------*/
+/*-----Hoover classes-----*/
 
 .hover-primary:hover,
 .hover-primary:focus {
@@ -550,7 +547,7 @@ footer {
     color: $primary !important;
 }
 
-/*-------------- Fixed sizes --------------*/
+/*-----Size components-----*/
 
 .h-40px {
     height: 40px;
@@ -560,7 +557,7 @@ footer {
     height: 24px;
 }
 
-/*--------------News and events--------------*/
+/*-----News and events-----*/
 
 li.upcoming_event,
 li.past_event,
@@ -592,7 +589,7 @@ li.past_event,
         display: inline-block;
     }
 }
-/*--------------More information-------------*/
+/*-----More information tiles-----*/
 
 .info-card {
     background-color: $info-card-bg;
@@ -613,7 +610,7 @@ li.past_event,
     }
 }
 
-/*--------------Navigation tiles-------------*/
+/*-----Section navigation tiles-----*/
 
 .navigation-tiles {
     .card {
@@ -641,7 +638,7 @@ li.past_event,
     }
 }
 
-/*--------------Scaling presentations and videos-------------*/
+/*-----Scaling presentations and videos-----*/
 
 iframe.scale {
     height: 500px;
