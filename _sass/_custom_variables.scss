@@ -9,6 +9,8 @@ $btn-primary-color-hover: $white;
 /*-----Top navigation-----*/
 $topnav-bg: $light;
 $topnav-title-color: $primary;
+$topnav-brand-height: 44px;
+$topnav-border: 0;
 
 /*-----Search-----*/
 $search-result-color: $primary;
@@ -16,11 +18,16 @@ $search-result-color: $primary;
 /*-----Sidebar-----*/
 $sidebar-bg: $light;
 $sidebar-color: $dark;
+$sidebar-lvl2-bg: $white;
+$sidebar-lvl2-color: $dark;
+$sidebar-lvl3-bg: $white;
+$sidebar-lvl3-color: $dark;
 $sidebar-bg-active: $primary;
 $sidebar-color-active: $white;
 
 /*-----TOC-----*/
 $toc-bg: $light;
+$toc-border: 0;
 
 /*-----Section navigation tiles-----*/
 $nav-card-bg: $white;
@@ -48,7 +55,7 @@ $contr-crown-color: $white;
 /*-----Events & news-----*/
 $news-title-bg: $primary;
 
-/*-----Cookie banner-----*/
+/*-----Cookie consent banner-----*/
 $cookie-alert-bg: $light;
 
 /*-----Default badge-----*/
@@ -63,4 +70,5 @@ $footer-color: $dark;
 $footer-link-color: $dark;
 $footer-link-color-hover: $primary;
 $footer-copyright-bg: $gray-200;
+$footer-border: 0;
 
