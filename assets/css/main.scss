@@ -328,7 +328,7 @@ ul#menu {
 
 #toc {
     background-color: $toc-bg;
-    border-bottom: $toc-border;
+    border: $toc-border;
     // Indent the lists and reset any other padding
 
     ul {
