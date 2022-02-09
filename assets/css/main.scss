@@ -513,7 +513,8 @@ footer {
 
 .cookiealert {
     position: fixed;
-    background-color: $cookie-alert-bg;
+    background-color: $footer-bg;
+    color: $footer-color;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -523,6 +524,14 @@ footer {
     visibility: hidden;
     transform: translateY(100%);
     transition: all 500ms ease-out;
+
+    a {
+        color: $footer-link-color !important;
+    }
+
+    a:hover {
+        color: $footer-link-color-hover !important;
+    }
 }
 
 .cookiealert.show {
