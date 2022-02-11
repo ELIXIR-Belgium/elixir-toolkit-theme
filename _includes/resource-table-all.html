@@ -28,8 +28,8 @@
                 {%- assign query = "related_pages." | append: page.type %}
                 {%- assign country_pages = site.pages | where: "type", "national_resources" | where: "search_exclude", "false" %}
                 {%- for country_page in country_pages %}
-                {%- assign instance_matches = country_page.resources | where: "instance_of", tool.name | where: query, include.tag %}
-                {%- assign tool_matches = country_page.resources | where: query, include.tag %}
+                {%- assign instance_matches = country_page.resources | where: "instance_of", tool.name | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
+                {%- assign tool_matches = country_page.resources | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
                 {%- unless tool_matches.size == 0 %}
                 {%- assign total_county_tools = total_county_tools | plus: tool_matches.size %}
                 {%- endunless %}
@@ -87,7 +87,7 @@
             {%- endunless %}
             {%- assign hide_ids = "resource_title" %}
             {%- for country_page in country_pages %}
-            {%- assign tool_matches = country_page.resources | where: query, include.tag %}
+            {%- assign tool_matches = country_page.resources| where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
             {%- for tool in tool_matches %}
             {%- assign tool_id = tool.name | slugify %}
             {%- assign hide_ids = hide_ids | append: " " | append: tool_id %}
@@ -107,16 +107,20 @@
                     </div>
                     {%- endif %}
                 </td>
+                {%- if tool.related_pages %}
                 {%- capture related_pages %}
                 {%- for section in tool.related_pages %}
+                {%- unless section.size == 0 %}
                 {%- for tag in section[1] %}
                 {%- unless tag == page.page_id %}
                 {%- assign related_page = site.pages | where:"page_id",tag | first %}
                 <a class="nohover" href="{{related_page.url | relative_url }}"><span class="badge default-badge">{{related_page.title}}</span></a>
                 {%- endunless %}
                 {%- endfor %}
+                {%- endunless %}
                 {%- endfor %}
                 {%- endcapture %}
+                {%- endif %}
                 <td>{{related_pages}}</td>
                 <td></td>
             </tr>

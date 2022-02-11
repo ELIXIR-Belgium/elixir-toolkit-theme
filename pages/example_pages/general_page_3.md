@@ -16,6 +16,11 @@ resources:
     instance_of: 
     related_pages:
       example_pages: [gp3]
+  - name: Resource name 3
+    description: A general description about the resource
+    how_to_access: 
+    instance_of: 
+
 
 ---
 

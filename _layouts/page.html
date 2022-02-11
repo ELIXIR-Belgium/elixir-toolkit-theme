@@ -24,6 +24,9 @@ layout: default
     {{content}}
     {% include resource-table-page.html %}
     {% include more-information-tiles.html %}
+    {%- if page.page_id %}
+    {% include resource-table-all.html tag=page.page_id %}
+    {%- endif %}
     {% include contributor-minitiles-page.html %}
 </main>
 
