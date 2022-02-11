@@ -34,14 +34,18 @@
                     </div>
                     {%- endif %}
                 </td>
+                {%- if tool.related_pages %}
                 {%- capture related_pages %}
                 {%- for section in tool.related_pages %}
+                {%- unless section.size == 0 %}
                 {%- for tag in section[1] %}
                 {%- assign related_page = site.pages | where:"page_id",tag | first %}
                 <a class="nohover" href="{{related_page.url | relative_url }}"><span class="badge default-badge">{{related_page.title}}</span></a>
                 {%- endfor %}
+                {%- endunless %}
                 {%- endfor %}
                 {%- endcapture %}
+                {%- endif %}
                 <td>{{related_pages}}</td>
             </tr>
             {%- endfor %}
