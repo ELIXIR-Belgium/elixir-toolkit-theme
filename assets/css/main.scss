@@ -133,6 +133,18 @@ header .navbar {
     }
 }
 
+// Break line in top navigation
+
+.nav-break {
+    @media (min-width: 992px) {
+        width: 1px;
+    }
+    @media (max-width: 992px) {
+        height: 1px;
+    }
+    background-color: rgba($nav-link-color, 0.3);
+}
+
 /*-----Search box top navigation-----*/
 
 .search-results {
