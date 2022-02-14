@@ -14,10 +14,10 @@
                     {%- assign topnav = site.data.topnav %}
                     {%- for item in topnav.subitems %}
                     <li class="nav-item {% if item.subitems %}dropdown {% endif %}ms-0 ms-lg-3 mt-2 mt-lg-0">
-                        {%- if item.external_url %}
-                        <a class="nav-link ps-2" href="{{item.external_url}}" target="_blank" rel="noopener">{{item.title}}</a>
                         {%- assign page_type = page.type | downcase | replace "-", "_" | replace " ", "_" %}
                         {%- assign page_title = item.title | downcase | replace "-", "_" | replace " ", "_" %}
+                        {%- if item.external_url %}
+                        <a class="nav-link ps-2" href="{{item.external_url}}" target="_blank" rel="noopener">{{item.title}}</a>
                         {%- elsif page.url contains item.url or page_type == page_title %}
                         <a class="nav-link ps-2 active" aria-current="page" href="{{item.url | relative_url }}">{{item.title}}</a>
                         {%- elsif item.subitems %}
