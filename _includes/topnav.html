@@ -42,7 +42,9 @@
                         {%- endif %}
                     </li>
                     {%- endfor %}
+                    {%- if topnav.subitems.size > 1 %}
                     <li class="nav-item ms-0 ms-lg-3 mt-2 mt-lg-0 nav-break"></li>
+                    {%- endif %}
                     <li class="nav-item ms-0 ms-lg-3 mt-2 mt-lg-0">
                         <a class="nav-link ps-2 d-flex align-items-center" href="{{site.github.repository_url}}"><i class="fab fa-github me-2"></i>GitHub</a>
                     </li>
