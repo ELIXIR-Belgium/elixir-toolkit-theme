@@ -11,9 +11,9 @@
 </button>
 <nav class="collapse" id="side-nav" aria-label="Side navigation">
     <ul id="menu" class="menu list-unstyled mb-4 mb-lg-0">
-        {% if sidebar.title or sidebar.version %}
+        {%- if sidebar.title or sidebar.version %}
         <li class="sidebar-title">{{sidebar.title}} {{sidebar.version}}</li>
-        {% endif %}
+        {%- endif %}
         {%- for folder in sidebar.subitems %}
         {%- if page.url == folder.url %}
         <li class="active{%- if folder.hr %} mt-3{% endif %}">
