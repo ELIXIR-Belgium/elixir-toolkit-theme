@@ -15,7 +15,7 @@
     {%- unless section[1].size == 0 %}
     <div class="col">
         <div class="card h-100 info-card">
-            <div class="card-header fw-bold">Related {{site.title}} pages in "{{ section[0] | replace: "_", " " | capitalize }}"</div>
+            <div class="card-header fw-bold text-center fs-3">"{{ section[0] | replace: "_", " " | capitalize }}"</div>
             <div class="card-body">
                 <ul class="list-unstyled">
                     {%- for page_id in section[1] %}
