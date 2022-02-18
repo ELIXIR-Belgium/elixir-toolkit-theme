@@ -618,9 +618,6 @@ li.past_event,
             color: $white !important;
         }
     }
-    .card-footer .flag-icon {
-        display: block;
-    }
 }
 
 /*-----Section navigation tiles-----*/
@@ -647,6 +644,9 @@ li.past_event,
         .badge:hover {
             color: $nav-card-badge-color-hover;
             background-color: $nav-card-badge-bg-hover;
+        }
+        .card-footer .flag-icon {
+            display: block;
         }
     }
 }
