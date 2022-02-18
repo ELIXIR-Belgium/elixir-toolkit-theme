@@ -657,6 +657,9 @@ li.past_event,
             color: $nav-card-badge-color-hover;
             background-color: $nav-card-badge-bg-hover;
         }
+        .card-footer .flag-icon {
+            display: block;
+        }
     }
 }
 

@@ -1,39 +1,8 @@
-{%- assign actual_related = nil %}
-{%- for section in page.related_pages %}
-{%- unless section[1].size == 0  %}
-{%- assign actual_related = 1 %}
-{%- endunless %}
-{%- endfor %}
-{%- if actual_related != nil or page.faircookbook or page.fairsharing or page.training or page.dsw %}
+{%- if page.faircookbook or page.fairsharing or page.training or page.dsw %}
 <!-- More information -->
 <h2>More information</h2>
 
 <div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
-    {%- if page.related_pages %}
-    <!-- Related pages -->
-    {%- for section in page.related_pages %}
-    {%- unless section[1].size == 0 %}
-    <div class="col">
-        <div class="card h-100 info-card">
-            <div class="card-header fw-bold">Related {{site.title}} pages in "{{ section[0] | replace: "_", " " | capitalize }}"</div>
-            <div class="card-body">
-                <ul class="list-unstyled">
-                    {%- for page_id in section[1] %}
-                    {%- assign section_pages = site.pages | where:"type", section[0] %}
-                    {%- assign metadata = section_pages | where:"page_id", page_id %}
-                    {%- for page_hit in metadata %}
-                    <li class="d-grid">
-                        <a class="btn bg-white hover-primary text-start" href="{{ page_hit.url | relative_url }}"><span>{{page_hit.title}}{% if page_hit.description %}</span><br><small class="text-muted">{{ page_hit.description | capitalize }}</small>{% endif %}</a>
-                    </li>
-                    {%- endfor %}
-                    {%- endfor %}
-                </ul>
-            </div>
-        </div>
-    </div>
-    {%- endunless %}
-    {%- endfor %}
-    {%- endif %}
     {%- if page.training %}
     <!-- Training -->
     <div class="col">
@@ -74,13 +43,13 @@
                     {%- if page.faircookbook %}
                     {%- for recipe in page.faircookbook %}
                     <li class="d-grid">
-                        <a class="btn bg-white hover-primary text-start" href="{{ recipe.url }}">
+                        <a class="btn bg-white hover-primary text-start"data-bs-toggle="tooltip" data-bs-placement="right" title="FAIRCookbook" href="{{ recipe.url }}">
                             <div class="row g-1">
                                 <div class="col-2 d-flex align-items-center justify-content-center">
-                                    <img alt="FAIR Cookbook logo" class="img-fluid h-40px" src="assets/img/fairplus.svg">
+                                    <img alt="FAIRCookbook logo" class="img-fluid h-40px" src="assets/img/fairplus.svg">
                                 </div>
                                 <div class="col-10 d-flex align-items-center">
-                                    <span class="text-start">FAIR Cookbook recipe for "{{recipe.name}}"</span>
+                                    <span class="text-start">Step-by-step process for: {{recipe.name}}</span>
                                 </div>
                             </div>
                         </a>
@@ -90,13 +59,13 @@
                     {%- if page.dsw %}
                     {%- for question in page.dsw %}
                     <li class="d-grid">
-                        <a class="btn bg-white hover-primary text-start" href="{{ site.dsw_deep_link_prefix | append: question.uuid }}">
+                        <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="DSW" href="{{ site.dsw_deep_link_prefix | append: question.uuid }}">
                             <div class="row g-1">
                                 <div class="col-2 d-flex align-items-center justify-content-center">
                                     <img alt="DSW logo" class="img-fluid h-40px" src="assets/img/dsw-compact.svg">
                                 </div>
                                 <div class="col-10 d-flex align-items-center">
-                                    <span class="text-start">DSW question for "{{question.name}}"</span>
+                                    <span class="text-start">Support for DMP on: {{question.name}}</span>
                                 </div>
                             </div>
                         </a>
@@ -106,13 +75,13 @@
                     {%- if page.fairsharing %}
                     {%- for standard in page.fairsharing %}
                     <li class="d-grid">
-                        <a class="btn bg-white hover-primary text-start" href="{{ standard.fairsharing }}">
+                        <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="FAIRsharing" href="{{ standard.fairsharing }}">
                             <div class="row g-1">
                                 <div class="col-2 d-flex align-items-center justify-content-center">
                                     <img alt="fairsharing logo" class="img-fluid h-40px" src="assets/img/FAIRsharing-small.svg">
                                 </div>
                                 <div class="col-10 d-flex align-items-center">
-                                    <span class="text-start">FAIRsharing collection about {{standard.title}}</span>
+                                    <span class="text-start">FAIRsharing collection about: {{standard.title}}</span>
                                 </div>
                             </div>
                         </a>
