@@ -1,6 +1,7 @@
 {%- assign tools = site.data.tool_and_resource_list | where:"related_pages", include.tag %}
+{%- assign country_pages = site.pages | where_exp: "item", "item.search_exclude != true" | where_exp:"item","item.resources != nil" %}
 {%- unless tools.size == 0 %}
-{%- if include.tag -%}
+{%- if include.tag %}
 <h2>Relevant tools and resources</h2>
 {%- endif %}
 <a class="visually-hidden-focusable" href='#skip-tool-table'>Skip tool table</a>
@@ -28,7 +29,6 @@
                 {%- assign total_county_tools = 0 %}
                 {%- assign instances_tool = 0 %}
                 {%- assign query = "related_pages." | append: page.type %}
-                {%- assign country_pages = site.pages | where: "search_exclude", "false" | where_exp:"item","item.resources != nil" %}
                 {%- for country_page in country_pages %}
                 {%- assign instance_matches = country_page.resources | where: "instance_of", tool.name | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
                 {%- assign tool_matches = country_page.resources | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
@@ -89,7 +89,11 @@
             {%- endunless %}
             {%- assign hide_ids = "resource_title" %}
             {%- for country_page in country_pages %}
+            {%- if include.tag %}
             {%- assign tool_matches = country_page.resources| where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
+            {%- else %}
+            {%- assign tool_matches = country_page.resources %}
+            {%- endif %}
             {%- for tool in tool_matches %}
             {%- assign tool_id = tool.name | slugify %}
             {%- assign hide_ids = hide_ids | append: " " | append: tool_id %}
