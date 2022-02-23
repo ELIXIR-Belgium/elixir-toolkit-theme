@@ -45,7 +45,7 @@
                 <td>{{tool.name}}</td>
                 {%- endif %}
                 <td>{{tool.description}}
-                {%- unless instances_tool == 0 or total_county_tools == 0 %}
+                {%- unless instances_tool == 0 or total_county_tools == 0 or include.tag == nil %}
                 <a href="#national-resources-button" class="d-block mt-1">
                 <span class="badge text-white bg-primary"><i class="fas fa-arrow-circle-down me-2"></i>Different instances available</span>
                 </a>
