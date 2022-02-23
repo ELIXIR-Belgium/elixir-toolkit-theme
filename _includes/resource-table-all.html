@@ -1,6 +1,8 @@
-{%- assign tools = site.data.tool_and_resource_list.Tools | where:"related_pages", include.tag %}
+{%- assign tools = site.data.tool_and_resource_list | where:"related_pages", include.tag %}
 {%- unless tools.size == 0 %}
+{%- if include.tag -%}
 <h2>Relevant tools and resources</h2>
+{%- endif %}
 <a class="visually-hidden-focusable" href='#skip-tool-table'>Skip tool table</a>
 <div class="table-responsive mt-4 mb-5">
     <table id="tooltable" class="table display">
@@ -26,7 +28,7 @@
                 {%- assign total_county_tools = 0 %}
                 {%- assign instances_tool = 0 %}
                 {%- assign query = "related_pages." | append: page.type %}
-                {%- assign country_pages = site.pages | where: "type", "national_resources" | where: "search_exclude", "false" %}
+                {%- assign country_pages = site.pages | where: "search_exclude", "false" | where_exp:"item","item.resources != nil" %}
                 {%- for country_page in country_pages %}
                 {%- assign instance_matches = country_page.resources | where: "instance_of", tool.name | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
                 {%- assign tool_matches = country_page.resources | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
@@ -91,7 +93,7 @@
             {%- for tool in tool_matches %}
             {%- assign tool_id = tool.name | slugify %}
             {%- assign hide_ids = hide_ids | append: " " | append: tool_id %}
-            <tr class="collapse multi-collapse" id="{{tool_id}}">
+            <tr {% unless include.tag == nil %} class="collapse multi-collapse" id="{{tool_id}}"{% endunless %}>
                 {% if tool.url %}
                 <td><a href="{{tool.url}}">{{tool.name}}</a><a href="{{country_page.url}}" data-bs-toggle="tooltip" title="{{country_page.title}}"><span class="flag-icon ms-2 flag-icon-{{country_page.country_code | downcase }}"></span></a></td>
                 {%- else %}
@@ -131,7 +133,7 @@
         </tbody>
     </table>
 </div>
-{%- unless total_county_tools == 0 %}
+{%- unless total_county_tools == 0 or include.tag == nil %}
 <a class="btn btn-primary" id="national-resources-button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" role="button" aria-expanded="false" aria-controls="{{hide_ids}}">
     View national resources <span class="badge bg-white text-primary ms-2">{{total_county_tools}}</span>
   </a>
