@@ -17,6 +17,8 @@ subitems:
     subitems:
       - title: Contributor page
         url: /contributors.html
+      - title: All resources
+        url: /all_resources.html
       - title: Events
         url: /events.html
       - title: News page
