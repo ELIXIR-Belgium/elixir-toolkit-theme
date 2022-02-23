@@ -12,7 +12,7 @@
 <nav class="collapse" id="side-nav" aria-label="Side navigation">
     <ul id="menu" class="menu list-unstyled mb-4 mb-lg-0">
         {%- if sidebar.title or sidebar.version %}
-        <li class="sidebar-title">{{sidebar.title}} {{sidebar.version}}</li>
+        <div class="sidebar-title mb-3">{% if sidebar.title_url %}<a href="{{ sidebar.title_url | relative_url }}">{{sidebar.title}}{% endif %}{% if sidebar.title_url %}</a>{% endif %} {{sidebar.version}}</div>
         {%- endif %}
         {%- for folder in sidebar.subitems %}
         {%- if page.url == folder.url %}
