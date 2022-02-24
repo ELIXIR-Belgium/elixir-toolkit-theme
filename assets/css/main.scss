@@ -266,12 +266,8 @@ header .navbar {
     background-color: $sidebar-bg-active;
 }
 
-.sidebar-title {
-    font-size: 1.3em;
-}
-
 ul#menu {
-    > li > a {
+    > li:not(.sidebar-title) > a {
         background-color: $sidebar-bg;
         color: $sidebar-color;
     }
