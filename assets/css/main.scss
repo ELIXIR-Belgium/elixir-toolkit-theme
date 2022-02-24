@@ -569,7 +569,7 @@ footer {
     height: 40px;
 }
 
-.h-30px {
+.h-24px {
     height: 24px;
 }
 
@@ -626,6 +626,14 @@ li.past_event,
     }
 }
 
+/*-----Country flags-----*/
+
+.flag-icon {
+    border-radius: 3px;
+    background-size: cover;
+}
+
+
 /*-----Section navigation tiles-----*/
 
 .navigation-tiles {
@@ -650,9 +658,6 @@ li.past_event,
         .badge:hover {
             color: $nav-card-badge-color-hover;
             background-color: $nav-card-badge-bg-hover;
-        }
-        .card-footer .flag-icon {
-            display: block;
         }
     }
 }
