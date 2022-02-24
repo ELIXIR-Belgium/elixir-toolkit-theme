@@ -1,5 +1,5 @@
 ---
-title: All resources
+title: All training
 toc: false
 datatable: true
 ---
@@ -11,10 +11,11 @@ Nam non sollicitudin sapien. Vestibulum ante ipsum primis in faucibus orci luctu
 
 ```
 {% raw %}
-{% include resource-table-all.html %}
+{% include training-table-all.html %}
 {% endraw %}
 ```
 
 
-{% include resource-table-all.html %}
+{% include training-table-all.html %}
+
 

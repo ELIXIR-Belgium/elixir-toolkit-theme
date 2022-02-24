@@ -20,8 +20,6 @@ subitems:
     subitems:
       - title: Contributor page
         url: /contributors.html
-      - title: All resources
-        url: /all_resources.html
       - title: Events
         url: /events.html
       - title: News page
@@ -39,6 +37,12 @@ subitems:
             url: /general_page_3.html
           - title: General page 4
             url: /general_page_4.html
+      - title: All resources
+        url: /all_resources.html
+      - title: All trainings
+        url: /all_trainings.html
+      - title: Website overview
+        url: /website_overview.html
   - title: 404 page not found
     url: /404.html
   

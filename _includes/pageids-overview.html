@@ -1,9 +1,9 @@
 
-{%- assign sidebar = site.data.sidebars.main.subitems -%}
+{%- assign sidebar = site.data.sidebars[include.sidebar]['subitems'] -%}
 {%- for sections in sidebar %}
 {%- assign section = sections.title | downcase | replace: " ", "_" %}
 {%- assign section_pages = site.pages | where:"type", section %}
-{%- unless section_pages == nil %}
+{%- unless section_pages.size == 0 %}
 <h2>{{sections.title}}</h2>
 <div class="table-responsive">
     <table class="table ">
