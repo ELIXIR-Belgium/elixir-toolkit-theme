@@ -2,6 +2,7 @@
 title: General page example 3
 type: example_pages
 description: This page has page level resources
+country_code: BE
 page_id: gp3
 resources:
   - name: Resource name
