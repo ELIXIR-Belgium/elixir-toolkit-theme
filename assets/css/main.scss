@@ -49,6 +49,11 @@ main {
     ul li {
         margin: 10px 0px;
     }
+
+    img {
+        @extend .img-fluid;
+        @extend .figure-img;
+    }
 }
 
 .ff-body {
