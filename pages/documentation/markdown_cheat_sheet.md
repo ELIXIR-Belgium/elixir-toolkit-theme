@@ -56,6 +56,7 @@ faircookbook:
 * `related_pages`: List here the `page_id` of {{site.title}} pages that you want to display as Related pages, grouped by section.
 
   If you want pages from the specific section (Your tasks, Your domain, Tool assembly) to be shown here as Related pages, list their `page_id`. If you want to list multiple related pages, make sure to put them in a list like this: [page_id1, page_id2]. The specific sections allowed in each page are specified in each page template. Please, do not add extra sections in the metadata of the page.
+
   ```yml
   related_pages: 
     - your_tasks: [page_id1, page_id2]
@@ -64,6 +65,7 @@ faircookbook:
   ``` 
 
 * `training`: List here training material relevant for the page. We recommend to add your training material in TeSS. However, you can also list here training material that is not yet present in TeSS.
+
   ```yml
   training:
     - name: Training in TeSS
@@ -76,7 +78,9 @@ faircookbook:
       registry_url: https://tess.elixir-europe.org
       url: https://tess.elixir-europe.org/search?q=data%20analysis
   ```
+
 * `faircookbook`: List here all the links towards FAIR Cookbook recipes.
+
   ```yml
   faircookbook:
   - name: Data licenses
@@ -189,6 +193,7 @@ This image is inserted in the markdown using following snippet:
 ```
 {% endraw %}
 
+
 Make sure that you add the image to the `images` directory and give it an understanding filename. Adapt the snippet so it points towards you image (only the filename is needed). In the case of the example, the image exampleImage.png is loaded. Supported attributes are:
 
 * `click`: if true, the image will be clickable -> the image will be loaded in another tab
@@ -196,6 +201,22 @@ Make sure that you add the image to the `images` directory and give it an unders
 * `alt`: describes the image and is used for people that are visually impaired
 * `caption`: Text that will appear under the image
 * `inline`: if true this image can be used in a list
+
+
+or using following markdown syntax:
+{% raw %}
+```
+![ELIXIR logo](https://elixir-belgium.github.io/jekyll-bootstrap-theme/images/infrastructures/ELIXIR-logo.svg)
+![ELIXIR logo](https://elixir-belgium.github.io/jekyll-bootstrap-theme/images/infrastructures/ELIXIR-logo.svg){: height="200px" width="200px"}
+```
+{% endraw %}
+
+gives:
+
+![ELIXIR logo](https://elixir-belgium.github.io/jekyll-bootstrap-theme/images/infrastructures/ELIXIR-logo.svg)
+![ELIXIR logo](https://elixir-belgium.github.io/jekyll-bootstrap-theme/images/infrastructures/ELIXIR-logo.svg){: height="200px" width="200px"}
+
+
 
 ## Icons
 
