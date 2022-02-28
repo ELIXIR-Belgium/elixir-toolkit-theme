@@ -78,10 +78,13 @@
     <link rel="shortcut icon" href="{{ 'assets/img/favicon.ico' | relative_url }}">
     <!-- Schema.org metadata -->
     {% include schemasorg.html %}
+    {%- if site.gtag and jekyll.environment == "production"%}
     <!-- Google analytics -->
-    {% include gtag.html %}
-    <!-- Plausible -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gtag }}"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', '{{ site.gtag }}');</script>
+    {%- endif %}
     {%- if site.plausible and jekyll.environment == "production"%}
+    <!-- Plausible -->
     <script defer data-domain="{{site.plausible}}" src="https://plausible.io/js/plausible.js"></script>
     {%- endif %}
 </head>
