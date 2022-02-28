@@ -1,30 +1,30 @@
-
 <div class="events {{include.event_type}}s">
   {%- if include.title == "true" %}
   <h2 class="mt-5 text-dark">{{include.event_type | replace: "_", " " | capitalize}}s</h2>
   {%- endif %}
-    {%- assign events = site.data.events %}
-    <ul class="list-unstyled mt-3">
-        {%- for event in events %}
-        <li class='{{include.event_type}}' data-start='{{ event.startDate}}'>
-          <span class="title mb-1">{{ event.name | escape }}</span>
-          <p class="text-muted mb-0"><i class="far fa-calendar me-2"></i><time datetime="{{ event.startDate | date: '%e %B, %Y %H:%M' }}">{{ event.startDate | date_to_long_string }} {{event.startTime}}</time>
-          {% if event.endDate or event.endTime %} - <time datetime="{{ event.endDate | date: '%e %B, %Y %H:%M %Z' }}">{{ event.endDate | date_to_long_string }} {{event.endTime}}</time>{% endif %}</p> 
-          {%- if event.location %}
-          <i class="fas fa-map-marker-alt me-2 text-muted"></i><div class="d-inline-block text-muted">{{ event.location  | markdownify }}</div>
-          {%- endif %}
-          {%- if event.description %}
-          {{ event.description | markdownify }}
-          {%- endif %}
-        </li>
-        {%- endfor %}
-    </ul>
-    {%- if include.caption == "true" %}
-    <small>An overview of all our events can be fount on the <a href="/events.html">events page</a>.</small>
-    {%- endif %}
+  {%- assign events = site.data.events %}
+  <ul class="list-unstyled mt-3">
+    {%- for event in events %}
+    <li class='{{include.event_type}}' data-start='{{ event.startDate}}'>
+      <span class="title mb-1">{{ event.name | escape }}</span>
+      <p class="text-muted mb-0"><i class="far fa-calendar me-2"></i><time datetime="{{ event.startDate | date: '%e %B, %Y %H:%M' }}">{{ event.startDate | date_to_long_string }} {{event.startTime}}</time>
+        {% if event.endDate or event.endTime %} - <time datetime="{{ event.endDate | date: '%e %B, %Y %H:%M %Z' }}">{{ event.endDate | date_to_long_string }} {{event.endTime}}</time>{% endif %}</p>
+      {%- if event.location %}
+      <i class="fas fa-map-marker-alt me-2 text-muted"></i>
+      <div class="d-inline-block text-muted">{{ event.location | markdownify }}</div>
+      {%- endif %}
+      {%- if event.description %}
+      {{ event.description | markdownify }}
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- if include.caption == "true" %}
+  <small>An overview of all our events can be fount on the <a href="/events.html">events page</a>.</small>
+  {%- endif %}
 </div>
 <script>
   $(function () {
-    show_{{include.event_type}}s();
+    show_{ { include.event_type } } s();
   });
 </script>

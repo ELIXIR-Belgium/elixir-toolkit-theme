@@ -31,7 +31,7 @@
                                 <a class="dropdown-item active" href="{{subitem.url | relative_url }}">{{ subitem.title }}</a>
                                 {%- elsif subitem.external_url %}
                                 <a class="dropdown-item" href="{{subitem.external_url}}" target="_blank" rel="noopener">{{subitem.title}}</a>
-                                {%- else %}    
+                                {%- else %}
                                 <a class="dropdown-item" href="{{subitem.url | relative_url }}">{{ subitem.title }}</a>
                                 {%- endif %}
                             </li>

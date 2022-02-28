@@ -1,5 +1,3 @@
-
-
 <div class="news">
   {%- if include.title == "true" %}
   <h2 class="mt-5 text-dark">Whats new?</h2>
@@ -7,17 +5,17 @@
   {%- assign news = site.data.news | sort: "date"%}
   {%- assign count = 0 %}
   <ul class="list-unstyled mt-3">
-      {%- for new in news reversed%}
-      <li>
-        <span class="title mb-1">{{ new.name | escape }}</span>
-        <p class="text-muted"><i class="far fa-calendar me-2"></i><time>{{ new.date | date_to_long_string }}</time>{% if new.linked_pr %}<b> - </b><i class="fas fa-code-branch"></i><a href="{{ site.github.repository_url | append: '/pull/' | append: new.linked_pr }}">{{new.linked_pr }}</a>{% endif %}</p>
-        {{ new.description | markdownify }}
-      </li>
-      {%- assign count = count | plus: 1 %}
-      {%- if include.limit and count == include.limit %}
-      {%- break %}
-      {%- endif %}
-      {%- endfor %}
+    {%- for new in news reversed%}
+    <li>
+      <span class="title mb-1">{{ new.name | escape }}</span>
+      <p class="text-muted"><i class="far fa-calendar me-2"></i><time>{{ new.date | date_to_long_string }}</time>{% if new.linked_pr %}<b> - </b><i class="fas fa-code-branch"></i><a href="{{ site.github.repository_url | append: '/pull/' | append: new.linked_pr }}">{{new.linked_pr }}</a>{% endif %}</p>
+      {{ new.description | markdownify }}
+    </li>
+    {%- assign count = count | plus: 1 %}
+    {%- if include.limit and count == include.limit %}
+    {%- break %}
+    {%- endif %}
+    {%- endfor %}
   </ul>
   {%- if include.caption == "true" %}
   <small>For more news please visit our <a href="/news.html">news page</a>.</small>
