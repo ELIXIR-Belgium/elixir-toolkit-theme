@@ -2,7 +2,7 @@ title: Jekyll bootstrap theme
 # This appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
 topnav_title: Jekyll bootstrap theme
-# Optional: this appears on the top navigation bar next to the home button
+# Optional: this appears on the top navigation bar next to the main_logo.svg icon
 
 description: "Flexible Jekyll theme using bootstrap 5 as CSS framework."
 # Metadata description of the website
