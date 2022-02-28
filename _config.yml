@@ -10,6 +10,12 @@ description: "Flexible Jekyll theme using bootstrap 5 as CSS framework."
 dsw_deep_link_prefix:
 # prefix for DSW deep links to a certain question
 
+gtag: 
+# Google analytics tag
+
+plausible: 
+# Plausible tag
+
 exclude:
   - .gitignore
   - var/
@@ -44,3 +50,5 @@ plugins:
 
 theme_variables: 
   theme_color: 0d6efd
+  fonts:
+  # List of urls towards google fonts

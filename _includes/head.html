@@ -80,4 +80,8 @@
     {% include schemasorg.html %}
     <!-- Google analytics -->
     {% include gtag.html %}
+    <!-- Plausible -->
+    {%- if site.plausible and jekyll.environment == "production"%}
+    <script defer data-domain="{{site.plausible}}" src="https://plausible.io/js/plausible.js"></script>
+    {%- endif %}
 </head>
