@@ -6,7 +6,7 @@
     {%- capture keywords %}
     {%- if page.related_pages %}
     {%- for section in page.related_pages %}
-    {%- unless section[1] == nil  %}{{ section[1] | join: ', ' }}
+    {%- unless section[1] == nil %}{{ section[1] | join: ', ' }}
     {%- endunless %}
     {%- endfor %}
     {%- endif %}
@@ -59,7 +59,7 @@
         $(document).ready(function () {
             $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
             $('table.display').DataTable({
-                lengthMenu: [ [25, 50, 100, -1], [25, 50, 100, "All"] ],
+                lengthMenu: [[25, 50, 100, -1], [25, 50, 100, "All"]],
                 stateSave: true,
                 searching: true,
                 language: {
@@ -78,6 +78,13 @@
     <link rel="shortcut icon" href="{{ 'assets/img/favicon.ico' | relative_url }}">
     <!-- Schema.org metadata -->
     {% include schemasorg.html %}
+    {%- if site.gtag and jekyll.environment == "production"%}
     <!-- Google analytics -->
-    {% include gtag.html %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gtag }}"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', '{{ site.gtag }}');</script>
+    {%- endif %}
+    {%- if site.plausible and jekyll.environment == "production"%}
+    <!-- Plausible -->
+    <script defer data-domain="{{site.plausible}}" src="{{site.plausible_src | default: 'https://plausible.io/js/plausible.js'}}"></script>
+    {%- endif %}
 </head>

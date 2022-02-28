@@ -45,11 +45,11 @@
                 <td>{{tool.name}}</td>
                 {%- endif %}
                 <td>{{tool.description}}
-                {%- unless instances_tool == 0 or total_county_tools == 0 or include.tag == nil %}
-                <a href="#national-resources-button" class="d-block mt-1">
-                <span class="badge text-white bg-primary"><i class="fas fa-arrow-circle-down me-2"></i>Different instances available</span>
-                </a>
-                {%- endunless %}
+                    {%- unless instances_tool == 0 or total_county_tools == 0 or include.tag == nil %}
+                    <a href="#national-resources-button" class="d-block mt-1">
+                        <span class="badge text-white bg-primary"><i class="fas fa-arrow-circle-down me-2"></i>Different instances available</span>
+                    </a>
+                    {%- endunless %}
                 </td>
                 {%- capture related_pages %}
                 {%- for tag in tool.related_pages %}
@@ -61,31 +61,25 @@
                 {%- endcapture %}
                 <td>{{related_pages}}</td>
                 <td class="align-middle text-center">
-                {%- if tool.registry.biotools %}
-                <a data-bs-toggle="tooltip"
-                    data-bs-original-title="Bio.tools" href="https://bio.tools/{{tool.registry.biotools}}"
-                    ><span class="badge bg-dark text-white hover-primary">Tool info</span></a>
-                {%- endif %}
-                {%- if tool.registry.fairsharing %}
-                <a data-bs-toggle="tooltip"
-                    data-bs-original-title="FAIRsharing" href="https://fairsharing.org/FAIRsharing.{{tool.registry.fairsharing}}"
-                    ><span class="badge bg-dark text-white hover-primary">Standards/Databases</span></a>
-                {%- endif %}
-                {%- if tool.registry.fairsharing-coll %}
-                <a data-bs-toggle="tooltip"
-                    data-bs-original-title="FAIRsharing collection" href="https://fairsharing.org/{{tool.registry.fairsharing-coll}}"
-                    ><span class="badge bg-dark text-white hover-primary">Standards/Databases</span></a>
-                {%- endif %}
-                {%- if tool.registry.tess %}
-                <a data-bs-toggle="tooltip"
-                    data-bs-original-title="TeSS" href="https://tess.elixir-europe.org/search?q={{tool.registry.tess}}" 
-                    ><span class="badge bg-dark text-white hover-primary">Training</span></a>
-                {%- endif %}
-                </td> 
+                    {%- if tool.registry.biotools %}
+                    <a data-bs-toggle="tooltip" data-bs-original-title="Bio.tools" href="https://bio.tools/{{tool.registry.biotools}}"><span class="badge bg-dark text-white hover-primary">Tool info</span></a>
+                    {%- endif %}
+                    {%- if tool.registry.fairsharing %}
+                    <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing" href="https://fairsharing.org/FAIRsharing.{{tool.registry.fairsharing}}"><span class="badge bg-dark text-white hover-primary">Standards/Databases</span></a>
+                    {%- endif %}
+                    {%- if tool.registry.fairsharing-coll %}
+                    <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing collection" href="https://fairsharing.org/{{tool.registry.fairsharing-coll}}"><span class="badge bg-dark text-white hover-primary">Standards/Databases</span></a>
+                    {%- endif %}
+                    {%- if tool.registry.tess %}
+                    <a data-bs-toggle="tooltip" data-bs-original-title="TeSS" href="https://tess.elixir-europe.org/search?q={{tool.registry.tess}}"><span class="badge bg-dark text-white hover-primary">Training</span></a>
+                    {%- endif %}
+                </td>
             </tr>
             {%- endfor %}
             {%- unless total_county_tools == 0 or include.tag == nil %}
-            <tr class="collapse multi-collapse bg-light" id="resource_title"><td colspan="4"><b>National resources</b></td></tr>
+            <tr class="collapse multi-collapse bg-light" id="resource_title">
+                <td colspan="4"><b>National resources</b></td>
+            </tr>
             {%- endunless %}
             {%- assign hide_ids = "resource_title" %}
             {%- for country_page in country_pages %}
@@ -97,7 +91,7 @@
             {%- for tool in tool_matches %}
             {%- assign tool_id = tool.name | slugify %}
             {%- assign hide_ids = hide_ids | append: " " | append: tool_id %}
-            <tr {% unless include.tag == nil %} class="collapse multi-collapse" id="{{tool_id}}"{% endunless %}>
+            <tr {% unless include.tag==nil %} class="collapse multi-collapse" id="{{tool_id}}" {% endunless %}>
                 {% if tool.url %}
                 <td><a href="{{tool.url}}">{{tool.name}}</a><a href="{{country_page.url}}" data-bs-toggle="tooltip" title="{{country_page.title}}"><span class="flag-icon ms-2 flag-icon-{{country_page.country_code | downcase }}"></span></a></td>
                 {%- else %}
@@ -108,7 +102,7 @@
                     <div class="d-block mt-1">
                         <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="This resource is an instance of {{tool.instance_of}}"><span class="badge text-primary border border-primary">{{tool.instance_of}}</span></span>
                         {%- if tool.how_to_access %}
-                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="{{tool.how_to_access}}"><span class="badge text-primary border border-primary">  <i class="fas fa-key"></i></span></span>
+                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="{{tool.how_to_access}}"><span class="badge text-primary border border-primary"> <i class="fas fa-key"></i></span></span>
                         {%- endif %}
                     </div>
                     {%- endif %}
@@ -140,7 +134,7 @@
 {%- unless total_county_tools == 0 or include.tag == nil %}
 <a class="btn btn-primary" id="national-resources-button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" role="button" aria-expanded="false" aria-controls="{{hide_ids}}">
     View national resources <span class="badge bg-white text-primary ms-2">{{total_county_tools}}</span>
-  </a>
+</a>
 {%- endunless %}
 <div id="skip-tool-table"></div>
 {%- endunless %}
