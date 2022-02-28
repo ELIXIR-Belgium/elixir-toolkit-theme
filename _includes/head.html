@@ -6,7 +6,7 @@
     {%- capture keywords %}
     {%- if page.related_pages %}
     {%- for section in page.related_pages %}
-    {%- unless section[1] == nil  %}{{ section[1] | join: ', ' }}
+    {%- unless section[1] == nil %}{{ section[1] | join: ', ' }}
     {%- endunless %}
     {%- endfor %}
     {%- endif %}
@@ -59,7 +59,7 @@
         $(document).ready(function () {
             $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
             $('table.display').DataTable({
-                lengthMenu: [ [25, 50, 100, -1], [25, 50, 100, "All"] ],
+                lengthMenu: [[25, 50, 100, -1], [25, 50, 100, "All"]],
                 stateSave: true,
                 searching: true,
                 language: {

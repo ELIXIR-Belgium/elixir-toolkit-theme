@@ -1,5 +1,5 @@
 {%- if page.resources %}
-{%- assign tools = page.resources  %}
+{%- assign tools = page.resources %}
 <h2>Relevant tools and resources</h2>
 <a class="visually-hidden-focusable" href='#skip-tool-table'>Skip tool table</a>
 <div class="table-responsive mt-4 mb-5">
@@ -29,7 +29,7 @@
                     <div class="d-block mt-1">
                         <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="This resource is an instance of {{tool.instance_of}}"><span class="badge text-primary border border-primary">{{tool.instance_of}}</span></span>
                         {%- if tool.how_to_access %}
-                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="{{tool.how_to_access}}"><span class="badge text-primary border border-primary">  <i class="fas fa-key"></i></span></span>
+                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="{{tool.how_to_access}}"><span class="badge text-primary border border-primary"> <i class="fas fa-key"></i></span></span>
                         {%- endif %}
                     </div>
                     {%- endif %}

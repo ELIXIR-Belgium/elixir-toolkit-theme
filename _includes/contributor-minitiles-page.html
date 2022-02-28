@@ -26,9 +26,9 @@
         {%- endif %}
     </div>
     {%- endcapture %}
-    <a tabindex="0" role="button" class="btn contributor-link hover-primary m-1 position-relative" data-bs-trigger="focus" data-bs-html="true" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content='{{html_code}}' title="{{contributor}}"> 
+    <a tabindex="0" role="button" class="btn contributor-link hover-primary m-1 position-relative" data-bs-trigger="focus" data-bs-html="true" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content='{{html_code}}' title="{{contributor}}">
         <div class="d-flex align-items-center">
-            <div class="flex-shrink-0">  
+            <div class="flex-shrink-0">
                 {%- if contributors[contributor].image_url %}
                 <img class="img-fluid rounded-circle contributor-img-sm" src="{{ contributors[contributor].image_url }}" alt="Avatar of the contributor {{ stripped_name }}">
                 {%- else %}
