@@ -85,6 +85,6 @@
     {%- endif %}
     {%- if site.plausible and jekyll.environment == "production"%}
     <!-- Plausible -->
-    <script defer data-domain="{{site.plausible}}" src="https://plausible.io/js/plausible.js"></script>
+    <script defer data-domain="{{site.plausible}}" src="{{site.plausible_src | default: 'https://plausible.io/js/plausible.js'}}"></script>
     {%- endif %}
 </head>
