@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/elixir-toolkit-theme.svg)](https://badge.fury.io/rb/elixir-toolkit-theme)
+
 # ELIXIR toolkit theme
 
 This repository is used to build a flexible Jekyll theme using bootstrap 5 as CSS framework.
