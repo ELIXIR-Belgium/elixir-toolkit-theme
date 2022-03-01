@@ -1,4 +1,4 @@
-# Jekyll bootstrap theme
+# ELIXIR toolkit theme
 
 This repository is used to build a flexible Jekyll theme using bootstrap 5 as CSS framework.
 
