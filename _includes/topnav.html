@@ -46,7 +46,7 @@
                     <li class="nav-item ms-0 ms-lg-3 mt-2 mt-lg-0 nav-break"></li>
                     {%- endif %}
                     <li class="nav-item ms-0 ms-lg-3 mt-2 mt-lg-0">
-                        <a class="nav-link ps-2 d-flex align-items-center" href="{{site.github.repository_url}}"><i class="fab fa-github me-2"></i>GitHub</a>
+                        <a class="nav-link ps-2 d-flex align-items-center" href="{{site.github.repository_url}}"><i class="fab fa-github me-2"></i>{{site.theme_variables.git_host | default: 'GitHub' }}</a>
                     </li>
                     <!--start search-->
                     <li class="nav-item ms-0 ms-lg-3 my-2 my-lg-0">
