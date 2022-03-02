@@ -1,1 +1,57 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 435 435"><defs><style>.cls-1{fill:#0d6efd;}.cls-2{fill:#fff;}</style></defs><circle class="cls-1" cx="217.5" cy="217.5" r="217.5"/><path class="cls-2" d="M278.6,367.82q0,10.89-6.89,17.77t-17.77,6.89H173.07q-10.89,0-17.78-6.89t-6.88-17.77v-88.2h30.88v85.53h68.43V44.79H278.6Z" transform="translate(0 -0.68)"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg8"
+   version="1.1"
+   height="800"
+   width="800">
+  <metadata
+     id="metadata14">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs12" />
+  <g
+     id="g6">
+    <title
+       id="title2">Layer 1</title>
+    <path
+       style="fill:#ffffff"
+       id="path837"
+       d="M 427.07422 798.56055 L 427.07422 200.65234 L 479.24805 200.65234 L 479.24805 151.07031 L 311.76953 151.07031 L 311.76953 200.65234 L 367.69141 200.65234 L 367.69141 797.90234 A 400 399.51779 0 0 0 400 799.51758 A 400 399.51779 0 0 0 427.07422 798.56055 z " />
+    <path
+       style="fill:#0d6efd"
+       id="path843"
+       d="M 746.24023 200.65234 L 616.39062 200.65234 L 616.39062 735.87695 A 400 399.51779 0 0 0 800 400 A 400 399.51779 0 0 0 746.24023 200.65234 z " />
+    <path
+       style="fill:#ffffff"
+       id="path841"
+       d="M 712.36719 151.07031 L 501.08594 151.07031 L 501.08594 200.65234 L 557.00781 200.65234 L 557.00781 766.91211 A 400 399.51779 0 0 0 616.39062 735.87695 L 616.39062 200.65234 L 746.24023 200.65234 A 400 399.51779 0 0 0 712.36719 151.07031 z " />
+    <path
+       style="fill:#0d6efd"
+       id="svg_2"
+       d="M 400 0.48242188 A 400 399.51779 0 0 0 0 400 A 400 399.51779 0 0 0 367.69141 797.90234 L 367.69141 200.65234 L 311.76953 200.65234 L 311.76953 151.07031 L 479.24805 151.07031 L 479.24805 200.65234 L 427.07422 200.65234 L 427.07422 798.56055 A 400 399.51779 0 0 0 557.00781 766.91211 L 557.00781 200.65234 L 501.08594 200.65234 L 501.08594 151.07031 L 712.36719 151.07031 A 400 399.51779 0 0 0 400 0.48242188 z " />
+    <g
+       id="svg_4"
+       style="font-size:24px;font-family:Antonio;text-anchor:start;fill:#ffffff;stroke-width:0"
+       transform="matrix(24.5982 0 0 24.5982 -15937.9 -13644)"
+       aria-label="ETT">
+      <path
+         id="path821"
+         style="font-size:24px;font-family:Antonio;text-anchor:start;fill:#ffffff;stroke-width:0"
+         d="m 653.48785,581.44128 v -20.625 h 6.16407 v 2.01563 h -3.73828 v 7.05469 h 3.53906 v 2.01562 h -3.53906 v 7.52344 h 3.78515 v 2.01562 z" />
+    </g>
+  </g>
+</svg>
