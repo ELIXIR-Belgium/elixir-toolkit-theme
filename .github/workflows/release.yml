@@ -1,4 +1,4 @@
-name: Ruby Gem
+name: Releasing Ruby Gem
 
 on:
   release:
