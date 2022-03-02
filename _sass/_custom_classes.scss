@@ -1,0 +1,6 @@
+/*-----Top navigation-----*/
+
+.navbar-nav .nav-item > a.active {
+    border-bottom: 4px solid $primary;
+    margin-bottom: -4px;
+}
