@@ -35,6 +35,7 @@ kramdown:
 
 sass:
   style: compressed
+  sourcemap: never
 
 defaults:
   -
