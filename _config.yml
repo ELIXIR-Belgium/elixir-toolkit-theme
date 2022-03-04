@@ -49,6 +49,7 @@ defaults:
 plugins:
   - jemoji
   - jekyll-github-metadata
+  - webrick
 
 theme_variables: 
   theme_color: 0d6efd
