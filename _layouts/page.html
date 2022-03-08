@@ -19,7 +19,7 @@ layout: default
             {%- endif %}
             {%- endif %}
             {%- if site.theme_variables.github_buttons.open_issue or site.theme_variables.github_buttons.open_issue == nil %}
-            <a role="button" data-bs-toggle="tooltip" title="Report an issue" href="{{site.github.repository_url}}/issues/new?title={{'Issue on page: ' | url_encode }}{{page.title | url_encode }}&amp;body={{'I would like to report an issue on the ' | url_encode }}{{page.title | url_encode }}{{'page at `'| url_encode }}{{page.url | url_encode }}{{'`. Description of the issue:' | url_encode }}" class="btn btn-sm hover-primary text-primary"><i class="fas fa-exclamation"></i></a>
+            <a role="button" data-bs-toggle="tooltip" title="Report an issue" href="{{site.github.repository_url}}/issues/new?title={{'Issue on page: ' | url_encode }}{{page.title | url_encode }}&amp;body={{'I would like to report an issue on the ' | url_encode }}{{page.title | url_encode }}{{' page at `'| url_encode }}{{page.url | url_encode }}{{'`. Description of the issue:' | url_encode }}" class="btn btn-sm hover-primary text-primary"><i class="fas fa-exclamation"></i></a>
             {%- endif %}
             {%- if site.theme_variables.github_buttons.history or site.theme_variables.github_buttons.history == nil %}
             <a role="button" data-bs-toggle="tooltip" title="Check out the history of this page" href="{{site.github.repository_url}}/commits/{{site.github.source.branch}}/{{page.path}}" class="btn btn-sm hover-primary text-primary"><i class="fas fa-history"></i></a>
