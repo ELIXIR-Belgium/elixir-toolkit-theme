@@ -31,7 +31,7 @@ $(document).ready(function external_new_window() {
  */
 $(document).ready(function () {
     // Initialize navgoco with default options
-    $("#menu").navgoco({
+    $("#side-nav>ul").navgoco({
         caretHtml: '',
         accordion: true,
         openClass: 'active', // open
