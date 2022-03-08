@@ -53,6 +53,17 @@ plugins:
   - webrick
 
 theme_variables: 
+  # git_host: GitHub
+  # github_buttons: 
+  #   edit_me: true
+  #   open_issue: true
+  #   history: true
   theme_color: 0d6efd
   fonts:
-  # List of urls towards google fonts
+  # - url towards a font
+
+# --- Missing in gitlab: ---
+# github:
+#   repository_url: https://github.com/ELIXIR-Belgium/elixir-toolkit-theme
+#   source:
+#     branch: main
