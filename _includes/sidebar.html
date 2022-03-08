@@ -18,9 +18,9 @@
         <li class="sidebar-title">
         {%- endif %}
         {%- if sidebar.title_url %}
-        <a class="btn active hover-primary text-start d-block mb-1" href="{{ sidebar.title_url | relative_url }}">{{sidebar.title}} {{sidebar.version}}</a>
+        <a class="btn hover-primary text-start d-block mb-1" href="{{ sidebar.title_url | relative_url }}">{{sidebar.title}} {{sidebar.version}}</a>
         {%- else %}
-        <a class="btn active hover-primary text-start d-block mb-1 disabled" aria-disabled="true">{{sidebar.title}} {{sidebar.version}}</a>
+        <a class="btn hover-primary text-start d-block mb-1 disabled" aria-disabled="true">{{sidebar.title}} {{sidebar.version}}</a>
         {%- endif %}
         </li>
         {%- endif %}
