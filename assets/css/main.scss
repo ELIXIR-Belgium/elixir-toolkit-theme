@@ -271,7 +271,7 @@ header .navbar {
     background-color: $sidebar-bg-active;
 }
 
-ul#menu {
+#side-nav>ul {
     > li:not(.sidebar-title) > a {
         background-color: $sidebar-bg;
         color: $sidebar-color;

@@ -10,20 +10,18 @@
     {{ page.sidebar | capitalize | replace: "_", " " }} menu <i title="navbar-toggler" class="fa fa-bars ms-2"></i>
 </button>
 <nav class="collapse" id="side-nav" aria-label="Side navigation">
-    <ul id="menu" class="list-unstyled mb-4 mb-lg-0">
-        {%- if sidebar.title or sidebar.version %}
-        {%- if sidebar.title_url and page.url == sidebar.title_url %}
-        <li class="sidebar-title active">
-        {%- else %}
-        <li class="sidebar-title">
-        {%- endif %}
-        {%- if sidebar.title_url %}
-        <a class="btn active hover-primary text-start d-block mb-1" href="{{ sidebar.title_url | relative_url }}">{{sidebar.title}} {{sidebar.version}}</a>
-        {%- else %}
-        <a class="btn active hover-primary text-start d-block mb-1 disabled" aria-disabled="true">{{sidebar.title}} {{sidebar.version}}</a>
-        {%- endif %}
-        </li>
-        {%- endif %}
+    {%- if sidebar.title or sidebar.version %}
+    {%- if sidebar.title_url %}
+    {%- if page.url == sidebar.title_url %}
+    <a class="btn hover-primary text-start d-block mb-1 sidebar-title active" href="{{ sidebar.title_url | relative_url }}">{{sidebar.title}} {{sidebar.version}}</a>
+    {%- else %}
+    <a class="btn hover-primary text-start d-block mb-1 sidebar-title" href="{{ sidebar.title_url | relative_url }}">{{sidebar.title}} {{sidebar.version}}</a>
+    {%- endif %}
+    {%- else %}
+    <a class="btn text-start d-block mb-1 sidebar-title disabled" aria-disabled="true">{{sidebar.title}} {{sidebar.version}}</a>
+    {%- endif %}
+    {%- endif %}
+    <ul class="list-unstyled mb-4 mb-lg-0">
         {%- for folder in sidebar.subitems %}
         {%- if page.url == folder.url %}
         <li class="active{%- if folder.hr %} mt-3{% endif %}">
