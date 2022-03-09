@@ -571,10 +571,6 @@ footer {
 
 /*-----Size components-----*/
 
-.h-40px {
-    height: 40px;
-}
-
 .h-24px {
     height: 24px;
 }
@@ -629,6 +625,10 @@ li.past_event,
             transition: $btn-transition;
             color: $white !important;
         }
+    }
+    img {
+        height: 40px;
+        max-width: 45px;
     }
 }
 

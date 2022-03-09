@@ -11,6 +11,12 @@ faircookbook:
 dsw:
 - name: Is there any pre-existing data?
   uuid: efc80cc8-8318-4f8c-acb7-dc1c60e491c1
+fairsharing:
+- name: ISO 20691
+  url: https://fairsharing.org/3533
+rdmkit:
+- name: Data organisation
+  url: https://rdmkit.elixir-europe.org/data_organisation.html
 training:
   - name: Training in TeSS
     registry: TeSS
