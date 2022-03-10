@@ -1,5 +1,5 @@
 {%- assign alllogos = site.data.affiliations %}
-<div id="affiliation-tiles" class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-5 my-3">
+<div class="affiliation-tiles row row-cols-2 row-cols-sm-3 row-cols-md-4 g-5 my-3">
   {%- assign filtered_logos = alllogos | where: "type", include.type %}
   {%- for affiliation in filtered_logos %}
   {%- if affiliation.image_url and affiliation.expose == true %}
