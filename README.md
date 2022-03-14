@@ -1,4 +1,4 @@
-[![Gem Version](https://badge.fury.io/rb/elixir-toolkit-theme.svg)](https://badge.fury.io/rb/elixir-toolkit-theme)[![Jekyll site CI](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/actions/workflows/jekyll.yml/badge.svg)](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/actions/workflows/jekyll.yml)
+[![Gem Version](https://badge.fury.io/rb/elixir-toolkit-theme.svg)](https://badge.fury.io/rb/elixir-toolkit-theme) [![Jekyll site CI](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/actions/workflows/jekyll.yml/badge.svg)](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/actions/workflows/jekyll.yml)
 
 <p align="center">
 <img src="assets/img/main_logo.svg" width="100" float="center"/>
@@ -7,10 +7,19 @@
 
 The ELIXIR toolkit theme is a Jekyll theme designed to support easy deployment of documentation websites but also more complex ones that require a central tool table and linking towards ELXIR resources. 
 
-Its features:
+Its key features:
 - Easy deployment using GitHub pages
 - Advanced content search
-- 
+- Create your own look with the many theme variables
+- Change style using custom classes
+- Support for a central tools table
+- Page tagging and listing of those tagged pages
+- Linking to ELIXIR resources including Bio.tools, FAIRSHARING, FAIR Cookbook, TeSS and DSW
+- Easy side navigation, top navigation and footer management
+- Mobile friendly
+- Create website sections with each section having its own sidebar
+- Out of the box search engine optimizations including schema.org attributes and many other matadata attributes
+- Support for Google Analytics and Plausible
 
 ## Installation
 
@@ -39,19 +48,13 @@ theme: elixir-toolkit-theme
 
 ## Usage
 
-[View the documentation](https://just-the-docs.github.io/just-the-docs/) for usage information.
+[View the documentation](https://elixir-belgium.github.io/elixir-toolkit-theme/) for usage information.
 
 ## Deployment
 
 ### Using GitHub pages
 
-### Using Docker
-
-If not already installed on your machine, install Docker. From the root of the ``jekyll-bootstrap-theme`` directory, run:
-```
-docker run -it --rm -p 4000:4000 -v $PWD:/srv/jekyll jekyll/jekyll:latest /bin/bash -c "chmod a+w /srv/jekyll/Gemfile.lock && chmod 777 /srv/jekyll && bundle exec jekyll serve -w"
-```
-This will start the docker container and serve the website locally.
+This theme can be used to deploy the website using GitHub pages. Visit the [GitHub documentation](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/) to find out more about how to setup GitHub pages. 
 
 ### Locally using Jekyll
 
@@ -83,8 +86,22 @@ If you have never installed or run a Jekyll site locally on your computer, follo
 Additional information can be found at the following link: [https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll)
 
 
+### Using Docker
 
+If not already installed on your machine, install Docker. From the root of the `elixir-toolkit-theme` directory, run:
 
+```
+docker run -it --rm -p [::1]:4000:4000 -v $PWD:/srv/jekyll jekyll/jekyll:latest /bin/bash -c "chmod a+w /srv/jekyll/Gemfile.lock && chmod 777 /srv/jekyll && bundle install && bundle exec jekyll serve --host 0.0.0.0"
+```
+
+This will start the docker container and serve the website locally. Make sure the `.\_site` is not yet created to avoid permission errors.
+
+## This theme is known to be used in:
+
+- [RDMkit](https://rdmkit.elixir-europe.org/)
+- [RDMGuide](https://rdm.elixir-belgium.org/)
+- [Infectious Diseases Toolkit](https://www.infectious-diseases-toolkit.org/)
+- [Applied Bioinformatics and Biostatistics intranet page](https://intranet.psb.ugent.be/abb/)
 
 
 ## Used packages
