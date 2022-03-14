@@ -1,4 +1,4 @@
-{%- if page.faircookbook or page.fairsharing or page.training or page.dsw %}
+{%- if page.faircookbook or page.fairsharing or page.training or page.dsw or page.rdmkit %}
 <!-- More information -->
 <h2>More information</h2>
 
@@ -16,7 +16,7 @@
                             <div class="row g-1">
                                 <div class="col-2 d-flex align-items-center justify-content-center">
                                     {%- if training.registry == "TeSS" %}
-                                    <img alt="TeSS logo" class="img-fluid h-40px" src="assets/img/tess_logo.svg">
+                                    <img alt="TeSS logo" class="img-fluid" src="assets/img/tess_logo.svg">
                                     {%- else %}
                                     <i class="fas fa-external-link-alt text-primary fs-5"></i>
                                     {%- endif %}
@@ -33,7 +33,7 @@
         </div>
     </div>
     {%- endif %}
-    {%- if page.faircookbook or page.fairsharing or page.dsw %}
+    {%- if page.faircookbook or page.fairsharing or page.dsw or page.RDMkit%}
     <!-- FAIR Cookbook and FAIRsharing -->
     <div class="col">
         <div class="card h-100 info-card">
@@ -46,7 +46,7 @@
                         <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="FAIRCookbook" href="{{ recipe.url }}">
                             <div class="row g-1">
                                 <div class="col-2 d-flex align-items-center justify-content-center">
-                                    <img alt="FAIRCookbook logo" class="img-fluid h-40px" src="assets/img/fairplus.svg">
+                                    <img alt="FAIRCookbook logo" class="img-fluid" src="assets/img/fairplus_compact_logo.svg">
                                 </div>
                                 <div class="col-10 d-flex align-items-center">
                                     <span class="text-start">Step-by-step process for: {{recipe.name}}</span>
@@ -62,7 +62,7 @@
                         <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="DSW" href="{{ site.dsw_deep_link_prefix | append: question.uuid }}">
                             <div class="row g-1">
                                 <div class="col-2 d-flex align-items-center justify-content-center">
-                                    <img alt="DSW logo" class="img-fluid h-40px" src="assets/img/dsw-compact.svg">
+                                    <img alt="DSW logo" class="img-fluid" src="assets/img/dsw_compact_logo.svg">
                                 </div>
                                 <div class="col-10 d-flex align-items-center">
                                     <span class="text-start">Support for DMP on: {{question.name}}</span>
@@ -75,13 +75,29 @@
                     {%- if page.fairsharing %}
                     {%- for standard in page.fairsharing %}
                     <li class="d-grid">
-                        <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="FAIRsharing" href="{{ standard.fairsharing }}">
+                        <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="FAIRsharing" href="{{ standard.url }}">
                             <div class="row g-1">
                                 <div class="col-2 d-flex align-items-center justify-content-center">
-                                    <img alt="fairsharing logo" class="img-fluid h-40px" src="assets/img/FAIRsharing-small.svg">
+                                    <img alt="FAIRsharing logo" class="img-fluid" src="assets/img/fairsharing_compact_logo.svg">
                                 </div>
                                 <div class="col-10 d-flex align-items-center">
-                                    <span class="text-start">FAIRsharing collection about: {{standard.title}}</span>
+                                    <span class="text-start">FAIRsharing collection about: {{standard.name}}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    {%- endfor %}
+                    {%- endif %}
+                    {%- if page.rdmkit %}
+                    {%- for rdmdoc in page.rdmkit %}
+                    <li class="d-grid">
+                        <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="RDMkit" href="{{ rdmdoc.url }}">
+                            <div class="row g-1">
+                                <div class="col-2 d-flex align-items-center justify-content-center">
+                                    <img alt="RDMkit logo" class="img-fluid" src="assets/img/rdmkit_compact_logo.svg">
+                                </div>
+                                <div class="col-10 d-flex align-items-center">
+                                    <span class="text-start">Data management guidelines on: {{rdmdoc.name}}</span>
                                 </div>
                             </div>
                         </a>
