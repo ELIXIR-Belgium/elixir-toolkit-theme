@@ -88,12 +88,13 @@ Additional information can be found at the following link: [https://docs.github.
 
 ### Using Docker
 
-If not already installed on your machine, install Docker. From the root of the ``jekyll-bootstrap-theme`` directory, run:
+If not already installed on your machine, install Docker. From the root of the `elixir-toolkit-theme` directory, run:
+
 ```
 docker run -it --rm -p [::1]:4000:4000 -v $PWD:/srv/jekyll jekyll/jekyll:latest /bin/bash -c "chmod a+w /srv/jekyll/Gemfile.lock && chmod 777 /srv/jekyll && bundle install && bundle exec jekyll serve --host 0.0.0.0"
 ```
-This will start the docker container and serve the website locally.
 
+This will start the docker container and serve the website locally. Make sure the `.\_site` is not yet created to avoid permission errors.
 
 ## Used packages
 
