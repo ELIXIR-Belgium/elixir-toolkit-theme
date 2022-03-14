@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "elixir-toolkit-theme"
-  spec.version       = "1.7.1"
+  spec.version       = "1.7.2"
   spec.authors       = ["bedroesb"]
   spec.email         = ["bedro@psb.vib-ugent.be\n"]
 

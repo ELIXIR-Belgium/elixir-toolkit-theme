@@ -206,15 +206,15 @@ Make sure that you add the image to the `images` directory and give it an unders
 or using following markdown syntax:
 {% raw %}
 ```
-![ELIXIR logo](/images/infrastructures/ELIXIR-logo.svg)
-![ELIXIR logo](/images/infrastructures/ELIXIR-logo.svg){: height="200px" width="200px"}
+![ELIXIR logo](images/infrastructures/ELIXIR-logo.svg)
+![ELIXIR logo](images/infrastructures/ELIXIR-logo.svg){: height="200px" width="200px"}
 ```
 {% endraw %}
 
 gives:
 
-![ELIXIR logo](/images/infrastructures/ELIXIR-logo.svg)
-![ELIXIR logo](/images/infrastructures/ELIXIR-logo.svg){: height="200px" width="200px"}
+![ELIXIR logo](images/infrastructures/ELIXIR-logo.svg)
+![ELIXIR logo](images/infrastructures/ELIXIR-logo.svg){: height="200px" width="200px"}
 
 
 
