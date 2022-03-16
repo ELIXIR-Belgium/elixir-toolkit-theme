@@ -11,6 +11,7 @@
                 <th>title</th>
                 <th>page_id</th>
                 <th>description</th>
+                <th>url</th>
             </tr>
         </thead>
         <tbody>
@@ -19,9 +20,8 @@
             <tr>
                 <td><a href="{{ section_page.url | relative_url }}">{{section_page.title}}</a></td>
                 <td>{{section_page.page_id}}</td>
-                {%- if section_page.description %}
-                <td>{{section_page.description}}</td>
-                {%- endif %}
+                <td>{{section_page.description | default: "no description"}}</td>
+                <td>{{section_page.url}}</td>
             </tr>
             {%- endif %}
             {%- endfor %}
