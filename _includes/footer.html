@@ -20,6 +20,10 @@
                     {%- endfor %}
                 </ul>
             </div>
+            {%- elsif column.type == "text" %}
+            <div class="col-lg-{{column.width}} col-sm-6 d-flex justify-content-center">
+                {{column.content | markdownify }}
+            </div>
             {%- endif %}
             {%- endfor %}
         </div>
