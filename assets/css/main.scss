@@ -587,7 +587,7 @@ li.past_event,
     display: none;
 }
 
-.events,
+.events > ul > li,
 .news > ul > li {
     border-left: $light 5px solid;
     border-radius: $border-radius;
