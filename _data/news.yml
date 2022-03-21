@@ -4,3 +4,22 @@
 - name: News title 2
   date: 2021-09-20
   description:  Example Description with [link](about)
+- name: News title 3
+  date: 2021-09-20
+  linked_pr: 2
+  description:  >
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna massa, vestibulum ut leo eget, fermentum molestie mauris. Cras facilisis libero non sodales lobortis. Proin eu ultricies lacus. Sed posuere orci id tincidunt sollicitudin. Phasellus sit amet justo turpis. Vestibulum non volutpat libero. Donec mattis elementum sem nec posuere. Donec vitae libero sed mi faucibus tempus.
+   Talks included<span>:</span>
+      * Curabitur faucibus lectus a sem posuere tempus
+      * [Vivamus et dignissim nulla](/)
+      * Curabitur faucibus lectus a sem posuere tempus
+      * [Vivamus et dignissim nulla](/)
+  
+   Donec sagittis laoreet leo, eu tincidunt nulla pulvinar a. Aenean diam orci, rhoncus et imperdiet eget, sodales eget massa. Pellentesque lobortis egestas consequat.
+- name: News title 4
+  date: 2021-09-20
+  linked_pr: 2
+  description:  >
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna massa, vestibulum ut leo eget, fermentum molestie mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna massa, vestibulum ut leo eget, fermentum molestie mauris.
+   
+

@@ -16,7 +16,7 @@
       {%- endif %}
       {%- if event.description %}
       {%- assign word_count = event.description | split: " " | size %}
-      {%- if include.truncate == "true" and  word_count > 20 %}
+      {%- if include.truncate == "true" and  word_count > 40 %}
       <p class="mb-0"><a data-bs-toggle="collapse" href="#collapse-{{count}}" role="button" aria-expanded="false" aria-controls="collapse-{{count}}">
         View description
       </a>
