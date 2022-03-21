@@ -3,6 +3,7 @@
   <h2 class="mt-5 text-dark">{{include.event_type | replace: "_", " " | capitalize}}s</h2>
   {%- endif %}
   {%- assign events = site.data.events %}
+  {%- assign count = 0 %}
   <ul class="list-unstyled mt-3">
     {%- for event in events %}
     <li class='{{include.event_type}}' data-start='{{ event.startDate}}'>
@@ -14,9 +15,21 @@
       <div class="d-inline-block text-muted">{{ event.location | markdownify }}</div>
       {%- endif %}
       {%- if event.description %}
+      {%- assign word_count = event.description | split: " " | size %}
+      {%- if include.truncate == "true" and  word_count > 20 %}
+      <p><a data-bs-toggle="collapse" href="#collapse-{{count}}" role="button" aria-expanded="false" aria-controls="collapse-{{count}}">
+        View description
+      </a>
+      </p>
+      <div class="collapse" id="collapse-{{count}}">
+        {{ event.description | markdownify }}
+      </div>
+      {%- else %}
       {{ event.description | markdownify }}
       {%- endif %}
+      {%- endif %}
     </li>
+    {%- assign count = count | plus: 1 %}
     {%- endfor %}
   </ul>
   {%- if include.caption == "true" %}
