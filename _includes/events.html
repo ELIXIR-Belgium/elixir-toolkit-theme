@@ -1,6 +1,6 @@
 <div class="events {{include.event_type}}s">
   {%- if include.title == "true" %}
-  <h2 class="mt-5 text-dark">{{include.event_type | replace: "_", " " | capitalize}}s</h2>
+  <h2>{{include.event_type | replace: "_", " " | capitalize}}s</h2>
   {%- endif %}
   {%- assign events = site.data.events %}
   {%- assign count = 0 %}
