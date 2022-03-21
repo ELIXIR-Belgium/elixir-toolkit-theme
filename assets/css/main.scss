@@ -133,7 +133,6 @@ pre code {
 
 header .navbar {
     background-color: $topnav-bg;
-    border-bottom: $topnav-border;
     .navbar-brand {
         color: $topnav-title-color;
         img {
@@ -344,7 +343,6 @@ header .navbar {
 
 #toc {
     background-color: $toc-bg;
-    border: $toc-border;
     // Indent the lists and reset any other padding
 
     ul {
@@ -421,7 +419,6 @@ footer {
     font-size: 0.9em;
     line-height: 24px;
     background-color: $footer-bg;
-    border-top: $footer-border;
     color: $footer-color;
 
     a {
@@ -531,7 +528,6 @@ footer {
     position: fixed;
     background-color: $footer-bg;
     color: $footer-color;
-    border-top: $footer-border;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -589,7 +585,7 @@ li.past_event,
 
 .events > ul > li,
 .news > ul > li {
-    border-left: $light 5px solid;
+    border-left: $news-border-color 5px solid;
     border-radius: $border-radius;
     padding: 0px 11px;
 
@@ -601,11 +597,10 @@ li.past_event,
     .title {
         background-color: $news-title-bg;
         font-weight: 600;
-        color: $white;
+        color: $news-title-color;
         padding: 0px 11px;
         border-radius: 0px 4px 4px 0px;
         margin-left: -11px;
-        border: 1px solid $news-title-bg;
         display: inline-block;
     }
 

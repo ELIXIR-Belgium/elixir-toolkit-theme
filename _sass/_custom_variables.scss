@@ -10,7 +10,6 @@ $btn-primary-color-hover: $white;
 $topnav-bg: $light;
 $topnav-title-color: $primary;
 $topnav-brand-height: 44px;
-$topnav-border: 0;
 
 /*-----Search-----*/
 $search-result-color: $primary;
@@ -27,7 +26,6 @@ $sidebar-color-active: $white;
 
 /*-----TOC-----*/
 $toc-bg: $light;
-$toc-border: 0;
 
 /*-----Section navigation tiles-----*/
 $nav-card-bg: $white;
@@ -54,6 +52,8 @@ $contr-crown-color: $white;
 
 /*-----Events & news-----*/
 $news-title-bg: $primary;
+$news-border-color: $light;
+$news-title-color: $white;
 
 /*-----Default badge-----*/
 $badge-color: $body-color;
@@ -67,5 +67,4 @@ $footer-color: $dark;
 $footer-link-color: $dark;
 $footer-link-color-hover: $primary;
 $footer-copyright-bg: $gray-200;
-$footer-border: 0;
 
