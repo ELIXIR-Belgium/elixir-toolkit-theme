@@ -610,6 +610,10 @@ li.past_event,
         border: 1px solid $news-title-bg;
         display: inline-block;
     }
+    
+    p:last-child {
+        margin: 0;
+    }
 }
 /*-----More information tiles-----*/
 
