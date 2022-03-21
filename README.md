@@ -99,6 +99,7 @@ This will start the docker container and serve the website locally. Make sure th
 ## This theme is known to be used in:
 
 - [RDMkit](https://rdmkit.elixir-europe.org/)
+- [WorkflowHub project](https://about.workflowhub.eu/)
 - [RDMGuide](https://rdm.elixir-belgium.org/)
 - [Infectious Diseases Toolkit](https://www.infectious-diseases-toolkit.org/)
 - [Applied Bioinformatics and Biostatistics intranet page](https://intranet.psb.ugent.be/abb/)
