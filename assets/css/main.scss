@@ -589,7 +589,7 @@ li.past_event,
 
 .events,
 .news {
-    li {
+    > ul > li {
         border-left: $light 5px solid;
         border-radius: $border-radius;
         padding: 0px 11px;
