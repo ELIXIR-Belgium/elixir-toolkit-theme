@@ -611,6 +611,9 @@ li.past_event,
 
     .full-description > *:last-child {
         margin-bottom: 0;
+        li {
+            margin-bottom: 0;
+        }
     }
 }
 /*-----More information tiles-----*/
