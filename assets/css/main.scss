@@ -589,7 +589,7 @@ li.past_event,
 
 .events > ul > li,
 .news > ul > li {
-    border-left: $light 5px solid;
+    border-left: $news-border-color 5px solid;
     border-radius: $border-radius;
     padding: 0px 11px;
 
@@ -601,11 +601,10 @@ li.past_event,
     .title {
         background-color: $news-title-bg;
         font-weight: 600;
-        color: $white;
+        color: $news-title-color;
         padding: 0px 11px;
         border-radius: 0px 4px 4px 0px;
         margin-left: -11px;
-        border: 1px solid $news-title-bg;
         display: inline-block;
     }
 
