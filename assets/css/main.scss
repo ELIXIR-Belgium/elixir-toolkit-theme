@@ -588,12 +588,10 @@ li.past_event,
 }
 
 .events,
-.news {
-    > ul > li {
-        border-left: $light 5px solid;
-        border-radius: $border-radius;
-        padding: 0px 11px;
-    }
+.news > ul > li {
+    border-left: $light 5px solid;
+    border-radius: $border-radius;
+    padding: 0px 11px;
 
     i {
         width: 20px;
@@ -610,9 +608,9 @@ li.past_event,
         border: 1px solid $news-title-bg;
         display: inline-block;
     }
-    
-    p:last-child {
-        margin: 0;
+
+    p:last-child, li:last-child {
+        margin-bottom: 0;
     }
 }
 /*-----More information tiles-----*/
