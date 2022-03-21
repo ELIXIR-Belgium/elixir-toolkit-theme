@@ -587,13 +587,11 @@ li.past_event,
     display: none;
 }
 
-.events,
-.news {
-    li {
-        border-left: $light 5px solid;
-        border-radius: $border-radius;
-        padding: 0px 11px;
-    }
+.events > ul > li,
+.news > ul > li {
+    border-left: $light 5px solid;
+    border-radius: $border-radius;
+    padding: 0px 11px;
 
     i {
         width: 20px;
@@ -609,6 +607,13 @@ li.past_event,
         margin-left: -11px;
         border: 1px solid $news-title-bg;
         display: inline-block;
+    }
+
+    .full-description > *:last-child {
+        margin-bottom: 0;
+        li {
+            margin-bottom: 0;
+        }
     }
 }
 /*-----More information tiles-----*/
