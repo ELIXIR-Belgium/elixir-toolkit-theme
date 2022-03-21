@@ -609,7 +609,7 @@ li.past_event,
         display: inline-block;
     }
 
-    p:last-child, li:last-child {
+    .full-description > *:last-child {
         margin-bottom: 0;
     }
 }
