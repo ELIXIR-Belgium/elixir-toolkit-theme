@@ -11,7 +11,8 @@
       showSpeed: 'slow', // set to 0 to deactivate effect
       classes: { list: '',
                  item: '',
-                 link: ''
+                 link: '', 
+                 toc: ''
                }
     },
     settings = $.extend(defaults, options);
@@ -43,6 +44,8 @@
     if (0 === settings.showSpeed) {
       settings.showEffect = 'none';
     }
+
+    $(this).addClass(settings.classes.toc)
 
     var render = {
       show: function() { output.hide().html(html).show(settings.showSpeed); },
