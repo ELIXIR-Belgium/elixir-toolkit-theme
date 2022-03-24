@@ -18,7 +18,7 @@
     <meta name="apple-mobile-web-app-title" content="{{site.title}}">
     <meta name="msapplication-TileColor" content="#{{site.theme_variables.theme_color | default: 0d6efd }}">
     <meta name="theme-color" content="#{{site.theme_variables.theme_color | default: 0d6efd }}">
-    {%- if page.search_exclude == true and page.url != "/index.html" %}
+    {%- if page.search_exclude == true and page.url != "/index" %}
     <meta name="robots" content="noindex" />
     {%- endif %}
     {%- if page.type %}
