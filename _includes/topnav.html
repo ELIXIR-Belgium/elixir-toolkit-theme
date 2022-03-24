@@ -45,9 +45,16 @@
                     {%- if topnav.subitems.size > 1 %}
                     <li class="nav-item ms-0 ms-lg-3 mt-2 mt-lg-0 nav-break"></li>
                     {%- endif %}
+                    {%- if site.theme_variables.topnav.twitter %}
+                    <li class="nav-item ms-0 ms-lg-3 mt-2 mt-lg-0">
+                        <a class="nav-link ps-2 d-flex align-items-center" href="{{site.theme_variables.topnav.twitter}}"><i class="fab fa-twitter me-2"></i>Twitter</a>
+                    </li>
+                    {%- endif %}
+                    {%- if site.theme_variables.topnav.github or site.theme_variables.topnav.github == nil %}
                     <li class="nav-item ms-0 ms-lg-3 mt-2 mt-lg-0">
                         <a class="nav-link ps-2 d-flex align-items-center" href="{{site.github.repository_url}}"><i class="fab fa-github me-2"></i>{{site.theme_variables.git_host | default: 'GitHub' }}</a>
                     </li>
+                    {%- endif %}
                     <!--start search-->
                     <li class="nav-item ms-0 ms-lg-3 my-2 my-lg-0">
                         <div class="position-relative">
