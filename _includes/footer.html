@@ -8,6 +8,9 @@
             </div>
             {%- elsif column.type == "links" %}
             <div class="col-lg-{{column.width}} col-sm-6">
+                {%- if column.title != nil %}
+                <span class="footer-title">{{column.title}}</span>
+                {%- endif %}
                 <ul class="mb-0">
                     {%- for link in column.children %}
                     {%- if link.url != nil and link.external_url == nil%}
