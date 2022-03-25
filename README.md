@@ -48,7 +48,7 @@ theme: elixir-toolkit-theme
 
 ## Usage
 
-[View the documentation](https://elixir-belgium.github.io/elixir-toolkit-theme/) for usage information.
+[View the documentation](https://elixir-belgium.github.io/elixir-toolkit-theme/) for usage information (under development).
 
 ## Deployment
 
