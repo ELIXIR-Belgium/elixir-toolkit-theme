@@ -55,6 +55,7 @@ plugins:
 theme_variables: 
   # git_host: GitHub
   # github_buttons: 
+  #   position: top
   #   edit_me: true
   #   open_issue: true
   #   history: true

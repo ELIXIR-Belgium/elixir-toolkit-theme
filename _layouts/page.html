@@ -9,22 +9,8 @@ layout: default
     {%- else %}
     <h1>{{ page.title }}
     {%- endif %}
-    {%- if site.theme_variables.github_buttons.edit_me or site.theme_variables.github_buttons.open_issue or site.theme_variables.github_buttons.history or site.theme_variables.github_buttons.edit_me == nil or site.theme_variables.github_buttons.open_issue == nil or site.theme_variables.github_buttons.history == nil %}
-        <div class="btn-group">
-            {%- if site.theme_variables.github_buttons.edit_me or site.theme_variables.github_buttons.edit_me == nil %}
-            {%- if page.custom-editme %}
-            <a role="button" data-bs-toggle="tooltip" title="Propose changes to the content of this page on {{site.theme_variables.git_host | default: 'GitHub' }}" href="{{site.github.repository_url}}/blob/{{site.github.source.branch}}/{{page.custom-editme}}" class="btn btn-sm hover-primary text-primary"><i class="fas fa-pencil-alt"></i></a>
-            {%- else %}
-            <a role="button" data-bs-toggle="tooltip" title="Propose changes to this page on {{site.theme_variables.git_host | default: 'GitHub' }}"  href="{{site.github.repository_url}}/blob/{{site.github.source.branch}}/{{page.path}}" class="btn btn-sm hover-primary text-primary"><i class="fas fa-pencil-alt"></i></a>
-            {%- endif %}
-            {%- endif %}
-            {%- if site.theme_variables.github_buttons.open_issue or site.theme_variables.github_buttons.open_issue == nil %}
-            <a role="button" data-bs-toggle="tooltip" title="Report an issue" href="{{site.github.repository_url}}/issues/new?title={{'Issue on page: ' | url_encode }}{{page.title | url_encode }}&amp;body={{'I would like to report an issue on the ' | url_encode }}{{page.title | url_encode }}{{' page at `'| url_encode }}{{page.url | url_encode }}{{'`. Description of the issue:' | url_encode }}" class="btn btn-sm hover-primary text-primary"><i class="fas fa-exclamation"></i></a>
-            {%- endif %}
-            {%- if site.theme_variables.github_buttons.history or site.theme_variables.github_buttons.history == nil %}
-            <a role="button" data-bs-toggle="tooltip" title="Check out the history of this page" href="{{site.github.repository_url}}/commits/{{site.github.source.branch}}/{{page.path}}" class="btn btn-sm hover-primary text-primary"><i class="fas fa-history"></i></a>
-            {%- endif %}
-        </div>
+    {%- if site.theme_variables.github_buttons.position == "top" or site.theme_variables.github_buttons.position == nil %}
+    {% include github-buttons.html %}
     {%- endif %}
     </h1>
     {%- endif %}
@@ -42,5 +28,10 @@ layout: default
     {% include resource-table-all.html tag=page.page_id %}
     {%- endif %}
     {% include contributor-minitiles-page.html %}
+    {%- if site.theme_variables.github_buttons.position == "bottom" %}
+    <div id="github-buttons-wrapper" class="d-flex mt-5">
+    {% include github-buttons.html %}
+    </div>
+    {%- endif %}
 </main>
 
