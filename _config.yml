@@ -26,13 +26,6 @@ exclude:
   - Gemfile*
   - LICENSE
 
-markdown: kramdown
-highlighter: rouge
-kramdown:
- input: GFM
- auto_ids: true
- hard_wrap: false
-
 sass:
   style: compressed
   sourcemap: never
@@ -46,9 +39,21 @@ defaults:
       permalink: /:basename:output_ext
       layout: "page"
       sidebar: main
+  -
+    scope:
+      path: "*/*/TEMPLATE_*.md"
+      type: "pages"
+    values:
+      permalink: /:basename:output_ext
+      sitemap: false
+      search_exclude: true
+      no_robots: true
+      layout: "page"
+      sidebar: main
 
 plugins:
   - jemoji
+  - jekyll-sitemap
   - jekyll-github-metadata
   - webrick
 
