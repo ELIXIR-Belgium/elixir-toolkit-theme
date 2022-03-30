@@ -62,16 +62,16 @@
                 <td>{{related_pages}}</td>
                 <td>
                     {%- if tool.registry.biotools %}
-                    <a data-bs-toggle="tooltip" data-bs-original-title="Bio.tools" href="https://bio.tools/{{tool.registry.biotools}}"><span class="badge bg-dark text-white hover-primary">Tool info</span></a>
+                    <a data-bs-toggle="tooltip" data-bs-original-title="Bio.tools" href="https://bio.tools/{{tool.registry.biotools}}"><span class="badge bg-dark text-white hover-primary"><i class="fas fa-info me-2"></i>Tool info</span></a>
                     {%- endif %}
                     {%- if tool.registry.fairsharing %}
-                    <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing" href="https://fairsharing.org/FAIRsharing.{{tool.registry.fairsharing}}"><span class="badge bg-dark text-white hover-primary">Standards/Databases</span></a>
+                    <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing" href="https://fairsharing.org/FAIRsharing.{{tool.registry.fairsharing}}"><span class="badge bg-dark text-white hover-primary"><i class="fas fa-database me-2"></i>Standards/Databases</span></a>
                     {%- endif %}
                     {%- if tool.registry.fairsharing-coll %}
-                    <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing collection" href="https://fairsharing.org/{{tool.registry.fairsharing-coll}}"><span class="badge bg-dark text-white hover-primary">Standards/Databases</span></a>
+                    <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing collection" href="https://fairsharing.org/{{tool.registry.fairsharing-coll}}"><span class="badge bg-dark text-white hover-primary"><i class="fas fa-database me-2"></i>Standards/Databases</span></a>
                     {%- endif %}
                     {%- if tool.registry.tess %}
-                    <a data-bs-toggle="tooltip" data-bs-original-title="TeSS" href="https://tess.elixir-europe.org/search?q={{tool.registry.tess}}"><span class="badge bg-dark text-white hover-primary">Training</span></a>
+                    <a data-bs-toggle="tooltip" data-bs-original-title="TeSS" href="https://tess.elixir-europe.org/search?q={{tool.registry.tess}}"><span class="badge bg-dark text-white hover-primary"><i class="fas fa-graduation-cap me-2"></i>Training</span></a>
                     {%- endif %}
                 </td>
             </tr>
