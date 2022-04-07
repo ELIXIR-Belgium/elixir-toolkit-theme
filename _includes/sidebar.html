@@ -1,11 +1,11 @@
 {%- assign sidebar = site.data.sidebars[page.sidebar] %}
-{%- capture reusing -%}{%- if page.url == "/reusing.html" -%}st0{%- else -%}st10{%- endif -%}{%- endcapture -%}
-{%- capture preserving -%}{%- if page.url == "/preserving.html" -%}st2{%- else -%}st12{%- endif -%}{%- endcapture -%}
-{%- capture analysing -%}{%- if page.url == "/analysing.html" -%}st3{%- else -%}st13{%- endif -%}{%- endcapture -%}
-{%- capture processing -%}{%- if page.url == "/processing.html" -%}st4{%- else -%}st14{%- endif -%}{%- endcapture -%}
-{%- capture planning -%}{%- if page.url == "/planning.html" -%}st5{%- else -%}st15{%- endif -%}{%- endcapture -%}
-{%- capture collecting -%}{%- if page.url == "/collecting.html" -%}st6{%- else -%}st16{%- endif -%}{%- endcapture -%}
-{%- capture sharing -%}{%- if page.url == "/sharing.html" -%}st7{%- else -%}st17{%- endif -%}{%- endcapture -%}
+{%- capture reusing -%}{%- if page.url == "/reusing" -%}st0{%- else -%}st10{%- endif -%}{%- endcapture -%}
+{%- capture preserving -%}{%- if page.url == "/preserving" -%}st2{%- else -%}st12{%- endif -%}{%- endcapture -%}
+{%- capture analysing -%}{%- if page.url == "/analysing" -%}st3{%- else -%}st13{%- endif -%}{%- endcapture -%}
+{%- capture processing -%}{%- if page.url == "/processing" -%}st4{%- else -%}st14{%- endif -%}{%- endcapture -%}
+{%- capture planning -%}{%- if page.url == "/planning" -%}st5{%- else -%}st15{%- endif -%}{%- endcapture -%}
+{%- capture collecting -%}{%- if page.url == "/collecting" -%}st6{%- else -%}st16{%- endif -%}{%- endcapture -%}
+{%- capture sharing -%}{%- if page.url == "/sharing" -%}st7{%- else -%}st17{%- endif -%}{%- endcapture -%}
 <button class="btn text-start d-lg-none collapsed sidebar-collapse w-100 mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#side-nav" aria-controls="side-nav" aria-expanded="true" aria-label="Toggle navigation">
     {{ page.sidebar | capitalize | replace: "_", " " }} menu <i title="navbar-toggler" class="fa fa-bars ms-2"></i>
 </button>
