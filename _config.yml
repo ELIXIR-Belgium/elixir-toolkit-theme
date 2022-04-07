@@ -36,7 +36,7 @@ defaults:
       path: ""
       type: "pages"
     values:
-      permalink: /:basename:output_ext
+      permalink: /:basename
       layout: "page"
       sidebar: main
   -
@@ -44,7 +44,7 @@ defaults:
       path: "pages/example_pages/TEMPLATE_general_page.md"
       type: "pages"
     values:
-      permalink: /:basename:output_ext
+      permalink: /:basename
       sitemap: false
       search_exclude: true
       no_robots: true
