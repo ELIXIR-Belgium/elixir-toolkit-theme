@@ -120,6 +120,17 @@ This theme would not be possible without following open source projects:
 - [Font-Awesome](https://github.com/FortAwesome/Font-Awesome) - The famous icon library
 - [flag-icons](https://github.com/lipis/flag-icons) - A curated collection of all country flags in SVG + css integration
 
+## Attribution
+
+If you like our work, you can add following badge to the readme of your project:
+```
+[![theme badge](https://img.shields.io/badge/ELIXIR%20toolkit%20theme-jekyll-blue?color=0d6efd)](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme)
+```
+[![theme badge](https://img.shields.io/badge/ELIXIR%20toolkit%20theme-jekyll-blue?color=0d6efd)](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme)
+
+
+
+
 ## License
 
 The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
