@@ -59,6 +59,7 @@ plugins:
 
 theme_variables: 
   # git_host: GitHub
+  # back_to_top: true
   # github_buttons: 
   #   position: top
   #   edit_me: true
