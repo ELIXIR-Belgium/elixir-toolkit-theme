@@ -26,7 +26,7 @@
         {%- endif %}
     </div>
     {%- endcapture %}
-    <a tabindex="0" role="button" class="btn contributor-link hover-primary m-1 position-relative" data-bs-trigger="focus" data-bs-html="true" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content='{{html_code}}' title="{{contributor}}">
+    <a tabindex="0" role="button" class="btn btn-sm contributor-link hover-primary m-1 position-relative" data-bs-trigger="focus" data-bs-html="true" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content='{{html_code}}' title="{{contributor}}">
         <div class="d-flex align-items-center">
             <div class="flex-shrink-0">
                 {%- if contributors[contributor].image_url %}
@@ -39,18 +39,17 @@
                 {{ contributor }}
             </div>
         </div>
+        {%- if page.coordinators %}
+        {%- for coordinator in page.coordinators %}
+        {%- if coordinator == contributor %}
         <div class="position-absolute top-0 start-100 translate-middle">
-            {%- if page.coordinators %}
-            {%- for coordinator in page.coordinators %}
-            {%- if coordinator == contributor %}
             <div class="rounded-circle coordinator-crown">
                 <i class="fa fa-crown"></i>
             </div>
-            {%- endif %}
-            {%- endfor %}
-            {%- endif %}
         </div>
-    </a>
-    {%- endfor %}
+        {%- endif %}
+        {%- endfor %}
+        {%- endif %}
+    </a>{%- endfor %}
 </div>
 {%- endif %}

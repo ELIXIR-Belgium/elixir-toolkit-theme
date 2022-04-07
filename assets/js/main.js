@@ -73,16 +73,27 @@ $(function () {
 })
 
 /**
- * Toggle button texts
+ * Back to top button
  */
-jQuery(function ($) {
-    $('.toggle-text[data-bs-toggle="collapse"]').on('click', function () {
-        $(this)
-            .data('text-original', $(this).text())
-            .text($(this).data('text-alt'))
-            .data('text-alt', $(this).data('text-original'));
-    });
-});
+
+ var toggleHeight = $(window).outerHeight() / 3;
+
+ $(window).scroll(function () {
+   if ($(window).scrollTop() > toggleHeight) {
+     //Adds active class to make button visible
+     $("#back-to-top").addClass("visible");
+ 
+   } else {
+     //Removes active class to make button visible
+     $("#back-to-top").removeClass("visible");
+   }
+ });
+ 
+ //Scrolls the user to the top of the page again
+ function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
 
 
 /**

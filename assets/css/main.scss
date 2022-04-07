@@ -443,6 +443,22 @@ footer {
     }
 }
 
+/*-----Back to top-----*/
+#back-to-top {
+    transition: 0.3s ease-in-out;
+    position: fixed;
+    bottom: -50px;
+    right: $spacer;
+    opacity: 0;
+    overflow: hidden;
+    z-index: 1000;
+
+    &.visible {
+        bottom: $spacer;
+        opacity: 1;
+    }    
+}
+
 /*-----Contributors cards-----*/
 
 .contributor-cards {
@@ -498,6 +514,7 @@ footer {
 /*--------Page contributors---------*/
 .page-contributors {
     background-color: $contr-bg;
+    font-size: 0; /* Gets rid of extra white space */
     .contributor-link {
         background-color: $contr-link-bg;
         .contributor-img-sm {
@@ -505,10 +522,10 @@ footer {
         }
 
         .coordinator-crown {
-            font-size: 0.7em;
-            width: 1.9em;
-            height: 1.9em;
-            line-height: 1.9;
+            font-size: 0.60em;
+            width: 1.8em;
+            height: 1.8em;
+            line-height: 1.8;
             background-color: $contr-crown-bg;
 
             .fa {
