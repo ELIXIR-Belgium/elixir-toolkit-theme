@@ -41,7 +41,7 @@ defaults:
       sidebar: main
   -
     scope:
-      path: "*/*/TEMPLATE_*.md"
+      path: "pages/example_pages/TEMPLATE_general_page.md"
       type: "pages"
     values:
       permalink: /:basename:output_ext
