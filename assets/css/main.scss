@@ -2,6 +2,8 @@
 layout: none
 permalink: assets/css/main.css
 ---
+/*-----Default theme variables-----*/
+$enable-caret: false;
 
 @import "bootstrap_variables";
 @import "bootstrap/bootstrap";
@@ -138,6 +140,21 @@ header .navbar {
         img {
             height: $topnav-brand-height;
         }
+    }
+    .dropdown-toggle::after {
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        margin-left: 0.25rem;
+        content: "\f0d7";
+        transition: transform 0.2s ease-in-out;
+    }
+    .dropdown-toggle[aria-expanded="true"]::after {
+            transform: rotate(-180deg);
     }
 }
 
@@ -293,7 +310,7 @@ header .navbar {
             font-variant: normal;
             text-rendering: auto;
             -webkit-font-smoothing: antialiased;
-            font-family: "Font Awesome 5 Free";
+            font-family: "Font Awesome 6 Free";
             font-weight: 900;
             content: "\f078";
             transition: transform 0.2s ease-in-out;
@@ -528,7 +545,7 @@ footer {
             line-height: 1.8;
             background-color: $contr-crown-bg;
 
-            .fa {
+            .fa-solid {
                 color: $contr-crown-color;
             }
         }

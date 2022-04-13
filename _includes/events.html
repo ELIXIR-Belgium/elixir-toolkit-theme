@@ -11,7 +11,7 @@
       <p class="text-muted mb-0"><i class="far fa-calendar me-2"></i><time datetime="{{ event.startDate | date: '%e %B, %Y %H:%M' }}">{{ event.startDate | date_to_long_string }} {{event.startTime}}</time>
         {% if event.endDate or event.endTime %} - <time datetime="{{ event.endDate | date: '%e %B, %Y %H:%M %Z' }}">{{ event.endDate | date_to_long_string }} {{event.endTime}}</time>{% endif %}</p>
       {%- if event.location %}
-      <i class="fas fa-map-marker-alt me-2 text-muted"></i>
+      <i class="fa-solid fa-map-marker-alt me-2 text-muted"></i>
       <div class="d-inline-block text-muted">{{ event.location | markdownify }}</div>
       {%- endif %}
       {%- if event.description %}
