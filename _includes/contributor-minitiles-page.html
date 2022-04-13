@@ -19,7 +19,7 @@
         <div class="mx-1"><a class="btn btn-primary rounded-circle social-icons p-0" href="https://github.com/{{id}}"><i class="fab fa-github"></i></a></div>
         {%- endif %}
         {%- if contributors[contributor].email %}
-        <div class="mx-1"><a class="btn btn-primary rounded-circle social-icons p-0" href="mailto:{{contributors[contributor].email}}"><i class="fas fa-envelope"></i></a></div>
+        <div class="mx-1"><a class="btn btn-primary rounded-circle social-icons p-0" href="mailto:{{contributors[contributor].email}}"><i class="fa-solid fa-envelope"></i></a></div>
         {%- endif %}
         {%- if contributors[contributor].orcid %}
         <div class="mx-1"><a class="btn btn-primary rounded-circle social-icons p-0" href="https://orcid.org/{{contributors[contributor].orcid}}"><i class="fab fa-orcid"></i></a></div>
@@ -44,7 +44,7 @@
         {%- if coordinator == contributor %}
         <div class="position-absolute top-0 start-100 translate-middle">
             <div class="rounded-circle coordinator-crown">
-                <i class="fa fa-crown"></i>
+                <i class="fa-solid fa-crown"></i>
             </div>
         </div>
         {%- endif %}

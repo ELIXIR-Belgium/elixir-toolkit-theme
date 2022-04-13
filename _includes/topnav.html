@@ -6,7 +6,7 @@
         <div class="container">
             <a class="navbar-brand" href="{{ '/' | relative_url }}"><img class="{% if site.topnav_title %}me-3 {% endif %}img-fluid" alt="{{site.title}} logo" src="{{ 'assets/img/main_logo.svg' | relative_url }}">{% if site.topnav_title %}<span class="me-0 me-lg-3">{{site.topnav_title}}</span>{% endif %}</a>
             <button class="navbar-toggler text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <i title="navbar-toggler" class="fa fa-bars"></i>
+                <i title="navbar-toggler" class="fa-solid fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
                 <ul class="navbar-nav">
@@ -59,7 +59,7 @@
                     <li class="nav-item ms-0 ms-lg-3 my-2 my-lg-0">
                         <div class="position-relative">
                             <form role="search" class="input-group">
-                                <span class="input-group-text" id="search-label"><i class="fa fa-search"></i></span><input type="search" id="search-input" class="search-input form-control" tabindex="0" placeholder="Search {{ site.title }}" aria-label="Search {{ site.title }}" autocomplete="off">
+                                <span class="input-group-text" id="search-label"><i class="fa-solid fa-magnifying-glass"></i></span><input type="search" id="search-input" class="search-input form-control" tabindex="0" placeholder="Search {{ site.title }}" aria-label="Search {{ site.title }}" autocomplete="off">
                             </form>
                             <div id="search-results" class="search-results"></div>
                         </div>
