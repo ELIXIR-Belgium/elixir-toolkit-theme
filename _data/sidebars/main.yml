@@ -6,16 +6,24 @@ subitems:
     subitems:
       - title: About this theme
         url: /about
+      - title: ELIXIR resources
+        url: /elixir_resources
       - title: Accessibility
         url: /accessibility
+      - title: SEO
+        url: /seo
   - title: Documentation
     subitems:
+      - title: Getting started
+        url: /getting_started
       - title: Markdown cheat sheet
         url: /markdown_cheat_sheet
       - title: Navigation structures
         url: /navigation_structures
       - title: Page mechanics
         url: /page_mechanics
+      - title: Custom branding
+        url: /custom_branding
   - title: Example pages
     subitems:
       - title: Contributor page

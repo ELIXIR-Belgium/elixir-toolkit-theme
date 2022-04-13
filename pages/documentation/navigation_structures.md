@@ -11,6 +11,9 @@ contributors: [Bert Droesbeke]
 
 
 
+## Top navigation and sidebar relationship
+
+
 ## Footer
 
 
