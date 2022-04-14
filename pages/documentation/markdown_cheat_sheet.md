@@ -1,7 +1,5 @@
 ---
 title: Markdown cheat sheet
-summary: This is a cheat sheet to showcase what is possible within the markdown pages.
-contributors: [Bert Droesbeke]
 ---
 
 For more information about Markdown, please check the Markdown [guidelines](https://guides.github.com/features/mastering-markdown/).

@@ -24,6 +24,8 @@ subitems:
         url: /page_mechanics
       - title: Custom branding
         url: /custom_branding
+      - title: Website sections
+        url: /website_sections
   - title: Example pages
     subitems:
       - title: Contributor page
@@ -53,4 +55,5 @@ subitems:
         url: /website_overview
   - title: 404 page not found
     url: /404
+    hr: true
   
