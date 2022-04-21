@@ -76,7 +76,7 @@ $(function () {
  * Back to top button
  */
 
- var toggleHeight = $(window).outerHeight() / 3;
+ var toggleHeight = $(window).outerHeight() / 2;
 
  $(window).scroll(function () {
    if ($(window).scrollTop() > toggleHeight) {

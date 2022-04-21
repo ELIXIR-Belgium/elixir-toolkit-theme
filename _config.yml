@@ -10,7 +10,7 @@ description: "Flexible Jekyll theme using bootstrap 5 as CSS framework."
 dsw_deep_link_prefix:
 # prefix for DSW deep links to a certain question
 
-gtag: 
+gtag: dw
 # Google analytics tag
 
 plausible: 
@@ -60,6 +60,7 @@ plugins:
 theme_variables: 
   # git_host: GitHub
   # back_to_top: true
+  # privacy_statement_url: /privacy
   # github_buttons: 
   #   position: top
   #   edit_me: true
@@ -69,7 +70,7 @@ theme_variables:
   #   min_headers: 2
   #   headers: 'h2'
   # topnav:
-  #   brand_logo: assets/img/main_logo.svg
+    # brand_logo: assets/img/main_logo.svg
     # github: true
     # twitter: false
   # theme_color: 0d6efd
