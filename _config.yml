@@ -69,6 +69,7 @@ theme_variables:
   #   min_headers: 2
   #   headers: 'h2'
   # topnav:
+  #   brand_logo: assets/img/main_logo.svg
     # github: true
     # twitter: false
   # theme_color: 0d6efd
