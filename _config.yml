@@ -10,7 +10,7 @@ description: "Flexible Jekyll theme using bootstrap 5 as CSS framework."
 dsw_deep_link_prefix:
 # prefix for DSW deep links to a certain question
 
-gtag: dw
+gtag:
 # Google analytics tag
 
 plausible: 
