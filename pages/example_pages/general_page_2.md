@@ -27,6 +27,10 @@ training:
   - name: Training on Youtube
     registry: Youtube
     url: https://tess.elixir-europe.org/
+  - name: Training in The Carpentries
+    registry: Carpentries
+    url: https://tess.elixir-europe.org/
+
 
 ---
 
