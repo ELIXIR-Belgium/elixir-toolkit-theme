@@ -15,8 +15,13 @@
                         <a class="btn bg-white hover-primary text-start" href="{{ training.url }}">
                             <div class="row g-1">
                                 <div class="col-2 d-flex align-items-center justify-content-center">
-                                    {%- if training.registry == "TeSS" %}
+                                    {%- assign registry = training.registry |  downcase %}
+                                    {%- if registry  == "tess" %}
                                     <img alt="TeSS logo" class="img-fluid" src="assets/img/tess_logo.svg">
+                                    {%- elsif registry == "zenodo" %}
+                                    <img alt="Zenodo logo" class="img-fluid" src="assets/img/zenodo_logo.svg">
+                                    {%- elsif registry == "youtube" %}
+                                    <img alt="Youtube logo" class="img-fluid" src="assets/img/youtube_logo.svg">
                                     {%- else %}
                                     <i class="fa-solid fa-external-link-alt text-primary fs-5"></i>
                                     {%- endif %}
