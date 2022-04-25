@@ -74,12 +74,10 @@ faircookbook:
   training:
     - name: Training in TeSS
       registry: TeSS
-      registry_url: https://tess.elixir-europe.org
       url: https://tess.elixir-europe.org/search?q=data%20analysis
 
     - name: Training in TeSS
       registry: TeSS
-      registry_url: https://tess.elixir-europe.org
       url: https://tess.elixir-europe.org/search?q=data%20analysis
   ```
 
@@ -411,12 +409,10 @@ You can list training material by using the metadata fields as in the example be
 training:
    - name: Training in TeSS
      registry: TeSS
-     registry_url: https://tess.elixir-europe.org
      url: https://tess.elixir-europe.org/search?q=data%20analysis
 
    - name: Training in TeSS
      registry: TeSS
-     registry_url: https://tess.elixir-europe.org
      url: https://tess.elixir-europe.org/search?q=data%20analysis
 ```
 
