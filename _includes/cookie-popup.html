@@ -1,11 +1,15 @@
 {%- if site.gtag %}
 <!-- START Bootstrap-Cookie-Alert -->
 <div class="alert text-center cookiealert rounded-0" role="alert">
-    We use cookies to ensure you get the best experience on our website. Read our
-    <a class="fw-bold" href="{{ '/privacy' | relative_url}}">privacy policy</a> to find out more.
-    <button type="button" id="acceptcookies" class="btn btn-primary ms-2">
-        Got it!
-    </button>
+    <p>
+        We use cookies to ensure you get the best experience on our website. Read our
+        <a class="fw-bold" href="{{ site.theme_variables.privacy_statement_url | default: '/privacy' | relative_url}}">privacy policy</a> to find out more.
+    </p>
+    <div class=""d-flex justify-content-cente>
+        <button type="button" id="acceptcookies" class="btn btn-primary ms-2">
+            Got it!
+        </button>
+    </div>
 </div>
 <script>
     /*

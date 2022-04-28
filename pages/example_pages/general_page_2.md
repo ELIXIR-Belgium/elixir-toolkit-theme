@@ -20,8 +20,17 @@ rdmkit:
 training:
   - name: Training in TeSS
     registry: TeSS
-    registry_url: https://tess.elixir-europe.org
     url: https://tess.elixir-europe.org/
+  - name: Training in Zenodo
+    registry: Zenodo
+    url: https://tess.elixir-europe.org/
+  - name: Training on Youtube
+    registry: Youtube
+    url: https://tess.elixir-europe.org/
+  - name: Training in The Carpentries
+    registry: Carpentries
+    url: https://tess.elixir-europe.org/
+
 
 ---
 
