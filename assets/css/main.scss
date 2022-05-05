@@ -497,16 +497,6 @@ footer {
         font-size: 0.8em;
     }
 
-    .popover {
-        max-width: 7rem;
-    }
-
-    .popover-arrow::before  {
-        border-top-color: rgba(mix($contr-card-bg, $card-cap-bg), 1);
-    }
-    .popover-arrow::after  {
-        border-top-color: rgba(mix($contr-card-bg, $card-cap-bg), 1);
-    }
 }
 /*-----Contributors carousel-----*/
 
