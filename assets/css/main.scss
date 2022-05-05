@@ -496,7 +496,7 @@ footer {
         font-size: 0.8em;
     }
     .popover-arrow::before  {
-        border-top-color: transparent;
+        border-top-color: rgba(mix($contr-card-bg, $card-cap-bg), 1);
     }
     .popover-arrow::after  {
         border-top-color: rgba(mix($contr-card-bg, $card-cap-bg), 1);
