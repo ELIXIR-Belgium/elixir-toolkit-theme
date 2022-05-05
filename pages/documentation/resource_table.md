@@ -1,6 +1,5 @@
 ---
 title: All resources
-toc: false
 datatable: true
 ---
 

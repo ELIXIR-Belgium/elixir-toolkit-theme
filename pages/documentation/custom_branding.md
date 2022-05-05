@@ -3,32 +3,29 @@ title: Branding
 ---
 
 
-## branding in top navigation
+## Branding in top navigation
 
 
 
 ## Theme styling
 
 
-### Bootstrap 
-
+### Bootstrap variables
 
 
 ### Custom variables
 
 
-
 ### Custom classes
 
 
-## index page
+## Index page
+
+
+## Favicon and other metadata fields
 
 
 
-
-
-## favicon and other metadata fields
-
-## branding in footer
+## Branding in footer
 
 

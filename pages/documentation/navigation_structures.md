@@ -10,7 +10,6 @@ contributors: [Bert Droesbeke]
 ## Sidebar
 
 
-
 ## Top navigation and sidebar relationship
 
 
