@@ -20,9 +20,9 @@
           {%- endif %}
         </div>
         <div class="card-body text-center py-0">
-          <p class="card-title">{{ contributor }}</p>
+          <p class="card-title">{{ contributor | replace "'", "’"}}</p>
           {%- if contributors[contributor].affiliation %}
-          <p class="card-affiliation">{{ contributors[contributor].affiliation }}</p>
+          <p class="card-affiliation">{{ contributors[contributor].affiliation | replace "'", "’" }}</p>
           {%- endif %}
         </div>
         {%- if contributors[contributor].git or contributors[contributor].email or contributors[contributor].orcid %}
