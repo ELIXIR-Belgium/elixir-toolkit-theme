@@ -7,26 +7,42 @@
     {%- assign id = contributors[contributor].git | default: 'no_github' %}
     {%- capture html_code %}
     {%- assign stripped_name = contributor | replace: "'", " " %}
-    <div class="d-flex justify-content-center">
-        {%- if contributors[contributor].image_url %}
-        <img class="img-fluid rounded-circle contributor-img" src="{{ contributors[contributor].image_url }}" alt="Avatar of the contributor {{ stripped_name }}">
-        {%- else %}
-        <img class="img-fluid rounded-circle contributor-img" src="https://avatars.githubusercontent.com/{{ id }}" alt="Avatar of the contributor {{ stripped_name }}">
+    <div class="card">
+        {%- assign id = contributors[contributor].git | default: 'no_github' %}
+        <div class="position-relative d-flex justify-content-center">
+          {%- if contributors[contributor].image_url %}
+          <img src="{{ contributors[contributor].image_url }}" class="card-img-top p-3 rounded-circle contributor-img" alt="{{ contributor }}">
+          {%- else %}
+          <img src="https://avatars.githubusercontent.com/{{id}}" class="card-img-top p-3 rounded-circle contributor-img" alt="{{ contributor }}">
+          {%- endif %}
+          {%- if contributors[contributor].role %}
+          <span class="badge position-absolute top-0 end-0">{{ contributors[contributor].role | capitalize }}</span>
+          {%- endif %}
+        </div>
+        <div class="card-body text-center py-0">
+          <p class="card-title">{{ contributor }}</p>
+          {%- if contributors[contributor].affiliation %}
+          <p class="card-affiliation">{{ contributors[contributor].affiliation }}</p>
+          {%- endif %}
+        </div>
+        {%- if contributors[contributor].git or contributors[contributor].email or contributors[contributor].orcid %}
+        <div class="card-footer">
+          <div class="d-flex justify-content-center">
+            {%- if contributors[contributor].git %}
+            <div class="mx-1"><a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://github.com/{{id}}"><i class="fa-brands fa-github"></i></a></div>
+            {%- endif %}
+            {%- if contributors[contributor].email %}
+            <div class="mx-1"><a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="mailto:{{contributors[contributor].email}}"><i class="fa-solid fa-envelope"></i></a></div>
+            {%- endif %}
+            {%- if contributors[contributor].orcid %}
+            <div class="mx-1"><a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://orcid.org/{{contributors[contributor].orcid}}"><i class="fa-brands fa-orcid"></i></a></div>
+            {%- endif %}
+          </div>
+        </div>
         {%- endif %}
-    </div>
-    <div class="d-flex mt-3 justify-content-center">
-        {%- if contributors[contributor].git %}
-        <div class="mx-1"><a class="btn btn-primary rounded-circle social-icons p-0" href="https://github.com/{{id}}"><i class="fa-brands fa-github"></i></a></div>
-        {%- endif %}
-        {%- if contributors[contributor].email %}
-        <div class="mx-1"><a class="btn btn-primary rounded-circle social-icons p-0" href="mailto:{{contributors[contributor].email}}"><i class="fa-solid fa-envelope"></i></a></div>
-        {%- endif %}
-        {%- if contributors[contributor].orcid %}
-        <div class="mx-1"><a class="btn btn-primary rounded-circle social-icons p-0" href="https://orcid.org/{{contributors[contributor].orcid}}"><i class="fa-brands fa-orcid"></i></a></div>
-        {%- endif %}
-    </div>
+      </div>
     {%- endcapture %}
-    <a tabindex="0" role="button" class="btn btn-sm contributor-link hover-primary m-1 position-relative" data-bs-trigger="focus" data-bs-html="true" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content='{{html_code}}' title="{{contributor}}">
+    <a tabindex="0" role="button" class="btn btn-sm contributor-link hover-primary m-1 position-relative" data-bs-html="true" data-bs-container="body" data-bs-template='<div class="popover shadow border-0 contributor-cards" role="tooltip"><div class="popover-arrow"></div><div class="popover-body p-0"></div></div>' data-bs-toggle="popover" data-bs-placement="top" data-bs-content='{{html_code}}'>
         <div class="d-flex align-items-center">
             <div class="flex-shrink-0">
                 {%- if contributors[contributor].image_url %}
