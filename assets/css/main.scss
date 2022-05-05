@@ -3,7 +3,8 @@ layout: none
 permalink: assets/css/main.css
 ---
 /*-----Default theme variables-----*/
-
+$popover-max-width: 7rem;
+$enable-caret: false;
 @import "bootstrap_variables";
 @import "bootstrap/bootstrap";
 @import "custom_variables";
