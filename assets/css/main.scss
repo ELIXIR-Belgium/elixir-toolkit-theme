@@ -3,7 +3,7 @@ layout: none
 permalink: assets/css/main.css
 ---
 /*-----Default theme variables-----*/
-$popover-max-width: 11em;
+$popover-max-width: 12em;
 $enable-caret: false;
 @import "bootstrap_variables";
 @import "bootstrap/bootstrap";
@@ -560,7 +560,7 @@ footer {
 }
 
 .contributor-img {
-    width: 130px;
+    width: 11em;
 }
 
 /*-----Cookie consent banner-----*/
