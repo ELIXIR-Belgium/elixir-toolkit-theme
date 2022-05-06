@@ -3,8 +3,8 @@ layout: none
 permalink: assets/css/main.css
 ---
 /*-----Default theme variables-----*/
+$popover-max-width: 12em;
 $enable-caret: false;
-
 @import "bootstrap_variables";
 @import "bootstrap/bootstrap";
 @import "custom_variables";
@@ -496,6 +496,7 @@ footer {
         color: $primary;
         font-size: 0.8em;
     }
+
 }
 /*-----Contributors carousel-----*/
 
@@ -559,7 +560,7 @@ footer {
 }
 
 .contributor-img {
-    width: 130px;
+    width: 11em;
 }
 
 /*-----Cookie consent banner-----*/
@@ -572,7 +573,7 @@ footer {
     left: 0;
     width: 100%;
     margin: 0 !important;
-    z-index: 999;
+    z-index: 1071;
     opacity: 0;
     visibility: hidden;
     transform: translateY(100%);

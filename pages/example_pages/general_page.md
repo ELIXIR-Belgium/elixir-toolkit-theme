@@ -1,7 +1,7 @@
 ---
 title: General page example
 type: example_pages
-contributors: [Bert Droesbeke, example contributor, example contributor, example contributor, example contributor, example contributor, example contributor, example contributor, example contributor]
+contributors: [Bert Droesbeke, Long example contributor , example contributor, example contributor, example contributor, example contributor, example contributor, example contributor, example contributor]
 coordinators: [Bert Droesbeke] 
 description: This description is used when the page is listed
 page_id: gp1
