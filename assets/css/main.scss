@@ -1,7 +1,4 @@
----
-layout: none
-permalink: assets/css/main.css
----
+--- layout: none permalink: assets/css/main.css ---
 /*-----Default theme variables-----*/
 $popover-max-width: 12em;
 $enable-caret: false;
@@ -17,6 +14,7 @@ main {
         font-weight: 400;
         margin-bottom: $spacer * 1.5;
     }
+
     h2,
     .h2-like {
         font-family: $font-family-theme;
@@ -36,11 +34,11 @@ main {
         margin-top: $spacer * 1.5;
     }
 
-    h2 + h3 {
+    h2+h3 {
         margin-top: $spacer * 0.5;
     }
 
-    h3 + h4 {
+    h3+h4 {
         margin-top: $spacer * 0.25;
     }
 
@@ -139,8 +137,10 @@ pre code {
 
 header .navbar {
     background-color: $topnav-bg;
+
     .navbar-brand {
         color: $topnav-title-color;
+
         img {
             height: $topnav-brand-height;
         }
@@ -160,8 +160,9 @@ header .navbar {
     content: "\f0d7";
     transition: transform 0.2s ease-in-out;
 }
+
 .dropdown-toggle[aria-expanded="true"]::after {
-        transform: rotate(-180deg);
+    transform: rotate(-180deg);
 }
 
 // Break line in top navigation
@@ -170,9 +171,11 @@ header .navbar {
     @media (min-width: 992px) {
         width: 1px;
     }
+
     @media (max-width: 992px) {
         height: 1px;
     }
+
     background-color: rgba($nav-link-color, 0.3);
 }
 
@@ -206,6 +209,7 @@ header .navbar {
         background-color: $light;
     }
 }
+
 @media (max-width: 992px) {
     .search-results {
         width: 100%;
@@ -228,6 +232,7 @@ header .navbar {
         font-size: 12px !important;
         font-weight: 600;
     }
+
     .search-result-doc-title {
         overflow: auto;
         color: $body-color;
@@ -259,7 +264,7 @@ header .navbar {
     vertical-align: top;
 }
 
-.search-result-preview + .search-result-preview {
+.search-result-preview+.search-result-preview {
     margin-top: 0.25rem;
 }
 
@@ -285,6 +290,7 @@ header .navbar {
 
 .sidebar-collapse {
     background-color: $sidebar-bg;
+
     i {
         font-size: 1.25rem;
         float: right;
@@ -298,19 +304,20 @@ header .navbar {
 }
 
 #side-nav>ul {
-    > li:not(.sidebar-title) > a {
+    >li:not(.sidebar-title)>a {
         background-color: $sidebar-bg;
         color: $sidebar-color;
     }
-    li > a {
-        > span {
+
+    li>a {
+        >span {
             float: right;
             width: 15px;
             margin-left: $btn-padding-x;
             text-align: center;
         }
 
-        > span:after {
+        >span:after {
             display: inline-block;
             font-style: normal;
             font-variant: normal;
@@ -322,23 +329,28 @@ header .navbar {
             transition: transform 0.2s ease-in-out;
         }
     }
+
     li.active {
-        &:not(.parent) > a {
+        &:not(.parent)>a {
             background-color: $sidebar-bg-active;
             color: $sidebar-color-active;
         }
-        > a > span:after {
+
+        >a>span:after {
             transform: rotate(-180deg);
         }
     }
+
     ul {
         display: none;
+
         li {
             a {
                 margin-left: 30px;
                 background-color: $sidebar-lvl2-bg;
                 color: $sidebar-lvl2-color;
             }
+
             ul li a {
                 margin-left: 60px;
                 background-color: $sidebar-lvl3-bg;
@@ -401,7 +413,7 @@ header .navbar {
 
 /*-----General table properties-----*/
 
-.table > :not(:first-child) {
+.table> :not(:first-child) {
     border-color: inherit;
 }
 
@@ -419,9 +431,11 @@ table {
     tr th:nth-child(1) {
         width: 25%;
     }
+
     tr th:nth-child(2) {
         width: 40%;
     }
+
     td:nth-child(2) {
         font-size: 0.9em;
     }
@@ -479,7 +493,7 @@ footer {
     &.visible {
         bottom: $spacer;
         opacity: 1;
-    }    
+    }
 }
 
 /*-----Contributors cards-----*/
@@ -488,16 +502,19 @@ footer {
     .card {
         background-color: $contr-card-bg;
     }
+
     .badge {
         background-color: $primary;
         margin: 10px 10px 0px 0px;
     }
+
     .card-affiliation {
         color: $primary;
         font-size: 0.8em;
     }
 
 }
+
 /*-----Contributors carousel-----*/
 
 #contributors-carousel .carousel-control-next,
@@ -509,10 +526,12 @@ footer {
     #contributors-carousel .card-title {
         font-size: 0.5em;
     }
+
     #contributors-carousel .card-affiliation {
         color: $primary;
         font-size: 0.4em;
     }
+
     #contributors-carousel .card-body {
         padding: 0rem 0.5rem 0.5rem 0.5rem;
     }
@@ -538,9 +557,12 @@ footer {
 /*--------Page contributors---------*/
 .page-contributors {
     background-color: $contr-bg;
-    font-size: 0; /* Gets rid of extra white space */
+    font-size: 0;
+
+    /* Gets rid of extra white space */
     .contributor-link {
         background-color: $contr-link-bg;
+
         .contributor-img-sm {
             height: 1.7em;
         }
@@ -624,8 +646,8 @@ li.past_event,
     display: none;
 }
 
-.events > ul > li,
-.news > ul > li {
+.events>ul>li,
+.news>ul>li {
     border-left: $news-border-color 5px solid;
     border-radius: $border-radius;
     padding: 0px 11px;
@@ -645,21 +667,25 @@ li.past_event,
         display: inline-block;
     }
 
-    .full-description > *:last-child {
+    .full-description>*:last-child {
         margin-bottom: 0;
+
         li {
             margin-bottom: 0;
         }
     }
 }
+
 /*-----More information tiles-----*/
 
 .info-card {
     background-color: $info-card-bg;
+
     .card-header {
         background-color: $info-card-header-bg;
         color: $info-card-header-color;
     }
+
     a:hover {
         .text-muted {
             transition: $btn-transition;
@@ -671,6 +697,7 @@ li.past_event,
             color: $white !important;
         }
     }
+
     img {
         height: 40px;
         max-width: 45px;
@@ -690,9 +717,11 @@ li.past_event,
 .navigation-tiles {
     .card {
         background-color: $nav-card-bg;
+
         .card-text {
             min-height: 4.5em;
         }
+
         .card-header {
             background-color: $nav-card-header-bg;
 
@@ -700,6 +729,7 @@ li.past_event,
                 color: $nav-card-header-color;
             }
         }
+
         .badge {
             font-weight: inherit;
             background-color: $nav-card-badge-bg;
