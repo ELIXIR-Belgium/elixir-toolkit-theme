@@ -108,6 +108,19 @@ This image is inserted in the markdown using following snippet:
 ```
 {% endraw %}
 
+or a smaller image
+
+{% include image.html file="infrastructures/ELIXIR-logo.svg" alt="ELIXIR logo" max-width="3em" %}
+
+This image is inserted in the markdown using following snippet:
+
+{% raw %}
+```
+{% include image.html file="infrastructures/ELIXIR-logo.svg" alt="ELIXIR logo" max-width="3em" %}
+```
+{% endraw %}
+
+
 
 Make sure that you add the image to the `images` directory and give it an understanding filename. Adapt the snippet so it points towards you image (only the filename is needed). In the case of the example, the image exampleImage.png is loaded. Supported attributes are:
 
@@ -116,6 +129,7 @@ Make sure that you add the image to the `images` directory and give it an unders
 * `alt`: describes the image and is used for people that are visually impaired
 * `caption`: Text that will appear under the image
 * `inline`: if true this image can be used in a list
+* `max-width`: Max width in px or em
 
 
 or using following markdown syntax:
