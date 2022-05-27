@@ -1,5 +1,5 @@
 {%- if page.contributors and page.contributors.size != 0 %}
-<span class="d-block h2-like fs-2 text-dark">Contributors</span>
+<span class="d-block h2-like fs-2">Contributors</span>
 <div class="p-4 rounded mt-4 page-contributors">
     {%- assign contributors = site.data.CONTRIBUTORS %}
     {%- assign page_contributors = page.contributors | sort %}
@@ -7,7 +7,7 @@
     {%- assign id = contributors[contributor].git | default: 'no_github' %}
     {%- capture html_code %}
     {%- assign stripped_name = contributor | replace: "'", "’" %}
-    <div class="card bg-white">
+    <div class="card">
         {%- assign id = contributors[contributor].git | default: 'no_github' %}
         <div class="position-relative d-flex justify-content-center">
           {%- if contributors[contributor].image_url %}
@@ -26,7 +26,7 @@
           {%- endif %}
         </div>
         {%- if contributors[contributor].git or contributors[contributor].email or contributors[contributor].orcid %}
-        <div class="card-footer bg-dark">
+        <div class="card-footer">
           <div class="d-flex justify-content-center">
             {%- if contributors[contributor].git %}
             <div class="mx-1"><a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://github.com/{{id}}"><i class="fa-brands fa-github"></i></a></div>
