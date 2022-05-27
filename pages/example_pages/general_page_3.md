@@ -4,11 +4,16 @@ type: example_pages
 description: This page has page level resources
 country_code: BE
 page_id: gp3
-resources:
+
+main_resources:
+  - Bioconda
+  - GitHub
+
+national_resources:
   - name: Resource name
     description: A general description about the resource
     how_to_access: explantation on how you can access this resource
-    instance_of: based on
+    instance_of: GitHub
     related_pages:
       example_pages: [gp3, gp1, gp2]
   - name: Resource name 2

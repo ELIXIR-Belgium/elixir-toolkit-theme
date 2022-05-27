@@ -30,8 +30,8 @@
                 {%- assign instances_tool = 0 %}
                 {%- assign query = "related_pages." | append: page.type %}
                 {%- for country_page in country_pages %}
-                {%- assign instance_matches = country_page.resources | where: "instance_of", tool.name | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
-                {%- assign tool_matches = country_page.resources | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
+                {%- assign instance_matches = country_page.national_resources | where: "instance_of", tool.name | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
+                {%- assign tool_matches = country_page.national_resources | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
                 {%- unless tool_matches.size == 0 %}
                 {%- assign total_county_tools = total_county_tools | plus: tool_matches.size %}
                 {%- endunless %}
@@ -84,9 +84,9 @@
             {%- assign hide_ids = "resource_title" %}
             {%- for country_page in country_pages %}
             {%- if include.tag %}
-            {%- assign tool_matches = country_page.resources| where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
+            {%- assign tool_matches = country_page.national_resources| where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
             {%- else %}
-            {%- assign tool_matches = country_page.resources %}
+            {%- assign tool_matches = country_page.national_resources %}
             {%- endif %}
             {%- for tool in tool_matches %}
             {%- assign tool_id = tool.name | slugify %}

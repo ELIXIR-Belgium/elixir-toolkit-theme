@@ -1,7 +1,8 @@
-{%- if page.resources %}
-{%- assign tools = page.resources %}
-<h2>Relevant tools and resources</h2>
-<a class="visually-hidden-focusable" href='#skip-tool-table'>Skip tool table</a>
+{%- if page.national_resources %}
+{%- assign tools = page.national_resources %}
+<h2>National tools and resources</h2>
+<p>Developed and/or deployed by {{page.title}}.</p>
+<a class="visually-hidden-focusable" href='#skip-tool-table-1'>Skip tool table</a>
 <div class="table-responsive mt-4 mb-5">
     <table id="tooltable" class="table display">
         <thead>
@@ -52,6 +53,63 @@
         </tbody>
     </table>
 </div>
-<div id="skip-tool-table"></div>
-
+<div id="skip-tool-table-1"></div>
+{%- endif %}
+{%- if page.main_resources %}
+{%- assign tool_names = page.main_resources %}
+<h2>Tools an resources {{page.title}} is involved with</h2>
+<p>These tools and resources can have a lead from {{page.title}} or this country is involved in the development contributions.</p>
+<a class="visually-hidden-focusable" href='#skip-tool-table-1'>Skip tool table</a>
+<div class="table-responsive mt-4 mb-5">
+    <table id="tooltable" class="table display">
+        <thead>
+            <tr class="text-nowrap">
+                <th>Resource</th>
+                <th>Description</th>
+                <th>Related pages</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%- for tool_name in tool_names | sort %}
+            {%- assign tool =  site.data.tool_and_resource_list | where:"name", tool_name | first %}
+            <tr>
+                {% if tool.url %}
+                <td><a href="{{tool.url}}">{{tool.name}}</a>
+                </td>
+                {%- else %}
+                <td>{{tool.name}}</td>
+                {%- endif %}
+                <td>{{tool.description | markdownify }}
+                    {%- if tool.instance_of or tool.how_to_access %}
+                    <div class="d-block mt-1">
+                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="This resource is an instance of {{tool.instance_of}}"><span class="badge text-primary border border-primary">{{tool.instance_of}}</span></span>
+                        {%- if tool.how_to_access %}
+                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="{{tool.how_to_access}}"><span class="badge text-primary border border-primary"> <i class="fa-solid fa-key"></i></span></span>
+                        {%- endif %}
+                    </div>
+                    {%- endif %}
+                </td>
+                {%- if tool.related_pages %}
+                {%- capture related_pages %}
+                {%- for section in tool.related_pages %}
+                {%- unless section.size == 0 %}
+                {%- for tag in section[1] %}
+                {%- unless tag == page.page_id %}
+                {%- assign related_page = site.pages | where:"page_id",tag | first %}
+                <a class="nohover" href="{{related_page.url | relative_url }}"><span class="badge default-badge">{{related_page.title}}</span></a>
+                {%- endunless %}
+                {%- endfor %}
+                {%- endunless %}
+                {%- endfor %}
+                {%- endcapture %}
+                <td>{{related_pages}}</td>
+                {%- else %}
+                <td></td>
+                {%- endif %}
+            </tr>
+            {%- endfor %}
+        </tbody>
+    </table>
+</div>
+<div id="skip-tool-table-1"></div>
 {%- endif %}
