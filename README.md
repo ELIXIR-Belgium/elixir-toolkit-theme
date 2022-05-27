@@ -104,7 +104,7 @@ This will start the docker container and serve the website locally. Make sure th
 - [Infectious Diseases Toolkit](https://www.infectious-diseases-toolkit.org/)
 - [Applied Bioinformatics and Biostatistics intranet page](https://intranet.psb.ugent.be/abb/)
 - [FAIRDOM](https://fair-dom.org/)
-
+- [Australian BioCommons How-to-Guides](https://australianbiocommons.github.io/how-to-guides/)
 
 ## Used packages
 
