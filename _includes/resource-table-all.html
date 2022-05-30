@@ -45,7 +45,7 @@
                 <td>{{tool.name}}</td>
                 {%- endif %}
                 <td>{{tool.description}}
-                    {%- if instances_tool or tool.instance_of or tool.how_to_access %}
+                    {%- if instances_tool != 0 and total_county_tools != 0 and include.tag != nil or tool.instance_of or tool.how_to_access %}
                     <div class="d-block mt-1">
                         {%- if tool.instance_of %}
                         <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="This resource is an instance of {{tool.instance_of}}"><span class="badge text-primary border border-primary">{{tool.instance_of}}</span></span>
