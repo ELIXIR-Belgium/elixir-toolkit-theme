@@ -39,8 +39,8 @@
                 {%- assign instances_tool = instances_tool | plus: instance_matches.size %}
                 {%- endunless %}
                 {%- endfor %}
-                {% if tool.link %}
-                <td><a href="{{tool.link}}">{{tool.name}}</a></td>
+                {% if tool.url %}
+                <td><a href="{{tool.url}}">{{tool.name}}</a></td>
                 {%- else %}
                 <td>{{tool.name}}</td>
                 {%- endif %}
