@@ -1,6 +1,7 @@
 {%- if page.national_resources %}
 {%- assign tools = page.national_resources %}
-<h2>National tools and resources</h2>
+<h2>Tools and resources</h2>
+<h3>Tailored to {{page.title}}</h3>
 <p>Developed and/or deployed by {{page.title}}.</p>
 <a class="visually-hidden-focusable" href='#skip-tool-table-1'>Skip tool table</a>
 <div class="table-responsive mt-4 mb-5">
@@ -57,8 +58,8 @@
 {%- endif %}
 {%- if page.main_resources %}
 {%- assign tool_names = page.main_resources %}
-<h2>Tools an resources {{page.title}} is involved with</h2>
-<p>These tools and resources can have a lead from {{page.title}} or this country is involved in the development contributions.</p>
+<h3>We are also involved in</h3>
+<p>These tools and resources can have a lead from {{page.title}} or we are involved in the development.</p>
 <a class="visually-hidden-focusable" href='#skip-tool-table-1'>Skip tool table</a>
 <div class="table-responsive mt-4 mb-5">
     <table id="tooltable" class="table display">
