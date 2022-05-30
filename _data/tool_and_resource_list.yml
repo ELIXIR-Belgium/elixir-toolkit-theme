@@ -6,11 +6,12 @@
     tess: Bioconda
   related_pages:
     - gp1
+    - gp2
 - description: Git based code hosting and collaboration tool, built for teams.
   url: https://bitbucket.org/
   name: Bitbucket
   related_pages:
-    - gp1
+    - gp2
 - description:
     Versioning system, used for sharing code, as well as for sharing of
     small data
@@ -19,6 +20,7 @@
   registry:
     fairsharing-coll: bsg-d001160
     tess: GitHub
+  how_to_access: Zenodo
   related_pages:
     - gp1
 - description:
@@ -36,6 +38,7 @@
     and CERN
   url: https://zenodo.org/
   name: Zenodo
+  instance_of: test
   registry:
     fairsharing: wy4egf
     tess: Zenodo

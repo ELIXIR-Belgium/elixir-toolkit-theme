@@ -11,6 +11,11 @@
                 <th>Resource</th>
                 <th>Description</th>
                 <th>Related pages</th>
+                <th>Registry
+                    <a data-bs-toggle="tooltip" data-bs-original-title="Links to related information in ELIXIR registries: related policies and standards in FAIRsharing, scientific and technical descriptions of the resource in bio.tools, and related training in TeSS.">
+                        <i class="fa-solid fa-info-circle"></i>
+                    </a>
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -49,6 +54,20 @@
                 {%- else %}
                 <td></td>
                 {%- endif %}
+                <td>
+                    {%- if tool.registry.biotools %}
+                    <a data-bs-toggle="tooltip" data-bs-original-title="Bio.tools" href="https://bio.tools/{{tool.registry.biotools}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-info me-2"></i>Tool info</span></a>
+                    {%- endif %}
+                    {%- if tool.registry.fairsharing %}
+                    <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing" href="https://fairsharing.org/FAIRsharing.{{tool.registry.fairsharing}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-database me-2"></i>Standards/Databases</span></a>
+                    {%- endif %}
+                    {%- if tool.registry.fairsharing-coll %}
+                    <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing collection" href="https://fairsharing.org/{{tool.registry.fairsharing-coll}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-database me-2"></i>Standards/Databases</span></a>
+                    {%- endif %}
+                    {%- if tool.registry.tess %}
+                    <a data-bs-toggle="tooltip" data-bs-original-title="TeSS" href="https://tess.elixir-europe.org/search?q={{tool.registry.tess}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-graduation-cap me-2"></i>Training</span></a>
+                    {%- endif %}
+                </td>
             </tr>
             {%- endfor %}
         </tbody>
@@ -59,7 +78,7 @@
 {%- if page.main_resources %}
 {%- assign tool_names = page.main_resources %}
 <h3>{{page.title}} is also involved in</h3>
-<p>These tools and resources can have a lead from {{page.title}} or is involved in the development.</p>
+<p>These tools and resources can have a lead from {{page.title}} or {{page.title}} is involved in the development.</p>
 <a class="visually-hidden-focusable" href='#skip-tool-table-1'>Skip tool table</a>
 <div class="table-responsive mt-4 mb-5">
     <table id="tooltable" class="table display">
@@ -68,6 +87,11 @@
                 <th>Resource</th>
                 <th>Description</th>
                 <th>Related pages</th>
+                <th>Registry
+                    <a data-bs-toggle="tooltip" data-bs-original-title="Links to related information in ELIXIR registries: related policies and standards in FAIRsharing, scientific and technical descriptions of the resource in bio.tools, and related training in TeSS.">
+                        <i class="fa-solid fa-info-circle"></i>
+                    </a>
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -90,23 +114,29 @@
                     </div>
                     {%- endif %}
                 </td>
-                {%- if tool.related_pages %}
                 {%- capture related_pages %}
-                {%- for section in tool.related_pages %}
-                {%- unless section.size == 0 %}
-                {%- for tag in section[1] %}
+                {%- for tag in tool.related_pages %}
                 {%- unless tag == page.page_id %}
                 {%- assign related_page = site.pages | where:"page_id",tag | first %}
-                <a class="nohover" href="{{related_page.url | relative_url }}"><span class="badge default-badge">{{related_page.title}}</span></a>
-                {%- endunless %}
-                {%- endfor %}
+                <a href="{{related_page.url | relative_url }}"><span class="badge default-badge">{{related_page.title}}</span></a>
                 {%- endunless %}
                 {%- endfor %}
                 {%- endcapture %}
                 <td>{{related_pages}}</td>
-                {%- else %}
-                <td></td>
-                {%- endif %}
+                <td>
+                    {%- if tool.registry.biotools %}
+                    <a data-bs-toggle="tooltip" data-bs-original-title="Bio.tools" href="https://bio.tools/{{tool.registry.biotools}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-info me-2"></i>Tool info</span></a>
+                    {%- endif %}
+                    {%- if tool.registry.fairsharing %}
+                    <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing" href="https://fairsharing.org/FAIRsharing.{{tool.registry.fairsharing}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-database me-2"></i>Standards/Databases</span></a>
+                    {%- endif %}
+                    {%- if tool.registry.fairsharing-coll %}
+                    <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing collection" href="https://fairsharing.org/{{tool.registry.fairsharing-coll}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-database me-2"></i>Standards/Databases</span></a>
+                    {%- endif %}
+                    {%- if tool.registry.tess %}
+                    <a data-bs-toggle="tooltip" data-bs-original-title="TeSS" href="https://tess.elixir-europe.org/search?q={{tool.registry.tess}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-graduation-cap me-2"></i>Training</span></a>
+                    {%- endif %}
+                </td>
             </tr>
             {%- endfor %}
         </tbody>

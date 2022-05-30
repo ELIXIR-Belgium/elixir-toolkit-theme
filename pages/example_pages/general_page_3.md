@@ -16,6 +16,9 @@ national_resources:
     instance_of: GitHub
     related_pages:
       example_pages: [gp3, gp1, gp2]
+    registry:
+      biotools: bioconda
+      tess: Bioconda
   - name: Resource name 2
     description: A general description about the resource
     how_to_access: 
