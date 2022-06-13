@@ -16,7 +16,7 @@
     {%- endif %}
     {%- endfor %}
     {%- endunless %}
-    {%- endfor %}{%- assign allkeywords = allkeywords | split: ", " | uniq | sort %}{{allkeywords | join: ", "}}
+    {%- endfor %}{{allkeywords}}
     {%- endif %}
     {%- endcapture %}
     <meta name="keywords" content="{{keywords}}">
