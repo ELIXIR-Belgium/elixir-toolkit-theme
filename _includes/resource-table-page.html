@@ -75,8 +75,8 @@
 </div>
 <div id="skip-tool-table-1"></div>
 {%- endif %}
-{%- if page.main_resources %}
-{%- assign tool_names = page.main_resources %}
+{%- if page.ref_ to_main_resources %}
+{%- assign tool_names = page.ref_ to_main_resources %}
 <h3>{{page.title}} is also involved in</h3>
 <p>These tools and resources can have a lead from {{page.title}} or {{page.title}} is involved in the development.</p>
 <a class="visually-hidden-focusable" href='#skip-tool-table-2'>Skip tool table</a>
