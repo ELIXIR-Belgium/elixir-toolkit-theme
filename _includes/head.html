@@ -6,9 +6,17 @@
     {%- capture keywords %}
     {%- if page.related_pages %}
     {%- for section in page.related_pages %}
-    {%- unless section[1] == nil %}{{ section[1] | join: ', ' }}
-    {%- endunless %}
+    {%- unless section[1] == nil %}
+    {%- for keywordstr in section[1] %}
+    {%- assign keywordpage = site.pages | where: "page_id", keywordstr | first  %}
+    {%- if allkeywords %}
+    {%- assign allkeywords = allkeywords | append: ", " | append: keywordstr | append: ", " | append: keywordpage.title %}
+    {%- else %}
+    {%- assign allkeywords = allkeywords | append: keywordstr | append: ", " | append: keywordpage.title %}
+    {%- endif %}
     {%- endfor %}
+    {%- endunless %}
+    {%- endfor %}{{allkeywords}}
     {%- endif %}
     {%- endcapture %}
     <meta name="keywords" content="{{keywords}}">
