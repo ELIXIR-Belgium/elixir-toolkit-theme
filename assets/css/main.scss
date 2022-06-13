@@ -39,10 +39,6 @@ main {
         margin-top: $spacer * 1.5;
     }
 
-    h2+h3 {
-        margin-top: $spacer * 0.5;
-    }
-
     h3+h4 {
         margin-top: $spacer * 0.25;
     }
@@ -432,7 +428,7 @@ table {
 
 // Tool table column width optimizations
 
-#tooltable {
+.tooltable {
     tr th:nth-child(1) {
         width: 25%;
     }
@@ -450,8 +446,8 @@ table {
     }
 }
 
-#tooltable td:nth-child(1) a,
-#trainingtable td:nth-child(1) a {
+.tooltable td:nth-child(1) a,
+.trainingtable td:nth-child(1) a {
     font-weight: bold;
 }
 

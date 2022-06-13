@@ -1,40 +1,45 @@
 - description: Bioconda is a bioinformatics channel for the Conda package manager
-  link: https://bioconda.github.io/
+  url: https://bioconda.github.io/
   name: Bioconda
   registry:
     biotools: bioconda
     tess: Bioconda
   related_pages:
-  - gp1
+    - gp1
+    - gp2
 - description: Git based code hosting and collaboration tool, built for teams.
-  link: https://bitbucket.org/
+  url: https://bitbucket.org/
   name: Bitbucket
   related_pages:
-  - gp1
-- description: Versioning system, used for sharing code, as well as for sharing of
+    - gp2
+- description:
+    Versioning system, used for sharing code, as well as for sharing of
     small data
-  link: https://github.com
+  url: https://github.com
   name: GitHub
   registry:
     fairsharing-coll: bsg-d001160
     tess: GitHub
+  how_to_access: Zenodo
   related_pages:
-  - gp1
-- description: GitLab is an open source end-to-end software development platform with
+    - gp1
+- description:
+    GitLab is an open source end-to-end software development platform with
     built-in version control, issue tracking, code review, CI/CD, and more. Self-host
     GitLab on your own servers, in a container, or on a cloud provider.
-  link: https://gitlab.com/gitlab-org/gitlab
+  url: https://gitlab.com/gitlab-org/gitlab
   name: GitLab
   registry:
     tess: GitLab
   related_pages:
-  - gp1
-- description: Generalist research data repository built and developed by OpenAIRE
+    - gp1
+- description:
+    Generalist research data repository built and developed by OpenAIRE
     and CERN
-  link: https://zenodo.org/
+  url: https://zenodo.org/
   name: Zenodo
+  instance_of: test
   registry:
     fairsharing: wy4egf
     tess: Zenodo
   related_pages:
-
