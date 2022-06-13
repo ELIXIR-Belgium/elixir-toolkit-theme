@@ -5,7 +5,7 @@ description: This page has page level resources
 country_code: BE
 page_id: gp3
 
-ref_ to_main_resources:
+ref_to_main_resources:
   - Bioconda
   - GitHub
 
