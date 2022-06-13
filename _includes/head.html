@@ -6,9 +6,15 @@
     {%- capture keywords %}
     {%- if page.related_pages %}
     {%- for section in page.related_pages %}
-    {%- unless section[1] == nil %}{{ section[1] | join: ', ' }}
+    {%- unless section[1] == nil %}
+    {%- assign keywordstr = section[1] | join: ', ' %}
+    {%- if allkeywords %}
+    {%- assign allkeywords = allkeywords | append: ", " | append: keywordstr %}
+    {%- else %}
+    {%- assign allkeywords = allkeywords | append: keywordstr %}
+    {%- endif %}
     {%- endunless %}
-    {%- endfor %}
+    {%- endfor %}{{allkeywords}}
     {%- endif %}
     {%- endcapture %}
     <meta name="keywords" content="{{keywords}}">
