@@ -1,5 +1,4 @@
 {%- unless include.affiliations == nil and include.search == nil and include.related_pages == nil %}
-{%- assign allcountries = site.data.countries %}
 {%- for current_page in site.pages | sorted %}
 {%- if current_page.affiliations and current_page.search_exclude != true and current_page.type == include.type %}
 {%- assign pageaffiliations = current_page.affiliations | join: ", " %}
@@ -21,7 +20,8 @@
                 {%- for affiliation in allaffiliations %}
                 {%- if affiliation.size == 2 %}
                 {%- assign country = affiliation | upcase %}
-                <option value="{{country | slugify}}">{{allcountries[country]}}</option>
+                {%- assign country_link = site.pages | where:"country_code",country | first %}
+                <option value="{{country | slugify}}">{{country_link[title]}}</option>
                 {%- else %}
                 <option value="{{affiliation | slugify}}">{{affiliation}}</option>
                 {%- endif %}
@@ -90,7 +90,6 @@
             </div>
             {%- if current_page.affiliations %}
             {%- assign alllogos = site.data.affiliations %}
-            {%- assign allcountries = site.data.countries %}
             <div class="card-footer d-flex align-middle">
                 <div class="me-3">
                     <span class="me-2"><b><small>Affiliations:</small></b></span>
@@ -100,22 +99,22 @@
                     {%- if affiliation.size == 2 %}
                     {%- assign country_link = site.pages | where:"country_code",country | first %}
                     {%- if country_link %}
-                    <a role="button" href="{{country_link.url}}" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm bg-white hover-primary">
-                        {%- else %}
-                        <a role="button" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm bg-white hover-primary disabled" aria-disabled="true">
-                            {%- endif %}
-                            <div class="d-block h-24px">
-                                <span class="flag-icon flag-icon-{{affiliation | downcase}} align-items-center"></span>
-                            </div>
-                        </a>
-                        {%- elsif filter_affiliation %}
-                        {%- for result in filter_affiliation %}
-                        <a role="button" href="{{result.url}}" data-bs-toggle="tooltip" data-bs-original-title="{{affiliation}}" class="btn btn-sm bg-white hover-primary">
-                            <img alt="logo of {{result.name}}" src="{{result.image_url | relative_url }}" class="d-inline h-24px">
-                        </a>
-                        {%- endfor %}
+                    <a role="button" href="{{country_link.url}}" data-bs-toggle="tooltip" title="{{country_link[title]}}" class="btn btn-sm bg-white hover-primary">
+                    {%- else %}
+                    <a role="button" data-bs-toggle="tooltip" title="{{country_link[title]}}" class="btn btn-sm bg-white hover-primary disabled" aria-disabled="true">
                         {%- endif %}
-                        {%- endfor %}
+                        <div class="d-block h-24px">
+                            <span class="flag-icon flag-icon-{{affiliation | downcase}} align-items-center"></span>
+                        </div>
+                    </a>
+                    {%- elsif filter_affiliation %}
+                    {%- for result in filter_affiliation %}
+                    <a role="button" href="{{result.url}}" data-bs-toggle="tooltip" data-bs-original-title="{{affiliation}}" class="btn btn-sm bg-white hover-primary">
+                        <img alt="logo of {{result.name}}" src="{{result.image_url | relative_url }}" class="d-inline h-24px">
+                    </a>
+                    {%- endfor %}
+                    {%- endif %}
+                    {%- endfor %}
                 </div>
             </div>
             {%- endif %}
