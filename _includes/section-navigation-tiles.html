@@ -20,7 +20,7 @@
                 {%- for affiliation in allaffiliations %}
                 {%- if affiliation.size == 2 %}
                 {%- assign country = affiliation | upcase %}
-                {%- assign country_page = site.pages | where:"country_code",country | first %}
+                {%- assign country_page = site.pages | where:"country_code",country | where_exp:"item","item.search_exclude != true" | first %}
                 <option value="{{country | slugify}}">{{country_page.title}}</option>
                 {%- else %}
                 <option value="{{affiliation | slugify}}">{{affiliation}}</option>
@@ -97,7 +97,7 @@
                     {%- assign filter_affiliation = alllogos | where: "name", affiliation %}
                     {%- assign country = affiliation | upcase %}
                     {%- if affiliation.size == 2 %}
-                    {%- assign country_page = site.pages | where:"country_code",country | first %}
+                    {%- assign country_page = site.pages | where:"country_code",country | where_exp:"item","item.search_exclude != true" | first %}
                     {%- if country_page %}
                     <a role="button" href="{{country_page.url}}" data-bs-toggle="tooltip" title="{{country_page.title}}" class="btn btn-sm bg-white hover-primary">
                     {%- else %}
