@@ -76,24 +76,24 @@ $(function () {
  * Back to top button
  */
 
- var toggleHeight = $(window).outerHeight() / 2;
+var toggleHeight = $(window).outerHeight() / 2;
 
- $(window).scroll(function () {
-   if ($(window).scrollTop() > toggleHeight) {
-     //Adds active class to make button visible
-     $("#back-to-top").addClass("visible");
- 
-   } else {
-     //Removes active class to make button visible
-     $("#back-to-top").removeClass("visible");
-   }
- });
- 
- //Scrolls the user to the top of the page again
- function topFunction() {
+$(window).scroll(function () {
+    if ($(window).scrollTop() > toggleHeight) {
+        //Adds active class to make button visible
+        $("#back-to-top").addClass("visible");
+
+    } else {
+        //Removes active class to make button visible
+        $("#back-to-top").removeClass("visible");
+    }
+});
+
+//Scrolls the user to the top of the page again
+function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  }
+}
 
 
 /**
@@ -127,3 +127,14 @@ function show_past_events() {
     elements.show();
 };
 
+/**
+ * Making tables responsive
+ */
+$(document).ready(function () {
+    $('table').each(function (i, obj) {
+        if (!$(obj).parents('.table-responsive').length) {
+            $(obj).wrap('<div class="table-responsive mt-4 mb-5"/>');
+        }
+    });
+
+});
