@@ -20,8 +20,8 @@
                 {%- for affiliation in allaffiliations %}
                 {%- if affiliation.size == 2 %}
                 {%- assign country = affiliation | upcase %}
-                {%- assign country_link = site.pages | where:"country_code",country | first %}
-                <option value="{{country | slugify}}">{{country_link[title]}}</option>
+                {%- assign country_page = site.pages | where:"country_code",country | first %}
+                <option value="{{country | slugify}}">{{country_page.title}}</option>
                 {%- else %}
                 <option value="{{affiliation | slugify}}">{{affiliation}}</option>
                 {%- endif %}
@@ -97,11 +97,11 @@
                     {%- assign filter_affiliation = alllogos | where: "name", affiliation %}
                     {%- assign country = affiliation | upcase %}
                     {%- if affiliation.size == 2 %}
-                    {%- assign country_link = site.pages | where:"country_code",country | first %}
-                    {%- if country_link %}
-                    <a role="button" href="{{country_link.url}}" data-bs-toggle="tooltip" title="{{country_link[title]}}" class="btn btn-sm bg-white hover-primary">
+                    {%- assign country_page = site.pages | where:"country_code",country | first %}
+                    {%- if country_page %}
+                    <a role="button" href="{{country_page.url}}" data-bs-toggle="tooltip" title="{{country_page.title}}" class="btn btn-sm bg-white hover-primary">
                     {%- else %}
-                    <a role="button" data-bs-toggle="tooltip" title="{{country_link[title]}}" class="btn btn-sm bg-white hover-primary disabled" aria-disabled="true">
+                    <a role="button" class="btn btn-sm bg-white hover-primary disabled" aria-disabled="true">
                         {%- endif %}
                         <div class="d-block h-24px">
                             <span class="flag-icon flag-icon-{{affiliation | downcase}} align-items-center"></span>
