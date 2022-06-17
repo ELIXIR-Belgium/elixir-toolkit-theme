@@ -96,7 +96,7 @@ docker run -it --rm -p [::1]:4000:4000 -v $PWD:/srv/jekyll jekyll/jekyll:latest 
 
 This will start the docker container and serve the website locally. Make sure the `.\_site` is not yet created to avoid permission errors.
 
-## This theme is known to be used in:
+## This theme is known to be used in
 
 - [RDMkit](https://rdmkit.elixir-europe.org/)
 - [WorkflowHub project](https://about.workflowhub.eu/)
