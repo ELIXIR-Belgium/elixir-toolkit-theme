@@ -1,5 +1,7 @@
 ---
 title: Markdown cheat sheet
+summary: This is a cheat sheet to showcase what is possible within the markdown pages.
+contributors: [Bert Droesbeke]
 ---
 
 For more information about Markdown, please check the Markdown [guidelines](https://guides.github.com/features/mastering-markdown/).
@@ -98,13 +100,13 @@ note can be replaced with tip, warning, important, depending on the type of mess
 
 ## Images
 
-{% include image.html file="infrastructures/ELIXIR-logo.svg" caption="Figure 1. Say something about this pic." alt="ELIXIR logo" %}
+{% include image.html file="/infrastructures/ELIXIR-logo.svg" caption="Figure 1. Say something about this pic." alt="ELIXIR logo" %}
 
 This image is inserted in the markdown using following snippet:
 
 {% raw %}
 ```
-{% include image.html file="infrastructures/ELIXIR-logo.svg" caption="Figure 1. Say something about this pic." alt="ELIXIR logo" %}
+{% include image.html file="/infrastructures/ELIXIR-logo.svg" caption="Figure 1. Say something about this pic." alt="ELIXIR logo" max-width="10" %}
 ```
 {% endraw %}
 
@@ -120,8 +122,6 @@ This image is inserted in the markdown using following snippet:
 ```
 {% endraw %}
 
-
-
 Make sure that you add the image to the `images` directory and give it an understanding filename. Adapt the snippet so it points towards you image (only the filename is needed). In the case of the example, the image exampleImage.png is loaded. Supported attributes are:
 
 * `click`: if true, the image will be clickable -> the image will be loaded in another tab
@@ -135,15 +135,15 @@ Make sure that you add the image to the `images` directory and give it an unders
 or using following markdown syntax:
 {% raw %}
 ```
-![ELIXIR logo](images/infrastructures/ELIXIR-logo.svg)
-![ELIXIR logo](images/infrastructures/ELIXIR-logo.svg){: height="200px" width="200px"}
+![ELIXIR logo](/images/infrastructures/ELIXIR-logo.svg)
+![ELIXIR logo](/images/infrastructures/ELIXIR-logo.svg){: height="200px" width="200px"}
 ```
 {% endraw %}
 
 gives:
 
-![ELIXIR logo](images/infrastructures/ELIXIR-logo.svg)
-![ELIXIR logo](images/infrastructures/ELIXIR-logo.svg){: height="200px" width="200px"}
+![ELIXIR logo](/images/infrastructures/ELIXIR-logo.svg)
+![ELIXIR logo](/images/infrastructures/ELIXIR-logo.svg){: height="200px" width="200px"}
 
 
 
@@ -319,18 +319,18 @@ Text
 
 If you want pages from the specific sections Your tasks, Your domain and Tool assembly to be shown as Related pages, list their `page_id`. If you want to list multiple related pages, make sure to put them in a list like this: [page_id1, page_id2]. 
 
-An overview of all of the page_id's can be found in the [Website overview page](website_overview).
+An overview of all RDMkit pages (belonging to the sections listed above) and their `page_id` can be found in the [Website overview page](website_overview).
 
 
 ```yml
 related_pages: 
-   - your_tasks: [page_id1, page_id2]
-   - your_domain: [page_id1, page_id2]
-   - tool_assembly: [page_id1, page_id2]
+   your_tasks: [page_id1, page_id2]
+   your_domain: [page_id1, page_id2]
+   tool_assembly: [page_id1, page_id2]
 ```
 
 ## Listing training material
-You can list training material by using the metadata fields as in the example below.
+You can list training material by using the metadata fields as in the example below. Each training item will be automatically added as an entry to the table in the [All training resources page](all_training_resources).
 
 ```yml
 training:
@@ -352,7 +352,7 @@ To have space between two lines of text, simply leave one empty line in between 
 <br>
 ```
 
-## Enforce no space between two lines
+## Enfore line break
 
 When you want to have a line of text.\\
 And another line underneath it without space, use:
