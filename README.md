@@ -23,7 +23,7 @@ Its key features:
 
 ## Installation
 
-### via GitHub Pages remote theme (instalation free)
+### via GitHub Pages remote theme (installation free!)
 
 The quickest way to use the elixir-toolkit-theme is to use the GitHub pages [remote theme](https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/) feature in your `config.yml` file:
 
