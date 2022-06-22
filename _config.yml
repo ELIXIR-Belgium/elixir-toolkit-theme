@@ -21,14 +21,10 @@ plausible_src:
 exclude:
   - .gitignore
   - var/
-  - README.md
   - vendor
   - Gemfile*
   - LICENSE
 
-sass:
-  style: compressed
-  sourcemap: never
 
 defaults:
   -
@@ -37,17 +33,6 @@ defaults:
       type: "pages"
     values:
       permalink: /:basename
-      layout: "page"
-      sidebar: main
-  -
-    scope:
-      path: "pages/example_pages/TEMPLATE_general_page.md"
-      type: "pages"
-    values:
-      permalink: /:basename
-      sitemap: false
-      search_exclude: true
-      no_robots: true
       layout: "page"
       sidebar: main
 

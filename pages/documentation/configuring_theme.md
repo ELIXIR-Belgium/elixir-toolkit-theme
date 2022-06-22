@@ -2,9 +2,36 @@
 title: Configuring the theme
 ---
 
-The `_config.yml` holds multiple options to configure the theme. These theme variables are all optional and don't have to be included in the _config.yaml file.
+The `_config.yml` file in the root of your project holds multiple options to configure the theme. These theme variables are all optional and don't have to be included in the _config.yaml file.
 
-Here we list all options and there default when not specified: 
+## General configurations
+
+```yml
+title: ELIXIR toolkit theme
+# This appears in the html browser tab for the site title (seen mostly by search engines, not users)
+
+topnav_title: ELIXIR toolkit theme
+# Optional: this appears on the top navigation bar next to the main_logo.svg icon
+
+description: "Flexible Jekyll theme using bootstrap 5 as CSS framework."
+# Metadata description of the website
+
+dsw_deep_link_prefix:
+# prefix for DSW deep links to a certain question
+
+gtag:
+# Google analytics tag
+
+plausible: 
+# Plausible tag
+plausible_src: 
+# default: 'https://plausible.io/js/plausible.js
+
+```
+
+## Additional settings
+
+Certain features are not always needed and can be disabled are changed in your deployment. Here we list all options and there default when not specified. Only specify the settings that you want to change 
 
 ```yml
 theme_variables: 
@@ -30,7 +57,7 @@ theme_variables:
 
 More detailed information about these settings can be found here:
 
-* `git_host`:
+* `git_host`: 
 * `back_to_top`:
 * `privacy_statement_url`: 
 * github_buttons: 
