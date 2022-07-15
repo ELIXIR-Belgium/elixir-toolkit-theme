@@ -7,7 +7,7 @@ This project started when we wanted to make a static website that is deployed us
 - modern looking
 - is lightweight
 - flexible when it comes to branding
-- has a collapsable sidebar to handle a lot of content
+- has a collapsible sidebar to handle a lot of content
 - a robust search function 
 
 and this offered trough a Jekyll theme that is actively maintained. Apparently we where asking to much, since none of the themes that we found checked all of these boxes.
