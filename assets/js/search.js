@@ -95,8 +95,11 @@ permalink: assets/js/search.js
                 hideSearch();
             } else {
                 showSearch();
-                // scroll search input into view, workaround for iOS Safari
-                document.querySelector('#hero').scrollIntoView();
+                var hero = document.getElementById("hero");
+                if(hero){
+                    document.querySelector('#hero').scrollIntoView();
+                }
+                
             }
             if (input === currentInput) {
                 return;
