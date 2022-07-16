@@ -95,9 +95,9 @@ permalink: assets/js/search.js
                 hideSearch();
             } else {
                 showSearch();
-                var hero = document.getElementById("hero");
+                var hero = document.getElementById("search-section");
                 if(hero){
-                    document.querySelector('#hero').scrollIntoView();
+                    document.querySelector('#search-section').scrollIntoView();
                 }
                 
             }
