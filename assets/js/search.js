@@ -96,8 +96,7 @@ permalink: assets/js/search.js
             } else {
                 showSearch();
                 // scroll search input into view, workaround for iOS Safari
-                window.scroll(0, -1);
-                setTimeout(function () { window.scroll(0, 0); }, 0);
+                window.scroll(0,findPos(document.getElementById('search-input')));
             }
             if (input === currentInput) {
                 return;
