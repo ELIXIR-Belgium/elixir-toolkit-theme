@@ -10,8 +10,8 @@
     <div class="card">
         {%- assign id = contributors[contributor].git | default: 'no_github' %}
         <div class="position-relative d-flex justify-content-center">
-          {%- if contributors[contributor].image_url %}
-          <img src="{{ contributors[contributor].image_url }}" class="card-img-top p-3 rounded-circle contributor-img" alt="{{ stripped_name }}">
+          {%- if contributors[contributor].image_path %}
+          <img src="{{ contributors[contributor].image_path }}" class="card-img-top p-3 rounded-circle contributor-img" alt="{{ stripped_name }}">
           {%- else %}
           <img src="https://avatars.githubusercontent.com/{{id}}" class="card-img-top p-3 rounded-circle contributor-img" alt="{{ stripped_name }}">
           {%- endif %}
@@ -45,8 +45,8 @@
     <a tabindex="0" role="button" class="btn btn-sm contributor-link hover-primary m-1 position-relative" data-bs-html="true" data-bs-trigger="focus" data-bs-container="body" data-bs-template='<div class="popover shadow border-0 contributor-cards" role="tooltip"><div class="popover-body p-0"></div></div>' data-bs-toggle="popover" data-bs-placement="top" data-bs-content='{{html_code}}'>
         <div class="d-flex align-items-center">
             <div class="flex-shrink-0">
-                {%- if contributors[contributor].image_url %}
-                <img class="img-fluid rounded-circle contributor-img-sm" src="{{ contributors[contributor].image_url }}" alt="Avatar of the contributor {{ stripped_name }}">
+                {%- if contributors[contributor].image_path %}
+                <img class="img-fluid rounded-circle contributor-img-sm" src="{{ contributors[contributor].image_path }}" alt="Avatar of the contributor {{ stripped_name }}">
                 {%- else %}
                 <img class="img-fluid rounded-circle contributor-img-sm" src="https://avatars.githubusercontent.com/{{ id }}" alt="Avatar of the contributor {{ stripped_name }}">
                 {%- endif %}

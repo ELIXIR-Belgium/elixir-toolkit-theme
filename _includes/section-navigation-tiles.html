@@ -111,7 +111,7 @@
                         {%- elsif filter_affiliation %}
                         {%- for result in filter_affiliation %}
                         <a role="button" href="{{result.url}}" data-bs-toggle="tooltip" data-bs-original-title="{{affiliation}}" class="btn btn-sm bg-white hover-primary">
-                            <img alt="logo of {{result.name}}" src="{{result.image_url | relative_url }}" class="d-inline h-24px">
+                            <img alt="logo of {{result.name}}" src="{{result.image_path | relative_url }}" class="d-inline h-24px">
                         </a>
                         {%- endfor %}
                         {%- endif %}

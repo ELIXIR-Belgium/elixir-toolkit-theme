@@ -8,7 +8,7 @@
 #    orcid: ocrid id
 #    role: the role of the contributor
 #    affiliation: affiliation
-#    image_url: absolute path to image (default image from github)
+#    image_path: absolute path to image (default image from github)
 
 Bert Droesbeke:
     git: bedroesb
