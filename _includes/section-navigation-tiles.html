@@ -73,7 +73,7 @@
                 {%- endif %}
                 {%- if current_page.related_pages %}
                 {%- for section in current_page.related_pages %}
-                {%- unless section[1] == nil %}
+                {%- unless section[1].size == 0 %}
                 <div>
                     <span><b><small>{{ section[0] | replace: "_", " " | capitalize }}: </small></b></span>
                     {%- for page_id in section[1] %}

@@ -6,7 +6,7 @@
     {%- capture keywords %}
     {%- if page.related_pages %}
     {%- for section in page.related_pages %}
-    {%- unless section[1] == nil %}
+    {%- unless section[1].size == 0 %}
     {%- for keywordstr in section[1] %}
     {%- assign keywordpage = site.pages | where: "page_id", keywordstr | first  %}
     {%- if allkeywords %}
