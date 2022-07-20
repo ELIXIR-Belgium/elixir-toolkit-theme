@@ -726,6 +726,11 @@ li.past_event,
     .card {
         background-color: $nav-card-bg;
 
+        a:not(.stretched-link) {
+            z-index: 2;
+            position: relative;
+        }
+
         .card-text {
             min-height: 4.5em;
         }
