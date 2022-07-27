@@ -1,4 +1,4 @@
-<figure class="{% if include.inline == true %}my-0{% else %}my-4{%- endif %} {% if include.class %}{{include.class}}{%- endif %}" {% if include.max-width %}style="max-width:{{include.max-width}}"{% endif %}>
+<figure class="{% if include.inline == true or include.inline == 'true' %}my-0{% else %}my-4{%- endif %} {% if include.class %}{{include.class}}{%- endif %}" {% if include.max-width %}style="max-width:{{include.max-width}}"{% endif %}>
     {%- capture file_url -%}
     {{ "/images/" | append:include.file | relative_url }}
     {%- endcapture -%}
@@ -13,9 +13,9 @@
     {%- endif %}
     {%- if include.caption %}
     <figcaption class="figure-caption">
-    {{include.caption}}
+    {{ include.caption | markdownify }}
     </figcaption>
     {%- endif %}
-{%- if include.inline != true %}
+{%- if include.inline != true or include.inline != 'true'%}
 </figure>
 {%- endif %}
