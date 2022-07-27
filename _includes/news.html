@@ -1,5 +1,5 @@
 <div class="news">
-  {%- if include.title == "true" %}
+  {%- if include.title == trueor include.title == true %}
   <h2>Whats new?</h2>
   {%- endif %}
   {%- assign news = site.data.news | sort: "date"%}
@@ -11,7 +11,7 @@
       <p class="text-muted"><i class="far fa-calendar me-2"></i><time>{{ new.date | date_to_long_string }}</time>{% if new.linked_pr %}<b> - </b><i class="fa-solid fa-code-branch"></i><a href="{{ site.github.repository_url | append: '/pull/' | append: new.linked_pr }}">{{new.linked_pr }}</a>{% endif %}</p>
       {%- if new.description %}
       {%- assign word_count = new.description | split: " " | size %}
-      {%- if include.truncate == "true" and  word_count > 40 %}
+      {%- if include.truncate == true and word_count > 40 %}
       <p class="mb-0"><a data-bs-toggle="collapse" href="#collapse-{{count}}" role="button" aria-expanded="false" aria-controls="collapse-{{count}}">
         View description
       </a>
@@ -30,7 +30,7 @@
     {%- endif %}
     {%- endfor %}
   </ul>
-  {%- if include.caption == "true" %}
+  {%- if include.caption == true %}
   <small>For more news please visit our <a href="{{ '/news' | relative_url }}">news page</a>.</small>
   {%- endif %}
 </div>
