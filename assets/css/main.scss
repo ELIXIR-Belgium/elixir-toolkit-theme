@@ -58,6 +58,11 @@ main {
     ol li,
     ul li {
         margin: 10px 0px;
+
+        &::marker {
+            color: $primary;
+            font-weight: 600;
+        }
     }
 
     img {
@@ -93,12 +98,6 @@ blockquote {
 ::selection {
     color: $white;
     background: $primary;
-}
-
-/*-----Color list marker-----*/
-
-ul li::marker {
-    color: $primary;
 }
 
 /*-----Emoji styling-----*/
