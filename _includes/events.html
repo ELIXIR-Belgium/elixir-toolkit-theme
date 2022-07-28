@@ -1,5 +1,5 @@
 <div class="events {{include.event_type}}s">
-  {%- if include.title == "true" %}
+  {%- if include.title == true%}
   <h2>{{include.event_type | replace: "_", " " | capitalize}}s</h2>
   {%- endif %}
   {%- assign events = site.data.events %}
@@ -16,7 +16,7 @@
       {%- endif %}
       {%- if event.description %}
       {%- assign word_count = event.description | split: " " | size %}
-      {%- if include.truncate == "true" and  word_count > 40 %}
+      {%- if include.truncate == true and word_count > 40 %}
       <p class="mb-0"><a data-bs-toggle="collapse" href="#collapse-{{count}}" role="button" aria-expanded="false" aria-controls="collapse-{{count}}">
         View description
       </a>
@@ -32,7 +32,7 @@
     {%- assign count = count | plus: 1 %}
     {%- endfor %}
   </ul>
-  {%- if include.caption == "true" %}
+  {%- if include.caption == true%}
   <small>An overview of all our events can be fount on the <a href="{{'/events' | relative_url}}">events page</a>.</small>
   {%- endif %}
 </div>
