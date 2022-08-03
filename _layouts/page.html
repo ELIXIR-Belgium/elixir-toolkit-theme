@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<main id="main" class="mb-5"  {{bg-con}}>
+<main id="main" class="mb-5">
     {%- if page.title %}
     {%- if page.type %}
     {%- assign subtitle = page.type | replace: "_", " " | capitalize %}
@@ -14,6 +14,26 @@ layout: default
     {%- endif %}
     </h1>
     {%- endif %}
+    {%- assign sidebar = site.data.sidebars[page.sidebar] %}
+    {%- for folder in sidebar.subitems %}
+    {%- if folder.image_url and  page.url == folder.url%}
+    <img src="assets/img/jekyll_theme_question.svg" style="max-height: 75px;opacity: 0.5;float: right;margin: 0 0 20px 20px;" alt="logo" >
+    {%- endif %}
+    {%- if folder.subitems %}
+    {%- for subfolder in folder.subitems %}
+    {%- if subfolder.image_url and  page.url == subfolder.url%}
+    <img src="assets/img/jekyll_theme_question.svg" style="max-height: 75px;opacity: 0.5;float: right;margin: 0 0 20px 20px;" alt="logo" >
+    {%- endif %}
+    {%- if subfolder.subitems %}
+    {%- for subsubfolder in subfolder.subitems %}
+    {%- if subsubfolder.image_url and  page.url == subsubfolder.url%}
+    <img src="assets/img/jekyll_theme_question.svg" style="max-height: 75px;opacity: 0.5;float: right;margin: 0 0 20px 20px;" alt="logo" >
+    {%- endif %}
+    {%- endfor %}
+    {%- endif %}
+    {%- endfor %}
+    {%- endif %}
+    {%- endfor %}
     {%- if page.summary %}
     <div class="summary">{{page.summary}}</div>
     {%- endif %}
