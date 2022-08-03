@@ -1,8 +1,14 @@
 ---
 title: Page mechanics
-contributors: [Bert Droesbeke]
 ---
 
+In order to render the website, each markdown file contains a specific frontmatter/metadata section. This section is located at the top of the markdown file, is delimited by two times `---` and contains all key value pairs. This can be seen as settings on pagelevel to enable/disable certain page functions are to deliver extra information which can be displayed in a structured way. An example of how this can look like:
+
+```yaml
+---
+title: Title of the page
+---
+```
 
 ## Possible metadata attributes of a page
 
@@ -17,7 +23,7 @@ contributors: [Bert Droesbeke]
 
 * `search_exclude`: by setting this field true, the page will not end up in the search results of the searchbar. By default this is false.
 
-* `sitemap`: let the page appear in the sitema.xml. Default: true
+* `sitemap`: let the page appear in the sitemap.xml. Default: true
 
 * `no_robots`: by setting this field to true, the page will not end up in the search results of google or any other search engine.
 
@@ -36,7 +42,7 @@ contributors: [Bert Droesbeke]
 * `datatable`: use this attribute to activate the pagination + sorting + searching in tables
 
 
-## Related pages
+### Related pages
 
 * `related_pages`: List here the `page_id` of {{site.title}} pages that you want to display as Related pages, grouped by section.
 
@@ -50,7 +56,7 @@ contributors: [Bert Droesbeke]
   ``` 
 
 
-## More information
+### More information
 
 
 * `training`: List here training material relevant for the page. We recommend to add your training material in TeSS. However, you can also list here training material that is not yet present in TeSS.
@@ -76,7 +82,7 @@ contributors: [Bert Droesbeke]
 
 
 
-## Tools and resources
+### Tools and resources
 
 * `ref_to_main_resources`: Refer to entries of the "main_tool_ and_resource_table" if institutions, organizations and projects from the country contribute to the development of international tools and resources. List the nme of the tool your refer to in the main tools table.
 
@@ -84,7 +90,8 @@ contributors: [Bert Droesbeke]
   ref_to_main_resources: 
     -  Resource name
   ```
-* `national_resources`: List here tools and resources mainly relevant for the specific country --->
+* `national_resources`: List here tools and resources mainly relevant for the specific country
+
   ```yml
   national_resources: 
     - name: Resource name
@@ -98,7 +105,7 @@ contributors: [Bert Droesbeke]
         tess: Bioconda
       url:
   ```
-## contributors
+
 
 
 
