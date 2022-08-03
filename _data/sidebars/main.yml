@@ -3,7 +3,6 @@
 # title_url:  /events
 subitems:
   - title: About
-    image_url: assets/img/jekyll_theme_question.svg
     url: /about
     subitems:
       - title: ELIXIR resources
