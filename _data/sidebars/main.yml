@@ -3,8 +3,9 @@
 # title_url:  /events
 subitems:
   - title: About
-    url: /about
     subitems:
+      - title: About this theme
+        url: /about
       - title: ELIXIR resources
         url: /elixir_resources
       - title: Accessibility
