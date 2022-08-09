@@ -71,22 +71,30 @@
                 {%- if current_page.description %}
                 <p class="card-text">{{ current_page.description}}</p>
                 {%- endif %}
-                {%- if current_page.related_pages %}
-                {%- for section in current_page.related_pages %}
-                {%- unless section[1].size == 0 %}
                 <div>
-                    <span><b><small>{{ section[0] | replace: "_", " " | capitalize }}: </small></b></span>
-                    {%- for page_id in section[1] %}
-                    {%- assign section_pages = site.pages | where:"type", section[0] %}
-                    {%- assign metadata = section_pages | where:"page_id", page_id %}
-                    {%- for page_hit in metadata %}
-                    <a href="{{ page_hit.url | relative_url }}"><span class="badge">{{page_hit.title | truncate: 20 }}</span></a>
-                    {%- endfor %}
-                    {%- endfor %}
+                    {%- if current_page.related_pages %}
+                    <div class="dropdown">
+                        <button class="btn bg-light hover-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Related pages
+                        </button>
+                        <ul class="dropdown-menu p-2">
+                            {%- for section in current_page.related_pages %}
+                            {%- unless section[1].size == 0 %}
+                            <li><h6 class="dropdown-header">{{ section[0] | replace: "_", " " | capitalize }}</h6></li>
+                            {%- for page_id in section[1] %}
+                            {%- assign section_pages = site.pages | where:"type", section[0] %}
+                            {%- assign metadata = section_pages | where:"page_id", page_id %}
+                            {%- for page_hit in metadata %}
+                            <li><a class="dropdown-item rounded" href="{{ page_hit.url | relative_url }}">{{page_hit.title | truncate: 20 }}</a></li>
+                            {%- endfor %}
+                            {%- endfor %}
+                            {%- endunless %}
+                            {%- endfor %}
+                        </ul>
+                    </div>
+                    {%- endif %}
                 </div>
-                {%- endunless %}
-                {%- endfor %}
-                {%- endif %}
+
             </div>
             {%- if current_page.affiliations %}
             {%- assign alllogos = site.data.affiliations %}

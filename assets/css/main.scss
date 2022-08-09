@@ -43,7 +43,7 @@ main {
         margin-top: $spacer * 0.25;
     }
 
-    a:not(.btn) {
+    a:not(.btn):not(.dropdown-item) {
         overflow-wrap: break-word;
         word-wrap: break-word;
         -ms-word-break: break-all;
@@ -725,7 +725,7 @@ li.past_event,
     .card {
         background-color: $nav-card-bg;
 
-        a:not(.stretched-link) {
+        a:not(.stretched-link), button:not(.stretched-link) {
             z-index: 2;
             position: relative;
         }
