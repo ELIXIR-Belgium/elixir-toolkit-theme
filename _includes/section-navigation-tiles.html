@@ -75,10 +75,10 @@
             <div class="p-3">
                 {%- if current_page.related_pages %}
                 <div class="dropdown">
-                    <button class="btn bg-white hover-primary dropdown-toggle border-0 shadow" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn bg-white hover-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Related pages
                     </button>
-                    <ul class="dropdown-menu p-2">
+                    <ul class="dropdown-menu p-2 border-0 shadow">
                         {%- for section in current_page.related_pages %}
                         {%- unless section[1].size == 0 %}
                         <li><h6 class="dropdown-header">{{ section[0] | replace: "_", " " | capitalize }}</h6></li>
