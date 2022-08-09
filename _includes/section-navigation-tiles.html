@@ -74,6 +74,12 @@
             </div>
             <div class="px-3 pb-3">
                 {%- if current_page.related_pages %}
+                {%- for section in current_page.related_pages %}
+                {%- unless section[1].size == 0 %}
+                {%- assign nonempty = true %}
+                {%- endunless %}
+                {%- endfor %}
+                {%- if nonempty %}
                 <div class="dropdown">
                     <button class="btn bg-white hover-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Related pages
@@ -93,6 +99,7 @@
                         {%- endfor %}
                     </ul>
                 </div>
+                {%- endif %}
                 {%- endif %}
             </div>
             {%- if current_page.affiliations %}
