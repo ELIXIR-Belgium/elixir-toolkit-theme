@@ -17,13 +17,13 @@
                                 <div class="col-2 d-flex align-items-center justify-content-center">
                                     {%- assign registry = training.registry |  downcase %}
                                     {%- if registry  == "tess" %}
-                                    <img alt="TeSS logo" class="img-fluid" src="assets/img/tess_logo.svg">
+                                    <img alt="TeSS logo" class="img-fluid" src="{{ 'assets/img/tess_logo.svg' | relative_url }}">
                                     {%- elsif registry == "zenodo" %}
-                                    <img alt="Zenodo logo" class="img-fluid" src="assets/img/zenodo_logo.svg">
+                                    <img alt="Zenodo logo" class="img-fluid" src="{{ 'assets/img/zenodo_logo.svg' | relative_url }}">
                                     {%- elsif registry == "youtube" %}
-                                    <img alt="Youtube logo" class="img-fluid" src="assets/img/youtube_logo.svg">
+                                    <img alt="Youtube logo" class="img-fluid" src="{{ 'assets/img/youtube_logo.svg' | relative_url }}">
                                     {%- elsif registry == "carpentries" %}
-                                    <img alt="Carpentries" class="img-fluid" src="assets/img/carpentries_logo.svg">
+                                    <img alt="Carpentries" class="img-fluid" src="{{ 'assets/img/carpentries_logo.svg' | relative_url }}">
                                     {%- else %}
                                     <i class="fa-solid fa-external-link-alt text-primary fs-5"></i>
                                     {%- endif %}
@@ -53,7 +53,7 @@
                         <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="FAIRCookbook" href="{{ recipe.url }}">
                             <div class="row g-1">
                                 <div class="col-2 d-flex align-items-center justify-content-center">
-                                    <img alt="FAIRCookbook logo" class="img-fluid" src="assets/img/fairplus_compact_logo.svg">
+                                    <img alt="FAIRCookbook logo" class="img-fluid" src="{{ 'assets/img/fairplus_compact_logo.svg' | relative_url }}">
                                 </div>
                                 <div class="col-10 d-flex align-items-center">
                                     <span class="text-start">Step-by-step process for: {{recipe.name}}</span>
@@ -69,7 +69,7 @@
                         <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="DSW" href="{{ site.dsw_deep_link_prefix | append: question.uuid }}">
                             <div class="row g-1">
                                 <div class="col-2 d-flex align-items-center justify-content-center">
-                                    <img alt="DSW logo" class="img-fluid" src="assets/img/dsw_compact_logo.svg">
+                                    <img alt="DSW logo" class="img-fluid" src="{{ 'assets/img/dsw_compact_logo.svg' | relative_url }}">
                                 </div>
                                 <div class="col-10 d-flex align-items-center">
                                     <span class="text-start">Support for DMP on: {{question.name}}</span>
@@ -85,7 +85,7 @@
                         <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="FAIRsharing" href="{{ standard.url }}">
                             <div class="row g-1">
                                 <div class="col-2 d-flex align-items-center justify-content-center">
-                                    <img alt="FAIRsharing logo" class="img-fluid" src="assets/img/fairsharing_compact_logo.svg">
+                                    <img alt="FAIRsharing logo" class="img-fluid" src="{{ 'assets/img/fairsharing_compact_logo.svg' | relative_url }}">
                                 </div>
                                 <div class="col-10 d-flex align-items-center">
                                     <span class="text-start">FAIRsharing collection about: {{standard.name}}</span>
@@ -101,7 +101,7 @@
                         <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="RDMkit" href="{{ rdmdoc.url }}">
                             <div class="row g-1">
                                 <div class="col-2 d-flex align-items-center justify-content-center">
-                                    <img alt="RDMkit logo" class="img-fluid" src="assets/img/rdmkit_compact_logo.svg">
+                                    <img alt="RDMkit logo" class="img-fluid" src="{{ 'assets/img/rdmkit_compact_logo.svg' | relative_url }}">
                                 </div>
                                 <div class="col-10 d-flex align-items-center">
                                     <span class="text-start">Data management guidelines on: {{rdmdoc.name}}</span>

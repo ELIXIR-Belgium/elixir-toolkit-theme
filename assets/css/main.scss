@@ -738,15 +738,16 @@ li.past_event,
             }
         }
 
-        .badge {
-            font-weight: inherit;
+        button {
             background-color: $nav-card-badge-bg;
             color: $nav-card-badge-color;
-        }
-
-        .badge:hover {
-            color: $nav-card-badge-color-hover;
-            background-color: $nav-card-badge-bg-hover;
+            &:hover {
+                color: $nav-card-badge-color-hover;
+                background-color: $nav-card-badge-bg-hover;
+            }
+            img {
+                height: 1.3em;
+            }
         }
     }
 }
