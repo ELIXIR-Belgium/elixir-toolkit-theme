@@ -39,7 +39,7 @@ main {
         margin-top: $spacer * 1.5;
     }
 
-    h3+h4 {
+    h3 + h4 {
         margin-top: $spacer * 0.25;
     }
 
@@ -51,7 +51,6 @@ main {
 
         &:hover {
             text-decoration: underline;
-
         }
     }
 
@@ -71,11 +70,11 @@ main {
 }
 
 .ff-body {
-    font-family: $font-family-sans-serif  !important;
+    font-family: $font-family-sans-serif !important;
 }
 
 .ff-theme {
-    font-family: $font-family-theme  !important;
+    font-family: $font-family-theme !important;
 }
 
 /*-----Blockquote-----*/
@@ -176,7 +175,7 @@ header .navbar {
         height: 1px;
     }
 
-    background-color: rgba($nav-link-color, 0.3);
+    background-color: rgba($navbar-{{site.theme_variables.topnav.theme | default: "light"}}-color, 0.3);
 }
 
 /*-----Search box top navigation-----*/
@@ -264,7 +263,7 @@ header .navbar {
     vertical-align: top;
 }
 
-.search-result-preview+.search-result-preview {
+.search-result-preview + .search-result-preview {
     margin-top: 0.25rem;
 }
 
@@ -303,21 +302,21 @@ header .navbar {
     background-color: $sidebar-bg-active;
 }
 
-#side-nav>ul {
-    >li:not(.sidebar-title)>a {
+#side-nav > ul {
+    > li:not(.sidebar-title) > a {
         background-color: $sidebar-bg;
         color: $sidebar-color;
     }
 
-    li>a {
-        >span {
+    li > a {
+        > span {
             float: right;
             width: 15px;
             margin-left: $btn-padding-x;
             text-align: center;
         }
 
-        >span:after {
+        > span:after {
             display: inline-block;
             font-style: normal;
             font-variant: normal;
@@ -331,12 +330,12 @@ header .navbar {
     }
 
     li.active {
-        &:not(.parent)>a {
+        &:not(.parent) > a {
             background-color: $sidebar-bg-active;
             color: $sidebar-color-active;
         }
 
-        >a>span:after {
+        > a > span:after {
             transform: rotate(-180deg);
         }
     }
@@ -413,7 +412,7 @@ header .navbar {
 
 /*-----General table properties-----*/
 
-.table> :not(:first-child) {
+.table > :not(:first-child) {
     border-color: inherit;
 }
 
@@ -459,12 +458,12 @@ footer {
     color: $footer-color;
 
     a {
-        color: $footer-link-color  !important;
+        color: $footer-link-color !important;
         font-weight: bold;
     }
 
     a:hover {
-        color: $footer-link-color-hover  !important;
+        color: $footer-link-color-hover !important;
     }
 
     h2 {
@@ -513,7 +512,6 @@ footer {
         color: $primary;
         font-size: 0.8em;
     }
-
 }
 
 /*-----Contributors carousel-----*/
@@ -569,7 +567,7 @@ footer {
         }
 
         .coordinator-crown {
-            font-size: 0.60em;
+            font-size: 0.6em;
             width: 1.8em;
             height: 1.8em;
             line-height: 1.8;
@@ -609,11 +607,11 @@ footer {
     transition: all 500ms ease-out;
 
     a {
-        color: $footer-link-color  !important;
+        color: $footer-link-color !important;
     }
 
     a:hover {
-        color: $footer-link-color-hover  !important;
+        color: $footer-link-color-hover !important;
     }
 }
 
@@ -628,15 +626,15 @@ footer {
 
 .hover-primary:hover,
 .hover-primary:focus {
-    background-color: $btn-primary-bg-hover  !important;
+    background-color: $btn-primary-bg-hover !important;
     transition: $btn-transition;
-    color: $btn-primary-color-hover  !important;
+    color: $btn-primary-color-hover !important;
 }
 
 .text-hover-primary:hover,
 .text-hover-primary:focus {
     transition: $btn-transition;
-    color: $primary  !important;
+    color: $primary !important;
 }
 
 /*-----Size components-----*/
@@ -653,8 +651,8 @@ li.past_event,
     display: none;
 }
 
-.events>ul>li,
-.news>ul>li {
+.events > ul > li,
+.news > ul > li {
     border-left: $news-border-color 5px solid;
     border-radius: $border-radius;
     padding: 0px 11px;
@@ -674,7 +672,7 @@ li.past_event,
         display: inline-block;
     }
 
-    .full-description>*:last-child {
+    .full-description > *:last-child {
         margin-bottom: 0;
 
         li {
@@ -696,12 +694,12 @@ li.past_event,
     a:hover {
         .text-muted {
             transition: $btn-transition;
-            color: $white  !important;
+            color: $white !important;
         }
 
         i {
             transition: $btn-transition;
-            color: $white  !important;
+            color: $white !important;
         }
     }
 
@@ -717,7 +715,6 @@ li.past_event,
     border-radius: 3px;
     background-size: cover;
 }
-
 
 /*-----Section navigation tiles-----*/
 
@@ -761,4 +758,3 @@ iframe.scale {
 }
 
 @import "custom_classes";
-
