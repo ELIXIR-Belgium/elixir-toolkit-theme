@@ -123,7 +123,7 @@
                         </button>
                         <ul class="dropdown-menu px-2 py-0 border-0 shadow">
                             {%- for item in current_page.dsw %}
-                            <li><a class="dropdown-item rounded" href="href={{ site.dsw_deep_link_prefix | append: item.uuid }}">{{item.name }}</a></li>
+                            <li><a class="dropdown-item rounded" href="{{ site.dsw_deep_link_prefix | append: item.uuid }}">{{item.name }}</a></li>
                             {%- endfor %}
                         </ul>
                     </div>
