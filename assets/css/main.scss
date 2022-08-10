@@ -57,7 +57,7 @@ main {
 
     ol li,
     ul li {
-        margin: 10px 0px;
+        margin: $spacer * .5 0;
 
         &::marker {
             color: $primary;
