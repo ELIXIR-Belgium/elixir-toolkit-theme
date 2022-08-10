@@ -47,6 +47,7 @@ theme_variables:
     min_headers: 2
     headers: 'h2'
   topnav:
+    theme: light
     brand_logo: assets/img/main_logo.svg
     github: true
     twitter: false
@@ -69,6 +70,7 @@ More detailed information about these settings can be found here:
   * `min_headers`: The minimum amount of headers (h2, h3,.. depending on the headers option) on a page for the toc to appear. This has to be an integer.
   * `headers`: The type of headers that need to be indexed by the toc. This can be a list or one value, ex: **'h1, h2, h3'** or **'h2'**
 * topnav: Settings related to the top navigation.
+  *  `theme`: This variable is needed to change between a dark and a light top navigation. possible values: **dark** and **light**
   *  `brand_logo`: Custom path towards the brand logo, in case the assets/img/main_logo.svg can not be used.
   *  `github`: Enable the appearance of the Github repo nav link
   *  `twitter`: Enable the appearance of the Twitter nav link by adding the url towards the twitter page. Disabling is done by giving de value **false** as seen in the example.
