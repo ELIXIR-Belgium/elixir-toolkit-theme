@@ -82,10 +82,10 @@
                 {%- endfor %}
                 {%- if nonempty %}
                 <div class="dropdown">
-                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn  btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Related pages
                     </button>
-                    <ul class="dropdown-menu p-2 border-0 shadow">
+                    <ul class="dropdown-menu px-2 py-0 border-0 shadow">
                         {%- for section in current_page.related_pages %}
                         {%- unless section[1].size == 0 %}
                         <li><h6 class="dropdown-header">{{ section[0] | replace: "_", " " | capitalize }}</h6></li>
@@ -103,13 +103,13 @@
                 {%- endif %}
                 {%- endif %}
                 {%- if current_page.dsw or current_page.faircookbook %}
-                <div class="btn-group" role="group">
+                <div class="btn-group btn-group-sm" role="group">
                     {%- if current_page.faircookbook %}
-                    <div class="btn-group" role="group">
+                    <div class="btn-group btn-group-sm" role="group">
                         <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img alt="faircookbook logo" src="{{ 'assets/img/fairplus_compact_logo.svg' | relative_url }}">
                         </button>
-                        <ul class="dropdown-menu p-2 border-0 shadow">
+                        <ul class="dropdown-menu px-2 py-0 border-0 shadow">
                             {%- for item in current_page.faircookbook %}
                             <li><a class="dropdown-item rounded" href="{{ item.url | relative_url }}">{{item.name }}</a></li>
                             {%- endfor %}
@@ -117,11 +117,11 @@
                     </div>
                     {%- endif %}
                     {%- if current_page.dsw %}
-                    <div class="btn-group" role="group">
+                    <div class="btn-group btn-group-sm" role="group">
                         <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img alt="DSW logo" src="{{ 'assets/img/dsw_compact_logo.svg' | relative_url }}">
                         </button>
-                        <ul class="dropdown-menu p-2 border-0 shadow">
+                        <ul class="dropdown-menu px-2 py-0 border-0 shadow">
                             {%- for item in current_page.dsw %}
                             <li><a class="dropdown-item rounded" href="{{ item.url | relative_url }}">{{item.name }}</a></li>
                             {%- endfor %}
