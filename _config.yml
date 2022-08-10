@@ -55,6 +55,7 @@ theme_variables:
   #   min_headers: 2
   #   headers: 'h2'
   # topnav:
+    # theme: light
     # brand_logo: assets/img/main_logo.svg
     # github: true
     # twitter: false
