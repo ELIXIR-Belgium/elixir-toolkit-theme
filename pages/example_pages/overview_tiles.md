@@ -9,12 +9,12 @@ Nam non sollicitudin sapien. Vestibulum ante ipsum primis in faucibus orci luctu
 ## Section tiles with information
 ```
 {% raw %}
-{% include section-navigation-tiles.html type="example_pages" affiliations="true" search="true" %}
+{% include section-navigation-tiles.html type="example_pages" affiliations=true search=true %}
 {% endraw %}
 ```
 
 
-{% include section-navigation-tiles.html type="example_pages" affiliations="true" search="true" %}
+{% include section-navigation-tiles.html type="example_pages" affiliations=true search=true %}
 
 
 ## Section tiles simple
