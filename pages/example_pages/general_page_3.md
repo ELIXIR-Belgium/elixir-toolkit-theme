@@ -29,7 +29,8 @@ national_resources:
     description: A general description about the resource
     how_to_access: 
     instance_of: 
-
+related_pages: 
+    example_pages: []
 
 ---
 

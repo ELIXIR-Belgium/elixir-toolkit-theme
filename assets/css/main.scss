@@ -43,7 +43,7 @@ main {
         margin-top: $spacer * 0.25;
     }
 
-    a:not(.btn) {
+    a:not(.btn):not(.dropdown-item) {
         overflow-wrap: break-word;
         word-wrap: break-word;
         -ms-word-break: break-all;
@@ -56,7 +56,7 @@ main {
 
     ol li,
     ul li {
-        margin: 10px 0px;
+        margin: $spacer * .5 0;
 
         &::marker {
             color: $primary;
@@ -722,8 +722,9 @@ li.past_event,
     .card {
         background-color: $nav-card-bg;
 
-        .card-text {
-            min-height: 4.5em;
+        a:not(.stretched-link), button:not(.stretched-link) {
+            z-index: 2;
+            position: relative;
         }
 
         .card-header {
@@ -734,15 +735,16 @@ li.past_event,
             }
         }
 
-        .badge {
-            font-weight: inherit;
+        button {
             background-color: $nav-card-badge-bg;
             color: $nav-card-badge-color;
-        }
-
-        .badge:hover {
-            color: $nav-card-badge-color-hover;
-            background-color: $nav-card-badge-bg-hover;
+            &:hover {
+                color: $nav-card-badge-color-hover;
+                background-color: $nav-card-badge-bg-hover;
+            }
+            img {
+                height: 1.2em;
+            }
         }
     }
 }
