@@ -103,7 +103,7 @@
             {%- assign hide_ids = hide_ids | append: " " | append: tool_id %}
             <tr {% unless include.tag==nil %} class="collapse multi-collapse" id="{{tool_id}}" {% endunless %}>
                 {% if tool.url %}
-                <td><a href="{{tool.url}}">{{tool.name}}</a><a href="{{country_page.url}}" data-bs-toggle="tooltip" title="{{country_page.title}}"><span class="flag-icon ms-2 flag-icon-{{country_page.country_code | downcase }}"></span></a></td>
+                <td><a href="{{tool.url}}">{{tool.name}}</a><a href="{{country_page.url | relative_url }}" data-bs-toggle="tooltip" title="{{country_page.title}}"><span class="flag-icon ms-2 flag-icon-{{country_page.country_code | downcase }}"></span></a></td>
                 {%- else %}
                 <td>{{tool.name}}<a href="{{country_page.url}}"><span class="flag-icon ms-2 flag-icon-{{country_page.country_code | downcase }}"></span></a></td>
                 {%- endif %}
