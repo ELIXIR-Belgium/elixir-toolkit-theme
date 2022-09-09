@@ -9,12 +9,17 @@ Nam non sollicitudin sapien. Vestibulum ante ipsum primis in faucibus orci luctu
 ## Section tiles with information
 ```
 {% raw %}
-{% include section-navigation-tiles.html type="example_pages" affiliations=true search=true %}
+{% include section-navigation-tiles.html type="example_pages" affiliations=true search=true except="index.md" %}
 {% endraw %}
 ```
 
+### Parameters
 
-{% include section-navigation-tiles.html type="example_pages" affiliations=true search=true %}
+* `affiliations`: Turn on filtering by affiliation
+* `search`: enable search in the tiles
+* `except`: `, ` separated list of page names which should be excluded, including the file extension
+
+{% include section-navigation-tiles.html type="example_pages" affiliations=true search=true except="index.md" %}
 
 
 ## Section tiles simple
