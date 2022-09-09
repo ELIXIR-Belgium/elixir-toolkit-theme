@@ -52,7 +52,7 @@
     {%- assign related_pages_classes = "" %}
     {%- assign except = include.except | split: ", " %}
     {%- if current_page.title and current_page.search_exclude != true and current_page.type == include.type %}
-    {%- unless except contains page.name %}
+    {%- unless except contains current_page.name %}
     {%- if current_page.affiliations %}
     {%- capture affiliations_classes -%}
     {%- assign affiliations_output = "" %}
