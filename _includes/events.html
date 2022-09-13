@@ -33,7 +33,8 @@
     {%- endfor %}
   </ul>
   {%- if include.caption == true%}
-  <small>An overview of all our events can be fount on the <a href="{{'/events' | relative_url}}">events page</a>.</small>
+  {%- assign caption_url = include.caption_url | default: "/about/news" %}
+  <small>An overview of all our events can be fount on the <a href="{{ caption_url | relative_url}}">events page</a>.</small>
   {%- endif %}
 </div>
 <script>

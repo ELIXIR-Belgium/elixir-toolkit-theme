@@ -31,6 +31,7 @@
     {%- endfor %}
   </ul>
   {%- if include.caption == true %}
-  <small>For more news please visit our <a href="{{ '/news' | relative_url }}">news page</a>.</small>
+  {%- assign caption_url = include.caption_url | default: "/about/events" %}
+  <small>For more news please visit our <a href="{{ caption_url | relative_url }}">news page</a>.</small>
   {%- endif %}
 </div>
