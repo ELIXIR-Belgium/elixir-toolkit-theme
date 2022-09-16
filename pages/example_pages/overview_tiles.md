@@ -13,13 +13,15 @@ Nam non sollicitudin sapien. Vestibulum ante ipsum primis in faucibus orci luctu
 {% endraw %}
 ```
 
+Becomes:
+
+{% include section-navigation-tiles.html type="example_pages" affiliations=true search=true except="index.md" %}
+
 ### Parameters
 
 * `affiliations`: Turn on filtering by affiliation
 * `search`: enable search in the tiles
 * `except`: `, ` separated list of page names which should be excluded, including the file extension
-
-{% include section-navigation-tiles.html type="example_pages" affiliations=true search=true except="index.md" %}
 
 
 ## Section tiles simple
