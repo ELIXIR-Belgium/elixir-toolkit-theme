@@ -6,6 +6,9 @@ permalink: assets/css/main.css
 /*-----Default theme variables-----*/
 $popover-max-width: 12em;
 $enable-caret: false;
+
+/*-----Include other SASS files-----*/
+
 @import "bootstrap_variables";
 @import "bootstrap/bootstrap";
 @import "variables";
@@ -160,7 +163,7 @@ header .navbar {
     transition: transform 0.2s ease-in-out;
 }
 
-.dropdown-toggle[aria-expanded="true"]::after {
+.dropdown-toggle[aria-expanded=true]::after {
     transform: rotate(-180deg);
 }
 
@@ -174,8 +177,6 @@ header .navbar {
     @media (max-width: 992px) {
         height: 1px;
     }
-
-    background-color: rgba($navbar-{{site.theme_variables.topnav.theme | default: "light"}}-color, 0.3);
 }
 
 /*-----Search box top navigation-----*/

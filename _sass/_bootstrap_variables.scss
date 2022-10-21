@@ -1,3 +1,5 @@
+@import "bootstrap/functions";
+
 /*-----Theme colors-----*/
 $primary:       #0d6efd;
 $secondary:     #6c757d;
@@ -6,3 +8,5 @@ $dark:          #212529;
 
 /*-----Custom values for Bootstrap variables-----*/
 $link-decoration: none;
+
+@import "bootstrap/variables";
