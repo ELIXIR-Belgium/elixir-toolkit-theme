@@ -1,9 +1,49 @@
-{%- if page.faircookbook or page.fairsharing or page.training or page.dsw or page.rdmkit %}
+{%- if page.training %}
+{%- assign actual_training = nil %}
+{%- for training in page.training %}
+{%- if training.name %}
+{%- assign actual_training = 1 %}
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+{%- if page.faircookbook %}
+{%- assign actual_faircookbook = nil %}
+{%- for recipe in page.faircookbook %}
+{%- if recipe.name %}
+{%- assign actual_faircookbook = 1 %}
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+{%- if page.fairsharing %}
+{%- assign actual_fairsharing = nil %}
+{%- for standard in page.fairsharing %}
+{%- if standard.name %}
+{%- assign actual_fairsharing = 1 %}
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+{%- if page.dsw %}
+{%- assign actual_dsw = nil %}
+{%- for question in page.dsw %}
+{%- if question.name %}
+{%- assign actual_dsw = 1 %}
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+{%- if page.rdmkit %}
+{%- assign actual_rdmkit = nil %}
+{%- for rdmdoc in page.rdmkit %}
+{%- if rdmdoc.name %}
+{%- assign actual_rdmkit = 1 %}
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+{%- if actual_training or actual_faircookbook or actual_fairsharing or actual_dsw or actual_rdmkit %}
 <!-- More information -->
 <h2>More information</h2>
 
 <div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
-    {%- if page.training %}
+    {%- if actual_training %}
     <!-- Training -->
     <div class="col">
         <div class="card h-100 info-card">
@@ -11,7 +51,6 @@
             <div class="card-body">
                 <ul class="list-unstyled">
                     {%- for training in page.training %}
-                    {%- if training.name %}
                     <li class="d-grid">
                         <a class="btn bg-white hover-primary text-start" href="{{ training.url }}">
                             <div class="row g-1">
@@ -35,23 +74,21 @@
                             </div>
                         </a>
                     </li>
-                    {%- endif %}
                     {%- endfor %}
                 </ul>
             </div>
         </div>
     </div>
     {%- endif %}
-    {%- if page.faircookbook or page.fairsharing or page.dsw or page.rdmkit %}
+    {%- if actual_faircookbook or actual_fairsharing or actual_dsw or actual_rdmkit %}
     <!-- FAIR Cookbook and FAIRsharing -->
     <div class="col">
         <div class="card h-100 info-card">
             <div class="card-header fw-bold">Links to other ELIXIR resources</div>
             <div class="card-body">
                 <ul class="list-unstyled">
-                    {%- if page.faircookbook %}
+                    {%- if actual_faircookbook %}
                     {%- for recipe in page.faircookbook %}
-                    {%- if recipe.name %}
                     <li class="d-grid">
                         <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="FAIRCookbook" href="{{ recipe.url }}">
                             <div class="row g-1">
@@ -64,12 +101,10 @@
                             </div>
                         </a>
                     </li>
-                    {%- endif %}
                     {%- endfor %}
                     {%- endif %}
-                    {%- if page.dsw %}
+                    {%- if actual_dsw %}
                     {%- for question in page.dsw %}
-                    {%- if question.name %}
                     <li class="d-grid">
                         <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="DSW" href="{{ site.dsw_deep_link_prefix | append: question.uuid }}">
                             <div class="row g-1">
@@ -82,12 +117,10 @@
                             </div>
                         </a>
                     </li>
-                    {%- endif %}
                     {%- endfor %}
                     {%- endif %}
-                    {%- if page.fairsharing %}
+                    {%- if actual_fairsharing %}
                     {%- for standard in page.fairsharing %}
-                    {%- if standard.name %}
                     <li class="d-grid">
                         <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="FAIRsharing" href="{{ standard.url }}">
                             <div class="row g-1">
@@ -100,12 +133,10 @@
                             </div>
                         </a>
                     </li>
-                    {%- endif %}
                     {%- endfor %}
                     {%- endif %}
-                    {%- if page.rdmkit %}
+                    {%- if actual_rdmkit %}
                     {%- for rdmdoc in page.rdmkit %}
-                    {%- if rdmdoc.name %}
                     <li class="d-grid">
                         <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="RDMkit" href="{{ rdmdoc.url }}">
                             <div class="row g-1">
@@ -118,7 +149,6 @@
                             </div>
                         </a>
                     </li>
-                    {%- endif %}
                     {%- endfor %}
                     {%- endif %}
                 </ul>
