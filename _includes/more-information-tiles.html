@@ -11,6 +11,7 @@
             <div class="card-body">
                 <ul class="list-unstyled">
                     {%- for training in page.training %}
+                    {%- if training.name %}
                     <li class="d-grid">
                         <a class="btn bg-white hover-primary text-start" href="{{ training.url }}">
                             <div class="row g-1">
@@ -34,13 +35,14 @@
                             </div>
                         </a>
                     </li>
+                    {%- endif %}
                     {%- endfor %}
                 </ul>
             </div>
         </div>
     </div>
     {%- endif %}
-    {%- if page.faircookbook or page.fairsharing or page.dsw or page.RDMkit%}
+    {%- if page.faircookbook or page.fairsharing or page.dsw or page.rdmkit %}
     <!-- FAIR Cookbook and FAIRsharing -->
     <div class="col">
         <div class="card h-100 info-card">
@@ -49,6 +51,7 @@
                 <ul class="list-unstyled">
                     {%- if page.faircookbook %}
                     {%- for recipe in page.faircookbook %}
+                    {%- if recipe.name %}
                     <li class="d-grid">
                         <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="FAIRCookbook" href="{{ recipe.url }}">
                             <div class="row g-1">
@@ -61,10 +64,12 @@
                             </div>
                         </a>
                     </li>
+                    {%- endif %}
                     {%- endfor %}
                     {%- endif %}
                     {%- if page.dsw %}
                     {%- for question in page.dsw %}
+                    {%- if question.name %}
                     <li class="d-grid">
                         <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="DSW" href="{{ site.dsw_deep_link_prefix | append: question.uuid }}">
                             <div class="row g-1">
@@ -77,10 +82,12 @@
                             </div>
                         </a>
                     </li>
+                    {%- endif %}
                     {%- endfor %}
                     {%- endif %}
                     {%- if page.fairsharing %}
                     {%- for standard in page.fairsharing %}
+                    {%- if standard.name %}
                     <li class="d-grid">
                         <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="FAIRsharing" href="{{ standard.url }}">
                             <div class="row g-1">
@@ -93,10 +100,12 @@
                             </div>
                         </a>
                     </li>
+                    {%- endif %}
                     {%- endfor %}
                     {%- endif %}
                     {%- if page.rdmkit %}
                     {%- for rdmdoc in page.rdmkit %}
+                    {%- if rdmdoc.name %}
                     <li class="d-grid">
                         <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="RDMkit" href="{{ rdmdoc.url }}">
                             <div class="row g-1">
@@ -109,6 +118,7 @@
                             </div>
                         </a>
                     </li>
+                    {%- endif %}
                     {%- endfor %}
                     {%- endif %}
                 </ul>
