@@ -43,7 +43,13 @@
                     </li>
                     {%- endfor %}
                     {%- if topnav.subitems.size > 1 %}
-                    <li class="nav-item ms-0 ms-lg-3 mt-2 mt-lg-0 nav-break"></li>
+                    {%- assign topnav_theme = site.theme_variables.topnav.theme | default: "light" %}
+                    {%- if topnav_theme == "light" %}
+                    {%- assign break_color = "dark" %}
+                    {%- else %}
+                    {%- assign break_color = "light" %}
+                    {%- endif -%}
+                    <li class="nav-item ms-0 ms-lg-3 mt-2 mt-lg-0 nav-break bg-{{break_color}} opacity-25"></li>
                     {%- endif %}
                     {%- if site.theme_variables.topnav.twitter %}
                     <li class="nav-item ms-0 ms-lg-3 mt-2 mt-lg-0">
