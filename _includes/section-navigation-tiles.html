@@ -140,6 +140,7 @@
                 <div class="me-3">
                     <span class="me-2"><b><small>Affiliations:</small></b></span>
                     {%- for affiliation in current_page.affiliations %}
+                    {{affiliation}}
                     {%- assign filter_affiliation = alllogos | where: "name", affiliation | first %}
                     {%- assign country = affiliation | upcase %}
                     {%- if affiliation.size == 2 %}
