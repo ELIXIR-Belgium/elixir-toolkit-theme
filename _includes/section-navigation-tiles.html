@@ -140,7 +140,6 @@
                 <div class="me-3">
                     <span class="me-2"><b><small>Affiliations:</small></b></span>
                     {%- for affiliation in current_page.affiliations %}
-                    {{affiliation}}
                     {%- assign filter_affiliation = alllogos | where: "name", affiliation | first %}
                     {%- assign country = affiliation | upcase %}
                     {%- if affiliation.size == 2 %}
@@ -155,8 +154,12 @@
                             </div>
                         </a>
                     {%- elsif filter_affiliation %}
-                    <a role="button" href="{{result.url}}" data-bs-toggle="tooltip" data-bs-original-title="{{affiliation}}" class="btn btn-sm bg-white hover-primary">
-                        <img alt="logo of {{result.name}}" src="{{result.image_url | relative_url }}" class="d-inline h-24px">
+                    <a role="button" href="{{filter_affiliation.url}}" data-bs-toggle="tooltip" data-bs-original-title="{{affiliation}}" class="btn btn-sm bg-white hover-primary">
+                        {%- if filter_affiliation.image_url %}
+                        <img alt="logo of {{filter_affiliation.name}}" src="{{filter_affiliation.image_url | relative_url }}" class="d-inline h-24px">
+                        {%- else %}
+                        {{filter_affiliation.name}}
+                        {%- endif %}
                     </a>
                     {%- endif %}
                     {%- endfor %}
