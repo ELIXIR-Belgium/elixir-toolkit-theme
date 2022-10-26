@@ -140,7 +140,7 @@
                 <div class="me-3">
                     <span class="me-2"><b><small>Affiliations:</small></b></span>
                     {%- for affiliation in current_page.affiliations %}
-                    {%- assign filter_affiliation = alllogos | where: "name", affiliation %}
+                    {%- assign filter_affiliation = alllogos | where: "name", affiliation | first %}
                     {%- assign country = affiliation | upcase %}
                     {%- if affiliation.size == 2 %}
                     {%- assign country_link = site.pages | where:"country_code",country | first %}
@@ -153,14 +153,12 @@
                                 <span class="flag-icon flag-icon-{{affiliation | downcase}} align-items-center"></span>
                             </div>
                         </a>
-                        {%- elsif filter_affiliation %}
-                        {%- for result in filter_affiliation %}
-                        <a role="button" href="{{result.url}}" data-bs-toggle="tooltip" data-bs-original-title="{{affiliation}}" class="btn btn-sm bg-white hover-primary">
-                            <img alt="logo of {{result.name}}" src="{{result.image_url | relative_url }}" class="d-inline h-24px">
-                        </a>
-                        {%- endfor %}
-                        {%- endif %}
-                        {%- endfor %}
+                    {%- elsif filter_affiliation %}
+                    <a role="button" href="{{result.url}}" data-bs-toggle="tooltip" data-bs-original-title="{{affiliation}}" class="btn btn-sm bg-white hover-primary">
+                        <img alt="logo of {{result.name}}" src="{{result.image_url | relative_url }}" class="d-inline h-24px">
+                    </a>
+                    {%- endif %}
+                    {%- endfor %}
                 </div>
             </div>
             {%- endif %}
