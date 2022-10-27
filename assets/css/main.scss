@@ -170,11 +170,11 @@ header .navbar {
 // Break line in top navigation
 
 .nav-break {
-    @media (min-width: 992px) {
+    @include media-breakpoint-up(lg) {
         width: 1px;
     }
 
-    @media (max-width: 992px) {
+    @include media-breakpoint-down(lg) {
         height: 1px;
     }
 }
@@ -210,7 +210,7 @@ header .navbar {
     }
 }
 
-@media (max-width: 992px) {
+@include media-breakpoint-down(lg) {
     .search-results {
         width: 100%;
     }
@@ -282,7 +282,7 @@ header .navbar {
 
 /*-----Sidebar-----*/
 
-@media (min-width: 992px) {
+@include media-breakpoint-up(lg) {
     #side-nav {
         display: block !important;
     }
@@ -522,7 +522,7 @@ footer {
     width: 3%;
 }
 
-@media (max-width: 768px) {
+@include media-breakpoint-down(md) {
     #contributors-carousel .card-title {
         font-size: 0.5em;
     }
@@ -546,7 +546,7 @@ footer {
     text-align: center;
 }
 
-@media (max-width: 768px) {
+@include media-breakpoint-down(md) {
     #contributors-carousel .social-icons {
         line-height: 1.2ex;
         width: 1.2ex;
