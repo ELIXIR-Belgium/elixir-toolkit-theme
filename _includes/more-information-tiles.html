@@ -49,33 +49,31 @@
         <div class="card h-100 info-card">
             <div class="card-header fw-bold">Training</div>
             <div class="card-body">
-                <ul class="list-unstyled">
+                <div class="d-grid gap-2">
                     {%- for training in page.training %}
-                    <li class="d-grid">
-                        <a class="btn bg-white hover-primary text-start" href="{{ training.url }}">
-                            <div class="row g-1">
-                                <div class="col-2 d-flex align-items-center justify-content-center">
-                                    {%- assign registry = training.registry |  downcase %}
-                                    {%- if registry  == "tess" %}
-                                    <img alt="TeSS logo" class="img-fluid" src="{{ 'assets/img/tess_logo.svg' | relative_url }}">
-                                    {%- elsif registry == "zenodo" %}
-                                    <img alt="Zenodo logo" class="img-fluid" src="{{ 'assets/img/zenodo_logo.svg' | relative_url }}">
-                                    {%- elsif registry == "youtube" %}
-                                    <img alt="Youtube logo" class="img-fluid" src="{{ 'assets/img/youtube_logo.svg' | relative_url }}">
-                                    {%- elsif registry == "carpentries" %}
-                                    <img alt="Carpentries" class="img-fluid" src="{{ 'assets/img/carpentries_logo.svg' | relative_url }}">
-                                    {%- else %}
-                                    <i class="fa-solid fa-external-link-alt text-primary fs-5"></i>
-                                    {%- endif %}
-                                </div>
-                                <div class="col-10 d-flex align-items-center">
-                                    <span class="text-start">{{training.name}}</span>
-                                </div>
+                    <a class="btn bg-white hover-primary text-start d-block" href="{{ training.url }}">
+                        <div class="row g-1">
+                            <div class="col-2 d-flex align-items-center justify-content-center">
+                                {%- assign registry = training.registry |  downcase %}
+                                {%- if registry  == "tess" %}
+                                <img alt="TeSS logo" class="img-fluid" src="{{ 'assets/img/tess_logo.svg' | relative_url }}">
+                                {%- elsif registry == "zenodo" %}
+                                <img alt="Zenodo logo" class="img-fluid" src="{{ 'assets/img/zenodo_logo.svg' | relative_url }}">
+                                {%- elsif registry == "youtube" %}
+                                <img alt="Youtube logo" class="img-fluid" src="{{ 'assets/img/youtube_logo.svg' | relative_url }}">
+                                {%- elsif registry == "carpentries" %}
+                                <img alt="Carpentries" class="img-fluid" src="{{ 'assets/img/carpentries_logo.svg' | relative_url }}">
+                                {%- else %}
+                                <i class="fa-solid fa-external-link-alt text-primary fs-5"></i>
+                                {%- endif %}
                             </div>
-                        </a>
-                    </li>
+                            <div class="col-10 d-flex align-items-center">
+                                <span class="text-start">{{training.name}}</span>
+                            </div>
+                        </div>
+                    </a>
                     {%- endfor %}
-                </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -86,72 +84,64 @@
         <div class="card h-100 info-card">
             <div class="card-header fw-bold">Links to other ELIXIR resources</div>
             <div class="card-body">
-                <ul class="list-unstyled">
+                <div class="d-grid gap-2">
                     {%- if actual_faircookbook %}
                     {%- for recipe in page.faircookbook %}
-                    <li class="d-grid">
-                        <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="FAIRCookbook" href="{{ recipe.url }}">
-                            <div class="row g-1">
-                                <div class="col-2 d-flex align-items-center justify-content-center">
-                                    <img alt="FAIRCookbook logo" class="img-fluid" src="{{ 'assets/img/fairplus_compact_logo.svg' | relative_url }}">
-                                </div>
-                                <div class="col-10 d-flex align-items-center">
-                                    <span class="text-start">Step-by-step process for: {{recipe.name}}</span>
-                                </div>
+                    <a class="btn bg-white hover-primary text-start d-block" data-bs-toggle="tooltip" data-bs-placement="right" title="FAIRCookbook" href="{{ recipe.url }}">
+                        <div class="row g-1">
+                            <div class="col-2 d-flex align-items-center justify-content-center">
+                                <img alt="FAIRCookbook logo" class="img-fluid" src="{{ 'assets/img/fairplus_compact_logo.svg' | relative_url }}">
                             </div>
-                        </a>
-                    </li>
+                            <div class="col-10 d-flex align-items-center">
+                                <span class="text-start">Step-by-step process for: {{recipe.name}}</span>
+                            </div>
+                        </div>
+                    </a>
                     {%- endfor %}
                     {%- endif %}
                     {%- if actual_dsw %}
                     {%- for question in page.dsw %}
-                    <li class="d-grid">
-                        <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="DSW" href="{{ site.dsw_deep_link_prefix | append: question.uuid }}">
-                            <div class="row g-1">
-                                <div class="col-2 d-flex align-items-center justify-content-center">
-                                    <img alt="DSW logo" class="img-fluid" src="{{ 'assets/img/dsw_compact_logo.svg' | relative_url }}">
-                                </div>
-                                <div class="col-10 d-flex align-items-center">
-                                    <span class="text-start">Support for DMP on: {{question.name}}</span>
-                                </div>
+                    <a class="btn bg-white hover-primary text-start d-block" data-bs-toggle="tooltip" data-bs-placement="right" title="DSW" href="{{ site.dsw_deep_link_prefix | append: question.uuid }}">
+                        <div class="row g-1">
+                            <div class="col-2 d-flex align-items-center justify-content-center">
+                                <img alt="DSW logo" class="img-fluid" src="{{ 'assets/img/dsw_compact_logo.svg' | relative_url }}">
                             </div>
-                        </a>
-                    </li>
+                            <div class="col-10 d-flex align-items-center">
+                                <span class="text-start">Support for DMP on: {{question.name}}</span>
+                            </div>
+                        </div>
+                    </a>
                     {%- endfor %}
                     {%- endif %}
                     {%- if actual_fairsharing %}
                     {%- for standard in page.fairsharing %}
-                    <li class="d-grid">
-                        <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="FAIRsharing" href="{{ standard.url }}">
-                            <div class="row g-1">
-                                <div class="col-2 d-flex align-items-center justify-content-center">
-                                    <img alt="FAIRsharing logo" class="img-fluid" src="{{ 'assets/img/fairsharing_compact_logo.svg' | relative_url }}">
-                                </div>
-                                <div class="col-10 d-flex align-items-center">
-                                    <span class="text-start">FAIRsharing collection about: {{standard.name}}</span>
-                                </div>
+                    <a class="btn bg-white hover-primary text-start d-block" data-bs-toggle="tooltip" data-bs-placement="right" title="FAIRsharing" href="{{ standard.url }}">
+                        <div class="row g-1">
+                            <div class="col-2 d-flex align-items-center justify-content-center">
+                                <img alt="FAIRsharing logo" class="img-fluid" src="{{ 'assets/img/fairsharing_compact_logo.svg' | relative_url }}">
                             </div>
-                        </a>
-                    </li>
+                            <div class="col-10 d-flex align-items-center">
+                                <span class="text-start">FAIRsharing collection about: {{standard.name}}</span>
+                            </div>
+                        </div>
+                    </a>
                     {%- endfor %}
                     {%- endif %}
                     {%- if actual_rdmkit %}
                     {%- for rdmdoc in page.rdmkit %}
-                    <li class="d-grid">
-                        <a class="btn bg-white hover-primary text-start" data-bs-toggle="tooltip" data-bs-placement="right" title="RDMkit" href="{{ rdmdoc.url }}">
-                            <div class="row g-1">
-                                <div class="col-2 d-flex align-items-center justify-content-center">
-                                    <img alt="RDMkit logo" class="img-fluid" src="{{ 'assets/img/rdmkit_compact_logo.svg' | relative_url }}">
-                                </div>
-                                <div class="col-10 d-flex align-items-center">
-                                    <span class="text-start">Data management guidelines on: {{rdmdoc.name}}</span>
-                                </div>
+                    <a class="btn bg-white hover-primary text-start d-block" data-bs-toggle="tooltip" data-bs-placement="right" title="RDMkit" href="{{ rdmdoc.url }}">
+                        <div class="row g-1">
+                            <div class="col-2 d-flex align-items-center justify-content-center">
+                                <img alt="RDMkit logo" class="img-fluid" src="{{ 'assets/img/rdmkit_compact_logo.svg' | relative_url }}">
                             </div>
-                        </a>
-                    </li>
+                            <div class="col-10 d-flex align-items-center">
+                                <span class="text-start">Data management guidelines on: {{rdmdoc.name}}</span>
+                            </div>
+                        </div>
+                    </a>
                     {%- endfor %}
                     {%- endif %}
-                </ul>
+                </div>
             </div>
         </div>
     </div>
