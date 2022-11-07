@@ -37,22 +37,22 @@ title: Title of the page
 
 * `toc`: When set to false, the table of contents in the beginning of the page will not be generated.
 
-* `page_id`: Unique identifier of a page. It is usually a shortened version of the page name or title, with small letters and spaces, or an acronym, with capital and small letters. Used to list Related pages.
+* `redirect_from`: Unique identifier of a page. It is usually a shortened version of the page name or title, with small letters and spaces, or an acronym, with capital and small letters. Used to list Related pages.
 
 * `datatable`: use this attribute to activate the pagination + sorting + searching in tables
 
 
 ### Related pages
 
-* `related_pages`: List here the `page_id` of {{site.title}} pages that you want to display as Related pages, grouped by section.
+* `related_pages`: List here the `redirect_from` of {{site.title}} pages that you want to display as Related pages, grouped by section.
 
-  If you want pages from the specific section (Your tasks, Your domain, Tool assembly) to be shown here as Related pages, list their `page_id`. If you want to list multiple related pages, make sure to put them in a list like this: [page_id1, page_id2]. The specific sections allowed in each page are specified in each page template. Please, do not add extra sections in the metadata of the page.
+  If you want pages from the specific section (Your tasks, Your domain, Tool assembly) to be shown here as Related pages, list their `redirect_from`. If you want to list multiple related pages, make sure to put them in a list like this: [redirect_from1, redirect_from2]. The specific sections allowed in each page are specified in each page template. Please, do not add extra sections in the metadata of the page.
 
   ```yml
   related_pages: 
-    - your_tasks: [page_id1, page_id2]
-    - your_domain: [page_id1, page_id2]
-    - tool_assembly: [page_id1, page_id2]
+    - your_tasks: [redirect_from1, redirect_from2]
+    - your_domain: [redirect_from1, redirect_from2]
+    - tool_assembly: [redirect_from1, redirect_from2]
   ``` 
 
 

@@ -18,9 +18,9 @@
             <div class="card-header fw-bold">{{ section[0] | replace: "_", " " | capitalize }}</div>
             <div class="card-body">
                 <div class="d-grid gap-2">
-                    {%- for page_id in section[1] %}
+                    {%- for redirect_from in section[1] %}
                     {%- assign section_pages = site.pages | where:"type", section[0] %}
-                    {%- assign metadata = section_pages | where:"page_id", page_id %}
+                    {%- assign metadata = section_pages | where:"redirect_from", redirect_from %}
                     {%- for page_hit in metadata %}
                     <a class="btn bg-white hover-primary text-start d-block" href="{{ page_hit.url | relative_url }}">
                         <span>{{page_hit.title}}{% if page_hit.description %}</span><br><small class="text-muted">{{ page_hit.description }}</small>{% endif %}

@@ -24,8 +24,8 @@ layout: default
     {% include resource-table-page.html %}
     {% include related-pages.html %}
     {% include more-information-tiles.html %}
-    {%- if page.page_id %}
-    {% include resource-table-all.html tag=page.page_id %}
+    {%- if page.redirect_from %}
+    {% include resource-table-all.html tag=page.redirect_from %}
     {%- endif %}
     {% include contributor-minitiles-page.html %}
     {%- if site.theme_variables.github_buttons.position == "bottom" %}

@@ -4,7 +4,7 @@ type: example_pages
 contributors: [Bert Droesbeke]
 coordinators: [Bert Droesbeke]
 description: This description is used when the page is listed
-page_id: gp2
+redirect_from: gp2
 faircookbook:
 - name: Link towards a FAIRCOOKBOOK recipe
   url: https://fairplus.github.io/

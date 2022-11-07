@@ -8,7 +8,7 @@
     {%- for section in page.related_pages %}
     {%- unless section[1].size == 0 %}
     {%- for keywordstr in section[1] %}
-    {%- assign keywordpage = site.pages | where: "page_id", keywordstr | first  %}
+    {%- assign keywordpage = site.pages | where: "redirect_from", keywordstr | first  %}
     {%- if allkeywords %}
     {%- assign allkeywords = allkeywords | append: ", " | append: keywordstr | append: ", " | append: keywordpage.title %}
     {%- else %}

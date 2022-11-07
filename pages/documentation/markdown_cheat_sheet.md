@@ -319,16 +319,16 @@ Text
 
 ## Add "Related pages" to a page 
 
-If you want pages from the specific sections Your tasks, Your domain and Tool assembly to be shown as Related pages, list their `page_id`. If you want to list multiple related pages, make sure to put them in a list like this: [page_id1, page_id2]. 
+If you want pages from the specific sections Your tasks, Your domain and Tool assembly to be shown as Related pages, list their `redirect_from`. If you want to list multiple related pages, make sure to put them in a list like this: [redirect_from1, redirect_from2]. 
 
-An overview of all RDMkit pages (belonging to the sections listed above) and their `page_id` can be found in the [Website overview page](website_overview).
+An overview of all RDMkit pages (belonging to the sections listed above) and their `redirect_from` can be found in the [Website overview page](website_overview).
 
 
 ```yml
 related_pages: 
-   your_tasks: [page_id1, page_id2]
-   your_domain: [page_id1, page_id2]
-   tool_assembly: [page_id1, page_id2]
+   your_tasks: [redirect_from1, redirect_from2]
+   your_domain: [redirect_from1, redirect_from2]
+   tool_assembly: [redirect_from1, redirect_from2]
 ```
 
 ## Listing training material

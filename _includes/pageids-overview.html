@@ -9,17 +9,17 @@
         <thead>
             <tr>
                 <th>title</th>
-                <th>page_id</th>
+                <th>redirect_from</th>
                 <th>description</th>
                 <th>url</th>
             </tr>
         </thead>
         <tbody>
             {%- for section_page in section_pages %}
-            {%- if section_page.page_id and section_page.search_exclude != true %}
+            {%- if section_page.redirect_from and section_page.search_exclude != true %}
             <tr>
                 <td><a href="{{ section_page.url | relative_url }}">{{section_page.title}}</a></td>
-                <td>{{section_page.page_id}}</td>
+                <td>{{section_page.redirect_from}}</td>
                 <td>{{section_page.description | default: "no description"}}</td>
                 <td>{{section_page.url}}</td>
             </tr>
