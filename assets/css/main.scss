@@ -562,6 +562,9 @@ footer {
     /* Gets rid of extra white space */
     .contributor-link {
         background-color: $contr-link-bg;
+        &::after {
+            display: none;
+        }
 
         .contributor-img-sm {
             height: 1.7em;
@@ -581,7 +584,7 @@ footer {
     }
 }
 
-.popover.contributor-cards {
+.dropdown .contributor-cards {
     .contributor-img {
         width: 11em;
     }
