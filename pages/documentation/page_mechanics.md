@@ -66,10 +66,6 @@ title: Title of the page
     - name: Training in TeSS
       registry: TeSS
       url: https://tess.elixir-europe.org/search?q=data%20analysis
-
-    - name: Training in TeSS
-      registry: TeSS
-      url: https://tess.elixir-europe.org/search?q=data%20analysis
   ```
 
   The supported registries that can be used in the `registry` attribute are: *YouTube*, *Zenodo*, *Carpentries*, *GitHub*, and *TeSS*.

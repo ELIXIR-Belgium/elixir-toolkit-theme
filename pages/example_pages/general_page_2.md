@@ -24,8 +24,8 @@ training:
   - name: Training in Zenodo
     registry: Zenodo
     url: https://zenodo.org/record/7277814
-  - name: Training on Youtube
-    registry: Youtube
+  - name: Training on YouTube
+    registry: YouTube
     url: https://www.youtube.com/
   - name: Training in The Carpentries
     registry: Carpentries
