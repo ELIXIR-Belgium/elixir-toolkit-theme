@@ -39,9 +39,9 @@
               {%- assign id = contributors[contributor].git | default: 'no_github' %}
               <div class="position-relative d-flex justify-content-center">
                 {%- if contributors[contributor].image_url %}
-                <img src="{{ contributors[contributor].image_url }}" class="card-img-top p-3 rounded-circle contributor-img" alt="{{ stripped_name }}">
+                <img src="{{ contributors[contributor].image_url }}" class="card-img-top p-3 rounded-circle" alt="{{ stripped_name }}">
                 {%- else %}
-                <img src="https://avatars.githubusercontent.com/{{id}}" class="card-img-top p-3 rounded-circle contributor-img" alt="{{ stripped_name }}">
+                <img src="https://avatars.githubusercontent.com/{{id}}" class="card-img-top p-3 rounded-circle" alt="{{ stripped_name }}">
                 {%- endif %}
                 {%- if contributors[contributor].role %}
                 <span class="badge position-absolute top-0 end-0">{{ contributors[contributor].role | capitalize }}</span>
