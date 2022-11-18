@@ -23,13 +23,19 @@ training:
     url: https://tess.elixir-europe.org/
   - name: Training in Zenodo
     registry: Zenodo
-    url: https://tess.elixir-europe.org/
+    url: https://zenodo.org/record/7277814
   - name: Training on Youtube
     registry: Youtube
-    url: https://tess.elixir-europe.org/
+    url: https://www.youtube.com/
   - name: Training in The Carpentries
     registry: Carpentries
-    url: https://tess.elixir-europe.org/
+    url: https://datacarpentry.org/
+  - name: Training in GitHub
+    registry: GitHub
+    url: https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/
+  - name: Training
+    registry: 
+    url: https://github.com/ELIXIR-Belgium/
 
 
 ---

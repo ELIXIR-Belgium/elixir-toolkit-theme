@@ -60,11 +60,13 @@
                                 {%- elsif registry == "zenodo" %}
                                 <img alt="Zenodo logo" class="img-fluid" src="{{ 'assets/img/zenodo_logo.svg' | relative_url }}">
                                 {%- elsif registry == "youtube" %}
-                                <img alt="Youtube logo" class="img-fluid" src="{{ 'assets/img/youtube_logo.svg' | relative_url }}">
+                                <img alt="YouTube logo" class="img-fluid" src="{{ 'assets/img/youtube_logo.svg' | relative_url }}">
                                 {%- elsif registry == "carpentries" %}
                                 <img alt="Carpentries" class="img-fluid" src="{{ 'assets/img/carpentries_logo.svg' | relative_url }}">
+                                {%- elsif registry == "github" %}
+                                <i class="fa-brands fa-github text-dark fa-2xl my-3"></i>
                                 {%- else %}
-                                <i class="fa-solid fa-external-link-alt text-primary fs-5"></i>
+                                <i class="fa-solid fa-external-link-alt text-primary fa-lg my-3"></i>
                                 {%- endif %}
                             </div>
                             <div class="col-10 d-flex align-items-center">
