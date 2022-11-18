@@ -145,7 +145,7 @@
                     {%- if affiliation.size == 2 %}
                     {%- assign country_link = site.pages | where:"country_code",country | first %}
                     {%- if country_link %}
-                    <a role="button" href="{{'country_link.url' | relative_url}}" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm bg-white hover-primary">
+                    <a role="button" href="{{country_link.url | relative_url}}" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm bg-white hover-primary">
                         {%- else %}
                         <a role="button" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm bg-white hover-primary disabled" aria-disabled="true">
                             {%- endif %}
