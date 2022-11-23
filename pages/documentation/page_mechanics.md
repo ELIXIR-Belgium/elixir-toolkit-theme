@@ -66,11 +66,9 @@ title: Title of the page
     - name: Training in TeSS
       registry: TeSS
       url: https://tess.elixir-europe.org/search?q=data%20analysis
-
-    - name: Training in TeSS
-      registry: TeSS
-      url: https://tess.elixir-europe.org/search?q=data%20analysis
   ```
+
+  The supported registries that can be used in the `registry` attribute are: *YouTube*, *Zenodo*, *Carpentries*, *GitHub*, and *TeSS*.
 
 * `faircookbook`: List here all the links towards FAIR Cookbook recipes.
 
@@ -80,7 +78,17 @@ title: Title of the page
     url: https://fairplus.github.io/the-fair-cookbook/content/recipes/reusability/ATI_licensing_data.html
   ```
 
+* `dsw`: Here all relevant Data Stewardship Wizard questions in the Researcher knowledge model are listed. 
 
+  ```yml
+  dsw:
+  - name: Will you monitor data integrity once it has been collected?
+    uuid: 02b3fed1-0b50-4a80-b8b6-a225a1107022
+  ```
+  Where the `uuid` resembles the uuid towards a question in a knowledge model specified with the `dsw_deep_link_prefix` attribute in the `[/_config.yml](/_config.yml)` file. Example:
+  ```yml
+  dsw_deep_link_prefix: https://researchers.ds-wizard.org/knowledge-models/dsw:root:latest/preview?questionUuid=
+  ```
 
 ### Tools and resources
 

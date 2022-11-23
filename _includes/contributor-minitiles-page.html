@@ -5,44 +5,8 @@
     {%- assign page_contributors = page.contributors | sort %}
     {%- for contributor in page_contributors %}
     {%- assign id = contributors[contributor].git | default: 'no_github' %}
-    {%- capture html_code %}
-    {%- assign stripped_name = contributor | replace: "'", "’" %}
-    <div class="card">
-        {%- assign id = contributors[contributor].git | default: 'no_github' %}
-        <div class="position-relative d-flex justify-content-center">
-          {%- if contributors[contributor].image_url %}
-          <img src="{{ contributors[contributor].image_url }}" class="card-img-top p-3 rounded-circle contributor-img" alt="{{ stripped_name }}">
-          {%- else %}
-          <img src="https://avatars.githubusercontent.com/{{id}}" class="card-img-top p-3 rounded-circle contributor-img" alt="{{ stripped_name }}">
-          {%- endif %}
-          {%- if contributors[contributor].role %}
-          <span class="badge position-absolute top-0 end-0">{{ contributors[contributor].role | capitalize }}</span>
-          {%- endif %}
-        </div>
-        <div class="card-body text-center py-0">
-          <p class="card-title">{{ stripped_name }}</p>
-          {%- if contributors[contributor].affiliation %}
-          <p class="card-affiliation">{{ contributors[contributor].affiliation | replace: "'", "’" }}</p>
-          {%- endif %}
-        </div>
-        {%- if contributors[contributor].git or contributors[contributor].email or contributors[contributor].orcid %}
-        <div class="card-footer">
-          <div class="d-flex justify-content-center">
-            {%- if contributors[contributor].git %}
-            <div class="mx-1"><a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://github.com/{{id}}"><i class="fa-brands fa-github"></i></a></div>
-            {%- endif %}
-            {%- if contributors[contributor].email %}
-            <div class="mx-1"><a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="mailto:{{contributors[contributor].email}}"><i class="fa-solid fa-envelope"></i></a></div>
-            {%- endif %}
-            {%- if contributors[contributor].orcid %}
-            <div class="mx-1"><a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://orcid.org/{{contributors[contributor].orcid}}"><i class="fa-brands fa-orcid"></i></a></div>
-            {%- endif %}
-          </div>
-        </div>
-        {%- endif %}
-      </div>
-    {%- endcapture %}
-    <a tabindex="0" role="button" class="btn btn-sm contributor-link hover-primary m-1 position-relative" data-bs-html="true" data-bs-trigger="focus" data-bs-container="body" data-bs-template='<div class="popover shadow border-0 contributor-cards" role="tooltip"><div class="popover-body p-0"></div></div>' data-bs-toggle="popover" data-bs-placement="top" data-bs-content='{{html_code}}'>
+    <div class="dropdown d-inline-block">
+      <button class="btn btn-sm dropdown-toggle contributor-link d-flex hover-primary m-1 position-relative"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
         <div class="d-flex align-items-center">
             <div class="flex-shrink-0">
                 {%- if contributors[contributor].image_url %}
@@ -60,12 +24,52 @@
         {%- if coordinator == contributor %}
         <div class="position-absolute top-0 start-100 translate-middle">
             <div class="rounded-circle coordinator-crown">
+              <a data-bs-toggle="tooltip" data-bs-original-title="Coordinator of the {{page.title}} page.">
                 <i class="fa-solid fa-crown"></i>
+              </a>  
             </div>
         </div>
         {%- endif %}
         {%- endfor %}
         {%- endif %}
-    </a>{%- endfor %}
+      </button>
+        <div class="dropdown-menu shadow p-0 border-0 contributor-cards">
+          {%- assign stripped_name = contributor | replace: "'", "’" %}
+          <div class="card">
+              {%- assign id = contributors[contributor].git | default: 'no_github' %}
+              <div class="position-relative d-flex justify-content-center">
+                {%- if contributors[contributor].image_url %}
+                <img src="{{ contributors[contributor].image_url }}" class="card-img-top p-3 rounded-circle" alt="{{ stripped_name }}">
+                {%- else %}
+                <img src="https://avatars.githubusercontent.com/{{id}}" class="card-img-top p-3 rounded-circle" alt="{{ stripped_name }}">
+                {%- endif %}
+                {%- if contributors[contributor].role %}
+                <span class="badge position-absolute top-0 end-0">{{ contributors[contributor].role | capitalize }}</span>
+                {%- endif %}
+              </div>
+              <div class="card-body text-center py-0">
+                <p class="card-title">{{ stripped_name }}</p>
+                {%- if contributors[contributor].affiliation %}
+                <p class="card-affiliation">{{ contributors[contributor].affiliation | replace: "'", "’" }}</p>
+                {%- endif %}
+              </div>
+              {%- if contributors[contributor].git or contributors[contributor].email or contributors[contributor].orcid %}
+              <div class="card-footer">
+                <div class="d-flex justify-content-center">
+                  {%- if contributors[contributor].git %}
+                  <div class="mx-1"><a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://github.com/{{id}}"><i class="fa-brands fa-github"></i></a></div>
+                  {%- endif %}
+                  {%- if contributors[contributor].email %}
+                  <div class="mx-1"><a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="mailto:{{contributors[contributor].email}}"><i class="fa-solid fa-envelope"></i></a></div>
+                  {%- endif %}
+                  {%- if contributors[contributor].orcid %}
+                  <div class="mx-1"><a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://orcid.org/{{contributors[contributor].orcid}}"><i class="fa-brands fa-orcid"></i></a></div>
+                  {%- endif %}
+                </div>
+              </div>
+              {%- endif %}
+            </div>
+        </div>
+      </div>{%- endfor %}
 </div>
 {%- endif %}

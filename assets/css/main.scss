@@ -559,9 +559,19 @@ footer {
     background-color: $contr-bg;
     font-size: 0;
 
+    .contributor-cards .card {
+        background-color: $contr-popover-bg;
+    }
+    .dropdown-menu {
+        width: 11em;
+    }
+
     /* Gets rid of extra white space */
     .contributor-link {
         background-color: $contr-link-bg;
+        &::after {
+            display: none;
+        }
 
         .contributor-img-sm {
             height: 1.7em;
@@ -578,16 +588,6 @@ footer {
                 color: $contr-crown-color;
             }
         }
-    }
-}
-
-.popover.contributor-cards {
-    .contributor-img {
-        width: 11em;
-    }
-
-    .card {
-        background-color: $contr-popover-bg;
     }
 }
 
