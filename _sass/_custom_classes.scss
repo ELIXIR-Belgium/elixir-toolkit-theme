@@ -4,27 +4,3 @@
     border-bottom: 4px solid $primary;
     margin-bottom: -4px;
 }
-
-
-/*-----Tools-----*/
-
-.tool {
-    cursor: pointer;
-    color: $primary;
-    background-color: rgba($primary, .1);
-    border-radius: $border-radius;
-    padding: 0.125rem 0.25rem;
-
-    &:hover {
-        text-decoration: none !important;
-        color: $primary;
-    }
-}
-
-.popover-tool {
-    max-width: 20rem;
-
-    h5 {
-        font-weight: bold;
-    }
-}
