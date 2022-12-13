@@ -1,3 +1,7 @@
+---
+permalink: /
+---
+
 [![Gem Version](https://badge.fury.io/rb/elixir-toolkit-theme.svg)](https://badge.fury.io/rb/elixir-toolkit-theme) [![Jekyll site CI](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/actions/workflows/jekyll.yml/badge.svg)](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/actions/workflows/jekyll.yml) [![DOI](https://zenodo.org/badge/421495867.svg)](https://zenodo.org/badge/latestdoi/421495867)
 
 
@@ -94,7 +98,7 @@ Additional information can be found at the following link: [https://docs.github.
 
 If not already installed on your machine, install Docker. From the root of the `elixir-toolkit-theme` directory, run:
 
-```
+```sh
 docker run -it --rm -p [::1]:4000:4000 -v $PWD:/srv/jekyll jekyll/jekyll:latest /bin/bash -c "chmod a+w /srv/jekyll/Gemfile.lock && chmod 777 /srv/jekyll && bundle install && bundle exec jekyll serve --host 0.0.0.0"
 ```
 
