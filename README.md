@@ -28,9 +28,9 @@ Its key features:
 
 ## Installation
 
-### via GitHub Pages remote theme (installation free!)
+### Via GitHub Actions (installation free!)
 
-The quickest way to use the elixir-toolkit-theme is to use the GitHub pages [remote theme](https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/) feature in your `config.yml` file:
+The quickest way to use the elixir-toolkit-theme is to use the GitHub Actions for deployment and setting the [remote theme](https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/)  feature in your `config.yml` file:
 
 ```yaml
 remote_theme: ELIXIR-Belgium/elixir-toolkit-theme
@@ -38,7 +38,7 @@ remote_theme: ELIXIR-Belgium/elixir-toolkit-theme
 
 It also allows you to use a specific version of the theme by add `@X.X.X` to make sure your website keeps working iif breaking changes get introduced.
 
-### via RubyGems:
+#### via RubyGems:
 
 Alternatively you can install it as a Ruby Gem (preferred way if you use GitLab).
 

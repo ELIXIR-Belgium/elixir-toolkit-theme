@@ -10,11 +10,13 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     colorator (1.1.0)
     concurrent-ruby (1.1.10)
+    elixir-toolkit-theme-plugins (0.1.0)
+      jekyll (~> 4.3, >= 4.3.1)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
-    faraday (2.7.1)
+    faraday (2.7.2)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
@@ -72,8 +74,6 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
     minitest (5.16.3)
-    nokogiri (1.13.10-x86_64-darwin)
-      racc (~> 1.4)
     nokogiri (1.13.10-x86_64-linux)
       racc (~> 1.4)
     octokit (4.25.1)
@@ -103,12 +103,11 @@ GEM
     webrick (1.7.0)
 
 PLATFORMS
-  x86_64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
-  elixir-toolkit-theme-plugins (= 0.1.1)
-  jekyll (= 4.3.1)
+  elixir-toolkit-theme-plugins (~> 0.1.0)
+  jekyll (~> 4.3.1)
   jekyll-github-metadata (~> 2.15)
   jekyll-redirect-from (~> 0.16.0)
   jekyll-relative-links (~> 0.6)
@@ -119,4 +118,4 @@ DEPENDENCIES
   webrick (~> 1.7)
 
 BUNDLED WITH
-   2.3.26
+   2.2.16

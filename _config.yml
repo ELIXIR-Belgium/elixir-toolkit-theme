@@ -39,6 +39,7 @@ defaults:
       sidebar: main
 
 plugins:
+  - elixir-toolkit-theme-plugins
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap

@@ -1,4 +1,5 @@
 - description: Bioconda is a bioinformatics channel for the Conda package manager
+  id: bioconda
   url: https://bioconda.github.io/
   name: Bioconda
   registry:
@@ -8,6 +9,7 @@
     - gp1
     - gp2
 - description: Git based code hosting and collaboration tool, built for teams.
+  id: bitbucket
   url: https://bitbucket.org/
   name: Bitbucket
   related_pages:
@@ -16,6 +18,7 @@
     Versioning system, used for sharing code, as well as for sharing of
     small data
   url: https://github.com
+  id: github
   name: GitHub
   registry:
     fairsharing-coll: bsg-d001160
@@ -29,6 +32,7 @@
     GitLab on your own servers, in a container, or on a cloud provider.
   url: https://gitlab.com/gitlab-org/gitlab
   name: GitLab
+  id: gitlab
   registry:
     tess: GitLab
   related_pages:
@@ -37,6 +41,7 @@
     Generalist research data repository built and developed by OpenAIRE
     and CERN
   url: https://zenodo.org/
+  id: zenodo
   name: Zenodo
   instance_of: test
   registry:
