@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "elixir-toolkit-theme-plugins", "~> 0.1.0"
+gem "elixir-toolkit-theme-plugins", "~> 0.1.2"
 
 gem "webrick", "~> 1.7"
 
