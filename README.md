@@ -15,7 +15,7 @@ Its key features:
 - Change style using custom classes
 - Support for a central tools table
 - Page tagging and listing of those tagged pages
-- Linking to ELIXIR resources including Bio.tools, FAIRSHARING, FAIR Cookbook, TeSS and DSW
+- Linking to ELIXIR resources including Bio.tools, FAIRsharing, FAIR Cookbook, TeSS and DSW
 - Easy side navigation, top navigation and footer management
 - Mobile friendly
 - Create website sections with each section having its own sidebar
