@@ -5,7 +5,7 @@ title: About
 This project started when we wanted to make a static website that is deployed using GitHub pages that is 
 
 - modern looking
-- is lightweight
+- lightweight
 - flexible when it comes to branding
 - has a collapsible sidebar to handle a lot of content
 - a robust search function 
