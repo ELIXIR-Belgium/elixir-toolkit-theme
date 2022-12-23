@@ -1,21 +1,16 @@
 copyright: Copyright notice
 extra_line: 
 columns:
-  - type: image
-    image_width: 120px
-    width: 2
-    src: 'assets/img/jekyll_theme_question.svg'
-    alt: Logo
   - type: links
     title: Title
-    width: 3
+    width: 4
     children: 
       - url_text: Contributors
         url: /contributors
       - url_text: Institutes, projects and funders
         url: /support
   - type: links
-    width: 3
+    width: 4
     children: 
       - url_text: About
         url: /about
