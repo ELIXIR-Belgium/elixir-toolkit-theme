@@ -6,7 +6,7 @@
 <h1 align="center">ELIXIR toolkit theme </h1>
 </p>
 
-The ELIXIR toolkit theme is a Jekyll theme designed to support easy deployment of documentation websites but also more complex ones that require a central tool table and linking towards ELXIR resources. 
+The ELIXIR toolkit theme is a Jekyll theme designed to support easy deployment of documentation websites but also more complex ones that require a central tool table and linking towards ELIXIR resources. 
 
 Its key features:
 - Easy deployment using GitHub pages
