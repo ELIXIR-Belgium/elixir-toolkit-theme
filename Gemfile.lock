@@ -10,7 +10,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     colorator (1.1.0)
     concurrent-ruby (1.1.10)
-    elixir-toolkit-theme-plugins (0.1.0)
+    elixir-toolkit-theme-plugins (0.1.2)
       jekyll (~> 4.3, >= 4.3.1)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
@@ -106,7 +106,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  elixir-toolkit-theme-plugins (~> 0.1.0)
+  elixir-toolkit-theme-plugins (~> 0.1.2)
   jekyll (~> 4.3.1)
   jekyll-github-metadata (~> 2.15)
   jekyll-redirect-from (~> 0.16.0)
