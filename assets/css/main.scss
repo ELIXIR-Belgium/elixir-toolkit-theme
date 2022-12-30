@@ -628,8 +628,8 @@ footer {
 
 .tool {
     cursor: pointer;
-    color: $primary;
-    background-color: rgba($primary, .1);
+    color: $link-color;
+    background-color: rgba($link-color, .1);
     border-radius: $border-radius;
     padding: 0.125rem 0.25rem;
 
