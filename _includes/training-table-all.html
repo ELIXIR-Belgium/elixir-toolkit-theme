@@ -16,8 +16,15 @@
             {%- for page in site.pages %}
             {%- unless page.search_exclude == true %}
             {%- if page.training %}
+            {%- assign actual_training = nil %}
             {%- for training in page.training %}
-            {%- if training %}
+            {%- if training.name %}
+            {%- assign actual_training = 1 %}
+            {%- endif %}
+            {%- endfor %}
+            {%- endif %}
+            {%- for training in page.training %}
+            {%- if actual_training %}
             <tr>
                 <td><a href="{{training.url | relative_url }}">{{training.name}}{%- if training.name == 'Training in TeSS'%} about {{page.title}}{%- endif %}</a></td>
                 <td><a href="{{page.url | relative_url }}"><span class="badge default-badge">{{page.title}}</span></a></td>
@@ -25,7 +32,6 @@
             </tr>
             {%- endif %}
             {%- endfor %}
-            {%- endif %}
             {%- endunless %}
             {%- endfor %}
         </tbody>
