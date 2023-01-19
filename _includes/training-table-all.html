@@ -14,8 +14,9 @@
         </thead>
         <tbody>
             {%- for page in site.pages %}
-            {%- unless page.search_exclude == true and page.training.size == 0 %}
-            {%- for training in page.training%}
+            {%- unless page.search_exclude == true %}
+            {%- if page.training %}
+            {%- for training in page.training %}
             {%- if training %}
             <tr>
                 <td><a href="{{training.url | relative_url }}">{{training.name}}{%- if training.name == 'Training in TeSS'%} about {{page.title}}{%- endif %}</a></td>
@@ -24,6 +25,7 @@
             </tr>
             {%- endif %}
             {%- endfor %}
+            {%- endif %}
             {%- endunless %}
             {%- endfor %}
         </tbody>
