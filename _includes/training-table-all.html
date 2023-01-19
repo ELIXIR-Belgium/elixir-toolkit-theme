@@ -15,6 +15,15 @@
         <tbody>
             {%- for page in site.pages %}
             {%- unless page.search_exclude == true %}
+            {%- if page.training %}
+            {%- assign actual_training = nil %}
+            {%- for training in page.training %}
+            {%- if training.name %}
+            {%- assign actual_training = 1 %}
+            {%- endif %}
+            {%- endfor %}
+            {%- endif %}
+            {%- if actual_training %}
             {%- for training in page.training%}
             <tr>
                 <td><a href="{{training.url | relative_url }}">{{training.name}}{%- if training.name == 'Training in TeSS'%} about {{page.title}}{%- endif %}</a></td>
@@ -22,6 +31,7 @@
                 <td>{%- if training.registry %}<span class="badge bg-dark text-white hover-primary">{{training.registry}}</span>{%- endif %}</td>
             </tr>
             {%- endfor %}
+            {%- endif %}
             {%- endunless %}
             {%- endfor %}
         </tbody>
