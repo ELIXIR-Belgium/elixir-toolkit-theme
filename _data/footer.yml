@@ -28,6 +28,6 @@ columns:
   - type: image
     image_width: 88px
     width: 1
-    src: 'assets/img/main_logo.svg'
+    src: 'assets/img/ett_compact_logo.svg'
     alt: Jekyll Bootstrap theme logo
 
