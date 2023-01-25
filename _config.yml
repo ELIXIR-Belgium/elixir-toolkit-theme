@@ -1,7 +1,7 @@
 title: ELIXIR toolkit theme
 # This appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
-topnav_title: ELIXIR toolkit theme
+# topnav_title: ELIXIR toolkit theme
 # Optional: this appears on the top navigation bar next to the main_logo.svg icon
 
 description: "Flexible Jekyll theme using bootstrap 5 as CSS framework."
