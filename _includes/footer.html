@@ -39,11 +39,11 @@
         {%- endunless %}
     </div>
     <div class="copyright p-4">
-        <div class="container d-flex justify-content-between">
+        <div class="container d-flex justify-content-between flex-column flex-lg-row">
             {%- unless site.data.footer.copyright == nil %}
-            <div class="d-flex align-items-center">{{ site.data.footer.copyright | markdownify }}</div>
+            <div class="d-flex align-items-center mb-3 mb-lg-0">{{ site.data.footer.copyright | markdownify }}</div>
             {%- endunless %}
-            <div><a href="https://elixir-belgium.github.io/elixir-toolkit-theme">Powered by <img alt="ELIXIR Toolkit Logo" width="30px" src="{{'assets/img/ett_compact_logo.svg' | relative_url}}"></a></div>
+            <div class="ms-0 ms-lg-4"><a href="https://elixir-belgium.github.io/elixir-toolkit-theme">Powered by <img alt="ELIXIR Toolkit Logo" width="30px" src="{{'assets/img/ett_compact_logo.svg' | relative_url}}"></a></div>
         </div>
     </div>
 </footer>
