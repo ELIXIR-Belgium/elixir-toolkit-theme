@@ -40,10 +40,10 @@
     </div>
     <div class="copyright p-4">
         <div class="container d-flex justify-content-between">
-            <div><a href="https://elixir-belgium.github.io/elixir-toolkit-theme">Powered by <img alt="ELIXIR Toolkit Logo" width="30px" src="{{'assets/img/ett_compact_logo.svg' | relative_url}}"></a></div>
             {%- unless site.data.footer.copyright == nil %}
             <div class="d-flex align-items-center">{{ site.data.footer.copyright | markdownify }}</div>
             {%- endunless %}
+            <div><a href="https://elixir-belgium.github.io/elixir-toolkit-theme">Powered by <img alt="ELIXIR Toolkit Logo" width="30px" src="{{'assets/img/ett_compact_logo.svg' | relative_url}}"></a></div>
         </div>
     </div>
 </footer>
