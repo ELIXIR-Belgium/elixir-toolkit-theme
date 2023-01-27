@@ -288,6 +288,12 @@ header .navbar {
     }
 }
 
+#side-nav .btn.sidebar-title {
+    color: $sidebar-lvl2-color;
+    background-color: $sidebar-lvl2-bg;
+    border-color: transparent
+}
+
 .sidebar-collapse {
     background-color: $sidebar-bg;
 
