@@ -163,7 +163,7 @@ header .navbar {
     transition: transform 0.2s ease-in-out;
 }
 
-.dropdown-toggle[aria-expanded=true]::after {
+.dropdown-toggle[aria-expanded="true"]::after {
     transform: rotate(-180deg);
 }
 
@@ -478,13 +478,16 @@ footer {
     .copyright {
         background-color: $footer-copyright-bg;
     }
-}
 
-#ett-logo {
-    .cls-1 {
-        fill: $footer-ett;
+    #ett-logo {
+        .cls-1 {
+            fill: $footer-ett;
+        }
         &:hover {
-            fill: #0d6efd;
+            .cls-1 {
+                fill: #0d6efd;
+            }
+            color: #0d6efd !important;
         }
     }
 }
