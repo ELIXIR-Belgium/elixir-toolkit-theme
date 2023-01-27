@@ -59,7 +59,7 @@ main {
 
     ol li,
     ul li {
-        margin: $spacer * .5 0;
+        margin: $spacer * 0.5 0;
 
         &::marker {
             color: $primary;
@@ -480,6 +480,15 @@ footer {
     }
 }
 
+#ett-logo {
+    .cls-1 {
+        fill: $footer-ett;
+        &:hover {
+            fill: #0d6efd;
+        }
+    }
+}
+
 /*-----Back to top-----*/
 
 #back-to-top {
@@ -723,7 +732,8 @@ li.past_event,
     .card {
         background-color: $nav-card-bg;
 
-        a:not(.stretched-link), button:not(.stretched-link) {
+        a:not(.stretched-link),
+        button:not(.stretched-link) {
             z-index: 2;
             position: relative;
         }
