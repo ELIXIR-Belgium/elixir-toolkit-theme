@@ -58,7 +58,15 @@
                     {%- endif %}
                     {%- if site.theme_variables.topnav.github or site.theme_variables.topnav.github == nil %}
                     <li class="nav-item ms-0 ms-lg-3 mt-2 mt-lg-0">
-                        <a class="nav-link ps-2 d-flex align-items-center" href="{{site.github.repository_url}}"><i class="fa-brands fa-github me-2"></i>{{site.theme_variables.git_host | default: 'GitHub' }}</a>
+                        <a class="nav-link ps-2 d-flex align-items-center" href="{{site.github.repository_url}}">
+                            {%- assign git_host = site.theme_variables.git_host | downcase %}
+                            {%- if git_host == 'gitlab' %}
+                            <i class="fa-brands fa-gitlab me-2"></i>
+                            {%- else %}
+                            <i class="fa-brands fa-github me-2"></i>
+                            {%- endif %}
+                            {{site.theme_variables.git_host | default: 'GitHub' }}
+                        </a>
                     </li>
                     {%- endif %}
                     {%- unless include.search == false %}
