@@ -2,7 +2,7 @@
 
 
 <p align="center">
-<img src="assets/img/main_logo.svg" width="100" float="center"/>
+<img src="assets/img/ett_compact_logo.svg" width="100" float="center"/>
 <h1 align="center">ELIXIR toolkit theme </h1>
 </p>
 

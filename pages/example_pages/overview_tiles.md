@@ -34,3 +34,8 @@ Becomes:
 
 
 {% include section-navigation-tiles-simple.html type="example_pages" %}
+
+### Parameters
+
+* `except`: `, ` separated list of page names which should be excluded, including the file extension
+
