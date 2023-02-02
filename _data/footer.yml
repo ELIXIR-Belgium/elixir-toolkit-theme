@@ -15,7 +15,7 @@ columns:
       - url_text: Getting started
         url: /getting_started
   - type: links
-    width: 4
+    width: 3
     children: 
       - url_text: About
         url: /about
@@ -25,7 +25,7 @@ columns:
         url: /privacy
   - type: image
     image_width: 100px
-    width: 1
+    width: 2
     src: 'assets/img/Flag_of_Europe.svg'
     alt: European flag
   - type: image
