@@ -1,4 +1,4 @@
-{%- unless include.affiliations == nil and include.search == nil and include.related_pages == nil %}
+{%- unless include.affiliations == nil and include.search == nil %}
 {%- assign allcountries = site.data.countries %}
 {%- for current_page in site.pages | sorted %}
 {%- if current_page.affiliations and current_page.search_exclude != true and current_page.type == include.type %}
@@ -147,7 +147,7 @@
                     {%- if country_link %}
                     <a role="button" href="{{country_link.url | relative_url}}" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm bg-white hover-primary">
                         {%- else %}
-                        <a role="button" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm bg-white hover-primary disabled" aria-disabled="true">
+                        <a role="button" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm bg-white hover-primary disabled border-white" aria-disabled="true">
                             {%- endif %}
                             <div class="d-block h-24px">
                                 <span class="flag-icon flag-icon-{{affiliation | downcase}} align-items-center"></span>

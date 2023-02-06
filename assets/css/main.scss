@@ -59,7 +59,7 @@ main {
 
     ol li,
     ul li {
-        margin: $spacer * .5 0;
+        margin: $spacer * 0.5 0;
 
         &::marker {
             color: $primary;
@@ -163,7 +163,7 @@ header .navbar {
     transition: transform 0.2s ease-in-out;
 }
 
-.dropdown-toggle[aria-expanded=true]::after {
+.dropdown-toggle[aria-expanded="true"]::after {
     transform: rotate(-180deg);
 }
 
@@ -286,6 +286,12 @@ header .navbar {
     #side-nav {
         display: block !important;
     }
+}
+
+#side-nav .btn.sidebar-title {
+    color: $sidebar-color;
+    background-color: transparent;
+    border-color: transparent
 }
 
 .sidebar-collapse {
@@ -477,6 +483,18 @@ footer {
 
     .copyright {
         background-color: $footer-copyright-bg;
+    }
+
+    #ett-logo {
+        .cls-1 {
+            fill: $footer-ett;
+        }
+        &:hover {
+            .cls-1 {
+                fill: #0d6efd;
+            }
+            color: #0d6efd !important;
+        }
     }
 }
 
@@ -748,7 +766,8 @@ li.past_event,
     .card {
         background-color: $nav-card-bg;
 
-        a:not(.stretched-link), button:not(.stretched-link) {
+        a:not(.stretched-link),
+        button:not(.stretched-link) {
             z-index: 2;
             position: relative;
         }

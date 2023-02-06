@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
 {% include head.html %}
-<body>
+<body class="d-flex flex-column min-vh-100">
     {% if jekyll.environment == "development" %}{% include dev-info.html %}{% endif %}
     {% include topnav.html %}
     <!-- Page Content -->
-    <div class="container min-vh-100">
+    <div class="container flex-grow-1">
         <!-- Content Row -->
         <div class="row gx-0 gx-lg-5">
             {%- assign content_col_size = "col-lg-12" %}{% unless page.hide_sidebar %}
@@ -22,7 +22,7 @@
     </div>
     {%- if site.theme_variables.back_to_top or site.theme_variables.back_to_top == nil %}
     <button id="back-to-top" class="btn btn-primary" type="button" aria-hidden="true" onclick="topFunction()">
-        <i class="fa-solid fa-arrow-up"></i><span class="ms-2 d-none d-sm-inline">Back to top</span>
+        <i class="fa-solid fa-arrow-up"></i>
     </button>
     {%- endif %}
     {% include footer.html %}
