@@ -11,7 +11,11 @@
     <a role="button" data-bs-toggle="tooltip" title="Report an issue" href="{{site.github.repository_url}}/issues/new?title={{'Issue on page: ' | url_encode }}{{page.title | url_encode }}&amp;body={{'I would like to report an issue on the ' | url_encode }}{{page.title | url_encode }}{{' page at `'| url_encode }}{{page.url | url_encode }}{{'`. Description of the issue:' | url_encode }}" class="btn btn-sm hover-primary text-primary"><i class="fa-solid fa-exclamation"></i></a>
     {%- endif %}
     {%- if site.theme_variables.github_buttons.history or site.theme_variables.github_buttons.history == nil %}
+    {%- if page.custom-editme %}
+    <a role="button" data-bs-toggle="tooltip" title="Check out the history of this page" href="{{site.github.repository_url}}/commits/{{site.github.source.branch}}/{{page.custom-editme}}" class="btn btn-sm hover-primary text-primary"><i class="fa-solid fa-history"></i></a>
+    {%- else %}
     <a role="button" data-bs-toggle="tooltip" title="Check out the history of this page" href="{{site.github.repository_url}}/commits/{{site.github.source.branch}}/{{page.path}}" class="btn btn-sm hover-primary text-primary"><i class="fa-solid fa-history"></i></a>
+    {%- endif %}
     {%- endif %}
 </div>
 {%- endif %}
