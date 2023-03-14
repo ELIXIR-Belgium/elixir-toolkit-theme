@@ -3,7 +3,7 @@ layout: none
 permalink: assets/js/search.js
 ---
 /**
- * Search based on just the docs
+ * Search based on just the docs and contains minor changes
  * 
  * https://github.com/pmarsceill/just-the-docs
  * The MIT License (MIT)
