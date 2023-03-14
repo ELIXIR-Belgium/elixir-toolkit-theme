@@ -382,12 +382,7 @@ permalink: assets/js/search.js
                     var active = document.querySelector('.search-results a.active');
                     if (active) {
                         active.click();
-                    } else {
-                        var first = document.querySelector('.search-results');
-                        if (first) {
-                            first.click();
-                        }
-                    }
+                    } 
                     return;
             }
         });

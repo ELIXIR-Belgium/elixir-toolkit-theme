@@ -6,7 +6,7 @@
     {%- for contributor in page_contributors %}
     {%- assign id = contributors[contributor].git | default: 'no_github' %}
     <div class="dropup-center dropup d-inline-block">
-      <button class="btn btn-sm dropdown-toggle contributor-link d-flex hover-primary m-1 position-relative"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <button class="btn btn-sm dropdown-toggle contributor-link d-flex hover-primary m-1 position-relative"  type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" data-bs-offset="0,10">
         <div class="d-flex align-items-center">
             <div class="flex-shrink-0">
                 {%- if contributors[contributor].image_url %}

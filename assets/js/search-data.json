@@ -4,7 +4,7 @@ layout: none
 ---
 {
   {%- assign i = 0 -%}
-  {%- assign pages_array = '' | split: '' -%}
+  {%- assign pages_array = "" | split: "" -%}
   {%- assign pages_array = pages_array | push: site.html_pages -%}
   {%- for pages in pages_array -%}
     {%- for page in pages -%}

@@ -1,6 +1,7 @@
 ---
 title: News
 toc: false
+custom_editme: _data/news.yml
 ---
 
 
