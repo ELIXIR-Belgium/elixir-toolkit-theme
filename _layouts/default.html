@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
 {% include head.html %}
-<body>
+<body class="d-flex flex-column min-vh-100">
     {% if jekyll.environment == "development" %}{% include dev-info.html %}{% endif %}
     {% include topnav.html %}
     <!-- Page Content -->
-    <div class="container min-vh-100">
+    <div class="container flex-grow-1">
         <!-- Content Row -->
         <div class="row gx-0 gx-lg-5">
             {%- assign content_col_size = "col-lg-12" %}{% unless page.hide_sidebar %}
