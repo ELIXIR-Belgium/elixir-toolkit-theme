@@ -22,6 +22,9 @@ dsw_deep_link_prefix:
 gtag:
 # Google analytics tag
 
+matomo:
+# Matomo domain where Matomo is running
+
 plausible: 
 # Plausible tag
 plausible_src: 
