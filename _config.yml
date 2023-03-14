@@ -13,7 +13,7 @@ dsw_deep_link_prefix:
 gtag:
 # Google analytics tag
 
-matomo:
+matomo: https://webstats.elixir-europe.org/
 # Matomo domain where Matomo is running
 
 plausible: 
