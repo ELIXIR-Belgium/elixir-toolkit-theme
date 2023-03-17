@@ -595,7 +595,8 @@ footer {
         }
 
         .contributor-img-sm {
-            height: 1.7em;
+            height: 25px;
+            width: 25px;
         }
 
         .coordinator-crown {
@@ -608,6 +609,11 @@ footer {
             .fa-solid {
                 color: $contr-crown-color;
             }
+        }
+
+        .contr-placeholder {
+            background-color: rgba($dark, 0.10);
+            font-size: 0.5rem;
         }
     }
 }
