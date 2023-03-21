@@ -118,19 +118,23 @@ code {
 }
 
 pre {
-    margin-bottom: 0;
     padding: $spacer;
+    word-break: break-all;
+    word-wrap: break-word;
     border: 1px solid $border-color;
     border-radius: $border-radius;
     margin-bottom: $spacer;
+    line-height: 1.42857143;
+    code {
+        padding: 0;
+        background-color: transparent;
+
+    }
 }
 
 div.highlight {
-    background: $light;
-    line-height: 1.42857143;
+    background: #fafbfc;
     color: $body-color;
-    word-break: break-all;
-    word-wrap: break-word;
     border: 1px solid $border-color;
     border-radius: $border-radius;
     margin-bottom: $spacer;
@@ -138,9 +142,6 @@ div.highlight {
         margin-bottom: 0;
         padding: $spacer;
         border: 0;
-        code {
-            padding: 0;
-        }
     }
 }
 /*-----Top navigation-----*/
