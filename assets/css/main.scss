@@ -80,6 +80,8 @@ main {
     font-family: $font-family-theme !important;
 }
 
+.highlight  { background: $light; }
+
 /*-----Blockquote-----*/
 
 blockquote {
@@ -118,12 +120,12 @@ code {
 }
 
 pre {
-    padding: 9.5px;
+    padding: 12px;
     line-height: 1.42857143;
-    color: #333;
+    color: $body-color;
     word-break: break-all;
     word-wrap: break-word;
-    border: 1px solid #ccc;
+    border: 1px solid $border-color;
     border-radius: $border-radius;
 }
 
