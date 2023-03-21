@@ -123,6 +123,7 @@ This theme would not be possible without following open source projects:
 - [jQuery Navgoco Menus](https://github.com/tefra/navgoco) - Multi-level slide navigation with accordion effect
 - [Font-Awesome](https://github.com/FortAwesome/Font-Awesome) - The famous icon library
 - [flag-icons](https://github.com/lipis/flag-icons) - A curated collection of all country flags in SVG + css integration
+- [clipboard.js v2.0.11](https://github.com/zenorocha/clipboard.js) - Modern copy to clipboard. No Flash. Just 3kb gzipped clipboard.
 
 ## Attribution
 

@@ -80,8 +80,6 @@ main {
     font-family: $font-family-theme !important;
 }
 
-.highlight  { background: $light; }
-
 /*-----Blockquote-----*/
 
 blockquote {
@@ -120,23 +118,31 @@ code {
 }
 
 pre {
-    padding: 12px;
+    margin-bottom: 0;
+    padding: $spacer;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    margin-bottom: $spacer;
+}
+
+div.highlight {
+    background: $light;
     line-height: 1.42857143;
     color: $body-color;
     word-break: break-all;
     word-wrap: break-word;
     border: 1px solid $border-color;
     border-radius: $border-radius;
+    margin-bottom: $spacer;
+    pre {
+        margin-bottom: 0;
+        padding: $spacer;
+        border: 0;
+        code {
+            padding: 0;
+        }
+    }
 }
-
-pre code {
-    padding: 0;
-    font-size: inherit;
-    color: inherit;
-    background-color: transparent;
-    border-radius: 0;
-}
-
 /*-----Top navigation-----*/
 
 header .navbar {
@@ -293,7 +299,7 @@ header .navbar {
 #side-nav .btn.sidebar-title {
     color: $sidebar-color;
     background-color: transparent;
-    border-color: transparent
+    border-color: transparent;
 }
 
 .sidebar-collapse {
@@ -534,7 +540,7 @@ footer {
         font-size: 0.8em;
     }
     .contr-placeholder {
-        background-color: rgba($dark, 0.10);
+        background-color: rgba($dark, 0.1);
     }
 }
 
@@ -614,7 +620,7 @@ footer {
         }
 
         .contr-placeholder {
-            background-color: rgba($dark, 0.10);
+            background-color: rgba($dark, 0.1);
             font-size: 0.5rem;
         }
     }
