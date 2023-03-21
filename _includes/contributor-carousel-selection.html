@@ -38,7 +38,23 @@
                         {%- if contributors[contributor].image_url %}
                         <img src="{{ contributors[contributor].image_url }}" class="card-img-top p-3 rounded-circle" alt="{{ contributor }}">
                         {%- else %}
+                        {%- if contributors[contributor].git %}
                         <img src="https://avatars.githubusercontent.com/{{id}}" class="card-img-top p-3 rounded-circle" alt="{{ contributor }}">
+                        {%- else %}
+                        <div class="p-3">
+                          <div class="ratio ratio-1x1">
+                            <div class="contr-placeholder rounded-circle d-flex justify-content-center align-items-center">
+                              {%- assign contr_name = contributor | split: " " %}
+                              {%- assign initials = "" %}
+                              {%- for name in contr_name %}
+                                  {%- assign initial = name | slice: 0,1 | capitalize %}
+                                  {%- assign initials = initials | append: initial %}
+                              {%- endfor %}
+                              <span class="fs-2 fw-bold">{{ initials }}</span>
+                            </div>
+                          </div>
+                        </div>
+                        {%- endif %}
                         {%- endif %}
                     </div>
                     <div class="card-body text-center py-0">
