@@ -118,23 +118,32 @@ code {
 }
 
 pre {
-    padding: 9.5px;
-    line-height: 1.42857143;
-    color: #333;
+    padding: $spacer;
     word-break: break-all;
     word-wrap: break-word;
-    border: 1px solid #ccc;
+    border: 1px solid $border-color;
     border-radius: $border-radius;
+    margin-bottom: $spacer;
+    line-height: 1.42857143;
+    code {
+        padding: 0;
+        background-color: transparent;
+
+    }
 }
 
-pre code {
-    padding: 0;
-    font-size: inherit;
-    color: inherit;
-    background-color: transparent;
-    border-radius: 0;
+div.highlight {
+    background: #fafbfc;
+    color: $body-color;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    margin-bottom: $spacer;
+    pre {
+        margin-bottom: 0;
+        padding: $spacer;
+        border: 0;
+    }
 }
-
 /*-----Top navigation-----*/
 
 header .navbar {
@@ -291,7 +300,7 @@ header .navbar {
 #side-nav .btn.sidebar-title {
     color: $sidebar-color;
     background-color: transparent;
-    border-color: transparent
+    border-color: transparent;
 }
 
 .sidebar-collapse {
@@ -532,7 +541,7 @@ footer {
         font-size: 0.8em;
     }
     .contr-placeholder {
-        background-color: rgba($dark, 0.10);
+        background-color: rgba($dark, 0.1);
     }
 }
 
@@ -612,7 +621,7 @@ footer {
         }
 
         .contr-placeholder {
-            background-color: rgba($dark, 0.10);
+            background-color: rgba($dark, 0.1);
             font-size: 0.5rem;
         }
     }
