@@ -46,7 +46,7 @@ A sitemap is automatically generated using the `jekyll-sitemap` gem. This allows
 MAke sure the gem is enabled in the `_config.yml` file in the root of your project like this:
 
 
-```json
+```yml
 plugins:
   - jekyll-sitemap
 ```
