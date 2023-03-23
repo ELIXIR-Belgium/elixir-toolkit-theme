@@ -1,6 +1,6 @@
 {%- assign tools = site.data.tool_and_resource_list | where:"related_pages", include.tag %}
 {%- assign country_pages = site.pages | where_exp: "item", "item.search_exclude != true" | where_exp:"item","item.national_resources != nil" %}
-{%- unless tools.size == 0 %}
+{%- unless tools.size == 0 or tools == nil %}
 {%- if include.tag %}
 <h2>Relevant tools and resources</h2>
 {%- endif %}
