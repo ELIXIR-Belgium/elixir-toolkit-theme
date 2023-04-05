@@ -126,7 +126,7 @@ $(document).ready(function () {
         var btn = document.createElement('button');
         var div = document.createElement('div');
         btn.innerHTML = '<i class="fa-regular fa-copy"></i>';
-        btn.className = "btn btn-light text-secondary m-1 btn-copy py-1 px-2";
+        btn.className = "btn text-secondary m-1 btn-copy py-1 px-2";
         btn.title = "Copy to clipboard";
         btn.type = "button";
         btn.setAttribute("data-bs-toggle", "tooltip");
