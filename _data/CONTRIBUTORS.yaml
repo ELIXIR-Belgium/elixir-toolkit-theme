@@ -16,6 +16,9 @@ Bert Droesbeke:
     orcid: 0000-0003-0522-5674
     role: editor
     affiliation: VIB-UGent / ELIXIR-BE
+Short example contributor:
+    affiliation: Very short affiliation + institute   
 Long example contributor:
     role: minion
-    affiliation: Very long affiliation + institute
+    image_url: https://t20526645.p.clickup-attachments.com/t20526645/8b291738-6040-41f4-82d6-6616486d6f55/20220710_222449.jpg
+    affiliation: Very long affiliation + Very long institute

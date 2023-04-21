@@ -567,6 +567,18 @@ footer {
     }
 }
 
+/*-----Contributor url image-----*/
+
+.contributor-cards .contr-placeholder {
+    background-color: rgba($dark, 0.1);
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size:  cover;
+}
+
 /*-----------Social icons----------*/
 
 .social-icons {
