@@ -674,11 +674,24 @@ footer {
     color: $primary !important;
 }
 
-/*-----Size components-----*/
+/*-----Affiliation sizes-----*/
 
-.h-24px {
+.affiliation-img-sm {
     height: 24px;
 }
+
+.affiliation-img {
+    height: 60px;
+}
+
+.affiliation-flag {
+    width: 60px;
+}
+
+.affiliation-flag .ratio {
+    width: 40px;
+}
+
 
 /*-----News and events-----*/
 
