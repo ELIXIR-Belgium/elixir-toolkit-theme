@@ -27,6 +27,7 @@ layout: default
     {%- if page.page_id %}
     {% include resource-table-all.html tag=page.page_id %}
     {%- endif %}
+    {% include affiliation-tiles-page.html %}
     {% include contributor-minitiles-page.html %}
     {%- if site.theme_variables.github_buttons.position == "bottom" %}
     <div id="github-buttons-wrapper" class="d-flex mt-5">

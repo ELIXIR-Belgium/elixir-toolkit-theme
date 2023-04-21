@@ -146,17 +146,17 @@
                     {%- assign country_link = site.pages | where:"country_code",country | first %}
                     {%- if country_link %}
                     <a role="button" href="{{country_link.url | relative_url}}" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm bg-white hover-primary">
-                        {%- else %}
-                        <a role="button" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm bg-white hover-primary disabled border-white" aria-disabled="true">
-                            {%- endif %}
-                            <div class="d-block h-24px">
-                                <span class="flag-icon flag-icon-{{affiliation | downcase}} align-items-center"></span>
-                            </div>
-                        </a>
+                    {%- else %}
+                    <a role="button" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm bg-white hover-primary disabled border-white" aria-disabled="true">
+                        {%- endif %}
+                        <div class="d-block affiliation-img-sm">
+                            <span class="flag-icon flag-icon-{{affiliation | downcase}}"></span>
+                        </div>
+                    </a>
                     {%- elsif filter_affiliation %}
                     <a role="button" href="{{filter_affiliation.url}}" data-bs-toggle="tooltip" data-bs-original-title="{{affiliation}}" class="btn btn-sm bg-white hover-primary">
                         {%- if filter_affiliation.image_url %}
-                        <img alt="logo of {{filter_affiliation.name}}" src="{{filter_affiliation.image_url | relative_url }}" class="d-inline h-24px">
+                        <img alt="logo of {{filter_affiliation.name}}" src="{{filter_affiliation.image_url | relative_url }}" class="d-inline affiliation-img-sm">
                         {%- else %}
                         {{filter_affiliation.name}}
                         {%- endif %}
