@@ -28,7 +28,12 @@
       {%- assign id = contributors[contributor].git | default: 'no_github' %}
       <div class="position-relative">
         {%- if contributors[contributor].image_url %}
-        <img src="{{ contributors[contributor].image_url }}" class="card-img-top p-3 rounded-circle" alt="{{ contributor }}">
+        <div class="p-3">
+          <div class="ratio ratio-1x1">
+            <div class="contr-placeholder rounded-circle" style="background-image: url({{ contributors[contributor].image_url }});">
+            </div>
+          </div>
+        </div>
         {%- else %}
         {%- if contributors[contributor].git %}
         <img src="https://avatars.githubusercontent.com/{{id}}" class="card-img-top p-3 rounded-circle" alt="{{ contributor }}">
