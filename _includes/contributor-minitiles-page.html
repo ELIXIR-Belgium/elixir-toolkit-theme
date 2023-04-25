@@ -9,7 +9,10 @@
       <button class="btn btn-sm dropdown-toggle contributor-link d-flex gap-2 align-items-center hover-primary position-relative"  type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" data-bs-offset="0,10">
           <div>
             {%- if contributors[contributor].image_url %}
-            <img class="img-fluid rounded-circle contributor-img-sm" src="{{ contributors[contributor].image_url }}" alt="Avatar of the contributor {{ contributor }}">
+            <div class="ratio ratio-1x1 contributor-img-sm">
+              <div class="contr-placeholder rounded-circle" style="background-image: url({{ contributors[contributor].image_url }});">
+              </div>
+            </div>
             {%- else %}
             {%- if contributors[contributor].git %}
             <img class="img-fluid rounded-circle contributor-img-sm" src="https://avatars.githubusercontent.com/{{ id }}" alt="Avatar of the contributor {{ contributor }}">
@@ -49,7 +52,12 @@
               {%- assign id = contributors[contributor].git | default: 'no_github' %}
               <div class="position-relative">
                 {%- if contributors[contributor].image_url %}
-                <img src="{{ contributors[contributor].image_url }}" class="card-img-top p-3 rounded-circle" alt="{{ contributor }}">
+                <div class="p-3">
+                  <div class="ratio ratio-1x1">
+                    <div class="contr-placeholder rounded-circle" style="background-image: url({{ contributors[contributor].image_url }});">
+                    </div>
+                  </div>
+                </div>
                 {%- else %}
                 {%- if contributors[contributor].git %}
                 <img src="https://avatars.githubusercontent.com/{{id}}" class="card-img-top p-3 rounded-circle" alt="{{ contributor }}">
