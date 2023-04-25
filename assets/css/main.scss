@@ -6,6 +6,7 @@ permalink: assets/css/main.css
 /*-----Default theme variables-----*/
 $popover-max-width: 12em;
 $enable-caret: false;
+$card-border-width: 0;
 
 /*-----Include other SASS files-----*/
 
@@ -136,7 +137,7 @@ div.highlight {
     color: $body-color;
     border: 1px solid $border-color;
     border-radius: $border-radius;
-    margin-bottom: $spacer;
+    margin: $spacer 0;
     pre {
         margin-bottom: 0;
         padding: $spacer;
