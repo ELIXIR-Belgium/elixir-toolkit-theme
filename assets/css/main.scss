@@ -128,7 +128,6 @@ pre {
     code {
         padding: 0;
         background-color: transparent;
-
     }
 }
 
@@ -540,9 +539,6 @@ footer {
         color: $primary;
         font-size: 0.8em;
     }
-    .contr-placeholder {
-        background-color: rgba($dark, 0.1);
-    }
 }
 
 /*-----Contributors carousel-----*/
@@ -569,14 +565,14 @@ footer {
 
 /*-----Contributor url image-----*/
 
-.contributor-cards .contr-placeholder {
+.contr-placeholder {
     background-color: rgba($dark, 0.1);
     background-position: center;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size:  cover;
+    background-size: cover;
 }
 
 /*-----------Social icons----------*/
@@ -633,7 +629,6 @@ footer {
         }
 
         .contr-placeholder {
-            background-color: rgba($dark, 0.1);
             font-size: 0.5rem;
         }
     }
@@ -703,7 +698,6 @@ footer {
 .affiliation-flag .ratio {
     width: 40px;
 }
-
 
 /*-----News and events-----*/
 

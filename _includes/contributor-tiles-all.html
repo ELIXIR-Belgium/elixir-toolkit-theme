@@ -33,7 +33,8 @@
             <div class="contr-placeholder rounded-circle" style="background-image: url({{ contributors[contributor].image_url }});">
             </div>
           </div>
-        </div>        {%- else %}
+        </div>
+        {%- else %}
         {%- if contributors[contributor].git %}
         <img src="https://avatars.githubusercontent.com/{{id}}" class="card-img-top p-3 rounded-circle" alt="{{ contributor }}">
         {%- else %}

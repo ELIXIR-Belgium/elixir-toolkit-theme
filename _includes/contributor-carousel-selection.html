@@ -10,54 +10,54 @@
 {%- assign allcontrstr = allcontrstr | append: ", " | append: pagecontr %}
 {%- else %}
 {%- assign allcontrstr = allcontrstr | append: pagecontr %}
-{%- endif  %}
-{%- endif  %}
+{%- endif %}
+{%- endif %}
 {%- endfor %}
 {%- for contr in contributors %}
 {%- assign allcontrstr = allcontrstr | append: ", " | append: contr[0] %}
 {%- endfor %}
 {%- assign allcontributors = allcontrstr | split: ", " | uniq | sort %}
-{%- endif  %}
+{%- endif %}
 <div id="contributors-carousel" class="carousel carousel-dark slide my-4" data-ride="carousel" data-bs-interval="7000">
     <div class="carousel-inner">
-        {%- assign counter = 0 %}
-        {%- for contributor in allcontributors %}
-        {%- capture modulo %}{{ counter | modulo:nr }}{% endcapture %}
-        {%- if modulo == '0' or counter == 0 %}
-        {%- if counter != 0 %}
-            </div>
-        </div>
-        {%- endif %}
-        <div class="carousel-item {% if counter == 0 %}active{% endif %}">
-            <div class="row row-cols-5 contributor-cards g-1 g-sm-4 ">
-        {%- endif %}
-                <div class="col">
-                    <div class="card h-100">
+    {%- assign counter = 0 %}
+    {%- for contributor in allcontributors %}
+    {%- capture modulo %}{{ counter | modulo:nr }}{% endcapture %}
+    {%- if modulo == '0' or counter == 0 %}
+    {%- if counter != 0 %}
+    </div>
+</div>
+    {%- endif %}
+    <div class="carousel-item {% if counter == 0 %}active{% endif %}">
+        <div class="row row-cols-5 contributor-cards g-1 g-sm-4 ">
+            {%- endif %}
+            <div class="col">
+                <div class="card h-100">
                     {%- assign id = contributors[contributor].git | default: 'no_github' %}
                     <div>
                         {%- if contributors[contributor].image_url %}
                         <div class="p-3">
                             <div class="ratio ratio-1x1">
-                              <div class="contr-placeholder rounded-circle" style="background-image: url({{ contributors[contributor].image_url }});">
-                              </div>
+                                <div class="contr-placeholder rounded-circle" style="background-image: url({{ contributors[contributor].image_url }});">
+                                </div>
                             </div>
-                          </div>
+                        </div>
                         {%- else %}
                         {%- if contributors[contributor].git %}
                         <img src="https://avatars.githubusercontent.com/{{id}}" class="card-img-top p-3 rounded-circle" alt="{{ contributor }}">
                         {%- else %}
                         <div class="p-3">
-                          <div class="ratio ratio-1x1">
-                            <div class="contr-placeholder rounded-circle d-flex justify-content-center align-items-center">
-                              {%- assign contr_name = contributor | split: " " %}
-                              {%- assign initials = "" %}
-                              {%- for name in contr_name %}
-                                  {%- assign initial = name | slice: 0,1 | capitalize %}
-                                  {%- assign initials = initials | append: initial %}
-                              {%- endfor %}
-                              <span class="fs-2 fw-bold">{{ initials }}</span>
+                            <div class="ratio ratio-1x1">
+                                <div class="contr-placeholder rounded-circle d-flex justify-content-center align-items-center">
+                                    {%- assign contr_name = contributor | split: " " %}
+                                    {%- assign initials = "" %}
+                                    {%- for name in contr_name %}
+                                    {%- assign initial = name | slice: 0,1 | capitalize %}
+                                    {%- assign initials = initials | append: initial %}
+                                    {%- endfor %}
+                                    <span class="fs-2 fw-bold">{{ initials }}</span>
+                                </div>
                             </div>
-                          </div>
                         </div>
                         {%- endif %}
                         {%- endif %}
@@ -83,21 +83,21 @@
                         </div>
                     </div>
                     {%- endif %}
-                    </div>
                 </div>
+            </div>
             {%- assign counter = counter | plus:1 %}
             {%- if forloop.last %}
-            </div>
-            {%- endif %}
-            {%- endfor %}
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#contributors-carousel"  data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#contributors-carousel"  data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        {%- endif %}
+        {%- endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#contributors-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#contributors-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
     </div>
 </div>
