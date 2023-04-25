@@ -494,8 +494,11 @@ footer {
     }
 
     #ett-logo {
+        transition: color .15s ease-in-out;
+
         .cls-1 {
             fill: $footer-ett;
+            transition: fill .15s ease-in-out;
         }
         &:hover {
             .cls-1 {
