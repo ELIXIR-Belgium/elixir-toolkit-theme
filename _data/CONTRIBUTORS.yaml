@@ -17,8 +17,8 @@ Bert Droesbeke:
     role: editor
     affiliation: VIB-UGent / ELIXIR-BE
 Short example contributor:
-    affiliation: Very short affiliation + institute   
+    affiliation: Affiliation 
 Long example contributor:
-    role: minion
+    role: role
     image_url: images/infrastructures/ELIXIR_BELGIUM_white_background.svg
     affiliation: Very long affiliation + Very long institute
