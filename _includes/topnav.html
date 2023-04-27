@@ -4,13 +4,11 @@
     <a class="visually-hidden-focusable" href='#footer'>Skip to footer</a>
     <nav class="navbar navbar-{{ site.theme_variables.topnav.theme | default: 'light' }} navbar-expand-lg mb-3 mb-lg-5">
         <div class="container">
-            <div class="d-flex flex-nowrap w-100 justify-content-between">
-                <a class="navbar-brand" href="{{ '/' | relative_url }}"><img class="{% if site.topnav_title %}me-3 {% endif %}img-fluid" alt="{{site.title}} logo" src="{{ site.theme_variables.topnav.brand_logo | default: 'assets/img/main_logo.svg' | relative_url }}">{% if site.topnav_title %}<span class="me-0 me-lg-3">{{site.topnav_title}}</span>{% endif %}</a>
-                <button class="navbar-toggler text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <i title="navbar-toggler" class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse w-100 justify-content-end" id="navbarCollapse">
+            <a class="navbar-brand" href="{{ '/' | relative_url }}"><img class="{% if site.topnav_title %}me-3 {% endif %}img-fluid" alt="{{site.title}} logo" src="{{ site.theme_variables.topnav.brand_logo | default: 'assets/img/main_logo.svg' | relative_url }}">{% if site.topnav_title %}<span class="me-0 me-lg-3">{{site.topnav_title}}</span>{% endif %}</a>
+            <button class="navbar-toggler text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i title="navbar-toggler" class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
                 <ul class="navbar-nav gap-2">
                     <!-- navigation entries -->
                     {%- assign topnav = site.data.topnav %}
