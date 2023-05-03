@@ -6,6 +6,7 @@ permalink: assets/css/main
 /*-----Default theme variables-----*/
 $popover-max-width: 12em;
 $enable-caret: false;
+$card-border-width: 0;
 
 /*-----Include other SASS files-----*/
 
@@ -118,23 +119,31 @@ code {
 }
 
 pre {
-    padding: 9.5px;
-    line-height: 1.42857143;
-    color: #333;
+    padding: $spacer;
     word-break: break-all;
     word-wrap: break-word;
-    border: 1px solid #ccc;
+    border: 1px solid $border-color;
     border-radius: $border-radius;
+    margin-bottom: $spacer;
+    line-height: 1.42857143;
+    code {
+        padding: 0;
+        background-color: transparent;
+    }
 }
 
-pre code {
-    padding: 0;
-    font-size: inherit;
-    color: inherit;
-    background-color: transparent;
-    border-radius: 0;
+div.highlight {
+    background: #fafbfc;
+    color: $body-color;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    margin: $spacer 0;
+    pre {
+        margin-bottom: 0;
+        padding: $spacer;
+        border: 0;
+    }
 }
-
 /*-----Top navigation-----*/
 
 header .navbar {
@@ -291,7 +300,7 @@ header .navbar {
 #side-nav .btn.sidebar-title {
     color: $sidebar-color;
     background-color: transparent;
-    border-color: transparent
+    border-color: transparent;
 }
 
 .sidebar-collapse {
@@ -486,8 +495,11 @@ footer {
     }
 
     #ett-logo {
+        transition: color .15s ease-in-out;
+
         .cls-1 {
             fill: $footer-ett;
+            transition: fill .15s ease-in-out;
         }
         &:hover {
             .cls-1 {
@@ -501,7 +513,6 @@ footer {
 /*-----Back to top-----*/
 
 #back-to-top {
-    transition: 0.3s ease-in-out;
     position: fixed;
     bottom: -50px;
     right: $spacer;
@@ -531,9 +542,6 @@ footer {
         color: $primary;
         font-size: 0.8em;
     }
-    .contr-placeholder {
-        background-color: rgba($dark, 0.10);
-    }
 }
 
 /*-----Contributors carousel-----*/
@@ -556,6 +564,18 @@ footer {
     #contributors-carousel .card-body {
         padding: 0rem 0.5rem 0.5rem 0.5rem;
     }
+}
+
+/*-----Contributor url image-----*/
+
+.contr-placeholder {
+    background-color: rgba($dark, 0.1);
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 /*-----------Social icons----------*/
@@ -612,7 +632,6 @@ footer {
         }
 
         .contr-placeholder {
-            background-color: rgba($dark, 0.10);
             font-size: 0.5rem;
         }
     }
@@ -690,10 +709,22 @@ footer {
     color: $primary !important;
 }
 
-/*-----Size components-----*/
+/*-----Affiliation sizes-----*/
 
-.h-24px {
+.affiliation-img-sm {
     height: 24px;
+}
+
+.affiliation-img {
+    height: 60px;
+}
+
+.affiliation-flag {
+    width: 60px;
+}
+
+.affiliation-flag .ratio {
+    width: 40px;
 }
 
 /*-----News and events-----*/

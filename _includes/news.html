@@ -8,7 +8,7 @@
     {%- for new in news reversed%}
     <li>
       <span class="title mb-1">{{ new.name | escape }}</span>
-      <p class="text-muted"><i class="far fa-calendar me-2"></i><time>{{ new.date | date_to_long_string }}</time>{% if new.linked_pr %}<b> - </b><i class="fa-solid fa-code-branch"></i><a href="{{ site.github.repository_url | append: '/pull/' | append: new.linked_pr }}">{{new.linked_pr }}</a>{% endif %}</p>
+      <p class="text-muted"><i class="far fa-calendar me-2"></i><time>{{ new.date | date_to_long_string }}</time>{% if new.linked_pr %} - <i class="fa-solid fa-code-branch"></i><a href="{{ site.github.repository_url | append: '/pull/' | append: new.linked_pr }}">{{new.linked_pr }}</a>{% endif %}</p>
       {%- if new.description %}
       {%- assign word_count = new.description | split: " " | size %}
       {%- if include.truncate == true and word_count > 40 %}

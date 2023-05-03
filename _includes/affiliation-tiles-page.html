@@ -1,0 +1,31 @@
+{%- if page.affiliations and page.affiliations.size != 0 %}
+<span class="d-block h2-like fs-2">Affiliations</span>
+<div class="p-4 rounded mt-4 page-contributors d-flex flex-wrap gap-2">
+    {%- assign affiliations = site.data.affiliations %}
+    {%- assign page_affiliations = page.affiliations | sort %}
+    {%- assign allcountries = site.data.countries %}
+    {%- for affiliation in page_affiliations %}
+    {%- if affiliation.size == 2 %}
+    {%- assign country = affiliation | upcase %}
+    {%- assign country_link = site.pages | where:"country_code",country | first %}
+    {%- if country_link %}
+    <a role="button" href="{{country_link.url | relative_url}}" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm d-flex align-items-center contributor-link hover-primary">
+    {%- else %}
+    <a role="button" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm contributor-link d-flex align-items-center hover-primary disabled border-white" aria-disabled="true">
+    {%- endif %}
+        <div class="d-flex justify-content-center affiliation-flag">
+            <div class="ratio ratio-4x3">
+                <div class="rounded shadow-sm flag-icon flag-icon-{{affiliation | downcase}}">
+                </div>
+            </div>
+        </div>
+    </a>
+    {%- else %}
+    {%- assign affiliation_info = affiliations | where:"name",affiliation | first %}
+    <a class="btn btn-sm contributor-link d-flex align-items-center justify-content-center hover-primary" data-bs-toggle="tooltip" title="{{affiliation_info.name}}" href="{{affiliation_info.url}}">
+        <img src="{{affiliation_info.image_url | relative_url}}" alt="{{affiliation_info.name}}" class="affiliation-img">
+    </a>
+    {%- endif %}
+    {%- endfor %}
+</div>
+{%- endif %}

@@ -113,6 +113,9 @@ This will start the docker container and serve the website locally. Make sure th
 - [Applied Bioinformatics and Biostatistics intranet page](https://intranet.psb.ugent.be/abb/)
 - [FAIRDOM](https://fair-dom.org/)
 - [Australian BioCommons How-to-Guides](https://australianbiocommons.github.io/how-to-guides/)
+- [Norwegian Life Science RDM LookUp](https://elixir.no/rdm-lookup)
+- [ERIM Research Toolbox](https://eur-nl.github.io/erim-research-toolbox/)
+- [ELIXIR-UK Fellowship](https://elixir-uk-dash.github.io/rdmkit/)
 
 ## Used packages
 
@@ -127,6 +130,7 @@ This theme would not be possible without following open source projects:
 - [jQuery Navgoco Menus](https://github.com/tefra/navgoco) - Multi-level slide navigation with accordion effect
 - [Font-Awesome](https://github.com/FortAwesome/Font-Awesome) - The famous icon library
 - [flag-icons](https://github.com/lipis/flag-icons) - A curated collection of all country flags in SVG + css integration
+- [clipboard.js](https://github.com/zenorocha/clipboard.js) - Modern copy to clipboard. No Flash. Just 3kb gzipped clipboard.
 
 ## Attribution
 
