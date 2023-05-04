@@ -674,10 +674,11 @@ footer {
 
 .tool {
     cursor: pointer;
+    white-space: nowrap !important;
     color: $link-color;
     background-color: rgba($link-color, .1);
     border-radius: $border-radius;
-    padding: 0.125rem 0.25rem;
+    padding:  $btn-padding-y-sm $btn-padding-x-sm;
 
     &:hover {
         text-decoration: none !important;
@@ -685,7 +686,7 @@ footer {
     }
 }
 
-.popover-tool {
+.dropdown-tool {
     max-width: 20rem;
 
     h5 {
