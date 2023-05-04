@@ -678,7 +678,7 @@ footer {
     color: $link-color;
     background-color: rgba($link-color, .1);
     border-radius: $border-radius;
-    padding:  $btn-padding-y-sm $btn-padding-x-sm;
+    padding:  0.125rem 0.250rem;
 
     &:hover {
         text-decoration: none !important;
@@ -686,7 +686,7 @@ footer {
     }
 }
 
-.dropdown-tool {
+.popover-tool {
     max-width: 20rem;
 
     h5 {
