@@ -29,12 +29,12 @@
 </div>
     {%- endif %}
     <div class="carousel-item {% if counter == 0 %}active{% endif %}">
-        <div class="row row-cols-5 contributor-cards g-1 g-sm-4 ">
+        <div class="row row-cols-5 contributor-cards g-1 g-xl-4 ">
             {%- endif %}
             <div class="col">
                 <div class="card h-100">
                     {%- assign id = contributors[contributor].git | default: 'no_github' %}
-                    <div>
+                    <div class="position-relative">
                         {%- if contributors[contributor].image_url %}
                         <div class="p-3">
                             <div class="ratio ratio-1x1">
@@ -61,6 +61,9 @@
                         </div>
                         {%- endif %}
                         {%- endif %}
+                        {%- if contributors[contributor].role %}
+                        <span class="badge position-absolute top-0 end-0">{{ contributors[contributor].role | capitalize }}</span>
+                        {%- endif %}
                     </div>
                     <div class="card-body text-center py-0">
                         <p class="card-title">{{ contributor }}</p>
@@ -70,7 +73,7 @@
                     </div>
                     {%- if contributors[contributor].git or contributors[contributor].email or contributors[contributor].orcid %}
                     <div class="card-footer">
-                        <div class="d-flex justify-content-center gap-2">
+                        <div class="d-flex justify-content-center gap-1 gap-md-2">
                             {%- if contributors[contributor].git %}
                             <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://github.com/{{id}}"><i class="fa-brands fa-github"></i></a>
                             {%- endif %}
