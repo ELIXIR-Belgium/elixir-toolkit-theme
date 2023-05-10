@@ -495,11 +495,11 @@ footer {
     }
 
     #ett-logo {
-        transition: color .15s ease-in-out;
+        transition: color 0.15s ease-in-out;
 
         .cls-1 {
             fill: $footer-ett;
-            transition: fill .15s ease-in-out;
+            transition: fill 0.15s ease-in-out;
         }
         &:hover {
             .cls-1 {
@@ -552,17 +552,31 @@ footer {
 }
 
 @include media-breakpoint-down(md) {
-    #contributors-carousel .card-title {
-        font-size: 0.5em;
-    }
+    #contributors-carousel {
+        .card-title {
+            font-size: 0.5em;
+        }
 
-    #contributors-carousel .card-affiliation {
-        color: $primary;
-        font-size: 0.4em;
-    }
+        .card-affiliation,
+        .badge {
+            font-size: 0.4em;
+        }
 
-    #contributors-carousel .card-body {
-        padding: 0rem 0.5rem 0.5rem 0.5rem;
+        .card-body,
+        .card-footer {
+            padding: 0.5rem 0.25rem;
+        }
+
+        .social-icons {
+            line-height: 2ex;
+            width: 2.2ex;
+            height: 2.2ex;
+            i {
+                font-size: 0.625em;
+                line-height: 0.1em;
+                vertical-align: 0.225em;
+            }
+        }
     }
 }
 
@@ -585,14 +599,6 @@ footer {
     width: 4ex;
     height: 4ex;
     text-align: center;
-}
-
-@include media-breakpoint-down(md) {
-    #contributors-carousel .social-icons {
-        line-height: 1.2ex;
-        width: 1.2ex;
-        height: 1.2ex;
-    }
 }
 
 /*--------Page contributors---------*/

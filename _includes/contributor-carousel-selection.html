@@ -1,10 +1,22 @@
 {%- assign contributors = site.data.CONTRIBUTORS %}
 {%- assign nr = include.nr | default: 5 %}
 {%- if include.custom %}
-{%- assign allcontributors = include.custom | split: ", " | sort %}
+{%- assign allcontrstr = include.custom %}
+{%- elsif include.role %}
+{%- assign rolefilter =  include.role | downcase %}
+{%- for contr in contributors %}
+{%- assign contrrole = contr[1]['role'] | downcase %}
+{%- if include.role == contrrole %}
+{%- if allcontrstr %}
+{%- assign allcontrstr = allcontrstr | append: ", " | append: contr[0] %}
+{%- else %}
+{%- assign allcontrstr = allcontrstr | append: contr[0] %}
+{%- endif %}
+{%- endif %}
+{%- endfor %}
 {%- else %}
 {%- for page in site.pages %}
-{%- if page.contributors and page.search_exclude != true %}
+{%- if page.contributors and page.search_exclude != true and page.contributors.size != 0 %}
 {%- assign pagecontr = page.contributors | join: ", " %}
 {%- if allcontrstr %}
 {%- assign allcontrstr = allcontrstr | append: ", " | append: pagecontr %}
@@ -14,10 +26,14 @@
 {%- endif %}
 {%- endfor %}
 {%- for contr in contributors %}
+{%- if allcontrstr %}
 {%- assign allcontrstr = allcontrstr | append: ", " | append: contr[0] %}
-{%- endfor %}
-{%- assign allcontributors = allcontrstr | split: ", " | uniq | sort %}
+{%- else %}
+{%- assign allcontrstr = allcontrstr | append: contr[0] %}
 {%- endif %}
+{%- endfor %}
+{%- endif %}
+{%- assign allcontributors = allcontrstr | split: ", " | uniq | sort %}
 <div id="contributors-carousel" class="carousel carousel-dark slide my-4" data-ride="carousel" data-bs-interval="7000">
     <div class="carousel-inner">
     {%- assign counter = 0 %}
@@ -29,12 +45,12 @@
 </div>
     {%- endif %}
     <div class="carousel-item {% if counter == 0 %}active{% endif %}">
-        <div class="row row-cols-5 contributor-cards g-1 g-sm-4 ">
+        <div class="row row-cols-{{nr}} contributor-cards g-1 g-xl-4 ">
             {%- endif %}
             <div class="col">
                 <div class="card h-100">
                     {%- assign id = contributors[contributor].git | default: 'no_github' %}
-                    <div>
+                    <div class="position-relative">
                         {%- if contributors[contributor].image_url %}
                         <div class="p-3">
                             <div class="ratio ratio-1x1">
@@ -61,6 +77,9 @@
                         </div>
                         {%- endif %}
                         {%- endif %}
+                        {%- if contributors[contributor].role %}
+                        <span class="badge position-absolute top-0 end-0">{{ contributors[contributor].role | capitalize }}</span>
+                        {%- endif %}
                     </div>
                     <div class="card-body text-center py-0">
                         <p class="card-title">{{ contributor }}</p>
@@ -70,15 +89,15 @@
                     </div>
                     {%- if contributors[contributor].git or contributors[contributor].email or contributors[contributor].orcid %}
                     <div class="card-footer">
-                        <div class="d-flex justify-content-center">
+                        <div class="d-flex justify-content-center gap-1 gap-md-2">
                             {%- if contributors[contributor].git %}
-                            <div class="mx-1"><a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://github.com/{{id}}"><i class="fa-brands fa-github"></i></a></div>
+                            <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://github.com/{{id}}"><i class="fa-brands fa-github"></i></a>
                             {%- endif %}
                             {%- if contributors[contributor].email %}
-                            <div class="mx-1"><a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="mailto:{{contributors[contributor].email}}"><i class="fa-solid fa-envelope"></i></a></div>
+                            <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="mailto:{{contributors[contributor].email}}"><i class="fa-solid fa-envelope"></i></a>
                             {%- endif %}
                             {%- if contributors[contributor].orcid %}
-                            <div class="mx-1"><a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://orcid.org/{{contributors[contributor].orcid}}"><i class="fa-brands fa-orcid"></i></a></div>
+                            <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://orcid.org/{{contributors[contributor].orcid}}"><i class="fa-brands fa-orcid"></i></a>
                             {%- endif %}
                         </div>
                     </div>

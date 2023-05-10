@@ -19,9 +19,9 @@ Becomes:
 
 ### Parameters
 
-* `affiliations`: Turn on filtering by affiliation
-* `search`: enable search in the tiles
-* `except`: `, ` separated list of page names which should be excluded, including the file extension
+* `affiliations`: Turn on filtering by affiliation (`true` or `false`)
+* `search`: enable search in the tiles (`true` or `false`)
+* `except`: `, ` separated list of page file names which should be excluded, including the file extension
 
 
 ## Section tiles simple

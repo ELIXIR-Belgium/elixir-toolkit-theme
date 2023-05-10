@@ -1,6 +1,19 @@
 {%- assign contributors = site.data.CONTRIBUTORS %}
+{%- assign nr = include.nr | default: 5 %}
 {%- if include.custom %}
-{%- assign allcontributors = include.custom | split: ", " | sort %}
+{%- assign allcontrstr = include.custom %}
+{%- elsif include.role %}
+{%- assign rolefilter =  include.role | downcase %}
+{%- for contr in contributors %}
+{%- assign contrrole = contr[1]['role'] | downcase %}
+{%- if include.role == contrrole %}
+{%- if allcontrstr %}
+{%- assign allcontrstr = allcontrstr | append: ", " | append: contr[0] %}
+{%- else %}
+{%- assign allcontrstr = allcontrstr | append: contr[0] %}
+{%- endif %}
+{%- endif %}
+{%- endfor %}
 {%- else %}
 {%- for page in site.pages %}
 {%- if page.contributors and page.search_exclude != true and page.contributors.size != 0 %}
@@ -19,9 +32,9 @@
 {%- assign allcontrstr = allcontrstr | append: contr[0] %}
 {%- endif %}
 {%- endfor %}
-{%- assign allcontributors = allcontrstr | split: ", " | uniq | sort %}
 {%- endif %}
-<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-xl-5 g-4 contributor-cards">
+{%- assign allcontributors = allcontrstr | split: ", " | uniq | sort %}
+<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-xl-{{nr}} g-4 contributor-cards">
   {%- for contributor in allcontributors %}
   <div class="col">
     <div class="card h-100">
@@ -65,15 +78,15 @@
       </div>
       {%- if contributors[contributor].git or contributors[contributor].email or contributors[contributor].orcid %}
       <div class="card-footer">
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center gap-2">
           {%- if contributors[contributor].git %}
-          <div class="mx-1"><a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://github.com/{{id}}"><i class="fa-brands fa-github"></i></a></div>
+          <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://github.com/{{id}}"><i class="fa-brands fa-github"></i></a>
           {%- endif %}
           {%- if contributors[contributor].email %}
-          <div class="mx-1"><a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="mailto:{{contributors[contributor].email}}"><i class="fa-solid fa-envelope"></i></a></div>
+          <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="mailto:{{contributors[contributor].email}}"><i class="fa-solid fa-envelope"></i></a>
           {%- endif %}
           {%- if contributors[contributor].orcid %}
-          <div class="mx-1"><a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://orcid.org/{{contributors[contributor].orcid}}"><i class="fa-brands fa-orcid"></i></a></div>
+          <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://orcid.org/{{contributors[contributor].orcid}}"><i class="fa-brands fa-orcid"></i></a>
           {%- endif %}
         </div>
       </div>
