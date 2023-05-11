@@ -7,6 +7,12 @@ permalink: assets/css/main.css
 $popover-max-width: 12em;
 $enable-caret: false;
 $card-border-width: 0;
+$custom-container-max-widths: (
+    xxxl: 1500px,
+);
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+$container-max-widths: map-merge($container-max-widths, $custom-container-max-widths);
 
 /*-----Include other SASS files-----*/
 
@@ -79,6 +85,77 @@ main {
 
 .ff-theme {
     font-family: $font-family-theme !important;
+}
+
+/*-----Layout-----*/
+
+#main {
+    grid-area: main;
+}
+
+@include media-breakpoint-up(md) {
+    #main {
+        display: grid;
+        grid-template-areas:
+            "intro"
+            "toc"
+            "content";
+        grid-template-rows: auto auto 1fr;
+    }
+}
+@include media-breakpoint-up(lg) {
+    #main {
+        grid-template-areas:
+            "intro toc"
+            "content toc";
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 5fr 2fr;
+    }
+}
+
+#toc {
+    grid-area: toc;
+}
+
+@include media-breakpoint-up(lg) {
+    #toc {
+        top: $spacer * 3;
+        right: 0;
+        z-index: 2;
+        height: calc(100vh - 7rem);
+        overflow-y: auto;
+        margin-left: $spacer * 3;
+    }
+}
+
+#intro {
+    grid-area: intro;
+}
+
+#sidebar {
+    grid-area: sidebar;
+}
+
+@include media-breakpoint-up(lg) {
+    #sidebar {
+        top: $spacer * 3;
+        display: block !important;
+        height: calc(100vh - 6rem);
+        overflow-y: auto;
+    }
+}
+
+#content {
+    grid-area: content;
+    min-width: 1px;
+}
+
+@include media-breakpoint-up(lg) {
+    #layout {
+        display: grid;
+        grid-template-areas: "sidebar main";
+        grid-template-columns: 2fr 9fr;
+    }
 }
 
 /*-----Blockquote-----*/
@@ -292,12 +369,12 @@ header .navbar {
 /*-----Sidebar-----*/
 
 @include media-breakpoint-up(lg) {
-    #side-nav {
+    #sidebar > nav {
         display: block !important;
     }
 }
 
-#side-nav .btn.sidebar-title {
+#sidebar > nav .btn.sidebar-title {
     color: $sidebar-color;
     background-color: transparent;
     border-color: transparent;
@@ -318,7 +395,7 @@ header .navbar {
     background-color: $sidebar-bg-active;
 }
 
-#side-nav > ul {
+#sidebar > nav > ul {
     > li:not(.sidebar-title) > a {
         background-color: $sidebar-bg;
         color: $sidebar-color;
@@ -391,12 +468,21 @@ header .navbar {
 
 /*-----TOC-----*/
 
-#toc {
-    background-color: $toc-bg;
-    // Indent the lists and reset any other padding
+#toc-contents {
+    @include media-breakpoint-up(lg) {
+        display: block !important;
+    }
 
+    // Indent the lists and reset any other padding
     ul {
         padding: 0 0 0 20px;
+        // highlighting active links
+        a {
+            &.active {
+                border-bottom: 2px solid $link-color;
+                padding-bottom: 2px;
+            }
+        }
     }
 
     // Consistent vertical space between list items
