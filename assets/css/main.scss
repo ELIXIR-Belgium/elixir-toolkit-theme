@@ -3,6 +3,7 @@ layout: none
 permalink: assets/css/main.css
 ---
 
+@import "bootstrap/functions";
 /*-----Default theme variables-----*/
 $popover-max-width: 12em;
 $enable-caret: false;
@@ -10,13 +11,15 @@ $card-border-width: 0;
 $custom-container-max-widths: (
     xxxl: 1500px,
 );
-@import "bootstrap/functions";
-@import "bootstrap/variables";
-$container-max-widths: map-merge($container-max-widths, $custom-container-max-widths);
 
 /*-----Include other SASS files-----*/
 
 @import "bootstrap_variables";
+@import "bootstrap/variables";
+
+/*-----Custom maps-----*/
+$container-max-widths: map-merge($container-max-widths, $custom-container-max-widths);
+
 @import "bootstrap/bootstrap";
 @import "variables";
 @import "custom_variables";
@@ -134,15 +137,6 @@ main {
 
 #sidebar {
     grid-area: sidebar;
-}
-
-@include media-breakpoint-up(lg) {
-    #sidebar {
-        top: $spacer * 3;
-        display: block !important;
-        height: calc(100vh - 6rem);
-        overflow-y: auto;
-    }
 }
 
 #content {
