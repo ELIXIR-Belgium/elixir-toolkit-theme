@@ -144,6 +144,9 @@ main {
 #content {
     grid-area: content;
     min-width: 1px;
+    h2:first-child {
+        margin-top: 0;
+    }
 }
 
 @include media-breakpoint-up(lg) {
