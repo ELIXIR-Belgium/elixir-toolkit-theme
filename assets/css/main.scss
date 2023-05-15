@@ -475,12 +475,15 @@ header .navbar {
 
     // Indent the lists and reset any other padding
     ul {
-        padding: 0 0 0 20px;
+        padding: 0;
+        list-style: none;
         // highlighting active links
         a {
+            color: inherit;
             &.active {
-                border-bottom: 2px solid $link-color;
-                padding-bottom: 2px;
+                // border-bottom: 2px solid $link-color;
+                // padding-bottom: 2px;
+                font-weight: bold;
             }
         }
     }
@@ -490,12 +493,6 @@ header .navbar {
     li,
     ul ul li {
         margin: 8px 0 0 0;
-    }
-
-    // Sublists
-
-    ul ul {
-        list-style: circle outside;
     }
 }
 
