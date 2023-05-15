@@ -3,8 +3,9 @@ layout: none
 permalink: assets/css/main.css
 ---
 
-@import "bootstrap/functions";
 /*-----Default theme variables-----*/
+
+@import "bootstrap/functions";
 $popover-max-width: 12em;
 $enable-caret: false;
 $card-border-width: 0;
@@ -12,7 +13,7 @@ $custom-container-max-widths: (
     xxxl: 1500px,
 );
 
-/*-----Include other SASS files-----*/
+/*-----Initialize Bootstrap variables-----*/
 
 @import "bootstrap_variables";
 @import "bootstrap/variables";
@@ -20,6 +21,7 @@ $custom-container-max-widths: (
 /*-----Custom maps-----*/
 $container-max-widths: map-merge($container-max-widths, $custom-container-max-widths);
 
+/*-----Include other SASS files-----*/
 @import "bootstrap/bootstrap";
 @import "variables";
 @import "custom_variables";
@@ -370,8 +372,6 @@ header .navbar {
 
 #sidebar > nav .btn.sidebar-title {
     color: $sidebar-color;
-    background-color: transparent;
-    border-color: transparent;
 }
 
 .sidebar-collapse {
@@ -477,7 +477,7 @@ header .navbar {
             &.active {
                 // border-bottom: 2px solid $link-color;
                 // padding-bottom: 2px;
-                font-weight: bold;
+                color: $primary;
             }
         }
     }
