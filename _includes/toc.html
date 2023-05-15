@@ -1,11 +1,11 @@
 {%- unless page.toc == false %}
 <script>
   $(document).ready(function () {
-    $('#toc-contents').toc({ minimumHeaders: {{site.theme_variables.toc.min_headers | default: 2 }}, listType: 'ul', noBackToTopLinks: true, showSpeed: 0, headers: '{{site.theme_variables.toc.headers | default: 'main h2' }}' , title: '<strong class="d-none d-lg-block h6 my-2">On this page</strong><hr class="d-none d-lg-block my-2">' });
+    $('#toc-contents').toc({ minimumHeaders: {{site.theme_variables.toc.min_headers | default: 2 }}, listType: 'ul', classes: { list: 'list-unstyled mb-4 mb-lg-0'}, showEffect: 'slfadeInideDown', noBackToTopLinks: true, showSpeed: 0, headers: '{{site.theme_variables.toc.headers | default: 'main h2' }}' , title: '<strong class="d-none d-lg-block h6 my-2">On this page</strong><hr class="d-none d-lg-block my-2">' });
   });
 </script>
-<button class="btn bg-light hover-primary mb-2 mb-lg-0 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#toc-contents" aria-expanded="true" aria-controls="toc-contents">
+<button class="btn bg-light d-lg-none hover-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#toc-contents" aria-expanded="true" aria-controls="toc-contents">
   <i class="fa-solid fa-up-right-and-down-left-from-center me-2"></i>On this page
 </button>
-<nav id="toc-contents" class="collapse"></nav>
+<nav id="toc-contents" class="collapse" aria-label="Table of contents"></nav>
 {%- endunless %}
