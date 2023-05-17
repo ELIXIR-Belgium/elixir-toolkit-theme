@@ -245,7 +245,7 @@ header .navbar {
     font-weight: 900;
     margin-left: 0.25rem;
     content: "\f0d7";
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.15s ease-in-out;
 }
 
 .dropdown-toggle[aria-expanded="true"]::after {
@@ -415,7 +415,7 @@ header .navbar {
             font-family: "Font Awesome 6 Free";
             font-weight: 900;
             content: "\f078";
-            transition: transform 0.2s ease-in-out;
+            transition: transform 0.15s ease-in-out;
         }
     }
 
@@ -475,10 +475,11 @@ header .navbar {
         // highlighting active links
         a {
             color: inherit;
-            &.active {
-                // border-bottom: 2px solid $link-color;
-                // padding-bottom: 2px;
-                color: $primary;
+            &.active,
+            &:hover {
+                text-decoration: none !important;
+                border-bottom: 2px solid $primary;
+                padding-bottom: 2px;
             }
         }
     }
