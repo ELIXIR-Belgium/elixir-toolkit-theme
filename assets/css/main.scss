@@ -676,9 +676,9 @@ footer {
     cursor: pointer;
     white-space: nowrap !important;
     color: $link-color;
-    background-color: rgba($link-color, .1);
+    background-color: rgba($link-color, .05);
     border-radius: $border-radius;
-    padding:  0.125rem 0.250rem;
+    padding:  0.1rem 0.250rem;
 
     &:hover {
         text-decoration: none !important;
