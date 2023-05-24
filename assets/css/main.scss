@@ -149,6 +149,10 @@ main {
     }
 }
 
+#main:not(:has(#toc ul)) {
+    grid-template-columns: 6fr 1fr;
+}
+
 @include media-breakpoint-up(lg) {
     #layout {
         display: grid;
