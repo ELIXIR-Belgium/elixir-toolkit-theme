@@ -98,6 +98,10 @@ main {
     grid-area: main;
 }
 
+#main:not(:has(#toc #toc-contents ul)) {
+    grid-template-columns: 7fr;
+}
+
 @include media-breakpoint-up(md) {
     #main {
         display: grid;
@@ -147,10 +151,6 @@ main {
     h2:first-child {
         margin-top: 0;
     }
-}
-
-#main:not(:has(#toc ul)) {
-    grid-template-columns: 6fr 1fr;
 }
 
 @include media-breakpoint-up(lg) {
