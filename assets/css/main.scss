@@ -98,7 +98,7 @@ main {
     grid-area: main;
 }
 
-#main:not(:has(#toc #toc-contents ul)) {
+#main:not(:is(#toc #toc-contents ul)) {
     grid-template-columns: 7fr;
 }
 
@@ -127,7 +127,7 @@ main {
 }
 
 @include media-breakpoint-up(lg) {
-    #toc {
+    #toc:not(:is(#toc-contents ul)) {
         top: $spacer * 3;
         right: 0;
         z-index: 2;
