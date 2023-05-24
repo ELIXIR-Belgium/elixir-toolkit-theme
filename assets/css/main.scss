@@ -674,7 +674,7 @@ footer {
 
 .tool {
     cursor: pointer;
-    white-space: nowrap !important;
+    white-space: nowrap;
     color: $link-color;
     background-color: rgba($link-color, .05);
     border-radius: $border-radius;
