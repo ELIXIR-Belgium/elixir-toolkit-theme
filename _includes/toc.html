@@ -1,7 +1,7 @@
 {%- unless page.toc == false %}
 <script>
   $(document).ready(function () {
-    $('#toc-contents').toc({ minimumHeaders: {{site.theme_variables.toc.min_headers | default: 2 }}, listType: 'ul', classes: { list: 'list-unstyled mb-4 mb-lg-0'}, noBackToTopLinks: true, showSpeed: 0, headers: '{{site.theme_variables.toc.headers | default: 'main h2' }}' , title: '<strong class="d-none d-lg-block my-2">On this page</strong><hr class="d-none d-lg-block my-2">' });
+    $('#toc-contents').toc({ minimumHeaders: {{site.theme_variables.toc.min_headers | default: 2 }}, listType: 'ul', classes: { list: 'list-unstyled'}, noBackToTopLinks: true, showSpeed: 0, headers: '{{site.theme_variables.toc.headers | default: 'main h2' }}' , title: '<strong class="my-2">On this page</strong><hr class="my-2">' });
   });
 </script>
 <button class="btn bg-light d-lg-none hover-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#toc-contents" aria-expanded="true" aria-controls="toc-contents">

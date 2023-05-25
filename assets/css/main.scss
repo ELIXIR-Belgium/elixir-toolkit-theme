@@ -98,7 +98,7 @@ main {
     grid-area: main;
 }
 
-#main:not(:is(#toc #toc-contents ul)) {
+#main:not(:has(#toc #toc-contents ul)) {
     grid-template-columns: 7fr;
 }
 
@@ -127,7 +127,7 @@ main {
 }
 
 @include media-breakpoint-up(lg) {
-    #toc:not(:is(#toc-contents ul)) {
+    #toc:has(#toc-contents ul) {
         top: $spacer * 3;
         right: 0;
         z-index: 2;
@@ -472,9 +472,7 @@ header .navbar {
 #toc-contents {
     @include media-breakpoint-up(lg) {
         display: block !important;
-    }
-
-    // Indent the lists and reset any other padding
+    }    // Indent the lists and reset any other padding
     ul {
         // highlighting active links
         a {
