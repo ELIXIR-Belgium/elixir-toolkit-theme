@@ -4,7 +4,7 @@
     $('#toc-contents').toc({ minimumHeaders: {{site.theme_variables.toc.min_headers | default: 2 }}, listType: 'ul', classes: { list: 'list-unstyled'}, noBackToTopLinks: true, showSpeed: 0, headers: '{{site.theme_variables.toc.headers | default: 'main h2' }}' , title: '<strong class="my-2">On this page</strong><hr class="my-2">' });
   });
 </script>
-<button class="btn bg-light d-lg-none hover-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#toc-contents" aria-expanded="true" aria-controls="toc-contents">
+<button id="btn-toc-hide" class="btn bg-light d-lg-none hover-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#toc-contents" aria-expanded="true" aria-controls="toc-contents">
   <i class="fa-solid fa-up-right-and-down-left-from-center me-2"></i>On this page
 </button>
 <nav id="toc-contents" class="collapse" aria-label="Table of contents"></nav>
