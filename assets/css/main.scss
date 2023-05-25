@@ -138,7 +138,7 @@ main {
         overflow-y: auto;
         margin-left: $spacer * 3;
     }
-    #toc:has(#toc-contents ul) {
+    #toc:not(:has(#toc-contents ul)) {
         margin-left: 0;
     }
 }
