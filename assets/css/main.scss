@@ -78,10 +78,10 @@ $container-max-widths: map-merge($container-max-widths, $custom-container-max-wi
             font-weight: 600;
         }
     }
+}
 
-    img {
-        @extend .img-fluid;
-    }
+body img {
+    @extend .img-fluid;
 }
 
 .ff-body {
