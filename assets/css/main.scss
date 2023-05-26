@@ -28,7 +28,7 @@ $container-max-widths: map-merge($container-max-widths, $custom-container-max-wi
 
 /*-----General styling-----*/
 
-main {
+#content {
     h1 {
         font-family: $font-family-theme;
         font-weight: 400;
