@@ -28,7 +28,7 @@ subitems:
         url: /custom_branding
       - title: Website sections
         url: /website_sections
-      - title: Resource table
+      - title: Tools and resources table
         url: /resource_table
   - title: Example pages
     subitems:
