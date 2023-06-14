@@ -2,7 +2,7 @@
 permalink: assets/js/search-data.json
 layout: none
 ---
-{
+[
   {%- assign i = 0 -%}
   {%- assign pages_array = "" | split: "" -%}
   {%- assign pages_array = pages_array | push: site.html_pages -%}
@@ -36,29 +36,31 @@ layout: none
               {%- capture url -%}{{ url | append: '#' | append: id }}{%- endcapture -%}
             {%- endif -%}
           {%- endif -%}
-    {%- unless i == 0 -%},{%- endunless -%}
-    "{{ i }}": {
-      "doc": {{ page.title | jsonify }},
-      "title": {{ title | jsonify }},
-      "content": {{ content | replace: '</h', ' . </h' | replace: '<hr', ' . <hr' | replace: '</p', ' . </p' | replace: '<ul', ' . <ul' | replace: '</ul', ' . </ul' | replace: '<ol', ' . <ol' | replace: '</ol', ' . </ol' | replace: '</tr', ' . </tr' | replace: '</td', ' | </td' | replace: '<td', ' | <td' | replace: '</th', ' | </th' | replace: '<th', ' | <th' | strip_html | remove: 'Table of contents' | normalize_whitespace | replace: '. . .', '.' | replace: '. .', '.' | replace: '| |', '|' | append: ' ' | jsonify }},
-      "url": "{{ url | relative_url }}",
-      "relUrl": "{{ url }}"
-    }
+          {%- unless i == 0 -%}
+  ,
+          {%- endunless %}
+  {
+    "title": {{ page.title | jsonify }},
+    "subtitle": {{ title | jsonify }},
+    "content": {{ content | replace: '</h', ' . </h' | replace: '<hr', ' . <hr' | replace: '</p', ' . </p' | replace: '<ul', ' . <ul' | replace: '</ul', ' . </ul' | replace: '<ol', ' . <ol' | replace: '</ol', ' . </ol' | replace: '</tr', ' . </tr' | replace: '</td', ' | </td' | replace: '<td', ' | <td' | replace: '</th', ' | </th' | replace: '<th', ' | <th' | strip_html | normalize_whitespace | replace: '. . .', '.' | replace: '. .', '.' | replace: '| |', '|' | append: ' ' | jsonify }},
+    "url": "{{ url | relative_url }}"
+  }
           {%- assign i = i | plus: 1 -%}
-        {%- endfor -%}
-        {%- unless title_found -%}
-    {%- unless i == 0 -%},{%- endunless -%}
-    "{{ i }}": {
-      "doc": {{ page.title | jsonify }},
-      "title": {{ page.title | jsonify }},
-      "content": {{ parts[0] | replace: '</h', ' . </h' | replace: '<hr', ' . <hr' | replace: '</p', ' . </p' | replace: '<ul', ' . <ul' | replace: '</ul', ' . </ul' | replace: '<ol', ' . <ol' | replace: '</ol', ' . </ol' | replace: '</tr', ' . </tr' | replace: '<li', ' | <li' | replace: '</li', ' | </li' | replace: '</td', ' | </td' | replace: '<td', ' | <td' | replace: '</th', ' | </th' | replace: '<th', ' | <th' | strip_html | remove: 'Table of contents' | normalize_whitespace | replace: '. . .', '.' | replace: '. .', '.' | replace: '| |', '|' | append: ' ' | jsonify }},
-      "url": "{{ page.url | relative_url }}",
-      "relUrl": "{{ page.url }}"
-    }
+          {%- endfor -%}
+          {%- unless title_found -%}
+          {%- unless i == 0 -%}
+  ,
+          {%- endunless %}
+  {
+    "title": {{ page.title | jsonify }},
+    "subtitle": {{ page.title | jsonify }},
+    "content": {{ parts[0] | replace: '</h', ' . </h' | replace: '<hr', ' . <hr' | replace: '</p', ' . </p' | replace: '<ul', ' . <ul' | replace: '</ul', ' . </ul' | replace: '<ol', ' . <ol' | replace: '</ol', ' . </ol' | replace: '</tr', ' . </tr' | replace: '<li', ' | <li' | replace: '</li', ' | </li' | replace: '</td', ' | </td' | replace: '<td', ' | <td' | replace: '</th', ' | </th' | replace: '<th', ' | <th' | strip_html | normalize_whitespace | replace: '. . .', '.' | replace: '. .', '.' | replace: '| |', '|' | append: ' ' | jsonify }},
+    "url": "{{ page.url | relative_url }}"
+  }
           {%- assign i = i | plus: 1 -%}
         {%- endunless -%}
       {%- endif -%}
     {%- endfor -%}
   {%- endfor %}
-  }
+]
   
