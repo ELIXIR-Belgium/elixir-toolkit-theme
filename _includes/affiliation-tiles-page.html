@@ -1,6 +1,6 @@
 {%- if page.affiliations and page.affiliations.size != 0 %}
 <span class="d-block h2-like fs-2">Affiliations</span>
-<div class="p-4 rounded mt-4 page-contributors d-flex flex-wrap gap-2">
+<div class="mt-4 d-flex flex-wrap gap-2">
     {%- assign affiliations = site.data.affiliations %}
     {%- assign page_affiliations = page.affiliations | sort %}
     {%- assign allcountries = site.data.countries %}
