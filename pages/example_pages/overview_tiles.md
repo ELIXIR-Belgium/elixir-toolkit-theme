@@ -21,7 +21,8 @@ Becomes:
 
 * `affiliations`: Turn on filtering by affiliation (`true` or `false`)
 * `search`: enable search in the tiles (`true` or `false`)
-* `except`: `, ` separated list of page file names which should be excluded, including the file extension
+* `except`: `, ` separated list of page file names which should be excluded, including the file extension.
+* `col`: give an integer to specify the number of columns/section cards per row. Default: 2.
 
 
 ## Section tiles simple
@@ -37,5 +38,6 @@ Becomes:
 
 ### Parameters
 
-* `except`: `, ` separated list of page names which should be excluded, including the file extension
+* `except`: `, ` separated list of page names which should be excluded, including the file extension.
+* `col`: give an integer to specify the number of columns/section cards per row. Default: 2.
 

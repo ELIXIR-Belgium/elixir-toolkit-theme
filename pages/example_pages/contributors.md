@@ -20,17 +20,17 @@ Contributors are defined in two places: the page-metadata and the [CONTRIBUTORS.
 
 * `custom`: `, ` separated list of contributor names if you only want to show a specific collection of contributors.
 * `role`: specify the role of the contributors you want to filter on. This is not combinable with the custom list of contributors.
-* `nr`: give an integer to specify the number of columns/contributor cards per row.
+* `col`: give an integer to specify the number of columns/contributor cards per row. Default: 5.
 
 ### Example with parameters
 
 ```
 {% raw %}
-{% include contributor-tiles-all.html custom="Bert Droesbeke, example contributor" nr=4 %}
+{% include contributor-tiles-all.html custom="Bert Droesbeke, example contributor" col=4 %}
 {% endraw %}
 ```
 
-{% include contributor-tiles-all.html custom="Bert Droesbeke, example contributor" nr=4 %}
+{% include contributor-tiles-all.html custom="Bert Droesbeke, example contributor" col=4 %}
 
 ## List website contributors in a carousel
 
@@ -48,14 +48,14 @@ Contributors are defined in two places: the page-metadata and the [CONTRIBUTORS.
 
 * `custom`: `, ` separated list of contributor names if you only want to show a specific collection of contributors.
 * `role`: specify the role of the contributors you want to filter on. This is not combinable with the custom list of contributors.
-* `nr`: give an integer to specify the number of columns/contributor cards per row.
+* `col`: give an integer to specify the number of columns/contributor cards per row. Default: 5.
 
 ### Example with parameters
 
 ```
 {% raw %}
-{% include contributor-carousel-selection.html custom="Bert Droesbeke, example contributor" nr=4 %}
+{% include contributor-carousel-selection.html custom="Bert Droesbeke, example contributor" col=4 %}
 {% endraw %}
 ```
 
-{% include contributor-carousel-selection.html custom="Bert Droesbeke, example contributor" nr=4 %}
+{% include contributor-carousel-selection.html custom="Bert Droesbeke, example contributor" col=4 %}
