@@ -7,17 +7,13 @@
     <!-- Page Content -->
     <div class="container flex-grow-1">
         <!-- Content Row -->
-        <div class="row gx-0 gx-lg-5">
-            {%- assign content_col_size = "col-lg-12" %}{% unless page.hide_sidebar %}
-            <!-- Sidebar Column -->
-            <div class="col-lg-3 mb-0 mb-lg-4">
+        <div id="layout" class="gap-5">
+            <!-- Sidebar -->
+            <aside id="sidebar">
                 {% include sidebar.html %}
-            </div>
-            {%- assign content_col_size = "col-lg-9" %}{% endunless %}
-            <!-- Content Column -->
-            <div class="{{content_col_size}}">
-                {{content}}
-            </div>
+            </aside>
+            <!-- Content -->
+            {{content}}
         </div>
     </div>
     {%- if site.theme_variables.back_to_top or site.theme_variables.back_to_top == nil %}

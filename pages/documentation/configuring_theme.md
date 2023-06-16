@@ -71,7 +71,6 @@ More detailed information about these settings can be found here:
   * `open_issue`: Enable the 'open an issue on this page' button.
   * `history`: Enable the 'history of this page' button.
 * toc: Settings related to the table of contents.
-  * `full_width`: Show the table of contents as a box that spans the full width of the screen. Default is **false**
   * `min_headers`: The minimum amount of headers (h2, h3,.. depending on the headers option) on a page for the toc to appear. This has to be an integer.
   * `headers`: The type of headers that need to be indexed by the toc. This can be a list or one value, ex: **'h1, h2, h3'** or **'h2'**
 * topnav: Settings related to the top navigation.
