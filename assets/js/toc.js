@@ -38,14 +38,10 @@
       return this.id;
     }), output = $(this);
     if (!headers.length || headers.length < settings.minimumHeaders || !output.length) {
-      $("#toc").remove();
       return;
     } else {
-      if ($(window).width() >= 992) {
-        $('#main').css("grid-template-columns", "5fr 2fr");
-      } else {
-        $('#main').css("grid-template-columns", "");
-      }
+      $('#main').addClass("add-grid");
+      $("#toc").show();
     }
 
     if (0 === settings.showSpeed) {

@@ -116,10 +116,15 @@ body img {
             "content toc";
         grid-template-rows: auto 1fr;
     }
+
+    .add-grid {
+        grid-template-columns: 5fr 2fr;
+    }
 }
 
 #toc {
     grid-area: toc;
+    display: none;
 }
 
 @include media-breakpoint-up(lg) {
