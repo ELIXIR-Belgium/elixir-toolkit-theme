@@ -11,7 +11,7 @@
                 {%- if column.title != nil %}
                 <span class="footer-title">{{column.title}}</span>
                 {%- endif %}
-                <ul class="mb-0">
+                <ul class="mb-0 list-unstyled">
                     {%- for link in column.children %}
                     {%- if link.url != nil and link.external_url == nil%}
                     <li><a href="{{ link.url | relative_url }}">{{link.url_text}}</a></li>
