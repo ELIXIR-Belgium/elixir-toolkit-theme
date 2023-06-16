@@ -1,5 +1,5 @@
 {%- assign contributors = site.data.CONTRIBUTORS %}
-{%- assign nr = include.nr | default: 5 %}
+{%- assign nr = include.col | default: 5 %}
 {%- if include.custom %}
 {%- assign allcontrstr = include.custom %}
 {%- elsif include.role %}
@@ -33,7 +33,11 @@
 {%- endif %}
 {%- endfor %}
 {%- endif %}
+{%- unless include.sort == false %}
 {%- assign allcontributors = allcontrstr | split: ", " | uniq | sort %}
+{%- else %}
+{%- assign allcontributors = allcontrstr | split: ", " | uniq %}
+{%- endunless %}
 <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-xl-{{nr}} g-4 contributor-cards">
   {%- for contributor in allcontributors %}
   <div class="col">
