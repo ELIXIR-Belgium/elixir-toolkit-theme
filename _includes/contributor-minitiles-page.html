@@ -2,7 +2,11 @@
 <span class="d-block h2-like fs-2">Contributors</span>
 <div class="p-4 rounded mt-4 page-contributors d-flex flex-wrap gap-2">
     {%- assign contributors = site.data.CONTRIBUTORS %}
+    {%- unless include.sort == false %}
     {%- assign page_contributors = page.contributors | sort %}
+    {%- else %}
+    {%- assign page_contributors = page.contributors %}
+    {%- endunless %}
     {%- for contributor in page_contributors %}
     {%- assign id = contributors[contributor].git | default: 'no_github' %}
     <div class="dropup-center dropup d-inline-block">
@@ -89,15 +93,15 @@
               </div>
               {%- if contributors[contributor].git or contributors[contributor].email or contributors[contributor].orcid %}
               <div class="card-footer">
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center gap-2">
                   {%- if contributors[contributor].git %}
-                  <div class="mx-1"><a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://github.com/{{id}}"><i class="fa-brands fa-github"></i></a></div>
+                  <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://github.com/{{id}}"><i class="fa-brands fa-github"></i></a>
                   {%- endif %}
                   {%- if contributors[contributor].email %}
-                  <div class="mx-1"><a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="mailto:{{contributors[contributor].email}}"><i class="fa-solid fa-envelope"></i></a></div>
+                  <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="mailto:{{contributors[contributor].email}}"><i class="fa-solid fa-envelope"></i></a>
                   {%- endif %}
                   {%- if contributors[contributor].orcid %}
-                  <div class="mx-1"><a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://orcid.org/{{contributors[contributor].orcid}}"><i class="fa-brands fa-orcid"></i></a></div>
+                  <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://orcid.org/{{contributors[contributor].orcid}}"><i class="fa-brands fa-orcid"></i></a>
                   {%- endif %}
                 </div>
               </div>

@@ -9,11 +9,11 @@
                 <i title="navbar-toggler" class="fa-solid fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav gap-2">
                     <!-- navigation entries -->
                     {%- assign topnav = site.data.topnav %}
                     {%- for item in topnav.subitems %}
-                    <li class="nav-item {% if item.subitems %}dropdown {% endif %}ms-0 ms-lg-3 mt-2 mt-lg-0">
+                    <li class="nav-item {% if item.subitems %}dropdown {% endif %}">
                         {%- assign page_sidebar = page.sidebar | downcase | replace: "-", "_" | replace: " ", "_" %}
                         {%- assign nav_title = item.title | downcase | replace: "-", "_" | replace: " ", "_" %}
                         {%- if item.external_url %}
@@ -49,15 +49,15 @@
                     {%- else %}
                     {%- assign break_color = "light" %}
                     {%- endif -%}
-                    <li class="nav-item ms-0 ms-lg-3 mt-2 mt-lg-0 nav-break bg-{{break_color}} opacity-25"></li>
+                    <li class="nav-item nav-break bg-{{break_color}} opacity-25"></li>
                     {%- endif %}
                     {%- if site.theme_variables.topnav.twitter %}
-                    <li class="nav-item ms-0 ms-lg-3 mt-2 mt-lg-0">
+                    <li class="nav-item">
                         <a class="nav-link ps-2 d-flex align-items-center" href="{{site.theme_variables.topnav.twitter}}"><i class="fa-brands fa-twitter me-2"></i>Twitter</a>
                     </li>
                     {%- endif %}
                     {%- if site.theme_variables.topnav.github or site.theme_variables.topnav.github == nil %}
-                    <li class="nav-item ms-0 ms-lg-3 mt-2 mt-lg-0">
+                    <li class="nav-item">
                         <a class="nav-link ps-2 d-flex align-items-center" href="{{site.github.repository_url}}">
                             {%- assign git_host = site.theme_variables.git_host | downcase %}
                             {%- if git_host == 'gitlab' %}
@@ -71,7 +71,7 @@
                     {%- endif %}
                     {%- unless include.search == false %}
                     <!--start search-->
-                    <li class="nav-item ms-0 ms-lg-3 my-2 my-lg-0">
+                    <li class="nav-item">
                         <div class="position-relative">
                             <form role="search" class="input-group">
                                 <span class="input-group-text" id="search-label"><i class="fa-solid fa-magnifying-glass"></i></span><input type="search" id="search-input" class="search-input form-control" tabindex="0" placeholder="Search {{ site.title }}" aria-label="Search {{ site.title }}" autocomplete="off">

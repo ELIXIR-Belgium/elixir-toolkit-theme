@@ -47,6 +47,7 @@ theme_variables:
     open_issue: true
     history: true
   toc:
+    full_width: false
     min_headers: 2
     headers: 'h2'
   topnav:

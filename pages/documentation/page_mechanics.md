@@ -27,8 +27,6 @@ title: Title of the page
 
 * `no_robots`: by setting this field to true, the page will not end up in the search results of google or any other search engine.
 
-* `hide_sidebar`: When true, the sidebar will be hided. Default: false
-
 * `custom_editme`: This attribute can be used to specify an alternative file when clicked on the edit-me or history button. Example: _data/news.yml
 
 * `keywords`: List here all the keywords that can be used to find the page using the searchbox in the right upper corner of the page, lowercase.
