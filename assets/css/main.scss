@@ -98,12 +98,6 @@ body img {
     grid-area: main;
 }
 
-#main:not(:has(#toc #toc-contents ul)) {
-    grid-template-columns: 7fr;
-    #btn-toc-hide {
-        display: none;
-    }
-}
 
 @include media-breakpoint-up(md) {
     #main {
@@ -121,7 +115,6 @@ body img {
             "intro toc"
             "content toc";
         grid-template-rows: auto 1fr;
-        grid-template-columns: 5fr 2fr;
     }
 }
 
@@ -138,9 +131,6 @@ body img {
         overflow-y: auto;
         margin-left: $spacer * 3;
     }
-    #toc:not(:has(#toc-contents ul)) {
-        margin-left: 0;
-    }
 }
 
 #intro {
@@ -154,6 +144,7 @@ body img {
 #content {
     grid-area: content;
     min-width: 1px;
+    position: relative;
     h2:first-child {
         margin-top: 0;
     }
@@ -478,16 +469,19 @@ header .navbar {
 #toc-contents {
     @include media-breakpoint-up(lg) {
         display: block !important;
-    }    // Indent the lists and reset any other padding
+    } // Indent the lists and reset any other padding
     ul {
         // highlighting active links
         a {
             color: inherit;
+            padding-left: 0.25rem;
+            border-left: 0.125rem solid transparent;
+            display: block;
             &.active,
             &:hover {
                 text-decoration: none !important;
-                border-bottom: 2px solid $primary;
-                padding-bottom: 1px;
+                border-left: 0.125rem solid $primary;
+                color: $primary;
             }
         }
     }

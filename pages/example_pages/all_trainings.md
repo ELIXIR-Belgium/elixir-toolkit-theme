@@ -1,6 +1,5 @@
 ---
 title: All training
-toc: false
 datatable: true
 ---
 

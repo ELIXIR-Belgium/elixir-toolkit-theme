@@ -1,6 +1,5 @@
 ---
 title: Logo page
-toc: false
 ---
 
 ```

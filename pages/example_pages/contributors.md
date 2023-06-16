@@ -1,6 +1,5 @@
 ---
 title: Contributors
-toc: false
 ---
 
 Contributors are defined in two places: the page-metadata and the [CONTRIBUTORS.yml](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/_data/CONTRIBUTORS.yaml) file in `_data`. 
