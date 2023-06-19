@@ -90,11 +90,11 @@ title: Title of the page
 
 ### Tools and resources
 
-* `ref_to_main_resources`: Refer to entries of the "main_tool_ and_resource_table" if institutions, organizations and projects from the country contribute to the development of international tools and resources. List the nme of the tool your refer to in the main tools table.
+* `ref_to_main_resources`: Refer to entries of the "main_tool_ and_resource_table" if institutions, organizations and projects from the country contribute to the development of international tools and resources. List the id of the tool your refer to in the main tools table.
 
   ```yml
   ref_to_main_resources: 
-    -  Resource name
+    -  resource-id
   ```
 * `national_resources`: List here tools and resources mainly relevant for the specific country
 

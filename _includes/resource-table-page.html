@@ -76,7 +76,7 @@
 <div id="skip-tool-table-1"></div>
 {%- endif %}
 {%- if page.ref_to_main_resources %}
-{%- assign tool_names = page.ref_to_main_resources %}
+{%- assign tool_ids = page.ref_to_main_resources %}
 <h3>{{page.title}} contributes to</h3>
 <p>Institutions and organisations in {{page.title}} are actively involved in the development of the following tools and resources.</p>
 <a class="visually-hidden-focusable" href='#skip-tool-table-2'>Skip tool table</a>
@@ -95,8 +95,8 @@
             </tr>
         </thead>
         <tbody>
-            {%- for tool_name in tool_names | sort %}
-            {%- assign tool =  site.data.tool_and_resource_list | where:"name", tool_name | first %}
+            {%- for tool_id in tool_ids | sort %}
+            {%- assign tool =  site.data.tool_and_resource_list | where:"id", tool_id | first %}
             <tr>
                 {% if tool.url %}
                 <td><a href="{{tool.url}}">{{tool.name}}</a>

@@ -6,8 +6,8 @@ country_code: BE
 page_id: gp3
 
 ref_to_main_resources:
-  - Bioconda
-  - GitHub
+  - bioconda
+  - github
 
 national_resources:
   - name: Resource name
