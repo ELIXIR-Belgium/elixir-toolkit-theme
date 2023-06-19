@@ -482,6 +482,7 @@ header .navbar {
             padding-left: 0.25rem;
             border-left: 0.125rem solid transparent;
             display: block;
+            transition: border-left 0.15s ease-in-out;
             &.active,
             &:hover {
                 text-decoration: none !important;
