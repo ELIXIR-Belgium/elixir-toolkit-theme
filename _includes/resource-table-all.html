@@ -34,7 +34,7 @@
                 {%- assign total_county_tools = 0 %}
                 {%- assign query = "related_pages." | append: page.type %}
                 {%- for country_page in country_pages %}
-                {%- assign instance_matches = country_page.national_resources | where: "instance_of", tool.name | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
+                {%- assign instance_matches = country_page.national_resources | where: "instance_of", tool.id | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
                 {%- assign tool_matches = country_page.national_resources | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
                 {%- unless tool_matches.size == 0 %}
                 {%- assign total_county_tools = total_county_tools | plus: tool_matches.size %}
@@ -52,7 +52,7 @@
                     {%- if tool.instance_of or tool.how_to_access or instances_tool != 0 and total_county_tools != 0 and include.tag != nil %}
                     <div class="d-block mt-1">
                         {%- if tool.instance_of %}
-                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="This resource is an instance of {{tool.instance_of}}"><span class="badge text-primary border border-primary">{{tool.instance_of}}</span></span>
+                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="This resource is an instance of {{tool.name}}"><span class="badge text-primary border border-primary">{{tool.name}}</span></span>
                         {%- endif %}
                         {%- if tool.how_to_access %}
                         <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="{{tool.how_to_access}}"><span class="badge text-primary border border-primary"> <i class="fa-solid fa-key"></i></span></span>
@@ -114,7 +114,7 @@
                 <td>{{tool.description | markdownify }}
                     {%- if tool.instance_of or tool.how_to_access %}
                     <div class="d-block mt-1">
-                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="This resource is an instance of {{tool.instance_of}}"><span class="badge text-primary border border-primary">{{tool.instance_of}}</span></span>
+                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="This resource is an instance of {{tool.name}}"><span class="badge text-primary border border-primary">{{tool.name}}</span></span>
                         {%- if tool.how_to_access %}
                         <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="{{tool.how_to_access}}"><span class="badge text-primary border border-primary"> <i class="fa-solid fa-key"></i></span></span>
                         {%- endif %}
