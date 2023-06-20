@@ -99,6 +99,7 @@ body img {
 }
 
 
+    
 @include media-breakpoint-up(md) {
     #main {
         display: grid;
@@ -761,16 +762,15 @@ footer {
     transition-delay: 1000ms;
 }
 
-
 /*-----Tools-----*/
 
 .tool {
     cursor: pointer;
     white-space: nowrap;
     color: $link-color;
-    background-color: rgba($link-color, .05);
+    background-color: rgba($link-color, 0.05);
     border-radius: $border-radius;
-    padding:  0.1rem 0.250rem;
+    padding: 0.1rem 0.25rem;
 
     &:hover {
         text-decoration: none !important;
@@ -785,7 +785,6 @@ footer {
         font-weight: bold;
     }
 }
-
 
 /*-----Hoover classes-----*/
 
