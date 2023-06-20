@@ -1,4 +1,8 @@
-{%- assign tools = site.data.tool_and_resource_list | where:"related_pages", include.tag %}
+{%- if include.tag %}
+{%- assign tools = site.data.tool_and_resource_list | add_related_pages | where:"related_pages", include.tag %}
+{%- else %}
+{%- assign tools = site.data.tool_and_resource_list | add_related_pages %}
+{%- endif %}
 {%- assign country_pages = site.pages | where_exp: "item", "item.search_exclude != true" | where_exp:"item","item.national_resources != nil" %}
 {%- unless tools.size == 0 or tools == nil %}
 {%- if include.tag %}
@@ -30,7 +34,7 @@
                 {%- assign total_county_tools = 0 %}
                 {%- assign query = "related_pages." | append: page.type %}
                 {%- for country_page in country_pages %}
-                {%- assign instance_matches = country_page.national_resources | where: "instance_of", tool.name | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
+                {%- assign instance_matches = country_page.national_resources | where: "instance_of", tool.id | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
                 {%- assign tool_matches = country_page.national_resources | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
                 {%- unless tool_matches.size == 0 %}
                 {%- assign total_county_tools = total_county_tools | plus: tool_matches.size %}
@@ -45,10 +49,11 @@
                 <td>{{tool.name}}</td>
                 {%- endif %}
                 <td>{{tool.description}}
-                    {%- if instances_tool != 0 and total_county_tools != 0 and include.tag != nil or tool.instance_of or tool.how_to_access %}
+                    {%- if tool.instance_of or tool.how_to_access or instances_tool != 0 and total_county_tools != 0 and include.tag != nil %}
+                    {%- assign linked_tool = site.data.tool_and_resource_list | where:"id", tool.instance_of | first %}
                     <div class="d-block mt-1">
-                        {%- if tool.instance_of %}
-                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="This resource is an instance of {{tool.instance_of}}"><span class="badge text-primary border border-primary">{{tool.instance_of}}</span></span>
+                        {%- if linked_tool %}
+                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="This resource is an instance of {{linked_tool.name}}"><span class="badge text-primary border border-primary">{{linked_tool.name}}</span></span>
                         {%- endif %}
                         {%- if tool.how_to_access %}
                         <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="{{tool.how_to_access}}"><span class="badge text-primary border border-primary"> <i class="fa-solid fa-key"></i></span></span>
@@ -109,8 +114,11 @@
                 {%- endif %}
                 <td>{{tool.description | markdownify }}
                     {%- if tool.instance_of or tool.how_to_access %}
+                    {%- assign linked_tool = site.data.tool_and_resource_list | where:"id", tool.instance_of | first %}
                     <div class="d-block mt-1">
-                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="This resource is an instance of {{tool.instance_of}}"><span class="badge text-primary border border-primary">{{tool.instance_of}}</span></span>
+                        {%- if linked_tool %}
+                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="This resource is an instance of {{linked_tool.name}}"><span class="badge text-primary border border-primary">{{linked_tool.name}}</span></span>
+                        {%- endif %}
                         {%- if tool.how_to_access %}
                         <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="{{tool.how_to_access}}"><span class="badge text-primary border border-primary"> <i class="fa-solid fa-key"></i></span></span>
                         {%- endif %}

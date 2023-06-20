@@ -1,6 +1,6 @@
 --- 
 layout: none
-permalink: assets/css/main.css
+permalink: assets/css/main
 ---
 
 /*-----Default theme variables-----*/
@@ -99,6 +99,7 @@ body img {
 }
 
 
+    
 @include media-breakpoint-up(md) {
     #main {
         display: grid;
@@ -760,6 +761,30 @@ footer {
     visibility: visible;
     transform: translateY(0%);
     transition-delay: 1000ms;
+}
+
+/*-----Tools-----*/
+
+.tool {
+    cursor: pointer;
+    white-space: nowrap;
+    color: $link-color;
+    background-color: rgba($link-color, 0.05);
+    border-radius: $border-radius;
+    padding: 0.1rem 0.25rem;
+
+    &:hover {
+        text-decoration: none !important;
+        color: $primary;
+    }
+}
+
+.popover-tool {
+    max-width: 20rem;
+
+    h5 {
+        font-weight: bold;
+    }
 }
 
 /*-----Hoover classes-----*/

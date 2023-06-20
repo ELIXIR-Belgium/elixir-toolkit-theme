@@ -1,19 +1,74 @@
 ---
-title: All resources
-datatable: true
+title: Tools and resources table
 ---
 
-Nam non sollicitudin sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas consectetur nulla nec rutrum rhoncus. Sed non urna sem. Maecenas sed lobortis urna, hendrerit aliquet massa. Phasellus felis dui, feugiat ut sapien vel, mattis dictum eros. Suspendisse in felis sit amet dui elementum rutrum tristique eget velit. Sed hendrerit, ante sit amet hendrerit cursus, ante nibh accumsan nibh, vitae rhoncus quam ipsum placerat ante.
-
-## Listing all resources
+One of the themes key features is the support for a central tool and resource table. This means that tools that are mentioned at multiple places on the website, can be described centrally, and these descriptions/metadata fields can be used to automatically populate a tools and resources table at the bottom of the page.
 
 
+## Way of working
+
+The [all_tools_and_resources](all_tools_and_resources) list is based on the [yaml file](https://github.com/elixir-europe/rdmkit/blob/master/_data/tool_and_resource_list.yml) in the `_data` directory of the RDMkit repository. Tools and resources can be manually linked to [FAIRsharing.org](https://fairsharing.org/), [Bio.tools](https://bio.tools) and [TeSS](https://tess.elixir-europe.org/).
+
+{% include callout.html type="important" content="The link with FAIRsharing,TeSS and Bio.tools is automatically done using GitHub actions and is weekly updated. If no FAIRsharing ID, Bio.tools ID or TeSS Query is available for a source, but there is yet one automatically given (faulty), you can overwrite the automatic linking by adding 'NA' as registry." %}
+
+## The main yaml file
+
+Each tool or resource mentioned in the text has metadata stored in the [main yaml file](https://github.com/elixir-europe/rdmkit/blob/master/_data/tool_and_resource_list.yml). The metadata block for each tool consists of 5 attributes:
+- **id**: The ID of a tool, in kebab-case, lowercase with hyphens.
+- **name**: The name of the tool or resource
+- **url**: URL to the main page of the tool or resource, make sure to let the URL start with `https://`
+- **description**: A short description of the tool or resource. Try to not use the characters `"` or `'` 
+- **registry**: 3 registries are supported: [Bio.tools](https://bio.tools), [FAIRsharing.org](https://fairsharing.org/) and [TeSS](https://tess.elixir-europe.org/). The keywords you can use respectively are: `biotools`, `fairsharing`, `fairsharing-coll` and `tess`, specifying the id or query with a colon. FAIRsharing collections have an ID that follows the pattern `bsg-s000XXX`. List registries under the `registry` attribute as `key: value pairs`.
+- **related_pages**: List of page_ids (Deprecated, This is replaced by the `{% raw %}{% tool "tool_id" %}{% endraw %}` snippet in the text)
+- **how_to_access**: This is free text feels that describes the accessibility of the tool or resource.
+
+
+Example:
+
+```yml
+- id: github
+  name: GitHub
+  url: https://github.com
+  description:
+    Versioning system, used for sharing code, as well as for sharing of
+    small data
+  registry:
+    tess: GitHub
 ```
-{% raw %}
-{% include resource-table-all.html %}
-{% endraw %}
-```
 
 
-{% include resource-table-all.html %}
+## What tool or resource can be added to the table
+Tools and resources specifically mentioned in the text of the pages should be present in the main table. 
+
+## Making changes
+
+1. Make sure the tool you want to add is not yet already described in the [yaml file](https://github.com/elixir-europe/rdmkit/blob/master/_data/tool_and_resource_list.yml). If yes,go to step 3, if not, go follow the next step.
+
+1. Click on the pencil icon seen on the GitHub view of the [main yaml file](https://github.com/elixir-europe/rdmkit/blob/master/_data/tool_and_resource_list.yml) as described in our GitHub Guide. Add your tool or resource at the bottom of the file following the structure described in the [The main yaml file section of this page](#the-main-yaml-file). Make sure the indentation follows the one of the previous listed items. Copy the content of the yaml file and paste in in an online yaml validator in case of doubt.
+
+1. Copy the `tool_id` of the tool or resource
+
+1. Add the right context on RDMkit for the tool by mentioning it somewhere in the text using following syntax:
+    ```
+    {% raw %}
+    {% tool "tool_id" %}
+    {% endraw %}
+    ```
+
+    {% include callout.html type="Don't forget to add the `\"` double quotes around the tool_id and make sure to use the exact tool_id as described in the yaml file." %}
+
+    Example:
+
+    ```
+    {% raw %}
+    {% tool "zenodo" %} is a powerful data publication service, which is supported by the European commission and focused on research data, including supplemental material like software, tables, figures or slides.
+    {% endraw %}
+    ```
+    Will give: 
+    
+    {% tool "zenodo" %} is a powerful data publication service, which is supported by the European commission and focused on research data, including supplemental material like software, tables, figures or slides.
+
+    
+
+
 

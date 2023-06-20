@@ -29,8 +29,11 @@
                 {%- endif %}
                 <td>{{tool.description | markdownify }}
                     {%- if tool.instance_of or tool.how_to_access %}
+                    {%- assign linked_tool = site.data.tool_and_resource_list | where:"id", tool.instance_of | first %}
                     <div class="d-block mt-1">
-                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="This resource is an instance of {{tool.instance_of}}"><span class="badge text-primary border border-primary">{{tool.instance_of}}</span></span>
+                        {%- if linked_tool %}
+                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="This resource is an instance of {{linked_tool.name}}"><span class="badge text-primary border border-primary">{{linked_tool.name}}</span></span>
+                        {%- endif %}
                         {%- if tool.how_to_access %}
                         <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="{{tool.how_to_access}}"><span class="badge text-primary border border-primary"> <i class="fa-solid fa-key"></i></span></span>
                         {%- endif %}
@@ -76,7 +79,7 @@
 <div id="skip-tool-table-1"></div>
 {%- endif %}
 {%- if page.ref_to_main_resources %}
-{%- assign tool_names = page.ref_to_main_resources %}
+{%- assign tool_ids = page.ref_to_main_resources %}
 <h3>{{page.title}} contributes to</h3>
 <p>Institutions and organisations in {{page.title}} are actively involved in the development of the following tools and resources.</p>
 <a class="visually-hidden-focusable" href='#skip-tool-table-2'>Skip tool table</a>
@@ -95,8 +98,8 @@
             </tr>
         </thead>
         <tbody>
-            {%- for tool_name in tool_names | sort %}
-            {%- assign tool =  site.data.tool_and_resource_list | where:"name", tool_name | first %}
+            {%- for tool_id in tool_ids | sort %}
+            {%- assign tool =  site.data.tool_and_resource_list | where:"id", tool_id | first %}
             <tr>
                 {% if tool.url %}
                 <td><a href="{{tool.url}}">{{tool.name}}</a>
@@ -106,9 +109,11 @@
                 {%- endif %}
                 <td>{{tool.description | markdownify }}
                     {%- if tool.instance_of or tool.how_to_access %}
+                    {%- assign linked_tool = site.data.tool_and_resource_list | where:"id", tool.instance_of | first %}
                     <div class="d-block mt-1">
-                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="This resource is an instance of {{tool.instance_of}}"><span class="badge text-primary border border-primary">{{tool.instance_of}}</span></span>
-                        {%- if tool.how_to_access %}
+                        {%- if linked_tool %}
+                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="This resource is an instance of {{linked_tool.name}}"><span class="badge text-primary border border-primary">{{linked_tool.name}}</span></span>
+                        {%- endif %}                        {%- if tool.how_to_access %}
                         <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="{{tool.how_to_access}}"><span class="badge text-primary border border-primary"> <i class="fa-solid fa-key"></i></span></span>
                         {%- endif %}
                     </div>
