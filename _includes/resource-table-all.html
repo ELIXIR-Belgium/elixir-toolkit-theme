@@ -1,7 +1,7 @@
 {%- if include.tag %}
-{%- assign tools = site.data.tool_and_resource_list | add_related_pages | where:"related_pages", include.tag %}
+{%- assign tools = site.data.tool_and_resource_list | add_related_pages | where:"related_pages", include.tag  | sort_natural: "name" %}
 {%- else %}
-{%- assign tools = site.data.tool_and_resource_list | add_related_pages %}
+{%- assign tools = site.data.tool_and_resource_list | add_related_pages  | sort_natural: "name" %}
 {%- endif %}
 {%- assign country_pages = site.pages | where_exp: "item", "item.search_exclude != true" | where_exp:"item","item.national_resources != nil" %}
 {%- unless tools.size == 0 or tools == nil %}
@@ -28,7 +28,7 @@
             </tr>
         </thead>
         <tbody>
-            {%- for tool in tools | sort %}
+            {%- for tool in tools %}
             <tr>
                 {%- assign instances_tool = 0 %}
                 {%- assign total_county_tools = 0 %}
@@ -99,9 +99,9 @@
             {%- assign hide_ids = "resource_title" %}
             {%- for country_page in country_pages %}
             {%- if include.tag %}
-            {%- assign tool_matches = country_page.national_resources| where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
+            {%- assign tool_matches = country_page.national_resources | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag | sort_natural: "name" %}
             {%- else %}
-            {%- assign tool_matches = country_page.national_resources %}
+            {%- assign tool_matches = country_page.national_resources | sort_natural: "name" %}
             {%- endif %}
             {%- for tool in tool_matches %}
             {%- assign tool_id = tool.name | slugify %}
