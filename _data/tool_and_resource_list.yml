@@ -24,8 +24,6 @@
     fairsharing-coll: bsg-d001160
     tess: GitHub
   how_to_access: Zenodo
-  related_pages:
-    - gp1
 - description:
     GitLab is an open source end-to-end software development platform with
     built-in version control, issue tracking, code review, CI/CD, and more. Self-host
