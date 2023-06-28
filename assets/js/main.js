@@ -31,7 +31,7 @@ $(document).ready(function () {
  */
 $(document).ready(function () {
     // Initialize navgoco with default options
-    $("#side-nav>ul").navgoco({
+    $("#sidebar>nav>ul").navgoco({
         caretHtml: '',
         accordion: true,
         openClass: 'active', // open
@@ -161,5 +161,16 @@ $(function () {
         return new bootstrap.Tooltip(tooltipTriggerEl, {
             animation: true
         })
+    })
+})
+
+/**
+ * Activate popovers
+ */
+
+$(function () {
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
     })
 })

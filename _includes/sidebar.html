@@ -21,7 +21,7 @@
     <a class="btn text-start d-block mb-1 sidebar-title disabled" aria-disabled="true">{{sidebar.title}} {{sidebar.version}}</a>
     {%- endif %}
     {%- endif %}
-    <ul class="list-unstyled mb-4 mb-lg-0">
+    <ul class="list-unstyled mb-4">
         {%- for folder in sidebar.subitems %}
         {%- if page.url == folder.url %}
         <li class="active{%- if folder.hr %} mt-3{% endif %}">

@@ -3,12 +3,12 @@ extra_line:
 columns:
   - type: image
     image_width: 150px
-    width: 2
+    width: 3
     src: 'images/infrastructures/ELIXIR_BELGIUM_white_background.svg'
     alt: ELIXIR Belgium logo
   - type: links
     title: Title
-    width: 4
+    width: 3
     children: 
       - url_text: Contributors
         url: /contributors

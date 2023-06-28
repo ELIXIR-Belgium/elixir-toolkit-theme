@@ -1,5 +1,5 @@
 {%- assign contributors = site.data.CONTRIBUTORS %}
-{%- assign nr = include.nr | default: 5 %}
+{%- assign nr = include.col | default: 5 %}
 {%- if include.custom %}
 {%- assign allcontrstr = include.custom %}
 {%- elsif include.role %}
@@ -33,7 +33,11 @@
 {%- endif %}
 {%- endfor %}
 {%- endif %}
+{%- unless include.sort == false %}
 {%- assign allcontributors = allcontrstr | split: ", " | uniq | sort %}
+{%- else %}
+{%- assign allcontributors = allcontrstr | split: ", " | uniq %}
+{%- endunless %}
 <div id="contributors-carousel" class="carousel carousel-dark slide my-4" data-ride="carousel" data-bs-interval="7000">
     <div class="carousel-inner">
     {%- assign counter = 0 %}

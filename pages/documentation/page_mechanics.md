@@ -27,8 +27,6 @@ title: Title of the page
 
 * `no_robots`: by setting this field to true, the page will not end up in the search results of google or any other search engine.
 
-* `hide_sidebar`: When true, the sidebar will be hided. Default: false
-
 * `custom_editme`: This attribute can be used to specify an alternative file when clicked on the edit-me or history button. Example: _data/news.yml
 
 * `keywords`: List here all the keywords that can be used to find the page using the searchbox in the right upper corner of the page, lowercase.
@@ -92,11 +90,11 @@ title: Title of the page
 
 ### Tools and resources
 
-* `ref_to_main_resources`: Refer to entries of the "main_tool_ and_resource_table" if institutions, organizations and projects from the country contribute to the development of international tools and resources. List the nme of the tool your refer to in the main tools table.
+* `ref_to_main_resources`: Refer to entries of the "main_tool_ and_resource_table" if institutions, organizations and projects from the country contribute to the development of international tools and resources. List the id of the tool your refer to in the main tools table.
 
   ```yml
   ref_to_main_resources: 
-    -  Resource name
+    -  resource-id
   ```
 * `national_resources`: List here tools and resources mainly relevant for the specific country
 

@@ -2,7 +2,11 @@
 <span class="d-block h2-like fs-2">Contributors</span>
 <div class="p-4 rounded mt-4 page-contributors d-flex flex-wrap gap-2">
     {%- assign contributors = site.data.CONTRIBUTORS %}
+    {%- unless include.sort == false %}
     {%- assign page_contributors = page.contributors | sort %}
+    {%- else %}
+    {%- assign page_contributors = page.contributors %}
+    {%- endunless %}
     {%- for contributor in page_contributors %}
     {%- assign id = contributors[contributor].git | default: 'no_github' %}
     <div class="dropup-center dropup d-inline-block">

@@ -28,6 +28,8 @@ exclude:
   - Gemfile*
   - LICENSE
 
+sass:
+    style: compressed
 
 defaults:
   -
@@ -40,9 +42,12 @@ defaults:
       sidebar: main
 
 plugins:
-  - jemoji
+  - elixir-toolkit-theme-plugins
+  - jekyll-redirect-from
+  - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-github-metadata
+  - jemoji
   - webrick
 
 theme_variables: 
@@ -55,7 +60,6 @@ theme_variables:
   #   open_issue: true
   #   history: true
   # toc:
-  #   full_width: false
   #   min_headers: 2
   #   headers: 'h2'
   # topnav:

@@ -1,7 +1,5 @@
 ---
 title: Overview page example
-toc: false
-
 ---
 
 Nam non sollicitudin sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas consectetur nulla nec rutrum rhoncus. Sed non urna sem. Maecenas sed lobortis urna, hendrerit aliquet massa. Phasellus felis dui, feugiat ut sapien vel, mattis dictum eros. Suspendisse in felis sit amet dui elementum rutrum tristique eget velit. Sed hendrerit, ante sit amet hendrerit cursus, ante nibh accumsan nibh, vitae rhoncus quam ipsum placerat ante.
@@ -21,7 +19,8 @@ Becomes:
 
 * `affiliations`: Turn on filtering by affiliation (`true` or `false`)
 * `search`: enable search in the tiles (`true` or `false`)
-* `except`: `, ` separated list of page file names which should be excluded, including the file extension
+* `except`: `, ` separated list of page file names which should be excluded, including the file extension.
+* `col`: give an integer to specify the number of columns/section cards per row. Default: 2.
 
 
 ## Section tiles simple
@@ -37,5 +36,6 @@ Becomes:
 
 ### Parameters
 
-* `except`: `, ` separated list of page names which should be excluded, including the file extension
+* `except`: `, ` separated list of page names which should be excluded, including the file extension.
+* `col`: give an integer to specify the number of columns/section cards per row. Default: 2.
 
