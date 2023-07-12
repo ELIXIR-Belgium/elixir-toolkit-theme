@@ -63,7 +63,7 @@ theme: elixir-toolkit-theme
 
 ### Via GitHub Actions
 
-1. Make sure you have a GitHub workflow file setup similar to the one in this repo at [.github/workflows/jekyll.yml](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/.github/workflows/jekyll.yml).
+1. Make sure you have a GitHub workflow file setup similar to the one in this repo at [.github/workflows/jekyll.yml](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/main/.github/workflows/jekyll.yml)).
 
 2. Go to Settings > Pages and enable GitHub Actions as a source
 3. Go to Environments > github-pages and remove the rule under Deployment branches if you want to deploy other branches than master or main via Workflow Dispatch (manually triggered action)
