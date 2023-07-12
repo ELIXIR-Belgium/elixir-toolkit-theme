@@ -38,16 +38,15 @@ permalink: assets/js/search.js
             if (request.status >= 200 && request.status < 400) {
                 var docs = JSON.parse(request.responseText);
                 var options = {
-
+                    tokenize: "forward",
+                    suggest: true,
                     keys: ["title", "content", "subtitle","url"]
                   };
                   
                 var index = new FlexSearch.Index(options);
-                var document = new FlexSearch.Document(options);
-                var worker = new FlexSearch.Worker(options);
 
                 index.add(docs, options);
-                searchLoaded(index);
+                searchLoaded(document);
             } else {
                 console.log('Error loading ajax request. Request status:' + request.status);
             }
@@ -60,9 +59,8 @@ permalink: assets/js/search.js
         request.send();
     }
 
-    function searchLoaded(fuse) {
+    function searchLoaded(index) {
 
-        var docs = docs;
         var searchInput = document.getElementById('search-input');
         var searchResults = document.getElementById('search-results');
         var currentInput;
@@ -99,7 +97,7 @@ permalink: assets/js/search.js
                 return;
             }
 
-            var results = fuse.search(input);
+            var results = index.search(input);
 
             if (results.length == 0) {
                 var noResultsDiv = document.createElement('div');
