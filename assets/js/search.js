@@ -11,7 +11,6 @@ permalink: assets/js/search.js
  */
 
 (function (Website, undefined) {
-
     // Event handling
 
     Website.addEvent = function (el, type, handler) {
@@ -38,27 +37,16 @@ permalink: assets/js/search.js
         request.onload = function () {
             if (request.status >= 200 && request.status < 400) {
                 var docs = JSON.parse(request.responseText);
+                var options = {
+                    tokenize: "forward",
+                    suggest: true,
+                    keys: ["title", "content", "subtitle","url"]
+                  };
+                  
+                var index = new FlexSearch.Index(options);
 
-                lunr.tokenizer.separator = /[\s/]+/
-
-                var index = lunr(function () {
-                    this.ref('id');
-                    this.field('title', { boost: 200 });
-                    this.field('content', { boost: 2 });
-                    this.field('relUrl');
-                    this.metadataWhitelist = ['position']
-
-                    for (var i in docs) {
-                        this.add({
-                            id: i,
-                            title: docs[i].title,
-                            content: docs[i].content,
-                            relUrl: docs[i].relUrl
-                        });
-                    }
-                });
-
-                searchLoaded(index, docs);
+                index.add(docs, options);
+                searchLoaded(document);
             } else {
                 console.log('Error loading ajax request. Request status:' + request.status);
             }
@@ -71,9 +59,8 @@ permalink: assets/js/search.js
         request.send();
     }
 
-    function searchLoaded(index, docs) {
-        var index = index;
-        var docs = docs;
+    function searchLoaded(index) {
+
         var searchInput = document.getElementById('search-input');
         var searchResults = document.getElementById('search-results');
         var currentInput;
@@ -110,28 +97,7 @@ permalink: assets/js/search.js
                 return;
             }
 
-            var results = index.query(function (query) {
-                var tokens = lunr.tokenizer(input)
-                query.term(tokens, {
-                    boost: 10
-                });
-                query.term(tokens, {
-                    wildcard: lunr.Query.wildcard.TRAILING
-                });
-            });
-
-            if ((results.length == 0) && (input.length > 2)) {
-                var tokens = lunr.tokenizer(input).filter(function (token, i) {
-                    return token.str.length < 20;
-                })
-                if (tokens.length > 0) {
-                    results = index.query(function (query) {
-                        query.term(tokens, {
-                            editDistance: Math.round(Math.sqrt(input.length / 2 - 1))
-                        });
-                    });
-                }
-            }
+            var results = index.search(input);
 
             if (results.length == 0) {
                 var noResultsDiv = document.createElement('div');
@@ -142,33 +108,25 @@ permalink: assets/js/search.js
             } else {
                 var resultsList = document.createElement('ul');
                 searchResults.appendChild(resultsList);
+                console.log(results);
+                for (var result in results) {
+                    console.log(result);
+                    addResult(resultsList, result['item']);
+                    searchIndex = currentSearchIndex
+                }
 
-                addResults(resultsList, results, 0, 10, 100, currentSearchIndex);
-            }
-
-            function addResults(resultsList, results, start, batchSize, batchMillis, searchIndex) {
                 if (searchIndex != currentSearchIndex) {
                     return;
                 }
-                for (var i = start; i < (start + batchSize); i++) {
-                    if (i == results.length) {
-                        return;
-                    }
-                    addResult(resultsList, results[i]);
-                }
-                setTimeout(function () {
-                    addResults(resultsList, results, start + batchSize, batchSize, batchMillis, searchIndex);
-                }, batchMillis);
             }
 
             function addResult(resultsList, result) {
-                var doc = docs[result.ref];
-
+                
                 var resultsListItem = document.createElement('li');
                 resultsList.appendChild(resultsListItem);
 
                 var resultLink = document.createElement('a');
-                resultLink.setAttribute('href', doc.url);
+                resultLink.setAttribute('href', result.url);
                 resultsListItem.appendChild(resultLink);
 
                 var resultTitle = document.createElement('div');
@@ -181,15 +139,15 @@ permalink: assets/js/search.js
 
                 var resultDocTitle = document.createElement('div');
                 resultDocTitle.classList.add('search-result-doc-title');
-                resultDocTitle.innerHTML = doc.doc;
+                resultDocTitle.innerHTML = result.title;
                 resultDoc.appendChild(resultDocTitle);
                 var resultDocOrSection = resultDocTitle;
 
-                if (doc.doc != doc.title) {
+                if (result.title != result.subtitle) {
                     resultDoc.classList.add('search-result-doc-parent');
                     var resultSection = document.createElement('div');
                     resultSection.classList.add('search-result-section');
-                    resultSection.innerHTML = doc.title;
+                    resultSection.innerHTML = result.subtitle;
                     resultTitle.appendChild(resultSection);
                     resultDocOrSection = resultSection;
                 }
@@ -199,8 +157,8 @@ permalink: assets/js/search.js
                 var contentPositions = [];
                 for (var j in metadata) {
                     var meta = metadata[j];
-                    if (meta.title) {
-                        var positions = meta.title.position;
+                    if (meta.subtitle) {
+                        var positions = meta.subtitle.position;
                         for (var k in positions) {
                             titlePositions.push(positions[k]);
                         }
@@ -214,8 +172,8 @@ permalink: assets/js/search.js
                             var ellipsesBefore = true;
                             var ellipsesAfter = true;
                             for (var k = 0; k < 4; k++) {
-                                var nextSpace = doc.content.lastIndexOf(' ', previewStart - 2);
-                                var nextDot = doc.content.lastIndexOf('. ', previewStart - 2);
+                                var nextSpace = result.content.lastIndexOf(' ', previewStart - 2);
+                                var nextDot = result.content.lastIndexOf('. ', previewStart - 2);
                                 if ((nextDot >= 0) && (nextDot > nextSpace)) {
                                     previewStart = nextDot + 1;
                                     ellipsesBefore = false;
@@ -229,8 +187,8 @@ permalink: assets/js/search.js
                                 previewStart = nextSpace + 1;
                             }
                             for (var k = 0; k < 4; k++) {
-                                var nextSpace = doc.content.indexOf(' ', previewEnd + 1);
-                                var nextDot = doc.content.indexOf('. ', previewEnd + 1);
+                                var nextSpace = result.content.indexOf(' ', previewEnd + 1);
+                                var nextDot = result.content.indexOf('. ', previewEnd + 1);
                                 if ((nextDot >= 0) && (nextDot < nextSpace)) {
                                     previewEnd = nextDot;
                                     ellipsesAfter = false;
@@ -255,7 +213,7 @@ permalink: assets/js/search.js
                 if (titlePositions.length > 0) {
                     titlePositions.sort(function (p1, p2) { return p1[0] - p2[0] });
                     resultDocOrSection.innerHTML = '';
-                    addHighlightedText(resultDocOrSection, doc.title, 0, doc.title.length, titlePositions);
+                    addHighlightedText(resultDocOrSection, result.subtitle, 0, result.subtitle.length, titlePositions);
                 }
 
                 if (contentPositions.length > 0) {
@@ -287,7 +245,7 @@ permalink: assets/js/search.js
                     resultPreviews.classList.add('search-result-previews');
                     resultLink.appendChild(resultPreviews);
 
-                    var content = doc.content;
+                    var content = result.content;
                     for (var j = 0; j < Math.min(previewPositions.length, 3); j++) {
                         var position = previewPositions[j];
 
