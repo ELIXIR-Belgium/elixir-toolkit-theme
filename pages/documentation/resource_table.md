@@ -16,11 +16,7 @@ The [all_tools_and_resources](all_tools_and_resources) list is based on the [yam
 * Make sure Pages where you want to mention the tools have a page_id in their frontmatter
 * When making use of the new way of tagging tools: 
   * `gem "elixir-toolkit-theme-plugins"` is added to the `/Gemfile`
-  * ```yml
-    plugins:
-    - elixir-toolkit-theme-plugins
-    ```
-    Is added to the plugins int the `_config.yml` file
+  * `- elixir-toolkit-theme-plugins` is added to the plugins block in the `_config.yml` file
 
 ## The main yaml file
 
