@@ -6,7 +6,7 @@ contributors: [Bert Droesbeke]
 
 We use Markdown files to manage the content in the ELIXIR Toolkit Theme in a structured and easy to edit way. For more information about Markdown, please check the [Markdown guidelines](https://guides.github.com/features/mastering-markdown/). If you want more information about the specific markdown flavor we use, Kramdown, please checkout the [Kramdown documentation](https://kramdown.gettalong.org/parser/kramdown.html).
 
-Besides the syntax to describe the main content on which this page focuses, we also make use of metadata fields in the Markdown. If you want to know more about them and how they can unlock certain features on pages, please go to our [page metadata](page_metadata) page
+Besides the syntax to describe the main content on which this page focuses, we also make use of metadata fields in the Markdown. If you want to know more about them and how they can unlock certain features on pages, please go to our [page metadata section](page_mechanics).
 
 ## Titles
 
