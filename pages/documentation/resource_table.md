@@ -63,8 +63,6 @@ Tools and resources specifically mentioned in the text of the pages should be pr
     {% endraw %}
     ```
 
-    {% include callout.html type="important" content="Don't forget to add the `\"` double quotes around the tool_id and make sure to use the exact tool_id as described in the yaml file." %}
-
     Example:
 
     ```
@@ -77,6 +75,5 @@ Tools and resources specifically mentioned in the text of the pages should be pr
     {% tool "zenodo" %} is a powerful data publication service, which is supported by the European commission and focused on research data, including supplemental material like software, tables, figures or slides.
 
     
-
-
+{% include callout.html type="important" content="Don't forget to add the `\"` double quotes around the tool_id and make sure to use the exact tool_id as described in the yaml file." %}
 
