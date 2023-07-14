@@ -7,13 +7,21 @@ One of the themes key features is the support for a central tool and resource ta
 
 ## Way of working
 
-The [all_tools_and_resources](all_tools_and_resources) list is based on the [yaml file](https://github.com/elixir-europe/rdmkit/blob/master/_data/tool_and_resource_list.yml) in the `_data` directory of the RDMkit repository. Tools and resources can be manually linked to [FAIRsharing.org](https://fairsharing.org/), [Bio.tools](https://bio.tools) and [TeSS](https://tess.elixir-europe.org/).
+The [all_tools_and_resources](all_tools_and_resources) list is based on the [yaml file](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/main/_data/tool_and_resource_list.yml) in the `_data` directory. Tools and resources can be manually linked to [FAIRsharing.org](https://fairsharing.org/), [Bio.tools](https://bio.tools) and [TeSS](https://tess.elixir-europe.org/).
 
-{% include callout.html type="important" content="The link with FAIRsharing,TeSS and Bio.tools is automatically done using GitHub actions and is weekly updated. If no FAIRsharing ID, Bio.tools ID or TeSS Query is available for a source, but there is yet one automatically given (faulty), you can overwrite the automatic linking by adding 'NA' as registry." %}
+
+## Prerequisites
+
+* The main yaml file describing the tools is called `tool_and_resource_list.yml` located in `/_data` and is using the correct YAML syntax
+* Make sure MarkDown pages where you want to mention the tools have a  `page_id` in their frontmatter, see metadata [documentation](page_mechanics).
+* When making use of the new way of tagging tools: 
+  * `gem "elixir-toolkit-theme-plugins"` is added to the `/Gemfile`
+  * `- elixir-toolkit-theme-plugins` is added to the plugins block in the `_config.yml` file
+* GitHub Actions is used to deploy the website. See [instructions](/#deployment).
 
 ## The main yaml file
 
-Each tool or resource mentioned in the text has metadata stored in the [main yaml file](https://github.com/elixir-europe/rdmkit/blob/master/_data/tool_and_resource_list.yml). The metadata block for each tool consists of 5 attributes:
+Each tool or resource mentioned in the text has metadata stored in the [main yaml file](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/main/_data/tool_and_resource_list.yml). The metadata block for each tool consists of 5 attributes:
 - **id**: The ID of a tool, in kebab-case, lowercase with hyphens.
 - **name**: The name of the tool or resource
 - **url**: URL to the main page of the tool or resource, make sure to let the URL start with `https://`
@@ -40,22 +48,20 @@ Example:
 ## What tool or resource can be added to the table
 Tools and resources specifically mentioned in the text of the pages should be present in the main table. 
 
-## Making changes
+## Adding new tools
 
-1. Make sure the tool you want to add is not yet already described in the [yaml file](https://github.com/elixir-europe/rdmkit/blob/master/_data/tool_and_resource_list.yml). If yes,go to step 3, if not, go follow the next step.
+1. Make sure the tool you want to add is not yet already described in the [yaml file](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/master/_data/tool_and_resource_list.yml). If yes,go to step 3, if not, go follow the next step.
 
-1. Click on the pencil icon seen on the GitHub view of the [main yaml file](https://github.com/elixir-europe/rdmkit/blob/master/_data/tool_and_resource_list.yml) as described in our GitHub Guide. Add your tool or resource at the bottom of the file following the structure described in the [The main yaml file section of this page](#the-main-yaml-file). Make sure the indentation follows the one of the previous listed items. Copy the content of the yaml file and paste in in an online yaml validator in case of doubt.
+1. Click on the pencil icon seen on the GitHub view of the [main yaml file](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/master/_data/tool_and_resource_list.yml) as described in our GitHub Guide. Add your tool or resource at the bottom of the file following the structure described in the [The main yaml file section of this page](#the-main-yaml-file). Make sure the indentation follows the one of the previous listed items. Copy the content of the yaml file and paste in in an online yaml validator in case of doubt.
 
 1. Copy the `tool_id` of the tool or resource
 
-1. Add the right context on RDMkit for the tool by mentioning it somewhere in the text using following syntax:
+1. Add the tool in the text by mentioning it using following syntax:
     ```
     {% raw %}
     {% tool "tool_id" %}
     {% endraw %}
     ```
-
-    {% include callout.html type="Don't forget to add the `\"` double quotes around the tool_id and make sure to use the exact tool_id as described in the yaml file." %}
 
     Example:
 
@@ -69,6 +75,5 @@ Tools and resources specifically mentioned in the text of the pages should be pr
     {% tool "zenodo" %} is a powerful data publication service, which is supported by the European commission and focused on research data, including supplemental material like software, tables, figures or slides.
 
     
-
-
+{% include callout.html type="important" content="Don't forget to add the `\"` double quotes around the tool_id and make sure to use the exact tool_id as described in the yaml file." %}
 
