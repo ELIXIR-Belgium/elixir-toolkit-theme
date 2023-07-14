@@ -1,5 +1,6 @@
 ---
 title: Tools and resources table
+page_id: tools_and_resources_table
 ---
 
 One of the themes key features is the support for a central tool and resource table. This means that tools that are mentioned at multiple places on the website, can be described centrally, and these descriptions/metadata fields can be used to automatically populate a tools and resources table at the bottom of the page.
@@ -7,7 +8,7 @@ One of the themes key features is the support for a central tool and resource ta
 
 ## Way of working
 
-The [all_tools_and_resources](all_tools_and_resources) list is based on the [yaml file](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/main/_data/tool_and_resource_list.yml) in the `_data` directory. Tools and resources can be manually linked to [FAIRsharing.org](https://fairsharing.org/), [Bio.tools](https://bio.tools) and [TeSS](https://tess.elixir-europe.org/).
+The [all_tools_and_resources](all_tools_and_resources) list is based on the [yaml file](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/main/_data/tool_and_resource_list.yml) in the `_data` directory. Tools and resources can be manually linked to [FAIRsharing.org](https://fairsharing.org/), [Bio.tools](https://bio.tools) and [TeSS](https://tess.elixir-europe.org/) and [EuroPMC](https://europepmc.org/).
 
 
 ## Prerequisites
@@ -19,6 +20,7 @@ The [all_tools_and_resources](all_tools_and_resources) list is based on the [yam
   * `- elixir-toolkit-theme-plugins` is added to the plugins block in the `_config.yml` file
 * GitHub Actions is used to deploy the website. See [instructions](/#deployment).
 
+
 ## The main yaml file
 
 Each tool or resource mentioned in the text has metadata stored in the [main yaml file](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/main/_data/tool_and_resource_list.yml). The metadata block for each tool consists of 5 attributes:
@@ -26,7 +28,7 @@ Each tool or resource mentioned in the text has metadata stored in the [main yam
 - **name**: The name of the tool or resource
 - **url**: URL to the main page of the tool or resource, make sure to let the URL start with `https://`
 - **description**: A short description of the tool or resource. Try to not use the characters `"` or `'` 
-- **registry**: 3 registries are supported: [Bio.tools](https://bio.tools), [FAIRsharing.org](https://fairsharing.org/) and [TeSS](https://tess.elixir-europe.org/). The keywords you can use respectively are: `biotools`, `fairsharing`, `fairsharing-coll` and `tess`, specifying the id or query with a colon. FAIRsharing collections have an ID that follows the pattern `bsg-s000XXX`. List registries under the `registry` attribute as `key: value pairs`.
+- **registry**: 3 registries are supported: [Bio.tools](https://bio.tools), [FAIRsharing.org](https://fairsharing.org/), [TeSS](https://tess.elixir-europe.org/) and [EuroPMC](https://europepmc.org/). The keywords you can use respectively are: `biotools`, `fairsharing`, `fairsharing-coll`, `tess` and `europmc`, specifying the id or query with a colon. FAIRsharing collections have an ID that follows the pattern `bsg-s000XXX`. List registries under the `registry` attribute as `key: value pairs`.
 - **related_pages**: List of page_ids (Deprecated, This is replaced by the `{% raw %}{% tool "tool_id" %}{% endraw %}` snippet in the text)
 - **how_to_access**: This is free text feels that describes the accessibility of the tool or resource.
 
@@ -63,7 +65,7 @@ Tools and resources specifically mentioned in the text of the pages should be pr
     {% endraw %}
     ```
 
-    Example:
+    **Examples:**
 
     ```
     {% raw %}
@@ -74,6 +76,15 @@ Tools and resources specifically mentioned in the text of the pages should be pr
     
     {% tool "zenodo" %} is a powerful data publication service, which is supported by the European commission and focused on research data, including supplemental material like software, tables, figures or slides.
 
+    ```
+    {% raw %}
+    {% tool "beacon" %} is a GA4GH standard which enables standardised querying across multiple sources.
+    {% endraw %}
+    ```
+    Will give: 
     
+    {% tool "beacon" %} is a GA4GH standard which enables standardised querying across multiple sources.
+
+
 {% include callout.html type="important" content="Don't forget to add the `\"` double quotes around the tool_id and make sure to use the exact tool_id as described in the yaml file." %}
 
