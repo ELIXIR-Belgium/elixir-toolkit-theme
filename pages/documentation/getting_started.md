@@ -2,6 +2,8 @@
 title: Getting started
 ---
 
+Thanks for showing interest in the ELIXIR Toolkit Theme. 
+
 ## Fork our basic example
 
 To help you started we made a [very basic repository](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme-example) that can be used as template for your upcoming Jekyll website using our theme. 
