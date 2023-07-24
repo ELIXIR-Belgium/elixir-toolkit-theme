@@ -1,6 +1,5 @@
 ---
 title: Navigation structure
-contributors: [Bert Droesbeke]
 ---
 
 The theme tries to minimize the need to change html code as much as possible, and for the top navigation, sidebar and footer, this is not different. These navigation structures are all defined by YAML files as  explained below.
