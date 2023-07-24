@@ -10,14 +10,16 @@ title: Title of the page
 ---
 ```
 
+It is important to know that you can also set the these key-value pairs on multiple pages at the same time by specifying them in the `_config.yml` file as described in the [Jekyll documentation](https://jekyllrb.com/docs/configuration/front-matter-defaults/).
+
 ## Possible metadata attributes of a page
 
 
 * `title`: Specify here the title of the page. This wil be the H1 title (replacing the top level title using the # in markdown )
 
-* `summary`: Using this attribute it is possible to specify a summary which will be displayed under the title of the page. This summary will also be used as description of your page when the page is tagged.
+* `summary`: Using this attribute it is possible to specify a summary which will be displayed under the title of the page.
 
-* `description`: Short sentence about the page starting with a lowercase. This sentence is visualized when pages are automatically listed using a tag.
+* `description`: Short sentence about the page starting with a lowercase. This sentence is visualized when in the related pages section of a page..
 
 * `contributors`: list here all the contributors that helped in establishing the page. This will be the full name of the person. Make sure that the person name that is listed can be found in the CONTRIBUTORS.yaml file in the _data directory if you want to link the github id and other contact information.
 
@@ -39,18 +41,22 @@ title: Title of the page
 
 * `datatable`: use this attribute to activate the pagination + sorting + searching in tables
 
+* `type`: The type of page, used for [website sections](website_sections).
+
+* `sidebar`: the name of the sidebar file that needs to be used on this page.
+
 
 ### Related pages
 
-* `related_pages`: List here the `page_id` of {{site.title}} pages that you want to display as Related pages, grouped by section.
+* `related_pages`: List here the `page_id` of your pages that you want to display as under the Related pages of this page, grouped by section. See [website sections](website_sections) for more information.
 
-  If you want pages from the specific section (Your tasks, Your domain, Tool assembly) to be shown here as Related pages, list their `page_id`. If you want to list multiple related pages, make sure to put them in a list like this: [page_id1, page_id2]. The specific sections allowed in each page are specified in each page template. Please, do not add extra sections in the metadata of the page.
+  If you want pages from the specific section to be shown here as Related pages, list their `page_id`. If you want to list multiple related pages, make sure to put them in a list like this: [page_id1, page_id2]. The specific sections allowed in each page are specified in each page template. Please, do not add extra sections in the metadata of the page.
 
   ```yml
   related_pages: 
-    - your_tasks: [page_id1, page_id2]
-    - your_domain: [page_id1, page_id2]
-    - tool_assembly: [page_id1, page_id2]
+    - section_name: [page_id1, page_id2]
+    - section_name: [page_id1, page_id2]
+    - section_name: [page_id1, page_id2]
   ``` 
 
 
