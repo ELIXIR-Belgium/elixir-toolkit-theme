@@ -36,6 +36,6 @@ Any change to the master/main branch will automatically trigger the re-deploymen
 - [Applying custom branding](custom_branding)
 - [Markdown cheat sheet](markdown_cheat_sheet)
 
-### 5. Add a LICENSE file to your GitHub repository. 
+## 5. Add a LICENSE file to your GitHub repository. 
 
 Add a license to your repository using the [GitHub instructions](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository).
