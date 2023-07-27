@@ -9,8 +9,9 @@ permalink: assets/css/main
 $popover-max-width: 12em;
 $enable-caret: false;
 $card-border-width: 0;
+$card-cap-bg: transparent;
 $custom-container-max-widths: (
-    xxxl: 1500px,
+    xxxl: 1500px
 );
 
 /*-----Initialize Bootstrap variables-----*/
@@ -63,10 +64,6 @@ $container-max-widths: map-merge($container-max-widths, $custom-container-max-wi
         word-wrap: break-word;
         -ms-word-break: break-all;
         word-break: break-word;
-
-        &:hover {
-            text-decoration: underline;
-        }
     }
 
     ol li,
@@ -98,8 +95,6 @@ body img {
     grid-area: main;
 }
 
-
-    
 @include media-breakpoint-up(md) {
     #main {
         display: grid;
@@ -907,8 +902,10 @@ li.past_event,
         }
 
         .card-header {
-            background-color: $nav-card-header-bg;
-
+            padding-bottom: 0;
+            a:hover {
+                text-decoration: none;
+            }
             a {
                 color: $nav-card-header-color;
             }
