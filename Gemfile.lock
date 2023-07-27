@@ -116,16 +116,16 @@ PLATFORMS
 
 DEPENDENCIES
   elixir-toolkit-theme-plugins (~> 0.1.9)
-  jekyll
-  jekyll-github-metadata
-  jekyll-redirect-from
-  jekyll-relative-links
+  jekyll (~> 4.3.2)
+  jekyll-github-metadata (~> 2.16.0)
+  jekyll-redirect-from (~> 0.16.0)
+  jekyll-relative-links (~> 0.7.0)
   jekyll-remote-theme
-  jekyll-seo-tag
-  jekyll-sitemap
-  jemoji
-  kramdown-parser-gfm
-  webrick
+  jekyll-seo-tag (~> 2.8)
+  jekyll-sitemap (~> 1.4)
+  jemoji (~> 0.13.0)
+  kramdown-parser-gfm (~> 1.1)
+  webrick (~> 1.8.1)
 
 BUNDLED WITH
    2.2.16
