@@ -895,22 +895,20 @@ li.past_event,
     .card {
         background-color: $nav-card-bg;
 
-        a:not(.stretched-link),
-        button:not(.stretched-link) {
-            z-index: 2;
-            position: relative;
-        }
+        a {
+            color: $nav-card-header-color;
+            
+            &:not(.stretched-link),
+            button:not(.stretched-link) {
+                z-index: 2;
+                position: relative;
+            }
 
-        .card-header {
             padding-bottom: 0;
-            a:hover {
+            &:hover {
                 text-decoration: none;
             }
-            a {
-                color: $nav-card-header-color;
-            }
         }
-
         button {
             background-color: $nav-card-badge-bg;
             color: $nav-card-badge-color;

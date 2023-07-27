@@ -64,12 +64,10 @@
     {%- endif %}
     <div class="col" data-affiliations="{{affiliations_classes}}" related-pages="{{related_pages_classes}}">
         <div class="card h-100">
-            <div class="card-header">
-                <a class="stretched-link" aria-label="Go to the {{current_page.title}} page" href="{{ current_page.url | relative_url }}">
-                    <h5 class="card-title m-0">{{current_page.title}}</h5>
-                </a>
-            </div>
             <div class="card-body">
+                <a class="stretched-link" aria-label="Go to the {{current_page.title}} page" href="{{ current_page.url | relative_url }}">
+                    <b class="card-title">{{current_page.title}}</b>
+                </a>
                 {%- if current_page.description %}
                 <p class="card-text">{{ current_page.description}}</p>
                 {%- endif %}

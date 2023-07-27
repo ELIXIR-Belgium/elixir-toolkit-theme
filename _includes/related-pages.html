@@ -18,12 +18,10 @@
     {%- assign page_hit = section_pages | where:"page_id", page_id | first %}
     <div class="col">
         <div class="card h-100">
-            <div class="card-header">
-                <a class="stretched-link" aria-label="Go to the {{current_page.title}} page" href="{{ current_page.url | relative_url }}">
-                    <h5 class="card-title m-0">{{page_hit.title}}</h5>
-                </a>
-            </div>
             <div class="card-body">
+                <a class="stretched-link" aria-label="Go to the {{page_hit.title}} page" href="{{ page_hit.url | relative_url }}">
+                    <b class="card-title">{{page_hit.title}}</b>
+                </a>
                 {%- if page_hit.description %}
                 <p class="card-text">{{ page_hit.description}}</p>
                 {%- endif %}
