@@ -19,6 +19,7 @@ Dropdown can be added in a similar way by nesting subitems:
 ```yml
 subitems:
 - title: Example dropdown
+  url: /
   subitems:
   - title: Events
     url: /events
