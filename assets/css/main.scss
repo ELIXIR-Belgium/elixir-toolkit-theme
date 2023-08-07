@@ -615,6 +615,15 @@ footer {
     }
 }
 
+/*-----Cards fix-----*/
+.card-header:first-child {
+    border-radius: $border-radius $border-radius 0 0;
+}
+
+.card-footer:last-child {
+    border-radius: 0 0 $border-radius $border-radius;
+}
+
 /*-----Contributors cards-----*/
 
 .contributor-cards {
