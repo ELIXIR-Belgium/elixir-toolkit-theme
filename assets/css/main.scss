@@ -615,7 +615,7 @@ footer {
     }
 }
 
-/*-----Cards fix-----*/
+/*-----Border radius card header/footer fix-----*/
 .card-header:first-child {
     border-radius: $border-radius $border-radius 0 0;
 }
