@@ -608,6 +608,7 @@ footer {
     opacity: 0;
     overflow: hidden;
     z-index: 1000;
+    transition: bottom 0.15s ease-out, opacity 0.15s ease-out;
 
     &.visible {
         bottom: $spacer;
