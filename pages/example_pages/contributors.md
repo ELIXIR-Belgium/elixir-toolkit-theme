@@ -19,7 +19,6 @@ Contributors are defined in two places: the page-metadata and the [CONTRIBUTORS.
 
 * `custom`: `, ` separated list of contributor names if you only want to show a specific collection of contributors.
 * `role`: specify the role of the contributors you want to filter on. This is not combinable with the custom list of contributors.
-* `nr`: give an integer to specify the number of columns/contributor cards per row.
 * `sort`: disable sorting of contributors by adding *false*. Default: *true*.
 * `col`: give an integer to specify the number of columns/contributor cards per row. Default: 5.
 
