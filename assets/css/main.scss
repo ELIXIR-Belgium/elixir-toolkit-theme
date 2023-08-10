@@ -608,6 +608,8 @@ footer {
     opacity: 0;
     overflow: hidden;
     z-index: 1000;
+    font-size: 21px;
+    padding: 12px 20px;
     transition: bottom 0.15s ease-out, opacity 0.15s ease-out;
 
     &.visible {
