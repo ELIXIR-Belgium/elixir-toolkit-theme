@@ -21,9 +21,23 @@ Becomes:
 ### Parameters
 
 * `affiliations`: Turn on filtering by affiliation (`true` or `false`)
+* `type`: specify the tiles that are being shown by giving a page type (complimentary to custom).
 * `search`: enable search in the tiles (`true` or `false`)
 * `except`: `, ` separated list of page file names which should be excluded, including the file extension.
 * `col`: give an integer to specify the number of columns/section cards per row. Default: 2.
+* `sort`: disable sorting of contributors by adding *false*. Default: *true*.
+* `custom`: `, ` separated list of page_id's if you only want to show specific pages.
+
+
+## Section tiles using the custom parameter and without sorting
+
+```
+{% raw %}
+{% include section-navigation-tiles.html custom="gp3, gp2" sort=false %}
+{% endraw %}
+```
+
+{% include section-navigation-tiles.html custom="gp3, gp2" sort=false %}
 
 
 ## Section tiles simple
