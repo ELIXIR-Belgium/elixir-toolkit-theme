@@ -81,13 +81,18 @@
     {%- endcapture -%}
     {%- endif %}
     <div class="col" data-affiliations="{{affiliations_classes}}" related-pages="{{related_pages_classes}}">
-        <div class="card h-100">
-            <div class="card-body">
-                <a class="stretched-link" aria-label="Go to the {{current_page.title}} page" href="{{ current_page.url | relative_url }}">
-                    <b class="card-title">{{current_page.title}}</b>
-                </a>
-                {%- if current_page.description %}
-                <p class="card-text">{{ current_page.description}}</p>
+        <div class="card h-100 ">
+            <div class="card-body d-flex gap-3">
+                <div class="w-100">
+                    <a class="stretched-link" aria-label="Go to the {{current_page.title}} page" href="{{ current_page.url | relative_url }}">
+                        <b class="card-title">{{current_page.title}}</b>
+                    </a>
+                    {%- if current_page.description %}
+                    <p class="card-text">{{ current_page.description}}</p>
+                    {%- endif %}
+                </div>
+                {%- if current_page.type_img %}
+                <img src="{{current_page.type_img | relative_url}}" class="type-icon" alt="{{current_page.type}} icon">
                 {%- endif %}
             </div>
             {%- if current_page.affiliations %}
