@@ -29,7 +29,7 @@ $container-max-widths: map-merge($container-max-widths, $custom-container-max-wi
 
 /*-----General styling-----*/
 
-#content {
+#main {
     h1 {
         font-family: $font-family-theme;
         font-weight: 400;
@@ -603,11 +603,23 @@ footer {
     opacity: 0;
     overflow: hidden;
     z-index: 1000;
+    font-size: 21px;
+    padding: 12px 20px;
+    transition: bottom 0.15s ease-out, opacity 0.15s ease-out;
 
     &.visible {
         bottom: $spacer;
         opacity: 1;
     }
+}
+
+/*-----Border radius card header/footer fix-----*/
+.card-header:first-child {
+    border-radius: $border-radius $border-radius 0 0;
+}
+
+.card-footer:last-child {
+    border-radius: 0 0 $border-radius $border-radius;
 }
 
 /*-----Contributors cards-----*/

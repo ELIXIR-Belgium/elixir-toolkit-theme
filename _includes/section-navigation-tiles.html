@@ -47,11 +47,29 @@
 </div>
 {%- endunless %}
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-{{ include.col | default: 2 }}  g-4 mb-5 navigation-tiles">
-    {%- for current_page in site.pages | sorted %}
+    {%- if include.custom %}
+    {%- assign related_pages = include.custom | split: ", " %}
+    {%- unless include.sort == false %}
+    {%- assign related_pages = related_pages | sort %}
+    {%- endunless %}
+    {%- elsif include.type %}
+    {%- assign related_pages = site.pages | where:"type", include.type %}
+    {%- else %}
+    {%- assign related_pages = site.pages %}
+    {%- endif %}
+    {%- unless include.sort == false %}
+    {%- assign related_pages = related_pages | sort: 'title'%}
+    {%- endunless %}
+    {%- for related_page in related_pages %}
+    {%- if include.custom %}
+    {%- assign current_page = site.pages | where:"page_id", related_page | first %}
+    {%- else %}
+    {%- assign current_page = related_page %}
+    {%- endif %}
     {%- assign affiliations_classes = "" %}
     {%- assign related_pages_classes = "" %}
     {%- assign except = include.except | split: ", " %}
-    {%- if current_page.title and current_page.search_exclude != true and current_page.type == include.type %}
+    {%- if current_page.title and current_page.search_exclude != true %}
     {%- unless except contains current_page.name %}
     {%- if current_page.affiliations %}
     {%- capture affiliations_classes -%}

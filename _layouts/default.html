@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 {% include head.html %}
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100" data-bs-spy="scroll" data-bs-target="#toc-contents" data-bs-smooth-scroll="true" tabindex="0">
     {% if jekyll.environment == "development" %}{% include dev-info.html %}{% endif %}
     {% include topnav.html %}
     <!-- Page Content -->
@@ -17,7 +17,7 @@
         </div>
     </div>
     {%- if site.theme_variables.back_to_top or site.theme_variables.back_to_top == nil %}
-    <button id="back-to-top" class="btn btn-primary" type="button" aria-hidden="true" onclick="topFunction()">
+    <button id="back-to-top" class="btn btn-primary rounded-3" type="button" aria-hidden="true" onclick="topFunction()">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
     {%- endif %}
