@@ -27,8 +27,8 @@
                     <p class="card-text">{{ page_hit.description}}</p>
                     {%- endif %}
                 </div>
-                {%- if current_page.type_img %}
-                <img src="{{current_page.type_img | relative_url}}" class="type-icon" alt="{{current_page.type}} icon">
+                {%- if page_hit.type_img %}
+                <img src="{{page_hit.type_img | relative_url}}" class="type-icon" alt="{{page_hit.type}} icon">
                 {%- endif %}
             </div>
         </div>
