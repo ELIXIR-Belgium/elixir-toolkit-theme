@@ -11,7 +11,7 @@
 {%- endif %}
 {%- endfor %}
 {%- assign allaffiliations = allaffiliations | split: ", " | uniq | sort %}
-<div class="row g-4 row-cols-1 row-cols-md-2 my-4">
+<div class="row g-4  row-cols-1 row-cols-md-2 row-cols-lg-{{ include.col | default: 2 }} my-4">
     {%- unless include.affiliations == nil %}
     <div class="col">
         <div class="input-group">
@@ -187,8 +187,7 @@
             }
             for (let i = 0; i < cols.length; i++) {
                 let body = cols[i].querySelector(".card-body");
-                let title = cols[i].querySelector(".card-header");
-                if (title.innerText.toLowerCase().indexOf(filter) > -1 || body.innerText.toLowerCase().indexOf(filter) > -1) {
+                if (body.innerText.toLowerCase().indexOf(filter) > -1) {
                     cols[i].classList.remove("d-none");
                 } else {
                     cols[i].classList.add("d-none");
