@@ -5,7 +5,7 @@
     {%- if current_page.title and current_page.search_exclude != true and current_page.type == include.type %}
     {%- unless except contains current_page.name %}
     <div class="col d-grid">
-        <a role="button" class="btn py-4 fs-3" href="{{ current_page.url | relative_url }}">{{current_page.title}}{% if current_page.country_code %}<span class="flag-icon shadow-sm ms-3 flag-icon-{{current_page.country_code | downcase }}"></span>{% endif %}</a>
+        <a role="button" class="btn py-4 fs-3 section-title" href="{{ current_page.url | relative_url }}">{{current_page.title}}{% if current_page.country_code %}<span class="flag-icon shadow-sm ms-3 flag-icon-{{current_page.country_code | downcase }}"></span>{% endif %}</a>
     </div>
     {% endunless %}
     {%- endif %}

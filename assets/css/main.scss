@@ -605,7 +605,9 @@ footer {
     z-index: 1000;
     font-size: 21px;
     padding: 12px 20px;
-    transition: bottom 0.15s ease-out, opacity 0.15s ease-out;
+    transition:
+        bottom 0.15s ease-out,
+        opacity 0.15s ease-out;
 
     &.visible {
         bottom: $spacer;
@@ -904,17 +906,21 @@ li.past_event,
 /*-----Section navigation tiles-----*/
 
 .navigation-tiles {
-    .card, .btn{
+    .card,
+    .btn {
         background-color: $nav-card-bg;
         &:hover {
             background-color: $nav-card-bg-hover;
             transition: $btn-transition;
             color: $nav-card-color-hover;
+            a.section-title {
+                text-decoration: none;
+                transition: $btn-transition;
+                color: $nav-card-color-hover;
+            }
         }
 
         a {
-            color: $nav-card-header-color;
-            
             &:not(.stretched-link),
             button:not(.stretched-link) {
                 z-index: 2;
@@ -922,10 +928,8 @@ li.past_event,
             }
 
             padding-bottom: 0;
-            &:hover {
-                text-decoration: none;
-                transition: $btn-transition;
-                color: $nav-card-color-hover;
+            &.section-title {
+                color: $nav-card-header-color;
             }
         }
         .type-icon {
