@@ -17,7 +17,7 @@
     {%- assign section_pages = site.pages | where:"type", section[0] %}
     {%- assign page_hit = section_pages | where:"page_id", page_id | first %}
     <div class="col">
-        <div class="card h-100 hover-primary">
+        <div class="card h-100">
             <div class="card-body d-flex gap-3">
                 <div class="w-100">
                     <a class="stretched-link" aria-label="Go to the {{page_hit.title}} page" href="{{ page_hit.url | relative_url }}">

@@ -907,9 +907,9 @@ li.past_event,
     .card, .btn{
         background-color: $nav-card-bg;
         &:hover {
-            background-color: $primary;
+            background-color: $nav-card-bg-hover;
             transition: $btn-transition;
-            color: $btn-primary-color-hover;
+            color: $nav-card-color-hover;
         }
 
         a {
@@ -925,7 +925,7 @@ li.past_event,
             &:hover {
                 text-decoration: none;
                 transition: $btn-transition;
-                color: $btn-primary-color-hover;
+                color: $nav-card-color-hover;
             }
         }
         .type-icon {
