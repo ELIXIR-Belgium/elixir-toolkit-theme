@@ -395,6 +395,7 @@ header .navbar {
 }
 
 #sidebar > nav > ul {
+
     > li:not(.sidebar-title) > a {
         background-color: $sidebar-bg;
         color: $sidebar-color;
@@ -447,6 +448,15 @@ header .navbar {
                 background-color: $sidebar-lvl3-bg;
                 color: $sidebar-lvl3-color;
             }
+        }
+
+        .sidebar_rdm_sub {
+            border-color: $sidebar-bg;
+            padding: 0.75rem 0.5rem 0.5rem 0.5rem;
+            border-radius: 0px 0px $border-radius $border-radius;
+            border-style: none solid solid solid;
+            border-width: 0.2em;
+            margin-top: -0.25rem;
         }
     }
 }
