@@ -23,15 +23,13 @@
                 {%- if page_hit.type_img %}
                 <img src="{{page_hit.type_img | relative_url}}" class="type-icon" alt="{{page_hit.type}} icon">
                 {%- endif %}
-                <div class="w-100 d-flex flex-column">
-                    <div class="h-100">
-                        <a class="stretched-link section-title" aria-label="Go to the {{page_hit.title}} page" href="{{ page_hit.url | relative_url }}">
-                            <b>{{page_hit.title}}</b>
-                        </a>
-                        {%- if page_hit.description %}
-                        <p class="card-text">{{ page_hit.description}}</p>
-                        {%- endif %}
-                    </div>
+                <div class="w-100">
+                    <a class="stretched-link section-title" aria-label="Go to the {{page_hit.title}} page" href="{{ page_hit.url | relative_url }}">
+                        <b>{{page_hit.title}}</b>
+                    </a>
+                    {%- if page_hit.description %}
+                    <p class="card-text">{{ page_hit.description}}</p>
+                    {%- endif %}
                 </div>
             </div>
         </div>
