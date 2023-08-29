@@ -110,7 +110,7 @@ body img {
         grid-template-rows: auto auto 1fr;
     }
 }
-@include media-breakpoint-up(lg) {
+@include media-breakpoint-up(xl) {
     #main {
         grid-template-areas:
             "intro toc"
@@ -128,7 +128,7 @@ body img {
     display: none;
 }
 
-@include media-breakpoint-up(lg) {
+@include media-breakpoint-up(xl) {
     #toc {
         top: $spacer * 3;
         right: 0;
@@ -474,7 +474,7 @@ header .navbar {
 /*-----TOC-----*/
 
 #toc-contents {
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(xl) {
         display: block !important;
     } // Indent the lists and reset any other padding
     ul {
