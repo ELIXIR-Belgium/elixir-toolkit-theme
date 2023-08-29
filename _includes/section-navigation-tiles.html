@@ -67,7 +67,6 @@
     {%- assign current_page = related_page %}
     {%- endif %}
     {%- assign affiliations_classes = "" %}
-    {%- assign related_pages_classes = "" %}
     {%- assign except = include.except | split: ", " %}
     {%- if current_page.title and current_page.search_exclude != true %}
     {%- unless except contains current_page.name %}
@@ -80,7 +79,7 @@
     {%- endfor %}{{affiliations_output}}
     {%- endcapture -%}
     {%- endif %}
-    <div class="col" data-affiliations="{{affiliations_classes}}" related-pages="{{related_pages_classes}}">
+    <div class="col" data-affiliations="{{affiliations_classes}}">
         <div class="card h-100">
             <div class="card-body d-flex gap-3">
                 <div class="w-100 d-flex flex-column">
