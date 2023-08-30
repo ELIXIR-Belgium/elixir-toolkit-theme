@@ -164,6 +164,20 @@ body img {
     }
 }
 
+@include media-breakpoint-up(lg) {
+    #layout {
+        display: grid;
+        grid-template-areas: "sidebar main";
+        grid-template-columns: 3fr 9fr;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    #layout {
+        grid-template-columns: 2fr 9fr;
+    }
+}
+
 /*-----Blockquote-----*/
 
 blockquote {
