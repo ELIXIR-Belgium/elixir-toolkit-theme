@@ -120,7 +120,7 @@ DEPENDENCIES
   jekyll-github-metadata (~> 2.16.0)
   jekyll-redirect-from (~> 0.16.0)
   jekyll-relative-links (~> 0.7.0)
-  jekyll-remote-theme
+  jekyll-remote-theme (~> 0.4.3)
   jekyll-seo-tag (~> 2.8)
   jekyll-sitemap (~> 1.4)
   jemoji (~> 0.13.0)
