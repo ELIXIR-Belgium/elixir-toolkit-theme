@@ -5,7 +5,7 @@
         "name": "{{ site.title }}",
         "url": "{{ site.url }}",
         "about": "{{ site.description }}"{% if page.contributors %},
-        {%- assign contributors = site.data.CONTRIBUTORS %}
+        {%- assign contributors = site.data.contributors %}
         {%- assign contributor_count = page.contributors.size %}
         {%- assign count = 1 %}
         "author": [
