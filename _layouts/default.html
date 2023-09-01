@@ -7,11 +7,13 @@
     <!-- Page Content -->
     <div class="container flex-grow-1">
         <!-- Content Row -->
-        <div id="layout" class="gap-5">
+        <div {% unless page.hide_sidebar == true %}id="layout" class="gap-5"{% endunless %}>
             <!-- Sidebar -->
+            {%- unless page.hide_sidebar == true %}
             <aside id="sidebar">
                 {% include sidebar.html %}
             </aside>
+            {% endunless %}
             <!-- Content -->
             {{content}}
         </div>

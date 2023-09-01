@@ -21,29 +21,29 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `description`: Short sentence about the page starting with a lowercase. This sentence is visualized when in the related pages section of a page..
 
-* `contributors`: list here all the contributors that helped in establishing the page. This will be the full name of the person. Make sure that the person name that is listed can be found in the CONTRIBUTORS.yaml file in the _data directory if you want to link the github id and other contact information.
+* `contributors`: List here all the contributors that helped in establishing the page. This will be the full name of the person. Make sure that the person name that is listed can be found in the CONTRIBUTORS.yaml file in the _data directory if you want to link the github id and other contact information.
 
-* `search_exclude`: by setting this field true, the page will not end up in the search results of the searchbar. By default this is false.
+* `search_exclude`: By setting this field true, the page will not end up in the search results of the searchbar. By default this is false.
 
-* `sitemap`: let the page appear in the sitemap.xml. Default: true
+* `sitemap`: Let the page appear in the sitemap.xml. Default: *true*
 
-* `no_robots`: by setting this field to true, the page will not end up in the search results of google or any other search engine.
+* `no_robots`: By setting this field to true, the page will not end up in the search results of google or any other search engine.
 
 * `custom_editme`: This attribute can be used to specify an alternative file when clicked on the edit-me or history button. Example: _data/news.yml
 
 * `keywords`: List here all the keywords that can be used to find the page using the searchbox in the right upper corner of the page, lowercase.
 
-* `sidebar`: Specify here an alternative sidebar. Default: main
+* `sidebar`: Specify here an alternative sidebar, which corresponds to the filename in the *_data/sidebars/* directory. Default: main
 
 * `toc`: When set to false, the table of contents in the beginning of the page will not be generated.
 
 * `page_id`: Unique identifier of a page. It is usually a shortened version of the page name or title, with small letters and spaces, or an acronym, with capital and small letters. Used to list Related pages.
 
-* `datatable`: use this attribute to activate the pagination + sorting + searching in tables
+* `datatable`: use this attribute to activate the pagination + sorting + searching in tables.
 
 * `type`: The type of page, used for [website sections](website_sections).
 
-* `sidebar`: the name of the sidebar file that needs to be used on this page.
+* `hide_sidebar`: The name of the sidebar file that needs to be used on this page. Default: false
 
 
 ### Related pages
