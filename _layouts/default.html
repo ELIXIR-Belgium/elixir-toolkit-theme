@@ -7,9 +7,9 @@
     <!-- Page Content -->
     <div class="container flex-grow-1">
         <!-- Content Row -->
-        <div {% unless page.hide_sidebar == true %}id="layout" class="gap-5"{% endunless %}>
+        <div {% unless page.sidebar == nil or page.sidebar == false %}id="layout" class="gap-5"{% endunless %}>
             <!-- Sidebar -->
-            {%- unless page.hide_sidebar == true %}
+            {%- unless page.sidebar == nil or page.sidebar == false %}
             <aside id="sidebar">
                 {% include sidebar.html %}
             </aside>

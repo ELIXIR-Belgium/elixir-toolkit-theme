@@ -33,7 +33,7 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `keywords`: List here all the keywords that can be used to find the page using the searchbox in the right upper corner of the page, lowercase.
 
-* `sidebar`: Specify here an alternative sidebar, which corresponds to the filename in the *_data/sidebars/* directory. Default: main
+* `sidebar`: Specify here an alternative sidebar, which corresponds to the filename in the *_data/sidebars/* directory. Default: *main*. If no sidebar is set, or *sidebar: false*, no sidebar will be shown.
 
 * `toc`: When set to false, the table of contents in the beginning of the page will not be generated.
 
@@ -43,7 +43,6 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `type`: The type of page, used for [website sections](website_sections).
 
-* `hide_sidebar`: The name of the sidebar file that needs to be used on this page. Default: false
 
 
 ### Related pages
