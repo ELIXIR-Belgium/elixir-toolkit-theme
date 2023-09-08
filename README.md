@@ -7,7 +7,7 @@ permalink: /
 
 <p align="center">
 <img src="assets/img/ett_compact_logo.svg" width="100" float="center"/>
-<h1 align="center">ELIXIR toolkit theme </h1>
+<h1 align="center">ELIXIR Toolkit Theme </h1>
 </p>
 
 The ELIXIR toolkit theme is a Jekyll theme designed to support easy deployment of documentation websites but also more complex ones that require a central tool table and linking towards ELIXIR resources. 
