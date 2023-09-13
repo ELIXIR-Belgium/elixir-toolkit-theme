@@ -1,4 +1,3 @@
-{%- unless page.toc == false %}
 <script>
   $(document).ready(function () {
     $('#toc-contents').toc({ minimumHeaders: {{site.theme_variables.toc.min_headers | default: 2 }}, listType: 'ul', classes: { list: 'list-unstyled' }, noBackToTopLinks: true, showSpeed: 0, headers: '{{site.theme_variables.toc.headers | default: 'main h2' }}' , title: '<strong class="my-2">On this page</strong><hr class="my-2">' });
@@ -8,4 +7,3 @@
   <i class="fa-solid fa-up-right-and-down-left-from-center me-2"></i>On this page
 </button>
 <nav id="toc-contents" class="collapse" aria-label="Table of contents"></nav>
-{%- endunless %}
