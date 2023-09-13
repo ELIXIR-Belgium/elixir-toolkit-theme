@@ -52,7 +52,7 @@
     <script src="{{ 'assets/js/lunr.min.js' | relative_url }}"></script>
     <script src="{{ 'assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
     <script src="{{ 'assets/js/anchor.min.js' | relative_url }}"></script>
-    <script src="{{ 'assets/js/toc.js' | relative_url }}"></script>
+    {% unless page.toc == false %}<script src="{{ 'assets/js/toc.js' | relative_url }}"></script>{% endunless %}
     <script src="{{ 'assets/js/jquery.navgoco.js' | relative_url }}"></script>
     <script src="{{ 'assets/js/main.js' | relative_url }}"></script>
     <script src="{{ 'assets/js/search.js' | relative_url }}"></script>
