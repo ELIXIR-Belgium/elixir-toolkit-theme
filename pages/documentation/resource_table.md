@@ -18,7 +18,7 @@ The [all_tools_and_resources](all_tools_and_resources) list is based on the [yam
 * When making use of the new way of tagging tools: 
   * `gem "elixir-toolkit-theme-plugins"` is added to the `/Gemfile`
   * `- elixir-toolkit-theme-plugins` is added to the plugins block in the `_config.yml` file
-* GitHub Actions is used to deploy the website. See [instructions](/#deployment).
+* GitHub Actions is used to deploy the website. See [instructions]([/#deployment](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow)).
 
 
 ## The main yaml file
