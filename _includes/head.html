@@ -70,7 +70,7 @@
                     lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
                     stateSave: true,
                     searching: true,
-                    info: false,
+                    info: true,
                     pageLength: 10,
                     language: {
                         searchPlaceholder: "Type here..."
@@ -81,11 +81,8 @@
                             $('#'+$tableId+'_length').hide();
                             $('#'+$tableId+'_paginate').hide();
                             $('#'+$tableId+'_filter').hide();
-                        } else {
-                            $('#'+$tableId+'_length').show();
-                            $('#'+$tableId+'_paginate').show();
-                            $('#'+$tableId+'_filter').show(); 
-                        }
+                            $('#'+$tableId+'_info').hide();
+                        } 
                     }
                 });
             })
