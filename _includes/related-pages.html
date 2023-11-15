@@ -6,7 +6,7 @@
 {%- endfor %}
 {%- if actual_related != nil %}
 <!-- Read next -->
-<h2>Related pages</h2>
+<h2>{{site.theme_variables.headings.related-pages | default: 'Related pages' }}</h2>
 
 <div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
     {%- if page.related_pages %}

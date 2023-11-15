@@ -6,7 +6,7 @@
 {%- assign country_pages = site.pages | where_exp: "item", "item.search_exclude != true" | where_exp:"item","item.national_resources != nil" %}
 {%- unless tools.size == 0 or tools == nil %}
 {%- if include.tag %}
-<h2>Tools and resources on this page</h2>
+<h2>{{site.theme_variables.headings.resource-table-all | default: 'Tools and resources on this page' }}</h2>
 {%- endif %}
 <a class="visually-hidden-focusable" href='#skip-tool-table'>Skip tool table</a>
 <div class="table-responsive mt-4 mb-5">
