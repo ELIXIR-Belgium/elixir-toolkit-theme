@@ -1,5 +1,5 @@
 {%- if page.affiliations and page.affiliations.size != 0 %}
-<span class="d-block h2-like fs-2">Affiliations</span>
+<span class="d-block h2-like fs-2">{{site.theme_variables.headings.affiliation-tiles-page | default: 'Affiliations' }}</span>
 <div class="mt-4 d-flex flex-wrap gap-2">
     {%- assign affiliations = site.data.affiliations %}
     {%- assign page_affiliations = page.affiliations | sort %}

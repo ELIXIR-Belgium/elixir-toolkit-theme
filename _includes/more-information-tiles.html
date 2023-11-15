@@ -40,7 +40,7 @@
 {%- endif %}
 {%- if actual_training or actual_faircookbook or actual_fairsharing or actual_dsw or actual_rdmkit %}
 <!-- More information -->
-<h2>More information</h2>
+<h2>{{site.theme_variables.headings.more-information-tiles | default: 'More information' }}</h2>
 
 <div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
     {%- if actual_training %}

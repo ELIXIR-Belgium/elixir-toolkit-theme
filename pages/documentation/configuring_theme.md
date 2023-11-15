@@ -46,10 +46,15 @@ theme_variables:
     edit_me: true
     open_issue: true
     history: true
+  headings:
+    related-pages: Related pages
+    more-information-tiles: More information
+    resource-table-all: Tools and resources on this page
+    affiliation-tiles-page: Affiliations
+    contributor-minitiles-page: Contributors
   toc:
-    full_width: false
-    min_headers: 2
-    headers: 'h2'
+    min_headings: 2
+    headings: 'h2'
   topnav:
     theme: light
     brand_logo: assets/img/main_logo.svg
@@ -70,9 +75,15 @@ More detailed information about these settings can be found here:
   * `edit_me`: Enable the 'propose an edit on this page' button.
   * `open_issue`: Enable the 'open an issue on this page' button.
   * `history`: Enable the 'history of this page' button.
+* headings: Change the subtitles of the page sections that are automatically generated
+    `related-pages`: Default: Related pages
+    `more-information-tiles`: Default: More information
+    `resource-table-all`: Default: Tools and resources on this page
+    `affiliation-tiles-page`: Default: Affiliations
+    `contributor-minitiles-page`: Default: Contributors
 * toc: Settings related to the table of contents.
-  * `min_headers`: The minimum amount of headers (h2, h3,.. depending on the headers option) on a page for the toc to appear. This has to be an integer.
-  * `headers`: The type of headers that need to be indexed by the toc. This can be a list or one value, ex: **'h1, h2, h3'** or **'h2'**
+  * `min_headings`: The minimum amount of headings (h2, h3,.. depending on the headings option) on a page for the toc to appear. This has to be an integer.
+  * `headings`: The type of headings that need to be indexed by the toc. This can be a list or one value, ex: **'h1, h2, h3'** or **'h2'**
 * topnav: Settings related to the top navigation.
   *  `theme`: This variable is needed to change between a dark and a light top navigation. possible values: **dark** and **light**
   *  `brand_logo`: Custom path towards the brand logo, in case the assets/img/main_logo.svg can not be used.

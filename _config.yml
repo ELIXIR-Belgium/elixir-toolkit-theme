@@ -59,9 +59,15 @@ theme_variables:
   #   edit_me: true
   #   open_issue: true
   #   history: true
+  # headings:
+  #   related-pages: Related pages
+  #   more-information-tiles: More information
+  #   resource-table-all: Tools and resources on this page
+  #   affiliation-tiles-page: Affiliations
+  #   contributor-minitiles-page: Contributors
   # toc:
-  #   min_headers: 2
-  #   headers: 'h2'
+  #   min_headings: 2
+  #   headings: 'h2'
   # topnav:
     # theme: light
     # brand_logo: assets/img/main_logo.svg
