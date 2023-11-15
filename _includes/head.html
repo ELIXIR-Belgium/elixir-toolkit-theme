@@ -64,7 +64,6 @@
     <script type="text/javascript" charset="utf8" src="{{ 'assets/js/dataTables.bootstrap5.min.js' | relative_url }}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
             $('table.display').each(function() {
                 $(this).DataTable({
                     lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
@@ -82,7 +81,12 @@
                             $('#'+$tableId+'_paginate').hide();
                             $('#'+$tableId+'_filter').hide();
                             $('#'+$tableId+'_info').hide();
-                        } 
+                        } else {
+                            $('#'+$tableId+'_length').hide();
+                            $('#'+$tableId+'_paginate').hide();
+                            $('#'+$tableId+'_filter').hide();
+                            $('#'+$tableId+'_info').hide();
+                        }
                     }
                 });
             })
