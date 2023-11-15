@@ -91,7 +91,7 @@ Tools and resources specifically mentioned in the text of the pages should be pr
 
 ## Listing all resources
 
-By default, the table at the bottom of the page will appear when tools are mentioned in the text/tagged with the correct page_id at the bottom og the page as seen at the bottom of this page under the "Tools and resources on this page" heading. To list manually all tools and resources that are described in your website, use following snippet:
+By default, the table at the bottom of the page will appear when tools are mentioned in the text/tagged with the correct page_id as seen at the bottom of this page under the "Tools and resources on this page" heading. To list manually all tools and resources that are described in your website, use following snippet:
 
 ```
 {% raw %}
