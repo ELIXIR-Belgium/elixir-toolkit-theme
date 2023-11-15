@@ -77,15 +77,10 @@
                     "fnDrawCallback": function ( oSettings ){
                         var tableId = oSettings.nTable.id;
                         if(oSettings.fnRecordsTotal() < 10){     
-                            $('#'+$tableId+'_length').hide();
-                            $('#'+$tableId+'_paginate').hide();
-                            $('#'+$tableId+'_filter').hide();
-                            $('#'+$tableId+'_info').hide();
-                        } else {
-                            $('#'+$tableId+'_length').hide();
-                            $('#'+$tableId+'_paginate').hide();
-                            $('#'+$tableId+'_filter').hide();
-                            $('#'+$tableId+'_info').hide();
+                            $('#'+tableId+'_length').hide();
+                            $('#'+tableId+'_paginate').hide();
+                            $('#'+tableId+'_filter').hide();
+                            $('#'+tableId+'_info').hide();
                         }
                     }
                 });
