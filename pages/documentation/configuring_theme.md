@@ -53,7 +53,6 @@ theme_variables:
     affiliation-tiles-page: Affiliations
     contributor-minitiles-page: Contributors
   toc:
-    full_width: false
     min_headings: 2
     headings: 'h2'
   topnav:
