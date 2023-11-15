@@ -67,17 +67,17 @@
             $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
             $('table.display').each(function() {
                 $(this).DataTable({
-                    lengthMenu: [[25, 50, 100, -1], [25, 50, 100, "All"]],
+                    lengthMenu: [[20, 50, 100, -1], [20, 50, 100, "All"]],
                     stateSave: true,
                     searching: true,
                     info: false,
-                    pageLength: 25,
+                    pageLength: 20,
                     language: {
                         searchPlaceholder: "Type here..."
                     },
                     "fnDrawCallback": function ( oSettings ){
                         var tableId = oSettings.nTable.id;
-                        if(oSettings.fnRecordsTotal() < 25){     
+                        if(oSettings.fnRecordsTotal() < 20){     
                             $('#'+tableId+'_length').hide();
                             $('#'+tableId+'_paginate').hide();
                             $('#'+tableId+'_filter').hide();
