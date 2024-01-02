@@ -24,6 +24,8 @@ gtag:
 
 matomo:
 # Matomo domain where Matomo is running
+matomo_id:
+# Integer indicating the Matomo Website ID
 
 plausible: 
 # Plausible tag
