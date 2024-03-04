@@ -100,7 +100,7 @@
         </tbody>
     </table>
 </div>
-
+{%- unless total_county_tools == 0 or include.tag == nil %}
 <h3>National resources</h3>
 <p>Tailored to users in different countries.</p>
 <div class="table-responsive mt-4 mb-5">
@@ -199,6 +199,7 @@
         </tbody>
     </table>
 </div>
+{% endunless %}
 {%- if include.tag %}
 </div>
 {%- endif %}
