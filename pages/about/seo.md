@@ -27,9 +27,9 @@ For example:
             "mainEntityOfPage": "https://orcid.org/0000-0003-0522-5674",
             "affiliation": {
                 "@type": "Organization",
-                "name": "VIB-UGent / ELIXIR-BE"
+                "name": "VIB Data Core / ELIXIR-BE"
             },
-            "email": "bedro@psb.ugent.be",
+            "email": "bert.droesbeke@vib.be",
             "url": "https://github.com/bedroesb",
             "image": "https://avatars.githubusercontent.com/bedroesb",
             "jobTitle": "editor",

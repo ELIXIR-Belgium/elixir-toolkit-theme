@@ -52,7 +52,7 @@
     <script src="{{ 'assets/js/lunr.min.js' | relative_url }}"></script>
     <script src="{{ 'assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
     <script src="{{ 'assets/js/anchor.min.js' | relative_url }}"></script>
-    <script src="{{ 'assets/js/toc.js' | relative_url }}"></script>
+    {% unless page.toc == false %}<script src="{{ 'assets/js/toc.js' | relative_url }}"></script>{% endunless %}
     <script src="{{ 'assets/js/jquery.navgoco.js' | relative_url }}"></script>
     <script src="{{ 'assets/js/main.js' | relative_url }}"></script>
     <script src="{{ 'assets/js/search.js' | relative_url }}"></script>
@@ -63,17 +63,28 @@
     <script type="text/javascript" charset="utf8" src="{{ 'assets/js/jquery.dataTables.min.js' | relative_url }}"></script>
     <script type="text/javascript" charset="utf8" src="{{ 'assets/js/dataTables.bootstrap5.min.js' | relative_url }}"></script>
     <script type="text/javascript">
-        $.fn.DataTable.ext.pager.numbers_length = 5;
         $(document).ready(function () {
-            $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
-            $('table.display').DataTable({
-                lengthMenu: [[25, 50, 100, -1], [25, 50, 100, "All"]],
-                stateSave: true,
-                searching: true,
-                language: {
-                    searchPlaceholder: "Type here..."
-                }
-            });
+            $('table.display').each(function() {
+                $(this).DataTable({
+                    lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+                    stateSave: true,
+                    searching: true,
+                    info: true,
+                    pageLength: 10,
+                    language: {
+                        searchPlaceholder: "Type here..."
+                    },
+                    "fnDrawCallback": function ( oSettings ){
+                        var tableId = oSettings.nTable.id;
+                        if(oSettings.fnRecordsTotal() < 10){     
+                            $('#'+tableId+'_length').hide();
+                            $('#'+tableId+'_paginate').hide();
+                            $('#'+tableId+'_filter').hide();
+                            $('#'+tableId+'_info').hide();
+                        }
+                    }
+                });
+            })
         });
     </script>
     {%- endif %}
@@ -103,12 +114,13 @@
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
         (function() {
-            var u="{{site.matomo}}";
-            _paq.push(['setTrackerUrl', u+'piwik.php']);
-            _paq.push(['setSiteId', '2']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+        var u="{{site.matomo}}";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '{{site.matomo_id}}']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
         })();
     </script>
+    <!-- End Matomo Code -->
     {%- endif %}
 </head>

@@ -1,6 +1,7 @@
 ---
 title: Tools and resources table
 page_id: tools_and_resources_table
+datatable: true
 ---
 
 One of the themes key features is the support for a central tool and resource table. This means that tools that are mentioned at multiple places on the website, can be described centrally, and these descriptions/metadata fields can be used to automatically populate a tools and resources table at the bottom of the page.
@@ -18,7 +19,7 @@ The [all_tools_and_resources](all_tools_and_resources) list is based on the [yam
 * When making use of the new way of tagging tools: 
   * `gem "elixir-toolkit-theme-plugins"` is added to the `/Gemfile`
   * `- elixir-toolkit-theme-plugins` is added to the plugins block in the `_config.yml` file
-* GitHub Actions is used to deploy the website. See [instructions](/#deployment).
+* GitHub Actions is used to deploy the website. See [instructions](https://elixir-belgium.github.io/elixir-toolkit-theme/#deployment)).
 
 
 ## The main yaml file
@@ -87,4 +88,19 @@ Tools and resources specifically mentioned in the text of the pages should be pr
 
 
 {% include callout.html type="important" content="Don't forget to add the `\"` double quotes around the tool_id and make sure to use the exact tool_id as described in the yaml file." %}
+
+## Listing all resources
+
+By default, the table at the bottom of the page will appear when tools are mentioned in the text/tagged with the correct page_id as seen at the bottom of this page under the "Tools and resources on this page" heading. To list manually all tools and resources that are described in your website, use following snippet:
+
+```
+{% raw %}
+{% include resource-table-all.html %}
+{% endraw %}
+```
+
+
+{% include resource-table-all.html %}
+
+
 

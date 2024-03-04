@@ -19,9 +19,11 @@ layout: default
         <div class="summary">{{page.summary}}</div>
         {%- endif %}
     </div>
-    <div id="toc" class="text-muted sticky-lg-top">
+    {%- unless page.toc == false %}
+    <div id="toc" class="text-muted sticky-xl-top">
         {%- include toc.html %}
     </div>
+    {%- endunless %}
     <div id="content" class="mb-5">
         {{content}}
         {% include resource-table-page.html %}

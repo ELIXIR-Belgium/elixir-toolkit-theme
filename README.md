@@ -7,7 +7,7 @@ permalink: /
 
 <p align="center">
 <img src="assets/img/ett_compact_logo.svg" width="100" float="center"/>
-<h1 align="center">ELIXIR toolkit theme </h1>
+<h1 align="center">ELIXIR Toolkit Theme </h1>
 </p>
 
 The ELIXIR toolkit theme is a Jekyll theme designed to support easy deployment of documentation websites but also more complex ones that require a central tool table and linking towards ELIXIR resources. 
@@ -37,7 +37,7 @@ remote_theme: ELIXIR-Belgium/elixir-toolkit-theme
 You can lock it onto a specific version like using:
 
 ```yaml
-remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@1.25.0
+remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@2.5.0
 ```
 
 ### Using Ruby Gems (alternative)
@@ -50,7 +50,7 @@ gem "elixir-toolkit-theme"
 You can lock it onto a specific version like this:
 
 ```ruby
-gem "elixir-toolkit-theme", "~> 1.25.0"
+gem "elixir-toolkit-theme", "~> 2.5.0"
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
@@ -64,9 +64,11 @@ theme: elixir-toolkit-theme
 ### Via GitHub Actions
 
 1. Make sure you have a GitHub workflow file setup similar to the one in this repo at [.github/workflows/jekyll.yml](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/main/.github/workflows/jekyll.yml).
-
-2. Go to Settings > Pages and enable GitHub Actions as a source
-3. Go to Environments > github-pages and remove the rule under Deployment branches if you want to deploy other branches than master or main via Workflow Dispatch (manually triggered action)
+2. Go to Settings > Actions and enable Allow all actions and reusable workflows
+3. Got to the Actions tab of the repository and trust the workflows to run.
+4. Go to Settings > Pages and enable GitHub Actions as a source
+5. Go to Environments > github-pages and remove the rule under Deployment branches if you want to deploy other branches than master or main via Workflow Dispatch (manually triggered action)
+6. Trigger the workflow by pushing a change to main or manually trigger the actions within the Actions tab of the repository.
 
 ### Via GitHub Pages
 

@@ -37,7 +37,7 @@
 {%- unless include.sort == false %}
 {%- assign allcontributors = allcontributors | sort %}
 {%- endunless %}
-<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-xl-{{nr}} g-4 contributor-cards">
+<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-xl-{{nr}} g-4 contributor-cards mb-4">
   {%- for contributor in allcontributors %}
   <div class="col">
     <div class="card h-100">

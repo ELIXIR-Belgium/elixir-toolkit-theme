@@ -104,7 +104,7 @@ body img {
         grid-template-rows: auto auto 1fr;
     }
 }
-@include media-breakpoint-up(lg) {
+@include media-breakpoint-up(xl) {
     #main {
         grid-template-areas:
             "intro toc"
@@ -122,7 +122,7 @@ body img {
     display: none;
 }
 
-@include media-breakpoint-up(lg) {
+@include media-breakpoint-up(xl) {
     #toc {
         top: $spacer * 3;
         right: 0;
@@ -154,6 +154,12 @@ body img {
     #layout {
         display: grid;
         grid-template-areas: "sidebar main";
+        grid-template-columns: 3fr 9fr;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    #layout {
         grid-template-columns: 2fr 9fr;
     }
 }
@@ -478,7 +484,7 @@ header .navbar {
 /*-----TOC-----*/
 
 #toc-contents {
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(xl) {
         display: block !important;
     } // Indent the lists and reset any other padding
     ul {
