@@ -1,19 +1,4 @@
-{%- if page.training %}
-{%- assign actual_training = nil %}
-{%- for training in page.training %}
-{%- if training.name %}
-{%- assign actual_training = 1 %}
-{%- endif %}
-{%- endfor %}
-{%- endif %}
-{%- if page.faircookbook %}
-{%- assign actual_faircookbook = nil %}
-{%- for recipe in page.faircookbook %}
-{%- if recipe.name %}
-{%- assign actual_faircookbook = 1 %}
-{%- endif %}
-{%- endfor %}
-{%- endif %}
+<!-- FAIRsharing -->
 {%- if page.fairsharing %}
 {%- assign actual_fairsharing = nil %}
 {%- for standard in page.fairsharing %}
@@ -22,6 +7,55 @@
 {%- endif %}
 {%- endfor %}
 {%- endif %}
+{%- if actual_fairsharing %}
+<a data-bs-toggle="collapse" href="#fairsharing_collapse" role="button" aria-expanded="false" aria-controls="fairsharing_collapse" class="d-flex align-items-baseline info-collapse">
+    <h2 class="mb-0 flex-grow-1 no-anchor">Links to FAIRsharing</h2><i class="fa-solid fa-arrow-right fs-3"></i>
+</a>
+<div class="collapse" id="fairsharing_collapse">
+    <img alt="FAIRsharing logo" class="img-fluid info-logo mt-4 mb-3" src="{{ 'assets/img/fairsharing_logo.svg' | relative_url }}">
+    <p><a href="https://fairsharing.org/">FAIRsharing</a> is a curated, informative and educational resource on data and metadata standards, inter-related to databases and data policies.</p>
+    <div class="row row-cols-1 row-cols-md-2 gy-2 gx-4 info-tiles">
+        {%- for standard in page.fairsharing %}
+        <div class="col">
+            <a class="btn text-start d-block" href="{{ standard.url }}">
+                {{standard.name}}
+            </a>
+        </div>
+        {%- endfor %}
+    </div>
+</div>
+{%- endif %}
+
+
+<!-- FAIR Cookbook -->
+{%- if page.faircookbook %}
+{%- assign actual_faircookbook = nil %}
+{%- for recipe in page.faircookbook %}
+{%- if recipe.name %}
+{%- assign actual_faircookbook = 1 %}
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+{%- if actual_faircookbook %}
+<a data-bs-toggle="collapse" href="#faircookbook_collapse" role="button" aria-expanded="false" aria-controls="faircookbook_collapse" class="d-flex align-items-baseline info-collapse">
+    <h2 class="mb-0 flex-grow-1 no-anchor">Links to FAIR Cookbook</h2><i class="fa-solid fa-arrow-right fs-3"></i>
+</a>
+<div class="collapse" id="faircookbook_collapse">
+    <img alt="FAIR Cookbook logo" class="img-fluid info-logo mt-4 mb-3" src="{{ 'assets/img/faircookbook_logo.svg' | relative_url }}">
+    <p><a href="https://faircookbook.elixir-europe.org/">FAIR Cookbook</a> is an online, open and live resource for the Life Sciences with recipes that help you to make and keep data Findable, Accessible, Interoperable and Reusable; in one word FAIR.</p>
+    <div class="row row-cols-1 row-cols-md-2 gy-2 gx-4 info-tiles">
+        {%- for recipe in page.faircookbook %}
+        <div class="col">
+            <a class="btn text-start d-block" href="{{ recipe.url }}">
+                {{recipe.name}}
+            </a>
+        </div>
+        {%- endfor %}
+    </div>
+</div>
+{%- endif %}
+
+<!-- DSW -->
 {%- if page.dsw %}
 {%- assign actual_dsw = nil %}
 {%- for question in page.dsw %}
@@ -30,6 +64,26 @@
 {%- endif %}
 {%- endfor %}
 {%- endif %}
+{%- if actual_dsw %}
+<a data-bs-toggle="collapse" href="#dsw_collapse" role="button" aria-expanded="false" aria-controls="dsw_collapse" class="d-flex align-items-baseline info-collapse">
+    <h2 class="mb-0 flex-grow-1 no-anchor">Links to DSW</h2><i class="fa-solid fa-arrow-right fs-3"></i>
+</a>
+<div class="collapse" id="dsw_collapse">
+    <img alt="DSW logo" class="img-fluid info-logo mt-4 mb-3" src="{{ 'assets/img/dsw_logo.svg' | relative_url }}">
+    <p><a href="https://faircookbook.elixir-europe.org/">FAIR Cookbook</a> is an online, open and live resource for the Life Sciences with recipes that help you to make and keep data Findable, Accessible, Interoperable and Reusable; in one word FAIR.</p>
+    <div class="row row-cols-1 row-cols-md-2 gy-2 gx-4 info-tiles">
+        {%- for question in page.dsw %}
+        <div class="col">
+            <a class="btn text-start d-block" href="{{ site.dsw_deep_link_prefix | append: question.uuid }}">
+            {{question.name}}
+            </a>
+        </div>
+        {%- endfor %}
+    </div>
+</div>
+{%- endif %}
+
+<!-- RDMkit -->
 {%- if page.rdmkit %}
 {%- assign actual_rdmkit = nil %}
 {%- for rdmdoc in page.rdmkit %}
@@ -38,115 +92,68 @@
 {%- endif %}
 {%- endfor %}
 {%- endif %}
-{%- if actual_training or actual_faircookbook or actual_fairsharing or actual_dsw or actual_rdmkit %}
-<!-- More information -->
-<h2>{{site.theme_variables.headings.more-information-tiles | default: 'More information' }}</h2>
+{%- if actual_rdmkit %}
+<a data-bs-toggle="collapse" href="#rdmkit_collapse" role="button" aria-expanded="false" aria-controls="rdmkit_collapse" class="d-flex align-items-baseline info-collapse">
+    <h2 class="mb-0 flex-grow-1 no-anchor">Links to RDMkit</h2><i class="fa-solid fa-arrow-right fs-3"></i>
+</a>
+<div class="collapse" id="rdmkit_collapse">
+    <img alt="RDMkit logo" class="img-fluid info-logo mt-4 mb-3" src="{{ 'assets/img/rdmkit_logo.svg' | relative_url }}">
+    <p><a href="https://faircookbook.elixir-europe.org/">FAIR Cookbook</a> is an online, open and live resource for the Life Sciences with recipes that help you to make and keep data Findable, Accessible, Interoperable and Reusable; in one word FAIR.</p>
+    <div class="row row-cols-1 row-cols-md-2 gy-2 gx-4 info-tiles">
+        {%- for rdmdoc in page.rdmkit %}
+        <div class="col">
+            <a class="btn text-start d-block" href="{{ rdmdoc.url }}">
+                {{rdmdoc.name}}
+            </a>
+        </div>
+        {%- endfor %}
+    </div>
+</div>
+{%- endif %}
 
-<div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
-    {%- if actual_training %}
-    <!-- Training -->
-    <div class="col">
-        <div class="card h-100 info-card">
-            <div class="card-header fw-bold">Training</div>
-            <div class="card-body">
-                <div class="d-grid gap-2">
-                    {%- for training in page.training %}
-                    <a class="btn bg-white hover-primary text-start d-block" href="{{ training.url }}">
-                        <div class="row g-1">
-                            <div class="col-2 d-flex align-items-center justify-content-center">
-                                {%- assign registry = training.registry |  downcase %}
-                                {%- if registry  == "tess" %}
-                                <img alt="TeSS logo" class="img-fluid" src="{{ 'assets/img/tess_logo.svg' | relative_url }}">
-                                {%- elsif registry == "zenodo" %}
-                                <img alt="Zenodo logo" class="img-fluid" src="{{ 'assets/img/zenodo_logo.svg' | relative_url }}">
-                                {%- elsif registry == "youtube" %}
-                                <img alt="YouTube logo" class="img-fluid" src="{{ 'assets/img/youtube_logo.svg' | relative_url }}">
-                                {%- elsif registry == "carpentries" %}
-                                <img alt="Carpentries" class="img-fluid" src="{{ 'assets/img/carpentries_logo.svg' | relative_url }}">
-                                {%- elsif registry == "github" %}
-                                <i class="fa-brands fa-github text-dark fa-2xl my-3"></i>
-                                {%- else %}
-                                <i class="fa-solid fa-external-link-alt text-primary fa-lg my-3"></i>
-                                {%- endif %}
-                            </div>
-                            <div class="col-10 d-flex align-items-center">
-                                <span class="text-start">{{training.name}}</span>
-                            </div>
-                        </div>
-                    </a>
-                    {%- endfor %}
+<!-- Training -->
+{%- if page.training %}
+{%- assign actual_training = nil %}
+{%- for training in page.training %}
+{%- if training.name %}
+{%- assign actual_training = 1 %}
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+{%- if actual_training %}
+<a data-bs-toggle="collapse" href="#training_collapse" role="button" aria-expanded="false" aria-controls="training_collapse" class="d-flex align-items-baseline info-collapse">
+    <h2 class="mb-0 flex-grow-1 no-anchor">Training</h2><i class="fa-solid fa-arrow-right fs-3"></i>
+</a>
+<div class="collapse" id="training_collapse">
+    <p class="mt-3"><a href="https://faircookbook.elixir-europe.org/">FAIR Cookbook</a> is an online, open and live resource for the Life Sciences with recipes that help you to make and keep data Findable, Accessible, Interoperable and Reusable; in one word FAIR.</p>
+    <div class="row row-cols-1 row-cols-md-2 gy-2 gx-4 info-tiles">
+        {%- for training in page.training %}
+        <div class="col">
+            <a class="btn text-start d-block" href="{{ training.url }}">
+                <div class="row g-1">
+                    <div class="col-2 d-flex align-items-center justify-content-center">
+                        {%- assign registry = training.registry | downcase %}
+                        {%- if registry == "tess" %}
+                        <img alt="TeSS logo" class="img-fluid" src="{{ 'assets/img/tess_logo.svg' | relative_url }}">
+                        {%- elsif registry == "zenodo" %}
+                        <img alt="Zenodo logo" class="img-fluid" src="{{ 'assets/img/zenodo_logo.svg' | relative_url }}">
+                        {%- elsif registry == "youtube" %}
+                        <img alt="YouTube logo" class="img-fluid" src="{{ 'assets/img/youtube_logo.svg' | relative_url }}">
+                        {%- elsif registry == "carpentries" %}
+                        <img alt="Carpentries" class="img-fluid" src="{{ 'assets/img/carpentries_logo.svg' | relative_url }}">
+                        {%- elsif registry == "github" %}
+                        <i class="fa-brands fa-github text-dark fa-2xl my-3"></i>
+                        {%- else %}
+                        <i class="fa-solid fa-external-link-alt text-primary fa-lg my-3"></i>
+                        {%- endif %}
+                    </div>
+                    <div class="col-10 d-flex align-items-center">
+                        <span class="text-start">{{training.name}}</span>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
+        {%- endfor %}
     </div>
-    {%- endif %}
-    {%- if actual_faircookbook or actual_fairsharing or actual_dsw or actual_rdmkit %}
-    <!-- FAIR Cookbook and FAIRsharing -->
-    <div class="col">
-        <div class="card h-100 info-card">
-            <div class="card-header fw-bold">Links to other ELIXIR resources</div>
-            <div class="card-body">
-                <div class="d-grid gap-2">
-                    {%- if actual_faircookbook %}
-                    {%- for recipe in page.faircookbook %}
-                    <a class="btn bg-white hover-primary text-start d-block" data-bs-toggle="tooltip" data-bs-placement="right" title="FAIRCookbook" href="{{ recipe.url }}">
-                        <div class="row g-1">
-                            <div class="col-2 d-flex align-items-center justify-content-center">
-                                <img alt="FAIRCookbook logo" class="img-fluid" src="{{ 'assets/img/fairplus_compact_logo.svg' | relative_url }}">
-                            </div>
-                            <div class="col-10 d-flex align-items-center">
-                                <span class="text-start">Step-by-step process for: {{recipe.name}}</span>
-                            </div>
-                        </div>
-                    </a>
-                    {%- endfor %}
-                    {%- endif %}
-                    {%- if actual_dsw %}
-                    {%- for question in page.dsw %}
-                    <a class="btn bg-white hover-primary text-start d-block" data-bs-toggle="tooltip" data-bs-placement="right" title="DSW" href="{{ site.dsw_deep_link_prefix | append: question.uuid }}">
-                        <div class="row g-1">
-                            <div class="col-2 d-flex align-items-center justify-content-center">
-                                <img alt="DSW logo" class="img-fluid" src="{{ 'assets/img/dsw_compact_logo.svg' | relative_url }}">
-                            </div>
-                            <div class="col-10 d-flex align-items-center">
-                                <span class="text-start">Support for DMP on: {{question.name}}</span>
-                            </div>
-                        </div>
-                    </a>
-                    {%- endfor %}
-                    {%- endif %}
-                    {%- if actual_fairsharing %}
-                    {%- for standard in page.fairsharing %}
-                    <a class="btn bg-white hover-primary text-start d-block" data-bs-toggle="tooltip" data-bs-placement="right" title="FAIRsharing" href="{{ standard.url }}">
-                        <div class="row g-1">
-                            <div class="col-2 d-flex align-items-center justify-content-center">
-                                <img alt="FAIRsharing logo" class="img-fluid" src="{{ 'assets/img/fairsharing_compact_logo.svg' | relative_url }}">
-                            </div>
-                            <div class="col-10 d-flex align-items-center">
-                                <span class="text-start">FAIRsharing collection about: {{standard.name}}</span>
-                            </div>
-                        </div>
-                    </a>
-                    {%- endfor %}
-                    {%- endif %}
-                    {%- if actual_rdmkit %}
-                    {%- for rdmdoc in page.rdmkit %}
-                    <a class="btn bg-white hover-primary text-start d-block" data-bs-toggle="tooltip" data-bs-placement="right" title="RDMkit" href="{{ rdmdoc.url }}">
-                        <div class="row g-1">
-                            <div class="col-2 d-flex align-items-center justify-content-center">
-                                <img alt="RDMkit logo" class="img-fluid" src="{{ 'assets/img/rdmkit_compact_logo.svg' | relative_url }}">
-                            </div>
-                            <div class="col-10 d-flex align-items-center">
-                                <span class="text-start">Data management guidelines on: {{rdmdoc.name}}</span>
-                            </div>
-                        </div>
-                    </a>
-                    {%- endfor %}
-                    {%- endif %}
-                </div>
-            </div>
-        </div>
-    </div>
-    {%- endif %}
 </div>
 {%- endif %}

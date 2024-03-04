@@ -50,7 +50,6 @@ theme_variables:
     history: true
   headings:
     related-pages: Related pages
-    more-information-tiles: More information
     resource-table-all: Tools and resources on this page
     affiliation-tiles-page: Affiliations
     contributor-minitiles-page: Contributors
@@ -79,7 +78,6 @@ More detailed information about these settings can be found here:
   * `history`: Enable the 'history of this page' button.
 * headings: Change the subtitles of the page sections that are automatically generated
     `related-pages`: Default: Related pages
-    `more-information-tiles`: Default: More information
     `resource-table-all`: Default: Tools and resources on this page
     `affiliation-tiles-page`: Default: Affiliations
     `contributor-minitiles-page`: Default: Contributors

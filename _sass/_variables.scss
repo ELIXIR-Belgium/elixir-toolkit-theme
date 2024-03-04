@@ -26,14 +26,15 @@ $sidebar-color-active: $white;
 
 /*-----Section navigation tiles-----*/
 $nav-card-bg: $light;
+$nav-card-color: $dark;
 $nav-card-bg-hover: $primary;
 $nav-card-color-hover: $white;
-$nav-card-header-color: $dark;
 
 /*-----More information tiles-----*/
 $info-card-bg: $light;
-$info-card-header-bg: $secondary;
-$info-card-header-color: $white;
+$info-card-color: $dark;
+$info-card-bg-hover: $primary;
+$info-card-color-hover: $white;
 
 /*-----Contributors-cards-----*/
 $contr-card-bg: $light;

@@ -1,5 +1,5 @@
 {%- if page.contributors and page.contributors.size != 0 %}
-<span class="d-block h2-like fs-2">{{site.theme_variables.headings.more-information-tiles | default: 'Contributors' }}</span>
+<span class="d-block h2-like fs-2">{{site.theme_variables.contributor-minitiles-page | default: 'Contributors' }}</span>
 <div class="p-4 rounded mt-4 page-contributors d-flex flex-wrap gap-2">
     {%- assign contributors = site.data.CONTRIBUTORS %}
     {%- assign page_contributors = page.contributors %}

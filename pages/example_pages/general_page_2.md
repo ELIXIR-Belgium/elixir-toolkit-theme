@@ -15,9 +15,6 @@ dsw:
 fairsharing:
 - name: ISO 20691
   url: https://fairsharing.org/3533
-rdmkit:
-- name: Data organisation
-  url: https://rdmkit.elixir-europe.org/data_organisation.html
 training:
   - name: Training in TeSS
     registry: TeSS

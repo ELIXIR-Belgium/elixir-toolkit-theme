@@ -5,12 +5,10 @@
 {%- endunless %}
 {%- endfor %}
 {%- if actual_related != nil %}
-<!-- Read next -->
+<!-- Related pages -->
 <h2>{{site.theme_variables.headings.related-pages | default: 'Related pages' }}</h2>
-
 <div class="row row-cols-1 row-cols-md-2 g-4 mt-2 navigation-tiles">
     {%- if page.related_pages %}
-    <!-- Related pages -->
     {%- for section in page.related_pages %}
     {%- unless section[1].size == 0 %}
     {%- for page_id in section[1] %}

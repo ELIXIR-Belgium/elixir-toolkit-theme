@@ -145,7 +145,7 @@ body img {
     grid-area: content;
     min-width: 1px;
     position: relative;
-    h2:first-child {
+    [data-bs-toggle="collapse"]:not(h2:first-child) {
         margin-top: 0;
     }
 }
@@ -885,29 +885,39 @@ li.past_event,
 
 /*-----More information tiles-----*/
 
-.info-card {
-    background-color: $info-card-bg;
-
-    .card-header {
-        background-color: $info-card-header-bg;
-        color: $info-card-header-color;
-    }
-
-    a:hover {
-        .text-muted {
-            transition: $btn-transition;
-            color: $white !important;
-        }
-
+.info-tiles {
+    a {
+        background-color: $info-card-bg;
+        color: $info-card-color;
         i {
             transition: $btn-transition;
-            color: $white !important;
+            color: $info-card-color !important;
+        }
+        &:hover {
+            background-color: $info-card-bg-hover;
+            color: $info-card-color-hover !important;
+            i {
+                color: $info-card-color-hover !important;
+            }
         }
     }
+    
 
     img {
-        height: 40px;
-        max-width: 45px;
+        height: 30px;
+        max-width: 35px;
+    }
+}
+
+.info-logo {
+    max-width: 250px;
+}
+
+.info-collapse {
+    margin-right: $spacer;
+    transition: margin-right .2s ease-in-out;
+    &:hover {
+        margin-right: 0;
     }
 }
 
@@ -919,11 +929,16 @@ li.past_event,
 }
 
 /*-----Section navigation tiles-----*/
+$nav-card-bg: $light;
+$nav-card-color: $dark;
+$nav-card-bg-hover: $primary;
+$nav-card-color-hover: $white;
 
 .navigation-tiles {
     .card,
     .btn {
         background-color: $nav-card-bg;
+        color: $nav-card-color;
         &:hover {
             background-color: $nav-card-bg-hover;
             transition: $btn-transition;
@@ -943,7 +958,7 @@ li.past_event,
             }
 
             &.section-title {
-                color: $nav-card-header-color;
+                color: $nav-card-color;
                 font-size: 1.2rem;
             }
         }
