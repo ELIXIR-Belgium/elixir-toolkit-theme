@@ -56,9 +56,9 @@
                         <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="{{tool.how_to_access}}"><span class="badge text-primary border border-primary"> <i class="fa-solid fa-key"></i></span></span>
                         {%- endif %}
                         {%- unless instances_tool == 0 or total_county_tools == 0 or include.tag == nil %}    
-                        <a href="#national-resources-button">
+                        <!-- <a href="#national-resources-button">
                             <span class="badge text-white bg-primary"><i class="fa-solid fa-arrow-circle-down me-2"></i>Different instances available</span>
-                        </a>
+                        </a> -->
                         {%- endunless %}
                     </div>
                     {%- endif %}
@@ -91,6 +91,31 @@
                 </td>
             </tr>
             {%- endfor %}
+        </tbody>
+    </table>
+</div>
+
+<h3>National resources</h3>
+<p>Tailored to users in different countries.</p>
+<div class="table-responsive mt-4 mb-5">
+    <table class="tooltable table display" id="national-resources-button">
+        <thead>
+            <tr class="text-nowrap">
+                <th>Tool or resource {%- if include.tag -%}
+                    <a data-bs-toggle="tooltip" data-bs-original-title="This is a curated list which means that not all tools or resources that exist for this topic are listed here. This is mainly because we do not intend to be a registry. In most cases you will only find back the tools or resources that are mentioned in this page.">
+                        <i class="fa-solid fa-info-circle"></i>
+                    </a>{%- endif %}
+                </th>
+                <th>Description</th>
+                <th>Related pages</th>
+                <th>Registry {%- if include.tag -%}
+                    <a data-bs-toggle="tooltip" data-bs-original-title="Links to related information in ELIXIR registries: related policies and standards in FAIRsharing, scientific and technical descriptions of the resource in bio.tools, and related training in TeSS.">
+                        <i class="fa-solid fa-info-circle"></i>
+                    </a>{%- endif %}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
             {%- unless total_county_tools == 0 or include.tag == nil %}
             <tr class="collapse multi-collapse table-light" id="resource_title">
                 <td><b>National resources</b></td>
@@ -109,7 +134,7 @@
             {%- for tool in tool_matches %}
             {%- assign tool_id = tool.name | slugify %}
             {%- assign hide_ids = hide_ids | append: " " | append: tool_id %}
-            <tr {% unless include.tag==nil %} class="collapse multi-collapse" id="{{tool_id}}" {% endunless %}>
+            <tr>
                 {% if tool.url %}
                 <td><a href="{{tool.url}}">{{tool.name}}</a><a href="{{country_page.url | relative_url }}" data-bs-toggle="tooltip" title="{{country_page.title}}"><span class="flag-icon ms-2 shadow-sm flag-icon-{{country_page.country_code | downcase }}"></span></a></td>
                 {%- else %}
@@ -168,10 +193,5 @@
         </tbody>
     </table>
 </div>
-{%- unless total_county_tools == 0 or include.tag == nil %}
-<a class="btn btn-primary" id="national-resources-button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" role="button" aria-expanded="false" aria-controls="{{hide_ids}}">
-    View national resources <span class="badge bg-white text-primary ms-2">{{total_county_tools}}</span>
-</a>
-{%- endunless %}
 <div id="skip-tool-table"></div>
 {%- endunless %}
