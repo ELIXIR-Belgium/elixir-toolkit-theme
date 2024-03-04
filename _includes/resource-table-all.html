@@ -9,9 +9,10 @@
 <a class="visually-hidden-focusable" href='#skip-tool-table'>Skip tool table</a>
 <a data-bs-toggle="collapse" href="#tools_collapse" role="button" aria-expanded="false" aria-controls="tools_collapse" class="d-flex align-items-baseline info-collapse">
     <h2 class="mb-0 flex-grow-1">{{site.theme_variables.headings.resource-table-all | default: 'Tools and resources on this page' }}</h2>
-    {%- endif %}</h2><i class="fa-solid fa-arrow-right fs-3"></i>
+   <i class="fa-solid fa-arrow-right fs-3"></i>
 </a>
 <div class="collapse" id="tools_collapse">
+    {%- endif %}</h2>
     <div class="table-responsive mt-4 mb-5">
         <table class="tooltable table display">
             <thead>
@@ -196,6 +197,8 @@
             </tbody>
         </table>
     </div>
+{%- if include.tag %}
 </div>
+{%- endif %}
 <div id="skip-tool-table"></div>
 {%- endunless %}
