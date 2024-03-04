@@ -939,9 +939,9 @@ $nav-card-color-hover: $white;
     .btn {
         background-color: $nav-card-bg;
         color: $nav-card-color;
+        transition: $btn-transition;
         &:hover {
             background-color: $nav-card-bg-hover;
-            transition: $btn-transition;
             color: $nav-card-color-hover;
             a.section-title {
                 text-decoration: none;
