@@ -401,7 +401,6 @@ header .navbar {
 }
 
 #sidebar > nav > ul {
-
     > li:not(.sidebar-title) > a {
         background-color: $sidebar-bg;
         color: $sidebar-color;
@@ -901,7 +900,6 @@ li.past_event,
             }
         }
     }
-    
 
     img {
         height: 30px;
@@ -911,13 +909,17 @@ li.past_event,
 
 .info-logo {
     max-width: 250px;
+    max-height: 40px;
 }
 
 .info-collapse {
-    margin-right: $spacer;
-    transition: margin-right .2s ease-in-out;
-    &:hover {
-        margin-right: 0;
+    i {
+        transition: transform 0.2s ease-in-out;
+    }
+    &:hover, &[aria-expanded="true"] {
+        i {
+            transform: rotate(90deg);
+        }
     }
 }
 
