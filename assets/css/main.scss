@@ -145,7 +145,7 @@ body img {
     grid-area: content;
     min-width: 1px;
     position: relative;
-    [data-bs-toggle="collapse"]:not(h2:first-child) {
+    > h2:first-child {
         margin-top: 0;
     }
 }
