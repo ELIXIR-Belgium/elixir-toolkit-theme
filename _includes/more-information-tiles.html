@@ -18,7 +18,7 @@
         <div class="row row-cols-1 row-cols-md-2 gy-2 gx-4 info-tiles">
             {%- for standard in page.fairsharing %}
             <div class="col">
-                <a class="btn text-start d-block h-100" href="{{ standard.url }}">
+                <a class="btn text-start d-flex align-items-center h-100" href="{{ standard.url }}">
                     {{standard.name}}
                 </a>
             </div>
@@ -49,7 +49,7 @@
         <div class="row row-cols-1 row-cols-md-2 gy-2 gx-4 info-tiles">
             {%- for recipe in page.faircookbook %}
             <div class="col">
-                <a class="btn text-start d-block h-100" href="{{ recipe.url }}">
+                <a class="btn text-start d-flex align-items-center h-100" href="{{ recipe.url }}">
                     {{recipe.name}}
                 </a>
             </div>
@@ -79,7 +79,7 @@
         <div class="row row-cols-1 row-cols-md-2 gy-2 gx-4 info-tiles">
             {%- for question in page.dsw %}
             <div class="col">
-                <a class="btn text-start d-block h-100" href="{{ site.dsw_deep_link_prefix | append: question.uuid }}">
+                <a class="btn text-start d-flex align-items-center h-100" href="{{ site.dsw_deep_link_prefix | append: question.uuid }}">
                     {{question.name}}
                 </a>
             </div>
@@ -109,7 +109,7 @@
         <div class="row row-cols-1 row-cols-md-2 gy-2 gx-4 info-tiles">
             {%- for rdmdoc in page.rdmkit %}
             <div class="col">
-                <a class="btn text-start d-block h-100" href="{{ rdmdoc.url }}">
+                <a class="btn text-start d-flex align-items-center h-100" href="{{ rdmdoc.url }}">
                     {{rdmdoc.name}}
                 </a>
             </div>
