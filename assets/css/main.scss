@@ -914,8 +914,8 @@ li.past_event,
     max-height: 40px;
 }
 
-.info-tile:first-of-type {
-    margin-top: $spacer;    
+.info-title:first-of-type {
+    margin-top: $spacer * 2;    
 }
 
 .info-collapse {
