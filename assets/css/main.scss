@@ -914,10 +914,12 @@ li.past_event,
     max-height: 40px;
 }
 
+.info-tile:first-of-type {
+    margin-top: $spacer;    
+}
+
 .info-collapse {
-    &:first-of-type {
-        margin-top: $spacer;    
-    }
+
       
     transition: border-bottom-color 0.2s ease-in-out;
 
@@ -925,21 +927,27 @@ li.past_event,
         transition-property: margin-right, transform;
         transition-duration: 0.2s;
         transition-timing-function: ease-in-out;
-        margin-right: $spacer;
+        margin-right: $spacer * 0.5;
     }
 
 
     &[aria-expanded="true"] {
         i {
             transform: rotate(90deg);
-            margin-right: $spacer * 0.5;
+            margin-right: 0;
         }
     }
     &:hover {
         i {
-            margin-right: $spacer * 0.5;
+            margin-right: 0;
         }
     }
+}
+
+.collapse-tile {
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    margin-top: $spacer;
 }
 
 /*-----Country flags-----*/
