@@ -913,12 +913,25 @@ li.past_event,
 }
 
 .info-collapse {
+
+
+
     i {
-        transition: transform 0.2s ease-in-out;
+        transition: transform,margin-right 0.2s ease-in-out;
+        margin-right: $spacer;
     }
-    &:hover, &[aria-expanded="true"] {
+
+    &[aria-expanded="true"] {
+        border-bottom-color: $dark!important;
         i {
             transform: rotate(90deg);
+            margin-right: 0;
+        }
+    }
+    &:hover {
+        border-bottom-color: $dark!important;
+        i { 
+            margin-right: 0;
         }
     }
 }
