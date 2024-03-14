@@ -914,13 +914,11 @@ li.past_event,
     max-height: 40px;
 }
 
-.info-title:first-of-type {
+.info-tile:first-of-type {
     margin-top: $spacer * 2;    
 }
 
 .info-collapse {
-
-      
     transition: border-bottom-color 0.2s ease-in-out;
 
     i {
