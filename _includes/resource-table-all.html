@@ -7,7 +7,7 @@
 {%- unless tools.size == 0 or tools == nil %}
 {%- if include.tag %}
 <a class="visually-hidden-focusable" href='#skip-tool-table'>Skip tool table</a>
-
+<div class="p-4 collapse-card">
 <a data-bs-toggle="collapse" href="#tools_collapse" role="button" aria-expanded="false" aria-controls="tools_collapse" class="d-flex align-items-baseline pb-3 info-collapse">
     <h2 class="mb-0 mt-3 flex-grow-1">{{site.theme_variables.headings.resource-table-all | default: 'Tools and resources on this page' }}</h2>
     <i class="fa-solid fa-chevron-right fs-4"></i>
@@ -102,12 +102,13 @@
     </div>
 {%- if include.tag %}
 </div>
+</div>
 <div id="skip-tool-table"></div>
 {%- endif %}
 {%- unless total_county_tools == 0 or include.tag == nil %}
 {%- if include.tag %}
 <a class="visually-hidden-focusable" href='#skip-nat-tool-table'>Skip national tools table</a>
-
+<div class="p-4 collapse-card">
 <a data-bs-toggle="collapse" href="#nat_tools_collapse" role="button" aria-expanded="false" aria-controls="nat_tools_collapse" class="d-flex align-items-baseline pb-3 info-collapse">
     <h2 class="mb-0 mt-3 flex-grow-1">National resources</h2>
     <i class="fa-solid fa-chevron-right fs-4"></i>
@@ -205,6 +206,7 @@
         </table>
     </div>
 {%- if include.tag %}
+</div>
 </div>
 <div id="skip-nat-tool-table"></div>
 {%- endif %}
