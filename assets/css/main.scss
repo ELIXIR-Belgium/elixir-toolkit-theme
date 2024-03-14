@@ -914,10 +914,6 @@ li.past_event,
     max-height: 40px;
 }
 
-.collapse-tile:first-of-type {
-    margin-top: $spacer * 2;    
-}
-
 .info-collapse {
     transition: border-bottom-color 0.2s ease-in-out;
 
@@ -946,6 +942,9 @@ li.past_event,
     box-shadow: $box-shadow;
     border-radius: $border-radius;
     margin-top: $spacer;
+    &:first-of-type {
+        margin-top: $spacer * 2;  
+    }
 }
 
 /*-----Country flags-----*/
