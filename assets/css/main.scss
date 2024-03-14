@@ -915,6 +915,10 @@ li.past_event,
 }
 
 .info-collapse {
+    &:first-of-type {
+        margin-top: $spacer;    
+    }
+      
     transition: border-bottom-color 0.2s ease-in-out;
 
     i {
