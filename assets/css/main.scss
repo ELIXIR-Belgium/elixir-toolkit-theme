@@ -886,7 +886,7 @@ li.past_event,
 
 /*-----More information tiles-----*/
 
-.info-tiles {
+.info-card {
     a {
         background-color: $info-card-bg;
         color: $info-card-color;
@@ -903,19 +903,24 @@ li.past_event,
         }
     }
 
-    img {
-        height: 30px;
-        max-width: 35px;
+    .info-logo {
+        max-width: 250px;
+        max-height: 40px;
     }
 }
 
-.info-logo {
-    max-width: 250px;
-    max-height: 40px;
+.collapse-tile {
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    margin-top: $spacer * 1.25;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.collapse-tile:first-of-type {
+    margin-top: $spacer * 2;
 }
 
 .info-collapse {
-    transition: border-bottom-color 0.2s ease-in-out;
 
     i {
         transition-property: margin-right, transform;
@@ -938,11 +943,7 @@ li.past_event,
     }
 }
 
-.collapse-tile {
-    box-shadow: $box-shadow;
-    border-radius: $border-radius;
-    margin-top: $spacer;
-}
+
 
 /*-----Country flags-----*/
 
