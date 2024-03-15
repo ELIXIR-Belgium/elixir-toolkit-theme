@@ -916,7 +916,9 @@ li.past_event,
 
 .info-collapse {
     &:first-of-type {
-        margin-top: $spacer * 2;    
+        margin-top: $spacer * 2.5;
+        // border-top: $border-width solid $border-color;
+
     }
       
     transition: border-bottom-color 0.2s ease-in-out;
