@@ -942,9 +942,6 @@ li.past_event,
     box-shadow: $box-shadow;
     border-radius: $border-radius;
     margin-top: $spacer;
-    &:first-of-type {
-        margin-top: $spacer * 2;  
-    }
 }
 
 /*-----Country flags-----*/
