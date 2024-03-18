@@ -886,42 +886,16 @@ li.past_event,
 
 /*-----More information tiles-----*/
 
-.info-tiles {
-    a {
-        background-color: $info-card-bg;
-        color: $info-card-color;
-        i {
-            transition: $btn-transition;
-            color: $info-card-color !important;
-        }
-        &:hover {
-            background-color: $info-card-bg-hover;
-            color: $info-card-color-hover !important;
-            i {
-                color: $info-card-color-hover !important;
-            }
-        }
-    }
-
-    img {
-        height: 30px;
-        max-width: 35px;
-    }
-}
-
-.info-logo {
-    max-width: 250px;
-    max-height: 40px;
-}
-
 .info-collapse {
-    &:first-of-type {
-        margin-top: $spacer * 2.5;
-        // border-top: $border-width solid $border-color;
+    transition: border-color 0.2s ease-in-out;
 
+    &:first-of-type {
+        margin-top: $spacer * 4;
     }
-      
-    transition: border-bottom-color 0.2s ease-in-out;
+
+    .h2-small {
+        font-size: 1.5em;
+    }
 
     i {
         transition-property: margin-right, transform;
@@ -930,19 +904,54 @@ li.past_event,
         margin-right: $spacer;
     }
 
-
     &[aria-expanded="true"] {
-        border-bottom-color: color.scale($border-color, $lightness: -20%) !important;
+        border-color: color.scale($border-color, $lightness: -30%) !important;
         i {
             transform: rotate(180deg);
-            color: color.scale($link-color, $lightness: -20%) !important;
-
         }
     }
     &:hover {
-        border-bottom-color: color.scale($border-color, $lightness: -20%) !important;
+        border-color: color.scale($border-color, $lightness: -30%) !important;
+        h2 {
+            color: color.scale($primary, $lightness: -20%) !important;
+        }
         i {
             color: color.scale($link-color, $lightness: -20%) !important;
+        }
+    }
+}
+
+.info-card {
+    .info-logo {
+        max-width: 250px;
+        max-height: 40px;
+    }
+
+    // Do not show border on last row tools table
+    .tooltable tbody tr:last-of-type {
+        border-bottom-color: transparent;
+    }
+
+    .info-links {
+        a.btn {
+            background-color: $info-card-bg;
+            color: $info-card-color;
+            i {
+                transition: $btn-transition;
+                color: $info-card-color !important;
+            }
+            &:hover {
+                background-color: $info-card-bg-hover;
+                color: $info-card-color-hover !important;
+                i {
+                    color: $info-card-color-hover !important;
+                }
+            }
+        }
+
+        img {
+            height: 30px;
+            max-width: 35px;
         }
     }
 }
