@@ -51,6 +51,7 @@ theme_variables:
   headings:
     related-pages: Related pages
     resource-table-all: Tools and resources on this page
+    resource-table-all-collapse: false
     affiliation-tiles-page: Affiliations
     contributor-minitiles-page: Contributors
   toc:
@@ -76,9 +77,10 @@ More detailed information about these settings can be found here:
   * `edit_me`: Enable the 'propose an edit on this page' button.
   * `open_issue`: Enable the 'open an issue on this page' button.
   * `history`: Enable the 'history of this page' button.
-* headings: Change the subtitles of the page sections that are automatically generated
+* headings: Change the subtitles or collapse the page sections that are automatically generated
     `related-pages`: Default: Related pages
     `resource-table-all`: Default: Tools and resources on this page
+    `resource-table-all-collapse`: Make the tools and resources table collapsed like the other sections. Default: False
     `affiliation-tiles-page`: Default: Affiliations
     `contributor-minitiles-page`: Default: Contributors
 * toc: Settings related to the table of contents.
