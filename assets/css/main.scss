@@ -889,10 +889,6 @@ li.past_event,
 .info-collapse {
     transition: border-color 0.2s ease-in-out;
 
-    &:first-of-type {
-        margin-top: $spacer * 4;
-    }
-
     .h2-small {
         font-size: 1.5em;
     }
@@ -919,6 +915,10 @@ li.past_event,
             color: color.scale($link-color, $lightness: -20%) !important;
         }
     }
+}
+
+#content > .info-collapse:first-of-type {
+    margin-top: $spacer * 4;
 }
 
 .info-card {
