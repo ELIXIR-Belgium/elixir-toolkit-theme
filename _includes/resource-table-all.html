@@ -10,7 +10,7 @@
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
 <a data-bs-toggle="collapse" href="#tools_collapse" role="button" aria-expanded="false" aria-controls="tools_collapse" class="d-flex align-items-baseline pb-3 border-top info-collapse">
 {%- endif %}
-    <h2 class="{% if site.theme_variables.headings.resource-table-all-collapse %}mb-0 mt-3 flex-grow-1 h2-small{% endif %}">{{site.theme_variables.headings.resource-table-all | default: 'Tools and resources on this page' }}</h2>
+{% if site.theme_variables.headings.resource-table-all-collapse %}<h3 class="mb-0 mt-3 flex-grow-1 text-dark fw-normal fs-5">{% else %}<h2 class="h2-like fs-2">{% endif %}{{site.theme_variables.headings.resource-table-all | default: 'Tools and resources on this page' }}{% if site.theme_variables.headings.resource-table-all-collapse %}</h3>{% else % %}</h2>{% endif %}
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
     <i class="fa-solid fa-chevron-down fs-5"></i>
 </a>
@@ -114,7 +114,7 @@
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
 <a data-bs-toggle="collapse" href="#nat_tools_collapse" role="button" aria-expanded="false" aria-controls="nat_tools_collapse" class="d-flex align-items-baseline pb-3 border-top info-collapse">
 {%- endif %}
-    <h2 class="{% if site.theme_variables.headings.resource-table-all-collapse %}mb-0 mt-3 flex-grow-1 h2-small{% endif %}">National resources</h2>
+    <h3 class="{% if site.theme_variables.headings.resource-table-all-collapse %}mb-0 mt-3 flex-grow-1 text-dark fw-normal fs-5{% endif %}">National resources</h3>
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
     <i class="fa-solid fa-chevron-down fs-5"></i>
 </a>

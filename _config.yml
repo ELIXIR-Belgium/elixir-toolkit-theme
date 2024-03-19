@@ -61,10 +61,10 @@ theme_variables:
   #   edit_me: true
   #   open_issue: true
   #   history: true
-  # headings:
+  headings:
   #   related-pages: Related pages
   #   resource-table-all: Tools and resources on this page
-  #   resource-table-all-collapse: false
+    resource-table-all-collapse: false
   #   affiliation-tiles-page: Affiliations
   #   contributor-minitiles-page: Contributors
   # toc:

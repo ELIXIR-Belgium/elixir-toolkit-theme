@@ -1,4 +1,3 @@
-<!-- FAIRsharing -->
 {%- if page.fairsharing %}
 {%- assign actual_fairsharing = nil %}
 {%- for standard in page.fairsharing %}
@@ -7,9 +6,53 @@
 {%- endif %}
 {%- endfor %}
 {%- endif %}
+{%- if page.faircookbook %}
+{%- assign actual_faircookbook = nil %}
+{%- for recipe in page.faircookbook %}
+{%- if recipe.name %}
+{%- assign actual_faircookbook = 1 %}
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+{%- if page.dsw %}
+{%- assign actual_dsw = nil %}
+{%- for question in page.dsw %}
+{%- if question.name %}
+{%- assign actual_dsw = 1 %}
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+{%- if page.rdmkit %}
+{%- assign actual_rdmkit = nil %}
+{%- for rdmdoc in page.rdmkit %}
+{%- if rdmdoc.name %}
+{%- assign actual_rdmkit = 1 %}
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+{%- if page.training %}
+{%- assign actual_training = nil %}
+{%- for training in page.training %}
+{%- if training.name %}
+{%- assign actual_training = 1 %}
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+{%- assign tools = site.data.tool_and_resource_list | where:"related_pages", page.page_id %}
+{%- unless tools.size == 0 or tools == nil %}
+{%- if site.theme_variables.headings.resource-table-all-collapse %}
+{%- assign actual_tools = 1 %}
+{%- endif %}
+{%- endunless %}
+
+{%- if actual_fairsharing or actual_faircookbook or actual_dsw or actual_rdmkit or actual_dsw or actual_training or actual_tools %}
+<h2 class="mb-4">{{site.theme_variables.headings.more-information-tiles | default: 'More information' }}</h2>
+{%- endif %}
+
+<!-- FAIRsharing -->
 {%- if actual_fairsharing %}
 <a data-bs-toggle="collapse" href="#fairsharing_collapse" role="button" aria-expanded="false" aria-controls="fairsharing_collapse" class="d-flex align-items-baseline pb-3 border-top info-collapse">
-    <h2 class="mb-0 flex-grow-1 mt-3 no-anchor h2-small">Links to FAIRsharing</h2><i class="fa-solid fa-chevron-down fs-5"></i>
+    <h3 class="mb-0 flex-grow-1 mt-3 text-dark fw-normal fs-5">Links to FAIRsharing</h3><i class="fa-solid fa-chevron-down fs-5"></i>
 </a>
 <div class="collapse info-card" id="fairsharing_collapse">
     <div class="mt-2 p-3 pb-5">
@@ -28,19 +71,10 @@
 </div>
 {%- endif %}
 
-
-<!-- FAIR Cookbook -->
-{%- if page.faircookbook %}
-{%- assign actual_faircookbook = nil %}
-{%- for recipe in page.faircookbook %}
-{%- if recipe.name %}
-{%- assign actual_faircookbook = 1 %}
-{%- endif %}
-{%- endfor %}
-{%- endif %}
 {%- if actual_faircookbook %}
+<!-- FAIR Cookbook -->
 <a data-bs-toggle="collapse" href="#faircookbook_collapse" role="button" aria-expanded="false" aria-controls="faircookbook_collapse" class="d-flex align-items-baseline pb-3 border-top info-collapse">
-    <h2 class="mb-0 flex-grow-1 mt-3 no-anchor h2-small">Links to FAIR Cookbook</h2><i class="fa-solid fa-chevron-down fs-5"></i>
+    <h3 class="mb-0 flex-grow-1 mt-3 text-dark fw-normal fs-5">Links to FAIR Cookbook</h3><i class="fa-solid fa-chevron-down fs-5"></i>
 </a>
 <div class="collapse info-card" id="faircookbook_collapse">
     <div class="mt-2 p-3 pb-5">
@@ -59,18 +93,10 @@
 </div>
 {%- endif %}
 
-<!-- DSW -->
-{%- if page.dsw %}
-{%- assign actual_dsw = nil %}
-{%- for question in page.dsw %}
-{%- if question.name %}
-{%- assign actual_dsw = 1 %}
-{%- endif %}
-{%- endfor %}
-{%- endif %}
 {%- if actual_dsw %}
+<!-- DSW -->
 <a data-bs-toggle="collapse" href="#dsw_collapse" role="button" aria-expanded="false" aria-controls="dsw_collapse" class="d-flex align-items-baseline pb-3 border-top info-collapse">
-    <h2 class="mb-0 flex-grow-1 mt-3 no-anchor h2-small">Links to DSW</h2><i class="fa-solid fa-chevron-down fs-5"></i>
+    <h3 class="mb-0 flex-grow-1 mt-3 text-dark fw-normal fs-5">Links to DSW</h3><i class="fa-solid fa-chevron-down fs-5"></i>
 </a>
 <div class="collapse info-card" id="dsw_collapse">
     <div class="mt-2 p-3 pb-5">
@@ -89,18 +115,10 @@
 </div>
 {%- endif %}
 
-<!-- RDMkit -->
-{%- if page.rdmkit %}
-{%- assign actual_rdmkit = nil %}
-{%- for rdmdoc in page.rdmkit %}
-{%- if rdmdoc.name %}
-{%- assign actual_rdmkit = 1 %}
-{%- endif %}
-{%- endfor %}
-{%- endif %}
 {%- if actual_rdmkit %}
+<!-- RDMkit -->
 <a data-bs-toggle="collapse" href="#rdmkit_collapse" role="button" aria-expanded="false" aria-controls="rdmkit_collapse" class="d-flex align-items-baseline pb-3 border-top info-collapse">
-    <h2 class="mb-0 flex-grow-1 mt-3 no-anchor h2-small">Links to RDMkit</h2><i class="fa-solid fa-chevron-down fs-5"></i>
+    <h3 class="mb-0 flex-grow-1 mt-3 text-dark fw-normal fs-5">Links to RDMkit</h3><i class="fa-solid fa-chevron-down fs-5"></i>
 </a>
 <div class="collapse info-card" id="rdmkit_collapse">
     <div class="mt-2 p-3 pb-5">
@@ -119,18 +137,11 @@
 </div>
 {%- endif %}
 
-<!-- Training -->
-{%- if page.training %}
-{%- assign actual_training = nil %}
-{%- for training in page.training %}
-{%- if training.name %}
-{%- assign actual_training = 1 %}
-{%- endif %}
-{%- endfor %}
-{%- endif %}
+
 {%- if actual_training %}
+<!-- Training -->
 <a data-bs-toggle="collapse" href="#training_collapse" role="button" aria-expanded="false" aria-controls="training_collapse" class="d-flex align-items-baseline pb-3 border-top info-collapse">
-    <h2 class="mb-0 flex-grow-1 mt-3 no-anchor h2-small">Training</h2><i class="fa-solid fa-chevron-down fs-5"></i>
+    <h3 class="mb-0 flex-grow-1 mt-3 text-dark fw-normal fs-5">Training</h3><i class="fa-solid fa-chevron-down fs-5"></i>
 </a>
 <div class="collapse info-card" id="training_collapse">
     <div class="mt-2 p-3 pb-5">

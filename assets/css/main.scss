@@ -889,10 +889,6 @@ li.past_event,
 .info-collapse {
     transition: border-color 0.2s ease-in-out;
 
-    .h2-small {
-        font-size: 1.5em;
-    }
-
     i {
         transition-property: margin-right, transform;
         transition-duration: 0.2s;
@@ -908,17 +904,10 @@ li.past_event,
     }
     &:hover {
         border-color: color.scale($border-color, $lightness: -30%) !important;
-        h2 {
-            color: color.scale($primary, $lightness: -20%) !important;
-        }
         i {
             color: color.scale($link-color, $lightness: -20%) !important;
         }
     }
-}
-
-#content > .info-collapse:first-of-type {
-    margin-top: $spacer * 4;
 }
 
 .info-card {
