@@ -44,13 +44,13 @@
 {%- assign actual_tools = 1 %}
 {%- endif %}
 {%- endunless %}
-
+actual_fairsharing:{{ actual_fairsharing}} actual_faircookbook:{{ actual_faircookbook}} actual_dsw:{{actual_dsw}} actual_rdmkit:{{actual_rdmkit}} actual_dsw:{{actual_dsw}} actual_training:{{actual_training}} actual_tools:{{actual_tools}}
 {%- if actual_fairsharing or actual_faircookbook or actual_dsw or actual_rdmkit or actual_dsw or actual_training or actual_tools %}
 <h2 class="mb-4">{{site.theme_variables.headings.more-information-tiles | default: 'More information' }}</h2>
 {%- endif %}
 
-<!-- FAIRsharing -->
 {%- if actual_fairsharing %}
+<!-- FAIRsharing -->
 <a data-bs-toggle="collapse" href="#fairsharing_collapse" role="button" aria-expanded="false" aria-controls="fairsharing_collapse" class="d-flex align-items-baseline pb-3 border-top info-collapse">
     <h3 class="mb-0 flex-grow-1 mt-3 text-dark">Links to FAIRsharing</h3><i class="fa-solid fa-chevron-down fs-5"></i>
 </a>
