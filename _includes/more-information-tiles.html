@@ -38,13 +38,14 @@
 {%- endif %}
 {%- endfor %}
 {%- endif %}
+{%- if page.page_id %}
 {%- assign tools = site.data.tool_and_resource_list | where:"related_pages", page.page_id %}
 {%- unless tools.size == 0 or tools == nil %}
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
 {%- assign actual_tools = 1 %}
 {%- endif %}
 {%- endunless %}
-actual_fairsharing:{{ actual_fairsharing}} actual_faircookbook:{{ actual_faircookbook}} actual_dsw:{{actual_dsw}} actual_rdmkit:{{actual_rdmkit}} actual_dsw:{{actual_dsw}} actual_training:{{actual_training}} actual_tools:{{actual_tools}}
+{%- endif %}
 {%- if actual_fairsharing or actual_faircookbook or actual_dsw or actual_rdmkit or actual_dsw or actual_training or actual_tools %}
 <h2 class="mb-4">{{site.theme_variables.headings.more-information-tiles | default: 'More information' }}</h2>
 {%- endif %}
