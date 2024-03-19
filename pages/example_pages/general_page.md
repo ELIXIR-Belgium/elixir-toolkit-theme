@@ -6,26 +6,26 @@ coordinators: [Bert Droesbeke]
 description: This description is used when the page is listed
 page_id: gp1
 affiliations: [ELIXIR Europe, BE, SE]
-# faircookbook:
-# - name: Link towards a FAIRCOOKBOOK recipe
-#   url: https://fairplus.github.io/
-# rdmkit:
-# - name: Title of an RDMkit page
-#   url: https://rdmkit.elixir-europe.org/compliance_monitoring
-# fairsharing:
-# - name: ISO 20691
-#   url: https://fairsharing.org/3533
-# dsw:
-# - name: Is there any pre-existing data?
-#   uuid: efc80cc8-8318-4f8c-acb7-dc1c60e491c1
-# training:
-#   - name: Training in TeSS
-#     registry: TeSS
-#     url: https://tess.elixir-europe.org/
-#   - name: Training not in TeSS
-#     url: https://www.youtube.com
-# related_pages: 
-#     example_pages: [gp2, gp3]
+faircookbook:
+- name: Link towards a FAIRCOOKBOOK recipe
+  url: https://fairplus.github.io/
+rdmkit:
+- name: Title of an RDMkit page
+  url: https://rdmkit.elixir-europe.org/compliance_monitoring
+fairsharing:
+- name: ISO 20691
+  url: https://fairsharing.org/3533
+dsw:
+- name: Is there any pre-existing data?
+  uuid: efc80cc8-8318-4f8c-acb7-dc1c60e491c1
+training:
+  - name: Training in TeSS
+    registry: TeSS
+    url: https://tess.elixir-europe.org/
+  - name: Training not in TeSS
+    url: https://www.youtube.com
+related_pages: 
+    example_pages: [gp2, gp3]
 ---
 
 

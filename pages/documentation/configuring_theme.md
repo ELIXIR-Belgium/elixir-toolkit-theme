@@ -50,6 +50,7 @@ theme_variables:
     history: true
   headings:
     related-pages: Related pages
+    more-information-tiles: More information
     resource-table-all: Tools and resources on this page
     resource-table-all-collapse: false
     affiliation-tiles-page: Affiliations
@@ -79,6 +80,7 @@ More detailed information about these settings can be found here:
   * `history`: Enable the 'history of this page' button.
 * headings: Change the subtitles or collapse the page sections that are automatically generated
     `related-pages`: Default: Related pages
+    `more-information-tiles`:  Default: More information
     `resource-table-all`: Default: Tools and resources on this page
     `resource-table-all-collapse`: Make the tools and resources table collapsed like the other sections. Default: False
     `affiliation-tiles-page`: Default: Affiliations
