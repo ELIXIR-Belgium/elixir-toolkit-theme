@@ -189,6 +189,7 @@
                 {%- endif %}
                 <td>
                     {%- if tool.registry.biotools and tool.registry.biotools != "NA" %}
+                    {{ tool.registry.biotools }}
                     <a data-bs-toggle="tooltip" data-bs-original-title="Bio.tools" href="https://bio.tools/{{tool.registry.biotools}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-info me-2"></i>Tool info</span></a>
                     {%- endif %}
                     {%- if tool.registry.fairsharing and tool.registry.fairsharing != "NA" %}
