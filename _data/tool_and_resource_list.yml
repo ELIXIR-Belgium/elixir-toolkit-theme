@@ -48,7 +48,7 @@
     API framework and data model for cross-cohort searching.
   url: https://github.com/ga4gh-beacon/beacon-v2
   id: beacon
-  name: Beacon v2
+  name: Beacon v2 with a very long name + description
   registry:
     fairsharing: 6fba91
     europmc: 35297548

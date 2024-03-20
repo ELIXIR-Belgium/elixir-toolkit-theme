@@ -796,7 +796,6 @@ footer {
 
 .tool {
     cursor: pointer;
-    white-space: nowrap;
     color: $link-color;
     background-color: rgba($link-color, 0.05);
     border-radius: $border-radius;
@@ -807,7 +806,11 @@ footer {
         color: $primary;
     }
 }
-
+@include media-breakpoint-up(sm) {
+    .tool {
+        white-space: nowrap;
+    }
+}
 .popover-tool {
     max-width: 20rem;
 
