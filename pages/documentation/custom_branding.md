@@ -16,6 +16,8 @@ theme_variables:
    brand_logo: assets/img/main_logo.svg
 ```
 
+Certain elements like the GitHub link have options in the `/_config.yml` file as described in the [configuring theme](configuring_theme) page. 
+
 ## Theme styling
 
 Bootstrap 5 is used as css library with the goal of reusing as much as possible to prevent a wild growth of classes and to make the html-code more understandable. SASS is used as css-precursor, a more structured and flexible language to describe the css styling. More information about the SASS language can be found [here](https://sass-lang.com/documentation/).

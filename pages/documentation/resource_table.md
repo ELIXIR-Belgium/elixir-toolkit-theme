@@ -19,7 +19,8 @@ The [all_tools_and_resources](all_tools_and_resources) list is based on the [yam
 * When making use of the new way of tagging tools: 
   * `gem "elixir-toolkit-theme-plugins"` is added to the `/Gemfile`
   * `- elixir-toolkit-theme-plugins` is added to the plugins block in the `_config.yml` file
-* GitHub Actions is used to deploy the website. See [instructions](https://elixir-belgium.github.io/elixir-toolkit-theme/#deployment)).
+  * A recent version of the ELIXIR Toolkit Theme is used. See the `remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@VERSION` line in the `_config.yml` file.
+* GitHub Actions is used to deploy the website. See [instructions](https://elixir-belgium.github.io/elixir-toolkit-theme/#deployment).
 
 
 ## The main yaml file
