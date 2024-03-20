@@ -1,11 +1,11 @@
 {%- assign allcountries = site.data.countries %}
 {%- assign except = include.except | split: ", " %}
-<div class="row row-cols-1 row-cols-md-2 row-cols-lg-{{ include.col | default: 2 }} g-3 my-4 navigation-tiles">
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-{{ include.col | default: 2 }} gy-2 gx-4 my-4 navigation-tiles">
     {%- for current_page in site.pages | sorted %}
     {%- if current_page.title and current_page.search_exclude != true and current_page.type == include.type %}
     {%- unless except contains current_page.name %}
     <div class="col d-grid">
-        <a role="button" class="btn bg-light py-4 fs-3 hover-primary" href="{{ current_page.url | relative_url }}">{{current_page.title}}{% if current_page.country_code %}<span class="flag-icon shadow-sm ms-3 flag-icon-{{current_page.country_code | downcase }}"></span>{% endif %}</a>
+        <a role="button" class="btn py-4 fs-3 section-title" href="{{ current_page.url | relative_url }}">{{current_page.title}}{% if current_page.country_code %}<span class="flag-icon shadow-sm ms-3 flag-icon-{{current_page.country_code | downcase }}"></span>{% endif %}</a>
     </div>
     {% endunless %}
     {%- endif %}

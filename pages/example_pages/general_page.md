@@ -9,6 +9,12 @@ affiliations: [ELIXIR Europe, BE, SE]
 faircookbook:
 - name: Link towards a FAIRCOOKBOOK recipe
   url: https://fairplus.github.io/
+rdmkit:
+- name: Title of an RDMkit page
+  url: https://rdmkit.elixir-europe.org/compliance_monitoring
+fairsharing:
+- name: ISO 20691
+  url: https://fairsharing.org/3533
 dsw:
 - name: Is there any pre-existing data?
   uuid: efc80cc8-8318-4f8c-acb7-dc1c60e491c1

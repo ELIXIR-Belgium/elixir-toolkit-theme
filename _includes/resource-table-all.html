@@ -1,15 +1,23 @@
 {%- if include.tag %}
-{%- assign tools = site.data.tool_and_resource_list | add_related_pages | where:"related_pages", include.tag  | sort_natural: "name" %}
+{%- assign tools = site.data.tool_and_resource_list | add_related_pages | where:"related_pages", include.tag | sort_natural: "name" %}
 {%- else %}
-{%- assign tools = site.data.tool_and_resource_list | add_related_pages  | sort_natural: "name" %}
+{%- assign tools = site.data.tool_and_resource_list | add_related_pages | sort_natural: "name" %}
 {%- endif %}
 {%- assign country_pages = site.pages | where_exp: "item", "item.search_exclude != true" | where_exp:"item","item.national_resources != nil" %}
 {%- unless tools.size == 0 or tools == nil %}
 {%- if include.tag %}
-<h2>{{site.theme_variables.headings.resource-table-all | default: 'Tools and resources on this page' }}</h2>
-{%- endif %}
 <a class="visually-hidden-focusable" href='#skip-tool-table'>Skip tool table</a>
-<div class="table-responsive mt-4 mb-5">
+{%- if site.theme_variables.headings.resource-table-all-collapse %}
+<a data-bs-toggle="collapse" href="#tools_collapse" role="button" aria-expanded="false" aria-controls="tools_collapse" class="d-flex align-items-baseline pb-3 border-top info-collapse">
+{%- endif %}
+{% if site.theme_variables.headings.resource-table-all-collapse %}<h3 class="mb-0 mt-3 flex-grow-1 text-dark">{% else %}<h2 class="h2-like fs-2">{% endif %}{{site.theme_variables.headings.resource-table-all | default: 'Tools and resources on this page' }}{% if site.theme_variables.headings.resource-table-all-collapse %}</h3>{% else % %}</h2>{% endif %}
+{%- if site.theme_variables.headings.resource-table-all-collapse %}
+    <i class="fa-solid fa-chevron-down fs-5"></i>
+</a>
+<div class="collapse info-card" id="tools_collapse">
+{%- endif %}
+{%- endif %}
+<div class="table-responsive mt-4">
     <table class="tooltable table display">
         <thead>
             <tr class="text-nowrap">
@@ -55,10 +63,10 @@
                         {%- if tool.how_to_access %}
                         <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="{{tool.how_to_access}}"><span class="badge text-primary border border-primary"> <i class="fa-solid fa-key"></i></span></span>
                         {%- endif %}
-                        {%- unless instances_tool == 0 or total_county_tools == 0 or include.tag == nil %}    
-                        <a href="#national-resources-button">
-                            <span class="badge text-white bg-primary"><i class="fa-solid fa-arrow-circle-down me-2"></i>Different instances available</span>
-                        </a>
+                        {%- unless instances_tool == 0 or total_county_tools == 0 or include.tag == nil %}
+                        <!-- <a href="#national-resources-button">
+                        <span class="badge text-white bg-primary"><i class="fa-solid fa-arrow-circle-down me-2"></i>Different instances available</span>
+                    </a> -->
                         {%- endunless %}
                     </div>
                     {%- endif %}
@@ -91,14 +99,48 @@
                 </td>
             </tr>
             {%- endfor %}
-            {%- unless total_county_tools == 0 or include.tag == nil %}
-            <tr class="collapse multi-collapse table-light" id="resource_title">
-                <td><b>National resources</b></td>
-                <td></td>
-                <td></td>
-                <td></td>
+        </tbody>
+    </table>
+</div>
+{%- if include.tag %}
+{%- if site.theme_variables.headings.resource-table-all-collapse %}
+</div>
+{%- endif %}
+<div id="skip-tool-table"></div>
+{%- endif %}
+{%- unless total_county_tools == 0 or include.tag == nil %}
+{%- if include.tag %}
+<a class="visually-hidden-focusable" href='#skip-nat-tool-table'>Skip national tools table</a>
+{%- if site.theme_variables.headings.resource-table-all-collapse %}
+<a data-bs-toggle="collapse" href="#nat_tools_collapse" role="button" aria-expanded="false" aria-controls="nat_tools_collapse" class="d-flex align-items-baseline pb-3 border-top info-collapse">
+{%- endif %}
+    <h3 class="{% if site.theme_variables.headings.resource-table-all-collapse %}mb-0 mt-3 flex-grow-1 text-dark {% endif %}">National resources</h3>
+{%- if site.theme_variables.headings.resource-table-all-collapse %}
+    <i class="fa-solid fa-chevron-down fs-5"></i>
+</a>
+<div class="collapse info-card" id="nat_tools_collapse">
+{%- endif %}
+{%- endif %}
+<p class="mt-4">Tools and resources tailored to users in different countries.</p>
+<div class="table-responsive mt-3">
+    <table class="tooltable table display" id="national-resources-button">
+        <thead>
+            <tr class="text-nowrap">
+                <th>Tool or resource {%- if include.tag -%}
+                    <a data-bs-toggle="tooltip" data-bs-original-title="This is a curated list which means that not all tools or resources that exist for this topic are listed here. This is mainly because we do not intend to be a registry. In most cases you will only find back the tools or resources that are mentioned in this page.">
+                        <i class="fa-solid fa-info-circle"></i>
+                    </a>{%- endif %}
+                </th>
+                <th>Description</th>
+                <th>Related pages</th>
+                <th>Registry {%- if include.tag -%}
+                    <a data-bs-toggle="tooltip" data-bs-original-title="Links to related information in ELIXIR registries: related policies and standards in FAIRsharing, scientific and technical descriptions of the resource in bio.tools, and related training in TeSS.">
+                        <i class="fa-solid fa-info-circle"></i>
+                    </a>{%- endif %}
+                </th>
             </tr>
-            {%- endunless %}
+        </thead>
+        <tbody>
             {%- assign hide_ids = "resource_title" %}
             {%- for country_page in country_pages %}
             {%- if include.tag %}
@@ -109,7 +151,7 @@
             {%- for tool in tool_matches %}
             {%- assign tool_id = tool.name | slugify %}
             {%- assign hide_ids = hide_ids | append: " " | append: tool_id %}
-            <tr {% unless include.tag==nil %} class="collapse multi-collapse" id="{{tool_id}}" {% endunless %}>
+            <tr>
                 {% if tool.url %}
                 <td><a href="{{tool.url}}">{{tool.name}}</a><a href="{{country_page.url | relative_url }}" data-bs-toggle="tooltip" title="{{country_page.title}}"><span class="flag-icon ms-2 shadow-sm flag-icon-{{country_page.country_code | downcase }}"></span></a></td>
                 {%- else %}
@@ -168,10 +210,11 @@
         </tbody>
     </table>
 </div>
-{%- unless total_county_tools == 0 or include.tag == nil %}
-<a class="btn btn-primary" id="national-resources-button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" role="button" aria-expanded="false" aria-controls="{{hide_ids}}">
-    View national resources <span class="badge bg-white text-primary ms-2">{{total_county_tools}}</span>
-</a>
+{%- if include.tag %}
+{%- if site.theme_variables.headings.resource-table-all-collapse %}
+</div>
+{%- endif %}
+<div id="skip-nat-tool-table"></div>
+{%- endif %}
 {%- endunless %}
-<div id="skip-tool-table"></div>
 {%- endunless %}

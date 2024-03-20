@@ -11,7 +11,7 @@
 {%- endif %}
 {%- endfor %}
 {%- assign allaffiliations = allaffiliations | split: ", " | uniq | sort %}
-<div class="row g-4 row-cols-1 row-cols-md-2 my-4">
+<div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-{{ include.col | default: 2 }} my-4">
     {%- unless include.affiliations == nil %}
     <div class="col">
         <div class="input-group">
@@ -46,7 +46,7 @@
     {%- endunless %}
 </div>
 {%- endunless %}
-<div class="row row-cols-1 row-cols-md-2 row-cols-lg-{{ include.col | default: 2 }}  g-4 mb-5 navigation-tiles">
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-{{ include.col | default: 2 }} g-4 mb-5 navigation-tiles">
     {%- if include.custom %}
     {%- assign related_pages = include.custom | split: ", " %}
     {%- unless include.sort == false %}
@@ -67,7 +67,6 @@
     {%- assign current_page = related_page %}
     {%- endif %}
     {%- assign affiliations_classes = "" %}
-    {%- assign related_pages_classes = "" %}
     {%- assign except = include.except | split: ", " %}
     {%- if current_page.title and current_page.search_exclude != true %}
     {%- unless except contains current_page.name %}
@@ -80,83 +79,28 @@
     {%- endfor %}{{affiliations_output}}
     {%- endcapture -%}
     {%- endif %}
-    <div class="col" data-affiliations="{{affiliations_classes}}" related-pages="{{related_pages_classes}}">
+    <div class="col" data-affiliations="{{affiliations_classes}}">
         <div class="card h-100">
-            <div class="card-header">
-                <a class="stretched-link" aria-label="Go to the {{current_page.title}} page" href="{{ current_page.url | relative_url }}">
-                    <h3 class="card-title m-0">{{current_page.title}}</h3>
+            <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center">
+                    {%- if current_page.type_img %}
+                    <img src="{{current_page.type_img | relative_url}}" class="type-icon me-2" alt="{{current_page.type}} icon">
+                    {%- endif %}
+                    {%- if current_page.type %}
+                    <span class=""><small>{{current_page.type | replace: "_", " " | capitalize }}</small></span>
+                    {%- endif %}
+                </div>
+                <a class="stretched-link section-title" aria-label="Go to the {{current_page.title}} page" href="{{ current_page.url | relative_url }}">
+                    <b>{{current_page.title}}</b>
                 </a>
-            </div>
-            <div class="card-body">
                 {%- if current_page.description %}
-                <p class="card-text">{{ current_page.description}}</p>
+                <p class="card-text h-100">{{ current_page.description}}</p>
                 {%- endif %}
-            </div>
-            <div class="px-3 pb-3 d-flex justify-content-between">
-                {%- if current_page.related_pages %}
-                {%- assign nonempty = false %}
-                {%- for section in current_page.related_pages %}
-                {%- unless section[1].size == 0 %}
-                {%- assign nonempty = true %}
-                {%- endunless %}
-                {%- endfor %}
-                {%- if nonempty %}
-                <div class="dropdown">
-                    <button class="btn  btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Related pages
-                    </button>
-                    <ul class="dropdown-menu px-2 py-0 border-0 shadow">
-                        {%- for section in current_page.related_pages %}
-                        {%- unless section[1].size == 0 %}
-                        <li><h6 class="dropdown-header">{{ section[0] | replace: "_", " " | capitalize }}</h6></li>
-                        {%- for page_id in section[1] %}
-                        {%- assign section_pages = site.pages | where:"type", section[0] %}
-                        {%- assign metadata = section_pages | where:"page_id", page_id %}
-                        {%- for page_hit in metadata %}
-                        <li><a class="dropdown-item rounded" href="{{ page_hit.url | relative_url }}">{{page_hit.title }}</a></li>
-                        {%- endfor %}
-                        {%- endfor %}
-                        {%- endunless %}
-                        {%- endfor %}
-                    </ul>
-                </div>
-                {%- endif %}
-                {%- endif %}
-                {%- if current_page.dsw or current_page.faircookbook %}
-                <div class="btn-group btn-group-sm" role="group">
-                    {%- if current_page.faircookbook %}
-                    <div class="btn-group btn-group-sm" role="group">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img alt="faircookbook logo" src="{{ 'assets/img/fairplus_compact_logo.svg' | relative_url }}">
-                        </button>
-                        <ul class="dropdown-menu px-2 py-0 border-0 shadow">
-                            {%- for item in current_page.faircookbook %}
-                            <li><a class="dropdown-item rounded" href="{{ item.url }}">{{item.name }}</a></li>
-                            {%- endfor %}
-                        </ul>
-                    </div>
-                    {%- endif %}
-                    {%- if current_page.dsw %}
-                    <div class="btn-group btn-group-sm" role="group">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img alt="DSW logo" src="{{ 'assets/img/dsw_compact_logo.svg' | relative_url }}">
-                        </button>
-                        <ul class="dropdown-menu px-2 py-0 border-0 shadow">
-                            {%- for item in current_page.dsw %}
-                            <li><a class="dropdown-item rounded" href="{{ site.dsw_deep_link_prefix | append: item.uuid }}">{{item.name }}</a></li>
-                            {%- endfor %}
-                        </ul>
-                    </div>
-                    {%- endif %}
-                </div>
-                {%- endif %}
-            </div>
-            {%- if current_page.affiliations %}
-            {%- assign alllogos = site.data.affiliations %}
-            {%- assign allcountries = site.data.countries %}
-            <div class="card-footer d-flex align-middle">
-                <div class="me-3">
-                    <span class="me-2"><b><small>Affiliations:</small></b></span>
+                {%- if current_page.affiliations %}
+                {%- assign alllogos = site.data.affiliations %}
+                {%- assign allcountries = site.data.countries %}
+                <div class="d-flex align-items-center gap-2">
+                    <span><b><small>Affiliations:</small></b></span>
                     {%- for affiliation in current_page.affiliations %}
                     {%- assign filter_affiliation = alllogos | where: "name", affiliation | first %}
                     {%- assign country = affiliation | upcase %}
@@ -181,9 +125,10 @@
                     </a>
                     {%- endif %}
                     {%- endfor %}
+
                 </div>
+                {%- endif %}
             </div>
-            {%- endif %}
         </div>
     </div>
     {% endunless %}
@@ -248,8 +193,7 @@
             }
             for (let i = 0; i < cols.length; i++) {
                 let body = cols[i].querySelector(".card-body");
-                let title = cols[i].querySelector(".card-header");
-                if (title.innerText.toLowerCase().indexOf(filter) > -1 || body.innerText.toLowerCase().indexOf(filter) > -1) {
+                if (body.innerText.toLowerCase().indexOf(filter) > -1) {
                     cols[i].classList.remove("d-none");
                 } else {
                     cols[i].classList.add("d-none");

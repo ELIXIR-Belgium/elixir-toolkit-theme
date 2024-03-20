@@ -5,32 +5,38 @@
 {%- endunless %}
 {%- endfor %}
 {%- if actual_related != nil %}
-<!-- Read next -->
+<!-- Related pages -->
 <h2>{{site.theme_variables.headings.related-pages | default: 'Related pages' }}</h2>
-
-<div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
+<div class="row row-cols-1 row-cols-md-2 g-4 mt-2 navigation-tiles">
     {%- if page.related_pages %}
-    <!-- Related pages -->
     {%- for section in page.related_pages %}
     {%- unless section[1].size == 0 %}
+    {%- for page_id in section[1] %}
+    {%- assign section_pages = site.pages | where:"type", section[0] %}
+    {%- assign page_hit = section_pages | where:"page_id", page_id | first %}
+    {%- if page_hit %}
     <div class="col">
-        <div class="card h-100 info-card">
-            <div class="card-header fw-bold">{{ section[0] | replace: "_", " " | capitalize }}</div>
-            <div class="card-body">
-                <div class="d-grid gap-2">
-                    {%- for page_id in section[1] %}
-                    {%- assign section_pages = site.pages | where:"type", section[0] %}
-                    {%- assign metadata = section_pages | where:"page_id", page_id %}
-                    {%- for page_hit in metadata %}
-                    <a class="btn bg-white hover-primary text-start d-block" href="{{ page_hit.url | relative_url }}">
-                        <span>{{page_hit.title}}{% if page_hit.description %}</span><br><small class="text-muted">{{ page_hit.description }}</small>{% endif %}
-                    </a>
-                    {%- endfor %}
-                    {%- endfor %}
+        <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center">
+                    {%- if page_hit.type_img %}
+                    <img src="{{page_hit.type_img | relative_url}}" class="type-icon me-2" alt="{{page_hit.type}} icon">
+                    {%- endif %}
+                    {%- if page_hit.type %}
+                    <span class=""><small>{{page_hit.type | replace: "_", " " | capitalize }}</small></span>
+                    {%- endif %}
                 </div>
+                <a class="stretched-link section-title" aria-label="Go to the {{page_hit.title}} page" href="{{ page_hit.url | relative_url }}">
+                    <b>{{page_hit.title}}</b>
+                </a>
+                {%- if page_hit.description %}
+                <p class="card-text">{{ page_hit.description}}</p>
+                {%- endif %}
             </div>
         </div>
     </div>
+    {%- endif %}
+    {%- endfor %}
     {%- endunless %}
     {%- endfor %}
     {%- endif %}

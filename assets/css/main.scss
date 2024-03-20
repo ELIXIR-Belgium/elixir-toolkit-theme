@@ -3,14 +3,19 @@ layout: none
 permalink: assets/css/main
 ---
 
+@use "sass:color";
+
 /*-----Default theme variables-----*/
 
 @import "bootstrap/functions";
 $popover-max-width: 12em;
 $enable-caret: false;
+$h3-font-size: 1rem * 1.6 !default;
+$h2-font-size: 1rem * 2.1 !default;
+$h1-font-size: 1rem * 3.3 !default;
 $card-border-width: 0;
 $custom-container-max-widths: (
-    xxxl: 1500px,
+    xxxl: 1500px
 );
 
 /*-----Initialize Bootstrap variables-----*/
@@ -63,10 +68,6 @@ $container-max-widths: map-merge($container-max-widths, $custom-container-max-wi
         word-wrap: break-word;
         -ms-word-break: break-all;
         word-break: break-word;
-
-        &:hover {
-            text-decoration: underline;
-        }
     }
 
     ol li,
@@ -98,8 +99,6 @@ body img {
     grid-area: main;
 }
 
-
-    
 @include media-breakpoint-up(md) {
     #main {
         display: grid;
@@ -151,7 +150,7 @@ body img {
     grid-area: content;
     min-width: 1px;
     position: relative;
-    h2:first-child {
+    > h2:first-child {
         margin-top: 0;
     }
 }
@@ -460,6 +459,15 @@ header .navbar {
                 color: $sidebar-lvl3-color;
             }
         }
+
+        .sidebar_rdm_sub {
+            border-color: $sidebar-bg;
+            padding: 0.75rem 0.5rem 0.5rem 0.5rem;
+            border-radius: 0px 0px $border-radius $border-radius;
+            border-style: none solid solid solid;
+            border-width: 0.2em;
+            margin-top: -0.25rem;
+        }
     }
 }
 
@@ -616,7 +624,9 @@ footer {
     z-index: 1000;
     font-size: 21px;
     padding: 12px 20px;
-    transition: bottom 0.15s ease-out, opacity 0.15s ease-out;
+    transition:
+        bottom 0.15s ease-out,
+        opacity 0.15s ease-out;
 
     &.visible {
         bottom: $spacer;
@@ -879,29 +889,62 @@ li.past_event,
 
 /*-----More information tiles-----*/
 
-.info-card {
-    background-color: $info-card-bg;
+.info-collapse {
+    transition: border-color 0.2s ease-in-out;
 
-    .card-header {
-        background-color: $info-card-header-bg;
-        color: $info-card-header-color;
+    i {
+        transition-property: margin-right, transform;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+        margin-right: $spacer;
     }
 
-    a:hover {
-        .text-muted {
-            transition: $btn-transition;
-            color: $white !important;
-        }
-
+    &[aria-expanded="true"] {
+        border-color: color.scale($border-color, $lightness: -30%) !important;
         i {
-            transition: $btn-transition;
-            color: $white !important;
+            transform: rotate(180deg);
         }
     }
+    &:hover {
+        border-color: color.scale($border-color, $lightness: -30%) !important;
+        i {
+            color: color.scale($link-color, $lightness: -20%) !important;
+        }
+    }
+}
 
-    img {
-        height: 40px;
-        max-width: 45px;
+.info-card {
+    .info-logo {
+        max-width: 250px;
+        max-height: 40px;
+    }
+
+    // Do not show border on last row tools table
+    .tooltable tbody tr:last-of-type {
+        border-bottom-color: transparent;
+    }
+
+    .info-links {
+        a.btn {
+            background-color: $info-card-bg;
+            color: $info-card-color;
+            i {
+                transition: $btn-transition;
+                color: $info-card-color !important;
+            }
+            &:hover {
+                background-color: $info-card-bg-hover;
+                color: $info-card-color-hover !important;
+                i {
+                    color: $info-card-color-hover !important;
+                }
+            }
+        }
+
+        img {
+            height: 30px;
+            max-width: 35px;
+        }
     }
 }
 
@@ -913,35 +956,36 @@ li.past_event,
 }
 
 /*-----Section navigation tiles-----*/
-
 .navigation-tiles {
-    .card {
+    .card,
+    .btn {
         background-color: $nav-card-bg;
-
-        a:not(.stretched-link),
-        button:not(.stretched-link) {
-            z-index: 2;
-            position: relative;
-        }
-
-        .card-header {
-            background-color: $nav-card-header-bg;
-
-            a {
-                color: $nav-card-header-color;
+        color: $nav-card-color;
+        transition: $btn-transition;
+        &:hover {
+            background-color: $nav-card-bg-hover;
+            color: $nav-card-color-hover;
+            a.section-title {
+                text-decoration: none;
+                transition: $btn-transition;
+                color: $nav-card-color-hover;
             }
         }
 
-        button {
-            background-color: $nav-card-badge-bg;
-            color: $nav-card-badge-color;
-            &:hover {
-                color: $nav-card-badge-color-hover;
-                background-color: $nav-card-badge-bg-hover;
+        a {
+            &:not(.stretched-link),
+            button:not(.stretched-link) {
+                z-index: 2;
+                position: relative;
             }
-            img {
-                height: 1.2em;
+
+            &.section-title {
+                color: $nav-card-color;
+                font-size: 1.2rem;
             }
+        }
+        .type-icon {
+            height: 1.2rem;
         }
     }
 }
