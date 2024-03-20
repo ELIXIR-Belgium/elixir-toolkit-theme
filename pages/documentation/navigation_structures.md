@@ -6,8 +6,7 @@ The theme tries to minimize the need to change html code as much as possible, an
 
 ## Top navigation
 
-The top navigation links are defined by the the `/_data/topnav.yml` file under the `subitems:` object. Components like search, Github (or GitLab) and main logo are rendered by default and can not be changed.
-
+The top navigation links are defined by the the `/_data/topnav.yml` file under the `subitems:` object. 
 ```yml
 subitems:
 - title: Home
@@ -34,7 +33,7 @@ subitems:
 
 {% include callout.html type="important" content="Make sure the given url follows the exact structure of the url your page is rendering to." %}
 
-Certain elements have options in the `/_config.yml` file as described in the [configuring theme](configuring_theme) page. Style customizations are described in the [custom branding](custom_branding#branding-in-the-top-navigation) page.
+Certain elements like the GitHub link have options in the `/_config.yml` file as described in the [configuring theme](configuring_theme) page. Style customizations are described in the [custom branding](custom_branding#branding-in-the-top-navigation) page.
 
 ## Sidebar
 

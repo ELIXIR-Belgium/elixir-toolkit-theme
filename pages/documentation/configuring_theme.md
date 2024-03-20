@@ -91,7 +91,7 @@ More detailed information about these settings can be found here:
 * topnav: Settings related to the top navigation.
   *  `theme`: This variable is needed to change between a dark and a light top navigation. possible values: **dark** and **light**
   *  `brand_logo`: Custom path towards the brand logo, in case the assets/img/main_logo.svg can not be used.
-  *  `github`: Enable the appearance of the Github repo nav link
-  *  `twitter`: Enable the appearance of the Twitter nav link by adding the url towards the twitter page. Disabling is done by giving de value **false** as seen in the example.
+  *  `github`: Enable or disable the appearance of the Github repo nav link
+  *  `twitter`: Enable or disable the appearance of the Twitter nav link by adding the url towards the twitter page. Disabling is done by giving de value **false** as seen in the example.
 * `theme_color`: This is the primary theme color which is used in the metadata of the website. Please use the hex color without the hashtag as value.
 * `fonts`: List here the urls towards google fonts to include custom fonts for your website.
