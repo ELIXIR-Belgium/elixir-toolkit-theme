@@ -44,6 +44,7 @@
   registry:
     fairsharing: wy4egf
     tess: Zenodo
+    biotools: NA
 - description:
     API framework and data model for cross-cohort searching.
   url: https://github.com/ga4gh-beacon/beacon-v2
