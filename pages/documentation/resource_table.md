@@ -48,6 +48,7 @@ Example:
     tess: GitHub
 ```
 
+{% include callout.html type="tip" content="`NA` as registry value will not be rendered as a url but will be skipped." %}
 
 ## What tool or resource can be added to the table
 Tools and resources specifically mentioned in the text of the pages should be present in the main table. 

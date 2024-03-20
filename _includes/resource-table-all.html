@@ -75,25 +75,25 @@
                 {%- for tag in tool.related_pages %}
                 {%- unless tag == page.page_id %}
                 {%- assign related_page = site.pages | where:"page_id",tag | first %}
-                <a href="{{related_page.url | relative_url }}" data-bs-toggle="tooltip" title="{{related_page.type | replace: '_', ' ' | capitalize}}"><span class="badge default-badge">{{ related_page.title | truncate: 25 }}</span></a>
+                <a href="{{related_page.url | relative_url }}" data-bs-toggle="tooltip" title="{{related_page.type | replace: '_', ' ' | capitalize }}"><span class="badge default-badge">{{ related_page.title | truncate: 25 }}</span></a>
                 {%- endunless %}
                 {%- endfor %}
                 {%- endcapture %}
                 <td>{{related_pages}}</td>
                 <td>
-                    {%- if tool.registry.biotools %}
+                    {%- if tool.registry.biotools and tool.registry.biotools != "NA" %}
                     <a data-bs-toggle="tooltip" data-bs-original-title="Bio.tools" href="https://bio.tools/{{tool.registry.biotools}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-info me-2"></i>Tool info</span></a>
                     {%- endif %}
-                    {%- if tool.registry.fairsharing %}
+                    {%- if tool.registry.fairsharing and tool.registry.fairsharing != "NA" %}
                     <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing" href="https://fairsharing.org/FAIRsharing.{{tool.registry.fairsharing}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-database me-2"></i>Standards/Databases</span></a>
                     {%- endif %}
-                    {%- if tool.registry.fairsharing-coll %}
+                    {%- if tool.registry.fairsharing-coll and tool.registry.fairsharing-coll != "NA" %}
                     <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing collection" href="https://fairsharing.org/{{tool.registry.fairsharing-coll}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-database me-2"></i>Standards/Databases</span></a>
                     {%- endif %}
-                    {%- if tool.registry.tess %}
+                    {%- if tool.registry.tess and tool.registry.tess != "NA" %}
                     <a data-bs-toggle="tooltip" data-bs-original-title="TeSS" href="https://tess.elixir-europe.org/search?q={{tool.registry.tess}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-graduation-cap me-2"></i>Training</span></a>
                     {%- endif %}
-                    {%- if tool.registry.europmc %}
+                    {%- if tool.registry.europmc and tool.registry.europmc != "NA" %}
                     <a data-bs-toggle="tooltip" data-bs-original-title="EuroPMC" href="https://europepmc.org/article/MED/{{tool.registry.europmc}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-book me-2"></i>Publication</span></a>
                     {%- endif %}
                 </td>
@@ -177,7 +177,7 @@
                 {%- for tag in section[1] %}
                 {%- unless tag == page.page_id %}
                 {%- assign related_page = site.pages | where:"page_id",tag | first %}
-                <a class="nohover" href="{{related_page.url | relative_url }}" data-bs-toggle="tooltip" title="{{related_page.type | replace: '_', ' ' | capitalize}}"><span class="badge default-badge">{{ related_page.title | truncate: 25 }}</span></a>
+                <a class="nohover" href="{{related_page.url | relative_url }}" data-bs-toggle="tooltip" title="{{related_page.type | replace: '_', ' ' | capitalize }}"><span class="badge default-badge">{{ related_page.title | truncate: 25 }}</span></a>
                 {%- endunless %}
                 {%- endfor %}
                 {%- endunless %}
@@ -188,19 +188,19 @@
                 <td></td>
                 {%- endif %}
                 <td>
-                    {%- if tool.registry.biotools %}
+                    {%- if tool.registry.biotools and tool.registry.biotools != "NA" %}
                     <a data-bs-toggle="tooltip" data-bs-original-title="Bio.tools" href="https://bio.tools/{{tool.registry.biotools}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-info me-2"></i>Tool info</span></a>
                     {%- endif %}
-                    {%- if tool.registry.fairsharing %}
+                    {%- if tool.registry.fairsharing and tool.registry.fairsharing != "NA" %}
                     <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing" href="https://fairsharing.org/FAIRsharing.{{tool.registry.fairsharing}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-database me-2"></i>Standards/Databases</span></a>
                     {%- endif %}
-                    {%- if tool.registry.fairsharing-coll %}
+                    {%- if tool.registry.fairsharing-coll and tool.registry.fairsharing-coll != "NA" %}
                     <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing collection" href="https://fairsharing.org/{{tool.registry.fairsharing-coll}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-database me-2"></i>Standards/Databases</span></a>
                     {%- endif %}
-                    {%- if tool.registry.tess %}
+                    {%- if tool.registry.tess and tool.registry.tess != "NA" %}
                     <a data-bs-toggle="tooltip" data-bs-original-title="TeSS" href="https://tess.elixir-europe.org/search?q={{tool.registry.tess}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-graduation-cap me-2"></i>Training</span></a>
                     {%- endif %}
-                    {%- if tool.registry.europmc %}
+                    {%- if tool.registry.europmc and tool.registry.europmc != "NA" %}
                     <a data-bs-toggle="tooltip" data-bs-original-title="EuroPMC" href="https://europepmc.org/article/MED/{{tool.registry.europmc}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-book me-2"></i>Publication</span></a>
                     {%- endif %}
                 </td>
