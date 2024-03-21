@@ -909,9 +909,9 @@ li.past_event,
             color: color.scale($link-color, $lightness: -20%) !important;
         }
     }
-    &:hover {
+    &:hover, &:active  {
         background-color: $info-card-bg-hover;
-        color: $info-card-color-hover !important;
+        color: $info-card-color-hover;
         i {
             color: color.scale($link-color, $lightness: -20%) !important;
         }
