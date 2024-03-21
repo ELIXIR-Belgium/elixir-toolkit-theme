@@ -910,8 +910,8 @@ li.past_event,
         }
     }
     &:hover, &:active  {
-        background-color: $info-card-bg-hover;
-        color: $info-card-color-hover;
+        background-color: $info-card-bg-hover!important;
+        color: $info-card-color-hover!important;
         i {
             color: color.scale($link-color, $lightness: -20%) !important;
         }
