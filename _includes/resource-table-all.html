@@ -8,7 +8,7 @@
 {%- if include.tag %}
 <a class="visually-hidden-focusable" href='#skip-tool-table'>Skip tool table</a>
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
-<a data-bs-toggle="collapse" href="#tools_collapse" role="button" aria-expanded="false" aria-controls="tools_collapse" class="d-flex align-items-baseline btn text-start mb-2 info-collapse">
+<a data-bs-toggle="collapse" href="#tools_collapse" role="button" aria-expanded="false" aria-controls="tools_collapse" class="d-flex align-items-baseline btn btn-lg text-start mb-3 info-collapse">
 {%- endif %}
 {% if site.theme_variables.headings.resource-table-all-collapse %}<h3 class="m-0 flex-grow-1">{% else %}<h2 class="h2-like fs-2">{% endif %}{{site.theme_variables.headings.resource-table-all | default: 'Tools and resources on this page' }}{% if site.theme_variables.headings.resource-table-all-collapse %}</h3>{% else % %}</h2>{% endif %}
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
@@ -18,7 +18,7 @@
 {%- endif %}
 {%- endif %}
 <div class="table-responsive pt-4">
-    <table class="tooltable table display">
+    <table class="tooltable table mb-0 pb-3 display">
         <thead>
             <tr class="text-nowrap">
                 <th>Tool or resource
@@ -112,7 +112,7 @@
 {%- if include.tag %}
 <a class="visually-hidden-focusable" href='#skip-nat-tool-table'>Skip national tools table</a>
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
-<a data-bs-toggle="collapse" href="#nat_tools_collapse" role="button" aria-expanded="false" aria-controls="nat_tools_collapse" class="d-flex align-items-baseline btn text-start mb-2 info-collapse">
+<a data-bs-toggle="collapse" href="#nat_tools_collapse" role="button" aria-expanded="false" aria-controls="nat_tools_collapse" class="d-flex align-items-baseline btn btn-lg text-start mb-3 info-collapse">
 {%- endif %}
     <h3 class="{% if site.theme_variables.headings.resource-table-all-collapse %}m-0 flex-grow-1 {% endif %}">National resources</h3>
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
@@ -123,7 +123,7 @@
 {%- endif %}
 <p class="pt-4">Tools and resources tailored to users in different countries.</p>
 <div class="table-responsive mt-3">
-    <table class="tooltable table display" id="national-resources-button">
+    <table class="tooltable table mb-0 pb-3 display" id="national-resources-button">
         <thead>
             <tr class="text-nowrap">
                 <th>Tool or resource {%- if include.tag -%}
