@@ -893,23 +893,25 @@ li.past_event,
 /*-----More information tiles-----*/
 
 .info-collapse {
-    transition: border-color 0.2s ease-in-out;
-
+    background-color: $info-card-bg;
+    h3 {
+        color: $info-card-color;;
+    }
     i {
-        transition-property: margin-right, transform;
+        transition-property: transform, color;
         transition-duration: 0.2s;
         transition-timing-function: ease-in-out;
-        margin-right: $spacer;
     }
 
     &[aria-expanded="true"] {
-        border-color: color.scale($border-color, $lightness: -30%) !important;
         i {
             transform: rotate(180deg);
+            color: color.scale($link-color, $lightness: -20%) !important;
         }
     }
     &:hover {
-        border-color: color.scale($border-color, $lightness: -30%) !important;
+        background-color: $info-card-bg-hover;
+        color: $info-card-color-hover !important;
         i {
             color: color.scale($link-color, $lightness: -20%) !important;
         }
@@ -929,17 +931,18 @@ li.past_event,
 
     .info-links {
         a.btn {
-            background-color: $info-card-bg;
-            color: $info-card-color;
+            transition: $btn-transition;
+            background-color: $light;
+            color: $dark;
             i {
                 transition: $btn-transition;
-                color: $info-card-color !important;
+                color: $dark;
             }
             &:hover {
-                background-color: $info-card-bg-hover;
-                color: $info-card-color-hover !important;
+                background-color: $primary;
+                color: $white;
                 i {
-                    color: $info-card-color-hover !important;
+                    color: $white;
                 }
             }
         }

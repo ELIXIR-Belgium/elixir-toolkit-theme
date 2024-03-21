@@ -8,16 +8,16 @@
 {%- if include.tag %}
 <a class="visually-hidden-focusable" href='#skip-tool-table'>Skip tool table</a>
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
-<a data-bs-toggle="collapse" href="#tools_collapse" role="button" aria-expanded="false" aria-controls="tools_collapse" class="d-flex align-items-baseline pb-3 border-top info-collapse">
+<a data-bs-toggle="collapse" href="#tools_collapse" role="button" aria-expanded="false" aria-controls="tools_collapse" class="d-flex align-items-baseline btn text-start mb-2 info-collapse">
 {%- endif %}
-{% if site.theme_variables.headings.resource-table-all-collapse %}<h3 class="mb-0 mt-3 flex-grow-1 text-dark">{% else %}<h2 class="h2-like fs-2">{% endif %}{{site.theme_variables.headings.resource-table-all | default: 'Tools and resources on this page' }}{% if site.theme_variables.headings.resource-table-all-collapse %}</h3>{% else % %}</h2>{% endif %}
+{% if site.theme_variables.headings.resource-table-all-collapse %}<h3 class="m-0 flex-grow-1">{% else %}<h2 class="h2-like fs-2">{% endif %}{{site.theme_variables.headings.resource-table-all | default: 'Tools and resources on this page' }}{% if site.theme_variables.headings.resource-table-all-collapse %}</h3>{% else % %}</h2>{% endif %}
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
     <i class="fa-solid fa-chevron-down fs-5"></i>
 </a>
 <div class="collapse info-card" id="tools_collapse">
 {%- endif %}
 {%- endif %}
-<div class="table-responsive mt-4">
+<div class="table-responsive pt-4">
     <table class="tooltable table display">
         <thead>
             <tr class="text-nowrap">
@@ -112,16 +112,16 @@
 {%- if include.tag %}
 <a class="visually-hidden-focusable" href='#skip-nat-tool-table'>Skip national tools table</a>
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
-<a data-bs-toggle="collapse" href="#nat_tools_collapse" role="button" aria-expanded="false" aria-controls="nat_tools_collapse" class="d-flex align-items-baseline pb-3 border-top info-collapse">
+<a data-bs-toggle="collapse" href="#nat_tools_collapse" role="button" aria-expanded="false" aria-controls="nat_tools_collapse" class="d-flex align-items-baseline btn text-start mb-2 info-collapse">
 {%- endif %}
-    <h3 class="{% if site.theme_variables.headings.resource-table-all-collapse %}mb-0 mt-3 flex-grow-1 text-dark {% endif %}">National resources</h3>
+    <h3 class="{% if site.theme_variables.headings.resource-table-all-collapse %}m-0 flex-grow-1 {% endif %}">National resources</h3>
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
     <i class="fa-solid fa-chevron-down fs-5"></i>
 </a>
 <div class="collapse info-card" id="nat_tools_collapse">
 {%- endif %}
 {%- endif %}
-<p class="mt-4">Tools and resources tailored to users in different countries.</p>
+<p class="pt-4">Tools and resources tailored to users in different countries.</p>
 <div class="table-responsive mt-3">
     <table class="tooltable table display" id="national-resources-button">
         <thead>
