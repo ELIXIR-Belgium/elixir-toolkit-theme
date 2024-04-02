@@ -1,6 +1,7 @@
 ---
 title: General page example 2
 type: example_pages
+type_img: /assets/img/ett_compact_logo_bw.svg
 contributors: [Bert Droesbeke]
 coordinators: [Bert Droesbeke]
 description: This description is used when the page is listed
@@ -14,9 +15,6 @@ dsw:
 fairsharing:
 - name: ISO 20691
   url: https://fairsharing.org/3533
-rdmkit:
-- name: Data organisation
-  url: https://rdmkit.elixir-europe.org/data_organisation.html
 training:
   - name: Training in TeSS
     registry: TeSS

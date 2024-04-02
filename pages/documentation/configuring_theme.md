@@ -52,6 +52,7 @@ theme_variables:
     related-pages: Related pages
     more-information-tiles: More information
     resource-table-all: Tools and resources on this page
+    resource-table-all-collapse: false
     affiliation-tiles-page: Affiliations
     contributor-minitiles-page: Contributors
   toc:
@@ -77,10 +78,11 @@ More detailed information about these settings can be found here:
   * `edit_me`: Enable the 'propose an edit on this page' button.
   * `open_issue`: Enable the 'open an issue on this page' button.
   * `history`: Enable the 'history of this page' button.
-* headings: Change the subtitles of the page sections that are automatically generated
+* headings: Change the subtitles or collapse the page sections that are automatically generated
     `related-pages`: Default: Related pages
-    `more-information-tiles`: Default: More information
+    `more-information-tiles`:  Default: More information
     `resource-table-all`: Default: Tools and resources on this page
+    `resource-table-all-collapse`: Make the tools and resources table collapsed like the other sections. Default: False
     `affiliation-tiles-page`: Default: Affiliations
     `contributor-minitiles-page`: Default: Contributors
 * toc: Settings related to the table of contents.
@@ -89,7 +91,7 @@ More detailed information about these settings can be found here:
 * topnav: Settings related to the top navigation.
   *  `theme`: This variable is needed to change between a dark and a light top navigation. possible values: **dark** and **light**
   *  `brand_logo`: Custom path towards the brand logo, in case the assets/img/main_logo.svg can not be used.
-  *  `github`: Enable the appearance of the Github repo nav link
-  *  `twitter`: Enable the appearance of the Twitter nav link by adding the url towards the twitter page. Disabling is done by giving de value **false** as seen in the example.
+  *  `github`: Enable or disable the appearance of the Github repo nav link
+  *  `twitter`: Enable or disable the appearance of the Twitter nav link by adding the url towards the twitter page. Disabling is done by giving de value **false** as seen in the example.
 * `theme_color`: This is the primary theme color which is used in the metadata of the website. Please use the hex color without the hashtag as value.
 * `fonts`: List here the urls towards google fonts to include custom fonts for your website.
