@@ -44,7 +44,7 @@ The attributes that define the structure are:
 - `url`: The URL to the internal page you want to link to. This is mostly in the form of: */markdown_file_name.html*.
 - `external_url`: Use this instead of URL if you want to link to an external page.
 - `subitems`: to define a sublevel.
-- `hr`: THis can be set as true to add a horizontal spacer (top) between 2 subitems in the sidebar. (example: `hr: true`)
+- `hr`: This can be set as true to add a horizontal spacer (top) between 2 subitems in the sidebar. (example: `hr: true`)
 
 Example:
 
@@ -85,7 +85,7 @@ Just like the other navigation structures, is the footer defined by a YAML file,
 The footer is composed out of columns, of which the width is defined by integers between 1 and 12, and the total of all columns should not exceed 12.
 
 
-Lets dissect the footer structure using this below: 
+Lets dissect the footer structure using the example below: 
 
 ```yml
 copyright: Copyright notice
