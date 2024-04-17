@@ -43,7 +43,7 @@ For example:
 
 A sitemap is automatically generated using the `jekyll-sitemap` gem. This allows search engine to detect the site structure and which pages are available for harvesting.
 
-MAke sure the gem is enabled in the `_config.yml` file in the root of your project like this:
+Make sure the gem is enabled in the `_config.yml` file in the root of your project like this:
 
 
 ```yml
