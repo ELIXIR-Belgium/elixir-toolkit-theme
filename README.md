@@ -13,18 +13,18 @@ permalink: /
 The ELIXIR toolkit theme is a Jekyll theme designed to support easy deployment of documentation websites but also more complex ones that require a central tool table and linking towards ELIXIR resources. 
 
 Its key features:
-- Easy deployment using GitHub pages
+- Easy deployment using GitHub Pages or GitHub Actions
 - Advanced content search
-- Create your own look with the many theme variables
-- Change style using custom classes
+- Create your own look with the many theme variables and support for custom classes
 - Support for a central tools table
+- Integrated attribution for contributors, editors and affiliations
 - Page tagging and listing of those tagged pages
-- Linking to ELIXIR resources including Bio.tools, FAIRsharing, FAIR Cookbook, TeSS and DSW
+- Linking to ELIXIR resources including Bio.tools, FAIRsharing, FAIR Cookbook, RDMkit, TeSS and DSW
 - Easy side navigation, top navigation and footer management
 - Mobile friendly
 - Create website sections with each section having its own sidebar
 - Out of the box search engine optimizations including schema.org attributes and many other metadata attributes
-- Support for Google Analytics, Matomo and Plausible
+- Web analytics through Matomo, Google Analytics or Plausible
 
 ## Enabling the theme on your Jekyll project
 
@@ -34,7 +34,7 @@ The quickest way to use the elixir-toolkit-theme is setting it as a [remote them
 remote_theme: ELIXIR-Belgium/elixir-toolkit-theme
 ```
 
-You can lock it onto a specific version like using:
+You can lock it onto a specific version using:
 
 ```yaml
 remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@2.5.0
