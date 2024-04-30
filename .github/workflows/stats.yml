@@ -6,7 +6,8 @@ on:
     # Run every Monday at 00:00 UTC
     - cron: '0 0 * * 1'
 
-permissions: read-all
+
+permissions: write-all
 
 jobs:
   update-stats:
