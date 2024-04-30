@@ -38,7 +38,7 @@ jobs:
         uses: EndBug/add-and-commit@v7
         with:
           message: "Update weekly GitHub stats"
-          add: "stats.txt"
+          add: "stats.txt stats.json"
           branch: stats
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
