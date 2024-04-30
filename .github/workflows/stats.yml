@@ -36,10 +36,10 @@ jobs:
 
       - name: Update Stats File
         run: |
-          CLONES=$(jq -r '.clones | .[] | .count' clones-stats.json)
-          UNIQUECLONES=$(jq -r '.clones | .[] | .uniques' clones-stats.json)
-          VIEWS=$(jq -r '.clones | .[] | .count' views-stats.json)
-          UNIQUEVIEWS=$(jq -r '.clones | .[] | .uniques' views-stats.json)
+          CLONES=$(jq -r '.count' clones-stats.json)
+          UNIQUECLONES=$(jq -r '.uniques' clones-stats.json)
+          VIEWS=$(jq -r '.count' views-stats.json)
+          UNIQUEVIEWS=$(jq -r '.uniques' views-stats.json)
           DATE=$(date +'%Y-%m-%d %H:%M:%S')
           echo "Date,Clones,Unique Clones,Views,Unique Views" > stats.csv
           echo "$DATE,$CLONES,$UNIQUECLONES,$VIEWS,$UNIQUEVIEWS"
