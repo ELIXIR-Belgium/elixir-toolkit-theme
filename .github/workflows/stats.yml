@@ -6,6 +6,8 @@ on:
     # Run every Monday at 00:00 UTC
     - cron: '0 0 * * 1'
 
+permissions: read-all
+
 jobs:
   update-stats:
     runs-on: ubuntu-latest
