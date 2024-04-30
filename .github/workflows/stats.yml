@@ -1,0 +1,44 @@
+name: Update Weekly GitHub Stats
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run every Monday at 00:00 UTC
+    - cron: '0 0 * * 1'
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Fetch GitHub Stats
+        id: fetch-stats
+        run: |
+          # Fetch GitHub stats using API
+          # Modify this script to suit your needs
+          # Example: Use curl to fetch stats
+          curl -H "Accept: application/vnd.github.v3+json" \
+               -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+               https://api.github.com/repos/elixir-toolkit-theme/traffic/clones > stats.json
+
+      - name: Update Stats File
+        run: |
+          # Parse stats.json and update the stats file
+          # Modify this script to parse and update the stats file
+          # Example: Use jq to parse JSON and update a stats file
+          jq -r '.clones' stats.json > clones.txt
+          jq -r '.count' stats.json > count.txt
+          echo "Clones: $(cat clones.txt)" > stats.txt
+          echo "Count: $(cat count.txt)" >> stats.txt
+
+      - name: Commit and Push Changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          message: "Update weekly GitHub stats"
+          add: "stats.txt"
+          branch: stats
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
