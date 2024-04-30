@@ -14,25 +14,36 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Fetch GitHub Stats
-        id: fetch-stats
+      - name: Fetch GitHub Stats Clones
+        id: fetch-clones
         run: |
           # Fetch GitHub stats using API
-          # Modify this script to suit your needs
-          # Example: Use curl to fetch stats
-          curl -H "Accept: application/vnd.github.v3+json" \
-               -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-               https://api.github.com/repos/elixir-toolkit-theme/traffic/clones > stats.json
+          curl -L \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            https://api.github.com/repos/ELIXIR-Belgium/elixir-toolkit-theme/traffic/clones > clones-stats.json
+
+      - name: Fetch GitHub Stats Views
+        id: fetch-views
+        run: |
+          curl -L \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            https://api.github.com/repos/ELIXIR-Belgium/elixir-toolkit-theme/traffic/views > views-stats.json
+
 
       - name: Update Stats File
         run: |
-          # Parse stats.json and update the stats file
-          # Modify this script to parse and update the stats file
-          # Example: Use jq to parse JSON and update a stats file
-          jq -r '.clones' stats.json > clones.txt
-          jq -r '.count' stats.json > count.txt
-          echo "Clones: $(cat clones.txt)" > stats.txt
-          echo "Count: $(cat count.txt)" >> stats.txt
+          CLONES=$(jq -r '.clones | .[] | .count' clones-stats.json)
+          UNIQUECLONES=$(jq -r '.clones | .[] | .uniques' clones-stats.json)
+          VIEWS=$(jq -r '.clones | .[] | .count' views-stats.json)
+          UNIQUEVIEWS=$(jq -r '.clones | .[] | .uniques' views-stats.json)
+          DATE=$(date +'%Y-%m-%d %H:%M:%S')
+          echo "Date,Clones,Unique Clones,Views,Unique Views" > stats.csv
+          echo "$DATE,$CLONES,$UNIQUECLONES,$VIEWS,$UNIQUEVIEWS"
+
 
       - name: Commit and Push Changes
         uses: EndBug/add-and-commit@v7
