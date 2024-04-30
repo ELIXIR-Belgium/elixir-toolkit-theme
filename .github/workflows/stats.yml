@@ -42,7 +42,6 @@ jobs:
           VIEWS=$(jq '.count' views-stats.json)
           UNIQUEVIEWS=$(jq '.uniques' views-stats.json)
           DATE=$(date +'%Y-%m-%d %H:%M:%S')
-          echo "Date,Clones,Unique Clones,Views,Unique Views" > stats.csv
           echo "$DATE,$CLONES,$UNIQUECLONES,$VIEWS,$UNIQUEVIEWS" >> stats.csv
 
 
