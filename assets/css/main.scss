@@ -903,9 +903,6 @@ a.info-collapse {
         transition: color .2s ease-in-out;
     }
     &[aria-expanded="true"] {
-        &:last-of-type {
-            border-bottom: 1px solid $border-color;
-        }
         i {
             transform: rotate(180deg);
         }
