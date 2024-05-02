@@ -894,9 +894,7 @@ li.past_event,
 
 a.info-collapse {
     i {
-        transition-property: transform;
-        transition-duration: 0.2s;
-        transition-timing-function: ease-in-out;
+        transition: transform .2s ease-in-out;
         margin-right: $spacer;
     }
     h3 {
