@@ -892,13 +892,6 @@ li.past_event,
 
 /*-----More information tiles-----*/
 
-
-// Add a bottom border to the last accordion.
-a.info-collapse[aria-expanded="false"]:last-of-type, 
-a.info-collapse[aria-expanded="true"]:last-of-type + .show {
-    border-bottom: 1px solid $border-color;
-}
-
 a.info-collapse {
     i {
         transition-property: transform;
@@ -910,6 +903,9 @@ a.info-collapse {
         transition: color .2s ease-in-out;
     }
     &[aria-expanded="true"] {
+        &:last-of-type {
+            border-bottom: 1px solid $border-color;
+        }
         i {
             transform: rotate(180deg);
         }
@@ -917,9 +913,15 @@ a.info-collapse {
     &:hover {
         i,
         h3 {
-            color: rgba($link-color, .8);
+            color: rgba($link-color, .8)!important;
         }
     }
+}
+
+// Add a bottom border to the last accordion.
+a.info-collapse[aria-expanded="false"]:last-of-type, 
+a.info-collapse[aria-expanded="true"]:last-of-type + .show {
+    border-bottom: 1px solid $border-color;
 }
 
 .info-card {
