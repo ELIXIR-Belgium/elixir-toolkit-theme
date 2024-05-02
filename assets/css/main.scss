@@ -891,7 +891,7 @@ li.past_event,
 }
 
 /*-----More information tiles-----*/
-
+// Main accordion style
 a.info-collapse {
     i {
         transition: transform .2s ease-in-out;
@@ -919,6 +919,7 @@ a.info-collapse[aria-expanded="true"]:last-of-type + .show {
     border-bottom: 1px solid $border-color;
 }
 
+// Collapsed content styling
 .info-card {
     .info-logo {
         max-width: 250px;
