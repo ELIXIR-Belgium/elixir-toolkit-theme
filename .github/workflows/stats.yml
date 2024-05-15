@@ -15,8 +15,11 @@ jobs:
         with:
           ref: stats
 
+      - name: Install python dependencies
+        run: pip install numpy
+
       - name: Update Stats File
-        run: python var/github_traffic.py
+        run: python var/github_traffic.py --token ${{ secrets.STATS_TOKEN }}
 
       - name: Commit and Push Changes
         uses: EndBug/add-and-commit@v7
