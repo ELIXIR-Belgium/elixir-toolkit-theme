@@ -2,7 +2,6 @@ import requests
 import csv
 import numpy as np
 import argparse
-from dateutil import parser
 
 # Parse command line arguments
 parser = argparse.ArgumentParser(description='Fetch GitHub traffic data and store in CSV file')
