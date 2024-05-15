@@ -16,7 +16,7 @@ jobs:
           ref: stats
 
       - name: Update Stats File
-        run: python /var/github_traffic.py
+        run: python var/github_traffic.py
 
       - name: Commit and Push Changes
         uses: EndBug/add-and-commit@v7
