@@ -11,45 +11,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Fetch GitHub Stats Clones
-        id: fetch-clones
-        run: |
-          # Fetch GitHub stats using API
-          curl -L \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${{ secrets.STATS_TOKEN }}" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            https://api.github.com/repos/ELIXIR-Belgium/elixir-toolkit-theme/traffic/clones > clones-stats.json
-          cat clones-stats.json
-
-      - name: Fetch GitHub Stats Views
-        id: fetch-views
-        run: |
-          curl -L \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${{ secrets.STATS_TOKEN }}" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            https://api.github.com/repos/ELIXIR-Belgium/elixir-toolkit-theme/traffic/views > views-stats.json
-          cat views-stats.json
-
+        uses: actions/checkout@v4
+        with:
+          ref: stats
 
       - name: Update Stats File
-        run: |
-          CLONES=$(jq '.count' clones-stats.json)
-          UNIQUECLONES=$(jq '.uniques' clones-stats.json)
-          VIEWS=$(jq '.count' views-stats.json)
-          UNIQUEVIEWS=$(jq '.uniques' views-stats.json)
-          DATE=$(date +'%Y-%m-%d %H:%M:%S')
-          echo "$DATE,$CLONES,$UNIQUECLONES,$VIEWS,$UNIQUEVIEWS" >> stats.csv
-
+        run: python /var/github_traffic.py
 
       - name: Commit and Push Changes
         uses: EndBug/add-and-commit@v7
         with:
           message: "Update weekly GitHub stats"
-          add: "stats.csv"
+          add: "github_traffic.csv"
           branch: stats
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
