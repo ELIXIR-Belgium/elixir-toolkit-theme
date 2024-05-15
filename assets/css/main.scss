@@ -891,31 +891,35 @@ li.past_event,
 }
 
 /*-----More information tiles-----*/
-
-.info-collapse {
-    transition: border-color 0.2s ease-in-out;
-
+// Main accordion style
+a.info-collapse {
     i {
-        transition-property: margin-right, transform;
-        transition-duration: 0.2s;
-        transition-timing-function: ease-in-out;
+        transition: transform .2s ease-in-out;
         margin-right: $spacer;
     }
-
+    h3 {
+        transition: color .2s ease-in-out;
+    }
     &[aria-expanded="true"] {
-        border-color: color.scale($border-color, $lightness: -30%) !important;
         i {
             transform: rotate(180deg);
         }
     }
     &:hover {
-        border-color: color.scale($border-color, $lightness: -30%) !important;
-        i {
-            color: color.scale($link-color, $lightness: -20%) !important;
+        i,
+        h3 {
+            color: rgba($link-color, .8)!important;
         }
     }
 }
 
+// Add a bottom border to the last accordion.
+a.info-collapse[aria-expanded="false"]:last-of-type, 
+a.info-collapse[aria-expanded="true"]:last-of-type + .show {
+    border-bottom: 1px solid $border-color;
+}
+
+// Collapsed content styling
 .info-card {
     .info-logo {
         max-width: 250px;
