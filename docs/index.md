@@ -1,5 +1,6 @@
-[![Gem Version](https://badge.fury.io/rb/elixir-toolkit-theme.svg)](https://badge.fury.io/rb/elixir-toolkit-theme) [![Jekyll site CI](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/actions/workflows/jekyll.yml/badge.svg)](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/actions/workflows/jekyll.yml) [![DOI](https://zenodo.org/badge/421495867.svg)](https://zenodo.org/badge/latestdoi/421495867)
-
+---
+permalink: /
+---
 
 <p align="center">
 <img src="assets/img/ett_compact_logo.svg" width="100" float="center"/>
@@ -175,4 +176,3 @@ If you like our work, you can add following badge to the readme of your project:
 ## License
 
 The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
