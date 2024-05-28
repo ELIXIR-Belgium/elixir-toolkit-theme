@@ -31,7 +31,6 @@ exclude:
   - vendor
   - Gemfile*
   - LICENSE
-  - docs/
 
 sass:
     style: compressed
