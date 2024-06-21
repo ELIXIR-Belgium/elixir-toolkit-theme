@@ -132,6 +132,7 @@ Make sure that you add the image to the `images` directory and give it an unders
 * `caption`: Text that will appear under the image
 * `inline`: if true this image can be used in a list
 * `max-width`: Max width in px or em
+* `class`: add a custom CSS class
 
 
 or using following markdown syntax:
