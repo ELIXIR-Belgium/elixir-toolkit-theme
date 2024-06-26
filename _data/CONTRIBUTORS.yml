@@ -5,6 +5,7 @@
 # Full Name:
 #    git: github id
 #    email: email adress
+#    node: short code node identifier (UK, BE, ...) - as per https://elixir-europe.org/about-us/who-we-are/nodes 
 #    orcid: orcid id
 #    role: the role of the contributor
 #    affiliation: affiliation
@@ -13,9 +14,10 @@
 # Bert Droesbeke:
 #     git: bedroesb
 #     email: bert.droesbeke@vib.be
+#     node: BE
 #     orcid: 0000-0003-0522-5674
 #     role: editor
-#     affiliation: VIB Data Core / ELIXIR-BE
+#     affiliation: VIB Data Core
 # Short example contributor:
 #     affiliation: Affiliation 
 # Long example contributor:
