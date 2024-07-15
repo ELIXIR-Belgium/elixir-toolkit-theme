@@ -4,7 +4,7 @@ title: ELIXIR toolkit theme
 # topnav_title: ELIXIR toolkit theme
 # Optional: this appears on the top navigation bar next to the main_logo.svg icon
 
-# topnav_banner: "RSQKit and its content are currently under development and may change at any point - it is not meant for production use"
+# topnav_banner: "ELIXIR toolkit theme is currently under development and may change at any point - it is not meant for production use"
 # Optional: a banner message to display to users on all pages
 
 description: "Flexible Jekyll theme using bootstrap 5 as CSS framework."
