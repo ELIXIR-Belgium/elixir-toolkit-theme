@@ -149,7 +149,7 @@ This will start the docker container and serve the website locally. Make sure th
 - [Australian BioCommons How-to-Guides](https://australianbiocommons.github.io/how-to-guides/)
 - [Norwegian Life Science RDM LookUp](https://elixir.no/rdm-lookup)
 - [ERIM Research Toolbox](https://eur-nl.github.io/erim-research-toolbox/)
-- [ELIXIR-UK Fellowship](https://elixir-uk-dash.github.io/rdmkit/)
+
 
 ## Dependencies
 
