@@ -107,10 +107,11 @@ pages:
 1. If not already present on your machine, install **ruby**. 
 
 1. Install Jekyll
-If you have never installed or run a Jekyll site locally on your computer, follow these instructions to install Jekyll: [https://jekyllrb.com/docs/installation/](https://jekyllrb.com/docs/installation/)
+
+     If you have never installed or run a Jekyll site locally on your computer, follow these instructions to install Jekyll: [https://jekyllrb.com/docs/installation/](https://jekyllrb.com/docs/installation/)
 
     ```
-    gem install jekyll bundler
+    gem install jekyll
     ```
 
 1. Install dependencies
@@ -119,12 +120,20 @@ If you have never installed or run a Jekyll site locally on your computer, follo
     bundle install
     ```
 
-1. deploy website
+1. Deploy website locally in development mode:
 
     ```
     bundle exec jekyll serve
     ```
 
+    If you want to deploy the website locally in production mode, do:
+
+    ```
+    JEKYLL_ENV=production PAGES_REPO_NWO='USER_OR_ORGANISATION/REPO_NAME' bundle exec jekyll serve --baseurl ""
+    ```
+
+1. To preview your site, in your web browser, navigate to `http://localhost:4000`.
+   
 Additional information can be found at the following link: [https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll)
 
 
