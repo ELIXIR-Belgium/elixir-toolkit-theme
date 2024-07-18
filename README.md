@@ -37,7 +37,7 @@ remote_theme: ELIXIR-Belgium/elixir-toolkit-theme
 You can lock it onto a specific version using:
 
 ```yaml
-remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@2.5.0
+remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@3.0.1
 ```
 
 ### Using Ruby Gems (alternative)
@@ -50,7 +50,7 @@ gem "elixir-toolkit-theme"
 You can lock it onto a specific version like this:
 
 ```ruby
-gem "elixir-toolkit-theme", "~> 2.5.0"
+gem "elixir-toolkit-theme", "~> 3.0.1"
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
@@ -158,7 +158,7 @@ This will start the docker container and serve the website locally. Make sure th
 - [Australian BioCommons How-to-Guides](https://australianbiocommons.github.io/how-to-guides/)
 - [Norwegian Life Science RDM LookUp](https://elixir.no/rdm-lookup)
 - [ERIM Research Toolbox](https://eur-nl.github.io/erim-research-toolbox/)
-- [ELIXIR-UK Fellowship](https://elixir-uk-dash.github.io/rdmkit/)
+
 
 ## Dependencies
 

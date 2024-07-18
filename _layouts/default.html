@@ -2,6 +2,7 @@
 <html lang="en">
 {% include head.html %}
 <body class="d-flex flex-column min-vh-100"{% unless page.toc == false %} data-bs-spy="scroll" data-bs-target="#toc-contents" data-bs-smooth-scroll="true" tabindex="0"{% endunless %}>
+    {% if site.topnav_banner %}{% include banner.html %}{% endif %}
     {% if jekyll.environment == "development" %}{% include dev-info.html %}{% endif %}
     {% include topnav.html %}
     <!-- Page Content -->
