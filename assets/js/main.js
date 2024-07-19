@@ -51,50 +51,26 @@ $(document).ready(function () {
 /**
  * Back to top button
  */
-$(document).ready(function () {
-    var toggleHeight = $(window).outerHeight() / 2;
-    var targetDiv = $('#footer'); // Replace with the selector of your target div
-    function updateButtonPosition() {
-        var divHeight = targetDiv.outerHeight(); // Get the height of the target div
 
-        $(window).scroll(function () {
-            var scrollTop = $(window).scrollTop();
-            var windowHeight = $(window).height();
-            var documentHeight = $(document).height();
-            var remainingDistance = documentHeight - (scrollTop + windowHeight) + 25;
+var toggleHeight = $(window).outerHeight() / 2;
 
-            if (scrollTop > toggleHeight) {
-                $("#back-to-top").addClass("visible");
-            } else {
-                $("#back-to-top").removeClass("visible");
-            }
+$(window).scroll(function () {
+    if ($(window).scrollTop() > toggleHeight) {
+        //Adds active class to make button visible
+        $("#back-to-top").addClass("visible");
 
-            // Adjust the bottom position based on the height of the target div
-            if (remainingDistance < divHeight) {
-                $("#back-to-top").css('bottom', divHeight - remainingDistance + 'px');
-            } else {
-                $("#back-to-top").css('bottom', '1rem'); // Assuming you want to keep 1rem when not near the bottom
-            }
-        });
-    }
-
-    // Initial call to set the button position
-    updateButtonPosition();
-
-    // Update button position on window resize
-    $(window).resize(function () {
-        // Unbind the scroll event to avoid multiple bindings
-        $(window).off('scroll');
-        // Recalculate and rebind the scroll event with updated values
-        updateButtonPosition();
-    });
-    
-    // Scrolls the user to the top of the page again
-    window.topFunction = function () {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    } else {
+        //Removes active class to make button visible
+        $("#back-to-top").removeClass("visible");
     }
 });
+
+//Scrolls the user to the top of the page again
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
 
 
 /**

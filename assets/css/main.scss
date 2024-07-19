@@ -15,7 +15,10 @@ $h2-font-size: 1rem * 2.1 !default;
 $h1-font-size: 1rem * 3.3 !default;
 $card-border-width: 0;
 $custom-container-max-widths: (
-    xxxl: 1500px
+    xxxl: 1700px
+);
+$custom-spacers: (
+    45: 2.25rem
 );
 
 /*-----Initialize Bootstrap variables-----*/
@@ -25,6 +28,8 @@ $custom-container-max-widths: (
 
 /*-----Custom maps-----*/
 $container-max-widths: map-merge($container-max-widths, $custom-container-max-widths);
+$grid-breakpoints: map-merge($grid-breakpoints, $custom-container-max-widths);
+$spacers: map-merge($spacers, $custom-spacers);
 
 /*-----Include other SASS files-----*/
 @import "bootstrap/bootstrap";
@@ -895,11 +900,11 @@ li.past_event,
 // Main accordion style
 a.info-collapse {
     i {
-        transition: transform .2s ease-in-out;
+        transition: transform 0.2s ease-in-out;
         margin-right: $spacer;
     }
     h3 {
-        transition: color .2s ease-in-out;
+        transition: color 0.2s ease-in-out;
     }
     &[aria-expanded="true"] {
         i {
@@ -909,13 +914,13 @@ a.info-collapse {
     &:hover {
         i,
         h3 {
-            color: rgba($link-color, .8)!important;
+            color: rgba($link-color, 0.8) !important;
         }
     }
 }
 
 // Add a bottom border to the last accordion.
-a.info-collapse[aria-expanded="false"]:last-of-type, 
+a.info-collapse[aria-expanded="false"]:last-of-type,
 a.info-collapse[aria-expanded="true"]:last-of-type + .show {
     border-bottom: 1px solid $border-color;
 }
