@@ -17,9 +17,6 @@ $card-border-width: 0;
 $custom-container-max-widths: (
     xxxl: 1700px
 );
-$custom-spacers: (
-    45: 2.25rem
-);
 
 /*-----Initialize Bootstrap variables-----*/
 
@@ -28,8 +25,6 @@ $custom-spacers: (
 
 /*-----Custom maps-----*/
 $container-max-widths: map-merge($container-max-widths, $custom-container-max-widths);
-$grid-breakpoints: map-merge($grid-breakpoints, $custom-container-max-widths);
-$spacers: map-merge($spacers, $custom-spacers);
 
 /*-----Include other SASS files-----*/
 @import "bootstrap/bootstrap";
@@ -600,6 +595,12 @@ footer {
 
     .copyright {
         background-color: $footer-copyright-bg;
+    }
+
+    @media (min-width: 1850px) {
+        .me-xxxl-0 {
+                margin-right: 0!important;
+            }
     }
 
     #ett-logo {
