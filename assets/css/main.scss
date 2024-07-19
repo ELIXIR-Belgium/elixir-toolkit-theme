@@ -620,17 +620,16 @@ footer {
     height: 50px;
     width: 50px;
     bottom: -50px; /* Default hidden position */
-    right: 1rem; /* Adjust as needed */
+    right: 1.5rem;
     opacity: 0;
     overflow: hidden;
     z-index: 1000;
     font-size: 21px;
     transition:
-        bottom 0.15s ease-out,
         opacity 0.15s ease-out;
 
     &.visible {
-        bottom: 1rem; /* Initial visible position */
+        bottom: 1.5rem; /* Initial visible position */
         opacity: 1;
     }
 }
