@@ -72,6 +72,7 @@ function topFunction() {
 }
 
 
+
 /**
  * Making relevant events visible
  */
