@@ -6,6 +6,7 @@ layout: none
   {%- assign i = 0 -%}
   {%- assign pages_array = "" | split: "" -%}
   {%- assign pages_array = pages_array | push: site.html_pages -%}
+  {%- assign pages_array = pages_array | push: site.documents -%}
   {%- for pages in pages_array -%}
     {%- for page in pages -%}
       {%- if page.title and page.search_exclude != true -%}
