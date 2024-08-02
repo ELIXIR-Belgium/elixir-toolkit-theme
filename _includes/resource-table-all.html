@@ -157,7 +157,7 @@
 {%- endif %}
             {%- for country_page in country_pages %}
             {%- if include.tag %}
-            {%- assign tool_matches = country_page.national_resources | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
+            {%- assign tool_matches = country_page.national_resources | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag | sort_natural: "name" %}
             {%- else %}
             {%- assign tool_matches = country_page.national_resources %}
             {%- endif %}
