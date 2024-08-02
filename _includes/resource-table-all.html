@@ -19,7 +19,7 @@
 {%- endfor %}
 {%- endunless %}
 {%- unless tools.size == 0  and tool_matches_total == 0 %}
-{%- if include.tag %}
+{%- if include.tag and tools.size != 0 %}
 <a class="visually-hidden-focusable" href='#skip-tool-table'>Skip tool table</a>
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
 <a data-bs-toggle="collapse" href="#tools_collapse" role="button" aria-expanded="false" aria-controls="tools_collapse" class="d-flex align-items-baseline pb-3 border-top info-collapse">
@@ -30,6 +30,8 @@
 </a>
 <div class="collapse info-card" id="tools_collapse">
 {%- endif %}
+{%- elsif tools.size == 0 and site.theme_variables.headings.resource-table-all-collapse == false or site.theme_variables.headings.resource-table-all-collapse == nil %}
+<h2 class="h2-like fs-2">{{site.theme_variables.headings.resource-table-all | default: 'Tools and resources on this page' }}</h2>
 {%- endif %}
 {%- unless tools.size == 0 %}
 <div class="table-responsive mt-4">
