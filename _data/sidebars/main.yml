@@ -51,6 +51,8 @@ subitems:
             url: /general_page_3
           - title: General page 4
             url: /general_page_4
+          - title: General page 5
+            url: /general_page_5
       - title: All trainings
         url: /all_trainings
       - title: Website overview
