@@ -37,7 +37,7 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `toc`: When set to false, the table of contents in the beginning of the page will not be generated.
 
-* `page_id`: Unique identifier of a page. It is usually a shortened version of the page name or title, with small letters and spaces, or an acronym, with capital and small letters. Used to list Related pages.
+* `page_id`: Unique identifier of a page used to list Related pages or to tag tools in the *tool_and_resource_list.yml* file. It is usually a shortened version of the page name or title, with small letters, or an acronym, with capital and small letters. Make sure it does not contain hyphens if you want to make use of the Tools and resources table. .
 
 * `datatable`: use this attribute to activate the pagination + sorting + searching in tables.
 

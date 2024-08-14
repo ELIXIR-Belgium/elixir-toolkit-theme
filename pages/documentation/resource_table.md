@@ -15,7 +15,7 @@ The [all_tools_and_resources](all_tools_and_resources) list is based on the [yam
 ## Prerequisites
 
 * The main yaml file describing the tools is called `tool_and_resource_list.yml` located in `/_data` and is using the correct YAML syntax
-* Make sure MarkDown pages where you want to mention the tools have a  `page_id` in their frontmatter, see metadata [documentation](page_mechanics).
+* Make sure MarkDown pages where you want to mention the tools have a  `page_id` in their frontmatter, and make sure it has no hyphen, see metadata [documentation](page_mechanics).
 * When making use of the new way of tagging tools: 
   * `gem "elixir-toolkit-theme-plugins"` is added to the `/Gemfile`
   * `- elixir-toolkit-theme-plugins` is added to the plugins block in the `_config.yml` file
