@@ -2,6 +2,9 @@
 title: Template example
 type: example_pages
 contributors: [Bert Droesbeke]
+search_exclude: true
+sitemap: false
+no_robots: true
 description: This description is used when the page is listed
 page_id: gp1
 affiliations: [ELIXIR Europe, BE, SE]
