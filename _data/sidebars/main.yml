@@ -55,8 +55,8 @@ subitems:
             url: /general_page_5
       - title: All trainings
         url: /all_trainings
-      - title: Website overview
-        url: /website_overview
+      - title: List of page IDs
+        url: /list_page_ids
   - title: 404 page not found
     url: /404
     hr: true
