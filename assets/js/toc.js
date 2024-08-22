@@ -38,11 +38,12 @@
       return this.id;
     }), output = $(this);
     if (!headers.length || headers.length < settings.minimumHeaders || !output.length) {
-      return;
-    } else {
-      $('#main').addClass("add-grid");
-      $("#toc").show();
-    }
+
+      $('#main').removeClass("add-grid");
+      $("#toc").hide();
+
+    } 
+    
 
     if (0 === settings.showSpeed) {
       settings.showEffect = 'none';
