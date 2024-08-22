@@ -27,7 +27,7 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `sitemap`: Let the page appear in the sitemap.xml. Default: *true*
 
-* `no_robots`: By setting this field to true, the page will not end up in the search results of google or any other search engine.
+* `no_robots`: By setting this field to true, the page will not end up in the search results of google or any other search engine. Default: *false*
 
 * `custom_editme`: This attribute can be used to specify an alternative file when clicked on the edit-me or history button. Example: _data/news.yml
 
