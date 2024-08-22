@@ -31,7 +31,7 @@ Each tool or resource mentioned in the text has metadata stored in the [main yam
 - **url**: URL to the main page of the tool or resource, make sure to let the URL start with `https://`
 - **description**: A short description of the tool or resource. Try to not use the characters `"` or `'` 
 - **registry**: 3 registries are supported: [Bio.tools](https://bio.tools), [FAIRsharing.org](https://fairsharing.org/), [TeSS](https://tess.elixir-europe.org/) and [EuroPMC](https://europepmc.org/). The keywords you can use respectively are: `biotools`, `fairsharing`, `fairsharing-coll`, `tess` and `europmc`, specifying the id or query with a colon. FAIRsharing collections have an ID that follows the pattern `bsg-s000XXX`. List registries under the `registry` attribute as `key: value pairs`.
-- **related_pages**: List of page_ids (It is not adviced to use this in combination with the `{% raw %}{% tool "tool_id" %}{% endraw %}` snippet in the text)
+- **related_pages**: List of page_ids (It is not advised to use this in combination with the `{% raw %}{% tool "tool_id" %}{% endraw %}` snippet in the text)
 - **how_to_access**: This is free text feels that describes the accessibility of the tool or resource.
 
 
