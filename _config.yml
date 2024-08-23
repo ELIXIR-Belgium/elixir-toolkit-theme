@@ -59,6 +59,7 @@ plugins:
 theme_variables: 
   # git_host: GitHub
   # back_to_top: true
+  # dev-info-banner: false
   # privacy_statement_url: /privacy
   # github_buttons: 
   #   position: top
