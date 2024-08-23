@@ -74,13 +74,13 @@
                     language: {
                         searchPlaceholder: "Type here..."
                     },
-                    "fnDrawCallback": function ( oSettings ){
-                        var tableId = oSettings.nTable.id;
-                        if(oSettings.fnRecordsTotal() < 10){     
-                            $('#'+tableId+'_length').hide();
-                            $('#'+tableId+'_paginate').hide();
-                            $('#'+tableId+'_filter').hide();
-                            $('#'+tableId+'_info').hide();
+                    "drawCallback": function ( settings ){
+                        var tableId = settings.nTable.id;
+                        if(settings.fnRecordsTotal() < 10){     
+                            $('#'+tableId+'_wrapper .dt-length').hide();
+                            $('#'+tableId+'_wrapper .dt-paging').hide();
+                            $('#'+tableId+'_wrapper .dt-search').hide();
+                            $('#'+tableId+'_wrapper .dt-info').hide();
                         }
                     }
                 });
