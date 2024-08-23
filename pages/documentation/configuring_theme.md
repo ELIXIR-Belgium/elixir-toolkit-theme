@@ -45,6 +45,7 @@ Certain features are not always needed and can be disabled are changed in your d
 theme_variables: 
   git_host: GitHub
   back_to_top: true
+  dev-info-banner: false
   privacy_statement_url: /privacy
   github_buttons: 
     position: top
@@ -74,7 +75,8 @@ theme_variables:
 More detailed information about these settings can be found here:
 
 * `git_host`: This can be **Github** or **GitLab** and customizes the text in the top navigation.
-* `back_to_top`: Enables the appearance of the back to top button 
+* `back_to_top`: Enables the appearance of the back to top button
+* `dev-info-banner`: Show a development banner including the commit and branch the website is deployed from, when the [Jekyll environment](https://jekyllrb.com/docs/configuration/environments/) is "development". Default: *false*
 * `privacy_statement_url`: Custom path to the privacy page that contains the privacy statement. This is used to link towards in the cookie banner.
 * github_buttons: Buttons that link towards github related.
   * `position`: Can be either **top**, next to the title or **bottom**, under the page content.
