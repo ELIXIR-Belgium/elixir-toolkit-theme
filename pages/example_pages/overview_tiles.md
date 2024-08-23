@@ -1,5 +1,6 @@
 ---
 title: Overview page example
+toc: false
 ---
 
 More info about sections tiles can be found in the [website sections page](website_sections).

@@ -35,7 +35,7 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `sidebar`: Specify here an alternative sidebar, which corresponds to the filename in the *_data/sidebars/* directory. Default: *main*. If no sidebar is set, or *sidebar: false*, no sidebar will be shown.
 
-* `toc`: When set to false, the table of contents in the beginning of the page will not be generated.
+* `toc`: When set to *false*, the table of contents at the right side of the page will not be generated. This is recommended when you know in advance no table of contents will ever be needed, and improves page loading times.
 
 * `page_id`: Unique identifier of a page used to list Related pages or to tag tools in the *tool_and_resource_list.yml* file. It is usually a shortened version of the page name or title, with small letters, or an acronym, with capital and small letters. Make sure it does not contain hyphens if you want to make use of the Tools and resources table. .
 
@@ -91,6 +91,13 @@ It is important to know that you can also set the these key-value pairs on multi
   Where the `uuid` resembles the uuid towards a question in a knowledge model specified with the `dsw_deep_link_prefix` attribute in the `[/_config.yml](/_config.yml)` file. Example:
   ```yml
   dsw_deep_link_prefix: https://researchers.ds-wizard.org/knowledge-models/dsw:root:latest/preview?questionUuid=
+  ```
+
+* `rdmkit`: Link out to guides inside of the RDMkit.
+  ```yml
+  rdmkit:
+    - name: RDMkit page title
+      url: https://rdmkit.elixir-europe.org/human_data
   ```
 
 ### Tools and resources

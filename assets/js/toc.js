@@ -1,4 +1,4 @@
-// https://github.com/ghiculescu/jekyll-table-of-contents
+// Modified from: https://github.com/ghiculescu/jekyll-table-of-contents
 (function ($) {
   $.fn.toc = function (options) {
     var defaults = {
@@ -37,11 +37,13 @@
       }
       return this.id;
     }), output = $(this);
+
+    // Check if there are any headers
     if (!headers.length || headers.length < settings.minimumHeaders || !output.length) {
-      return;
-    } else {
-      $('#main').addClass("add-grid");
-      $("#toc").show();
+
+      $('#main').removeClass("add-grid");
+      $("#toc").hide();
+      return;  // Exit early if there are no headers
     }
 
     if (0 === settings.showSpeed) {
