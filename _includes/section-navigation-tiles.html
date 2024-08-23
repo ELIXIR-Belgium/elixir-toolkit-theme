@@ -99,7 +99,7 @@
                 {%- if current_page.affiliations %}
                 {%- assign alllogos = site.data.affiliations %}
                 {%- assign allcountries = site.data.countries %}
-                <div class="d-flex align-items-center gap-2">
+                <div class="d-flex align-items-center flex-wrap gap-2">
                     <span><b><small>Affiliations:</small></b></span>
                     {%- for affiliation in current_page.affiliations %}
                     {%- assign filter_affiliation = alllogos | where: "name", affiliation | first %}
