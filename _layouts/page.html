@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<main id="main" class="order-1 add-grid">
+<main id="main" class="order-1{% unless page.toc == false %} add-grid{% endunless %}">
     <div id="intro">
         {%- if page.title %}
         {%- if page.type %}
