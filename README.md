@@ -149,16 +149,25 @@ This will start the docker container and serve the website locally. Make sure th
 
 ## This theme is known to be used in
 
-- [RDMkit](https://rdmkit.elixir-europe.org/)
-- [WorkflowHub project](https://about.workflowhub.eu/)
-- [RDM Guide](https://rdm.elixir-belgium.org/)
-- [Infectious Diseases Toolkit](https://www.infectious-diseases-toolkit.org/)
-- [Applied Bioinformatics and Biostatistics intranet page](https://intranet.psb.ugent.be/abb/)
-- [FAIRDOM](https://fair-dom.org/)
-- [Australian BioCommons How-to-Guides](https://australianbiocommons.github.io/how-to-guides/)
-- [Norwegian Life Science RDM LookUp](https://elixir.no/rdm-lookup)
-- [ERIM Research Toolbox](https://eur-nl.github.io/erim-research-toolbox/)
-
+- [RDMkit](https://rdmkit.elixir-europe.org/) (CONVERGE)
+- [WorkflowHub](https://about.workflowhub.eu/) (EOSC-life project)
+- [RO-crate](https://www.researchobject.org/ro-crate-2024) (EOSC)
+- [Infectious Diseases Toolkit](https://www.infectious-diseases-toolkit.org/) (BY-COVID)
+- [FAIRDOM](https://fair-dom.org/) (FAIRDOM community)
+- [ABB intranet page at PSB](https://intranet.psb.ugent.be/abb/) (VIB department)
+- [How-to-Guides](https://australianbiocommons.github.io/how-to-guides/) (Australian BioCommons)
+- [SPLASH](https://elixir-europe-training.github.io/ELIXIR-Training-SPLASH/) (ELIXIR Training platform)
+- [1+MG Framework](https://framework.onemilliongenomes.eu/) (GDI)
+- [Human 'Omics Data Sharing Field Guide](https://australianbiocommons.github.io/human-omics-data-sharing-field-guide/) (Australian BioCommons)
+- [ERIM RDM Toolbox](https://eur-nl.github.io/erim-research-toolbox/) (ERIM NL)
+- [ABLeS](https://australianbiocommons.github.io/ables) (Australian BioCommons)
+- [TRE-FX](https://trefx.uk/) (DARE UK, HDR UK)
+- [Norwegian Life Science RDM LookUp](https://elixir.no/rdm-lookup/) (ELIXIR Norway)
+- [RSQkit: Research Software Quality kit](https://everse.software/RSQKit/) (EOSC-EVERSE)
+- [dHMp norge](https://dhp-stottepakke.github.io/pages/) (ELIXIR Norway)
+- [Learning-Library](https://patcapon39.github.io/Learning-Library/) (Australian BioCommons)
+- [ELIXIR-IT Training Platform](https://elixir-iib-training.github.io/site/training_courses) (ELIXIR IT)
+- Want your instance here? [Open an issue](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/issues)
 
 ## Dependencies
 
