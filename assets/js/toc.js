@@ -16,7 +16,7 @@
         toc: ''
       }
     },
-      settings = $.extend(defaults, options);
+    settings = $.extend(defaults, options);
 
     function fixedEncodeURIComponent(str) {
       return encodeURIComponent(str).replace(/[!'()*]/g, function (c) {
@@ -25,32 +25,30 @@
     }
 
     function createLink(header) {
-      var innerText = (header.textContent === undefined) ? header.innerText : header.textContent;
+      var innerText = header.textContent || header.innerText;
       return "<a class='" + settings.classes.link + "' href='#" + fixedEncodeURIComponent(header.id) + "'>" + innerText + "</a>";
     }
 
     var headers = $(settings.headers).filter(function () {
-      // get all headers with an ID
-      var previousSiblingName = $(this).prev().attr("name");
-      if (!this.id && previousSiblingName) {
-        this.id = $(this).attr("id", previousSiblingName.replace(/\./g, "-"));
+      // Ensure headers have IDs
+      if (!this.id) {
+        this.id = $(this).text().trim().replace(/\s+/g, '-').toLowerCase();
       }
       return this.id;
     }), output = $(this);
 
     // Check if there are any headers
     if (!headers.length || headers.length < settings.minimumHeaders || !output.length) {
-
       $('#main').removeClass("add-grid");
       $("#toc").hide();
       return;  // Exit early if there are no headers
     }
 
-    if (0 === settings.showSpeed) {
+    if (settings.showSpeed === 0) {
       settings.showEffect = 'none';
     }
 
-    $(this).addClass(settings.classes.toc)
+    $(this).addClass(settings.classes.toc);
 
     var render = {
       show: function () { output.hide().html(html).show(settings.showSpeed); },
@@ -64,37 +62,31 @@
     var return_to_top = '<i class="icon-arrow-up back-to-top"> </i>';
 
     var level = get_level(headers[0]),
-      this_level,
-      html = settings.title + " <" + settings.listType + " class=\"" + settings.classes.list + "\">";
-    headers.on('click', function () {
-      if (!settings.noBackToTopLinks) {
-        window.location.hash = this.id;
+        this_level,
+        html = settings.title + " <" + settings.listType + " class=\"" + settings.classes.list + "\">";
+    headers.each(function (_, header) {
+      this_level = get_level(header);
+      if (!settings.noBackToTopLinks && this_level === highest_level) {
+        $(header).addClass('top-level-header').after(return_to_top);
       }
-    })
-      .addClass('clickable-header')
-      .each(function (_, header) {
-        this_level = get_level(header);
-        if (!settings.noBackToTopLinks && this_level === highest_level) {
-          $(header).addClass('top-level-header').after(return_to_top);
+      if (this_level === level) { // same level as before; same indenting
+        html += "<li class=\"" + settings.classes.item + "\">" + createLink(header);
+      } else if (this_level <= level) { // higher level than before; end parent ol
+        for (var i = this_level; i < level; i++) {
+          html += "</li></" + settings.listType + ">"
         }
-        if (this_level === level) // same level as before; same indenting
-          html += "<li class=\"" + settings.classes.item + "\">" + createLink(header);
-        else if (this_level <= level) { // higher level than before; end parent ol
-          for (var i = this_level; i < level; i++) {
-            html += "</li></" + settings.listType + ">"
-          }
-          html += "<li class=\"" + settings.classes.item + "\">" + createLink(header);
+        html += "<li class=\"" + settings.classes.item + "\">" + createLink(header);
+      } else if (this_level > level) { // lower level than before; expand the previous to contain a ol
+        for (i = this_level; i > level; i--) {
+          html += "<" + settings.listType + " class=\"" + settings.classes.list + "\">" +
+            "<li class=\"" + settings.classes.item + "\">"
         }
-        else if (this_level > level) { // lower level than before; expand the previous to contain a ol
-          for (i = this_level; i > level; i--) {
-            html += "<" + settings.listType + " class=\"" + settings.classes.list + "\">" +
-              "<li class=\"" + settings.classes.item + "\">"
-          }
-          html += createLink(header);
-        }
-        level = this_level; // update for the next one
-      });
+        html += createLink(header);
+      }
+      level = this_level; // update for the next one
+    });
     html += "</" + settings.listType + ">";
+
     if (!settings.noBackToTopLinks) {
       $(document).on('click', '.back-to-top', function () {
         $(window).scrollTop(0);
