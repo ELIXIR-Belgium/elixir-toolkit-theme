@@ -1,7 +1,5 @@
 ---
 title: About
-page-logo: infrastructures/ELIXIR_BELGIUM_white_background.svg # TEMP
-summary: About a page, this is the summary value # TEMP 
 ---
 
 This project started when we wanted to make a static website that is deployed using GitHub pages that is 

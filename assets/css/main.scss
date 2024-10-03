@@ -1011,8 +1011,6 @@ iframe.scale {
     margin: 40px 0;
 }
 
-@import "custom_classes";
-
 /*-----Page logo-----*/
 
 .has-page-logo {
@@ -1024,3 +1022,5 @@ iframe.scale {
     max-width: 10em;
     max-height: 10em;
 }
+
+@import "custom_classes";
