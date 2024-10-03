@@ -15,6 +15,12 @@ layout: default
         {%- endif %}
         </h1>
         {%- endif %}
+        {%- if page.page-logo %}
+        {%- capture file_url -%}
+        {{ "/images/" | append:ipage.page-logo | relative_url }}
+        {%- endcapture -%}
+        <!-- <div id="page-logo"><img src="{{ file_url }}"/></div> -->
+        {% endif %}
         {%- if page.summary %}
         <div class="summary">{{page.summary}}</div>
         {%- endif %}
