@@ -2,6 +2,7 @@ name: Jekyll site CI
 
 on:
   push:
+    branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
   workflow_dispatch:
@@ -21,7 +22,7 @@ jobs:
           ref: ${{ github.event.inputs.branch }}
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1.127.0
+        uses: ruby/setup-ruby@v1.194.0
         with:
           ruby-version: '3.1'
           bundler-cache: true
@@ -41,7 +42,7 @@ jobs:
           bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           PAGES_REPO_NWO: ${{ github.repository }}
-          JEKYLL_ENV: ${{ steps.name.outputs.jekyll_env }}
+          JEKYLL_ENV: production
           JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JEKYLL_BUILD_BRANCH: ${{ github.ref_name }}
           JEKYLL_BASE_PATH: ${{ steps.pages.outputs.base_path }}

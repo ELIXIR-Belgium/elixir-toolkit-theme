@@ -1,6 +1,36 @@
 <script>
   $(document).ready(function () {
-    $('#toc-contents').toc({ minimumHeaders: {{site.theme_variables.toc.min_headings | default: 2 }}, listType: 'ul', classes: { list: 'list-unstyled' }, noBackToTopLinks: true, showSpeed: 0, headers: '{{site.theme_variables.toc.headings | default: 'main h2' }}' , title: '<strong class="my-2">On this page</strong><hr class="my-2">' });
+    // Ensure that the TOC is generated after the document is fully loaded
+    $('#toc-contents').toc({
+      minimumHeaders: {{ site.theme_variables.toc.min_headings | default: 1 }},
+      listType: 'ul',
+      classes: { list: 'list-unstyled' },
+      showSpeed: 0,
+      headers: '{{site.theme_variables.toc.headings | default: "main h2" }}',
+      title: '<strong class="my-2">On this page</strong><hr class="my-2">' 
+    });
+    // After generating the TOC, check the hash in the URL and scroll to the anchor if present
+    if (window.location.hash) {
+      var target = $(window.location.hash);
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 0);
+      }
+    }
+    // Allow the browser to handle the scrolling to the anchor
+    $('#toc-contents a').on('click', function (e) {
+      e.preventDefault(); // Prevent the default link click behavior
+
+      var target = this.hash; // Get the hash (e.g., #heading-id)
+      var $target = $(target); // Find the element with the corresponding ID
+
+      if ($target.length) {
+        // Change the URL hash
+        window.location.hash = target;
+      }
+    });
+
   });
 </script>
 <button id="btn-toc-hide" class="btn bg-light d-xl-none hover-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#toc-contents" aria-expanded="true" aria-controls="toc-contents">

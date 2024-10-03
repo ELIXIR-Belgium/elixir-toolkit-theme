@@ -69,7 +69,7 @@ If no sidebar should be displayed, add `sidebar: false` to the frontmatter of th
 
 ## Top navigation and sidebar relationship
 
-Top navigation titles can be used to switch between different high level sections on the website, each having their own sidebar. As described before, sidebars are defined by the `sidebar` metadata attribute in a page, so linking in the topnav YAML towards whis page is one part of the job. To make sure that all pages within that sidebar have this topnav item on active, one has to name its sidebar file in the same way as the topnav title (spaces, hyphens and underscores get ignored). 
+Top navigation titles can be used to switch between different high level sections on the website, each having their own sidebar. As described before, sidebars are defined by the `sidebar` metadata attribute in a page, so linking in the topnav YAML towards this page is one part of the job. To make sure that all pages within that sidebar have this topnav item on active, one has to name its sidebar file in the same way as the topnav title (spaces, hyphens and underscores get ignored). 
 
 Example: `/_data/sidebars/main_sidebar.yml` and in the `/_data/topnav.yml`:
 

@@ -2,7 +2,8 @@
 <html lang="en">
 {% include head.html %}
 <body class="d-flex flex-column min-vh-100"{% unless page.toc == false %} data-bs-spy="scroll" data-bs-target="#toc-contents" data-bs-smooth-scroll="true" tabindex="0"{% endunless %}>
-    {% if jekyll.environment == "development" %}{% include dev-info.html %}{% endif %}
+    {% if site.topnav_banner %}{% include banner.html %}{% endif %}
+    {% if jekyll.environment == "development" and site.theme_variables.dev-info-banner == true %}{% include dev-info.html %}{% endif %}
     {% include topnav.html %}
     <!-- Page Content -->
     <div class="container flex-grow-1">
@@ -18,11 +19,7 @@
             {{content}}
         </div>
     </div>
-    {%- if site.theme_variables.back_to_top or site.theme_variables.back_to_top == nil %}
-    <button id="back-to-top" class="btn btn-primary rounded-3" type="button" aria-hidden="true" onclick="topFunction()">
-        <i class="fa-solid fa-arrow-up"></i>
-    </button>
-    {%- endif %}
+    {% include scroll-top.html %}
     {% include footer.html %}
     {% include cookie-popup.html %}
 </body>

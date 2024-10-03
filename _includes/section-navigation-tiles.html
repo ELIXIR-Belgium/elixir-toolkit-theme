@@ -1,4 +1,4 @@
-{%- unless include.affiliations == nil and include.search == nil %}
+{%- if include.affiliations == true or include.search == true %}
 {%- assign allcountries = site.data.countries %}
 {%- for current_page in site.pages | sorted %}
 {%- if current_page.affiliations and current_page.search_exclude != true and current_page.type == include.type %}
@@ -12,7 +12,7 @@
 {%- endfor %}
 {%- assign allaffiliations = allaffiliations | split: ", " | uniq | sort %}
 <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-{{ include.col | default: 2 }} my-4">
-    {%- unless include.affiliations == nil %}
+    {%- if include.affiliations == true %}
     <div class="col">
         <div class="input-group">
             <label class="input-group-text" for="affiliations-input">Filter by affiliation</label>
@@ -32,8 +32,8 @@
             </button>
         </div>
     </div>
-    {%- endunless %}
-    {%- unless include.search == nil %}
+    {%- endif %}
+    {%- if include.search == true %}
     <div class="col">
         <div class="input-group">
             <span class="input-group-text" id="search-label">Search</span>
@@ -43,9 +43,9 @@
             </button>
         </div>
     </div>
-    {%- endunless %}
+    {%- endif %}
 </div>
-{%- endunless %}
+{%- endif %}
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-{{ include.col | default: 2 }} g-4 mb-5 navigation-tiles">
     {%- if include.custom %}
     {%- assign related_pages = include.custom | split: ", " %}
@@ -99,7 +99,7 @@
                 {%- if current_page.affiliations %}
                 {%- assign alllogos = site.data.affiliations %}
                 {%- assign allcountries = site.data.countries %}
-                <div class="d-flex align-items-center gap-2">
+                <div class="d-flex align-items-center flex-wrap gap-2">
                     <span><b><small>Affiliations:</small></b></span>
                     {%- for affiliation in current_page.affiliations %}
                     {%- assign filter_affiliation = alllogos | where: "name", affiliation | first %}

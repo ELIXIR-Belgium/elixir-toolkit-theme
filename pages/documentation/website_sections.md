@@ -25,7 +25,7 @@ Becomes:
 * `search`: enable search in the tiles (`true` or `false`)
 * `except`: `, ` separated list of page file names which should be excluded, including the file extension.
 * `col`: give an integer to specify the number of columns/section cards per row. Default: 2.
-* `sort`: disable sorting of contributors by adding *false*. Default: *true*.
+* `sort`: disable sorting of the section tiles by adding *false*. Default: *true*.
 * `custom`: `, ` separated list of page_id's if you only want to show specific pages.
 
 

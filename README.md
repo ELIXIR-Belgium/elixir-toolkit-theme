@@ -37,7 +37,7 @@ remote_theme: ELIXIR-Belgium/elixir-toolkit-theme
 You can lock it onto a specific version using:
 
 ```yaml
-remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@2.5.0
+remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@3.0.1
 ```
 
 ### Using Ruby Gems (alternative)
@@ -50,7 +50,7 @@ gem "elixir-toolkit-theme"
 You can lock it onto a specific version like this:
 
 ```ruby
-gem "elixir-toolkit-theme", "~> 2.5.0"
+gem "elixir-toolkit-theme", "~> 3.0.1"
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
@@ -107,10 +107,11 @@ pages:
 1. If not already present on your machine, install **ruby**. 
 
 1. Install Jekyll
-If you have never installed or run a Jekyll site locally on your computer, follow these instructions to install Jekyll: [https://jekyllrb.com/docs/installation/](https://jekyllrb.com/docs/installation/)
+
+     If you have never installed or run a Jekyll site locally on your computer, follow these instructions to install Jekyll: [https://jekyllrb.com/docs/installation/](https://jekyllrb.com/docs/installation/)
 
     ```
-    gem install jekyll bundler
+    gem install jekyll
     ```
 
 1. Install dependencies
@@ -119,12 +120,20 @@ If you have never installed or run a Jekyll site locally on your computer, follo
     bundle install
     ```
 
-1. deploy website
+1. Deploy website locally in development mode:
 
     ```
     bundle exec jekyll serve
     ```
 
+    If you want to deploy the website locally in production mode, do:
+
+    ```
+    JEKYLL_ENV=production PAGES_REPO_NWO='USER_OR_ORGANISATION/REPO_NAME' bundle exec jekyll serve --baseurl ""
+    ```
+
+1. To preview your site, in your web browser, navigate to `http://localhost:4000`.
+   
 Additional information can be found at the following link: [https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll)
 
 
@@ -140,16 +149,25 @@ This will start the docker container and serve the website locally. Make sure th
 
 ## This theme is known to be used in
 
-- [RDMkit](https://rdmkit.elixir-europe.org/)
-- [WorkflowHub project](https://about.workflowhub.eu/)
-- [RDM Guide](https://rdm.elixir-belgium.org/)
-- [Infectious Diseases Toolkit](https://www.infectious-diseases-toolkit.org/)
-- [Applied Bioinformatics and Biostatistics intranet page](https://intranet.psb.ugent.be/abb/)
-- [FAIRDOM](https://fair-dom.org/)
-- [Australian BioCommons How-to-Guides](https://australianbiocommons.github.io/how-to-guides/)
-- [Norwegian Life Science RDM LookUp](https://elixir.no/rdm-lookup)
-- [ERIM Research Toolbox](https://eur-nl.github.io/erim-research-toolbox/)
-- [ELIXIR-UK Fellowship](https://elixir-uk-dash.github.io/rdmkit/)
+- [RDMkit](https://rdmkit.elixir-europe.org/) (CONVERGE)
+- [WorkflowHub](https://about.workflowhub.eu/) (EOSC-life project)
+- [RO-crate](https://www.researchobject.org/ro-crate-2024) (EOSC)
+- [Infectious Diseases Toolkit](https://www.infectious-diseases-toolkit.org/) (BY-COVID)
+- [FAIRDOM](https://fair-dom.org/) (FAIRDOM community)
+- [ABB intranet page at PSB](https://intranet.psb.ugent.be/abb/) (VIB department)
+- [How-to-Guides](https://australianbiocommons.github.io/how-to-guides/) (Australian BioCommons)
+- [SPLASH](https://elixir-europe-training.github.io/ELIXIR-Training-SPLASH/) (ELIXIR Training platform)
+- [1+MG Framework](https://framework.onemilliongenomes.eu/) (GDI)
+- [Human 'Omics Data Sharing Field Guide](https://australianbiocommons.github.io/human-omics-data-sharing-field-guide/) (Australian BioCommons)
+- [ERIM RDM Toolbox](https://eur-nl.github.io/erim-research-toolbox/) (ERIM NL)
+- [ABLeS](https://australianbiocommons.github.io/ables) (Australian BioCommons)
+- [TRE-FX](https://trefx.uk/) (DARE UK, HDR UK)
+- [Norwegian Life Science RDM LookUp](https://elixir.no/rdm-lookup/) (ELIXIR Norway)
+- [RSQkit: Research Software Quality kit](https://everse.software/RSQKit/) (EOSC-EVERSE)
+- [dHMp norge](https://dhp-stottepakke.github.io/pages/) (ELIXIR Norway)
+- [Learning-Library](https://patcapon39.github.io/Learning-Library/) (Australian BioCommons)
+- [ELIXIR-IT Training Platform](https://elixir-iib-training.github.io/site/training_courses) (ELIXIR IT)
+- Want your instance here? [Open an issue](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/issues)
 
 ## Dependencies
 

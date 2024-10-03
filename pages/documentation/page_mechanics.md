@@ -27,7 +27,7 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `sitemap`: Let the page appear in the sitemap.xml. Default: *true*
 
-* `no_robots`: By setting this field to true, the page will not end up in the search results of google or any other search engine.
+* `no_robots`: By setting this field to true, the page will not end up in the search results of google or any other search engine. Default: *false*
 
 * `custom_editme`: This attribute can be used to specify an alternative file when clicked on the edit-me or history button. Example: _data/news.yml
 
@@ -35,9 +35,9 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `sidebar`: Specify here an alternative sidebar, which corresponds to the filename in the *_data/sidebars/* directory. Default: *main*. If no sidebar is set, or *sidebar: false*, no sidebar will be shown.
 
-* `toc`: When set to false, the table of contents in the beginning of the page will not be generated.
+* `toc`: When set to *false*, the table of contents at the right side of the page will not be generated. This is recommended when you know in advance no table of contents will ever be needed, and improves page loading times.
 
-* `page_id`: Unique identifier of a page. It is usually a shortened version of the page name or title, with small letters and spaces, or an acronym, with capital and small letters. Used to list Related pages.
+* `page_id`: Unique identifier of a page used to list Related pages or to tag tools in the *tool_and_resource_list.yml* file. It is usually a shortened version of the page name or title, with small letters, or an acronym, with capital and small letters. Make sure it does not contain hyphens if you want to make use of the Tools and resources table. .
 
 * `datatable`: use this attribute to activate the pagination + sorting + searching in tables.
 
@@ -91,6 +91,13 @@ It is important to know that you can also set the these key-value pairs on multi
   Where the `uuid` resembles the uuid towards a question in a knowledge model specified with the `dsw_deep_link_prefix` attribute in the `[/_config.yml](/_config.yml)` file. Example:
   ```yml
   dsw_deep_link_prefix: https://researchers.ds-wizard.org/knowledge-models/dsw:root:latest/preview?questionUuid=
+  ```
+
+* `rdmkit`: Link out to guides inside of the RDMkit.
+  ```yml
+  rdmkit:
+    - name: RDMkit page title
+      url: https://rdmkit.elixir-europe.org/human_data
   ```
 
 ### Tools and resources

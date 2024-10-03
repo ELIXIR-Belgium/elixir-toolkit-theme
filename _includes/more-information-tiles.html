@@ -38,15 +38,25 @@
 {%- endif %}
 {%- endfor %}
 {%- endif %}
-{%- if page.page_id %}
+{%- if page.page_id and site.theme_variables.headings.resource-table-all-collapse%}
 {%- assign tools = site.data.tool_and_resource_list | where:"related_pages", page.page_id %}
-{%- unless tools.size == 0 or tools == nil %}
-{%- if site.theme_variables.headings.resource-table-all-collapse %}
+{%- unless tools.size == 0 %}
 {%- assign actual_tools = 1 %}
-{%- endif %}
+{%- endunless %}
+{%- assign country_pages = site.pages | where_exp: "item", "item.search_exclude != true" | where_exp:"item","item.national_resources != nil" %}
+{%- unless country_pages.size == 0 %}
+{%- assign tool_matches_total = 0 %}
+{%- assign query = "related_pages." | append: page.type %}
+{%- for country_page in country_pages %}
+{%- assign tool_matches = country_page.national_resources | where_exp:"resource","resource.related_pages != nil" | where: query, page.page_id %}
+{%- assign tool_matches_total = tool_matches_total | plus: tool_matches.size %}
+{%- endfor %}
+{%- endunless %}
+{%- unless tool_matches_total == 0 %}
+{%- assign actual_nat_tools = 1 %}
 {%- endunless %}
 {%- endif %}
-{%- if actual_fairsharing or actual_faircookbook or actual_dsw or actual_rdmkit or actual_dsw or actual_training or actual_tools %}
+{%- if actual_fairsharing or actual_faircookbook or actual_dsw or actual_rdmkit or actual_dsw or actual_training or actual_tools or actual_nat_tools %}
 <h2 class="mb-4">{{site.theme_variables.headings.more-information-tiles | default: 'More information' }}</h2>
 {%- endif %}
 
