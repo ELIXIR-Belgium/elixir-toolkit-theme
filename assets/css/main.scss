@@ -1015,7 +1015,12 @@ iframe.scale {
 
 /*-----Page logo-----*/
 
+.has-page-logo {
+    display: flex;
+    justify-content: space-between;
+}
+
 #page-logo {
-    max-width: 12em;
-    max-height: 12em;
+    max-width: 10em;
+    max-height: 10em;
 }
