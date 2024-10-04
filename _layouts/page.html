@@ -22,7 +22,7 @@ layout: default
         {%- capture file_url -%}
         {{ "/images/" | append: page.page-logo | relative_url }}
         {%- endcapture -%}
-        <div id="page-logo"><img src="{{ file_url }}"/></div>
+        <div id="page-logo"><img src="{{ file_url }}" alt="Page logo"/></div>
         </div>
         {% endif %}
         {%- if page.summary %}

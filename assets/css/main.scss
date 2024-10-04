@@ -1016,11 +1016,14 @@ iframe.scale {
 .has-page-logo {
     display: flex;
     justify-content: space-between;
+    /* For very narrow screens, prevent horizontal scroll */
+    overflow-x: hidden; 
 }
 
 #page-logo {
     max-width: 10em;
-    max-height: 10em;
+    /* SVG images can appear size 0x0 without a min-width */
+    min-width: 8em;
 }
 
 @import "custom_classes";
