@@ -91,7 +91,14 @@
                     {%- endif %}
                 </div>
                 <a class="stretched-link section-title" aria-label="Go to the {{current_page.title}} page" href="{{ current_page.url | relative_url }}">
+                    {%- if current_page.page_img %}
+                    <div class="d-flex justify-content-between">
+                    {%- endif %}
                     <b>{{current_page.title}}</b>
+                    {%- if current_page.page_img %}
+                    <img alt="logo of {{current_page.title}}" src="images/{{current_page.page_img }}" class="d-inline tile-img-sm" />   
+                    </div>
+                    {%- endif %}
                 </a>
                 {%- if current_page.description %}
                 <p class="card-text h-100">{{ current_page.description}}</p>
