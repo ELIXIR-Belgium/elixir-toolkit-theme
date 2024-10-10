@@ -24,7 +24,7 @@ training:
     url: https://tess.elixir-europe.org/
   - name: Training not in TeSS
     url: https://www.youtube.com
-page-logo: infrastructures/ELIXIR_BELGIUM_white_background.svg 
+page_img: infrastructures/ELIXIR_BELGIUM_white_background.svg 
 summary: This summary is used below the page title
 related_pages: 
     example_pages: [gp2, gp3]

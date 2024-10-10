@@ -3,8 +3,8 @@ layout: default
 ---
 <main id="main" class="order-1{% unless page.toc == false %} add-grid{% endunless %}">
     <div id="intro">
-        {%- if page.page-logo %}
-        <div class="has-page-logo">
+        {%- if page.page_img %}
+        <div class="has-page_img">
         {% endif %}
         {%- if page.title %}
         {%- if page.type %}
@@ -18,11 +18,11 @@ layout: default
         {%- endif %}
         </h1>
         {%- endif %}
-        {%- if page.page-logo %}
+        {%- if page.page_img %}
         {%- capture file_url -%}
-        {{ "/images/" | append: page.page-logo | relative_url }}
+        {{ "/images/" | append: page.page_img | relative_url }}
         {%- endcapture -%}
-        <div id="page-logo"><img src="{{ file_url }}" alt="Page logo"/></div>
+        <div id="page_img"><img src="{{ file_url }}" alt="Page image"/></div>
         </div>
         {% endif %}
         {%- if page.summary %}
