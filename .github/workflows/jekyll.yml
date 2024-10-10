@@ -22,9 +22,9 @@ jobs:
           ref: ${{ github.event.inputs.branch }}
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1.194.0
+        uses: ruby/setup-ruby@v1.196.0
         with:
-          ruby-version: '3.1'
+          ruby-version: '3.3'
           bundler-cache: true
           cache-version: 0
 
