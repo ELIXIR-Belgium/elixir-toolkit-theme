@@ -96,7 +96,10 @@
                     {%- endif %}
                     <b>{{current_page.title}}</b>
                     {%- if current_page.page_img %}
-                    <img alt="logo of {{current_page.title}}" src="images/{{current_page.page_img }}" class="d-inline tile-img-sm" />   
+                    {%- capture file_url -%}
+                    {{ "/images/" | append: current_page.page_img | relative_url }}
+                    {%- endcapture -%}
+                    <img alt="logo of {{current_page.title}}" src="{{ file_url }}" class="d-inline tile-img-sm" />   
                     </div>
                     {%- endif %}
                 </a>
