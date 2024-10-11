@@ -1011,4 +1011,24 @@ iframe.scale {
     margin: 40px 0;
 }
 
+/*-----Page image-----*/
+
+.has-page_img {
+    display: flex;
+    justify-content: space-between;
+    /* For very narrow screens, prevent horizontal scroll */
+    overflow-x: hidden; 
+}
+
+#page_img {
+    max-width: 10em;
+    /* SVG images can appear size 0x0 without a min-width */
+    min-width: 8em;
+}
+
+/*------Tile Image-------*/
+.tile-img-sm {
+    height: 50px;
+  }
+
 @import "custom_classes";
