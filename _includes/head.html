@@ -74,9 +74,11 @@
                     lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
                     stateSave: true,
                     searching: true,
+                    {%- if site.theme_variables.datatables.searchbuilder %}
                     layout: {
                         topStart: 'searchBuilder'
                     },
+                    {%- endif %}
                     info: true,
                     pageLength: 10,
                     language: {
