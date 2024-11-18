@@ -63,8 +63,10 @@
     <script type="text/javascript" charset="utf8" src="{{ 'assets/js/jquery.dataTables.min.js' | relative_url }}"></script>
     <script type="text/javascript" charset="utf8" src="{{ 'assets/js/dataTables.bootstrap5.min.js' | relative_url }}"></script>
     {%- if site.theme_variables.datatables.searchbuilder %}
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/css/dataTables.dateTime.min.css' | relative_url }}">
     <link rel="stylesheet" type="text/css" href="{{ 'assets/css/searchBuilder.bootstrap5.min.css' | relative_url }}">
     <script type="text/javascript" charset="utf8" src="{{ 'assets/js/dataTables.searchBuilder.min.js' | relative_url }}"></script>
+    <script type="text/javascript" charset="utf8" src="{{ 'assets/js/dataTables.dateTime.min.js' | relative_url }}"></script>
     <script type="text/javascript" charset="utf8" src="{{ 'assets/js/searchBuilder.bootstrap5.min.js' | relative_url }}"></script>
     {%- endif %}
     <script type="text/javascript">
