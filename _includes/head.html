@@ -95,6 +95,9 @@
                             $('#'+tableId+'_wrapper .dt-info').hide();
                         }
                         $('.dt-layout-full').addClass('table-responsive');
+                        {%- if site.theme_variables.datatables.searchbuilder %}
+                        $('.dt-datetime').addClass('position-fixed');
+                        {%- endif %}
                     }
                 });
             })
