@@ -66,8 +66,8 @@ theme_variables:
   #   edit_me: true
   #   open_issue: true
   #   history: true
-  # datatables:
-  #   searchbuilder: False
+  datatables:
+    searchbuilder: True
   # headings:
   #   related-pages: Related pages
   #   more-information-tiles: More information
