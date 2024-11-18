@@ -78,7 +78,7 @@
                     searching: true,
                     {%- if site.theme_variables.datatables.searchbuilder %}
                     layout: {
-                        top: 'searchBuilder'
+                        top1Start: 'searchBuilder'
                     },
                     {%- endif %}
                     info: true,
@@ -94,10 +94,7 @@
                             $('#'+tableId+'_wrapper .dt-search').hide();
                             $('#'+tableId+'_wrapper .dt-info').hide();
                         }
-                        $('.dt-layout-full').addClass('table-responsive');
-                        {%- if site.theme_variables.datatables.searchbuilder %}
-                        $('.dt-datetime').addClass('position-fixed');
-                        {%- endif %}
+                        $('.dt-layout-table .dt-layout-full').addClass('table-responsive');
                     }
                 });
             })
