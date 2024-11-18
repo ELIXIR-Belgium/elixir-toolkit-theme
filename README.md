@@ -37,7 +37,7 @@ remote_theme: ELIXIR-Belgium/elixir-toolkit-theme
 You can lock it onto a specific version using:
 
 ```yaml
-remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@3.0.1
+remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@3.2.0
 ```
 
 ### Using Ruby Gems (alternative)
