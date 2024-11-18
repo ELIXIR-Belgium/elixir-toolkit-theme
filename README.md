@@ -50,7 +50,7 @@ gem "elixir-toolkit-theme"
 You can lock it onto a specific version like this:
 
 ```ruby
-gem "elixir-toolkit-theme", "~> 3.0.1"
+gem "elixir-toolkit-theme", "~> 3.2.0"
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
