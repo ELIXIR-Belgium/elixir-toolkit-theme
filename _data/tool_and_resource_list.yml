@@ -53,3 +53,7 @@
   registry:
     fairsharing: 6fba91
     europmc: 35297548
+- description: Discover tools and best practices for working with infectious disease data. IDTk provides general guidance as well as specific information for pathogen characterisation, socioeconomic data, human biomolecular data, and human clinical and health data.
+  id: idtk
+  name: Infectious Diseases Toolkit (IDTk)
+  url: https://www.infectious-diseases-toolkit.org/

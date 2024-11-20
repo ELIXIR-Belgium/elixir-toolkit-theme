@@ -807,7 +807,7 @@ footer {
     border-radius: $border-radius;
     padding: 0.1rem 0.25rem;
 
-    &:hover {
+    &:hover, &:active {
         text-decoration: none !important;
         color: $primary;
     }

@@ -2,6 +2,7 @@ name: Jekyll site CI
 
 on:
   push:
+    branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
   workflow_dispatch:
@@ -13,7 +14,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -21,9 +22,9 @@ jobs:
           ref: ${{ github.event.inputs.branch }}
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1.127.0
+        uses: ruby/setup-ruby@v1.196.0
         with:
-          ruby-version: '3.1'
+          ruby-version: '3.3'
           bundler-cache: true
           cache-version: 0
 

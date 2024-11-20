@@ -52,6 +52,8 @@ theme_variables:
     edit_me: true
     open_issue: true
     history: true
+  datatables:
+    searchbuilder: False
   headings:
     related-pages: Related pages
     more-information-tiles: More information
@@ -83,6 +85,8 @@ More detailed information about these settings can be found here:
   * `edit_me`: Enable the 'propose an edit on this page' button.
   * `open_issue`: Enable the 'open an issue on this page' button.
   * `history`: Enable the 'history of this page' button.
+* **datatables**: Settings related to the DataTables JS library
+  * `searchbuilder`: SearchBuilder provides the end user with an easy to use UI for them to create their own complex custom search expression for a DataTable. Default: False.
 * **headings**: Change the subtitles or collapse the page sections that are automatically generated
     `related-pages`: Default: Related pages
     `more-information-tiles`:  Default: More information
