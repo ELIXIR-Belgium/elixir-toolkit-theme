@@ -4,12 +4,12 @@ layout: default
 <main id="main" class="order-1{% unless page.toc == false %} add-grid{% endunless %}">
     <div id="intro">
         {%- if page.page_img %}
-        <div class="d-flex justify-content-between gap-2">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap gap-2">
         {% endif %}
         {%- if page.title %}
         {%- if page.type %}
         {%- assign subtitle = page.type | replace: "_", " " | capitalize %}
-        <h1 class="has-subtitle"><span class="d-block text-secondary fs-4 ff-body">{{subtitle}}</span><span class="visually-hidden">:</span> {{ page.title }}
+        <h1 class="has-subtitle order-1 order-md-0"><span class="d-block text-secondary fs-4 ff-body">{{subtitle}}</span><span class="visually-hidden">:</span> {{ page.title }}
         {%- else %}
         <h1>{{ page.title }}
         {%- endif %}
@@ -22,7 +22,7 @@ layout: default
         {%- capture file_url -%}
         {{ "/images/" | append: page.page_img | relative_url }}
         {%- endcapture -%}
-        <div class="page-img-lg"><img src="{{ file_url }}" alt="Page image"/></div>
+            <img src="{{ file_url }}" alt="Page image" class="page-img-lg order-0 order-md-1"/>
         </div>
         {% endif %}
         {%- if page.summary %}
