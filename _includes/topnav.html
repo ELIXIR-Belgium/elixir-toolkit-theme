@@ -5,8 +5,6 @@
     <nav class="navbar navbar-{{ site.theme_variables.topnav.theme | default: 'light' }} navbar-expand-lg mb-3 mb-lg-5">
         <div class="container g-lg-5">
             <a class="navbar-brand flex-grow-1 overflow-x-auto" href="{{ '/' | relative_url }}"><img class="{% if site.topnav_title %}me-3 {% endif %}img-fluid" alt="{{site.title}} logo" src="{{ site.theme_variables.topnav.brand_logo | default: 'assets/img/main_logo.svg' | relative_url }}">{% if site.topnav_title %}<span class="me-0 me-lg-3">{{site.topnav_title}}</span>{% endif %}</a>
-        <div class="container">
-            <a class="navbar-brand flex-grow-1 overflow-x-auto" href="{{ '/' | relative_url }}"><img class="{% if site.topnav_title %}me-3 {% endif %}img-fluid" alt="{{site.title}} logo" src="{{ site.theme_variables.topnav.brand_logo | default: 'assets/img/main_logo.svg' | relative_url }}">{% if site.topnav_title %}<span class="me-0 me-lg-3">{{site.topnav_title}}</span>{% endif %}</a>
             <button class="navbar-toggler text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <i title="navbar-toggler" class="fa-solid fa-bars"></i>
             </button>
