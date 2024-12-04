@@ -1000,6 +1000,9 @@ a.info-collapse[aria-expanded="true"]:last-of-type + .show {
         .type-icon {
             height: 1.2rem;
         }
+        .page-img-sm {
+            max-height: 3em;
+        }
     }
 }
 
@@ -1010,5 +1013,15 @@ iframe.scale {
     width: 100%;
     margin: 40px 0;
 }
+
+/*-----Page image-----*/
+
+.page-img-lg {
+    max-height: 9em;
+    max-width: 17em;
+    /* SVG images can appear size 0x0 without a min-width */
+    min-width: 1px;
+}
+
 
 @import "custom_classes";
