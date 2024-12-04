@@ -36,8 +36,8 @@
     {%- if include.search == true %}
     <div class="col">
         <div class="input-group">
-            <span class="input-group-text" id="search-label">Search</span>
-            <input type="text" id="title-search" class="form-control" onkeyup="StartSearch();" placeholder="Type here..." aria-label="{{page.type | replace: '_', ' ' |}}" aria-describedby="search-label">
+            <span class="input-group-text" id="search-label-tiles"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input type="text" id="title-search" class="form-control" onkeyup="StartSearch();" placeholder="Find your page..." aria-label="{{page.type | replace: '_', ' ' |}}" aria-describedby="search-label-tiles">
             <button class="btn btn-primary" title="Button to clear search" type="button" id="clearsearch">
                 <i class="fa-solid fa-backspace"></i>
             </button>
@@ -137,6 +137,7 @@
 </div>
 
 
+{%- if include.affiliations == true or include.search == true %}
 <script type="text/javascript">
     /** 
      * Filter cards by affiliation
@@ -218,3 +219,4 @@
     });
 
 </script>
+{%- endif %}
