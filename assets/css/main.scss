@@ -1001,8 +1001,7 @@ a.info-collapse[aria-expanded="true"]:last-of-type + .show {
             height: 1.2rem;
         }
         .page-img-sm {
-            max-height: 4em;
-            max-width: 6em;
+            max-height: 3em;
         }
     }
 }
@@ -1020,7 +1019,7 @@ iframe.scale {
 .page-img-lg {
     max-width: 10em;
     /* SVG images can appear size 0x0 without a min-width */
-    min-width: 8em;
+    min-width: 1em;
 }
 
 
