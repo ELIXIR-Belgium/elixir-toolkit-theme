@@ -1,5 +1,5 @@
 <footer id="footer">
-    <div class="container py-1 py-4">
+    <div class="container py-4 g-lg-5">
         <div class="row g-4 d-flex justify-content-between">
             {%- for column in site.data.footer.columns %}
             {%- if column.type == "image" %}
@@ -38,8 +38,8 @@
         </div>
         {%- endunless %}
     </div>
-    <div class="copyright p-4">
-        <div class="container d-flex justify-content-between flex-column flex-lg-row">
+    <div class="copyright py-4">
+        <div class="container g-lg-5 d-flex justify-content-between flex-column flex-lg-row">
             {%- unless site.data.footer.copyright == nil %}
             <div class="d-flex align-items-center mb-3 mb-lg-0 mx-auto mx-lg-0 text-center">{{ site.data.footer.copyright | markdownify }}</div>
             {%- endunless %}
