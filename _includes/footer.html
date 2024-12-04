@@ -3,7 +3,7 @@
         <div class="row g-4 d-flex justify-content-between">
             {%- for column in site.data.footer.columns %}
             {%- if column.type == "image" %}
-            <div class="col-lg-{{column.width}} col-sm-6 d-flex justify-content-center">
+            <div class="col-lg-{{column.width}} col-sm-6">
                 <img class="my-auto" width="{{column.image_width}}" src="{{ column.src | relative_url }}" alt="{{column.alt}}" />
             </div>
             {%- elsif column.type == "links" %}
@@ -24,7 +24,7 @@
                 </ul>
             </div>
             {%- elsif column.type == "text" %}
-            <div class="col-lg-{{column.width}} col-sm-6 d-flex justify-content-center">
+            <div class="col-lg-{{column.width}} col-sm-6">
                 {{column.content | markdownify }}
             </div>
             {%- endif %}
