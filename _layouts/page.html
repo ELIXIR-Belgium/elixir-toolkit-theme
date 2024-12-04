@@ -4,7 +4,7 @@ layout: default
 <main id="main" class="order-1{% unless page.toc == false %} add-grid{% endunless %}">
     <div id="intro">
         {%- if page.page_img %}
-        <div class="d-flex justify-content-between flex-column flex-md-row gap-2">
+        <div class="d-flex justify-content-between flex-column flex-md-row gap-3">
         {% endif %}
         {%- if page.title %}
         {%- if page.type %}
@@ -22,7 +22,9 @@ layout: default
         {%- capture file_url -%}
         {{ "/images/" | append: page.page_img | relative_url }}
         {%- endcapture -%}
-            <img src="{{ file_url }}" alt="Page image" class="page-img-lg order-0 order-md-1"/>
+            <div class="page-img-lg">
+                <img src="{{ file_url }}" alt="Page image" class="order-0 order-md-1 page-img-lg"/>
+            </div>
         </div>
         {% endif %}
         {%- if page.summary %}
