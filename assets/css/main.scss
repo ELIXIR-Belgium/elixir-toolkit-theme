@@ -1018,6 +1018,7 @@ iframe.scale {
 
 .page-img-lg {
     max-height: 9em;
+    max-width: 17em;
     /* SVG images can appear size 0x0 without a min-width */
     min-width: 1px;
 }
