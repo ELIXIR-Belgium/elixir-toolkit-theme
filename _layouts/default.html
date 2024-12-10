@@ -1,20 +1,20 @@
 <!doctype html>
 <html lang="en">
 {% include head.html %}
-<body class="d-flex flex-column min-vh-100"{% unless page.toc == false %} data-bs-spy="scroll" data-bs-target="#toc-contents" data-bs-smooth-scroll="true" tabindex="0"{% endunless %}>
+<body class="d-flex flex-column min-vh-100"{% if page.toc %} data-bs-spy="scroll" data-bs-target="#toc-contents" data-bs-smooth-scroll="true" tabindex="0"{% endif %}>
     {% if site.topnav_banner %}{% include banner.html %}{% endif %}
     {% if jekyll.environment == "development" and site.theme_variables.dev-info-banner == true %}{% include dev-info.html %}{% endif %}
     {% include topnav.html %}
     <!-- Page Content -->
     <div class="container g-lg-5 flex-grow-1">
         <!-- Content Row -->
-        <div {% unless page.sidebar == nil or page.sidebar == false %}id="layout" class="gap-5"{% endunless %}>
+        <div {% if page.sidebar %}id="layout" class="gap-5"{% endif %}>
             <!-- Sidebar -->
-            {%- unless page.sidebar == nil or page.sidebar == false %}
+            {%- if page.sidebar%}
             <aside id="sidebar">
                 {% include sidebar.html %}
             </aside>
-            {% endunless %}
+            {%- endif %}
             <!-- Content -->
             {{content}}
         </div>

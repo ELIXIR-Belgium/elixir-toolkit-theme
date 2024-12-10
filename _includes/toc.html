@@ -9,7 +9,7 @@
 {%- if page.page_img %}
 </div>
 {% endif %}
-{%- unless page.toc == false %}
+{%- if page.toc or page.toc == nil %}
 <script>
   $(document).ready(function () {
     // Ensure that the TOC is generated after the document is fully loaded
@@ -49,4 +49,4 @@
   <i class="fa-solid fa-up-right-and-down-left-from-center me-2"></i>On this page
 </button>
 <nav id="toc-contents" class="collapse" aria-label="Table of contents"></nav>
-{% endunless %}
+{% endif %}

@@ -53,6 +53,10 @@ subitems:
             url: /general_page_4
           - title: General page 5
             url: /general_page_5
+          - title: General page 6
+            url: /general_page_6
+          - title: General page 7
+            url: /general_page_7
       - title: All trainings
         url: /all_trainings
       - title: List of page IDs

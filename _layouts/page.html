@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<main id="main" class="order-1{% unless page.toc == false and page.page_img == false %} add-grid{% endunless %}">
+<main id="main" class="order-1{%- if page.toc or page.toc == nil or page.page_img %} add-grid{% endif %}">
     <div id="intro">
         {%- if page.title %}
         {%- if page.type %}
@@ -19,11 +19,11 @@ layout: default
         <div class="summary">{{page.summary}}</div>
         {%- endif %}
     </div>
-    {%- unless page.toc == false and page.page_img == false %}
+    {%- if page.toc or page.toc == nil or page.page_img %}
     <div id="toc" class="text-muted sticky-xl-top">
         {%- include toc.html %}
     </div>
-    {%- endunless %}
+    {%- endif %}
     <div id="content" class="mb-5">
         {{content}}
         {% include resource-table-page.html %}
