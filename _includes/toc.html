@@ -1,3 +1,15 @@
+
+{%- if page.page_img %}
+<div class="d-flex flex-column">
+{%- capture file_url -%}
+{{ "/images/" | append: page.page_img | relative_url }}
+{%- endcapture -%}
+<div class="mb-4"><img src="{{ file_url }}" alt="Page image" class="page-img-lg"/></div>
+{% endif %}
+{%- if page.page_img %}
+</div>
+{% endif %}
+{%- unless page.toc == false %}
 <script>
   $(document).ready(function () {
     // Ensure that the TOC is generated after the document is fully loaded
@@ -33,18 +45,8 @@
 
   });
 </script>
-{%- if page.page_img %}
-<div class="d-flex flex-column">
-{%- capture file_url -%}
-{{ "/images/" | append: page.page_img | relative_url }}
-{%- endcapture -%}
-<div class="mb-4"><img src="{{ file_url }}" alt="Page image" class="page-img-lg"/></div>
-{% endif %}
-{%- if page.page_img %}
-</div>
-{% endif %}
 <button id="btn-toc-hide" class="btn bg-light me-auto d-xl-none hover-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#toc-contents" aria-expanded="true" aria-controls="toc-contents">
   <i class="fa-solid fa-up-right-and-down-left-from-center me-2"></i>On this page
 </button>
 <nav id="toc-contents" class="collapse" aria-label="Table of contents"></nav>
-
+{% endunless %}
