@@ -124,6 +124,16 @@ body img {
 
 #toc {
     grid-area: toc;
+    /*-----Page image-----*/
+    .page-img-lg {
+        max-height: 9em;
+    }
+
+    @include media-breakpoint-down(xl) {
+        .page-img-lg {
+            max-width: 17em;
+        }
+    }
 }
 
 @include media-breakpoint-up(xl) {
@@ -598,8 +608,8 @@ footer {
 
     @media (min-width: 1850px) {
         .me-xxxl-0 {
-                margin-right: 0!important;
-            }
+            margin-right: 0 !important;
+        }
     }
 
     #ett-logo {
@@ -807,7 +817,8 @@ footer {
     border-radius: $border-radius;
     padding: 0.1rem 0.25rem;
 
-    &:hover, &:active {
+    &:hover,
+    &:active {
         text-decoration: none !important;
         color: $primary;
     }
@@ -999,6 +1010,9 @@ a.info-collapse[aria-expanded="true"]:last-of-type + .show {
         }
         .type-icon {
             height: 1.2rem;
+        }
+        .page-img-sm {
+            max-height: 3em;
         }
     }
 }

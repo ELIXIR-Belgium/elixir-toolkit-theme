@@ -1,12 +1,12 @@
 ---
 layout: default
 ---
-<main id="main" class="order-1{% unless page.toc == false %} add-grid{% endunless %}">
+<main id="main" class="order-1{%- if page.toc or page.toc == nil or page.page_img %} add-grid{% endif %}">
     <div id="intro">
         {%- if page.title %}
         {%- if page.type %}
         {%- assign subtitle = page.type | replace: "_", " " | capitalize %}
-        <h1 class="has-subtitle"><span class="d-block text-secondary fs-4 ff-body">{{subtitle}}</span><span class="visually-hidden">:</span> {{ page.title }}
+        <h1 class="has-subtitle order-1 order-md-0"><span class="d-block text-secondary fs-4 ff-body">{{subtitle}}</span><span class="visually-hidden">:</span> {{ page.title }}
         {%- else %}
         <h1>{{ page.title }}
         {%- endif %}
@@ -19,11 +19,11 @@ layout: default
         <div class="summary">{{page.summary}}</div>
         {%- endif %}
     </div>
-    {%- unless page.toc == false %}
+    {%- if page.toc or page.toc == nil or page.page_img %}
     <div id="toc" class="text-muted sticky-xl-top">
         {%- include toc.html %}
     </div>
-    {%- endunless %}
+    {%- endif %}
     <div id="content" class="mb-5">
         {{content}}
         {% include resource-table-page.html %}
