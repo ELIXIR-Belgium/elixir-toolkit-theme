@@ -1022,7 +1022,7 @@ iframe.scale {
     min-width: 1px;
 }
 
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(xl) {
     .page-img-lg {
         max-width: 17em;
     }
