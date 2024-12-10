@@ -1023,7 +1023,9 @@ iframe.scale {
 }
 
 @include media-breakpoint-down(lg) {
-    max-width: 17em;
+    .page-img-lg {
+        max-width: 17em;
+    }
 }
 
 @import "custom_classes";
