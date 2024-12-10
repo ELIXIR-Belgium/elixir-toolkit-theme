@@ -3,28 +3,30 @@
         <div class="row g-4 d-flex justify-content-between">
             {%- for column in site.data.footer.columns %}
             {%- if column.type == "image" %}
-            <div class="col-lg-{{column.width}} col-sm-6">
-                <img class="my-auto" width="{{column.image_width}}" src="{{ column.src | relative_url }}" alt="{{column.alt}}" />
+            <div class="col-6 col-lg-{{column.width}} d-flex justify-content-lg-{% if forloop.first == true %}start{% elsif forloop.last == true %}end{% else %}center{% endif %}">
+                <img class="my-auto" width="{{column.image_width}}" src="{{ column.src | relative_url }}" alt="{{column.alt}}"/>
             </div>
             {%- elsif column.type == "links" %}
-            <div class="col-lg-{{column.width}} col-sm-6">
-                {%- if column.title != nil %}
-                <span class="footer-title">{{column.title}}</span>
-                {%- endif %}
-                <ul class="mb-0 list-unstyled">
-                    {%- for link in column.children %}
-                    {%- if link.url != nil and link.external_url == nil%}
-                    <li><a href="{{ link.url | relative_url }}">{{link.url_text}}</a></li>
-                    {%- elsif link.external_url != nil and link.url == nil %}
-                    <li><a href="{{link.external_url}}">{{link.url_text}}</a></li>
-                    {%- else %}
-                    <li>{{link.url_text}}</li>
+            <div class="col-6 col-lg-{{column.width}} d-flex justify-content-lg-{% if forloop.first == true %}start{% elsif forloop.last == true %}end{% else %}center{% endif %}">
+                <div>
+                    {%- if column.title != nil %}
+                    <span class="footer-title">{{column.title}}</span>
                     {%- endif %}
-                    {%- endfor %}
-                </ul>
+                    <ul class="mb-0 list-unstyled">
+                        {%- for link in column.children %}
+                        {%- if link.url != nil and link.external_url == nil%}
+                        <li><a href="{{ link.url | relative_url }}">{{link.url_text}}</a></li>
+                        {%- elsif link.external_url != nil and link.url == nil %}
+                        <li><a href="{{link.external_url}}">{{link.url_text}}</a></li>
+                        {%- else %}
+                        <li>{{link.url_text}}</li>
+                        {%- endif %}
+                        {%- endfor %}
+                    </ul>
+                </div>
             </div>
             {%- elsif column.type == "text" %}
-            <div class="col-lg-{{column.width}} col-sm-6">
+            <div class="col-6 col-lg-{{column.width}} d-flex justify-content-lg-{% if forloop.first == true %}start{% elsif forloop.last == true %}end{% else %}center{% endif %}">
                 {{column.content | markdownify }}
             </div>
             {%- endif %}
@@ -44,7 +46,7 @@
             <div class="d-flex align-items-center mb-3 mb-lg-0 mx-auto mx-lg-0 text-center">{{ site.data.footer.copyright | markdownify }}</div>
             {%- endunless %}
             <div class="d-flex align-items-center mx-auto ms-lg-4 me-lg-0">
-                <a id="ett-logo" class="text-nowrap me-lg-5 me-xxxl-0" href="https://elixir-belgium.github.io/elixir-toolkit-theme">Built with
+                <a id="ett-logo" class="text-nowrap me-lg-5 me-xxlg-0" href="https://elixir-belgium.github.io/elixir-toolkit-theme">Built with
                     <svg data-name="ETT logo" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 77.2 77.12">
                         <defs>
                             <style>
