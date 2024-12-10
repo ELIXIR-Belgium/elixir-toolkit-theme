@@ -3,7 +3,7 @@ extra_line:
 columns:
   - type: image
     image_width: 150px
-    width: 3
+    width: 2
     src: 'images/infrastructures/ELIXIR_BELGIUM_white_background.svg'
     alt: ELIXIR Belgium logo
   - type: links
@@ -26,7 +26,7 @@ columns:
     alt: European flag
   - type: image
     image_width: 88px
-    width: 1
+    width: 2
     src: 'assets/img/ett_compact_logo.svg'
     alt: Jekyll Bootstrap theme logo
 
