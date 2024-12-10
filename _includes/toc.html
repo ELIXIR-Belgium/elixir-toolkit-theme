@@ -1,6 +1,6 @@
 
 {%- if page.page_img %}
-<div class="d-flex flex-column">
+<div id="page-img" class="d-flex flex-column">
 {%- capture file_url -%}
 {{ "/images/" | append: page.page_img | relative_url }}
 {%- endcapture -%}
