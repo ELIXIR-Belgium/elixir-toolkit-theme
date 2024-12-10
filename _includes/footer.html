@@ -3,11 +3,11 @@
         <div class="row g-4 d-flex justify-content-between">
             {%- for column in site.data.footer.columns %}
             {%- if column.type == "image" %}
-            <div class="col-lg-{{column.width}} col-sm-6 d-flex justify-content-center justify-content-lg-{% if forloop.first == true %}start{% elsif forloop.last == true %}end{% else %}center{% endif %}">
+            <div class="col-6 col-lg-{{column.width}} d-flex justify-content-lg-{% if forloop.first == true %}start{% elsif forloop.last == true %}end{% else %}center{% endif %}">
                 <img class="my-auto" width="{{column.image_width}}" src="{{ column.src | relative_url }}" alt="{{column.alt}}"/>
             </div>
             {%- elsif column.type == "links" %}
-            <div class="col-lg-{{column.width}} col-sm-6 d-flex justify-content-center justify-content-lg-{% if forloop.first == true %}start{% elsif forloop.last == true %}end{% else %}center{% endif %}">
+            <div class="col-6 col-lg-{{column.width}} d-flex justify-content-lg-{% if forloop.first == true %}start{% elsif forloop.last == true %}end{% else %}center{% endif %}">
                 <div>
                     {%- if column.title != nil %}
                     <span class="footer-title">{{column.title}}</span>
@@ -26,7 +26,7 @@
                 </div>
             </div>
             {%- elsif column.type == "text" %}
-            <div class="col-lg-{{column.width}} col-sm-6 d-flex justify-content-center justify-content-lg-{% if forloop.first == true %}start{% elsif forloop.last == true %}end{% else %}center{% endif %}">
+            <div class="col-6 col-lg-{{column.width}} d-flex justify-content-lg-{% if forloop.first == true %}start{% elsif forloop.last == true %}end{% else %}center{% endif %}">
                 {{column.content | markdownify }}
             </div>
             {%- endif %}
