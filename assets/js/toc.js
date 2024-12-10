@@ -39,7 +39,7 @@
     var output = $(this);
 
     // Check if there are any headers
-    if (!headers.length || headers.length < settings.minimumHeaders || !output.length || !$('#page-img').length) {
+    if (!headers.length || headers.length < settings.minimumHeaders || !output.length || $('#page-img').length === 0) {
       $('#main').removeClass("add-grid");
       $("#toc").hide();
       return;  // Exit early if there are no headers
