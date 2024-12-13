@@ -1,4 +1,5 @@
 {%- assign contributors = site.data.CONTRIBUTORS %}
+{%- assign allcontrstr = nil %}
 {%- assign nr = include.col | default: 5 %}
 {%- if include.custom %}
 {%- assign allcontrstr = include.custom %}
@@ -6,11 +7,11 @@
 {%- assign rolefilter =  include.role | downcase %}
 {%- for contr in contributors %}
 {%- assign contrrole = contr[1]['role'] | downcase %}
-{%- if include.role == contrrole %}
+{%- if rolefilter == contrrole %}
 {%- if allcontrstr %}
 {%- assign allcontrstr = allcontrstr | append: ", " | append: contr[0] %}
 {%- else %}
-{%- assign allcontrstr = allcontrstr | append: contr[0] %}
+{%- assign allcontrstr = contr[0] %}
 {%- endif %}
 {%- endif %}
 {%- endfor %}
@@ -21,7 +22,7 @@
 {%- if allcontrstr %}
 {%- assign allcontrstr = allcontrstr | append: ", " | append: pagecontr %}
 {%- else %}
-{%- assign allcontrstr = allcontrstr | append: pagecontr %}
+{%- assign allcontrstr = pagecontr %}
 {%- endif %}
 {%- endif %}
 {%- endfor %}
@@ -29,7 +30,7 @@
 {%- if allcontrstr %}
 {%- assign allcontrstr = allcontrstr | append: ", " | append: contr[0] %}
 {%- else %}
-{%- assign allcontrstr = allcontrstr | append: contr[0] %}
+{%- assign allcontrstr = contr[0] %}
 {%- endif %}
 {%- endfor %}
 {%- endif %}
@@ -37,6 +38,7 @@
 {%- unless include.sort == false %}
 {%- assign allcontributors = allcontributors | sort %}
 {%- endunless %}
+{%- unless allcontributors.size == 0 %}
 <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-xl-{{nr}} g-4 contributor-cards mb-4">
   {%- for contributor in allcontributors %}
   <div class="col">
@@ -98,3 +100,4 @@
   </div>
   {%- endfor %}
 </div>
+{%- endunless %}
