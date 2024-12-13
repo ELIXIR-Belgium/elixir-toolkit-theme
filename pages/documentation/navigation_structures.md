@@ -143,6 +143,16 @@ Column attributes:
 * `url_text`: Title of a link.
 * `url`: Absolute path of a page.
 
+## Table of Contents (TOC)
+
+### Configuration
 
 
+Currently, 2 settings can be configured related to the TOC, `min_headings` and `headings`. Read more on how to configure them and what they do in the [Configuring theme page](configuring_theme).
 
+### Usage
+
+By default, toc is enabled and will appear once the minimum amount of headings is reached, of the correct type. Disable on site-level (using Jekyll defaults) or on page level, by adding the `toc: false` when you don't wan't the TOC to appear, or when there will never be a heading. 
+
+
+{% include callout.html type="tip" content="To prevent the main content from resizing, when no TOC is present, it is suggested to add `toc: false` to improve the loading of the page." %}
