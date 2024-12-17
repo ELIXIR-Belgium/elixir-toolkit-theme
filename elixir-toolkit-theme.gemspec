@@ -5,7 +5,7 @@ Gem::Specification.new do |spec|
 
   spec.version       = "4.0.0"
   spec.authors       = ["bedroesb"]
-  spec.email         = ["bedro@psb.vib-ugent.be\n"]
+  spec.email         = ["bert.droesbeke@vib.be"]
 
   spec.summary       = "Flexible Jekyll theme using bootstrap 5 as CSS framework."
   spec.homepage      = "https://elixir-belgium.github.io/elixir-toolkit-theme/"
