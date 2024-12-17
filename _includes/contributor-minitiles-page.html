@@ -87,7 +87,7 @@
               <div class="card-body text-center py-0">
                 <p class="card-title">{{ stripped_name }}</p>
                 {%- if contributors[contributor].affiliation %}
-                <p class="card-affiliation">{{ contributors[contributor].affiliation }}</p>
+                <p class="card-affiliation">{{ contributors[contributor].affiliation | join: ", " }}</p>
                 {%- endif %}
               </div>
               {%- if contributors[contributor].git or contributors[contributor].email or contributors[contributor].orcid %}
