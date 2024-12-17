@@ -61,7 +61,7 @@ subitems:
         url: /all_trainings
       - title: List of page IDs
         url: /list_page_ids
-  - title: Example 404 page"
+  - title: Example 404 page
     url: /404
     hr: true
   
