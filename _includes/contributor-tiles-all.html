@@ -76,7 +76,7 @@
       <div class="card-body text-center py-0">
         <p class="card-title">{{ contributor }}</p>
         {%- if contributors[contributor].affiliation %}
-        <p class="card-affiliation">{{ contributors[contributor].affiliation }}</p>
+        <p class="card-affiliation">{{ contributors[contributor].affiliation }}{%- if contributors[contributor].node %}<br>ELIXIR-{{ contributors[contributor].node }}{%- endif %}</p>
         {%- endif %}
       </div>
       {%- if contributors[contributor].git or contributors[contributor].email or contributors[contributor].orcid %}
