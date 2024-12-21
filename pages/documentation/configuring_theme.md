@@ -29,7 +29,7 @@ matomo:
 # Matomo domain where Matomo is running
 matomo_id:
 # Integer indicating the Matomo Website ID
-matomo_cookies: false
+matomo_cookies: true
 # Boolean that determines whether a Matomo tracking cookie is used or not
 
 plausible: 
