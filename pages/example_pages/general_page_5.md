@@ -1,7 +1,7 @@
 ---
 title: General page example 5
 type: example_pages
-contributors: [Bert Droesbeke, Long Example Contributor , Example Contributor, Example Contributor, Example Contributor, Example Contributor, Example Contributor, Example Contributor, Example Contributor]
+contributors: [Bert Droesbeke, Long Example Contributor , Example Contributor, Example Contributor2, Example Contributor3]
 coordinators: [Bert Droesbeke] 
 description: This description is used when the page is listed
 page_id: gp5
