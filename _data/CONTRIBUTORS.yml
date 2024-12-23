@@ -7,7 +7,7 @@
 #    email: email adress
 #    orcid: orcid id
 #    role: the role of the contributor
-#    affiliation: affiliation
+#    affiliation: affiliation or ["affiliation 1", "affiliation 2"]
 #    image_url: absolute path to image (default image from github)
 
 # Bert Droesbeke:
@@ -15,7 +15,7 @@
 #     email: bert.droesbeke@vib.be
 #     orcid: 0000-0003-0522-5674
 #     role: editor
-#     affiliation: VIB Data Core / ELIXIR-BE
+#     affiliation: ["VIB Data Core", "ELIXIR-BE"]
 # Short Example Contributor:
 #     affiliation: Affiliation 
 # Long Example Contributor:
