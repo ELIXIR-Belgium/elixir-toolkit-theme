@@ -126,7 +126,7 @@
         /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
         {%- if site.matomo_cookies == false %}
         _paq.push(['disableCookies']);
-        {%- endunless %}
+        {%- endif %}
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
         (function() {
