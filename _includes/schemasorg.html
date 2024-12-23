@@ -19,7 +19,7 @@
                 {%- if contributors[people].affiliation %}
                 "affiliation": {
                     "@type": "Organization",
-                    "name": "{{contributors[people].affiliation | join: ", "}}"
+                    "name": "{{contributors[people].affiliation | join: " / "}}"
                 },
                 {%- endif %}
                 {%- if contributors[people].email %}
