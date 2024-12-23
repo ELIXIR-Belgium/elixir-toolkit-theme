@@ -17,7 +17,7 @@
 {%- else %}
 {%- for page in site.pages %}
 {%- if page.contributors and page.search_exclude != true and page.contributors.size != 0 %}
-{%- assign pagecontr = page.contributors | join: ", " %}
+{%- assign pagecontr = page.contributors | join: " / " %}
 {%- if allcontrstr %}
 {%- assign allcontrstr = allcontrstr | append: ", " | append: pagecontr %}
 {%- else %}
