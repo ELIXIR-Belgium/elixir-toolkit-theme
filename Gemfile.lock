@@ -130,7 +130,7 @@ GEM
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.6.0)
     uri (1.0.2)
-    webrick (1.8.2)
+    webrick (1.9.1)
 
 PLATFORMS
   x86_64-linux
@@ -146,7 +146,7 @@ DEPENDENCIES
   jekyll-sitemap (~> 1.4)
   jemoji (~> 0.13.0)
   kramdown-parser-gfm (~> 1.1)
-  webrick (~> 1.8.2)
+  webrick (~> 1.9.1)
 
 BUNDLED WITH
    2.2.33

@@ -16,9 +16,9 @@
 #     orcid: 0000-0003-0522-5674
 #     role: editor
 #     affiliation: ["VIB Data Core", "ELIXIR-BE"]
-# Short example contributor:
+# Short Example Contributor:
 #     affiliation: Affiliation 
-# Long example contributor:
+# Long Example Contributor:
 #     role: role
 #     image_url: images/infrastructures/ELIXIR_BELGIUM_white_background.svg
 #     affiliation: Very long affiliation + Very long institute
