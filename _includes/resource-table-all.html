@@ -17,7 +17,7 @@
 {%- endfor %}
 {%- endunless %}
 {%- unless tools.size == 0  and tool_matches_total == 0 %}
-tools: {{tools}} and tool.size: {{tools}} and tool matches total: {{tool_matches_total}}
+tools: {{tools}} and tool.size: {{tools.size}} and tool matches total: {{tool_matches_total}}
 {%- if include.tag and tools.size != 0 %}
 <a class="visually-hidden-focusable" href='#skip-tool-table'>Skip tool table</a>
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
