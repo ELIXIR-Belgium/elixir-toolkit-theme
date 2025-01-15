@@ -13,8 +13,6 @@
 {%- unless tool_matches.size == 0  %}
 {%- assign tool_matches_total = tool_matches_total | plus: tool_matches.size %}
 {%- endunless %}
-{%- else %}
-{%- assign tool_matches_total = tool_matches_total | plus: country_page.national_resources.size %}
 {%- endif %}
 {%- endfor %}
 {%- endunless %}
