@@ -10,7 +10,6 @@
 {%- for country_page in country_pages %}
 {%- if include.tag %}
 {%- assign tool_matches = country_page.national_resources | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
-{{tool_matches}}
 {%- unless tool_matches.size == 0  %}
 {%- assign tool_matches_total = tool_matches_total | plus: tool_matches.size %}
 {%- endunless %}
@@ -19,6 +18,7 @@
 {%- endunless %}
 {%- unless tools.size == 0  and tool_matches_total == 0 %}
 {%- if include.tag and tools.size != 0 %}
+{{tool}}
 <a class="visually-hidden-focusable" href='#skip-tool-table'>Skip tool table</a>
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
 <a data-bs-toggle="collapse" href="#tools_collapse" role="button" aria-expanded="false" aria-controls="tools_collapse" class="d-flex align-items-baseline pb-3 border-top info-collapse">
