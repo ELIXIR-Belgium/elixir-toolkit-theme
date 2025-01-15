@@ -6,7 +6,6 @@
 {%- assign tool_matches_total = 0 %}
 {%- assign country_pages = site.pages | where_exp: "item", "item.search_exclude != true" | where_exp:"item","item.national_resources != nil" %}
 {%- unless country_pages.size == 0  %}
-{%- assign tool_matches_total = 0 %}
 {%- assign query = "related_pages." | append: page.type %}
 {%- for country_page in country_pages %}
 {%- if include.tag %}
