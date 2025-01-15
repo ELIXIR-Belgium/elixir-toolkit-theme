@@ -11,9 +11,11 @@
 {%- for country_page in country_pages %}
 {%- if include.tag %}
 {%- assign tool_matches = country_page.national_resources | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
-{%- if tool_matches %}
+{%- unless tool_matches.size == 0 %}
 {%- assign tool_matches_total = tool_matches_total | plus: tool_matches.size %}
-{%- endif %}
+{%- endunless %}
+{%- else %}
+{%- assign tool_matches_total = tool_matches_total | plus: country_page.national_resources.size %}
 {%- endif %}
 {%- endfor %}
 {%- endunless %}
