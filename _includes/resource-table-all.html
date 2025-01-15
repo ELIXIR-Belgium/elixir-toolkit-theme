@@ -3,6 +3,7 @@
 {%- else %}
 {%- assign tools = site.data.tool_and_resource_list | add_related_pages | sort_natural: "name" %}
 {%- endif %}
+{%- assign tool_matches_total = 0 %}
 {%- assign country_pages = site.pages | where_exp: "item", "item.search_exclude != true" | where_exp:"item","item.national_resources != nil" %}
 {%- unless country_pages.size == 0  %}
 {%- assign tool_matches_total = 0 %}
