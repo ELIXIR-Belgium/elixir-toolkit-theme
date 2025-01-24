@@ -34,9 +34,7 @@ layout: default
         {%- endif %}
         {% include affiliation-tiles-page.html %}
         {% include contributor-minitiles-page.html %}
-        {% if page.include_citation %}
-        {% include citation.html %}
-        {% endif %}
+        {% include citation-page.html %}
         {%- if site.theme_variables.github_buttons.position == "bottom" %}
         <div id="github-buttons-wrapper" class="d-flex mt-5">
         {% include github-buttons.html %}
