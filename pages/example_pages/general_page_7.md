@@ -5,6 +5,7 @@ contributors: [Bert Droesbeke, Long Example Contributor , Example Contributor, E
 coordinators: [Bert Droesbeke] 
 description: This description is used when the page is listed
 page_id: gp7
+page_citation: true
 ---
 
 
