@@ -166,7 +166,7 @@ This will start the docker container and serve the website locally. Make sure th
 - [dHMp norge](https://dhp-stottepakke.github.io/pages/) (ELIXIR Norway)
 - [Learning-Library](https://patcapon39.github.io/Learning-Library/) (Australian BioCommons)
 - [ELIXIR-IT Training Platform](https://elixir-iib-training.github.io/site/training_courses) (ELIXIR IT)
-- [FAIRDOM-SEEK Documentation](https://docs.seek4science.org/) (SEEK Comminity)
+- [FAIRDOM-SEEK Documentation](https://docs.seek4science.org/) (SEEK community)
 - [FAIR Lesson Plan Handbook](https://elixir-europe-training.github.io/ELIXIR-TrP-FAIR-Converge/)  (ELIXIR Training platform)
 - [Data Steward Handbook](https://elixir-uk.github.io/elixir-ds-handbook) (ELIXIR RDM Community)
 - Want your instance here? [Open an issue](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/issues)
