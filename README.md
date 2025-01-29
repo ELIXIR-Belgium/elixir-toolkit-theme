@@ -151,7 +151,7 @@ This will start the docker container and serve the website locally. Make sure th
 
 - [RDMkit](https://rdmkit.elixir-europe.org/) (CONVERGE)
 - [WorkflowHub](https://about.workflowhub.eu/) (EOSC-life project)
-- [RO-crate](https://www.researchobject.org/ro-crate-2024) (EOSC)
+- [RO-crate](https://www.researchobject.org/ro-crate/) (EOSC)
 - [Infectious Diseases Toolkit](https://www.infectious-diseases-toolkit.org/) (BY-COVID)
 - [FAIRDOM](https://fair-dom.org/) (FAIRDOM community)
 - [How-to-Guides](https://australianbiocommons.github.io/how-to-guides/) (Australian BioCommons)
