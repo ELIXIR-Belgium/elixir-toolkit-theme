@@ -100,11 +100,12 @@
                 <p class="card-text h-100">{{ current_page.description}}</p>
                 {%- endif %}
                 {%- if current_page.affiliations %}
+                {%- assign pageaffil = current_page.affiliations | sort %}
                 {%- assign alllogos = site.data.affiliations %}
                 {%- assign allcountries = site.data.countries %}
                 <div class="d-flex align-items-center flex-wrap gap-2">
                     <span><b><small>Affiliations:</small></b></span>
-                    {%- for affiliation in current_page.affiliations %}
+                    {%- for affiliation in pageaffil %}
                     {%- assign filter_affiliation = alllogos | where: "name", affiliation | first %}
                     {%- assign country = affiliation | upcase %}
                     {%- if affiliation.size == 2 %}
