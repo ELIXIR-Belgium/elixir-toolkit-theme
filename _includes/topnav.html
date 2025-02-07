@@ -56,6 +56,21 @@
                         <a class="nav-link ps-2 d-flex align-items-center" href="{{site.theme_variables.topnav.twitter}}"><i class="fa-brands fa-x-twitter me-2"></i>Twitter</a>
                     </li>
                     {%- endif %}
+                    {%- if site.theme_variables.topnav.bluesky %}
+                    <li class="nav-item">
+                        <a class="nav-link ps-2 d-flex align-items-center" href="{{site.theme_variables.topnav.bluesky}}"><i class="fa-brands fa-bluesky me-2"></i>Bluesky</a>
+                    </li>
+                    {%- endif %}
+                    {%- if site.theme_variables.topnav.fosstodon %}
+                    <li class="nav-item">
+                        <a class="nav-link ps-2 d-flex align-items-center" href="{{site.theme_variables.topnav.fosstodon}}"><i class="fa-brands fa-mastodon me-2"></i>FOSStodon</a>
+                    </li>
+                    {%- endif %}
+                    {%- if site.theme_variables.topnav.linkedin %}
+                    <li class="nav-item">
+                        <a class="nav-link ps-2 d-flex align-items-center" href="{{site.theme_variables.topnav.linkedin}}"><i class="fa-brands fa-linkedin me-2"></i>LinkedIn</a>
+                    </li>
+                    {%- endif %}
                     {%- if site.theme_variables.topnav.github or site.theme_variables.topnav.github == nil %}
                     <li class="nav-item">
                         <a class="nav-link ps-2 d-flex align-items-center" href="{{site.github.repository_url}}">
