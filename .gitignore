@@ -4,3 +4,4 @@ _site/
 .jekyll-metadata
 .vscode/launch.json
 .ruby-version
+Gemfile.lock
