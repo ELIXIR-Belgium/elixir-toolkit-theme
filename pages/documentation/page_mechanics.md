@@ -39,6 +39,8 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `page_id`: Unique identifier of a page used to list Related pages or to tag tools in the *tool_and_resource_list.yml* file. It is usually a shortened version of the page name or title, with small letters, or an acronym, with capital and small letters. Make sure it does not contain hyphens if you want to make use of the Tools and resources table. .
 
+* `page_img`: Specify here an image to represent the page, which corresponds to a filename in the *images/* directory. This image will appear small to the right of the page title and in the section navigation tiles. It may be used with logos for products or services. Example: infrastructures/ELIXIR_BELGIUM_white_background.svg 
+
 * `datatable`: use this attribute to activate the pagination + sorting + searching in tables.
 
 * `type`: The type of page, used for [website sections](website_sections).

@@ -20,6 +20,8 @@ matomo:
 # Matomo domain where Matomo is running
 matomo_id:
 # Integer indicating the Matomo Website ID
+matomo_cookies: true
+# Boolean that determines whether a Matomo tracking cookie is used or not
 
 plausible: 
 # Plausible tag
@@ -66,6 +68,8 @@ theme_variables:
   #   edit_me: true
   #   open_issue: true
   #   history: true
+  # datatables:
+  #   searchbuilder: True
   # headings:
   #   related-pages: Related pages
   #   more-information-tiles: More information

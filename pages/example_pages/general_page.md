@@ -1,7 +1,7 @@
 ---
 title: General page example
 type: example_pages
-contributors: [Bert Droesbeke, Long Example Contributor , Example Contributor, Example Contributor, Example Contributor, Example Contributor, Example Contributor, Example Contributor, Example Contributor]
+contributors: [Bert Droesbeke, Long Example Contributor , Example Contributor, Example Contributor2, Example Contributor3]
 coordinators: [Bert Droesbeke] 
 description: This description is used when the page is listed
 page_id: gp1
@@ -24,6 +24,7 @@ training:
     url: https://tess.elixir-europe.org/
   - name: Training not in TeSS
     url: https://www.youtube.com
+summary: This summary is used below the page title
 related_pages: 
     example_pages: [gp2, gp3]
 ---

@@ -3,7 +3,7 @@ extra_line:
 columns:
   - type: image
     image_width: 150px
-    width: 3
+    width: 2
     src: 'images/infrastructures/ELIXIR_BELGIUM_white_background.svg'
     alt: ELIXIR Belgium logo
   - type: links
@@ -14,15 +14,11 @@ columns:
         url: /contributors
       - url_text: Getting started
         url: /getting_started
-  - type: links
+  - type: text
     width: 3
-    children: 
-      - url_text: About
-        url: /about
-      - url_text: Accessibility
-        url: /accessibility
-      - url_text: Privacy
-        url: /privacy
+    content: |
+      This is a multiline \
+      example test snippet.
   - type: image
     image_width: 100px
     width: 2
@@ -30,7 +26,7 @@ columns:
     alt: European flag
   - type: image
     image_width: 88px
-    width: 1
+    width: 2
     src: 'assets/img/ett_compact_logo.svg'
     alt: Jekyll Bootstrap theme logo
 

@@ -9,7 +9,7 @@ One of the themes key features is the support for a central tool and resource ta
 
 ## Way of working
 
-The [all_tools_and_resources](all_tools_and_resources) list is based on the [yaml file](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/main/_data/tool_and_resource_list.yml) in the `_data` directory. Tools and resources can be manually linked to [FAIRsharing.org](https://fairsharing.org/), [Bio.tools](https://bio.tools) and [TeSS](https://tess.elixir-europe.org/) and [EuroPMC](https://europepmc.org/).
+The [all_tools_and_resources](#listing-all-resources) list is based on the [yaml file](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/main/_data/tool_and_resource_list.yml) in the `_data` directory. Tools and resources can be manually linked to [FAIRsharing.org](https://fairsharing.org/), [Bio.tools](https://bio.tools) and [TeSS](https://tess.elixir-europe.org/) and [EuroPMC](https://europepmc.org/).
 
 
 ## Prerequisites
@@ -20,7 +20,7 @@ The [all_tools_and_resources](all_tools_and_resources) list is based on the [yam
   * `gem "elixir-toolkit-theme-plugins"` is added to the `/Gemfile`
   * `- elixir-toolkit-theme-plugins` is added to the plugins block in the `_config.yml` file
   * A recent version of the ELIXIR Toolkit Theme is used. See the `remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@VERSION` line in the `_config.yml` file.
-* GitHub Actions is used to deploy the website. See [instructions](https://elixir-belgium.github.io/elixir-toolkit-theme/#deployment).
+  * GitHub Actions is used to deploy the website. See [instructions](https://elixir-belgium.github.io/elixir-toolkit-theme/#deployment).
 
 
 ## The main yaml file

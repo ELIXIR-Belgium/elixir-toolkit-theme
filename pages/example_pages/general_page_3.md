@@ -4,7 +4,7 @@ type: example_pages
 description: This page has page level resources
 country_code: BE
 page_id: gp3
-
+toc: false
 ref_to_main_resources:
   - bioconda
   - github

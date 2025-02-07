@@ -52,9 +52,9 @@
     <script src="{{ 'assets/js/lunr.min.js' | relative_url }}"></script>
     <script src="{{ 'assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
     <script src="{{ 'assets/js/anchor.min.js' | relative_url }}"></script>
-    {% unless page.toc == false %}<script src="{{ 'assets/js/toc.js' | relative_url }}"></script>{% endunless %}
+    {% if page.toc or page.toc == nil %}<script src="{{ 'assets/js/toc.js' | relative_url }}?{{site.time | date: '%s'}}"></script>{% endif %}
     <script src="{{ 'assets/js/jquery.navgoco.js' | relative_url }}"></script>
-    <script src="{{ 'assets/js/main.js' | relative_url }}"></script>
+    <script src="{{ 'assets/js/main.js' | relative_url }}?{{site.time | date: '%s'}}"></script>
     <script src="{{ 'assets/js/search.js' | relative_url }}"></script>
     <script src="{{ 'assets/js/clipboard.min.js' | relative_url }}"></script>
     {%- if page.datatable == true %}
@@ -62,6 +62,13 @@
     <link rel="stylesheet" type="text/css" href="{{ 'assets/css/dataTables.bootstrap5.min.css' | relative_url }}">
     <script type="text/javascript" charset="utf8" src="{{ 'assets/js/jquery.dataTables.min.js' | relative_url }}"></script>
     <script type="text/javascript" charset="utf8" src="{{ 'assets/js/dataTables.bootstrap5.min.js' | relative_url }}"></script>
+    {%- if site.theme_variables.datatables.searchbuilder %}
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/css/dataTables.dateTime.min.css' | relative_url }}">
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/css/searchBuilder.bootstrap5.min.css' | relative_url }}">
+    <script type="text/javascript" charset="utf8" src="{{ 'assets/js/dataTables.searchBuilder.min.js' | relative_url }}"></script>
+    <script type="text/javascript" charset="utf8" src="{{ 'assets/js/dataTables.dateTime.min.js' | relative_url }}"></script>
+    <script type="text/javascript" charset="utf8" src="{{ 'assets/js/searchBuilder.bootstrap5.min.js' | relative_url }}"></script>
+    {%- endif %}
     <script type="text/javascript">
         $(document).ready(function () {
             $('table.display').each(function() {
@@ -69,6 +76,11 @@
                     lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
                     stateSave: true,
                     searching: true,
+                    {%- if site.theme_variables.datatables.searchbuilder %}
+                    layout: {
+                        top1Start: 'searchBuilder'
+                    },
+                    {%- endif %}
                     info: true,
                     pageLength: 10,
                     language: {
@@ -82,6 +94,7 @@
                             $('#'+tableId+'_wrapper .dt-search').hide();
                             $('#'+tableId+'_wrapper .dt-info').hide();
                         }
+                        $('.dt-layout-table .dt-layout-full').addClass('table-responsive');
                     }
                 });
             })
@@ -111,6 +124,9 @@
     <script>
         var _paq = window._paq = window._paq || [];
         /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        {%- if site.matomo_cookies == false %}
+        _paq.push(['disableCookies']);
+        {%- endif %}
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
         (function() {

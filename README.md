@@ -37,7 +37,7 @@ remote_theme: ELIXIR-Belgium/elixir-toolkit-theme
 You can lock it onto a specific version using:
 
 ```yaml
-remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@3.0.1
+remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@4.1.0
 ```
 
 ### Using Ruby Gems (alternative)
@@ -50,7 +50,7 @@ gem "elixir-toolkit-theme"
 You can lock it onto a specific version like this:
 
 ```ruby
-gem "elixir-toolkit-theme", "~> 3.0.1"
+gem "elixir-toolkit-theme", "~> 4.1.0"
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
@@ -151,10 +151,9 @@ This will start the docker container and serve the website locally. Make sure th
 
 - [RDMkit](https://rdmkit.elixir-europe.org/) (CONVERGE)
 - [WorkflowHub](https://about.workflowhub.eu/) (EOSC-life project)
-- [RO-crate](https://www.researchobject.org/ro-crate-2024) (EOSC)
+- [RO-crate](https://www.researchobject.org/ro-crate/) (EOSC)
 - [Infectious Diseases Toolkit](https://www.infectious-diseases-toolkit.org/) (BY-COVID)
 - [FAIRDOM](https://fair-dom.org/) (FAIRDOM community)
-- [ABB intranet page at PSB](https://intranet.psb.ugent.be/abb/) (VIB department)
 - [How-to-Guides](https://australianbiocommons.github.io/how-to-guides/) (Australian BioCommons)
 - [SPLASH](https://elixir-europe-training.github.io/ELIXIR-Training-SPLASH/) (ELIXIR Training platform)
 - [1+MG Framework](https://framework.onemilliongenomes.eu/) (GDI)
@@ -167,6 +166,9 @@ This will start the docker container and serve the website locally. Make sure th
 - [dHMp norge](https://dhp-stottepakke.github.io/pages/) (ELIXIR Norway)
 - [Learning-Library](https://patcapon39.github.io/Learning-Library/) (Australian BioCommons)
 - [ELIXIR-IT Training Platform](https://elixir-iib-training.github.io/site/training_courses) (ELIXIR IT)
+- [FAIRDOM-SEEK Documentation](https://docs.seek4science.org/) (SEEK community)
+- [FAIR Lesson Plan Handbook](https://elixir-europe-training.github.io/ELIXIR-TrP-FAIR-Converge/)  (ELIXIR Training platform)
+- [Data Steward Handbook](https://elixir-uk.github.io/elixir-ds-handbook) (ELIXIR RDM Community)
 - Want your instance here? [Open an issue](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/issues)
 
 ## Dependencies
