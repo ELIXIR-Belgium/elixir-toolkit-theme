@@ -71,6 +71,9 @@ theme_variables:
     brand_logo: assets/img/main_logo.svg
     github: true
     twitter: false
+    bluesky: false
+    linkedin: false
+    fosstodon: false
   theme_color: 0d6efd
   fonts:
     - url towards a font
@@ -104,5 +107,8 @@ More detailed information about these settings can be found here:
   *  `brand_logo`: Custom path towards the brand logo, in case the assets/img/main_logo.svg can not be used.
   *  `github`: Enable or disable the appearance of the Github repo nav link. Default: *true*
   *  `twitter`: Enable or disable the appearance of the Twitter nav link by adding the url towards the twitter page. Default: *false*
+  *  `bluesky`: Enable or disable the appearance of the Bluesky nav link by adding the url towards the Bluesky page. Default: *false*
+  *  `linkedin`: Enable or disable the appearance of the Linkedin nav link by adding the url towards the Linkedin page. Default: *false*
+  *  `fosstodon`: Enable or disable the appearance of the Fosstodon nav link by adding the url towards the Fosstodon page. Default: *false*
 * `theme_color`: This is the primary theme color which is used in the metadata of the website. Please use the hex color without the hashtag as value.
 * `fonts`: List here the urls towards google fonts to include custom fonts for your website.
