@@ -85,6 +85,7 @@ theme_variables:
     # brand_logo: assets/img/main_logo.svg
     # github: true
     # twitter: false
+    # bluesky: false
   # theme_color: 0d6efd
   # fonts:
   #   - url towards a font

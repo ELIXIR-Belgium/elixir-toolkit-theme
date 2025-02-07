@@ -103,6 +103,7 @@ More detailed information about these settings can be found here:
   *  `theme`: This variable is needed to change between a dark and a light top navigation. possible values: *dark* and *light*
   *  `brand_logo`: Custom path towards the brand logo, in case the assets/img/main_logo.svg can not be used.
   *  `github`: Enable or disable the appearance of the Github repo nav link. Default: *true*
-  *  `twitter`: Enable or disable the appearance of the Twitter nav link by adding the url towards the twitter page. Default: *false*
+  *  `twitter`: Enable or disable the appearance of the X (formerly Twitter) nav link by adding the url towards the twitter page. Default: *false*  
+  *  `bluesky`: Enable or disable the appearance of the Bluesky nav link by adding the url towards the Bluesky page. Default: *false*
 * `theme_color`: This is the primary theme color which is used in the metadata of the website. Please use the hex color without the hashtag as value.
 * `fonts`: List here the urls towards google fonts to include custom fonts for your website.
