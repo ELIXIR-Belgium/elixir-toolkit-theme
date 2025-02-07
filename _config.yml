@@ -87,7 +87,7 @@ theme_variables:
     # twitter: false
     # bluesky: false
     # linkedin: false
-    # mastodon: false
+    # fosstodon: false
   # theme_color: 0d6efd
   # fonts:
   #   - url towards a font
