@@ -45,8 +45,7 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `type`: The type of page, used for [website sections](website_sections).
 
-* `page_citation`: When set to true, it will cause the citation section for the page to be generated in the format:
-`<author names>. <page title> (<site name> material). Online: <page URL>. Accessed: <date>`.
+* `page_citation`: When set to true, it will cause the citation section for the page to be generated in the format: `<author names>. <page title>. <site domain>. <page URL>. <date accessed>.`
 
 ### Related pages
 
