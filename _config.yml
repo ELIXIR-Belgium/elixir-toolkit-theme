@@ -80,14 +80,14 @@ theme_variables:
   # toc:
   #   min_headings: 2
   #   headings: 'h2'
-  # topnav:
+  topnav:
     # theme: light
     # brand_logo: assets/img/main_logo.svg
     # github: true
-    # twitter: false
-    # bluesky: false
-    # linkedin: false
-    # fosstodon: false
+    twitter: https://x.com/
+    bluesky: https://bsky.app/
+    linkedin: https://linkedin.com/
+    fosstodon: https://fosstodon.org/
   # theme_color: 0d6efd
   # fonts:
   #   - url towards a font

@@ -42,34 +42,38 @@
                         {%- endif %}
                     </li>
                     {%- endfor %}
-                    {%- if topnav.subitems.size > 1 %}
-                    {%- assign topnav_theme = site.theme_variables.topnav.theme | default: "light" %}
+                    {%- assign topnav = site.theme_variables.topnav %}
+                    {%- assign topnav_theme = topnav.theme | default: "light" %}
                     {%- if topnav_theme == "light" %}
                     {%- assign break_color = "dark" %}
                     {%- else %}
                     {%- assign break_color = "light" %}
-                    {%- endif -%}
+                    {%- endif %}
+                    {%- if site.data.topnav.subitems.size > 1 %}   
                     <li class="nav-item nav-break bg-{{break_color}} opacity-25"></li>
                     {%- endif %}
                     {%- if site.theme_variables.topnav.twitter %}
                     <li class="nav-item">
-                        <a class="nav-link ps-2 d-flex align-items-center" href="{{site.theme_variables.topnav.twitter}}"><i class="fa-brands fa-x-twitter me-2"></i>X-Twitter</a>
+                        <a class="nav-link" href="{{site.theme_variables.topnav.twitter}}"><i class="fa-brands fa-x-twitter"></i></a>
                     </li>
                     {%- endif %}
                     {%- if site.theme_variables.topnav.bluesky %}
                     <li class="nav-item">
-                        <a class="nav-link ps-2 d-flex align-items-center" href="{{site.theme_variables.topnav.bluesky}}"><i class="fa-brands fa-bluesky me-2"></i>Bluesky</a>
+                        <a class="nav-link" href="{{site.theme_variables.topnav.bluesky}}"><i class="fa-brands fa-bluesky"></i></a>
                     </li>
                     {%- endif %}
                     {%- if site.theme_variables.topnav.fosstodon %}
                     <li class="nav-item">
-                        <a class="nav-link ps-2 d-flex align-items-center" href="{{site.theme_variables.topnav.fosstodon}}"><i class="fa-brands fa-mastodon me-2"></i>FOSStodon</a>
+                        <a class="nav-link" href="{{site.theme_variables.topnav.fosstodon}}"><i class="fa-brands fa-mastodon"></i></a>
                     </li>
                     {%- endif %}
                     {%- if site.theme_variables.topnav.linkedin %}
                     <li class="nav-item">
-                        <a class="nav-link ps-2 d-flex align-items-center" href="{{site.theme_variables.topnav.linkedin}}"><i class="fa-brands fa-linkedin me-2"></i>LinkedIn</a>
+                        <a class="nav-link" href="{{site.theme_variables.topnav.linkedin}}"><i class="fa-brands fa-linkedin"></i></a>
                     </li>
+                    {%- endif %}
+                    {%- if topnav.twitter or topnav.bluesky or topnav.fosstodon or topnav.linkedin %}
+                    <li class="nav-item nav-break bg-{{break_color}} opacity-25"></li>
                     {%- endif %}
                     {%- if site.theme_variables.topnav.github or site.theme_variables.topnav.github == nil %}
                     <li class="nav-item">
