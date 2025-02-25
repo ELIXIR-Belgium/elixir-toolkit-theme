@@ -4,9 +4,13 @@
 
 {%- if show_github_edit_button or show_github_history_button or show_github_open_issue_button %}
 <div id="edit-me" class="btn-group">
-    {%- if show_github_edit_button %}
-    {%- assign repo_url = page.custom_repo_url | default: site.github.repository_url %}
-    {%- assign file_path = page.custom_file_path | default: page.path %}
+    {% if show_github_edit_button %}
+    {% assign repo_url = page.custom_repo_url | default: site.github.repository_url %}
+    {% if page.custom_editme %}
+    {% assign file_path = page.custom_editme %}
+    {% else %}
+    {% assign file_path = page.custom_file_path | default: page.path %}
+    {% endif %}
     <a role="button" data-bs-toggle="tooltip"
         title="Propose changes to the content of this page on {{site.theme_variables.git_host | default: 'GitHub' }}"
         href="{{repo_url}}/blob/{{site.github.source.branch}}/{{file_path}}"
