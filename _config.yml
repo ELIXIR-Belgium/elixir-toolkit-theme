@@ -23,9 +23,9 @@ matomo_id:
 matomo_cookies: true
 # Boolean that determines whether a Matomo tracking cookie is used or not
 
-plausible: 
+plausible:
 # Plausible tag
-plausible_src: 
+plausible_src:
 # default: 'https://plausible.io/js/plausible.js
 
 exclude:
@@ -58,12 +58,14 @@ plugins:
   - jemoji
   - webrick
 
-theme_variables: 
+show_breadcrumb: false
+
+theme_variables:
   # git_host: GitHub
   # back_to_top: true
   # dev-info-banner: false
   # privacy_statement_url: /privacy
-  # github_buttons: 
+  # github_buttons:
   #   position: top
   #   edit_me: true
   #   open_issue: true
