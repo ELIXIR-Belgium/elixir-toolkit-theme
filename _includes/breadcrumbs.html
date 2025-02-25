@@ -1,0 +1,24 @@
+<nav id="breadcrumbs" aria-label="breadcrumb" style="--bs-breadcrumb-divider: '>';">
+    {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+    <ol class="breadcrumb">
+        {% if crumbs.size > 0 %}
+        <li class="breadcrumb-item">
+            <a href="{{ site.baseurl }}/">Home</a>
+        </li>
+        {% endif %}
+        {% for crumb in crumbs offset: 1 %}
+        {% if forloop.last %}
+        <li class="breadcrumb-item last" aria-current="page">
+            {{ page.title }}
+        </li>
+        {% else %}
+        <li class="breadcrumb-item">
+            <a
+                href="{{ site.baseurl }}{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' | replace:'without-plugin/','without-plugins/' }}{% endfor %}">{{
+                crumb | replace:'-',' ' | remove:'.html' | capitalize }}
+            </a>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ol>
+</nav>
