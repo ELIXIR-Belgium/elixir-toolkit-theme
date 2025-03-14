@@ -29,7 +29,7 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `no_robots`: By setting this field to true, the page will not end up in the search results of google or any other search engine. Default: *false*
 
-* `custom_editme`: This attribute can be used to specify an alternative file when clicked on the edit-me or history button. Example: _data/news.yml
+* `custom_editme`: This attribute can be used to specify an alternative file when clicked on the edit-me or history button. Example: _data/news.yml. **!This will be deprecated in the next major release (v5.0)!**
 
 * `keywords`: List here all the keywords that can be used to find the page using the searchbox in the right upper corner of the page, lowercase.
 
@@ -39,13 +39,17 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `page_id`: Unique identifier of a page used to list Related pages or to tag tools in the *tool_and_resource_list.yml* file. It is usually a shortened version of the page name or title, with small letters, or an acronym, with capital and small letters. Make sure it does not contain hyphens if you want to make use of the Tools and resources table. .
 
-* `page_img`: Specify here an image to represent the page, which corresponds to a filename in the *images/* directory. This image will appear small to the right of the page title and in the section navigation tiles. It may be used with logos for products or services. Example: infrastructures/ELIXIR_BELGIUM_white_background.svg 
+* `page_img`: Specify here an image to represent the page, which corresponds to a filename in the *images/* directory. This image will appear small to the right of the page title and in the section navigation tiles. It may be used with logos for products or services. Example: infrastructures/ELIXIR_BELGIUM_white_background.svg
 
 * `datatable`: use this attribute to activate the pagination + sorting + searching in tables.
 
 * `type`: The type of page, used for [website sections](website_sections).
 
 * `page_citation`: When set to true, it will cause the citation section for the page to be generated in the format: `<author names>. <page title>. <site domain>. <page URL>. <date accessed>.`
+
+* `custom_repo_url`: Specify an alternative GitHub repository that overrides the repository specified in the config file. Default: *site.github.repository_url*.
+
+* `custom_file_path`: Specify an alternative file on the GitHub repository. This replaces the `custom_editme` variable. Default: current path of the page.
 
 ### Related pages
 
@@ -54,11 +58,11 @@ It is important to know that you can also set the these key-value pairs on multi
   If you want pages from the specific section to be shown here as Related pages, list their `page_id`. If you want to list multiple related pages, make sure to put them in a list like this: [page_id1, page_id2]. The specific sections allowed in each page are specified in each page template. Please, do not add extra sections in the metadata of the page.
 
   ```yml
-  related_pages: 
+  related_pages:
     - section_name: [page_id1, page_id2]
     - section_name: [page_id1, page_id2]
     - section_name: [page_id1, page_id2]
-  ``` 
+  ```
 
 
 ### More information
@@ -83,7 +87,7 @@ It is important to know that you can also set the these key-value pairs on multi
     url: https://fairplus.github.io/the-fair-cookbook/content/recipes/reusability/ATI_licensing_data.html
   ```
 
-* `dsw`: Here all relevant Data Stewardship Wizard questions in the Researcher knowledge model are listed. 
+* `dsw`: Here all relevant Data Stewardship Wizard questions in the Researcher knowledge model are listed.
 
   ```yml
   dsw:
@@ -107,13 +111,13 @@ It is important to know that you can also set the these key-value pairs on multi
 * `ref_to_main_resources`: Refer to entries of the "main_tool_ and_resource_table" if institutions, organizations and projects from the country contribute to the development of international tools and resources. List the id of the tool your refer to in the main tools table.
 
   ```yml
-  ref_to_main_resources: 
+  ref_to_main_resources:
     -  resource-id
   ```
 * `national_resources`: List here tools and resources mainly relevant for the specific country
 
   ```yml
-  national_resources: 
+  national_resources:
     - name: Resource name
       description: A general description about the resource
       how_to_access: explantation on how you can access this resource
