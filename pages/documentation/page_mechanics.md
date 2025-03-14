@@ -47,9 +47,9 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `page_citation`: When set to true, it will cause the citation section for the page to be generated in the format: `<author names>. <page title>. <site domain>. <page URL>. <date accessed>.`
 
-* `custom_repo_url [default: site.github.repository_url]`: Specify an alternative GitHub repository that overrides the repository specified in the config file.
+* `custom_repo_url`: Specify an alternative GitHub repository that overrides the repository specified in the config file. Default: *site.github.repository_url*.
 
-* `custom_file_path [default: page.path]`: Specify an alternative file on the GitHub repository. This replaces the `custom_editme` variable.
+* `custom_file_path`: Specify an alternative file on the GitHub repository. This replaces the `custom_editme` variable. Default: current path of the page.
 
 ### Related pages
 
