@@ -58,7 +58,6 @@ plugins:
   - jemoji
   - webrick
 
-show_breadcrumb: false
 
 theme_variables:
   # git_host: GitHub
@@ -93,6 +92,7 @@ theme_variables:
   # theme_color: 0d6efd
   # fonts:
   #   - url towards a font
+  # show_breadcrumb: false
 
 # --- Missing in gitlab: ---
 # github:
