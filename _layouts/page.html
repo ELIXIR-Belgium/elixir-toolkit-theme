@@ -9,21 +9,18 @@ layout: default
         {%- if page.title %}
         {%- if page.type %}
         {%- assign subtitle = page.type | replace: "_", " " | capitalize %}
-        <h1 class="has-subtitle order-1 order-md-0"><span
-                class="d-block text-secondary fs-4 ff-body">{{subtitle}}</span><span class="visually-hidden">:</span> {{
-            page.title }}
-            {%- else %}
-            <h1>{{ page.title }}
-                {%- endif %}
-                {%- if site.theme_variables.github_buttons.position == "top" or
-                site.theme_variables.github_buttons.position == nil %}
-                {% include github-buttons.html %}
-                {%- endif %}
-            </h1>
-            {%- endif %}
-            {%- if page.summary %}
-            <div class="summary">{{page.summary}}</div>
-            {%- endif %}
+        <h1 class="has-subtitle order-1 order-md-0"><span class="d-block text-secondary fs-4 ff-body">{{subtitle}}</span><span class="visually-hidden">:</span> {{ page.title }}
+        {%- else %}
+        <h1>{{ page.title }}
+        {%- endif %}
+        {%- if site.theme_variables.github_buttons.position == "top" or site.theme_variables.github_buttons.position == nil %}
+        {% include github-buttons.html %}
+        {%- endif %}
+        </h1>
+        {%- endif %}
+        {%- if page.summary %}
+        <div class="summary">{{page.summary}}</div>
+        {%- endif %}
     </div>
     {%- if page.toc or page.toc == nil or page.page_img %}
     <div id="toc" class="text-muted sticky-xl-top">
