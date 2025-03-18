@@ -3,6 +3,9 @@ layout: default
 ---
 <main id="main" class="order-1{%- if page.toc or page.toc == nil or page.page_img %} add-grid{% endif %}">
     <div id="intro">
+        {%- if site.theme_variables.breadcrumb %}
+        {% include breadcrumb.html %}
+        {%- endif %}
         {%- if page.title %}
         {%- if page.type %}
         {%- assign subtitle = page.type | replace: "_", " " | capitalize %}
@@ -37,10 +40,8 @@ layout: default
         {% include citation-page.html %}
         {%- if site.theme_variables.github_buttons.position == "bottom" %}
         <div id="github-buttons-wrapper" class="d-flex mt-5">
-        {% include github-buttons.html %}
+            {% include github-buttons.html %}
         </div>
         {%- endif %}
     </div>
 </main>
-
-
