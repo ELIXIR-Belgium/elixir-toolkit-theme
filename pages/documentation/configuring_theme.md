@@ -112,6 +112,6 @@ More detailed information about these settings can be found here:
   *  `fosstodon`: Enable or disable the appearance of the Fosstodon nav link by adding the url towards the Fosstodon page. Default: *false*
 * `theme_color`: This is the primary theme color which is used in the metadata of the website. Please use the hex color without the hashtag as value.
 * `fonts`: List here the urls towards google fonts to include custom fonts for your website.
-* `show_breadcrumb`: Adds a breadcrumb above the title of every page. The breadcrumb will always represent the URL pattern. Default: *false*
+* `show_breadcrumb`: Adds a breadcrumb above the title of every page. The breadcrumb will always represent the URL pattern and works best in combination with [permalink style](https://jekyllrb.com/docs/permalinks/#built-in-formats) *pretty*. Default: *false*
 
 
