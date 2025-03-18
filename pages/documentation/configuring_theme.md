@@ -77,6 +77,7 @@ theme_variables:
   theme_color: 0d6efd
   fonts:
     - url towards a font
+  show_breadcrumb: false
 ```
 
 More detailed information about these settings can be found here:
