@@ -3,10 +3,9 @@ layout: default
 ---
 <main id="main" class="order-1{%- if page.toc or page.toc == nil or page.page_img %} add-grid{% endif %}">
     <div id="intro">
-        {% if site.theme_variables.show_breadcrumb %}
-        {% include breadcrumbs.html %}
-        {% endif %}
-
+        {%- if site.theme_variables.breadcrumb %}
+        {% include breadcrumb.html %}
+        {%- endif %}
         {%- if page.title %}
         {%- if page.type %}
         {%- assign subtitle = page.type | replace: "_", " " | capitalize %}

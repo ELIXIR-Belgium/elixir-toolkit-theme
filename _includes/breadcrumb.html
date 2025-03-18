@@ -1,4 +1,4 @@
-<nav id="breadcrumbs" aria-label="breadcrumb">
+<nav id="breadcrumb" aria-label="breadcrumb">
     {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
     <ol class="breadcrumb">
         {% if crumbs.size > 0 %}
@@ -13,11 +13,12 @@
         </li>
         {% else %}
         {% capture crumb_url %}{{ site.baseurl }}{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: "/" }}{% endfor %}{% endcapture %}
+        {% assign crumb_title = crumb | replace:'-',' ' | replace:'_',' ' | remove:'.html' | capitalize %} 
         {% assign has_index = site.pages | where: "url", crumb_url | first %}
         <li class="breadcrumb-item mt-0">
-            {% if has_index %}<a href="{{crumb_url}}">{{ has_index.title }}</a>
+            {% if has_index %}<a href="{{crumb_url}}">{% if has_index.title %}{{ has_index.title }}{% else %}{{ crumb_title }}{% endif %}</a>
             {% else %}
-            {{ crumb | replace:'-',' ' | replace:'_',' ' | remove:'.html' | capitalize }}
+            {{ crumb_title }}
             {% endif %}
         </li>
         {% endif %}
