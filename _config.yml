@@ -92,7 +92,7 @@ theme_variables:
   # theme_color: 0d6efd
   # fonts:
   #   - url towards a font
-  breadcrumb: true
+  # breadcrumb: false
 
 # --- Missing in gitlab: ---
 # github:
