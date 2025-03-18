@@ -12,10 +12,10 @@
             {{ page.title }}
         </li>
         {% else %}
-        {% capture crumb_url %}{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | relative_url }}{% endfor %}/{% endcapture %}
+        {% capture crumb_url %}{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb }}{% endfor %}/{% endcapture %}
         {% assign has_index = site.pages | where: "url", crumb_url %}
         <li class="breadcrumb-item">
-            {% if has_index.size == 1 %}<a href="{{crumb_url}}">{% endif %}
+            {% if has_index.size == 1 %}<a href="{{crumb_url | relative_url}}">{% endif %}
             {{ crumb | replace:'-',' ' | replace:'_',' ' | remove:'.html' | capitalize }}
             {% if has_index.size == 1 %}</a>{% endif %}
         </li>
