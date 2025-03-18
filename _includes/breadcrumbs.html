@@ -3,7 +3,7 @@
     <ol class="breadcrumb">
         {% if crumbs.size > 0 %}
         <li class="breadcrumb-item">
-            <a href="{{ site.baseurl }}/">Home</a>
+            <a href="{{ site.baseurl }}/"><i class="fa-solid fa-house me-2 fa-xs"></i></a>
         </li>
         {% endif %}
         {% for crumb in crumbs offset: 1 %}
@@ -13,11 +13,12 @@
         </li>
         {% else %}
         {% capture crumb_url %}{{ site.baseurl }}{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: "/" }}{% endfor %}{% endcapture %}
-        {% assign has_index = site.pages | where: "url", crumb_url %}
+        {% assign has_index = site.pages | where: "url", crumb_url | first %}
         <li class="breadcrumb-item">
-            {% if has_index.size == 1 %}<a href="{{crumb_url}}">{% endif %}
+            {% if has_index %}<a href="{{crumb_url}}">{{ has_index.title }}</a>
+            {% else %}
             {{ crumb | replace:'-',' ' | replace:'_',' ' | remove:'.html' | capitalize }}
-            {% if has_index.size == 1 %}</a>{% endif %}
+            {% endif %}
         </li>
         {% endif %}
         {% endfor %}
