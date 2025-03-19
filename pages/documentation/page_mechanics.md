@@ -49,6 +49,8 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `custom_repo_url`: Specify an alternative GitHub repository that overrides the repository specified in the config file. Default: *site.github.repository_url*.
 
+* `custom_repo_branch`: Specify an alternative branch on the GitHub repository that overrides the branch in the config file: *site.github.source.branch*.
+
 * `custom_file_path`: Specify an alternative file on the GitHub repository. This replaces the `custom_editme` variable. Default: current path of the page.
 
 ### Related pages
