@@ -13,5 +13,5 @@ group :jekyll_plugins do
   gem "jekyll-relative-links", "~> 0.7.0"
   gem "jekyll-seo-tag", "~> 2.8"
   gem "jekyll-remote-theme", "~> 0.4.3"
-  gem "jekyll-sass-converter", "~> 2.0
+  gem "jekyll-sass-converter", "~> 2.0"
 end
