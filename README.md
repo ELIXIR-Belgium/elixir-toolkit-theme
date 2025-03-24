@@ -37,7 +37,7 @@ remote_theme: ELIXIR-Belgium/elixir-toolkit-theme
 You can lock it onto a specific version using:
 
 ```yaml
-remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@4.1.0
+remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@4.2.0
 ```
 
 ### Using Ruby Gems (alternative)
@@ -50,7 +50,7 @@ gem "elixir-toolkit-theme"
 You can lock it onto a specific version like this:
 
 ```ruby
-gem "elixir-toolkit-theme", "~> 4.1.0"
+gem "elixir-toolkit-theme", "~> 4.2.0"
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
@@ -81,7 +81,7 @@ NOTE: This way of deploying does not support the tool-tag in the text of the mar
 Add an extra `.gitlab-ci.yml` file in the root of the repo with:
 
 ```yml
-image: ruby:2.7
+image: ruby:3.3
 
 variables:
   JEKYLL_ENV: production
@@ -131,6 +131,7 @@ pages:
     ```
     JEKYLL_ENV=production PAGES_REPO_NWO='USER_OR_ORGANISATION/REPO_NAME' bundle exec jekyll serve --baseurl ""
     ```
+Where `USER_OR_ORGANISATION/REPO_NAME` is the GitHub USER_OR_ORGANISATION/REPO_NAME (to be found in the url).
 
 1. To preview your site, in your web browser, navigate to `http://localhost:4000`.
    
@@ -169,6 +170,7 @@ This will start the docker container and serve the website locally. Make sure th
 - [FAIRDOM-SEEK Documentation](https://docs.seek4science.org/) (SEEK community)
 - [FAIR Lesson Plan Handbook](https://elixir-europe-training.github.io/ELIXIR-TrP-FAIR-Converge/)  (ELIXIR Training platform)
 - [Data Steward Handbook](https://elixir-uk.github.io/elixir-ds-handbook) (ELIXIR RDM Community)
+- [Fed-A-Crate](https://elixir-europe.github.io/fed-a-crate/how-to-contribute) (ELIXIR Fed-A-Crate project)
 - Want your instance here? [Open an issue](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/issues)
 
 ## Dependencies
