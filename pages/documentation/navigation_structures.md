@@ -89,6 +89,7 @@ Lets dissect the footer structure using the example below:
 
 ```yml
 copyright: Copyright notice
+citation: '[Cite us](https://zenodo.org/records/15045935)'
 extra_line: 
 columns:
   - type: image
