@@ -129,6 +129,7 @@ columns:
 High level attributes:
 
 * `copyright`: Define the text in the most bottom part of the footer, usually with a darker background and describing the license.
+* `citation`: Define the link (name and URL) in Markdown format to the citation information for the project to be displayed in the footer
 * `extra_line`: Add a extra line in the top part, spanning the full width of the footer (optional)
 * `columns`: Key to list columns
 
