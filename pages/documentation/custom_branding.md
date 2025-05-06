@@ -18,13 +18,13 @@ theme_variables:
 
 Certain elements like the GitHub link have options in the `/_config.yml` file as described in the [configuring theme](configuring_theme) page. 
 
-## Theme styling
+## Theme styling using CSS
 
 Bootstrap 5 is used as css library with the goal of reusing as much as possible to prevent a wild growth of classes and to make the html-code more understandable. SASS is used as css-precursor, a more structured and flexible language to describe the css styling. More information about the SASS language can be found [here](https://sass-lang.com/documentation/).
 
-The order in which the css style sheets are loaded is as follows: bootstrap_variables > bootstrap > variables > custom_variables > main_theme_classes > custom_classes. The theme allows you to intervene and customize at different levels:
+The order in which the css style sheets are loaded is as follows: bootstrap_variables > bootstrap > variables > custom_variables > main_theme_classes > custom_classes. The theme allows you to intervene and customize at different levels. It is recommended to customize on Bootstrap level, and only work your way down the ladder if needed.
 
-### Bootstrap variables
+### 1. Bootstrap variables
 
 In the `/_sass/bootstrap_variables.scss` file, you can declare variables that can be used by Bootstrap. This is the very first place where one wants to customize their theme for things like:
 
@@ -36,7 +36,7 @@ In the `/_sass/bootstrap_variables.scss` file, you can declare variables that ca
 The variables that you can define, and their respective defaults, can be found in the [Bootstrap variables file](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/main/_sass/bootstrap/_variables.scss). 
 
 
-### Custom variables
+### 2. Custom variables
 
 In the `/_sass/custom_variables.scss` file, you can declare variables that can be used by the theme. These are variables that are used by the theme to define the color, background-color, size and more of components like:
 
@@ -47,7 +47,7 @@ In the `/_sass/custom_variables.scss` file, you can declare variables that can b
 
 The variables that you can define, and their respective defaults, can be found in the [theme variables file](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/main/_sass/_variables.scss). 
 
-### Custom classes
+### 3. Custom classes
 
 In situations where the bootstrap and theme variables are not sufficient, one can add/overwrite css rules using the `/_sass/custom_classes.scss` file.
 This file is loaded as last and can overwrite everything in the theme if needed. This is more used for customizations for theme users that are familiar with css to change things like:
@@ -74,6 +74,11 @@ The one from the ELIXIR Toolkit Theme are defined in the `/assets/img` as:
 - /assets/img/safari-pinned-tab.svg
 
 This files can be overwritten in your own project by placing them in the same directory with the same name. These files can be easily generated out of an image of your square logo (preferably in svg) with for example the [Favicon generator](https://realfavicongenerator.net/).
+
+## Custom Java Script
+
+Sometimes it is needed to inject some custom Java Script code. This is possible by creating a file `\assets\js\custom.js`. Be aware that this javascript code will be loaded on every page.
+
 
 ## Branding in footer
 
