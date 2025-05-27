@@ -4,7 +4,7 @@ page_id: tools_and_resources_table
 datatable: true
 ---
 
-One of the themes key features is the support for a central tool and resource table. This means that tools that are mentioned at multiple places on the website, can be described centrally, and these descriptions/metadata fields can be used to automatically populate a tools and resources table at the bottom of the page.
+One of the key features of the theme is the support for a central tool and resource table. This means that tools that are mentioned at multiple places on the website, can be described centrally. These descriptions/metadata fields can be used to automatically populate a tools and resources table at the bottom of the page by using the correct tool snippet in the content of the page.
 
 
 ## Way of working
