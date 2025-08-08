@@ -23,7 +23,7 @@
                     <img src="{{page_hit.type_img | relative_url}}" class="type-icon me-2" alt="{{page_hit.type}} icon">
                     {%- endif %}
                     {%- if page_hit.type %}
-                    <span class=""><small>{{page_hit.type | replace: "_", " " | capitalize }}</small></span>
+                    <span class=""><small>{{page_hit.type | replace: "_", " " }}</small></span>
                     {%- endif %}
                 </div>
                 <a class="stretched-link section-title" aria-label="Go to the {{page_hit.title}} page" href="{{ page_hit.url | relative_url }}">

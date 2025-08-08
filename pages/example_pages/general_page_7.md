@@ -1,6 +1,6 @@
 ---
 title: General page example 7
-type: example_pages
+type: Example_pages
 coordinators: [Bert Droesbeke]
 description: This description is used when the page is listed
 page_id: gp7
