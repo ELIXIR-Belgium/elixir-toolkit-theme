@@ -4,19 +4,19 @@ title: Website sections
 
 When content grows, the need to categorize grows. The theme makes it possible to categorize in the [sidebar](navigation_structures#sidebar), but also to list pages in a nice way that belong to the same section.
 
-A section is simple a collection of pages of the same `type`, see [page mechanics](page_mechanics). Adding the pages you want to list in an overview, can be simply done by tagging them with a type (in the example `type: example_pages`) in the metadata and listing that type using the snippets below.
+A section is simple a collection of pages of the same `type`, see [page mechanics](page_mechanics). Adding the pages you want to list in an overview, can be simply done by tagging them with a type (in the example `type: Example_pages`) in the [page metadata](page_mechanics) and listing that type using the snippets below. Be aware that the type attribute is case sensitive and spaces should get replaced with an underscore "_".
 
 
 ## Section tiles with information
 ```
 {% raw %}
-{% include section-navigation-tiles.html type="example_pages" affiliations=true search=true except="index.md" %}
+{% include section-navigation-tiles.html type="Example_pages" affiliations=true search=true except="index.md" %}
 {% endraw %}
 ```
 
 Becomes:
 
-{% include section-navigation-tiles.html type="example_pages" affiliations=true search=true except="index.md" %}
+{% include section-navigation-tiles.html type="Example_pages" affiliations=true search=true except="index.md" %}
 
 ### Parameters
 
@@ -49,7 +49,7 @@ Becomes:
 ```
 
 
-{% include section-navigation-tiles-simple.html type="example_pages" %}
+{% include section-navigation-tiles-simple.html type="Example_pages" %}
 
 ### Parameters
 
@@ -70,8 +70,8 @@ defaults:
     scope:
       path: "pages/data_life_cycle"
     values:
-      type: data_life_cycle
+      type: Data_life_cycle
 
 ```
 
-This will give all markdown files in the `pages/data_life_cycle` subdirectory the *data_life_cycle* type.
+This will give all markdown files in the `pages/data_life_cycle` subdirectory the *Data_life_cycle* type. This will be displayed as "Data life cycle".
