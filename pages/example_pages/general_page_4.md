@@ -1,6 +1,7 @@
 ---
 title: General page example 4
 type: example_pages
+contributors: []
 description: This page has no more information
 page_img: infrastructures/ELIXIR_BELGIUM_white_background.svg 
 page_id: gp4

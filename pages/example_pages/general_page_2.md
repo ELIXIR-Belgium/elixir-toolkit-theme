@@ -3,7 +3,6 @@ title: General page example 2
 type: example_pages
 type_img: /assets/img/ett_compact_logo_bw.svg
 page_img: infrastructures/ELIXIR_BELGIUM_white_background.svg 
-contributors: [Bert Droesbeke]
 coordinators: [Bert Droesbeke]
 description: This description is used when the page is listed
 page_id: gp2
