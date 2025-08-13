@@ -23,6 +23,10 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `contributors`: List here all the contributors that helped in establishing the page. This will be the full name of the person. Make sure that the person name that is listed can be found in the CONTRIBUTORS.yaml file in the _data directory if you want to link the github id and other contact information.
 
+* `coordinators`: List here all the coordinators of the page who will get displayed as contributors with a crown. Use the full name of the person. Make sure that the person name that is listed can be found in the *_data/CONTRIBUTORS.yaml* file in the _data directory if you want to link the github id and other contact information.
+
+* `affiliations` List here all affiliations related to the page. Make sure that the person name that is listed can be found in the *_data/affiliations.yaml* file. These affiliations will get displayed at the bottom of the page and in the section navigation tile of the page.
+
 * `search_exclude`: By setting this field true, the page will not end up in the search results of the searchbar. By default this is false.
 
 * `sitemap`: Let the page appear in the sitemap.xml. Default: *true*
