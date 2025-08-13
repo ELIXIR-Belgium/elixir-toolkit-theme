@@ -1,38 +1,43 @@
+{%- capture keywords %}
+{%- if page.related_pages %}
+{%- for section in page.related_pages %}
+{%- unless section[1].size == 0 %}
+{%- for keywordstr in section[1] %}
+{%- assign keywordpage = site.pages | where: "page_id", keywordstr | first  %}
+{%- if allkeywords %}
+{%- assign allkeywords = allkeywords | append: ", " | append: keywordstr | append: ", " | append: keywordpage.title %}
+{%- else %}
+{%- assign allkeywords = allkeywords | append: keywordstr | append: ", " | append: keywordpage.title %}
+{%- endif %}
+{%- endfor %}
+{%- endunless %}
+{%- endfor %}{{allkeywords}}
+{%- endif %}
+{%- endcapture %}
+{%- if page.type %}
+{%- assign subtitle = page.type | replace: "_", " " | capitalize %}
+{%- endif %}
+{%- capture title %}{% if page.title %}{% if subtitle %}{{subtitle}}: {% endif %}{{ page.title }} | {{ site.title }}{%- else %}{{ site.title }}{% endif %}{% endcapture %}
+{%- capture description %}
+{%- if page.description %}{{ page.description | strip_html | strip_newlines | truncatewords: 30, '...' }}{% elsif page.summary %}{{ page.summary | strip_html | strip_newlines | truncatewords: 30, '...' }}{% else %}{{ page.content | strip_html | strip_newlines | truncatewords: 30, '...' }}{% endif %}{% endcapture %}
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{title}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-    {%- capture keywords %}
-    {%- if page.related_pages %}
-    {%- for section in page.related_pages %}
-    {%- unless section[1].size == 0 %}
-    {%- for keywordstr in section[1] %}
-    {%- assign keywordpage = site.pages | where: "page_id", keywordstr | first  %}
-    {%- if allkeywords %}
-    {%- assign allkeywords = allkeywords | append: ", " | append: keywordstr | append: ", " | append: keywordpage.title %}
-    {%- else %}
-    {%- assign allkeywords = allkeywords | append: keywordstr | append: ", " | append: keywordpage.title %}
-    {%- endif %}
-    {%- endfor %}
-    {%- endunless %}
-    {%- endfor %}{{allkeywords}}
-    {%- endif %}
-    {%- endcapture %}
+    <meta name="description" content="{{description}}">
     <meta name="keywords" content="{{keywords}}">
-    <meta property="og:title" content="{{ site.title }}" />
-    <meta property="og:description" content="{{ site.description }}" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
     <meta property="og:image" content="//{{site.github.url | remove: 'https://' | remove: 'http://'}}/assets/img/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="{{site.title}}">
+    <meta name="apple-mobile-web-app-title" content="{{title}}">
     <meta name="msapplication-TileColor" content="#{{site.theme_variables.theme_color | default: 0d6efd }}">
     <meta name="theme-color" content="#{{site.theme_variables.theme_color | default: 0d6efd }}">
     {%- if page.no_robots %}
     <meta name="robots" content="noindex" />
     {%- endif %}
-    {%- if page.type %}
-    {%- assign subtitle = page.type | replace: "_", " " | capitalize %}
-    {%- endif %}
-    <title>{% if page.title %}{% if subtitle %}{{subtitle}}: {% endif %}{{ page.title }} | {{ site.title }}{%- else %}{{ site.title }}{% endif %}</title>
     <!-- Syntax highlighting  -->
     <link rel="stylesheet" href="{{ 'assets/css/syntax.css' | relative_url }}">
     <!-- Country flags  -->
