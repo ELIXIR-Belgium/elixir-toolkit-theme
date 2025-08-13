@@ -46,12 +46,10 @@ It is important to know that you can also set the these key-value pairs on multi
 * `page_citation`: When set to true, it will cause the citation section for the page to be generated in the format: `<author names>. <page title>. <site domain>. <page URL>. <date accessed>.`
 
 ### Page specific GitHub configurations
-
-Since v5.0.0 the GitHub buttons (Edit me, report an issue and history) next to the page title can be customized using the following attributes:
-
-* `repository_url`: Specify an alternative GitHub repository that overrides the repository specified in the config file. Default: *site.github.repository_url*.
-* `branch`: Specify an alternative branch on the GitHub repository that overrides the branch in the config file: *site.github.source.branch*.
-* `file_path`: Specify an alternative file on the GitHub repository. Example: _data/news.yml, default: current path of the page.
+* `github`: Since v5.0.0 the GitHub buttons (Edit me, report an issue and history) next to the page title can be customized using the following attributes
+  * `repository_url`: Specify an alternative GitHub repository that overrides the repository specified in the config file. Default: *site.github.repository_url*.
+  * `branch`: Specify an alternative branch on the GitHub repository that overrides the branch in the config file: *site.github.source.branch*.
+  * `file_path`: Specify an alternative file on the GitHub repository. Example: _data/news.yml, default: current path of the page.
 
 Example:
 ```yaml
