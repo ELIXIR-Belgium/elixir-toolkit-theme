@@ -1,8 +1,11 @@
-{%- if page.contributors and page.contributors.size != 0 %}
+{%- assign EMPTY = "" | split: "" -%}
+{%- assign contrib_list = page.contributors | default: EMPTY -%}
+{%- assign coord_list  = page.coordinators | default: EMPTY -%}
+{%- if contrib_list.size > 0 or coord_list.size > 0 -%}
 <span class="d-block h2-like fs-2">{{site.theme_variables.contributor-minitiles-page | default: 'Contributors' }}</span>
 <div class="p-4 rounded mt-4 page-contributors d-flex flex-wrap gap-2">
     {%- assign contributors = site.data.CONTRIBUTORS %}
-    {%- assign page_contributors = page.contributors %}
+    {%- assign page_contributors = contrib_list | concat: coord_list | uniq %}
     {%- unless include.sort == false %}
     {%- assign page_contributors = page_contributors | sort %}
     {%- endunless %}
@@ -35,9 +38,7 @@
           <div>
               {{ contributor }}
           </div>
-        {%- if page.coordinators %}
-        {%- for coordinator in page.coordinators %}
-        {%- if coordinator == contributor %}
+        {%- if page.coordinators.size != 0 and page.coordinators contains contributor %}
         <div class="position-absolute top-0 start-100 translate-middle">
             <div class="rounded-circle coordinator-crown">
               <a data-bs-toggle="tooltip" data-bs-original-title="Coordinator of the {{page.title}} page.">
@@ -45,8 +46,6 @@
               </a>  
             </div>
         </div>
-        {%- endif %}
-        {%- endfor %}
         {%- endif %}
       </button>
         <div class="dropdown-menu shadow p-0 border-0 contributor-cards">
