@@ -17,9 +17,8 @@
 {%- if page.type %}
 {%- assign subtitle = page.type | replace: "_", " " | capitalize %}
 {%- endif %}
-{%- capture title %}{% if page.title %}{% if subtitle %}{{subtitle}}: {% endif %}{{ page.title }} | {{ site.title }}{%- else %}{{ site.title }}{% endif %}{% endcapture %}
-{%- capture description %}
-{%- if page.description %}{{ page.description | strip_html | strip_newlines | truncatewords: 30, '...' }}{% elsif page.summary %}{{ page.summary | strip_html | strip_newlines | truncatewords: 30, '...' }}{% else %}{{ page.content | strip_html | strip_newlines | truncatewords: 30, '...' }}{% endif %}{% endcapture %}
+{%- capture title %}{% if page.url == "/" %}{{site.title}}{% elsif page.title %}{% if subtitle %}{{subtitle}}: {% endif %}{{ page.title }} | {{ site.title }}{%- else %}{{ site.title }}{% endif %}{% endcapture %}
+{%- capture description %}{% if page.url == "/" %}{{site.description}}{% elsif page.description %}{{ page.description | strip_html | replace: '\n', ' ' | truncatewords: 30, '...' }}{% elsif page.summary %}{{ page.summary | strip_html | replace: '\n', ' ' | truncatewords: 30, '...' }}{% else %}{{ page.content | strip_html | replace: '\n', ' ' | truncatewords: 30, '...' }}{% endif %}{% endcapture %}
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
