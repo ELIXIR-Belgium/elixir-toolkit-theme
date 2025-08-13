@@ -1,6 +1,7 @@
 ---
 title: News
-custom_editme: _data/news.yml
+github:
+    file_path: _data/news.yml
 ---
 
 
