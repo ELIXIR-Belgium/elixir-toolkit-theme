@@ -92,7 +92,7 @@
                 {%- for tag in tool.related_pages %}
                 {%- unless tag == page.page_id %}
                 {%- assign related_page = site.pages | where:"page_id",tag | first %}
-                <a href="{{related_page.url | relative_url }}" data-bs-toggle="tooltip" title="{{related_page.type | replace: '_', ' ' | capitalize }}"><span class="badge default-badge">{{ related_page.title | truncate: 25 }}</span></a>
+                <a href="{{related_page.url | relative_url }}" data-bs-toggle="tooltip" title="{{related_page.type | replace: '_', ' ' }}"><span class="badge default-badge">{{ related_page.title | truncate: 25 }}</span></a>
                 {%- endunless %}
                 {%- endfor %}
                 {%- endcapture %}

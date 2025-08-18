@@ -2,7 +2,7 @@
   {%- if include.title == true%}
   <h2>{{include.event_type | replace: "_", " " | capitalize}}s</h2>
   {%- endif %}
-  {%- assign events = site.data.events %}
+  {%- assign events = site.data.events | sort: "startDate" | reverse %}
   {%- assign count = 0 %}
   <ul class="list-unstyled mt-3">
     {%- for event in events %}

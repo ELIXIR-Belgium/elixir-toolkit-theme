@@ -23,13 +23,15 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `contributors`: List here all the contributors that helped in establishing the page. This will be the full name of the person. Make sure that the person name that is listed can be found in the CONTRIBUTORS.yaml file in the _data directory if you want to link the github id and other contact information.
 
+* `coordinators`: List here all the coordinators of the page who will get displayed as contributors with a crown. Use the full name of the person. Make sure that the person name that is listed can be found in the *_data/CONTRIBUTORS.yaml* file in the _data directory if you want to link the github id and other contact information.
+
+* `affiliations` List here all affiliations related to the page. Make sure that the person name that is listed can be found in the *_data/affiliations.yaml* file. These affiliations will get displayed at the bottom of the page and in the section navigation tile of the page.
+
 * `search_exclude`: By setting this field true, the page will not end up in the search results of the searchbar. By default this is false.
 
 * `sitemap`: Let the page appear in the sitemap.xml. Default: *true*
 
 * `no_robots`: By setting this field to true, the page will not end up in the search results of google or any other search engine. Default: *false*
-
-* `custom_editme`: This attribute can be used to specify an alternative file when clicked on the edit-me or history button. Example: _data/news.yml. **!This will be deprecated in the next major release (v5.0)!**
 
 * `keywords`: List here all the keywords that can be used to find the page using the searchbox in the right upper corner of the page, lowercase.
 
@@ -43,15 +45,23 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `datatable`: use this attribute to activate the pagination + sorting + searching in tables.
 
-* `type`: The type of page, used for [website sections](website_sections).
+* `type`: The type of page, used for [website sections](website_sections). Case the value is case sensitive and spaces should get replaced with underscores.
 
 * `page_citation`: When set to true, it will cause the citation section for the page to be generated in the format: `<author names>. <page title>. <site domain>. <page URL>. <date accessed>.`
 
-* `github.repository_url`: Specify an alternative GitHub repository that overrides the repository specified in the config file. Default: *site.github.repository_url*.
+### Page specific GitHub configurations
+* `github`: Since v5.0.0 the GitHub buttons (Edit me, report an issue and history) next to the page title can be customized using the following attributes
+  * `repository_url`: Specify an alternative GitHub repository that overrides the repository specified in the config file. Default: *site.github.repository_url*.
+  * `branch`: Specify an alternative branch on the GitHub repository that overrides the branch in the config file: *site.github.source.branch*.
+  * `file_path`: Specify an alternative file on the GitHub repository. Example: _data/news.yml, default: current path of the page.
 
-* `github.branch`: Specify an alternative branch on the GitHub repository that overrides the branch in the config file: *site.github.source.branch*.
-
-* `github.file_path`: Specify an alternative file on the GitHub repository. This replaces the `custom_editme` variable. Default: current path of the page.
+Example:
+```yaml
+github:
+  repository_url: https://github.com/ELIXIR-Belgium/elixir-toolkit-theme
+  branch: master
+  file_path: _data/news.yml
+```
 
 ### Related pages
 

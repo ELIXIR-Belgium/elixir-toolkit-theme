@@ -1,6 +1,6 @@
 ---
 title: Template example
-type: example_pages
+type: Example_pages
 contributors: [Bert Droesbeke]
 search_exclude: true
 sitemap: false

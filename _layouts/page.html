@@ -8,7 +8,7 @@ layout: default
         {%- endif %}
         {%- if page.title %}
         {%- if page.type and site.theme_variables.breadcrumb != true %}
-        {%- assign subtitle = page.type | replace: "_", " " | capitalize %}
+        {%- assign subtitle = page.type | replace: "_", " " %}
         <h1 class="has-subtitle order-1 order-md-0"><span class="d-block text-secondary fs-4 ff-body">{{subtitle}}</span><span class="visually-hidden">:</span> {{ page.title }}
         {%- else %}
         <h1>{{ page.title }}
