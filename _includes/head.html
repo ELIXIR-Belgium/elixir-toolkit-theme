@@ -73,11 +73,12 @@
     <script type="text/javascript" charset="utf8" src="{{ 'assets/js/dataTables.dateTime.min.js' | relative_url }}"></script>
     <script type="text/javascript" charset="utf8" src="{{ 'assets/js/searchBuilder.bootstrap5.min.js' | relative_url }}"></script>
     {%- endif %}
+    {%- assign pagelength = site.theme_variables.datatables.pagelength | default: 10 %}
     <script type="text/javascript">
         $(document).ready(function () {
             $('table.display').each(function() {
                 $(this).DataTable({
-                    lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+                    lengthMenu: [[{{ pagelength }}, {{ pagelength | times: 2 }}, {{ pagelength | times: 5 }}, {{ pagelength | times: 10 }}, -1], [{{ pagelength }}, {{ pagelength | times: 2 }}, {{ pagelength | times: 5 }}, {{ pagelength | times: 10 }}, "All"]],
                     stateSave: true,
                     searching: true,
                     {%- if site.theme_variables.datatables.searchbuilder %}
@@ -86,13 +87,13 @@
                     },
                     {%- endif %}
                     info: true,
-                    pageLength: 10,
+                    pageLength: {{ pagelength }},
                     language: {
                         searchPlaceholder: "Type here..."
                     },
                     "drawCallback": function ( settings ){
                         var tableId = settings.nTable.id;
-                        if(settings.fnRecordsTotal() < 10){     
+                        if(settings.fnRecordsTotal() < {{ pagelength }}){     
                             $('#'+tableId+'_wrapper .dt-length').hide();
                             $('#'+tableId+'_wrapper .dt-paging').hide();
                             $('#'+tableId+'_wrapper .dt-search').hide();

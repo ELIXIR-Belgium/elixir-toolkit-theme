@@ -70,7 +70,8 @@ theme_variables:
   #   open_issue: true
   #   history: true
   # datatables:
-  #   searchbuilder: True
+  #   searchbuilder: false
+    # pagelength: 10
   # headings:
   #   related-pages: Related pages
   #   more-information-tiles: More information
