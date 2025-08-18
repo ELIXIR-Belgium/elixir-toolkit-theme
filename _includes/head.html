@@ -30,7 +30,7 @@
     <meta name="robots" content="noindex" />
     {%- endif %}
     {%- if page.type %}
-    {%- assign subtitle = page.type | replace: "_", " " | capitalize %}
+    {%- assign subtitle = page.type | replace: "_", " " %}
     {%- endif %}
     <title>{% if page.title %}{% if subtitle %}{{subtitle}}: {% endif %}{{ page.title }} | {{ site.title }}{%- else %}{{ site.title }}{% endif %}</title>
     <!-- Syntax highlighting  -->
