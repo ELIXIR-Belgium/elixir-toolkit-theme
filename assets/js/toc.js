@@ -1,11 +1,4 @@
 // Modified from: https://github.com/ghiculescu/jekyll-table-of-contents
-// Changes:
-// - Always guard for "no/too-few headers" (independent of page image presence).
-// - Make get_level() resilient against undefined nodes.
-// - Toggle `has-toc` on BOTH #main (for layout/grid) and #toc (for margin/visibility).
-// - Avoid mutating defaults (use a copy when merging options).
-// - On success, restore #main.add-grid (if your layout relies on it).
-
 (function ($) {
   $.fn.toc = function (options) {
     var defaults = {
@@ -55,9 +48,8 @@
     });
 
     var output = $(this);          // the TOC container (e.g., #toc-contents)
-    var $main  = $('#main');       // we toggle .has-toc here to control page layout/grid
+    var $main  = $('#main');   
 
-    // === Early exit when there are no (or not enough) headers ===
     // Prevents calling get_level(headers[0]) on undefined and collapses layout/space.
     if (!headers.length || headers.length < settings.minimumHeaders || !output.length) {
       $main.removeClass('add-grid'); // collapse layout (your existing side-effect + our flag)
@@ -120,7 +112,6 @@
     // Render with the selected effect
     (render[settings.showEffect] || render.none)();
 
-    // === Success: TOC exists ===
     // Add grid + flag on #main (if your layout uses it), and flag #toc so CSS applies margin.
     $main.addClass('add-grid');
   };
