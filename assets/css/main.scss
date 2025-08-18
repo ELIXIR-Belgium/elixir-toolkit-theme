@@ -104,27 +104,12 @@ body img {
     grid-area: main;
 }
 
-@include media-breakpoint-up(md) {
-    #main {
-        display: grid;
-        grid-template-areas:
-            "intro"
-            "toc"
-            "content";
-        grid-template-rows: auto auto 1fr;
-    }
+#intro {
+    grid-area: intro;
 }
-@include media-breakpoint-up(xl) {
-    #main {
-        grid-template-areas:
-            "intro toc"
-            "content toc";
-        grid-template-rows: auto 1fr;
-    }
 
-    .add-grid {
-        grid-template-columns: 5fr 2fr;
-    }
+#sidebar {
+    grid-area: sidebar;
 }
 
 #toc {
@@ -141,33 +126,17 @@ body img {
     }
 }
 
-@include media-breakpoint-up(xl) {
-    #toc {
-        top: $spacer * 3;
-        right: 0;
-        z-index: 2;
-        height: calc(100vh - 7rem);
-        overflow-y: auto;
-        margin-left: $spacer * 3;
+@include media-breakpoint-up(md) {
+    #main {
+        display: grid;
+        grid-template-areas:
+            "intro"
+            "toc"
+            "content";
+        grid-template-rows: auto auto 1fr;
     }
 }
 
-#intro {
-    grid-area: intro;
-}
-
-#sidebar {
-    grid-area: sidebar;
-}
-
-#content {
-    grid-area: content;
-    min-width: 1px;
-    position: relative;
-    > h2:first-child {
-        margin-top: 0;
-    }
-}
 
 @include media-breakpoint-up(lg) {
     #layout {
@@ -178,10 +147,38 @@ body img {
 }
 
 @include media-breakpoint-up(xl) {
+    #main.add-grid {
+        grid-template-areas:
+            "intro toc"
+            "content toc";
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 5fr 2fr;
+    }
+
+    #main.add-grid #toc {
+        top: $spacer * 3;
+        right: 0;
+        z-index: 2;
+        height: calc(100vh - 7rem);
+        overflow-y: auto;
+        margin-left: $spacer * 3;
+    }
+
     #layout {
         grid-template-columns: 2fr 9fr;
     }
 }
+
+
+#content {
+    grid-area: content;
+    min-width: 1px;
+    position: relative;
+    > h2:first-child {
+        margin-top: 0;
+    }
+}
+
 
 /*-----Blockquote-----*/
 
