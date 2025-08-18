@@ -1,3 +1,8 @@
+- name: Test event 2
+  startDate: 2021-11-08
+  endDate: 2021-11-12
+  description: Example Description with [link](about)
+  location: "[Barcelona](test)"
 - name: Test event 1
   startDate: 2025-06-23
   startTime: '9:00'
@@ -6,9 +11,9 @@
   description: The description of this event
   location: Online
 - name: Test event 3
-  startDate: 2025-06-23
+  startDate: 2030-06-23
   startTime: '9:00'
-  endDate: 2025-06-24
+  endDate: 2030-06-24
   endTime: 13:30 CET
   description: >
    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna massa, vestibulum ut leo eget, fermentum molestie mauris. Cras facilisis libero non sodales lobortis. Proin eu ultricies lacus. Sed posuere orci id tincidunt sollicitudin. Phasellus sit amet justo turpis. Vestibulum non volutpat libero. Donec mattis elementum sem nec posuere. Donec vitae libero sed mi faucibus tempus.
@@ -20,8 +25,3 @@
   
    Donec sagittis laoreet leo, eu tincidunt nulla pulvinar a. Aenean diam orci, rhoncus et imperdiet eget, sodales eget massa. Pellentesque lobortis egestas consequat.
   location: Online
-- name: Test event 2
-  startDate: 2021-11-08
-  endDate: 2021-11-12
-  description: Example Description with [link](about)
-  location: "[Barcelona](test)"
