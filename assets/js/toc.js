@@ -14,8 +14,10 @@
         link: '',
         toc: ''
       }
-    },
-    settings = $.extend(defaults, options);
+    };
+
+    // do not mutate defaults
+    var settings = $.extend({}, defaults, options);
 
     function fixedEncodeURIComponent(str) {
       return encodeURIComponent(str).replace(/[!'()*]/g, function (c) {
@@ -24,34 +26,39 @@
     }
 
     function createLink(header) {
-      var innerText = header.textContent || header.innerText;
+      var innerText = header.textContent || header.innerText || '';
+      // Ensure an id exists even if the text is empty
+      if (!header.id) {
+        header.id = innerText.trim()
+          ? innerText.trim().replace(/\s+/g, '-').toLowerCase()
+          : ('heading-' + Math.random().toString(36).slice(2, 8));
+      }
       return "<a class='" + settings.classes.link + "' href='#" + fixedEncodeURIComponent(header.id) + "'>" + innerText + "</a>";
     }
 
+    // Collect headers and ensure they have IDs
     var headers = $(settings.headers).filter(function () {
-      // Ensure headers have IDs
       if (!this.id) {
-        this.id = $(this).text().trim().replace(/\s+/g, '-').toLowerCase();
+        var text = $(this).text().trim();
+        this.id = text ? text.replace(/\s+/g, '-').toLowerCase() : '';
       }
       return this.id;
     });
 
     var output = $(this);
 
-    // Check if there are any headers
-    if (!$('#page-img .page-img-lg').length ) {
-      if ( !headers.length || headers.length < settings.minimumHeaders || !output.length ) {
-        $('#main').removeClass("add-grid");
-        $("#toc").hide();
-        return;  // Exit early if there are no headers
-      }
+    // === SAFE GUARD: exit cleanly when no (or not enough) headers, regardless of page image ===
+    if (!headers.length || headers.length < settings.minimumHeaders || !output.length) {
+      $('#main').removeClass('add-grid');   // keep your original side-effect
+      output.hide().empty();                // operate on the selected TOC container
+      return;
     }
 
     if (settings.showSpeed === 0) {
       settings.showEffect = 'none';
     }
 
-    $(this).addClass(settings.classes.toc);
+    output.addClass(settings.classes.toc);
 
     var render = {
       show: function () { output.hide().html(html).show(settings.showSpeed); },
@@ -60,30 +67,43 @@
       none: function () { output.html(html); }
     };
 
-    var get_level = function (ele) { return parseInt(ele.nodeName.replace("H", ""), 10); };
-    var highest_level = headers.map(function (_, ele) { return get_level(ele); }).get().sort()[0];
-    var level = get_level(headers[0]), this_level;
+    // === Resilient level parser ===
+    var get_level = function (ele) {
+      return (ele && ele.nodeName) ? parseInt(ele.nodeName.replace(/H/i, ''), 10) : NaN;
+    };
+
+    var level = get_level(headers[0]);
+    if (!isFinite(level)) {
+      output.hide().empty();
+      return;
+    }
+
+    var this_level;
     var html = settings.title + " <" + settings.listType + " class=\"" + settings.classes.list + "\">";
 
     headers.each(function (_, header) {
       this_level = get_level(header);
+      if (!isFinite(this_level)) { return; } // skip weird nodes just in case
+
       if (this_level === level) { // same level as before; same indenting
         html += "<li class=\"" + settings.classes.item + "\">" + createLink(header);
-      } else if (this_level <= level) { // higher level than before; end parent ol
+      } else if (this_level <= level) { // higher level than before; end parent list(s)
         for (var i = this_level; i < level; i++) {
-          html += "</li></" + settings.listType + ">"
+          html += "</li></" + settings.listType + ">";
         }
         html += "<li class=\"" + settings.classes.item + "\">" + createLink(header);
-      } else if (this_level > level) { // lower level than before; expand the previous to contain a ol
-        for (i = this_level; i > level; i--) {
+      } else if (this_level > level) { // lower level than before; expand previous to contain a list
+        for (var j = this_level; j > level; j--) {
           html += "<" + settings.listType + " class=\"" + settings.classes.list + "\">" +
-            "<li class=\"" + settings.classes.item + "\">"
+                  "<li class=\"" + settings.classes.item + "\">";
         }
         html += createLink(header);
       }
       level = this_level; // update for the next one
     });
+
     html += "</" + settings.listType + ">";
-    render[settings.showEffect]();
+
+    (render[settings.showEffect] || render.none)();
   };
 })(jQuery);
