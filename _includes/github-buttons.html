@@ -1,17 +1,12 @@
 {%- assign show_github_edit_button = site.theme_variables.github_buttons.edit_me | default: true %}
 {%- assign show_github_history_button = site.theme_variables.github_buttons.history | default: true %}
 {%- assign show_github_open_issue_button = site.theme_variables.github_buttons.open_issue | default: true %}
-
 {%- if show_github_edit_button or show_github_history_button or show_github_open_issue_button %}
 <div id="edit-me" class="btn-group">
     {% if show_github_edit_button %}
     {% assign repo_url = page.github.repository_url | default: site.github.repository_url %}
     {% assign repo_branch = page.github.branch | default: site.github.source.branch %}
-    {% if page.custom_editme %}
-    {% assign file_path = page.custom_editme %}
-    {% else %}
     {% assign file_path = page.github.file_path | default: page.path %}
-    {% endif %}
     <a role="button" data-bs-toggle="tooltip"
         title="Propose changes to the content of this page on {{site.theme_variables.git_host | default: 'GitHub' }}"
         href="{{repo_url}}/blob/{{repo_branch}}/{{file_path}}" class="btn btn-sm hover-primary text-primary"><i

@@ -33,8 +33,6 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `no_robots`: By setting this field to true, the page will not end up in the search results of google or any other search engine. Default: *false*
 
-* `custom_editme`: This attribute can be used to specify an alternative file when clicked on the edit-me or history button. Example: _data/news.yml. **!This will be deprecated in the next major release (v5.0)!**
-
 * `keywords`: List here all the keywords that can be used to find the page using the searchbox in the right upper corner of the page, lowercase.
 
 * `sidebar`: Specify here an alternative sidebar, which corresponds to the filename in the *_data/sidebars/* directory. Default: *main*. If no sidebar is set, or *sidebar: false*, no sidebar will be shown.
@@ -51,11 +49,19 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `page_citation`: When set to true, it will cause the citation section for the page to be generated in the format: `<author names>. <page title>. <site domain>. <page URL>. <date accessed>.`
 
-* `github.repository_url`: Specify an alternative GitHub repository that overrides the repository specified in the config file. Default: *site.github.repository_url*.
+### Page specific GitHub configurations
+* `github`: Since v5.0.0 the GitHub buttons (Edit me, report an issue and history) next to the page title can be customized using the following attributes
+  * `repository_url`: Specify an alternative GitHub repository that overrides the repository specified in the config file. Default: *site.github.repository_url*.
+  * `branch`: Specify an alternative branch on the GitHub repository that overrides the branch in the config file: *site.github.source.branch*.
+  * `file_path`: Specify an alternative file on the GitHub repository. Example: _data/news.yml, default: current path of the page.
 
-* `github.branch`: Specify an alternative branch on the GitHub repository that overrides the branch in the config file: *site.github.source.branch*.
-
-* `github.file_path`: Specify an alternative file on the GitHub repository. This replaces the `custom_editme` variable. Default: current path of the page.
+Example:
+```yaml
+github:
+  repository_url: https://github.com/ELIXIR-Belgium/elixir-toolkit-theme
+  branch: master
+  file_path: _data/news.yml
+```
 
 ### Related pages
 
