@@ -79,7 +79,7 @@ theme_variables:
   #   affiliation-tiles-page: Affiliations
   #   contributor-minitiles-page: Contributors
   # toc:
-  #   min_headings: 2
+  #   min_headings: 1
   #   headings: 'h2'
   # topnav:
     # theme: light
