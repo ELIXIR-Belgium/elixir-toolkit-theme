@@ -1,3 +1,4 @@
+{%- assign carousel_counter = carousel_counter | plus: 1 %}
 {%- assign contributors = site.data.CONTRIBUTORS %}
 {%- assign allcontrstr = nil %}
 {%- assign nr = include.col | default: 5 %}
@@ -39,7 +40,7 @@
 {%- assign allcontributors = allcontributors | sort %}
 {%- endunless %}
 {%- unless allcontributors.size == 0 %}
-<div id="contributors-carousel" class="carousel carousel-dark slide my-4" data-ride="carousel" data-bs-interval="7000">
+<div id="contributors-carousel-{{carousel_counter}}" class="carousel carousel-dark slide my-4" data-ride="carousel" data-bs-interval="7000">
     <div class="carousel-inner">
         {%- assign counter = 0 %}
         {%- for contributor in allcontributors %}
@@ -111,11 +112,11 @@
         </div>
         {%- endif %}
         {%- endfor %}
-        <button class="carousel-control-prev" type="button" data-bs-target="#contributors-carousel" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#contributors-carousel-{{carousel_counter}}" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#contributors-carousel" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#contributors-carousel-{{carousel_counter}}" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
