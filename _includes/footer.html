@@ -1,5 +1,12 @@
+{%- assign EMPTY = "" | split: "" %}
+{%- assign footer_columns = site.data.footer.columns | default: EMPTY %}
+{%- assign footer_copyright = site.data.footer.copyright %}
+{%- assign footer_extra_line = site.data.footer.extra_line %}
+{%- if footer_columns != EMPTY or footer_copyright or footer_extra_line %}
 <footer id="footer">
+    {%- if footer_columns != EMPTY or footer_extra_line %}
     <div class="container py-4 g-lg-5">
+        {%- if footer_columns != EMPTY %}
         <div class="row g-4 d-flex justify-content-between">
             {%- for column in site.data.footer.columns %}
             {%- if column.type == "image" %}
@@ -32,19 +39,21 @@
             {%- endif %}
             {%- endfor %}
         </div>
-        {%- unless site.data.footer.extra_line == nil %}
+        {%- endif %}
+        {%- if footer_extra_line %}
         <div class="row">
             <div class="text-center pt-4 mb-0">
-                {{site.data.footer.extra_line | markdownify }}
+                {{footer_extra_line | markdownify }}
             </div>
         </div>
-        {%- endunless %}
+        {%- endif %}
     </div>
+    {%- endif %}
     <div class="copyright py-4">
         <div class="container g-lg-5 d-flex justify-content-between flex-column flex-lg-row">
-            {%- unless site.data.footer.copyright == nil %}
-            <div class="d-flex align-items-center mb-3 mb-lg-0 mx-auto mx-lg-0 text-center">{{ site.data.footer.copyright | markdownify }}</div>
-            {%- endunless %}
+            {%- if footer_copyright %}
+            <div class="d-flex align-items-center mb-3 mb-lg-0 mx-auto mx-lg-0 text-center">{{ footer_copyright | markdownify }}</div>
+            {%- endif %}
             <div class="d-flex align-items-center mx-auto ms-lg-4 me-lg-0">
                 <a id="ett-logo" class="text-nowrap me-lg-5 me-xxlg-0" href="https://elixir-belgium.github.io/elixir-toolkit-theme">Built with
                     <svg data-name="ETT logo" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 77.2 77.12">
@@ -72,3 +81,4 @@
         </div>
     </div>
 </footer>
+{%- endif %}
