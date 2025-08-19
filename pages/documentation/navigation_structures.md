@@ -82,7 +82,7 @@ subitems:
 ## Footer
 
 Just like the other navigation structures, is the footer defined by a YAML file, `/_data/footer.yml`.
-The footer is composed out of columns, of which the width is defined by integers between 1 and 12, and the total of all columns should not exceed 12.
+The footer is composed out of columns, of which the width is defined by integers **between 1 and 12**, and the total of all columns should not exceed 12.
 
 
 Lets dissect the footer structure using the example below: 
@@ -125,13 +125,16 @@ columns:
     alt: Jekyll Bootstrap theme logo
 ```
 
-High level attributes:
+### High level attributes:
 
 * `copyright`: Define the text in the most bottom part of the footer, usually with a darker background and describing the license.
 * `extra_line`: Add a extra line in the top part, spanning the full width of the footer (optional)
 * `columns`: Key to list columns
 
-Column attributes:
+None of these attributes are mandatory, leaving them empty will make them disappear. Do not remove the `footer.yml` file in order to have no footer, but rather leave the high level attributes empty.
+
+
+### Column attributes:
 
 * `type:`: This defines the purpose of the column and can be *links* or *image*
 * `image_width`: To be specified when it is an *image* column, don't forget to add the unit.
