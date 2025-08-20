@@ -7,7 +7,7 @@ description: This description is used when the page is listed
 sidebar: false
 page_id: gp6
 related_pages: 
-    example_pages: [gp2, gp3]
+    Example_pages: [gp2, gp3]
 ---
 
 

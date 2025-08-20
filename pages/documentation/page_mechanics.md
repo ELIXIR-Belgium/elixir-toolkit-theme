@@ -135,7 +135,7 @@ github:
       how_to_access: explantation on how you can access this resource
       instance_of: GitHub
       related_pages:
-        example_pages: [gp3, gp1, gp2]
+        Example_pages: [gp3, gp1, gp2]
       registry:
         biotools: bioconda
         tess: Bioconda

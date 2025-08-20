@@ -21,7 +21,7 @@ training:
   - name: Training not in TeSS
     url: https://www.youtube.com
 related_pages: 
-    example_pages: [gp2]
+    Example_pages: [gp2]
 ---
 
 
