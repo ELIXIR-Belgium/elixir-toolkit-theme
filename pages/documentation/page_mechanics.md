@@ -67,7 +67,7 @@ github:
 
 * `related_pages`: List here the `page_id` of your pages that you want to display as under the Related pages of this page, grouped by section. See [website sections](website_sections) for more information.
 
-  If you want pages from the specific section to be shown here as Related pages, list their `page_id`. If you want to list multiple related pages, make sure to put them in a list like this: [page_id1, page_id2]. The specific sections allowed in each page are specified in each page template. Please, do not add extra sections in the metadata of the page.
+  If you want pages from the specific section to be shown here as Related pages, list their `page_id`. If you want to list multiple related pages, make sure to put them in a list like this: [page_id1, page_id2]. The specific sections allowed in each page are specified in each page template. Please, do not add extra sections in the metadata of the page. Be aware that sections are case sensitive.
 
   ```yml
   related_pages:
