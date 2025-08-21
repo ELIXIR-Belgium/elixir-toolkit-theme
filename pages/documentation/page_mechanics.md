@@ -33,8 +33,6 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `no_robots`: By setting this field to true, the page will not end up in the search results of google or any other search engine. Default: *false*
 
-* `keywords`: List here all the keywords that can be used to find the page using the searchbox in the right upper corner of the page, lowercase.
-
 * `sidebar`: Specify here an alternative sidebar, which corresponds to the filename in the *_data/sidebars/* directory. Default: *main*. If no sidebar is set, or *sidebar: false*, no sidebar will be shown.
 
 * `toc`: When set to *false*, the table of contents at the right side of the page will not be generated. This is recommended when you know in advance no table of contents will ever be needed, and improves page loading times.
