@@ -99,7 +99,7 @@ body img {
 }
 
 // Add external link icon to all urls
-#content a:is([href^="http"], [href^="//"]):not([href^="{{ site.url }}"]):not([href^="mailto:"]):not([href^="tel:"]):not(:has(> span:only-child)):not(:has(> img)):not(.btn):not(.no-ext-icon)::after {
+#content a:is([href^="http"], [href^="//"]):not([href^="{{ site.github.url | default: site.url }}"]):not([href^="mailto:"]):not([href^="tel:"]):not(:has(> span:only-child)):not(:has(> img)):not(.btn):not(.no-ext-icon)::after {
     content: "\f35d";
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
