@@ -15,7 +15,7 @@ national_resources:
     how_to_access: explantation on how you can access this resource
     instance_of: github
     related_pages:
-      example_pages: [gp5, gp2]
+      Example_pages: [gp5, gp2]
     registry:
       biotools: bioconda
       tess: Bioconda
@@ -24,13 +24,13 @@ national_resources:
     how_to_access: 
     instance_of: 
     related_pages:
-      example_pages: [gp5]
+      Example_pages: [gp5]
   - name: Resource name 3
     description: A general description about the resource
     how_to_access: 
     instance_of: 
 related_pages: 
-    example_pages: []
+    Example_pages: []
 
 ---
 

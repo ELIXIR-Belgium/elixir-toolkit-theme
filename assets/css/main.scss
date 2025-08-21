@@ -98,6 +98,22 @@ body img {
     font-family: $font-family-theme !important;
 }
 
+// Add external link icon to all urls
+#content a:is([href^="http"], [href^="//"]):not([href^="{{ site.url }}"]):not([href^="mailto:"]):not([href^="tel:"]):not(:has(> span:only-child)):not(:has(> img)):not(.btn):not(.no-ext-icon)::after {
+    content: "\f35d";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    display: inline-block;
+    margin-left: .4em;
+    font-size: .60em;
+    line-height: 1;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    pointer-events: none;
+    vertical-align: middle;
+}
+
 /*-----Layout-----*/
 
 #main {

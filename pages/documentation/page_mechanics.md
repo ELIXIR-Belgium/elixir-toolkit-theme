@@ -33,8 +33,6 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `no_robots`: By setting this field to true, the page will not end up in the search results of google or any other search engine. Default: *false*
 
-* `keywords`: List here all the keywords that can be used to find the page using the searchbox in the right upper corner of the page, lowercase.
-
 * `sidebar`: Specify here an alternative sidebar, which corresponds to the filename in the *_data/sidebars/* directory. Default: *main*. If no sidebar is set, or *sidebar: false*, no sidebar will be shown.
 
 * `toc`: When set to *false*, the table of contents at the right side of the page will not be generated. This is recommended when you know in advance no table of contents will ever be needed, and improves page loading times.
@@ -67,7 +65,7 @@ github:
 
 * `related_pages`: List here the `page_id` of your pages that you want to display as under the Related pages of this page, grouped by section. See [website sections](website_sections) for more information.
 
-  If you want pages from the specific section to be shown here as Related pages, list their `page_id`. If you want to list multiple related pages, make sure to put them in a list like this: [page_id1, page_id2]. The specific sections allowed in each page are specified in each page template. Please, do not add extra sections in the metadata of the page.
+  If you want pages from the specific section to be shown here as Related pages, list their `page_id`. If you want to list multiple related pages, make sure to put them in a list like this: [page_id1, page_id2]. The specific sections allowed in each page are specified in each page template. Please, do not add extra sections in the metadata of the page. Be aware that sections are case sensitive.
 
   ```yml
   related_pages:
@@ -135,7 +133,7 @@ github:
       how_to_access: explantation on how you can access this resource
       instance_of: GitHub
       related_pages:
-        example_pages: [gp3, gp1, gp2]
+        Example_pages: [gp3, gp1, gp2]
       registry:
         biotools: bioconda
         tess: Bioconda

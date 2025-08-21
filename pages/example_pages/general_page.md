@@ -26,7 +26,7 @@ training:
     url: https://www.youtube.com
 summary: This summary is used below the page title
 related_pages: 
-    example_pages: [gp2, gp3]
+    Example_pages: [gp2, gp3]
 ---
 
 

@@ -6,7 +6,7 @@ coordinators: [Bert Droesbeke]
 description: This description is used when the page is listed
 page_id: gp5
 related_pages: 
-    example_pages: [gp2, gp3]
+    Example_pages: [gp2, gp3]
 ---
 
 
