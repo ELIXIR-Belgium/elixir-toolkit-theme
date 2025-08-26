@@ -327,9 +327,7 @@ An overview of all pages (belonging to the sections listed above) and their `pag
 
 ```yml
 related_pages: 
-   your_tasks: [page_id1, page_id2]
-   your_domain: [page_id1, page_id2]
-   tool_assembly: [page_id1, page_id2]
+   Example_pages: [page_id1, page_id2]
 ```
 
 ## Listing training material

@@ -44,7 +44,7 @@ Becomes:
 
 ```
 {% raw %}
-{% include section-navigation-tiles-simple.html type="example_pages" %}
+{% include section-navigation-tiles-simple.html type="Example_pages" %}
 {% endraw %}
 ```
 
