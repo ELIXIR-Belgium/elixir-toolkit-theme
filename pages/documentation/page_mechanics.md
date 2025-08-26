@@ -63,7 +63,7 @@ github:
 
 ### Related pages
 
-* `related_pages`: List here the `page_id` of your pages that you want to display at Related pages of this page, grouped by section. These groups are in reality dictionaries with page.type (sections) as key and a list with page ids as value. See [website sections](website_sections) for more information.
+* `related_pages`: List here the `page_id` of your pages that you want to display at the Related pages section at the end of the page, grouped by section. These groups are in reality dictionaries with page.type (sections) as key and a list with page ids as value. See [website sections](website_sections) for more information.
 
   ```yml
   related_pages:
