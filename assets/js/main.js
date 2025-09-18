@@ -26,27 +26,6 @@ $(document).ready(function () {
     }
 });
 
-/**
- * Settings for side navigation
- */
-$(document).ready(function () {
-    // Initialize navgoco with default options
-    $("#sidebar>nav>ul").navgoco({
-        caretHtml: '',
-        accordion: true,
-        openClass: 'active', // open
-        save: false, // leave false or nav highlighting doesn't work right
-        cookie: {
-            name: 'navgoco',
-            expires: false,
-            path: '/'
-        },
-        slide: {
-            duration: 400,
-            easing: 'swing'
-        }
-    });
-});
 
 /**
  * Back to top button

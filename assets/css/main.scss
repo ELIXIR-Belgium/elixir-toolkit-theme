@@ -433,70 +433,51 @@ header .navbar {
 }
 
 #sidebar > nav > ul {
-    > li:not(.sidebar-title) > a {
+    > li:not(.sidebar-title) {
         background-color: $sidebar-bg;
         color: $sidebar-color;
     }
 
-    li > a {
-        > span {
-            float: right;
-            width: 15px;
-            margin-left: $btn-padding-x;
-            text-align: center;
-        }
-
-        > span:after {
-            display: inline-block;
-            font-style: normal;
-            font-variant: normal;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            content: "\f078";
-            transition: transform 0.15s ease-in-out;
-        }
+    li  > i {
+        transition: transform 0.15s ease-in-out;
     }
+    
 
     li.active {
-        &:not(.parent) > a {
+        &:not(.parent) {
             background-color: $sidebar-bg-active;
             color: $sidebar-color-active;
         }
 
-        > a > span:after {
-            transform: rotate(-180deg);
+        > button > i {
+            transform: rotate(-90deg);
         }
     }
 
     ul {
-        display: none;
-
         li {
-            a {
-                margin-left: 30px;
-                background-color: $sidebar-lvl2-bg;
-                color: $sidebar-lvl2-color;
+            margin-left: 30px;
+            background-color: $sidebar-lvl2-bg;
+            color: $sidebar-lvl2-color;
             }
 
-            ul li a {
+            ul li {
                 margin-left: 60px;
                 background-color: $sidebar-lvl3-bg;
                 color: $sidebar-lvl3-color;
             }
-        }
+    }
 
-        .sidebar_rdm_sub {
-            border-color: $sidebar-bg;
-            padding: 0.75rem 0.5rem 0.5rem 0.5rem;
-            border-radius: 0px 0px $border-radius $border-radius;
-            border-style: none solid solid solid;
-            border-width: 0.2em;
-            margin-top: -0.25rem;
-        }
+    .sidebar_rdm_sub {
+        border-color: $sidebar-bg;
+        padding: 0.75rem 0.5rem 0.5rem 0.5rem;
+        border-radius: 0px 0px $border-radius $border-radius;
+        border-style: none solid solid solid;
+        border-width: 0.2em;
+        margin-top: -0.25rem;
     }
 }
+
 
 /*-----Summary under page title-----*/
 
