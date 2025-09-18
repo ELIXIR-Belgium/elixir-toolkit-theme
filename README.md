@@ -185,7 +185,6 @@ This theme would not be possible without following open source projects:
 - [lunr.js](https://github.com/olivernn/lunr.js) - Main tool behind the search bar enabling content search
 - [jQuery](https://github.com/jquery/jquery) - A fast, small, and feature-rich JavaScript library for easy scripting
 - [jekyll-table-of-contents](https://github.com/ghiculescu/jekyll-table-of-contents) - Lightweight JS script to render the table of contents
-- [jQuery Navgoco Menus](https://github.com/tefra/navgoco) - Multi-level slide navigation with accordion effect
 - [Font-Awesome](https://github.com/FortAwesome/Font-Awesome) - The famous icon library
 - [flag-icons](https://github.com/lipis/flag-icons) - A curated collection of all country flags in SVG + css integration
 - [clipboard.js](https://github.com/zenorocha/clipboard.js) - Modern copy to clipboard. No Flash. Just 3kb gzipped clipboard.
