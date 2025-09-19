@@ -70,6 +70,7 @@ theme_variables:
   topnav:
     theme: light
     brand_logo: assets/img/main_logo.svg
+    search: true
     github: true
     twitter: false
     bluesky: false
@@ -108,6 +109,7 @@ More detailed information about these settings can be found here:
 * **topnav**: Settings related to the top navigation.
   *  `theme`: This variable is needed to change between a dark and a light top navigation. possible values: *dark* and *light*
   *  `brand_logo`: Custom path towards the brand logo, in case the assets/img/main_logo.svg can not be used.
+  *  `search`:  Enable or disable the appearance of the search bar. Default: *true*
   *  `github`: Enable or disable the appearance of the Github repo nav link. Default: *true*
   *  `twitter`: Enable or disable the appearance of the Twitter nav link by adding the url towards the twitter page. Default: *false*
   *  `bluesky`: Enable or disable the appearance of the Bluesky nav link by adding the url towards the Bluesky page. Default: *false*
