@@ -1,0 +1,10 @@
+<div class="p-4 rounded mt-4">
+  <ul class="list-unstyled d-flex flex-column gap-3">
+    {%- for citation in include.citations_list -%}
+    <li class="p-3 rounded border bg-light">
+      <i class="fa-solid fa-quote-left text-muted me-2"></i>
+      <span>{{ citation }}</span>
+    </li>
+    {%- endfor -%}
+  </ul>
+</div>
