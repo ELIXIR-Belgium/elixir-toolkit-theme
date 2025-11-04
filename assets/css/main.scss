@@ -429,13 +429,11 @@ header .navbar {
 
 .sidebar-collapse:not(.collapsed) {
     color: $sidebar-color-active;
-    background-color: $sidebar-bg-active;
 }
 
 #sidebar > nav > ul {
     > li:not(.sidebar-title) {
-        background-color: $sidebar-bg;
-        color: $sidebar-color;
+
     }
 
     li  > i {
@@ -445,7 +443,6 @@ header .navbar {
 
     li.active {
         &:not(.parent) {
-            background-color: $sidebar-bg-active;
             color: $sidebar-color-active;
         }
 
