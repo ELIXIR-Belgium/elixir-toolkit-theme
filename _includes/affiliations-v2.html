@@ -1,0 +1,18 @@
+<div class="p-4 rounded mt-4 d-flex flex-wrap gap-2">
+  {%- for affiliation_name in include.affiliations_list -%}
+    {%- comment -%} Check if it's a country code (2 characters) {%- endcomment -%}
+    {%- if affiliation_name.size == 2 -%}
+      {%- assign country_code = affiliation_name | upcase -%}
+
+      <a role="button" class="btn btn-sm d-flex align-items-center contributor-link hover-primary">
+        <div class="d-flex justify-content-center affiliation-flag">
+          {%- include affiliation-logo.html country_code=country_code name=country_code -%}
+        </div>
+      </a>
+    {%- else -%}
+      <span class="btn btn-sm contributor-link d-flex align-items-center justify-content-center">
+        {%- include affiliation-logo.html name=affiliation_name -%}
+      </span>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
