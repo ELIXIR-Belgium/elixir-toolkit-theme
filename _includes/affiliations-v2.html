@@ -1,10 +1,16 @@
-<div class="p-4 rounded mt-4 d-flex flex-wrap gap-2">
+<div class="p-2 gap-1 d-flex flex-wrap">
   {%- for affiliation_name in include.affiliations_list -%}
     {%- comment -%} Check if it's a country code (2 characters) {%- endcomment -%}
     {%- if affiliation_name.size == 2 -%}
       {%- assign country_code = affiliation_name | upcase -%}
 
-      <a role="button" class="btn btn-sm d-flex align-items-center contributor-link hover-primary">
+      {%- for country in site.data.countries %}
+        {%- if country[0] == country_code %}
+          {% assign country_name = country[1] %}
+        {%- endif %}
+      {%- endfor %}
+
+      <a href="{% if country_name %}{{ country_name | prepend: 'https://elixir-' | append: '.org' | downcase }}{% endif %}" class="btn btn-sm d-flex align-items-center contributor-link hover-light" role="button" target="_blank">
         <div class="d-flex justify-content-center affiliation-flag">
           {%- include affiliation-logo.html country_code=country_code name=country_code -%}
         </div>
