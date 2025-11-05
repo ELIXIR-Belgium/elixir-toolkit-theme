@@ -752,9 +752,29 @@ footer {
     text-align: center;
 }
 
+/*---- Page metadata ----*/
+.page-metadata {
+    background-color: $contr-bg;
+    border-radius: $border-radius;
+    padding: $spacer * .5;
+
+    .nav-pills .nav-link {
+        border-radius: 0px;
+        color: black;
+        border-bottom: black 0px solid;
+        transition: border-bottom 0.3s ease-in-out;
+    }
+    
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+        color: black;
+        background-color: transparent;
+        border-bottom: black 2px solid;
+    }
+}
+
+
 /*--------Page contributors---------*/
 .page-contributors {
-    background-color: $contr-bg;
     font-size: 0;
 
     .contributor-cards .card {
