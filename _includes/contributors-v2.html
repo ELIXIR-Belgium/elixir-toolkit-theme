@@ -1,6 +1,6 @@
 {%- assign contributors_lookup = site.data.CONTRIBUTORS -%}
 
-<div class="p-2 gap-1 rounded page-contributors d-flex flex-wrap">
+<div class="gap-1 rounded page-contributors d-flex flex-wrap">
   {%- for contributor_name in include.contributors_list -%}
     {%- assign data = contributors_lookup[contributor_name] -%}
 

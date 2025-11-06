@@ -788,7 +788,7 @@ footer {
     }
 
     .tab-content {
-        padding: 0.75rem;
+        padding: 0.5rem 0;
         margin-top: 0.5rem;
     }
 }
@@ -797,8 +797,6 @@ footer {
 /*--------Page contributors---------*/
 .page-contributors {
     font-size: 0;
-    gap: 0.35rem !important;
-    padding: 0.5rem !important;
 
     .contributor-cards .card {
         background-color: $contr-popover-bg;
