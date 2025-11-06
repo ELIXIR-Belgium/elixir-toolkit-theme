@@ -603,13 +603,6 @@ table {
     --bs-btn-font-size: .75em;
     --bs-btn-line-height: 1;
     --bs-btn-border-radius: .375rem; /* ~badge radius. Add .rounded-pill if you want pill badges */
-  
-    /* optional: badge-like colors (tweak or remove if you want outline) */
-    --bs-btn-bg: var(--bs-dark);
-    --bs-btn-color: #fff;
-    --bs-btn-border-color: var(--bs-dark);
-    --bs-btn-hover-bg: var(--bs-primary);
-    --bs-btn-hover-border-color: var(--bs-primary);
   }
 
 /*-----Footer-----*/
