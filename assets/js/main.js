@@ -26,6 +26,43 @@ $(document).ready(function () {
     }
 });
 
+/**
+ * Sidebar height
+ */
+function getVisibleHeight(el) {
+  const rect = el.getBoundingClientRect();
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+  // Calculate visible portion
+  const visibleTop = Math.max(rect.top, 0);
+  const visibleBottom = Math.min(rect.bottom, windowHeight);
+  const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+  
+  return visibleHeight;
+}
+
+$(document).ready(function () {
+    const breakpointLg = 992; // Bootstrap's lg breakpoint in pixels
+    const main = document.getElementById('main');
+    const sideNav = document.getElementById('side-nav');
+
+    function adjustSidebarHeight() {
+        window.requestAnimationFrame(() => {
+            if (window.innerWidth < breakpointLg) {
+                sideNav.style.height = 'auto';
+            } else {
+                const visibleHeight = getVisibleHeight(main);
+                sideNav.style.height = visibleHeight + 'px';
+            }
+        });
+    }
+
+    adjustSidebarHeight();
+
+    window.addEventListener('scroll', adjustSidebarHeight);
+    window.addEventListener('resize', adjustSidebarHeight);
+})
+
 
 /**
  * Back to top button

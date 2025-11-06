@@ -20,7 +20,7 @@ $navbar-light-toggler-border-color: transparent;
 $navbar-dark-toggler-border-color: transparent;
 $card-border-width: 0;
 $custom-container-max-widths: (
-    xxxl: 1700px
+    xxxl: 1440px
 );
 
 /*-----Initialize Bootstrap variables-----*/
@@ -172,12 +172,14 @@ body img {
     }
 
     #main.add-grid #toc {
-        top: $spacer * 3;
+        top: 0;
         right: 0;
         z-index: 2;
         height: calc(100vh - 7rem);
         overflow-y: auto;
         margin-left: $spacer * 3;
+        scrollbar-width: thin;
+        scrollbar-color: $primary transparent;
     }
 
     #layout {
@@ -409,16 +411,45 @@ header .navbar {
 @include media-breakpoint-up(lg) {
     #sidebar > nav {
         display: block !important;
+        position: sticky;
+        top: 0;
+        height: calc(100vh - 7rem);
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: $primary transparent;
     }
 }
 
-#sidebar > nav .btn.sidebar-title {
-    color: $sidebar-color;
-    border: 0;
+#sidebar > nav {
+    .sidebar-title-wrapper {
+        position: sticky;
+        top: 0;
+        background: $sidebar-bg;
+        z-index: 1;
+        padding-bottom: 0.25rem;
+    }
+
+    .sidebar-title {
+        color: $sidebar-color;
+        border: 0;
+        padding: 0.5rem;
+        font-weight: 700;
+        transition: $transition-base;
+        border-radius: $border-radius;
+
+        &:hover {
+            color: $sidebar-link-hover-color;
+            background: $sidebar-link-hover-background;
+        }
+
+        &.disabled {
+            color: $secondary;
+        }
+    }
 }
 
 .sidebar-collapse {
-    background-color: $sidebar-bg;
+    background-color: $light;
 
     i {
         font-size: 1.25rem;
@@ -429,36 +460,91 @@ header .navbar {
 
 .sidebar-collapse:not(.collapsed) {
     color: $sidebar-color-active;
+    background: $sidebar-bg-active;
 }
 
 #sidebar > nav > ul {
-    > li:not(.sidebar-title) {
+    margin-bottom: 0;
 
-    }
+    li {
+        padding: 0.25rem 0.5rem;
+        position: relative;
 
-    li  > i {
-        transition: transform 0.15s ease-in-out;
-    }
-    
+        &.active {
+            & > a {
+                color: $primary;
+                font-weight: 600;
+            }
+        }
+        
+        a {
+            color: $secondary;
+            cursor: pointer;
+            transition: $transition-base;
+
+            &::after {
+                transition: $transition-base;
+                pointer-events: none;
+                background: transparent;
+                position: absolute;
+                content: "";
+                left: 0;
+                top: -0.125rem;
+                right: 0;
+                bottom: -0.125rem;
+                border-radius: $border-radius;
+            }
+
+            &:hover {
+                color: $sidebar-link-hover-color;
+
+                &::after {
+                    background: $sidebar-link-hover-background;
+                }
+
+                & + .btn i {
+                    color: $sidebar-link-hover-color;
+                }
+            }
+        }
+
+        .btn {
+            transition: $transition-base;
+            color: $secondary;
+            width: 1.75rem;
+            height: 1.75rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                color: $sidebar-link-hover-color;
+                background: $sidebar-link-hover-background;
+            }
+
+            &:not(.collapsed) {
+                i {
+                    transform: rotate(90deg);
+                }
+            }
+
+            i {
+                transition: $transition-base;
+            }
+        }
+
+        ul {
+            border-left: 1px solid $border-color;
+            margin-left: 0.2rem;
+            padding-left: 0.4rem;
+            margin-bottom: 0;
+        }
+    }    
 
     li.active {
         &:not(.parent) {
             color: $sidebar-color-active;
         }
-
-        > button > i {
-            transform: rotate(-90deg);
-        }
-    }
-
-    ul {
-        li {
-            margin-left: 30px;
-            }
-
-            ul li {
-                margin-left: 60px;
-            }
     }
 
     .sidebar_rdm_sub {
@@ -576,6 +662,7 @@ footer {
     line-height: 24px;
     background-color: $footer-bg;
     color: $footer-color;
+    margin-top: 1rem;
 
     a {
         color: $footer-link-color !important;
