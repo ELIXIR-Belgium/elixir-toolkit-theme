@@ -9,7 +9,7 @@
 {%- if page.coordinators and page.coordinators.size > 0 -%}{%- assign has_coordinators = true -%}{%- endif -%}
 {%- if page.editors and page.editors.size > 0 -%}{%- assign has_editors = true -%}{%- endif -%}
 {%- if page.affiliations and page.affiliations.size > 0 -%}{%- assign has_affiliations = true -%}{%- endif -%}
-{%- if page.citations and page.citations.size > 0 -%}{%- assign has_citations = true -%}{%- endif -%}
+{%- if page.page_citation -%}{%- assign has_citations = true -%}{%- endif -%}
 
 {% if has_contributors or has_coordinators or has_editors or has_affiliations or has_citations %}
 
@@ -54,9 +54,9 @@
             {% endif %}
 
             {% if has_citations %}
-            <button class="nav-link {% if first_tab == 'citations' %}active{% endif %}" id="credits-cite-tab" data-bs-toggle="tab" data-bs-target="#credits-cite" type="button" role="tab" aria-controls="credits-cite" aria-selected="{% if first_tab == 'citations' %}true{% else %}false{% endif %}">
+            <button class="nav-link {% if first_tab == 'citations' %}active{% endif %}" id="credits-cite-tab" data-bs-toggle="tab" data-bs-target="#credits-citations" type="button" role="tab" aria-controls="credits-cite" aria-selected="{% if first_tab == 'citations' %}true{% else %}false{% endif %}">
                 <i class="fa-solid fa-quote-left"></i>
-                How to cite
+                Citation
             </button>
             {% endif %}
 
@@ -96,7 +96,12 @@
 
         {% if has_citations %}
         <div class="tab-pane {% if first_tab == 'citations' %}show active{% endif %}" id="credits-citations" role="tabpanel" aria-labelledby="credits-citations-tab">
-            {% include citations-v2.html citations_list=page.citations %}
+            {% assign page_title = page.title | strip %}
+            {% if has_contributors %}
+                {% include citations-v2.html contributors=page.contributors title=page_title url=page.url %}
+            {% else %}
+                {% include citations-v2.html title=page_title url=page.url %}
+            {% endif %}
         </div>
         {% endif %}
 
