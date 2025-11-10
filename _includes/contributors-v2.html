@@ -1,0 +1,20 @@
+{%- assign contributors_lookup = site.data.CONTRIBUTORS -%}
+
+<div class="gap-1 rounded page-contributors d-flex flex-wrap">
+  {%- for contributor_name in include.contributors_list -%}
+    {%- assign data = contributors_lookup[contributor_name] -%}
+
+    <div class="dropup-center dropup d-inline-block">
+      <button class="btn btn-sm dropdown-toggle contributor-link d-flex gap-2 align-items-center hover-primary position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" data-bs-offset="0,10">
+        <div class="ratio ratio-1x1 contributor-img-sm">
+          {%- include contributor-avatar.html name=contributor_name image_url=data.image_url git=data.git -%}
+        </div>
+        <div>{{ contributor_name }}</div>
+      </button>
+
+      <div class="dropdown-menu shadow p-0 border-0 contributor-cards">
+        {%- include contributor-card.html name=contributor_name image_url=data.image_url git=data.git email=data.email orcid=data.orcid role=data.role affiliation=data.affiliation -%}
+      </div>
+    </div>
+  {%- endfor -%}
+</div>

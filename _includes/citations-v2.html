@@ -1,0 +1,13 @@
+{% if include.contributors %}
+  {{ include.contributors | join: ", " }},
+{% endif %}
+"<em>{{ include.title }}</em>".
+{% if site.url %}
+  {{ site.url | remove: "https://www." | remove: "http://www." | remove: "https://" | remove: "http://"  }}.
+{% endif %}
+{% assign page_url = include.url | absolute_url %}
+<a href="{{ page_url }}">{{ page_url }}</a> <span id="current_date"></span>.
+<script>
+  var current_date = new Date().toLocaleDateString('en-uk', { year:"numeric", month:"long", day:"numeric"})
+  document.getElementById("current_date").textContent = " (accessed " + current_date + ")";
+</script>

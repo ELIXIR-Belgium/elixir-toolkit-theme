@@ -752,9 +752,50 @@ footer {
     text-align: center;
 }
 
+/*---- Page metadata ----*/
+.page-metadata {
+    background-color: $contr-bg;
+    border-radius: $border-radius;
+    padding: $spacer * .5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+    .nav-pills {
+        gap: 0.25rem;
+    }
+
+    .nav-pills .nav-link {
+        border-radius: 0px;
+        color: $primary;
+        border-bottom: $primary 0px solid;
+        transition: border-bottom 0.3s ease-in-out, background-color 0.2s ease-in-out;
+        padding: 0.4rem 0.75rem;
+        font-size: 0.9rem;
+
+        i {
+            font-size: 0.85em;
+            margin-right: 0.35rem;
+        }
+
+        &:hover {
+            background-color: rgba($primary, 0.05);
+        }
+    }
+
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+        color: $primary;
+        background-color: transparent;
+        border-bottom: $primary 2px solid;
+    }
+
+    .tab-content {
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+    }
+}
+
+
 /*--------Page contributors---------*/
 .page-contributors {
-    background-color: $contr-bg;
     font-size: 0;
 
     .contributor-cards .card {
@@ -767,13 +808,17 @@ footer {
     /* Gets rid of extra white space */
     .contributor-link {
         background-color: $contr-link-bg;
+        padding: 0.25rem 0.5rem !important;
+        font-size: 0.85rem;
+        gap: 0.35rem !important;
+
         &::after {
             display: none;
         }
 
         .contributor-img-sm {
-            height: 25px;
-            width: 25px;
+            height: 22px;
+            width: 22px;
         }
 
         .coordinator-crown {
@@ -790,6 +835,28 @@ footer {
 
         .contr-placeholder {
             font-size: 0.5rem;
+        }
+    }
+}
+
+/*-----Page citations-----*/
+.page-metadata {
+    #credits-citations {
+        padding: 0.5rem !important;
+
+        ul {
+            gap: 0.5rem !important;
+        }
+
+        li {
+            padding: 0.75rem 1rem !important;
+            font-size: 0.9rem;
+            background-color: rgba($light, 0.5) !important;
+
+            i {
+                font-size: 0.8em;
+                opacity: 0.6;
+            }
         }
     }
 }
@@ -876,15 +943,15 @@ footer {
 }
 
 .affiliation-img {
-    height: 60px;
+    height: 45px;
 }
 
 .affiliation-flag {
-    width: 60px;
+    width: 50px;
 }
 
 .affiliation-flag .ratio {
-    width: 40px;
+    width: 35px;
 }
 
 /*-----News and events-----*/
