@@ -64,7 +64,7 @@ $container-max-widths: map-merge($container-max-widths, $custom-container-max-wi
         margin-top: $spacer * 1.5;
     }
 
-    h3 + h4 {
+    h3+h4 {
         margin-top: $spacer * 0.25;
     }
 
@@ -130,6 +130,7 @@ body img {
 
 #toc {
     grid-area: toc;
+
     /*-----Page image-----*/
     .page-img-lg {
         max-height: 9em;
@@ -190,7 +191,8 @@ body img {
     grid-area: content;
     min-width: 1px;
     position: relative;
-    > h2:first-child {
+
+    >h2:first-child {
         margin-top: 0;
     }
 }
@@ -241,6 +243,7 @@ pre {
     border-radius: $border-radius;
     margin-bottom: $spacer;
     line-height: 1.42857143;
+
     code {
         padding: 0;
         background-color: transparent;
@@ -253,12 +256,14 @@ div.highlight {
     border: 1px solid $border-color;
     border-radius: $border-radius;
     margin: $spacer 0;
+
     pre {
         margin-bottom: 0;
         padding: $spacer;
         border: 0;
     }
 }
+
 /*-----Top navigation-----*/
 
 header .navbar {
@@ -388,7 +393,7 @@ header .navbar {
     vertical-align: top;
 }
 
-.search-result-preview + .search-result-preview {
+.search-result-preview+.search-result-preview {
     margin-top: 0.25rem;
 }
 
@@ -407,12 +412,12 @@ header .navbar {
 /*-----Sidebar-----*/
 
 @include media-breakpoint-up(lg) {
-    #sidebar > nav {
+    #sidebar>nav {
         display: block !important;
     }
 }
 
-#sidebar > nav .btn.sidebar-title {
+#sidebar>nav .btn.sidebar-title {
     color: $sidebar-color;
     border: 0;
 }
@@ -432,21 +437,21 @@ header .navbar {
     background-color: $sidebar-bg-active;
 }
 
-#sidebar > nav > ul {
-    > li:not(.sidebar-title) > a {
+#sidebar>nav>ul {
+    >li:not(.sidebar-title)>a {
         background-color: $sidebar-bg;
         color: $sidebar-color;
     }
 
-    li > a {
-        > span {
+    li>a {
+        >span {
             float: right;
             width: 15px;
             margin-left: $btn-padding-x;
             text-align: center;
         }
 
-        > span:after {
+        >span:after {
             display: inline-block;
             font-style: normal;
             font-variant: normal;
@@ -460,12 +465,12 @@ header .navbar {
     }
 
     li.active {
-        &:not(.parent) > a {
+        &:not(.parent)>a {
             background-color: $sidebar-bg-active;
             color: $sidebar-color-active;
         }
 
-        > a > span:after {
+        >a>span:after {
             transform: rotate(-180deg);
         }
     }
@@ -517,8 +522,11 @@ header .navbar {
 #toc-contents {
     @include media-breakpoint-up(xl) {
         display: block !important;
-    } // Indent the lists and reset any other padding
+    }
+
+    // Indent the lists and reset any other padding
     ul {
+
         // highlighting active links
         a {
             color: inherit;
@@ -526,6 +534,7 @@ header .navbar {
             border-left: 0.125rem solid transparent;
             display: block;
             transition: border-left 0.15s ease-in-out;
+
             &.active,
             &:hover {
                 text-decoration: none !important;
@@ -558,7 +567,7 @@ header .navbar {
 
 /*-----General table properties-----*/
 
-.table > :not(:first-child) {
+.table> :not(:first-child) {
     border-color: inherit;
 }
 
@@ -637,10 +646,12 @@ footer {
             fill: $footer-ett;
             transition: fill 0.15s ease-in-out;
         }
+
         &:hover {
             .cls-1 {
                 fill: #0d6efd;
             }
+
             color: #0d6efd !important;
         }
     }
@@ -652,8 +663,10 @@ footer {
     position: fixed;
     height: 50px;
     width: 50px;
-    bottom: -50px; /* Default hidden position */
-    right: 1rem; /* Adjust as needed */
+    bottom: -50px;
+    /* Default hidden position */
+    right: 1rem;
+    /* Adjust as needed */
     opacity: 0;
     overflow: hidden;
     z-index: 1000;
@@ -663,7 +676,8 @@ footer {
         opacity 0.15s ease-out;
 
     &.visible {
-        bottom: 1rem; /* Initial visible position */
+        bottom: 1rem;
+        /* Initial visible position */
         opacity: 1;
     }
 }
@@ -722,6 +736,7 @@ footer {
             line-height: 2ex;
             width: 2.2ex;
             height: 2.2ex;
+
             i {
                 font-size: 0.625em;
                 line-height: 0.1em;
@@ -754,42 +769,18 @@ footer {
 
 /*---- Page metadata ----*/
 .page-metadata {
-    background-color: $contr-bg;
-    border-radius: $border-radius;
-    padding: $spacer * .5;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    background-color: $page-metadata-bg;
+    .nav-link {
+        border: none;
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid transparent;
 
-    .nav-pills {
-        gap: 0.25rem;
-    }
-
-    .nav-pills .nav-link {
-        border-radius: 0px;
-        color: $primary;
-        border-bottom: $primary 0px solid;
-        transition: border-bottom 0.3s ease-in-out, background-color 0.2s ease-in-out;
-        padding: 0.4rem 0.75rem;
-        font-size: 0.9rem;
-
-        i {
-            font-size: 0.85em;
-            margin-right: 0.35rem;
+        &.active,
+        &.hover {
+            background: none;
+            border-bottom-color: #0c3450;
         }
-
-        &:hover {
-            background-color: rgba($primary, 0.05);
-        }
-    }
-
-    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-        color: $primary;
-        background-color: transparent;
-        border-bottom: $primary 2px solid;
-    }
-
-    .tab-content {
-        padding: 0.5rem 0;
-        margin-top: 0.5rem;
     }
 }
 
@@ -801,6 +792,7 @@ footer {
     .contributor-cards .card {
         background-color: $contr-popover-bg;
     }
+
     .dropdown-menu {
         width: 11em;
     }
@@ -819,18 +811,6 @@ footer {
         .contributor-img-sm {
             height: 22px;
             width: 22px;
-        }
-
-        .coordinator-crown {
-            font-size: 0.6em;
-            width: 1.8em;
-            height: 1.8em;
-            line-height: 1.8;
-            background-color: $contr-crown-bg;
-
-            .fa-solid {
-                color: $contr-crown-color;
-            }
         }
 
         .contr-placeholder {
@@ -908,11 +888,13 @@ footer {
         color: $primary;
     }
 }
+
 @include media-breakpoint-up(sm) {
     .tool {
         white-space: nowrap;
     }
 }
+
 .popover-tool {
     max-width: 20rem;
 
@@ -962,8 +944,8 @@ li.past_event,
     display: none;
 }
 
-.events > ul > li,
-.news > ul > li {
+.events>ul>li,
+.news>ul>li {
     border-left: $news-border-color 5px solid;
     border-radius: $border-radius;
     padding: 0px 11px;
@@ -983,7 +965,7 @@ li.past_event,
         display: inline-block;
     }
 
-    .full-description > *:last-child {
+    .full-description>*:last-child {
         margin-bottom: 0;
 
         li {
@@ -999,15 +981,19 @@ a.info-collapse {
         transition: transform 0.2s ease-in-out;
         margin-right: $spacer;
     }
+
     h3 {
         transition: color 0.2s ease-in-out;
     }
+
     &[aria-expanded="true"] {
         i {
             transform: rotate(180deg);
         }
     }
+
     &:hover {
+
         i,
         h3 {
             color: rgba($link-color, 0.8) !important;
@@ -1017,7 +1003,7 @@ a.info-collapse {
 
 // Add a bottom border to the last accordion.
 a.info-collapse[aria-expanded="false"]:last-of-type,
-a.info-collapse[aria-expanded="true"]:last-of-type + .show {
+a.info-collapse[aria-expanded="true"]:last-of-type+.show {
     border-bottom: 1px solid $border-color;
 }
 
@@ -1037,13 +1023,16 @@ a.info-collapse[aria-expanded="true"]:last-of-type + .show {
         a.btn {
             background-color: $info-card-bg;
             color: $info-card-color;
+
             i {
                 transition: $btn-transition;
                 color: $info-card-color !important;
             }
+
             &:hover {
                 background-color: $info-card-bg-hover;
                 color: $info-card-color-hover !important;
+
                 i {
                     color: $info-card-color-hover !important;
                 }
@@ -1066,14 +1055,17 @@ a.info-collapse[aria-expanded="true"]:last-of-type + .show {
 
 /*-----Section navigation tiles-----*/
 .navigation-tiles {
+
     .card,
     .btn {
         background-color: $nav-card-bg;
         color: $nav-card-color;
         transition: $btn-transition;
+
         &:hover {
             background-color: $nav-card-bg-hover;
             color: $nav-card-color-hover;
+
             a.section-title {
                 text-decoration: none;
                 transition: $btn-transition;
@@ -1082,6 +1074,7 @@ a.info-collapse[aria-expanded="true"]:last-of-type + .show {
         }
 
         a {
+
             &:not(.stretched-link),
             button:not(.stretched-link) {
                 z-index: 2;
@@ -1093,9 +1086,11 @@ a.info-collapse[aria-expanded="true"]:last-of-type + .show {
                 font-size: 1.2rem;
             }
         }
+
         .type-icon {
             height: 1.2rem;
         }
+
         .page-img-sm {
             max-height: 3.2em;
         }
