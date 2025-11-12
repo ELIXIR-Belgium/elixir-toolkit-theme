@@ -39,15 +39,16 @@
         {%- endfor %}
         {%- endif %}
         {%- endfor %}
+        {%- endif %}
         {%- if folder.external_url %}
             <a class="text-start w-100" href="{{folder.external_url}}" target="_blank" rel="noopener">{{folder.title}}</a>
         {%- else %}
             <a class="text-start w-100" {%- if folder.url %}href="{{folder.url | relative_url }}"{% else %}data-bs-toggle="collapse" data-bs-target="#sidebar-list-lvl-1-{{subitems_count}}" aria-expanded="{{subfolder_active}}" aria-controls="sidebar-list-lvl-1-{{subitems_count}}"{% endif %}>{{ folder.title }}</a>
         {%- endif %}
+        {%- if folder.subitems %}
          <button type="button" class="btn btn-sm btn-link rounded-circle{%- unless subfolder_active or page.url == subfolder.url %} collapsed{% endunless %}" data-bs-toggle="collapse" data-bs-target="#sidebar-list-lvl-1-{{subitems_count}}" aria-expanded="{{subfolder_active}}" aria-controls="sidebar-list-lvl-1-{{subitems_count}}">
             <i class="fa-solid fa-chevron-right"></i>
           </button>
-        </li>
         <li class="py-0">
             <ul id="sidebar-list-lvl-1-{{subitems_count}}" class="list-unstyled collapse{%- if subfolder_active or page.url == folder.url %} show{% endif %}" data-bs-parent="#sidebar-list-lvl-0">
                 {%- for subfolder in folder.subitems %}
@@ -241,12 +242,15 @@
                     </ul>
                 </li>
                 {%- endif %}
+                {%- unless subfolder.subitems %}
+                </li>
+                {%- endunless  %}
                 {%- endif %}
                 {%- assign subsubitems_count = subsubitems_count | plus: 1 %}
                 {%- endfor %}
             </ul>
-        </li>
         {%- endif %}
+        </li>        
         {%- assign subitems_count = subitems_count | plus: 1 %}
         {%- endfor %}
     </ul>
