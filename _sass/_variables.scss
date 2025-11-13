@@ -15,14 +15,12 @@ $topnav-brand-height: 44px;
 $search-result-color: $primary;
 
 /*-----Sidebar-----*/
-$sidebar-bg: $light;
+$sidebar-bg: $white !default;
 $sidebar-color: $dark;
-$sidebar-lvl2-bg: $white;
-$sidebar-lvl2-color: $dark;
-$sidebar-lvl3-bg: $white;
-$sidebar-lvl3-color: $dark;
 $sidebar-bg-active: $primary;
 $sidebar-color-active: $white;
+$sidebar-link-hover-color: shift-color($primary, $link-shade-percentage) !default;
+$sidebar-link-hover-background: rgba($sidebar-link-hover-color, 0.1) !default;
 
 /*-----Section navigation tiles-----*/
 $nav-card-bg: $light;

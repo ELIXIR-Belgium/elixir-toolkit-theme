@@ -57,7 +57,6 @@
     <script src="{{ 'assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
     <script src="{{ 'assets/js/anchor.min.js' | relative_url }}"></script>
     {% if page.toc or page.toc == nil %}<script src="{{ 'assets/js/toc.js' | relative_url }}?{{site.time | date: '%s'}}"></script>{% endif %}
-    <script src="{{ 'assets/js/jquery.navgoco.js' | relative_url }}"></script>
     <script src="{{ 'assets/js/main.js' | relative_url }}?{{site.time | date: '%s'}}"></script>
     {%- unless site.theme_variables.topnav.search == false  %}
     <script src="{{ 'assets/js/search.js' | relative_url }}"></script>
