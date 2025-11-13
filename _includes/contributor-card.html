@@ -1,0 +1,33 @@
+<div class="card h-100">
+  <div class="position-relative">
+    <div class="p-3">
+      <div class="ratio ratio-1x1">
+        {%- include contributor-avatar.html name=include.name image_url=include.image_url git=include.git %}
+      </div>
+    </div>
+    {%- if include.role %}
+    <span class="badge position-absolute top-0 end-0">{{ include.role | capitalize }}</span>
+    {%- endif -%}
+  </div>
+  <div class="card-body text-center py-0">
+    <p class="card-title">{{ include.name }}</p>
+    {%- if include.affiliation %}
+    <p class="card-affiliation">{{ include.affiliation | join: " / " }}</p>
+    {%- endif -%}
+  </div>
+  {%- if include.git or include.email or include.orcid %}
+  <div class="card-footer">
+    <div class="d-flex justify-content-center gap-2">
+      {%- if include.git %}
+      <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://github.com/{{ include.git }}"><i class="fa-brands fa-github"></i></a>
+      {%- endif -%}
+      {%- if include.email %}
+      <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="mailto:{{ include.email }}"><i class="fa-solid fa-envelope"></i></a>
+      {%- endif -%}
+      {%- if include.orcid %}
+      <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://orcid.org/{{ include.orcid }}"><i class="fa-brands fa-orcid"></i></a>
+      {%- endif %}
+    </div>
+  </div>
+  {%- endif %} 
+</div>

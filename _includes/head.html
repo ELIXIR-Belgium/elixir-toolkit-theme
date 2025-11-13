@@ -58,7 +58,9 @@
     <script src="{{ 'assets/js/anchor.min.js' | relative_url }}"></script>
     {% if page.toc or page.toc == nil %}<script src="{{ 'assets/js/toc.js' | relative_url }}?{{site.time | date: '%s'}}"></script>{% endif %}
     <script src="{{ 'assets/js/main.js' | relative_url }}?{{site.time | date: '%s'}}"></script>
+    {%- unless site.theme_variables.topnav.search == false  %}
     <script src="{{ 'assets/js/search.js' | relative_url }}"></script>
+    {%- endunless %}
     <script src="{{ 'assets/js/clipboard.min.js' | relative_url }}"></script>
     {%- if page.datatable == true %}
     <!-- Include the standard DataTables bits -->
