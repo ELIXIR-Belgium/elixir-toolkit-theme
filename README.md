@@ -164,7 +164,7 @@ This will start the docker container and serve the website locally. Make sure th
 - [TRE-FX](https://trefx.uk/) (DARE UK, HDR UK)
 - [Norwegian Life Science RDM LookUp](https://elixir.no/rdm-lookup/) (ELIXIR Norway)
 - [RSQkit: Research Software Quality kit](https://everse.software/RSQKit/) (EOSC-EVERSE)
-- [dHMp norge](https://dhp-stottepakke.github.io/pages/) (ELIXIR Norway)
+- [research-data.no](https://plan.research-data.no/pages/) (ELIXIR Norway & BOTT universities Norway)
 - [Learning-Library](https://patcapon39.github.io/Learning-Library/) (Australian BioCommons)
 - [ELIXIR-IT Training Platform](https://elixir-iib-training.github.io/site/training_courses) (ELIXIR IT)
 - [FAIRDOM-SEEK Documentation](https://docs.seek4science.org/) (SEEK community)
