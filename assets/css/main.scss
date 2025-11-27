@@ -500,8 +500,10 @@ header .navbar {
                 border-radius: $border-radius;
             }
 
-            &:hover {
+            &:hover,&.active {
                 color: $sidebar-link-hover-color;
+                color: $primary;
+                font-weight: 600;
 
                 &::after {
                     background: $sidebar-link-hover-background;
