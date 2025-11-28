@@ -40,7 +40,7 @@
 {%- assign allcontributors = allcontributors | sort %}
 {%- endunless %}
 {%- unless allcontributors.size == 0 %}
-<div class="position-relative px-5">
+<div class="position-relative">
 <div id="contributors-carousel-{{carousel_counter}}" class="carousel carousel-dark slide my-4" data-ride="carousel" data-bs-interval="7000">
     <div class="carousel-inner">
         {%- assign counter = 0 %}
@@ -114,11 +114,11 @@
         {%- endif %}
         {%- endfor %}
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#contributors-carousel-{{carousel_counter}}" data-bs-slide="prev" style="left: -3rem;">
+    <button class="carousel-control-prev" type="button" data-bs-target="#contributors-carousel-{{carousel_counter}}" data-bs-slide="prev" style="width: 2rem; margin-left: -2rem; top: 80px; bottom: auto; height: 3rem;">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#contributors-carousel-{{carousel_counter}}" data-bs-slide="next" style="right: -3rem;">
+    <button class="carousel-control-next" type="button" data-bs-target="#contributors-carousel-{{carousel_counter}}" data-bs-slide="next" style="width: 2rem; margin-right: -2rem; top: 80px; bottom: auto; height: 3rem;">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
