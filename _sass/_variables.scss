@@ -15,12 +15,9 @@ $topnav-brand-height: 44px;
 $search-result-color: $primary;
 
 /*-----Sidebar-----*/
-$sidebar-bg: $white !default;
-$sidebar-color: $dark;
-$sidebar-bg-active: $primary;
-$sidebar-color-active: $white;
-$sidebar-link-hover-color: shift-color($primary, $link-shade-percentage) !default;
-$sidebar-link-hover-background: rgba($sidebar-link-hover-color, 0.1) !default;
+$sidebar-title-bg: $white;
+$sidebar-link-color-active: shift-color($primary, $link-shade-percentage) !default;
+$sidebar-link-bg-active:rgba($primary, 0.1) !default;
 
 /*-----Section navigation tiles-----*/
 $nav-card-bg: $light;
@@ -39,8 +36,8 @@ $contr-card-bg: $light;
 
 /*-----Page metadata-----*/
 $page-metadata-bg: rgba($primary, 0.05);
-$contr-link-bg: $white;
-$contr-popover-bg: $white;
+$page-metadata-link-bg: $white;
+$contr-popover-bg: $light;
 
 /*-----Events & news-----*/
 $news-title-bg: $primary;
