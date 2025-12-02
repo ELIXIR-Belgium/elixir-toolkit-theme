@@ -1,6 +1,6 @@
 {%- assign contributors_lookup = site.data.CONTRIBUTORS %}
 {%- assign allcontrstr = nil %}
-{%- assign nr = include.col | default: 5 %}
+{%- assign nr = include.col | default: 4 %}
 {%- if include.custom %}
 {%- assign allcontrstr = include.custom %}
 {%- elsif include.role %}
@@ -39,7 +39,7 @@
 {%- assign allcontributors = allcontributors | sort %}
 {%- endunless %}
 {%- unless allcontributors.size == 0 %}
-<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-xl-{{nr}} g-4 contributor-cards mb-4">
+<div class="row row-cols-2 row-cols-sm-3{%- if nr < 4 %} row-cols-md-4{%- endif %} row-cols-xl-{{nr}} g-4 contributor-cards mb-4">
   {%- for contributor_name in allcontributors %}
   {%- assign data = contributors_lookup[contributor_name] %}
   <div class="col">
