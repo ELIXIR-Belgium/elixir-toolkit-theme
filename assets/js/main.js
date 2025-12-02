@@ -29,22 +29,24 @@ $(document).ready(function () {
 /**
  * Sidebar height
  */
-function getVisibleHeight(el) {
-  const rect = el.getBoundingClientRect();
-  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-  // Calculate visible portion
-  const visibleTop = Math.max(rect.top, 0);
-  const visibleBottom = Math.min(rect.bottom, windowHeight);
-  const visibleHeight = Math.max(0, visibleBottom - visibleTop);
-  
-  return visibleHeight;
-}
-
 $(document).ready(function () {
     const breakpointLg = 992; // Bootstrap's lg breakpoint in pixels
     const main = document.getElementById('main');
     const sideNav = document.getElementById('side-nav');
+
+    // If either element is missing, don't do anything
+    if (!main || !sideNav) return;
+
+    function getVisibleHeight(el) {
+      const rect = el.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+      const visibleTop = Math.max(rect.top, 0);
+      const visibleBottom = Math.min(rect.bottom, windowHeight);
+      const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+
+      return visibleHeight;
+    }
 
     function adjustSidebarHeight() {
         window.requestAnimationFrame(() => {
@@ -61,7 +63,7 @@ $(document).ready(function () {
 
     window.addEventListener('scroll', adjustSidebarHeight);
     window.addEventListener('resize', adjustSidebarHeight);
-})
+});
 
 
 /**
