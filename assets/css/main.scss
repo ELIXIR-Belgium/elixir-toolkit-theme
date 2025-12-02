@@ -429,26 +429,20 @@ header .navbar {
     .sidebar-title-wrapper {
         position: sticky;
         top: 0;
-        background: $sidebar-bg;
+        background: $sidebar-title-bg;
         z-index: 1;
-        padding-bottom: 0.25rem;
     }
 
     .sidebar-title {
-        color: $sidebar-color;
         border: 0;
         padding: 0.5rem;
         font-weight: 700;
         transition: $transition-base;
         border-radius: $border-radius;
 
-        &:hover {
-            color: $sidebar-link-hover-color;
-            background: $sidebar-link-hover-background;
-        }
-
-        &.disabled {
-            color: $secondary;
+        &:hover:not(.disabled), &.active:not(.disabled) {
+            color: $sidebar-link-color-active!important;
+            background: $sidebar-link-bg-active;
         }
     }
 }
@@ -463,10 +457,6 @@ header .navbar {
     }
 }
 
-.sidebar-collapse:not(.collapsed) {
-    color: $sidebar-color-active;
-    background: $sidebar-bg-active;
-}
 
 #sidebar > nav > ul {
     margin-bottom: 0;
@@ -474,16 +464,9 @@ header .navbar {
     li {
         padding: 0.25rem 0.5rem;
         position: relative;
-
-        &.active {
-            & > a {
-                color: $primary;
-                font-weight: 600;
-            }
-        }
         
         a {
-            color: $secondary;
+            color: inherit;
             cursor: pointer;
             transition: $transition-base;
 
@@ -494,30 +477,29 @@ header .navbar {
                 position: absolute;
                 content: "";
                 left: 0;
-                top: -0.125rem;
+                top: 0;
                 right: 0;
-                bottom: -0.125rem;
+                bottom: 0;
                 border-radius: $border-radius;
             }
 
             &:hover,&.active {
-                color: $sidebar-link-hover-color;
-                color: $primary;
-                font-weight: 600;
-
+                color: $sidebar-link-color-active;
+                
                 &::after {
-                    background: $sidebar-link-hover-background;
+                    background: $sidebar-link-bg-active;
                 }
+            }
 
-                & + .btn i {
-                    color: $sidebar-link-hover-color;
-                }
+            &.active {
+                font-weight: 600;
+                color: $sidebar-link-color-active;
             }
         }
 
         .btn {
             transition: $transition-base;
-            color: $secondary;
+            color: inherit;
             width: 1.75rem;
             height: 1.75rem;
             display: flex;
@@ -525,8 +507,8 @@ header .navbar {
             align-items: center;
 
             &:hover {
-                color: $sidebar-link-hover-color;
-                background: $sidebar-link-hover-background;
+                color: $sidebar-link-color-active;
+                background: $sidebar-link-bg-active;
             }
 
             &:not(.collapsed) {
@@ -548,14 +530,8 @@ header .navbar {
         }
     }    
 
-    li.active {
-        &:not(.parent) {
-            color: $sidebar-color-active;
-        }
-    }
-
     .sidebar_rdm_sub {
-        border-color: $sidebar-bg;
+        border-color: $border-color;
         padding: 0.75rem 0.5rem 0.5rem 0.5rem;
         border-radius: 0px 0px $border-radius $border-radius;
         border-style: none solid solid solid;
@@ -832,16 +808,23 @@ footer {
 /*---- Page metadata ----*/
 .page-metadata {
     background-color: $page-metadata-bg;
+    .affiliation-link {
+        background-color: $page-metadata-link-bg;
+    }
     .nav-link {
         border: none;
         display: flex;
         align-items: center;
         border-bottom: 2px solid transparent;
-
+        color: rgba($body-color, 0.75);
         &.active,
-        &.hover {
+        &:hover {
             background: none;
-            border-bottom-color: #0c3450;
+            border-bottom-color: $primary;
+            color: $body-color;
+        }
+        &:not(.active):hover {
+            border-bottom-color: $body-color;
         }
     }
 }
@@ -861,7 +844,7 @@ footer {
 
     /* Gets rid of extra white space */
     .contributor-link {
-        background-color: $contr-link-bg;
+        background-color: $page-metadata-link-bg;
         padding: 0.25rem 0.5rem !important;
         font-size: 0.85rem;
         gap: 0.35rem !important;
@@ -881,27 +864,6 @@ footer {
     }
 }
 
-/*-----Page citations-----*/
-.page-metadata {
-    #credits-citations {
-        padding: 0.5rem !important;
-
-        ul {
-            gap: 0.5rem !important;
-        }
-
-        li {
-            padding: 0.75rem 1rem !important;
-            font-size: 0.9rem;
-            background-color: rgba($light, 0.5) !important;
-
-            i {
-                font-size: 0.8em;
-                opacity: 0.6;
-            }
-        }
-    }
-}
 
 /*-----Cookie consent banner-----*/
 

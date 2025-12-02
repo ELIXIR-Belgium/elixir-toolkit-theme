@@ -19,13 +19,13 @@
   <div class="card-footer">
     <div class="d-flex justify-content-center gap-2">
       {%- if include.git %}
-      <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://github.com/{{ include.git }}"><i class="fa-brands fa-github"></i></a>
+      <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://github.com/{{ include.git }}"><i class="fa-brands fa-github"></i><span class="visually-hidden">GitHub</span></a>
       {%- endif -%}
       {%- if include.email %}
-      <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="mailto:{{ include.email }}"><i class="fa-solid fa-envelope"></i></a>
+      <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="mailto:{{ include.email }}"><i class="fa-solid fa-envelope"></i><span class="visually-hidden">Email</span></a>
       {%- endif -%}
       {%- if include.orcid %}
-      <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://orcid.org/{{ include.orcid }}"><i class="fa-brands fa-orcid"></i></a>
+      <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://orcid.org/{{ include.orcid }}"><i class="fa-brands fa-orcid"></i><span class="visually-hidden">Orcid</span></a>
       {%- endif %}
     </div>
   </div>

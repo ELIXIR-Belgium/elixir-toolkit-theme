@@ -1,7 +1,7 @@
 {%- assign carousel_counter = carousel_counter | plus: 1 %}
 {%- assign contributors_lookup = site.data.CONTRIBUTORS %}
 {%- assign allcontrstr = nil %}
-{%- assign nr = include.col | default: 5 %}
+{%- assign nr = include.col | default: 4 %}
 {%- if include.custom %}
 {%- assign allcontrstr = include.custom %}
 {%- elsif include.role %}

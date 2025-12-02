@@ -1,6 +1,12 @@
 {%- assign contributors_lookup = site.data.CONTRIBUTORS %}
+{%- assign sort = include.sort | default: true %}
+{%- if sort %}
+{%- assign name_list = include.contributors_list | sort %}
+{%- else %}
+{%- assign name_list = include.contributors_list %}
+{%- endif %}
 <div class="gap-1 rounded page-contributors d-flex flex-wrap">
-  {%- for contributor_name in include.contributors_list %}
+  {%- for contributor_name in name_list %}
     {%- assign data = contributors_lookup[contributor_name] %}
     <div class="dropup-center dropup d-inline-block">
       <button class="btn btn-sm dropdown-toggle contributor-link d-flex gap-2 align-items-center hover-primary rounded-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" data-bs-offset="0,10">

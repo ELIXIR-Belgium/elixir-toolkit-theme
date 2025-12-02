@@ -1,5 +1,11 @@
+{%- assign sort = include.sort | default: true %}
+{%- if sort %}
+{%- assign affiliations_list = include.affiliations_list | sort %}
+{%- else %}
+{%- assign affiliations_list = include.affiliations_list %}
+{%- endif %}
 <div class="d-flex flex-wrap gap-2">
-  {%- for affiliation_name in include.affiliations_list -%}
+  {%- for affiliation_name in affiliations_list -%}
     {%- comment -%} Check if it's a country code (2 characters) {%- endcomment -%}
     {%- if affiliation_name.size == 2 -%}
       
@@ -10,7 +16,7 @@
       {%- if country_link %}
         <a role="button" data-bs-toggle="tooltip" title="{{country_name}}" class="btn btn-sm d-flex align-items-center affiliation-link hover-primary" href="{{country_link.url | relative_url}}">
       {%- else %}
-        <a role="button" data-bs-toggle="tooltip" title="{{country_name}}" class="btn btn-sm affiliation-link d-flex align-items-center disabled" aria-disabled="true">
+        <a role="button" data-bs-toggle="tooltip" title="{{country_name}}" class="btn btn-sm affiliation-link d-flex align-items-center disabled border-0" aria-disabled="true">
       {%- endif %}
         <div class="d-flex justify-content-center affiliation-flag">
           {%- include affiliation-logo.html country_code=country_code name=country_code -%}
