@@ -531,11 +531,7 @@ header .navbar {
     }    
 
     .sidebar_rdm_sub {
-        border-color: $border-color;
         padding: 0.75rem 0.5rem 0.5rem 0.5rem;
-        border-radius: 0px 0px $border-radius $border-radius;
-        border-style: none solid solid solid;
-        border-width: 0.2em;
         margin-top: -0.25rem;
     }
 }
