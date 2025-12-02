@@ -175,3 +175,48 @@ $(function () {
         return new bootstrap.Popover(popoverTriggerEl)
     })
 })
+
+/**
+ * Equalize contributor card heights in carousels and position arrows
+ */
+function equalizeContributorCardHeights() {
+    // Find all contributor carousels
+    $('.carousel[id^="contributors-carousel-"]').each(function() {
+        var carousel = $(this);
+        var maxHeight = 0;
+        
+        // Reset any previously set heights
+        carousel.find('.contributor-cards .card').css('min-height', '');
+        
+        // Find the maximum natural height across all cards in this carousel
+        carousel.find('.contributor-cards .card').each(function() {
+            var cardHeight = $(this).outerHeight();
+            if (cardHeight > maxHeight) {
+                maxHeight = cardHeight;
+            }
+        });
+        
+        // Apply the maximum height to all cards in this carousel
+        if (maxHeight > 0) {
+            carousel.find('.contributor-cards .card').css('min-height', maxHeight + 'px');
+            
+            // Position carousel control arrows at 50% of the card height
+            var arrowTopPosition = (maxHeight / 2) - 24; // 24px is half of the 3rem (48px) button height
+            carousel.find('.carousel-control-prev, .carousel-control-next').css('top', arrowTopPosition + 'px');
+        }
+    });
+}
+
+$(document).ready(function() {
+    // Equalize heights on page load
+    equalizeContributorCardHeights();
+    
+    // Re-equalize on window resize
+    var resizeTimer;
+    $(window).on('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            equalizeContributorCardHeights();
+        }, 250);
+    });
+});
