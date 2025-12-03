@@ -8,7 +8,8 @@
     {%- assign name_parts = include.name | split: " " %}
     {%- assign initials = "" %}
     {%- for part in name_parts %}
-      {%- assign initials = initials | append: part | slice: 0,1 | capitalize %}
+    {%- assign initial = part | slice: 0,1 | capitalize %}
+    {%- assign initials = initials | append: initial %}
     {%- endfor -%}
     <span class="fw-bold{%- unless include.small %} fs-2{% endunless %}">{{ initials }}</span>
   </div>
