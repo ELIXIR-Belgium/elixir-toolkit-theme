@@ -59,31 +59,31 @@
 
     <div class="tab-content" id="nav-creditsContent">
         {%- if has_contributors %}
-        <div class="tab-pane {% if first_tab == 'contributors' %}show active{% endif %}" id="credits-contributors" role="tabpanel" aria-labelledby="credits-contributors-tab">
+        <div class="tab-pane {% if first_tab == 'contributors' %}show active{% endif %}" id="credits-contributors" role="tabpanel">
             {% include contributor-minitiles-page.html contributors_list=page.contributors sort=site.theme_variables.page_metadata.contributors_sort %}
         </div>
         {%- endif %}
         {%- if has_coordinators %}
-        <div class="tab-pane {% if first_tab == 'coordinators' %}show active{% endif %}" id="credits-coordinators" role="tabpanel" aria-labelledby="credits-coordinators-tab">
+        <div class="tab-pane {% if first_tab == 'coordinators' %}show active{% endif %}" id="credits-coordinators" role="tabpanel">
             <div class="coordinators">
                 {% include contributor-minitiles-page.html contributors_list=page.coordinators sort=site.theme_variables.page_metadata.coordinators_sort %}
             </div>
         </div>
         {%- endif %}
         {%- if has_editors %}
-        <div class="tab-pane {% if first_tab == 'editors' %}show active{% endif %}" id="credits-editors" role="tabpanel" aria-labelledby="credits-editors-tab">
+        <div class="tab-pane {% if first_tab == 'editors' %}show active{% endif %}" id="credits-editors" role="tabpanel">
             <div class="editors">
                 {% include contributor-minitiles-page.html contributors_list=page.editors sort=site.theme_variables.page_metadata.editors_sort %}
             </div>
         </div>
         {%- endif %}
         {%- if has_affiliations %}
-        <div class="tab-pane {% if first_tab == 'affiliations' %}show active{% endif %}" id="credits-affiliations" role="tabpanel" aria-labelledby="credits-affiliations-tab">
+        <div class="tab-pane {% if first_tab == 'affiliations' %}show active{% endif %}" id="credits-affiliations" role="tabpanel">
             {% include affiliation-tiles-page.html affiliations_list=page.affiliations sort=site.theme_variables.page_metadata.affiliations_sort %}
         </div>
         {%- endif %}
         {%- if has_citations %}
-        <div class="tab-pane {% if first_tab == 'citations' %}show active{% endif %}" id="credits-citations" role="tabpanel" aria-labelledby="credits-citations-tab">
+        <div class="tab-pane {% if first_tab == 'citations' %}show active{% endif %}" id="credits-citations" role="tabpanel">
             {% include citation-page.html contributors_list=page.contributors sort=site.theme_variables.page_metadata.contributors_sort %}
         </div>
         {%- endif %}
