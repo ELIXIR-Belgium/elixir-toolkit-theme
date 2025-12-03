@@ -1,10 +1,9 @@
 {%- assign contributors_lookup = site.data.CONTRIBUTORS %}
-{%- assign sort = include.sort | default: true %}
-{%- if sort %}
+{%- unless include.sort == false %}
 {%- assign name_list = include.contributors_list | sort %}
 {%- else %}
 {%- assign name_list = include.contributors_list %}
-{%- endif %}
+{%- endunless %}
 <div class="gap-1 rounded page-contributors d-flex flex-wrap">
   {%- for contributor_name in name_list %}
     {%- assign data = contributors_lookup[contributor_name] %}

@@ -24,86 +24,69 @@
 <div class="page-metadata p-4 mt-5 rounded">
     <nav>
         <div class="nav nav-tabs mb-3" id="nav-credits" role="tablist">
-            {% if has_contributors %}
+            {%- if has_contributors %}
             <button class="nav-link {% if first_tab == 'contributors' %}active{% endif %}" id="credits-contributors-tab" data-bs-toggle="tab" data-bs-target="#credits-contributors" type="button" role="tab" aria-controls="credits-contributors" aria-selected="{% if first_tab == 'contributors' %}true{% else %}false{% endif %}">
                 <i class="fa-solid fa-users me-2"></i>
                 Contributors
             </button>
-            {% endif %}
-
-            {% if has_coordinators %}
+            {%- endif %}
+            {%- if has_coordinators %}
             <button class="nav-link {% if first_tab == 'coordinators' %}active{% endif %}" id="credits-coordinators-tab" data-bs-toggle="tab" data-bs-target="#credits-coordinators" type="button" role="tab" aria-controls="credits-coordinators" aria-selected="{% if first_tab == 'coordinators' %}true{% else %}false{% endif %}">
                 <i class="fa-solid fa-crown me-2"></i>
                 Coordinators
             </button>
-            {% endif %}
-
-            {% if has_editors %}
+            {%- endif %}
+            {%- if has_editors %}
             <button class="nav-link {% if first_tab == 'editors' %}active{% endif %}" id="credits-editors-tab" data-bs-toggle="tab" data-bs-target="#credits-editors" type="button" role="tab" aria-controls="credits-editors" aria-selected="{% if first_tab == 'editors' %}true{% else %}false{% endif %}">
                 <i class="fa-solid fa-comment-dots me-2"></i>
                 Editors
             </button>
             {% endif %}
-
-            {% if has_affiliations %}
+            {%- if has_affiliations %}
             <button class="nav-link {% if first_tab == 'affiliations' %}active{% endif %}" id="credits-affiliations-tab" data-bs-toggle="tab" data-bs-target="#credits-affiliations" type="button" role="tab" aria-controls="credits-affiliations" aria-selected="{% if first_tab == 'affiliations' %}true{% else %}false{% endif %}">
                 <i class="fa-solid fa-building-columns me-2"></i>
                 Affiliations
             </button>
-            {% endif %}
-
-            {% if has_citations %}
+            {%- endif %}
+            {%- if has_citations %}
             <button class="nav-link {% if first_tab == 'citations' %}active{% endif %}" id="credits-cite-tab" data-bs-toggle="tab" data-bs-target="#credits-citations" type="button" role="tab" aria-controls="credits-cite" aria-selected="{% if first_tab == 'citations' %}true{% else %}false{% endif %}">
                 <i class="fa-solid fa-quote-left me-2"></i>
                 Citation
             </button>
-            {% endif %}
-
+            {%- endif %}
         </div>
-
     </nav>
 
     <div class="tab-content" id="nav-creditsContent">
-
-        {% if has_contributors %}
+        {%- if has_contributors %}
         <div class="tab-pane {% if first_tab == 'contributors' %}show active{% endif %}" id="credits-contributors" role="tabpanel" aria-labelledby="credits-contributors-tab">
-            {% include contributor-minitiles-page.html contributors_list=page.contributors sort=site.theme_variables.page-metadata.contributors %}
+            {% include contributor-minitiles-page.html contributors_list=page.contributors sort=site.theme_variables.page_metadata.contributors_sort %}
         </div>
-        {% endif %}
-
-        {% if has_coordinators %}
+        {%- endif %}
+        {%- if has_coordinators %}
         <div class="tab-pane {% if first_tab == 'coordinators' %}show active{% endif %}" id="credits-coordinators" role="tabpanel" aria-labelledby="credits-coordinators-tab">
             <div class="coordinators">
-                {% include contributor-minitiles-page.html contributors_list=page.coordinators sort=site.theme_variables.page-metadata.coordinators %}
+                {% include contributor-minitiles-page.html contributors_list=page.coordinators sort=site.theme_variables.page_metadata.coordinators_sort %}
             </div>
         </div>
-        {% endif %}
-
-        {% if has_editors %}
+        {%- endif %}
+        {%- if has_editors %}
         <div class="tab-pane {% if first_tab == 'editors' %}show active{% endif %}" id="credits-editors" role="tabpanel" aria-labelledby="credits-editors-tab">
             <div class="editors">
-                {% include contributor-minitiles-page.html contributors_list=page.editors sort=site.theme_variables.page-metadata.editors %}
+                {% include contributor-minitiles-page.html contributors_list=page.editors sort=site.theme_variables.page_metadata.editors_sort %}
             </div>
         </div>
-        {% endif %}
-
-        {% if has_affiliations %}
+        {%- endif %}
+        {%- if has_affiliations %}
         <div class="tab-pane {% if first_tab == 'affiliations' %}show active{% endif %}" id="credits-affiliations" role="tabpanel" aria-labelledby="credits-affiliations-tab">
-            {% include affiliation-tiles-page.html affiliations_list=page.affiliations sort=site.theme_variables.page-metadata.affiliations %}
+            {% include affiliation-tiles-page.html affiliations_list=page.affiliations sort=site.theme_variables.page_metadata.affiliations_sort %}
         </div>
-        {% endif %}
-
-        {% if has_citations %}
+        {%- endif %}
+        {%- if has_citations %}
         <div class="tab-pane {% if first_tab == 'citations' %}show active{% endif %}" id="credits-citations" role="tabpanel" aria-labelledby="credits-citations-tab">
-            {% assign page_title = page.title | strip %}
-            {% if has_contributors %}
-                {% include citation-page.html contributors=page.contributors title=page_title url=page.url %}
-            {% else %}
-                {% include citation-page.html title=page_title url=page.url %}
-            {% endif %}
+            {% include citation-page.html contributors_list=page.contributors sort=site.theme_variables.page_metadata.contributors_sort %}
         </div>
-        {% endif %}
-
+        {%- endif %}
     </div>
 </div>
 {% endif %}

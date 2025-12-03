@@ -1,12 +1,18 @@
+
 <p class="mb-0">
-  {% if include.contributors %}
-    {{ include.contributors | join: ", " }},
-  {% endif %}
-  "<em>{{ include.title }}</em>".
-  {% if site.url %}
-    {{ site.url | remove: "https://www." | remove: "http://www." | remove: "https://" | remove: "http://"  }}.
-  {% endif %}
-  {% assign page_url = include.url | absolute_url %}
+  {%- if include.contributors_list %}
+  {%- unless include.sort == false %}
+  {%- assign name_list = include.contributors_list | sort %}
+  {%- else %}
+  {%- assign name_list = include.contributors_list %}
+  {%- endunless %}
+  {{ name_list | join: ", " }},
+  {%- endif %}
+  "<em>{{ page.title | strip }}</em>".
+  {%- if site.url %}
+  {{ site.url | remove: "https://www." | remove: "http://www." | remove: "https://" | remove: "http://"  }}.
+  {%- endif %}
+  {%- assign page_url = page.url | absolute_url %}
   <a href="{{ page_url }}">{{ page_url }}</a> <span id="current_date"></span>.
 </p>
 <script>

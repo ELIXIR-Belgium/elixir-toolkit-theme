@@ -77,11 +77,11 @@ theme_variables:
     # more-information-tiles: More information
     # resource-table-all: Tools and resources on this page
     # resource-table-all-collapse: false
-  # page-metadata:
-    # contributors-sort: true
-    # coordinators-sort: true
-    # editors-sort: true
-    # affiliations-sort: true
+  # page_metadata:
+    # contributors_sort: true
+    # coordinators_sort: true
+    # editors_sort: true
+    # affiliations_sort: true
   # toc:
     # min_headings: 1
     # headings: 'h2'

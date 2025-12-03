@@ -1,9 +1,8 @@
-{%- assign sort = include.sort | default: true %}
-{%- if sort %}
+{%- unless include.sort == false %}
 {%- assign affiliations_list = include.affiliations_list | sort %}
 {%- else %}
 {%- assign affiliations_list = include.affiliations_list %}
-{%- endif %}
+{%- endunless %}
 <div class="d-flex flex-wrap gap-2">
   {%- for affiliation_name in affiliations_list -%}
     {%- comment -%} Check if it's a country code (2 characters) {%- endcomment -%}
