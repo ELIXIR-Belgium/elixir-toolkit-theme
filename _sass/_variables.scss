@@ -22,14 +22,14 @@ $sidebar-link-bg-active:rgba($primary, 0.08) !default;
 /*-----Section navigation tiles-----*/
 $nav-card-bg: $light;
 $nav-card-color: $dark;
-$nav-card-bg-hover: $primary;
-$nav-card-color-hover: $white;
+$nav-card-bg-hover: rgba($primary, 0.08) !default;
+$nav-card-color-hover: $dark;
 
 /*-----More information tiles-----*/
 $info-card-bg: $light;
 $info-card-color: $dark;
-$info-card-bg-hover: $primary;
-$info-card-color-hover: $white;
+$info-card-bg-hover: rgba($primary, 0.08) !default;
+$info-card-color-hover: $dark;
 
 /*-----Contributors-cards-----*/
 $contr-card-bg: $light;
