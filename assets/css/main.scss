@@ -1021,7 +1021,7 @@ a.info-collapse {
 
     &[aria-expanded="true"] {
         i {
-            transform: rotate(180deg);
+            transform: rotate(90deg);
         }
     }
 
@@ -1029,7 +1029,7 @@ a.info-collapse {
 
         i,
         h3 {
-            color: rgba($link-color, 0.8) !important;
+            color: shift-color($link-color, $link-shade-percentage)!important;
         }
     }
 }
