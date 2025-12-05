@@ -26,7 +26,7 @@
 {%- endif %}
 {% if site.theme_variables.headings.resource-table-all-collapse %}<h3 class="mb-0 mt-3 flex-grow-1 text-dark">{% else %}<h2 class="h2-like fs-2">{% endif %}{{site.theme_variables.headings.resource-table-all | default: 'Tools and resources on this page' }}{% if site.theme_variables.headings.resource-table-all-collapse %}</h3>{% else % %}</h2>{% endif %}
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
-    <i class="fa-solid fa-chevron-down fs-5"></i>
+    <i class="fa-solid fa-chevron-right fs-5"></i>
 </a>
 <div class="collapse info-card" id="tools_collapse">
 {%- endif %}
@@ -137,7 +137,7 @@
 {%- endif %}
     <h3 class="{% if site.theme_variables.headings.resource-table-all-collapse %}mb-0 mt-3 flex-grow-1 text-dark {% endif %}">National resources</h3>
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
-    <i class="fa-solid fa-chevron-down fs-5"></i>
+    <i class="fa-solid fa-chevron-right fs-5"></i>
 </a>
 <div class="collapse info-card" id="nat_tools_collapse">
 {%- endif %}
