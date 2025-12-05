@@ -175,3 +175,48 @@ $(function () {
         return new bootstrap.Popover(popoverTriggerEl)
     })
 })
+
+/**
+ * Equalize contributor card heights in carousels and position arrows
+ */
+function equalizeContributorCardHeights() {
+    $('.carousel[id^="contributors-carousel-"]').each(function() {
+        var carousel = $(this);
+        var maxHeight = 0;
+        
+        carousel.find('.contributor-cards .card').css('min-height', '');
+        
+        // Measure all slides by temporarily making them active
+        carousel.find('.carousel-item').each(function() {
+            var $item = $(this);
+            var wasActive = $item.hasClass('active');
+            
+            $item.addClass('active').css({'visibility': 'hidden', 'position': 'absolute'});
+            $item.find('.contributor-cards .card').each(function() {
+                maxHeight = Math.max(maxHeight, $(this).outerHeight());
+            });
+            $item.css({'visibility': '', 'position': ''});
+            if (!wasActive) $item.removeClass('active');
+        });
+        
+        // Apply max height and position arrows
+        if (maxHeight > 0) {
+            carousel.find('.contributor-cards .card').css('min-height', maxHeight + 'px');
+            carousel.find('.carousel-control-prev, .carousel-control-next').css('top', (maxHeight / 2 - 24) + 'px');
+        }
+    });
+}
+
+$(document).ready(function() {
+    // Equalize heights on page load
+    equalizeContributorCardHeights();
+    
+    // Re-equalize on window resize
+    var resizeTimer;
+    $(window).on('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            equalizeContributorCardHeights();
+        }, 250);
+    });
+});
