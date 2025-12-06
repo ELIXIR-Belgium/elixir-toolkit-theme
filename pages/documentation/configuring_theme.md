@@ -62,7 +62,7 @@ theme_variables:
     more-information-tiles: More information
     resource-table-all: Tools and resources on this page
     resource-table-all-collapse: false
-   page_metadata:
+  page_metadata:
     contributors_sort: true
     coordinators_sort: true
     editors_sort: true
