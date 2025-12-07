@@ -57,7 +57,7 @@
         <tbody>
             {%- for tool in tools %}
             <tr>
-                {%- assign instances_tool = tool.instances | default: empty | size %}
+                {%- assign instances_tool = tool.instances | size %}
                 {% if tool.url %}
                 <td><a href="{{tool.url}}">{{tool.name}}</a></td>
                 {%- else %}
@@ -86,7 +86,7 @@
                             <ul class="dropdown-menu" aria-labelledby="{{ dropdown_id }}">
                             {%- for inst in tool.instances %}
                                 <li>
-                                    <a class="dropdown-item" href="{{ inst.url | default: inst.page_path | default: '#' }}">
+                                    <a class="dropdown-item" href="{{ inst.url }}">
                                         {{ inst.name }}
                                         {%- if inst.country_code %}
                                             <span class="flag-icon ms-2 shadow-sm flag-icon-{{ inst.country_code | downcase }}"></span>
