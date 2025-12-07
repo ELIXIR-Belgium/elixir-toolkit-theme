@@ -64,7 +64,7 @@
                 <td>{{tool.name}}</td>
                 {%- endif %}
                 <td>{{tool.description}}
-                    {%- if tool.instance_of or tool.how_to_access or instances_tool != 0 and include.tag != nil %}
+                    {%- if tool.instance_of or tool.how_to_access or instances_tool != 0 %}
                     {%- assign linked_tool = site.data.tool_and_resource_list | where:"id", tool.instance_of | first %}
                     <div class="d-block mt-1">
                         {%- if linked_tool %}
