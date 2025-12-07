@@ -41,6 +41,7 @@
   url: https://zenodo.org/
   id: zenodo
   name: Zenodo
+  instance_of: github
   registry:
     fairsharing: wy4egf
     tess: Zenodo

@@ -14,6 +14,7 @@ national_resources:
     description: A general description about the resource
     how_to_access: explantation on how you can access this resource
     instance_of: github
+    url: https://github.com
     related_pages:
       Example_pages: [gp5, gp2]
     registry:
