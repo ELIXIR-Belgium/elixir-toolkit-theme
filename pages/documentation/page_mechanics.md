@@ -131,7 +131,7 @@ github:
     - name: Resource name
       description: A general description about the resource
       how_to_access: explantation on how you can access this resource
-      instance_of: GitHub
+      instance_of: github
       related_pages:
         Example_pages: [gp3, gp1, gp2]
       registry:

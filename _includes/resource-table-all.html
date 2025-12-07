@@ -60,18 +60,20 @@
                 {%- assign instances_tool = 0 %}
                 {%- assign query = "related_pages." | append: page.type %}
                 {%- for country_page in country_pages %}
-                {%- assign instance_matches = country_page.national_resources | where: "instance_of", tool.id | where_exp:"resource","resource.related_pages != nil" | where: query, include.tag %}
+                {%- assign instance_matches = country_page.national_resources | where: "instance_of", tool.id %}
                 {%- unless instance_matches.size == 0 %}
                 {%- assign instances_tool = instances_tool | plus: instance_matches.size %}
                 {%- endunless %}
                 {%- endfor %}
+                {%- assign yaml_instances = site.data.tool_and_resource_list | where: "instance_of", tool.id %}
+                {%- assign instances_tool = instances_tool | plus: yaml_instances.size %}
                 {% if tool.url %}
                 <td><a href="{{tool.url}}">{{tool.name}}</a></td>
                 {%- else %}
                 <td>{{tool.name}}</td>
                 {%- endif %}
                 <td>{{tool.description}}
-                    {%- if tool.instance_of or tool.how_to_access or instances_tool != 0 != 0 and include.tag != nil %}
+                    {%- if tool.instance_of or tool.how_to_access or instances_tool != 0 and include.tag != nil %}
                     {%- assign linked_tool = site.data.tool_and_resource_list | where:"id", tool.instance_of | first %}
                     <div class="d-block mt-1">
                         {%- if linked_tool %}
@@ -80,11 +82,40 @@
                         {%- if tool.how_to_access %}
                         <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="{{tool.how_to_access}}"><span class="badge text-primary border border-primary"> <i class="fa-solid fa-key"></i></span></span>
                         {%- endif %}
-                        {%- unless instances_tool == 0 or include.tag == nil %}
-                        <!-- <a href="#national-resources-button">
-                        <span class="badge text-white bg-primary"><i class="fa-solid fa-arrow-circle-down me-2"></i>Different instances available</span>
-                    </a> -->
-                        {%- endunless %}
+                        {%- if instances_tool > 0 %}
+                        {%- assign dropdown_id = 'instances-dd-' | append: forloop.index0 %}
+                        <div class="dropdown d-inline-block">
+                            <button class="btn btn-badge btn-outline-primary dropdown-toggle"
+                                    type="button"
+                                    id="{{ dropdown_id }}"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                            <i class="fa-solid fa-globe me-2"></i>Instances
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="{{ dropdown_id }}">
+                            {%- for country_page in country_pages %}
+                            {%- assign matches = country_page.national_resources | where: "instance_of", tool.id %}
+                            {%- for nat_instance in matches %}
+                                <li>
+                                    <a class="dropdown-item" href="{{ nat_instance.url }}">
+                                        {{ nat_instance.name }}
+                                        {%- if country_page.country_code %}
+                                            <span class="flag-icon ms-2 shadow-sm flag-icon-{{ country_page.country_code | downcase }}"></span>
+                                        {%- endif %}
+                                    </a>
+                                </li>
+                            {%- endfor %}
+                            {%- endfor %}
+                            {%- for yaml_instance in yaml_instances %}
+                                <li>
+                                    <a class="dropdown-item no-ext-icon" href="{{ yaml_instance.url }}">
+                                        {{ yaml_instance.name | default: yaml_instance.id }}
+                                    </a>
+                                </li>
+                            {%- endfor %}
+                            </ul>
+                        </div>
+                        {%- endif %}
                     </div>
                     {%- endif %}
                 </td>

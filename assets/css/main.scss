@@ -638,6 +638,16 @@ table {
     font-weight: bold;
 }
 
+/* Make a button the same height/feel as a .badge */
+.btn-badge {
+    /* match .badge metrics */
+    --bs-btn-padding-y: .35em;
+    --bs-btn-padding-x: .65em;
+    --bs-btn-font-size: .75em;
+    --bs-btn-line-height: 1;
+    --bs-btn-border-radius: .375rem; /* ~badge radius. Add .rounded-pill if you want pill badges */
+  }
+
 /*-----Footer-----*/
 
 footer {

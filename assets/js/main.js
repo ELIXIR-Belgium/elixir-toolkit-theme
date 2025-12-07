@@ -188,11 +188,59 @@ $(function () {
  */
 
 $(function () {
-    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-        return new bootstrap.Popover(popoverTriggerEl)
-    })
-})
+    const bs = window.bootstrap;
+    // Initialize all popovers (click to open; HTML allowed; render in body)
+    $('[data-bs-toggle="popover"]').each(function () {
+        new bs.Popover(this, {
+            html: true,
+            sanitize: false,   // allow dropdown markup inside
+            container: 'body',
+            trigger: 'click'
+        });
+    });
+
+    // When a popover is shown, initialize any dropdowns inside it
+    $(document).on('shown.bs.popover', '[data-bs-toggle="popover"]', function () {
+        const tipId = $(this).attr('aria-describedby');
+        if (!tipId) return;
+        const $tip = $('#' + tipId);
+        if (!$tip.length) return;
+
+        $tip.find('[data-bs-toggle="dropdown"]').each(function () {
+            new bs.Dropdown(this);
+        });
+    });
+
+    // Prevent clicks *inside* the popover from bubbling up (so it doesn't immediately close)
+    $('body').on('click', function (e) {
+        if ($(e.target).closest('.popover').length) {
+            e.stopPropagation();
+        }
+    });
+
+    // Close popovers when clicking outside any popover/trigger
+    $(document).on('click', function (e) {
+        const $t = $(e.target);
+        const clickedTrigger = $t.closest('[data-bs-toggle="popover"]').length > 0;
+        const clickedInsidePopover = $t.closest('.popover').length > 0;
+        if (clickedTrigger || clickedInsidePopover) return;
+
+        $('[data-bs-toggle="popover"]').each(function () {
+            const inst = bs.Popover.getInstance(this);
+            if (inst) inst.hide();
+        });
+    });
+
+    // Close on ESC
+    $(document).on('keydown', function (e) {
+        if (e.key !== 'Escape') return;
+        $('[data-bs-toggle="popover"]').each(function () {
+            const inst = bs.Popover.getInstance(this);
+            if (inst) inst.hide();
+        });
+    });
+});
+  
 
 /**
  * Equalize contributor card heights in carousels and position arrows
