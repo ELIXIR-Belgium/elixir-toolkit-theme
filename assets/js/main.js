@@ -171,11 +171,6 @@ $(function () {
 
 $(function () {
     const bs = window.bootstrap;
-    if (!(bs && bs.Popover && bs.Dropdown)) {
-        console.warn("[tool-popover] Bootstrap 5 not available");
-        return;
-    }
-
     // Initialize all popovers (click to open; HTML allowed; render in body)
     $('[data-bs-toggle="popover"]').each(function () {
         new bs.Popover(this, {
