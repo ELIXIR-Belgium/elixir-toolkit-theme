@@ -172,59 +172,104 @@ $(function () {
 $(function () {
     const bs = window.bootstrap;
     if (!(bs && bs.Popover && bs.Dropdown)) {
-      console.warn("[tool-popover] Bootstrap 5 not available");
-      return;
+        console.warn("[tool-popover] Bootstrap 5 not available");
+        return;
     }
-  
+
     // Initialize all popovers (click to open; HTML allowed; render in body)
     $('[data-bs-toggle="popover"]').each(function () {
-      new bs.Popover(this, {
-        html: true,
-        sanitize: false,   // allow dropdown markup inside
-        container: 'body',
-        trigger: 'click'
-      });
+        new bs.Popover(this, {
+            html: true,
+            sanitize: false,   // allow dropdown markup inside
+            container: 'body',
+            trigger: 'click'
+        });
     });
-  
+
     // When a popover is shown, initialize any dropdowns inside it
     $(document).on('shown.bs.popover', '[data-bs-toggle="popover"]', function () {
-      const tipId = $(this).attr('aria-describedby');
-      if (!tipId) return;
-      const $tip = $('#' + tipId);
-      if (!$tip.length) return;
-  
-      $tip.find('[data-bs-toggle="dropdown"]').each(function () {
-        new bs.Dropdown(this);
-      });
+        const tipId = $(this).attr('aria-describedby');
+        if (!tipId) return;
+        const $tip = $('#' + tipId);
+        if (!$tip.length) return;
+
+        $tip.find('[data-bs-toggle="dropdown"]').each(function () {
+            new bs.Dropdown(this);
+        });
     });
-  
+
     // Prevent clicks *inside* the popover from bubbling up (so it doesn't immediately close)
     $('body').on('click', function (e) {
-      if ($(e.target).closest('.popover').length) {
-        e.stopPropagation();
-      }
+        if ($(e.target).closest('.popover').length) {
+            e.stopPropagation();
+        }
     });
-  
+
     // Close popovers when clicking outside any popover/trigger
     $(document).on('click', function (e) {
-      const $t = $(e.target);
-      const clickedTrigger = $t.closest('[data-bs-toggle="popover"]').length > 0;
-      const clickedInsidePopover = $t.closest('.popover').length > 0;
-      if (clickedTrigger || clickedInsidePopover) return;
-  
-      $('[data-bs-toggle="popover"]').each(function () {
-        const inst = bs.Popover.getInstance(this);
-        if (inst) inst.hide();
-      });
+        const $t = $(e.target);
+        const clickedTrigger = $t.closest('[data-bs-toggle="popover"]').length > 0;
+        const clickedInsidePopover = $t.closest('.popover').length > 0;
+        if (clickedTrigger || clickedInsidePopover) return;
+
+        $('[data-bs-toggle="popover"]').each(function () {
+            const inst = bs.Popover.getInstance(this);
+            if (inst) inst.hide();
+        });
     });
-  
+
     // Close on ESC
     $(document).on('keydown', function (e) {
-      if (e.key !== 'Escape') return;
-      $('[data-bs-toggle="popover"]').each(function () {
-        const inst = bs.Popover.getInstance(this);
-        if (inst) inst.hide();
-      });
+        if (e.key !== 'Escape') return;
+        $('[data-bs-toggle="popover"]').each(function () {
+            const inst = bs.Popover.getInstance(this);
+            if (inst) inst.hide();
+        });
     });
-  });
+});
   
+
+/**
+ * Equalize contributor card heights in carousels and position arrows
+ */
+function equalizeContributorCardHeights() {
+    $('.carousel[id^="contributors-carousel-"]').each(function() {
+        var carousel = $(this);
+        var maxHeight = 0;
+        
+        carousel.find('.contributor-cards .card').css('min-height', '');
+        
+        // Measure all slides by temporarily making them active
+        carousel.find('.carousel-item').each(function() {
+            var $item = $(this);
+            var wasActive = $item.hasClass('active');
+            
+            $item.addClass('active').css({'visibility': 'hidden', 'position': 'absolute'});
+            $item.find('.contributor-cards .card').each(function() {
+                maxHeight = Math.max(maxHeight, $(this).outerHeight());
+            });
+            $item.css({'visibility': '', 'position': ''});
+            if (!wasActive) $item.removeClass('active');
+        });
+        
+        // Apply max height and position arrows
+        if (maxHeight > 0) {
+            carousel.find('.contributor-cards .card').css('min-height', maxHeight + 'px');
+            carousel.find('.carousel-control-prev, .carousel-control-next').css('top', (maxHeight / 2 - 24) + 'px');
+        }
+    });
+}
+
+$(document).ready(function() {
+    // Equalize heights on page load
+    equalizeContributorCardHeights();
+    
+    // Re-equalize on window resize
+    var resizeTimer;
+    $(window).on('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            equalizeContributorCardHeights();
+        }, 250);
+    });
+});
