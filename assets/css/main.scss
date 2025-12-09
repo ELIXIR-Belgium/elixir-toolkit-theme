@@ -8,24 +8,39 @@ permalink: assets/css/main
 /*-----Default theme variables-----*/
 
 @import "bootstrap/functions";
-$popover-max-width: 12em;
-$enable-caret: false;
-$breadcrumb-font-size: 0.85rem;
-$breadcrumb-divider: '>';
-$breadcrumb-margin-bottom: 0;
+
+
+/*-----Initialize User Bootstrap variables-----*/
+
+@import "bootstrap_variables";
+
+/*-----Initialize Bootstrap variables-----*/
+$primary:       #0d6efd !default;
+$light:         #f8f9fa !default;
+$input-bg: $light !default;
+$input-group-addon-bg: rgba($primary, 0.08) !default;
+$form-select-bg: $light !default;
+$popover-max-width: 12em !default;
+$input-border-width: 0 !default;
+$alert-border-width: 0 !default;
+$form-select-border-width: 0 !default;
+$card-border-width: 0 !default;
+$enable-caret: false !default;
+$breadcrumb-font-size: 0.85rem !default;
+$breadcrumb-divider: '>' !default;
+$breadcrumb-margin-bottom: 0 !default;
 $h3-font-size: 1rem * 1.6 !default;
 $h2-font-size: 1rem * 2.1 !default;
 $h1-font-size: 1rem * 3.3 !default;
-$navbar-light-toggler-border-color: transparent;
-$navbar-dark-toggler-border-color: transparent;
-$card-border-width: 0;
+$navbar-light-toggler-border-color: transparent !default;
+$navbar-dark-toggler-border-color: transparent !default;
+$link-decoration: none  !default;
+$link-color: #0d6efd !default;
 $custom-container-max-widths: (
     xxxl: 1700px
 );
 
-/*-----Initialize Bootstrap variables-----*/
 
-@import "bootstrap_variables";
 @import "bootstrap/variables";
 
 /*-----Custom maps-----*/
@@ -263,7 +278,9 @@ div.highlight {
 
 header .navbar {
     background-color: $topnav-bg;
-
+    #search-label, #search-input {
+        background-color: $white;
+    }
     .navbar-brand {
         color: $topnav-title-color;
 
@@ -854,14 +871,14 @@ footer {
 .tool {
     cursor: pointer;
     color: $link-color;
-    background-color: rgba($link-color, 0.05);
+    background-color: rgba($link-color, 0.08);
     border-radius: $border-radius;
     padding: 0.1rem 0.25rem;
 
     &:hover,
     &:active {
         text-decoration: none !important;
-        color: $primary;
+        color: $link-hover-color;
     }
 }
 @include media-breakpoint-up(sm) {
