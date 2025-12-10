@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<main id="main" class="order-1{%- if page.toc or page.toc == nil or page.page_img %} add-grid{% endif %}">
+<main id="main" class="min-vh-100{%- if page.toc or page.toc == nil or page.page_img %} add-grid{% endif %}">
     <div id="intro">
         {%- if site.theme_variables.breadcrumb %}
         {% include breadcrumb.html %}
