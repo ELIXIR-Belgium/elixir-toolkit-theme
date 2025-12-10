@@ -570,6 +570,11 @@ header .navbar {
 
 /*-----TOC-----*/
 
+#toc {
+    #btn-toc-hide {
+        display: none;
+    }
+}
 #toc-contents {
     @include media-breakpoint-up(xl) {
         display: block !important;
