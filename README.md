@@ -173,6 +173,8 @@ This will start the docker container and serve the website locally. Make sure th
 - [Fed-A-Crate](https://elixir-europe.github.io/fed-a-crate/how-to-contribute) (ELIXIR Fed-A-Crate project)
 - [Federated Learning toolkit (FLkit)](https://uhasselt-biomedicaldatasciences.github.io/federated-learning-toolkit/) (UHasselt)
 - [mTeSS-X](https://elixirtess.github.io/mTeSS-X/) (OSCARS project)
+- [Galaxy Codex](https://galaxyproject.github.io/galaxy_codex/) (Galaxy Community)
+- [ELIXIR Software Management Plan](https://elixir-europe.github.io/software-management-plans/community/) (ELIXIR SMP Community)
 - Want your instance here? [Open an issue](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/issues)
 
 ## Dependencies
