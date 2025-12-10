@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<main id="main" class="order-1{%- if page.toc or page.toc == nil or page.page_img %} add-grid{% endif %}">
+<main id="main" class="min-vh-100{%- if page.toc or page.toc == nil or page.page_img %} add-grid{% endif %}">
     <div id="intro">
         {%- if site.theme_variables.breadcrumb %}
         {% include breadcrumb.html %}
@@ -35,9 +35,9 @@ layout: default
         {%- if page.page_id %}
         {% include resource-table-all.html tag=page.page_id %}
         {%- endif %}
-        {% include affiliation-tiles-page.html %}
-        {% include contributor-minitiles-page.html %}
-        {% include citation-page.html %}
+        
+        {% include page-metadata-tabs.html %}
+        
         {%- if site.theme_variables.github_buttons.position == "bottom" %}
         <div id="github-buttons-wrapper" class="d-flex mt-5">
             {% include github-buttons.html %}

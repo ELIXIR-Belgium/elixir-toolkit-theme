@@ -62,8 +62,11 @@ theme_variables:
     more-information-tiles: More information
     resource-table-all: Tools and resources on this page
     resource-table-all-collapse: false
-    affiliation-tiles-page: Affiliations
-    contributor-minitiles-page: Contributors
+  page_metadata:
+    contributors_sort: true
+    coordinators_sort: true
+    editors_sort: true
+    affiliations_sort: true
   toc:
     min_headings: 1
     headings: 'main h2'
@@ -97,12 +100,15 @@ More detailed information about these settings can be found here:
   * `searchbuilder`: SearchBuilder provides the end user with an easy to use UI for them to create their own complex custom search expression for a DataTable. Default: *false*.
   * `pagelength`: Number of rows to display on a single page. Dropdown for entries per page is a list of *pagelength* times 2,5 and 10. Default: *10*.
 * **headings**: Change the subtitles or collapse the page sections that are automatically generated
-    `related-pages`: Default: Related pages
-    `more-information-tiles`:  Default: More information
-    `resource-table-all`: Default: Tools and resources on this page
-    `resource-table-all-collapse`: Make the tools and resources table collapsed like the other more information sections. This will also make the tools and resources table and National resources part of the More information heading. Default: *False*
-    `affiliation-tiles-page`: Default: Affiliations
-    `contributor-minitiles-page`: Default: Contributors
+  * `related-pages`: Default: Related pages
+  * `more-information-tiles`:  Default: More information
+  * `resource-table-all`: Default: Tools and resources on this page
+  * `resource-table-all-collapse`: Make the tools and resources table collapsed like the other more information sections. This will also make the tools and resources table and National resources part of the More information heading. Default: *false*
+* **page_metadata**: Configure options related to the page metadata panel at the bottom of the page.
+  * `contributors_sort`: Default: *true*
+  * `coordinators_sort`: Default: *true*
+  * `editors_sort`: Default: *true*
+  * `affiliations_sort`: Default: *true*
 * **toc**: Settings related to the table of contents.
   * `min_headings`: The minimum amount of headings (h2, h3,.. depending on the headings option) on a page for the toc to appear. This has to be an integer. Default: *1*
   * `headings`: The type of headings that need to be indexed by the toc. This can be a list or one value, ex: *'h1, h2, h3'* or *'h2'*. Default: *'main h2'*

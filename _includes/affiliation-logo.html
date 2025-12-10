@@ -1,0 +1,10 @@
+{%- if include.image_url -%}
+  <img src="{{ include.image_url | relative_url }}" alt="{{ include.name }}" class="affiliation-img">
+{%- elsif include.country_code -%}
+  <div class="ratio ratio-4x3">
+    <div class="rounded shadow-sm flag-icon flag-icon-{{ include.country_code | downcase }}">
+    </div>
+  </div>
+{%- else -%}
+  <span>{{ include.name }}</span>
+{%- endif -%}

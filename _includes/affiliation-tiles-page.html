@@ -1,31 +1,31 @@
-{%- if page.affiliations and page.affiliations.size != 0 %}
-<span class="d-block h2-like fs-2">{{site.theme_variables.headings.affiliation-tiles-page | default: 'Affiliations' }}</span>
-<div class="mt-4 d-flex flex-wrap gap-2">
-    {%- assign affiliations = site.data.affiliations %}
-    {%- assign page_affiliations = page.affiliations | sort %}
-    {%- assign allcountries = site.data.countries %}
-    {%- for affiliation in page_affiliations %}
-    {%- if affiliation.size == 2 %}
-    {%- assign country = affiliation | upcase %}
-    {%- assign country_link = site.pages | where:"country_code",country | first %}
-    {%- if country_link %}
-    <a role="button" href="{{country_link.url | relative_url}}" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm d-flex align-items-center contributor-link hover-primary">
-    {%- else %}
-    <a role="button" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm contributor-link d-flex align-items-center hover-primary disabled border-white" aria-disabled="true">
-    {%- endif %}
+{%- unless include.sort == false %}
+{%- assign affiliations_list = include.affiliations_list | sort %}
+{%- else %}
+{%- assign affiliations_list = include.affiliations_list %}
+{%- endunless %}
+<div class="d-flex flex-wrap gap-2">
+  {%- for affiliation_name in affiliations_list -%}
+    {%- comment -%} Check if it's a country code (2 characters) {%- endcomment -%}
+    {%- if affiliation_name.size == 2 -%}
+      
+      {%- assign country_code = affiliation_name | upcase %}
+      {%- assign country_link = site.pages | where:"country_code",country_code | first %}
+      {%- assign country_name = site.data.countries[country_code] %}
+
+      {%- if country_link %}
+        <a role="button" data-bs-toggle="tooltip" title="{{country_name}}" class="btn btn-sm d-flex align-items-center affiliation-link hover-primary" href="{{country_link.url | relative_url}}">
+      {%- else %}
+        <a role="button" data-bs-toggle="tooltip" title="{{country_name}}" class="btn btn-sm affiliation-link d-flex align-items-center disabled border-0" aria-disabled="true">
+      {%- endif %}
         <div class="d-flex justify-content-center affiliation-flag">
-            <div class="ratio ratio-4x3">
-                <div class="rounded shadow-sm flag-icon flag-icon-{{affiliation | downcase}}">
-                </div>
-            </div>
+          {%- include affiliation-logo.html country_code=country_code name=country_code -%}
         </div>
-    </a>
-    {%- else %}
-    {%- assign affiliation_info = affiliations | where:"name",affiliation | first %}
-    <a class="btn btn-sm contributor-link d-flex align-items-center justify-content-center hover-primary" data-bs-toggle="tooltip" title="{{affiliation_info.name}}" href="{{affiliation_info.url}}">
+      </a>
+    {%- else -%}
+      {%- assign affiliation_info = site.data.affiliations | where:"name",affiliation_name | first %}
+      <a class="btn btn-sm affiliation-link d-flex align-items-center justify-content-center hover-primary" data-bs-toggle="tooltip" title="{{affiliation_info.name}}" href="{{affiliation_info.url}}">
         <img src="{{affiliation_info.image_url | relative_url}}" alt="{{affiliation_info.name}}" class="affiliation-img">
-    </a>
-    {%- endif %}
-    {%- endfor %}
+      </a>
+    {%- endif -%}
+  {%- endfor -%}
 </div>
-{%- endif %}

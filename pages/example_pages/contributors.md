@@ -20,17 +20,17 @@ Contributors are defined in two places: the [page-metadata](page_mechanics) and 
 * `custom`: `, ` separated list of contributor names if you only want to show a specific collection of contributors.
 * `role`: specify the role of the contributors you want to filter on. This is not combinable with the custom list of contributors.
 * `sort`: disable sorting of contributors by adding *false*. Default: *true*.
-* `col`: give an integer to specify the number of columns/contributor cards per row. Default: 5.
+* `col`: give an integer to specify the number of columns/contributor cards per row. Default: 4.
 
 ### Example with parameters
 
 ```
 {% raw %}
-{% include contributor-tiles-all.html custom="Example Contributor, Bert Droesbeke" col=4 sort=false %}
+{% include contributor-tiles-all.html custom="Example Contributor, Bert Droesbeke" col=3 sort=false %}
 {% endraw %}
 ```
 
-{% include contributor-tiles-all.html custom="Example Contributor, Bert Droesbeke" col=4 sort=false %}
+{% include contributor-tiles-all.html custom="Example Contributor, Bert Droesbeke" col=3 sort=false %}
 
 ## List website contributors in a carousel
 
@@ -49,14 +49,14 @@ Contributors are defined in two places: the [page-metadata](page_mechanics) and 
 * `custom`: `, ` separated list of contributor names if you only want to show a specific collection of contributors.
 * `role`: specify the role of the contributors you want to filter on. This is not combinable with the custom list of contributors.
 * `sort`: disable sorting of contributors by adding *false*. Default: *true*.
-* `col`: give an integer to specify the number of columns/contributor cards per row. Default: 5.
+* `col`: give an integer to specify the number of columns/contributor cards per row. Default: 4.
 
 ### Example with parameters
 
 ```
 {% raw %}
-{% include contributor-carousel-selection.html custom="Bert Droesbeke, Example Contributor" col=4 %}
+{% include contributor-carousel-selection.html custom="Bert Droesbeke, Example Contributor" col=3 %}
 {% endraw %}
 ```
 
-{% include contributor-carousel-selection.html custom="Bert Droesbeke, Example Contributor" col=4 %}
+{% include contributor-carousel-selection.html custom="Bert Droesbeke, Example Contributor" col=3 %}

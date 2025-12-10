@@ -1,12 +1,12 @@
 {%- assign carousel_counter = carousel_counter | plus: 1 %}
-{%- assign contributors = site.data.CONTRIBUTORS %}
+{%- assign contributors_lookup = site.data.CONTRIBUTORS %}
 {%- assign allcontrstr = nil %}
-{%- assign nr = include.col | default: 5 %}
+{%- assign nr = include.col | default: 4 %}
 {%- if include.custom %}
 {%- assign allcontrstr = include.custom %}
 {%- elsif include.role %}
 {%- assign rolefilter =  include.role | downcase %}
-{%- for contr in contributors %}
+{%- for contr in contributors_lookup %}
 {%- assign contrrole = contr[1]['role'] | downcase %}
 {%- if rolefilter == contrrole %}
 {%- if allcontrstr %}
@@ -27,7 +27,7 @@
 {%- endif %}
 {%- endif %}
 {%- endfor %}
-{%- for contr in contributors %}
+{%- for contr in contributors_lookup %}
 {%- if allcontrstr %}
 {%- assign allcontrstr = allcontrstr | append: ", " | append: contr[0] %}
 {%- else %}
@@ -44,67 +44,14 @@
 <div id="contributors-carousel-{{carousel_counter}}" class="carousel carousel-dark slide my-4" data-ride="carousel" data-bs-interval="7000">
     <div class="carousel-inner">
         {%- assign counter = 0 %}
-        {%- for contributor in allcontributors %}
+        {%- for contributor_name in allcontributors %}
         {%- if modulo == '0' or counter == 0 %}
         <div class="carousel-item {% if counter == 0 %}active{% endif %}">
             <div class="row row-cols-{{nr}} contributor-cards g-1 g-xl-4 ">
         {%- endif %}
+        {%- assign data = contributors_lookup[contributor_name] %}
                 <div class="col">
-                    <div class="card h-100">
-                        {%- assign id = contributors[contributor].git | default: 'no_github' %}
-                        <div class="position-relative">
-                            {%- if contributors[contributor].image_url %}
-                            <div class="p-3">
-                                <div class="ratio ratio-1x1">
-                                    <div class="contr-placeholder rounded-circle" style="background-image: url({{ contributors[contributor].image_url }});">
-                                    </div>
-                                </div>
-                            </div>
-                            {%- else %}
-                            {%- if contributors[contributor].git %}
-                            <img src="https://avatars.githubusercontent.com/{{id}}" class="card-img-top p-3 rounded-circle" alt="{{ contributor }}">
-                            {%- else %}
-                            <div class="p-3">
-                                <div class="ratio ratio-1x1">
-                                    <div class="contr-placeholder rounded-circle d-flex justify-content-center align-items-center">
-                                        {%- assign contr_name = contributor | split: " " %}
-                                        {%- assign initials = "" %}
-                                        {%- for name in contr_name %}
-                                        {%- assign initial = name | slice: 0,1 | capitalize %}
-                                        {%- assign initials = initials | append: initial %}
-                                        {%- endfor %}
-                                        <span class="fs-2 fw-bold">{{ initials }}</span>
-                                    </div>
-                                </div>
-                            </div>
-                            {%- endif %}
-                            {%- endif %}
-                            {%- if contributors[contributor].role %}
-                            <span class="badge position-absolute top-0 end-0">{{ contributors[contributor].role | capitalize }}</span>
-                            {%- endif %}
-                        </div>
-                        <div class="card-body text-center py-0">
-                            <p class="card-title">{{ contributor }}</p>
-                            {%- if contributors[contributor].affiliation %}
-                            <p class="card-affiliation">{{ contributors[contributor].affiliation | join: " / " }}</p>
-                            {%- endif %}
-                        </div>
-                        {%- if contributors[contributor].git or contributors[contributor].email or contributors[contributor].orcid %}
-                        <div class="card-footer">
-                            <div class="d-flex justify-content-center gap-1 gap-md-2">
-                                {%- if contributors[contributor].git %}
-                                <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://github.com/{{id}}"><i class="fa-brands fa-github"></i></a>
-                                {%- endif %}
-                                {%- if contributors[contributor].email %}
-                                <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="mailto:{{contributors[contributor].email}}"><i class="fa-solid fa-envelope"></i></a>
-                                {%- endif %}
-                                {%- if contributors[contributor].orcid %}
-                                <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://orcid.org/{{contributors[contributor].orcid}}"><i class="fa-brands fa-orcid"></i></a>
-                                {%- endif %}
-                            </div>
-                        </div>
-                        {%- endif %}
-                    </div>
+                    {%- include contributor-card.html name=contributor_name image_url=data.image_url git=data.git email=data.email orcid=data.orcid role=data.role affiliation=data.affiliation %}
                 </div>
         {%- assign counter = counter | plus:1 %}
         {%- capture modulo %}{{ counter | modulo:nr }}{% endcapture %}

@@ -48,11 +48,12 @@
     });
 
     var output = $(this);          // the TOC container (e.g., #toc-contents)
-    var $main  = $('#main');   
+    var main  = $('#main');
+    var button = $('#btn-toc-hide')
 
     // Prevents calling get_level(headers[0]) on undefined and collapses layout/space.
     if (!headers.length || headers.length < settings.minimumHeaders || !output.length) {
-      $main.removeClass('add-grid'); // collapse layout (your existing side-effect + our flag)
+      main.removeClass('add-grid'); // collapse layout (your existing side-effect + our flag)
       output.empty().hide();                 // hide/clear inner TOC container
       return;
     }
@@ -113,6 +114,7 @@
     (render[settings.showEffect] || render.none)();
 
     // Add grid + flag on #main (if your layout uses it), and flag #toc so CSS applies margin.
-    $main.addClass('add-grid');
+    main.addClass('add-grid');
+    button.show()
   };
 })(jQuery);

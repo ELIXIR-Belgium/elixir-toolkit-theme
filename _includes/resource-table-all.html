@@ -26,7 +26,7 @@
 {%- endif %}
 {% if site.theme_variables.headings.resource-table-all-collapse %}<h3 class="mb-0 mt-3 flex-grow-1 text-dark">{% else %}<h2 class="h2-like fs-2">{% endif %}{{site.theme_variables.headings.resource-table-all | default: 'Tools and resources on this page' }}{% if site.theme_variables.headings.resource-table-all-collapse %}</h3>{% else % %}</h2>{% endif %}
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
-    <i class="fa-solid fa-chevron-down fs-5"></i>
+    <i class="fa-solid fa-chevron-right fs-5"></i>
 </a>
 <div class="collapse info-card" id="tools_collapse">
 {%- endif %}
@@ -64,7 +64,7 @@
                 <td>{{tool.name}}</td>
                 {%- endif %}
                 <td>{{tool.description}}
-                    {%- if tool.instance_of or tool.how_to_access or instances_tool != 0 and include.tag != nil %}
+                    {%- if tool.instance_of or tool.how_to_access or instances_tool != 0 %}
                     {%- assign linked_tool = site.data.tool_and_resource_list | where:"id", tool.instance_of | first %}
                     <div class="d-block mt-1">
                         {%- if linked_tool %}
@@ -149,7 +149,7 @@
 {%- endif %}
     <h3 class="{% if site.theme_variables.headings.resource-table-all-collapse %}mb-0 mt-3 flex-grow-1 text-dark {% endif %}">National resources</h3>
 {%- if site.theme_variables.headings.resource-table-all-collapse %}
-    <i class="fa-solid fa-chevron-down fs-5"></i>
+    <i class="fa-solid fa-chevron-right fs-5"></i>
 </a>
 <div class="collapse info-card" id="nat_tools_collapse">
 {%- endif %}

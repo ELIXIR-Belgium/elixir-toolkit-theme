@@ -1,0 +1,16 @@
+{%- if include.image_url %}
+  <div class="contr-placeholder rounded-circle" style="background-image: url({{ include.image_url }});">
+  </div>
+{%- elsif include.git %}
+  <img src="https://avatars.githubusercontent.com/{{ include.git }}" class="img-fluid rounded-circle" alt="{{ include.name }}">
+{%- else -%}
+  <div class="contr-placeholder rounded-circle d-flex justify-content-center align-items-center{%- if include.small %} contributor-img-sm{% endif %}">
+    {%- assign name_parts = include.name | split: " " %}
+    {%- assign initials = "" %}
+    {%- for part in name_parts %}
+    {%- assign initial = part | slice: 0,1 | capitalize %}
+    {%- assign initials = initials | append: initial %}
+    {%- endfor -%}
+    <span class="fw-bold{%- unless include.small %} fs-2{% endunless %}">{{ initials }}</span>
+  </div>
+{%- endif %}

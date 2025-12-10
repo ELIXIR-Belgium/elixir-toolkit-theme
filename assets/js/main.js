@@ -27,26 +27,44 @@ $(document).ready(function () {
 });
 
 /**
- * Settings for side navigation
+ * Sidebar height
  */
 $(document).ready(function () {
-    // Initialize navgoco with default options
-    $("#sidebar>nav>ul").navgoco({
-        caretHtml: '',
-        accordion: true,
-        openClass: 'active', // open
-        save: false, // leave false or nav highlighting doesn't work right
-        cookie: {
-            name: 'navgoco',
-            expires: false,
-            path: '/'
-        },
-        slide: {
-            duration: 400,
-            easing: 'swing'
-        }
-    });
+    const breakpointLg = 992; // Bootstrap's lg breakpoint in pixels
+    const main = document.getElementById('main');
+    const sideNav = document.getElementById('side-nav');
+
+    // If either element is missing, don't do anything
+    if (!main || !sideNav) return;
+
+    function getVisibleHeight(el) {
+      const rect = el.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+      const visibleTop = Math.max(rect.top, 0);
+      const visibleBottom = Math.min(rect.bottom, windowHeight);
+      const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+
+      return visibleHeight;
+    }
+
+    function adjustSidebarHeight() {
+        window.requestAnimationFrame(() => {
+            if (window.innerWidth < breakpointLg) {
+                sideNav.style.height = 'auto';
+            } else {
+                const visibleHeight = getVisibleHeight(main);
+                sideNav.style.height = visibleHeight + 'px';
+            }
+        });
+    }
+
+    adjustSidebarHeight();
+
+    window.addEventListener('scroll', adjustSidebarHeight);
+    window.addEventListener('resize', adjustSidebarHeight);
 });
+
 
 /**
  * Back to top button

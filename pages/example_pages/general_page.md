@@ -3,6 +3,8 @@ title: General page example
 type: Example_pages
 contributors: [Bert Droesbeke, Long Example Contributor , Example Contributor, Example Contributor2, Example Contributor3]
 coordinators: [Bert Droesbeke] 
+editors: [Bert Droesbeke] 
+page_citation: true
 description: This description is used when the page is listed
 page_id: gp1
 affiliations: [ELIXIR Europe, BE, SE]

@@ -164,7 +164,7 @@
                 }
                 const cols = document.querySelectorAll(".navigation-tiles .col");
                 for (col of cols) {
-                    const colCategories = col.getAttribute("data-affiliations").split(" ");
+                    const colCategories = (col.getAttribute("data-affiliations") ?? "").split(" ");
                     if (colCategories.indexOf(this.value) != -1 || this.value === "reset") {
                         col.classList.remove("d-none");
                     } else {
@@ -181,7 +181,7 @@
                     document.getElementById("affiliations-input").selectedIndex = null;
                     const cols = document.querySelectorAll(".navigation-tiles .col");
                     for (col of cols) {
-                        const colCategories = col.getAttribute("data-affiliations").split(" ");
+                        const colCategories = (col.getAttribute("data-affiliations") ?? "").split(" ");
                         col.classList.remove("d-none");
                     }
                 }
@@ -198,13 +198,17 @@
         const input = document.getElementById("title-search");
         if (input) {
             const cols = document.querySelectorAll(".navigation-tiles .col");
-            let filter = input.value.toLowerCase();
+            const filter = input.value.toLowerCase();
+
             var affiliations = document.getElementById('affiliations-input');
             if (affiliations) {
                 document.getElementById("affiliations-input").selectedIndex = null;
             }
+
             for (let i = 0; i < cols.length; i++) {
-                let body = cols[i].querySelector(".card-body");
+                let body = cols[i].querySelector(".card-body") || cols[i].querySelector(".section-title");
+                if (!body) continue; // skip cols that don’t have searchable content
+
                 if (body.innerText.toLowerCase().indexOf(filter) > -1) {
                     cols[i].classList.remove("d-none");
                 } else {
@@ -212,7 +216,8 @@
                 }
             }
         }
-    }
+    };
+
     $(document).ready(function () {
         var clearsearch = document.getElementById("clearsearch");
         if (clearsearch) {

@@ -16,35 +16,28 @@ $topnav-searchbar: $white;
 $search-result-color: $primary;
 
 /*-----Sidebar-----*/
-$sidebar-bg: $light;
-$sidebar-color: $dark;
-$sidebar-lvl2-bg: $white;
-$sidebar-lvl2-color: $dark;
-$sidebar-lvl3-bg: $white;
-$sidebar-lvl3-color: $dark;
-$sidebar-bg-active: $primary;
-$sidebar-color-active: $white;
+$sidebar-title-bg: $white;
+$sidebar-link-color-active: shift-color($primary, $link-shade-percentage) !default;
+$sidebar-link-bg-active:rgba($primary, 0.08) !default;
 
 /*-----Section navigation tiles-----*/
 $nav-card-bg: $light;
 $nav-card-color: $dark;
-$nav-card-bg-hover: $primary;
-$nav-card-color-hover: $white;
+$nav-card-bg-hover: rgba($primary, 0.08) !default;
+$nav-card-color-hover: $dark;
 
 /*-----More information tiles-----*/
 $info-card-bg: $light;
 $info-card-color: $dark;
-$info-card-bg-hover: $primary;
-$info-card-color-hover: $white;
+$info-card-bg-hover: rgba($primary, 0.08) !default;
+$info-card-color-hover: $dark;
 
 /*-----Contributors-cards-----*/
 $contr-card-bg: $light;
 
-/*-----Page contributors-----*/
-$contr-bg: $light;
-$contr-link-bg: $white;
-$contr-crown-bg: $dark;
-$contr-crown-color: $white;
+/*-----Page metadata-----*/
+$page-metadata-bg: rgba($primary, 0.08);
+$page-metadata-link-bg: $white;
 $contr-popover-bg: $white;
 
 /*-----Events & news-----*/

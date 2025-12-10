@@ -65,23 +65,26 @@ theme_variables:
   # dev-info-banner: false
   # privacy_statement_url: /privacy
   # github_buttons:
-  #   position: top
-  #   edit_me: true
-  #   open_issue: true
-  #   history: true
+    # position: top
+    # edit_me: true
+    # open_issue: true
+    # history: true
   # datatables:
-  #   searchbuilder: false
+    # searchbuilder: false
     # pagelength: 10
   # headings:
-  #   related-pages: Related pages
-  #   more-information-tiles: More information
-  #   resource-table-all: Tools and resources on this page
-  #   resource-table-all-collapse: false
-  #   affiliation-tiles-page: Affiliations
-  #   contributor-minitiles-page: Contributors
+    # related-pages: Related pages
+    # more-information-tiles: More information
+    # resource-table-all: Tools and resources on this page
+    # resource-table-all-collapse: false
+  # page_metadata:
+    # contributors_sort: true
+    # coordinators_sort: true
+    # editors_sort: true
+    # affiliations_sort: true
   # toc:
-  #   min_headings: 1
-  #   headings: 'h2'
+    # min_headings: 1
+    # headings: 'h2'
   # topnav:
     # theme: light
     # brand_logo: assets/img/main_logo.svg
@@ -93,11 +96,11 @@ theme_variables:
     # fosstodon: false
   # theme_color: 0d6efd
   # fonts:
-  #   - url towards a font
+    # - url towards a font
   # breadcrumb: false
 
 # --- Missing in gitlab: ---
 # github:
-#   repository_url: https://github.com/ELIXIR-Belgium/elixir-toolkit-theme
-#   source:
-#     branch: main
+  # repository_url: https://github.com/ELIXIR-Belgium/elixir-toolkit-theme
+  # source:
+    # branch: main
