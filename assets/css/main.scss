@@ -279,7 +279,7 @@ div.highlight {
 header .navbar {
     background-color: $topnav-bg;
     #search-label, #search-input {
-        background-color: $white;
+        background-color: $topnav-searchbar;
     }
     .navbar-brand {
         color: $topnav-title-color;
