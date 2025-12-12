@@ -86,9 +86,9 @@
                             <ul class="dropdown-menu" aria-labelledby="{{ dropdown_id }}">
                             {%- for inst in tool.instances %}
                                 <li>
-                                    <a class="dropdown-item" href="{{ inst.url }}">
+                                    <a class="dropdown-item no-ext-icon" href="{{ inst.url }}">
                                         {{ inst.name }}
-                                        {%- if inst.country_code %}
+                                        {%- if inst.country_code.size != 0 %}
                                             <span class="flag-icon ms-2 shadow-sm flag-icon-{{ inst.country_code | downcase }}"></span>
                                         {%- endif %}
                                     </a>
