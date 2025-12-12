@@ -64,23 +64,22 @@ To have some inspiration on what is possible here, go to the [RDMkit custom clas
 
 The one from the ELIXIR Toolkit Theme are defined in the `/assets/img` as:
 
-- /assets/img/android-chrome-192x192.png
-- /assets/img/android-chrome-512x512.png
+- /assets/img/web-app-manifest-192x192.png
+- /assets/img/web-app-manifest-512x512.png
 - /assets/img/apple-touch-icon.png
 - /assets/img/favicon-16x16.png
 - /assets/img/favicon-32x32.png
+- /assets/img/favicon-96x96.png
 - /assets/img/favicon.ico
 - /assets/img/site.webmanifest
 - /assets/img/safari-pinned-tab.svg
 
-This files can be overwritten in your own project by placing them in the same directory with the same name. These files can be easily generated out of an image of your square logo (preferably in svg) with for example the [Favicon generator](https://realfavicongenerator.net/).
+These files can be overwritten in your own project by placing them in the same directory with the same name. These files can be easily generated out of an image of your square logo (preferably in svg) with for example the [Favicon generator](https://realfavicongenerator.net/).
 
 ## Custom Java Script
 
-Sometimes it is needed to inject some custom Java Script code. This is possible by creating a file `\assets\js\custom.js`. Be aware that this javascript code will be loaded on every page.
-
+Sometimes it is needed to inject some custom Java Script code. This is possible by creating a file `/assets/js/custom.js`. Be aware that this javascript code will be loaded on every page.
 
 ## Branding in footer
-
 
 The footer is one more place to add branding or important logo's. For more information on how to customize the footer, visit our [navigation structures](navigation_structures#footer) page.

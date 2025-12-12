@@ -19,7 +19,7 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `summary`: Using this attribute it is possible to specify a summary which will be displayed under the title of the page.
 
-* `description`: Short sentence about the page starting with a lowercase. This sentence is visualized when in the related pages section of a page..
+* `description`: Short sentence about the page starting with a lowercase. This sentence is visualized in the section navigation tiles, the related pages tiles and in the HTML metadata tag of the page (this tag is used when sharing urls in chats).
 
 * `contributors`: List here all the contributors that helped in establishing the page. This will be the full name of the person. Make sure that the person name that is listed can be found in the CONTRIBUTORS.yaml file in the _data directory if you want to link the github id and other contact information.
 

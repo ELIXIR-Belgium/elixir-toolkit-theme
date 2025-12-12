@@ -4,12 +4,21 @@ title: Search Engine Optimization
 
 ## Metadata in head
 
-Multiple metadata fields are filled in to increase SEO including: `description`, `keywords`, `og:title`, `og:description`, `og:image`, `apple-mobile-web-app-title`, `msapplication-TileColor`, `apple-touch-icon`, `manifest`, `mask-icon` and `theme-color`. These fields will also help in how the website gets previewed when the url is used on social media or chats.
+Multiple metadata fields are filled in to increase SEO including: 
 
+- `title`:
+- `description`: 
+- `keywords`: 
+- `og:title`: 
+- `og:description`: 
+- `og:image`: 
+- `og:logo`: 
+
+These fields will also help in how the website gets previewed when the url is used on social media or chats.
 
 ## Schema.org attributes
 
-We use schema.org attributes and some bioschema.org extensions to describe certain objects on the website more in detail including contributors. 
+We use schema.org attributes and some bioschema.org extensions to describe certain objects on the website more in detail. This includes contributors and their affiliations. 
 
 For example:
 
