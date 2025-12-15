@@ -76,6 +76,8 @@ The one from the ELIXIR Toolkit Theme are defined in the `/assets/img` as:
 
 These files can be overwritten in your own project by placing them in the same directory with the same name. These files can be easily generated out of an image of your square logo (preferably in svg) with for example the [Favicon generator](https://realfavicongenerator.net/).
 
+{% include callout.html type="note" content="Since v6.0.0 /assets/img/favicon-96x96.png is added and the assets/img/android-chrome-xxxxxxx.png files have been replaced with /assets/img/web-app-manifest-xxxxxxx.png. See above list for reference." %}
+
 ## Custom Java Script
 
 Sometimes it is needed to inject some custom Java Script code. This is possible by creating a file `/assets/js/custom.js`. Be aware that this javascript code will be loaded on every page.

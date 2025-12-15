@@ -6,15 +6,12 @@ title: Search Engine Optimization
 
 Multiple metadata fields are filled in to increase SEO including: 
 
-- `title`:
-- `description`: 
-- `keywords`: 
-- `og:title`: 
-- `og:description`: 
-- `og:image`: 
-- `og:logo`: 
+- `title` and `og:title`: The index page of the website gets the site title (from _config.yml). Other pages will have following pattern: *page.type*: *page.title* | *site.title* if attributes are present. 
+- `description` and `og:description`: The index page of the website gets the site description (from _config.yml). Other pages will look for a description in following places and order: *page.description* > *page.summary* > *markdown content*. In all three scenarios the first 30 words are used.
+- `keywords`: created based on the *page.page_id*'s in *page.related_pages* and the respective *page.title*'s of those listed pages.
+- `og:image` and `og:logo`: the image file available in */assets/img/apple-touch-icon.png*. Please replace this file if you want your brand logo to appear as a thumbnail when links are are shared in chats.
 
-These fields will also help in how the website gets previewed when the url is used on social media or chats.
+These fields will also help in how the website gets previewed when the url is used on social media or chats. See [Page mechanics](page_mechanics) and [Configuring the theme](configuring_theme) on how to set these attributes.
 
 ## Schema.org attributes
 
