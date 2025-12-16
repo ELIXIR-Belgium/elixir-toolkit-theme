@@ -71,7 +71,6 @@ The one from the ELIXIR Toolkit Theme are defined in the `/assets/img` as:
 - /assets/img/favicon-32x32.png
 - /assets/img/favicon.ico
 - /assets/img/site.webmanifest
-- /assets/img/safari-pinned-tab.svg
 
 These files can be overwritten in your own project by placing them in the same directory with the same name. These files can be easily generated out of an image of your square logo (preferably in svg) with for example the [Favicon generator](https://realfavicongenerator.net/).
 
