@@ -69,7 +69,6 @@ The one from the ELIXIR Toolkit Theme are defined in the `/assets/img` as:
 - /assets/img/apple-touch-icon.png
 - /assets/img/favicon-16x16.png
 - /assets/img/favicon-32x32.png
-- /assets/img/favicon-96x96.png
 - /assets/img/favicon.ico
 - /assets/img/site.webmanifest
 - /assets/img/safari-pinned-tab.svg
