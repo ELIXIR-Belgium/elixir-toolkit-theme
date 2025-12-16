@@ -31,8 +31,8 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
     <meta property="og:image" content="//{{site.github.url | remove: 'https://' | remove: 'http://'}}/assets/img/apple-touch-icon.png" />
+    <meta property="og:logo" content="//{{site.github.url | remove: 'https://' | remove: 'http://'}}/assets/img/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="{{title}}">
-    <meta name="msapplication-TileColor" content="#{{site.theme_variables.theme_color | default: 0d6efd }}">
     <meta name="theme-color" content="#{{site.theme_variables.theme_color | default: 0d6efd }}">
     {%- if page.no_robots %}
     <meta name="robots" content="noindex" />
@@ -113,7 +113,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/img/favicon-32x32.png' | relative_url }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/img/favicon-16x16.png' | relative_url }}">
     <link rel="manifest" href="{{ 'assets/img/site.webmanifest' | relative_url }}">
-    <link rel="mask-icon" href="{{ 'assets/img/safari-pinned-tab.svg' | relative_url }}" color="#{{site.theme_variables.theme_color | default: 0d6efd }}">
     <link rel="shortcut icon" href="{{ 'assets/img/favicon.ico' | relative_url }}">
     <!-- Schema.org metadata -->
     {% include schemasorg.html %}
