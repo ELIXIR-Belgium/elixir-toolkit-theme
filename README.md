@@ -28,13 +28,13 @@ Its key features:
 
 ## Enabling the theme on your Jekyll project
 
-The quickest way to use the elixir-toolkit-theme is setting it as a [remote theme](https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/) in your `config.yml` file:
+The quickest way to use the latest version of elixir-toolkit-theme is setting it as a [remote theme](https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/) in your `config.yml` file:
 
 ```yaml
-remote_theme: ELIXIR-Belgium/elixir-toolkit-theme
+remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@latest
 ```
 
-You can lock it onto a specific version using:
+You can lock it onto a specific version (recommended!) using:
 
 ```yaml
 remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@6.0.0
