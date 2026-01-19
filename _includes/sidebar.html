@@ -45,6 +45,7 @@
           </button>
         <li class="py-0">
             <ul id="sidebar-list-lvl-1-{{subitems_count}}" class="list-unstyled collapse{%- if subfolder_active or page.url == folder.url or page.type == 'Data_life_cycle' and folder.title == 'Data life cycle' %} show{% endif %}" data-bs-parent="#sidebar-list-lvl-0">
+                {%- assign subsubitems_count = 0 %}
                 {%- for subfolder in folder.subitems %}
                 {%- if subfolder.RDM -%}
                 <li class="sidebar_rdm_sub mb-1{%- if page.type == 'Data_life_cycle' %} active{% endif %}">
@@ -205,11 +206,6 @@
                 </li>
                 {%- else %}
                 <li class="d-flex align-items-center{%- if subfolder.hr %} mt-3{% endif %}">
-                {%- if subfolder.external_url %}
-                    <a class="text-start w-100" href="{{subfolder.external_url}}" target="_blank" rel="noopener">{{subfolder.title}}</a>
-                {%- else %}    
-                    <a class="text-start w-100{%- if page.url == subfolder.url %} active{% endif %}" href="{{subfolder.url | relative_url }}">{{ subfolder.title }}</a>
-                {%- endif %}
                 {%- if subfolder.subitems %}
                 {%- assign subsubfolder_active = false %}
                 {%- for subsubfolder in subfolder.subitems %}
@@ -217,7 +213,13 @@
                 {%- assign subsubfolder_active = true %}
                 {%- endif %}
                 {%- endfor %}
-                {%- assign subsubitems_count = 0 %}
+                {%- endif %}
+                {%- if subfolder.external_url %}
+                    <a class="text-start w-100" href="{{subfolder.external_url}}" target="_blank" rel="noopener">{{subfolder.title}}</a>
+                {%- else %}    
+                    <a class="text-start w-100{%- if page.url == subfolder.url %} active{% endif %}" {%- if subfolder.url %}href="{{subfolder.url | relative_url }}"{% else %}data-bs-toggle="collapse" data-bs-target="#sidebar-list-lvl-2-{{subsubitems_count}}" aria-expanded="{{subsubfolder_active}}" aria-controls="sidebar-list-lvl-2-{{subsubitems_count}}"{% endif %}>{{ subfolder.title }}</a>
+                {%- endif %}
+                {%- if subfolder.subitems %}
                 <button type="button" class="btn btn-sm btn-link rounded-circle{%- unless subsubfolder_active or page.url == subfolder.url %} collapsed{% endunless %}" data-bs-toggle="collapse" data-bs-target="#sidebar-list-lvl-2-{{subsubitems_count}}" aria-expanded="{{subsubfolder_active}}" aria-controls="sidebar-list-lvl-2-{{subsubitems_count}}">
                     <i class="fa-solid fa-chevron-right"></i><span class="visually-hidden">Expand sidebar</span>
                 </button>
