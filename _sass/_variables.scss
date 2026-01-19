@@ -17,7 +17,7 @@ $search-result-color: $primary;
 
 /*-----Sidebar-----*/
 $sidebar-title-bg: $white;
-$sidebar-link-color-active: shift-color($primary, $link-shade-percentage) !default;
+$sidebar-link-color-active: $primary !default;
 $sidebar-link-bg-active:rgba($primary, 0.08) !default;
 
 /*-----Section navigation tiles-----*/
