@@ -4,7 +4,9 @@ title: Website sections
 
 When content grows, the need to categorize grows. The theme makes it possible to categorize in the [sidebar](navigation_structures#sidebar), but also to list pages in a nice way that belong to the same section.
 
-A section is simple a collection of pages of the same `type`, see [page mechanics](page_mechanics). Adding the pages you want to list in an overview, can be simply done by tagging them with a type (in the example `type: Example_pages`) in the [page metadata](page_mechanics) and listing that type using the snippets below. Be aware that the type attribute is case sensitive and spaces should get replaced with an underscore "_".
+A section is a collection of pages of the same `type`, see [page mechanics](page_mechanics). Adding the pages you want to list in an overview, can be done by tagging them with a type (in the example below `type: Example_pages`) in the [page metadata](page_mechanics). If you do not want to list pages using their type, you can also manually list them using the `custom` parameter and listing the `page_id`s in a comma separated way. Be aware that the type attribute is case sensitive and spaces should get replaced with an underscore "_".
+
+{% include callout.html type="tip" content="Use the `type_img` attribute to specify a section/type icon as seen in the *General page example 2* tile." %}
 
 
 ## Section tiles with information
