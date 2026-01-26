@@ -47,6 +47,8 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `type`: The type of page, used for [website sections](website_sections). Case the value is case sensitive and spaces should get replaced with underscores.
 
+* `type_img`: Specify an icon that is shown in front of the page title in the section navigation tiles (See [Website sections](website_sections)) and related pages. It can be used as a "Section" specific icon to visually group.
+
 * `page_citation`: When set to true, it will cause the citation section for the page to be generated in the format: `<author names>. <page title>. <site domain>. <page URL>. <date accessed>.`
 
 ### Page specific GitHub configurations
