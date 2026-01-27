@@ -31,7 +31,7 @@ Its key features:
 The quickest way to use the latest version of elixir-toolkit-theme is setting it as a [remote theme](https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/) in your `config.yml` file:
 
 ```yaml
-remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@latest
+remote_theme: ELIXIR-Belgium/elixir-toolkit-theme
 ```
 
 You can lock it onto a specific version (recommended!) using:
