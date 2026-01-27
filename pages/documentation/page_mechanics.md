@@ -112,6 +112,7 @@ github:
   ```
 
 * `rdmkit`: Link out to guides inside of the RDMkit.
+
   ```yml
   rdmkit:
     - name: RDMkit page title
