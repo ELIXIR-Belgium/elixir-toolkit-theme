@@ -31,7 +31,7 @@ Its key features:
 The quickest way to use the latest version of elixir-toolkit-theme is setting it as a [remote theme](https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/) in your `config.yml` file:
 
 ```yaml
-remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@latest
+remote_theme: ELIXIR-Belgium/elixir-toolkit-theme
 ```
 
 You can lock it onto a specific version (recommended!) using:
@@ -169,12 +169,15 @@ This will start the docker container and serve the website locally. Make sure th
 - [ELIXIR-IT Training Platform](https://elixir-iib-training.github.io/site/training_courses) (ELIXIR IT)
 - [FAIRDOM-SEEK Documentation](https://docs.seek4science.org/) (SEEK community)
 - [FAIR Lesson Plan Handbook](https://elixir-europe-training.github.io/ELIXIR-TrP-FAIR-Converge/)  (ELIXIR Training platform)
-- [Data Steward Handbook](https://elixir-uk.github.io/elixir-ds-handbook) (ELIXIR RDM Community)
+- [Data Steward Handbook](https://elixir-europe.github.io/ds-handbook/) (ELIXIR RDM Community)
 - [Fed-A-Crate](https://elixir-europe.github.io/fed-a-crate/how-to-contribute) (ELIXIR Fed-A-Crate project)
 - [Federated Learning toolkit (FLkit)](https://uhasselt-biomedicaldatasciences.github.io/federated-learning-toolkit/) (UHasselt)
 - [mTeSS-X](https://elixirtess.github.io/mTeSS-X/) (OSCARS project)
 - [Galaxy Codex](https://galaxyproject.github.io/galaxy_codex/) (Galaxy Community)
 - [ELIXIR Software Management Plan](https://elixir-europe.github.io/software-management-plans/community/) (ELIXIR SMP Community)
+- [FAIR Metroline](https://fairmetroline.org/) (Health-RI)
+- [Globus Community Australasia](https://aarnet.github.io/Globus-Community/) (AARNet)
+- [ELIXIR Research Software Ecosystem (RSEc)](https://research-software-ecosystem.github.io/) (ELIXIR Tools Platform)
 - Want your instance here? [Open an issue](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/issues)
 
 ## Dependencies
