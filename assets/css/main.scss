@@ -38,13 +38,13 @@ $link-decoration: none  !default;
 $link-color: $primary !default;
 $custom-container-max-widths: (
     xxxl: 1440px
-);
+)!default;
 
 
 @import "bootstrap/variables";
 
 /*-----Custom maps-----*/
-$container-max-widths: map-merge($container-max-widths, $custom-container-max-widths)!default;
+$container-max-widths: map-merge($container-max-widths, $custom-container-max-widths);
 
 /*-----Include other SASS files-----*/
 @import "bootstrap/bootstrap";
