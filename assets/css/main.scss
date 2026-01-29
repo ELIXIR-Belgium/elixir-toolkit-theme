@@ -44,7 +44,7 @@ $custom-container-max-widths: (
 @import "bootstrap/variables";
 
 /*-----Custom maps-----*/
-$container-max-widths: map-merge($container-max-widths, $custom-container-max-widths);
+$container-max-widths: map-merge($container-max-widths, $custom-container-max-widths)!default;
 
 /*-----Include other SASS files-----*/
 @import "bootstrap/bootstrap";
