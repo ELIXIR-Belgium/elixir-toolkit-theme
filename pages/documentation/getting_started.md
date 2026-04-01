@@ -5,7 +5,7 @@ title: Getting started
 Please follow following steps to use the theme.
 
 
-## 1. Use template of fork the example repository
+## 1. Use template or fork the example repository
 
 Go to the [example repository](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme-example). Click on the `Use this template` button or the `Fork` on the top right, to create a new repository with this template.
 
