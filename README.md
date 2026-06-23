@@ -181,8 +181,8 @@ This will start the docker container and serve the website locally. Make sure th
 - [Globus Community Australasia](https://aarnet.github.io/Globus-Community/) (AARNet)
 - [ELIXIR Research Software Ecosystem (RSEc)](https://research-software-ecosystem.github.io/) (ELIXIR Tools Platform)
 - [Knowledge Hub](https://knowledge.lnds.lu/) (Luxembourg National Data Service (LNDS))
+- [ELIXIR-ELITMa](https://elixir-europe-training.github.io/ELIXIR-ELITMa/) (ELIXIR Training platform)
 - Want your instance here? [Open an issue](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/issues)
-- [ELIXIR-ELITMa](https://github.com/elixir-europe-training/ELIXIR-ELITMa) (ELIXIR Training platform)
 
 ## Dependencies
 
