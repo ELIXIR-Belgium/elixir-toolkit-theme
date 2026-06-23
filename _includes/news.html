@@ -4,16 +4,17 @@
   {%- endif %}
   {%- assign news = site.data.news | sort: "date" %}
   {%- assign count = 0 %}
-  <ul class="list-unstyled mt-3">
+  <ul class="news-timeline list-unstyled mt-3">
     {%- for new in news reversed%}
-    <li>
-      <span class="title mb-1">{{ new.name | escape }}</span>
-      <p class="text-muted"><i class="far fa-calendar me-2"></i><time>{{ new.date | date_to_long_string }}</time>{% if new.linked_pr %} - <i class="fa-solid fa-code-branch me-2"></i><a href="{{ site.github.repository_url | append: '/pull/' | append: new.linked_pr }}"><span>{{new.linked_pr }}</span></a>{% endif %}</p>
+    <li class="news-timeline-item">
+      <article class="news-timeline-content">
+      <h3 class="title mt-0 mb-2">{{ new.name | escape }}</h3>
+      <p class="news-timeline-date text-muted mb-3"><i class="far fa-calendar me-2" aria-hidden="true"></i><time>{{ new.date | date_to_long_string }}</time>{% if new.linked_pr %}<span class="metadata-separator" aria-hidden="true">&middot;</span><i class="fa-solid fa-code-branch me-2" aria-hidden="true"></i><a href="{{ site.github.repository_url | append: '/pull/' | append: new.linked_pr }}"><span>PR #{{new.linked_pr }}</span></a>{% endif %}</p>
       {%- if new.description %}
       {%- assign word_count = new.description | split: " " | size %}
       {%- if include.truncate == true and word_count > 40 %}
-      <p class="mb-0"><a data-bs-toggle="collapse" href="#collapse-{{count}}" role="button" aria-expanded="false" aria-controls="collapse-{{count}}">
-        View description
+      <p class="mb-0"><a class="description-toggle btn btn-outline-primary btn-sm d-inline-flex align-items-center gap-2" data-bs-toggle="collapse" href="#collapse-{{count}}" role="button" aria-expanded="false" aria-controls="collapse-{{count}}">
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i><span>View description</span>
       </a>
       </p>
       <div class="full-description collapse" id="collapse-{{count}}">
@@ -23,6 +24,7 @@
       {{ new.description | markdownify }}
       {%- endif %}
       {%- endif %}
+      </article>
     </li>
     {%- assign count = count | plus: 1 %}
     {%- if include.limit and count == include.limit %}

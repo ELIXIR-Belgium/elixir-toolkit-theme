@@ -9,21 +9,24 @@
   {%- assign events = site.data.events | sort: "startDate" | reverse %}
     {%- endif %}
   {%- assign count = 0 %}
-  <ul class="list-unstyled mt-3">
+  <ul class="events-grid row row-cols-1 row-cols-md-{{ include.col | default: 1 }} g-4 list-unstyled mt-3">
     {%- for event in events %}
-    <li class='{{include.event_type}}' data-start='{{ event.startDate}}'>
-      <span class="title mb-1">{{ event.name | escape }}</span>
-      <p class="text-muted mb-0"><i class="far fa-calendar me-2"></i><time datetime="{{ event.startDate | date: '%e %B, %Y %H:%M' }}">{{ event.startDate | date_to_long_string }} {{event.startTime}}</time>
-        {% if event.endDate or event.endTime %} - <time datetime="{{ event.endDate | date: '%e %B, %Y %H:%M %Z' }}">{{ event.endDate | date_to_long_string }} {{event.endTime}}</time>{% endif %}</p>
-      {%- if event.location %}
-      <i class="fa-solid fa-map-marker-alt me-2 text-muted"></i>
-      <div class="d-inline-block text-muted">{{ event.location | markdownify }}</div>
-      {%- endif %}
+    <li class='col {{include.event_type}}' data-start='{{ event.startDate}}'>
+      <article class="event-card card h-100">
+      <div class="card-body d-flex flex-column p-4">
+      <div class="event-card-header d-flex align-items-start gap-3 mb-3">
+        <span class="event-card-icon d-inline-flex flex-shrink-0 align-items-center justify-content-center rounded-circle" aria-hidden="true"><i class="far fa-calendar"></i></span>
+        <div>
+          <h3 class="title mt-0 mb-0">{{ event.name | escape }}</h3>
+          <p class="event-card-date text-muted mt-1 mb-0"><time datetime="{{ event.startDate | date: '%e %B, %Y %H:%M' }}">{{ event.startDate | date_to_long_string }} {{event.startTime}}</time>
+            {% if event.endDate or event.endTime %}<span class="event-date-range-separator" aria-hidden="true">&ndash;</span><time datetime="{{ event.endDate | date: '%e %B, %Y %H:%M %Z' }}">{{ event.endDate | date_to_long_string }} {{event.endTime}}</time>{% endif %}{% if event.location %}<span class="metadata-separator" aria-hidden="true">&middot;</span><i class="fa-solid fa-map-marker-alt me-1" aria-hidden="true"></i><span>{{ event.location | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span>{% endif %}</p>
+        </div>
+      </div>
       {%- if event.description %}
       {%- assign word_count = event.description | split: " " | size %}
       {%- if include.truncate == true and word_count > 40 %}
-      <p class="mb-0"><a data-bs-toggle="collapse" href="#collapse-{{count}}" role="button" aria-expanded="false" aria-controls="collapse-{{count}}">
-        View description
+      <p class="mb-0"><a class="description-toggle btn btn-outline-primary btn-sm d-inline-flex align-items-center gap-2" data-bs-toggle="collapse" href="#collapse-{{count}}" role="button" aria-expanded="false" aria-controls="collapse-{{count}}">
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i><span>View description</span>
       </a>
       </p>
       <div class="full-description collapse" id="collapse-{{count}}">
@@ -33,6 +36,8 @@
       {{ event.description | markdownify }}
       {%- endif %}
       {%- endif %}
+      </div>
+      </article>
     </li>
     {%- assign count = count | plus: 1 %}
     {%- endfor %}
