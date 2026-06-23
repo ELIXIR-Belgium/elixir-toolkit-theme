@@ -2,7 +2,12 @@
   {%- if include.title == true%}
   <h2>{{include.event_type | replace: "_", " " | capitalize}}s</h2>
   {%- endif %}
+  {%- if include.related_pages %}
+  {%- assign filtered = site.data.events | where_exp: "event", "event.related_pages contains include.related_pages" %}
+  {%- assign events = filtered | sort: "startDate" | reverse %}
+  {%- else %}
   {%- assign events = site.data.events | sort: "startDate" | reverse %}
+    {%- endif %}
   {%- assign count = 0 %}
   <ul class="list-unstyled mt-3">
     {%- for event in events %}

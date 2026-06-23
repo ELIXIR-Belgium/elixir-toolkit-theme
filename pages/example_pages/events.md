@@ -34,7 +34,17 @@ Becomes:
 * `caption_url`: Add a custom url if the main events page is not served at */events*
 * `truncate`: If longer event descriptions are used and this parameter is set to *true*, descriptions which are longer than 40 words will get collapsed behind a button (`true` or `false`).
 * `limit`: Integer to determine the amount of news items shown.
+* `related_pages`: A `page_id` assigned to the events that should be displayed. Add the same ID to each event's `related_pages` list in `_data/events.yml`.
+
+## Filter events by related page
 
 
+```
+{% raw %}
+{% include events.html event_type="upcoming_event" related_pages="gp5" %}
+{% endraw %}
+```
 
+Becomes:
 
+{% include events.html event_type="upcoming_event" related_pages="gp5" %}

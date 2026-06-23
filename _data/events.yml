@@ -15,6 +15,7 @@
   startTime: '9:00'
   endDate: 2030-06-24
   endTime: 13:30 CET
+  related_pages: [gp5]
   description: >
    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna massa, vestibulum ut leo eget, fermentum molestie mauris. Cras facilisis libero non sodales lobortis. Proin eu ultricies lacus. Sed posuere orci id tincidunt sollicitudin. Phasellus sit amet justo turpis. Vestibulum non volutpat libero. Donec mattis elementum sem nec posuere. Donec vitae libero sed mi faucibus tempus.
    Talks included<span>:</span>
