@@ -153,9 +153,11 @@ This will start the docker container and serve the website locally. Make sure th
 - [RDMkit](https://rdmkit.elixir-europe.org/) (CONVERGE)
 - [WorkflowHub](https://about.workflowhub.eu/) (EOSC-life project)
 - [RO-crate](https://www.researchobject.org/ro-crate/) (EOSC)
+- [GPG RO-Crate Profile](https://uoa-eresearch.github.io/GPG-ro-crate-profile/) (University of Auckland eResearch)
 - [Infectious Diseases Toolkit](https://www.infectious-diseases-toolkit.org/) (BY-COVID)
 - [FAIRDOM](https://fair-dom.org/) (FAIRDOM community)
 - [How-to-Guides](https://australianbiocommons.github.io/how-to-guides/) (Australian BioCommons)
+- [Australian Tree of Life documentation](https://australianbiocommons.github.io/atol/) (Australian BioCommons)
 - [SPLASH](https://elixir-europe-training.github.io/ELIXIR-Training-SPLASH/) (ELIXIR Training platform)
 - [1+MG Framework](https://framework.onemilliongenomes.eu/) (GDI)
 - [Human 'Omics Data Sharing Field Guide](https://australianbiocommons.github.io/human-omics-data-sharing-field-guide/) (Australian BioCommons)
@@ -180,6 +182,7 @@ This will start the docker container and serve the website locally. Make sure th
 - [ELIXIR Research Software Ecosystem (RSEc)](https://research-software-ecosystem.github.io/) (ELIXIR Tools Platform)
 - [Knowledge Hub](https://knowledge.lnds.lu/) (Luxembourg National Data Service (LNDS))
 - Want your instance here? [Open an issue](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/issues)
+- [ELIXIR-ELITMa](https://github.com/elixir-europe-training/ELIXIR-ELITMa) (ELIXIR Training platform)
 
 ## Dependencies
 
@@ -208,4 +211,3 @@ If you like our work, you can add following badge to the readme of your project:
 ## License
 
 The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
