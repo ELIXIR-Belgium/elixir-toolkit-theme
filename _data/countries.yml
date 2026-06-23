@@ -12,7 +12,7 @@ AS: American Samoa
 AT: Austria
 AU: Australia
 AW: Aruba
-AX: "\xC5land Islands"
+AX: Åland Islands
 AZ: Azerbaijan
 BA: Bosnia and Herzegovina
 BB: Barbados
@@ -23,11 +23,11 @@ BG: Bulgaria
 BH: Bahrain
 BI: Burundi
 BJ: Benin
-BL: "Saint Barth\xE9lemy"
+BL: Saint Barthélemy
 BM: Bermuda
-BN: Brunei Darussalam
-BO: Bolivia (Plurinational State of)
-BQ: Bonaire, Sint Eustatius and Saba
+BN: Brunei
+BO: Bolivia
+BQ: Caribbean Netherlands
 BR: Brazil
 BS: Bahamas
 BT: Bhutan
@@ -37,7 +37,7 @@ BY: Belarus
 BZ: Belize
 CA: Canada
 CC: Cocos (Keeling) Islands
-CD: Congo (Democratic Republic of the)
+CD: DR Congo
 CF: Central African Republic
 CG: Congo
 CH: Switzerland
@@ -49,11 +49,11 @@ CN: China
 CO: Colombia
 CR: Costa Rica
 CU: Cuba
-CV: Cabo Verde
-CW: "Cura\xE7ao"
+CV: Cape Verde
+CW: Curaçao
 CX: Christmas Island
 CY: Cyprus
-CZ: Czech Republic
+CZ: Czechia
 DE: Germany
 DJ: Djibouti
 DK: Denmark
@@ -69,12 +69,12 @@ ES: Spain
 ET: Ethiopia
 FI: Finland
 FJ: Fiji
-FK: Falkland Islands (Malvinas)
-FM: Micronesia (Federated States of)
+FK: Falkland Islands
+FM: Micronesia
 FO: Faroe Islands
 FR: France
 GA: Gabon
-GB: United Kingdom of Great Britain and Northern Ireland
+GB: United Kingdom
 GD: Grenada
 GE: Georgia
 GF: French Guiana
@@ -87,7 +87,7 @@ GN: Guinea
 GP: Guadeloupe
 GQ: Equatorial Guinea
 GR: Greece
-GS: South Georgia and the South Sandwich Islands
+GS: South Georgia
 GT: Guatemala
 GU: Guam
 GW: Guinea-Bissau
@@ -105,7 +105,7 @@ IM: Isle of Man
 IN: India
 IO: British Indian Ocean Territory
 IQ: Iraq
-IR: Iran (Islamic Republic of)
+IR: Iran
 IS: Iceland
 IT: Italy
 JE: Jersey
@@ -118,12 +118,12 @@ KH: Cambodia
 KI: Kiribati
 KM: Comoros
 KN: Saint Kitts and Nevis
-KP: Korea (Democratic People's Republic of)
-KR: Korea (Republic of)
+KP: North Korea
+KR: South Korea
 KW: Kuwait
 KY: Cayman Islands
 KZ: Kazakhstan
-LA: Lao People's Democratic Republic
+LA: Laos
 LB: Lebanon
 LC: Saint Lucia
 LI: Liechtenstein
@@ -136,16 +136,16 @@ LV: Latvia
 LY: Libya
 MA: Morocco
 MC: Monaco
-MD: Moldova (Republic of)
+MD: Moldova
 ME: Montenegro
-MF: Saint Martin (French part)
+MF: Saint Martin
 MG: Madagascar
 MH: Marshall Islands
 MK: North Macedonia
 ML: Mali
 MM: Myanmar
 MN: Mongolia
-MO: Macao
+MO: Macau
 MP: Northern Mariana Islands
 MQ: Martinique
 MR: Mauritania
@@ -178,17 +178,17 @@ PH: Philippines
 PK: Pakistan
 PL: Poland
 PM: Saint Pierre and Miquelon
-PN: Pitcairn
+PN: Pitcairn Islands
 PR: Puerto Rico
-PS: Palestine, State of
+PS: Palestine
 PT: Portugal
 PW: Palau
 PY: Paraguay
 QA: Qatar
-RE: "R\xE9union"
+RE: Réunion
 RO: Romania
 RS: Serbia
-RU: Russian Federation
+RU: Russia
 RW: Rwanda
 SA: Saudi Arabia
 SB: Solomon Islands
@@ -206,14 +206,14 @@ SN: Senegal
 SO: Somalia
 SR: Suriname
 SS: South Sudan
-ST: Sao Tome and Principe
+ST: São Tomé and Príncipe
 SV: El Salvador
-SX: Sint Maarten (Dutch part)
-SY: Syrian Arab Republic
-SZ: Swaziland
+SX: Sint Maarten
+SY: Syria
+SZ: Eswatini
 TC: Turks and Caicos Islands
 TD: Chad
-TF: French Southern Territories
+TF: French Southern and Antarctic Lands
 TG: Togo
 TH: Thailand
 TJ: Tajikistan
@@ -222,27 +222,27 @@ TL: Timor-Leste
 TM: Turkmenistan
 TN: Tunisia
 TO: Tonga
-TR: Turkey
+TR: Türkiye
 TT: Trinidad and Tobago
 TV: Tuvalu
 TW: Taiwan
-TZ: Tanzania, United Republic of
+TZ: Tanzania
 UA: Ukraine
 UG: Uganda
 UM: United States Minor Outlying Islands
-US: United States of America
+US: United States
 UY: Uruguay
 UZ: Uzbekistan
 VA: Vatican City
 VC: Saint Vincent and the Grenadines
-VE: Venezuela (Bolivarian Republic of)
-VG: Virgin Islands (British)
-VI: Virgin Islands (U.S.)
+VE: Venezuela
+VG: British Virgin Islands
+VI: United States Virgin Islands
 VN: Vietnam
 VU: Vanuatu
 WF: Wallis and Futuna
 WS: Samoa
-XK: Republic of Kosovo
+XK: Kosovo
 YE: Yemen
 YT: Mayotte
 ZA: South Africa
