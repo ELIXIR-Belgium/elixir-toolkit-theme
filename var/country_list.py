@@ -19,7 +19,7 @@ def client(url):
 
 def fetch_country_list():
     json_output = client(
-        f"https://restcountries.com/v2/all")
+        f"https://restcountries.com/v3.1/all?fields=name,cca2")
     if json_output:
         return json_output
     else:
@@ -40,8 +40,12 @@ print(f"----> Fetching country name based on country ID")
 countries = {}
 
 for country in country_list:
-    if country['name'] and country['alpha2Code']:
-        countries[country['alpha2Code']] = country['name']
+    if not isinstance(country, dict):
+        continue
+    name = country.get('name', {}).get('common')
+    cca2 = country.get('cca2')
+    if name and cca2:
+        countries[cca2] = name
 
 
 with open(output_path, 'w') as yaml_file:
