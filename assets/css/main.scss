@@ -1005,7 +1005,6 @@ footer {
 /*-----News-----*/
 
 .news-timeline {
-    --timeline-line-color: #{$news-border-color};
     position: relative;
     max-width: 72rem;
     margin-bottom: 0;
@@ -1017,7 +1016,7 @@ footer {
         bottom: 0rem;
         left: .45rem;
         width: 2px;
-        background: var(--timeline-line-color);
+        background: $news-timeline-color;
         content: "";
     }
 }
@@ -1054,8 +1053,8 @@ footer {
             height: .9rem;
             border: 3px solid $body-bg;
             border-radius: 50%;
-            background: $news-title-bg;
-            box-shadow: 0 0 0 2px $news-border-color;
+            background: $news-accent-color;
+            box-shadow: 0 0 0 2px $news-timeline-color;
             content: "";
             transform: translateY(-50%);
         }
@@ -1136,8 +1135,8 @@ li.past_event,
 .event-card-icon {
     width: 2.5rem;
     height: 2.5rem;
-    background: rgba($news-title-bg, .1);
-    color: $news-title-bg;
+    background: rgba($news-accent-color, .1);
+    color: $news-accent-color;
 }
 
 .event-card-date {
