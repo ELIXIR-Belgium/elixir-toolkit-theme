@@ -9,7 +9,7 @@
   {%- assign events = site.data.events | sort: "startDate" | reverse %}
     {%- endif %}
   {%- assign count = 0 %}
-  <ul class="events-grid row row-cols-1 row-cols-md-{{ include.col | default: 1 }} g-4 list-unstyled mt-3">
+  <ul class="events-grid row row-cols-1 row-cols-md-{{ include.col | default: 1 }} gx-4 gy-0 list-unstyled mt-3">
     {%- for event in events %}
     <li class='col {{include.event_type}}' data-start='{{ event.startDate}}'>
       <article class="event-card card h-100">
