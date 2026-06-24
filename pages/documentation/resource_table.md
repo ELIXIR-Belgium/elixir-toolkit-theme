@@ -48,7 +48,8 @@ Example:
     tess: GitHub
 ```
 
-{% include callout.html type="tip" content="`NA` as registry value will not be rendered as a url but will be skipped." %}
+{: .tip }
+`NA` as registry value will not be rendered as a url but will be skipped.
 
 ## What tool or resource can be added to the table
 Tools and resources specifically mentioned in the text of the pages should be present in the main table. 
@@ -89,7 +90,8 @@ Tools and resources specifically mentioned in the text of the pages should be pr
     {% tool "beacon" %} is a GA4GH standard which enables standardised querying across multiple sources.
 
 
-{% include callout.html type="important" content="Don't forget to add the `\"` double quotes around the tool_id and make sure to use the exact tool_id as described in the yaml file." %}
+{: .important }
+Don't forget to add the `"` double quotes around the tool_id and make sure to use the exact tool_id as described in the yaml file.
 
 ## Listing all resources
 
@@ -103,6 +105,4 @@ By default, the table at the bottom of the page will appear when tools are menti
 
 
 {% include resource-table-all.html %}
-
-
 

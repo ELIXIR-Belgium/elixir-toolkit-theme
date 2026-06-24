@@ -9,7 +9,8 @@ Please follow following steps to use the theme.
 
 Go to the [example repository](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme-example). Click on the `Use this template` button or the `Fork` on the top right, to create a new repository with this template.
 
-{% include callout.html type="note" content="The [example repository](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme-example) repo should demonstrate how easy it is to setup the theme, but more importantly, to show how small the footprint is of the theme. It is the bare minimal to start if you want to use the theme. This way of using the theme will also make sure that your own content is not cluttered with theme files and that you can easily stay up to date when improvements to the theme are made." %}
+{: .note }
+The [example repository](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme-example) repo should demonstrate how easy it is to setup the theme, but more importantly, to show how small the footprint is of the theme. It is the bare minimal to start if you want to use the theme. This way of using the theme will also make sure that your own content is not cluttered with theme files and that you can easily stay up to date when improvements to the theme are made.
 
 ## 2. Deploy using GitHub Actions
 

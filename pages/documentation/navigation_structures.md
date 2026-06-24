@@ -31,7 +31,8 @@ subitems:
   external_url: https://example.url
 ```
 
-{% include callout.html type="important" content="Make sure the given url follows the exact structure of the url your page is rendering to." %}
+{: .important }
+Make sure the given url follows the exact structure of the url your page is rendering to.
 
 Certain elements like the GitHub link have options in the `/_config.yml` file as described in the [configuring theme](configuring_theme) page. Style customizations are described in the [custom branding](custom_branding#branding-in-the-top-navigation) page.
 
@@ -158,4 +159,5 @@ Currently, 2 settings can be configured related to the TOC, `min_headings` and `
 By default, toc is enabled and will appear once the minimum amount of headings is reached, of the correct type. Disable on site-level (using Jekyll defaults) or on page level, by adding the `toc: false` when you don't wan't the TOC to appear, or when there will never be a heading. 
 
 
-{% include callout.html type="tip" content="To prevent the main content from resizing, when no TOC is present, it is suggested to add `toc: false` to improve the loading of the page." %}
+{: .tip }
+To prevent the main content from resizing, when no TOC is present, it is suggested to add `toc: false` to improve the loading of the page.

@@ -79,26 +79,84 @@ You can use Multimarkdown syntax for tables. The following shows a sample:
 | pink lady | jazz | macintosh |
 | honeycrisp | granny smith | fuji |
 
-## Message boxes
+## Callouts
 
-Change the content attribute in the code snippet to change the text in the message box
+Callouts use the same [Kramdown block attribute syntax as Just the Docs](https://just-the-docs.com/docs/ui-components/callouts/). Put the attribute list on the line immediately before (or after) the paragraph or blockquote you want to highlight.
 
-{% include callout.html type="note" content="This is my note." %}
+{: .note }
+This is a note.
 
-{% include callout.html type="tip" content="This is my tip." %}
+{: .tip }
+This is a tip.
 
-{% include callout.html type="warning" content="This is my warning." %}
+{: .warning }
+This is a warning.
 
-{% include callout.html type="important" content="This is my important info." %}
+{: .important }
+This is important information.
 
+The built-in types are `tip`, `important`, `note`, and `warning`.
 
-This is done by using this snippet:
+### Basic callout
+
 {% raw %}
-```
-{% include callout.html type="note" content="This is my note." %}
+```md
+{: .note }
+A paragraph.
 ```
 {% endraw %}
-note can be replaced with tip, warning, important, depending on the type of message you want. 
+
+The type adds a standard heading and Font Awesome icon. Use `highlight` when you want the visual emphasis without a heading.
+
+### Custom title and longer content
+
+Add `-title` to provide your own heading. Use a blockquote when the callout needs more than one paragraph, a list, or another block element.
+
+{: .important-title }
+> Before you publish
+>
+> Check that all links work and that the page metadata is complete.
+>
+> - Confirm the page title.
+> - Preview the page on a narrow screen.
+
+{% raw %}
+```md
+{: .important-title }
+> Before you publish
+>
+> Check that all links work and that the page metadata is complete.
+>
+> - Confirm the page title.
+> - Preview the page on a narrow screen.
+```
+{% endraw %}
+
+### Nested callouts
+
+To place a callout inside another callout, use `div.opaque` exactly as in Just the Docs so the nested background remains readable.
+
+{% raw %}
+```md
+{: .important }
+> <div markdown="block" class="opaque">
+> {: .warning }
+> A nested callout.
+> </div>
+```
+{% endraw %}
+
+### Legacy include
+
+The previous include remains supported, so existing pages do not need to change. New content should use the Markdown syntax above. Pass `title` to replace the standard callout heading.
+
+{% include callout.html type="note" title="Legacy callout" content="This note uses the legacy include." %}
+
+{% raw %}
+```liquid
+{% include callout.html type="note" title="Legacy callout" content="This note uses the legacy include." %}
+```
+{% endraw %}
 
 ## Images
 
@@ -148,7 +206,8 @@ gives:
 ![ELIXIR logo](images/infrastructures/ELIXIR-logo.svg)
 ![ELIXIR logo](images/infrastructures/ELIXIR-logo.svg){: height="200px" width="200px"}
 
-{% include callout.html type="important" content="This way of including images does not work well when webpages are served using folders in its URL since absolute links towards images do no work on forks." %}
+{: .important }
+This way of including images does not work well when webpages are served using folders in its URL since absolute links towards images do no work on forks.
 
 ## Icons
 
