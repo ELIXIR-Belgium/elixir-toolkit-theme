@@ -1014,7 +1014,7 @@ footer {
     &::before {
         position: absolute;
         top: .75rem;
-        bottom: .75rem;
+        bottom: 0rem;
         left: .45rem;
         width: 2px;
         background: var(--timeline-line-color);
@@ -1079,6 +1079,10 @@ footer {
 
 .metadata-separator {
     margin: 0 .45rem;
+}
+
+.description-toggle {
+    margin-top: -1rem;
 }
 
 .description-toggle .fa-chevron-right {

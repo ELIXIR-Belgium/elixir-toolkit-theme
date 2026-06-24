@@ -4,7 +4,7 @@
   {%- endif %}
   {%- assign news = site.data.news | sort: "date" %}
   {%- assign count = 0 %}
-  <ul class="news-timeline list-unstyled mt-3">
+  <ul class="news-timeline list-unstyled my-3">
     {%- for new in news reversed%}
     <li class="news-timeline-item">
       <article class="news-timeline-content">
@@ -13,7 +13,7 @@
       {%- if new.description %}
       {%- assign word_count = new.description | split: " " | size %}
       {%- if include.truncate == true and word_count > 40 %}
-      <p class="mb-0"><a class="description-toggle btn btn-outline-primary btn-sm d-inline-flex align-items-center gap-2" data-bs-toggle="collapse" href="#collapse-{{count}}" role="button" aria-expanded="false" aria-controls="collapse-{{count}}">
+      <p class="mb-0"><a class="description-toggle btn btn-sm d-inline-flex align-items-center gap-2" data-bs-toggle="collapse" href="#collapse-{{count}}" role="button" aria-expanded="false" aria-controls="collapse-{{count}}">
         <i class="fa-solid fa-chevron-right" aria-hidden="true"></i><span>View description</span>
       </a>
       </p>

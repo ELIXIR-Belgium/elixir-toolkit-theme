@@ -25,7 +25,7 @@
       {%- if event.description %}
       {%- assign word_count = event.description | split: " " | size %}
       {%- if include.truncate == true and word_count > 40 %}
-      <p class="mb-0"><a class="description-toggle btn btn-outline-primary btn-sm d-inline-flex align-items-center gap-2" data-bs-toggle="collapse" href="#collapse-{{count}}" role="button" aria-expanded="false" aria-controls="collapse-{{count}}">
+      <p class="mb-0"><a class="description-toggle btn btn-sm d-inline-flex align-items-center gap-2" data-bs-toggle="collapse" href="#collapse-{{count}}" role="button" aria-expanded="false" aria-controls="collapse-{{count}}">
         <i class="fa-solid fa-chevron-right" aria-hidden="true"></i><span>View description</span>
       </a>
       </p>
