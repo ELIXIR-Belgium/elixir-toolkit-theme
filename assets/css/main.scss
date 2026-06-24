@@ -1115,12 +1115,6 @@ li.past_event,
     margin-bottom: 0;
 }
 
-.events-grid > li,
-#main .events-grid > li {
-    min-width: 0;
-    margin: 0;
-    margin-top: var(--bs-gutter-y);
-}
 
 .event-card {
     background-color: $nav-card-bg;
