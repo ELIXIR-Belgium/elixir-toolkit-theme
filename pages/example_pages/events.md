@@ -33,7 +33,7 @@ Becomes:
 * `caption`: Show the "An overview of all our events can be fount on the events page." by using *true* (`true` or `false`).
 * `caption_url`: Add a custom url if the main events page is not served at */events*
 * `truncate`: If longer event descriptions are used and this parameter is set to *true*, descriptions which are longer than 40 words will get collapsed behind a button (`true` or `false`).
-* `limit`: Integer to determine the amount of news items shown.
+* `limit`: Integer to determine the amount of event items shown.
 * `col`: Number of event columns shown from the medium breakpoint upwards. Defaults to `1`; use `col=2` for a two-column layout.
 * `related_pages`: A `page_id` assigned to the events that should be displayed. Add the same ID to each event's `related_pages` list in `_data/events.yml`.
 
