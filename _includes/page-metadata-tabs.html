@@ -2,23 +2,25 @@
 {%- assign has_contributors = false -%}
 {%- assign has_coordinators = false -%}
 {%- assign has_editors = false -%}
-{%- assign has_affiliations = false -%}
+{%- assign has_supported_by = false -%}
 {%- assign has_citations = false -%}
+{%- assign supported_by = page.supported_by -%}
+{%- if supported_by == nil -%}{%- assign supported_by = page.affiliations -%}{%- endif -%}
 
 {%- if page.contributors and page.contributors.size > 0 -%}{%- assign has_contributors = true -%}{%- endif -%}
 {%- if page.coordinators and page.coordinators.size > 0 -%}{%- assign has_coordinators = true -%}{%- endif -%}
 {%- if page.editors and page.editors.size > 0 -%}{%- assign has_editors = true -%}{%- endif -%}
-{%- if page.affiliations and page.affiliations.size > 0 -%}{%- assign has_affiliations = true -%}{%- endif -%}
+{%- if supported_by and supported_by.size > 0 -%}{%- assign has_supported_by = true -%}{%- endif -%}
 {%- if page.page_citation -%}{%- assign has_citations = true -%}{%- endif -%}
 
-{% if has_contributors or has_coordinators or has_editors or has_affiliations or has_citations %}
+{% if has_contributors or has_coordinators or has_editors or has_supported_by or has_citations %}
 
 {%- comment -%} Determine which tab should be active by default {%- endcomment -%}
 {%- assign first_tab = nil -%}
 {%- unless first_tab -%}{%- if has_contributors -%}{%- assign first_tab = "contributors" -%}{%- endif -%}{%- endunless -%}
 {%- unless first_tab -%}{%- if has_coordinators -%}{%- assign first_tab = "coordinators" -%}{%- endif -%}{%- endunless -%}
 {%- unless first_tab -%}{%- if has_editors -%}{%- assign first_tab = "editors" -%}{%- endif -%}{%- endunless -%}
-{%- unless first_tab -%}{%- if has_affiliations -%}{%- assign first_tab = "affiliations" -%}{%- endif -%}{%- endunless -%}
+{%- unless first_tab -%}{%- if has_supported_by -%}{%- assign first_tab = "supported-by" -%}{%- endif -%}{%- endunless -%}
 {%- unless first_tab -%}{%- if has_citations -%}{%- assign first_tab = "citations" -%}{%- endif -%}{%- endunless -%}
 
 <div class="page-metadata p-4 mt-5 rounded">
@@ -42,10 +44,10 @@
                 Editors
             </button>
             {% endif %}
-            {%- if has_affiliations %}
-            <button class="nav-link {% if first_tab == 'affiliations' %}active{% endif %}" id="credits-affiliations-tab" data-bs-toggle="tab" data-bs-target="#credits-affiliations" type="button" role="tab" aria-controls="credits-affiliations" aria-selected="{% if first_tab == 'affiliations' %}true{% else %}false{% endif %}">
-                <i class="fa-solid fa-building-columns me-2"></i>
-                Affiliations
+            {%- if has_supported_by %}
+            <button class="nav-link {% if first_tab == 'supported-by' %}active{% endif %}" id="credits-supported-by-tab" data-bs-toggle="tab" data-bs-target="#credits-supported-by" type="button" role="tab" aria-controls="credits-supported-by" aria-selected="{% if first_tab == 'supported-by' %}true{% else %}false{% endif %}">
+                <i class="fa-solid fa-handshake-angle me-2"></i>
+                Supported by
             </button>
             {%- endif %}
             {%- if has_citations %}
@@ -77,9 +79,11 @@
             </div>
         </div>
         {%- endif %}
-        {%- if has_affiliations %}
-        <div class="tab-pane {% if first_tab == 'affiliations' %}show active{% endif %}" id="credits-affiliations" role="tabpanel">
-            {% include affiliation-tiles-page.html affiliations_list=page.affiliations sort=site.theme_variables.page_metadata.affiliations_sort %}
+        {%- if has_supported_by %}
+        <div class="tab-pane {% if first_tab == 'supported-by' %}show active{% endif %}" id="credits-supported-by" role="tabpanel">
+            {%- assign supported_by_sort = site.theme_variables.page_metadata.supported_by_sort -%}
+            {%- if supported_by_sort == nil -%}{%- assign supported_by_sort = site.theme_variables.page_metadata.affiliations_sort -%}{%- endif -%}
+            {% include affiliation-tiles-page.html affiliations_list=supported_by sort=supported_by_sort %}
         </div>
         {%- endif %}
         {%- if has_citations %}

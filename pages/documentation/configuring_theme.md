@@ -66,7 +66,7 @@ theme_variables:
     contributors_sort: true
     coordinators_sort: true
     editors_sort: true
-    affiliations_sort: true
+    supported_by_sort: true
   toc:
     min_headings: 1
     headings: 'main h2'
@@ -108,7 +108,8 @@ More detailed information about these settings can be found here:
   * `contributors_sort`: Default: *true*
   * `coordinators_sort`: Default: *true*
   * `editors_sort`: Default: *true*
-  * `affiliations_sort`: Default: *true*
+  * `supported_by_sort`: Default: *true*
+  * `affiliations_sort`: Deprecated alias for `supported_by_sort`; it will be removed in ETT v8.0.0.
 * **toc**: Settings related to the table of contents.
   * `min_headings`: The minimum amount of headings (h2, h3,.. depending on the headings option) on a page for the toc to appear. This has to be an integer. Default: *1*
   * `headings`: The type of headings that need to be indexed by the toc. This can be a list or one value, ex: *'h1, h2, h3'* or *'h2'*. Default: *'main h2'*
@@ -124,5 +125,4 @@ More detailed information about these settings can be found here:
 * `theme_color`: This is the primary theme color which is used in the metadata of the website. Please use the hex color without the hashtag as value.
 * `fonts`: List here the urls towards google fonts to include custom fonts for your website.
 * `breadcrumb`: Adds a breadcrumb above the title of every page. The breadcrumb will always represent the URL pattern and works best in combination with [permalink style](https://jekyllrb.com/docs/permalinks/#built-in-formats) *pretty*. Default: *false*
-
 

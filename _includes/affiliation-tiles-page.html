@@ -1,3 +1,4 @@
+{%- assign supporter_data = site.data.supported_by | concat: site.data.affiliations -%}
 {%- unless include.sort == false %}
 {%- assign affiliations_list = include.affiliations_list | sort %}
 {%- else %}
@@ -22,7 +23,7 @@
         </div>
       </a>
     {%- else -%}
-      {%- assign affiliation_info = site.data.affiliations | where:"name",affiliation_name | first %}
+      {%- assign affiliation_info = supporter_data | where:"name",affiliation_name | first %}
       <a class="btn btn-sm affiliation-link d-flex align-items-center justify-content-center hover-primary" data-bs-toggle="tooltip" title="{{affiliation_info.name}}" href="{{affiliation_info.url}}">
         <img src="{{affiliation_info.image_url | relative_url}}" alt="{{affiliation_info.name}}" class="affiliation-img">
       </a>

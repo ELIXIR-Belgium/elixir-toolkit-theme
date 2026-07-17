@@ -7,7 +7,7 @@ sitemap: false
 no_robots: true
 description: This description is used when the page is listed
 page_id: gp1
-affiliations: [ELIXIR Europe, BE, SE]
+supported_by: [ELIXIR Europe, BE, SE]
 faircookbook:
 - name: Link towards a FAIRCOOKBOOK recipe
   url: https://fairplus.github.io/

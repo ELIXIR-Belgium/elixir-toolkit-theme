@@ -27,7 +27,11 @@ It is important to know that you can also set the these key-value pairs on multi
 
 * `editors`: List here all the editors of the page. Use the full name of the person. Make sure that the person name that is listed can be found in the *_data/CONTRIBUTORS.yaml* file in the _data directory if you want to link the github id and other contact information.
 
-* `affiliations` List here all affiliations related to the page. Make sure that the person name that is listed can be found in the *_data/affiliations.yaml* file. These affiliations will get displayed at the bottom of the page and in the section navigation tile of the page.
+* `supported_by`: List the organizations that support the page. Each organization name must match an entry in *_data/supported_by.yml*. Supporters are displayed in the **Supported by** tab at the bottom of the page and in the page's section navigation tile.
+
+* `affiliations`: Deprecated alias for `supported_by`. It remains supported for backwards compatibility, but will be removed in ETT v8.0.0. Migrate existing page front matter to `supported_by` before upgrading to v8.
+
+The *_data/affiliations.yml* data file is likewise deprecated in favor of *_data/supported_by.yml* and will be removed in ETT v8.0.0.
 
 * `search_exclude`: By setting this field true, the page will not end up in the search results of the searchbar. By default this is false.
 
@@ -142,7 +146,5 @@ github:
         tess: Bioconda
       url:
   ```
-
-
 
 

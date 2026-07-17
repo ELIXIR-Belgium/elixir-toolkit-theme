@@ -81,7 +81,7 @@ theme_variables:
     # contributors_sort: true
     # coordinators_sort: true
     # editors_sort: true
-    # affiliations_sort: true
+    # supported_by_sort: true
   # toc:
     # min_headings: 1
     # headings: 'h2'
