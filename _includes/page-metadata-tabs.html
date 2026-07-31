@@ -83,7 +83,7 @@
         <div class="tab-pane {% if first_tab == 'supported-by' %}show active{% endif %}" id="credits-supported-by" role="tabpanel">
             {%- assign supported_by_sort = site.theme_variables.page_metadata.supported_by_sort -%}
             {%- if supported_by_sort == nil -%}{%- assign supported_by_sort = site.theme_variables.page_metadata.affiliations_sort -%}{%- endif -%}
-            {% include affiliation-tiles-page.html affiliations_list=supported_by sort=supported_by_sort %}
+            {% include supported-by-tiles-page.html supported_by_list=supported_by sort=supported_by_sort %}
         </div>
         {%- endif %}
         {%- if has_citations %}

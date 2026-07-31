@@ -1,0 +1,32 @@
+{%- assign supporter_data = site.data.supported_by | default: site.data.affiliations %}
+{%- assign supported_by_list = include.supported_by_list | default: include.affiliations_list %}
+{%- unless include.sort == false %}
+{%- assign supported_by_list = supported_by_list | sort %}
+{%- else %}
+{%- assign supported_by_list = supported_by_list %}
+{%- endunless %}
+<div class="d-flex flex-wrap gap-2">
+  {%- for supporter_name in supported_by_list -%}
+    {%- if supporter_name.size == 2 -%}
+      
+      {%- assign country_code = supporter_name | upcase %}
+      {%- assign country_link = site.pages | where:"country_code",country_code | first %}
+      {%- assign country_name = site.data.countries[country_code] %}
+
+      {%- if country_link %}
+        <a role="button" data-bs-toggle="tooltip" title="{{country_name}}" class="btn btn-sm d-flex align-items-center affiliation-link hover-primary" href="{{country_link.url | relative_url}}">
+      {%- else %}
+        <a role="button" data-bs-toggle="tooltip" title="{{country_name}}" class="btn btn-sm affiliation-link d-flex align-items-center disabled border-0" aria-disabled="true">
+      {%- endif %}
+        <div class="d-flex justify-content-center affiliation-flag">
+          {%- include supported-by-logo.html country_code=country_code name=country_code -%}
+        </div>
+      </a>
+    {%- else -%}
+      {%- assign supporter_info = supporter_data | where:"name",supporter_name | first %}
+      <a class="btn btn-sm affiliation-link d-flex align-items-center justify-content-center hover-primary" data-bs-toggle="tooltip" title="{{supporter_info.name}}" href="{{supporter_info.url}}">
+        <img src="{{supporter_info.image_url | relative_url}}" alt="{{supporter_info.name}}" class="affiliation-img">
+      </a>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
