@@ -1,4 +1,4 @@
-{%- assign supporter_data = site.data.supported_by | default: site.data.affiliations %}
+{%- assign supporter_data = site.data.affiliations | default: site.data.supported_by %}
 {%- assign supported_by_list = include.supported_by_list | default: include.affiliations_list %}
 {%- unless include.sort == false %}
 {%- assign supported_by_list = supported_by_list | sort %}

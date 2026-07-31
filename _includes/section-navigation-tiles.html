@@ -107,7 +107,7 @@
                 {%- endif %}
                 {%- if current_page_supported_by %}
                 {%- assign pageaffil = current_page_supported_by | sort %}
-                {%- assign alllogos = site.data.supported_by | default: site.data.affiliations %}
+                {%- assign alllogos = site.data.affiliations | default: site.data.supported_by %}
                 {%- assign allcountries = site.data.countries %}
                 <div class="d-flex align-items-center flex-wrap gap-2">
                     <span><b><small>Supported by:</small></b></span>
