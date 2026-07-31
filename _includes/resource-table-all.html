@@ -89,7 +89,7 @@
                                     <a class="dropdown-item no-ext-icon" href="{{ inst.url }}">
                                         {{ inst.name }}
                                         {%- if inst.country_code.size != 0 %}
-                                            <span class="flag-icon ms-2 shadow-sm flag-icon-{{ inst.country_code | downcase }}"></span>
+                                            <span class="fi ms-2 shadow-sm fi-{{ inst.country_code | downcase }}"></span>
                                         {%- endif %}
                                     </a>
                                 </li>
@@ -180,9 +180,9 @@
             {%- for tool in tool_matches %}
             <tr>
                 {% if tool.url %}
-                <td><a href="{{tool.url}}">{{tool.name}}</a><a href="{{country_page.url | relative_url }}" data-bs-toggle="tooltip" title="{{country_page.title}}"><span class="flag-icon ms-2 shadow-sm flag-icon-{{country_page.country_code | downcase }}"></span></a></td>
+                <td><a href="{{tool.url}}">{{tool.name}}</a><a href="{{country_page.url | relative_url }}" data-bs-toggle="tooltip" title="{{country_page.title}}"><span class="fi ms-2 shadow-sm fi-{{country_page.country_code | downcase }}"></span></a></td>
                 {%- else %}
-                <td>{{tool.name}}<a href="{{country_page.url}}"><span class="flag-icon ms-2 shadow-sm flag-icon-{{country_page.country_code | downcase }}"></span></a></td>
+                <td>{{tool.name}}<a href="{{country_page.url}}"><span class="fi ms-2 shadow-sm fi-{{country_page.country_code | downcase }}"></span></a></td>
                 {%- endif %}
                 <td>{{tool.description | markdownify }}
                     {%- if tool.instance_of or tool.how_to_access %}
