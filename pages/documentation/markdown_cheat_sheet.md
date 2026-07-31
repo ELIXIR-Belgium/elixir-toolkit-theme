@@ -81,7 +81,7 @@ You can use Multimarkdown syntax for tables. The following shows a sample:
 
 ## Callouts
 
-Callouts use the same [Kramdown block attribute syntax as Just the Docs](https://just-the-docs.com/docs/ui-components/callouts/). Put the attribute list on the line immediately before the blockquote you want to highlight, and use `>` for the callout content.
+Callouts in this theme are styled blockquotes. Put a supported callout class on the line immediately before the blockquote, and use `>` for each line of callout content.
 
 The built-in types are `tip`, `important`, `note`, and `warning`.
 
