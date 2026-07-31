@@ -37,6 +37,7 @@ exclude:
 
 sass:
     style: compressed
+    sourcemap: never
 
 defaults:
 # Define here page metadata attributes for all pages at once or on specific directories. More information: https://jekyllrb.com/docs/configuration/front-matter-defaults/
@@ -81,7 +82,7 @@ theme_variables:
     # contributors_sort: true
     # coordinators_sort: true
     # editors_sort: true
-    # affiliations_sort: true
+    # supported_by_sort: true
   # toc:
     # min_headings: 1
     # headings: 'h2'

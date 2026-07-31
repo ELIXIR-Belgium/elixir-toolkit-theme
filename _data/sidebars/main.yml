@@ -30,6 +30,8 @@ subitems:
         url: /website_sections
       - title: Tools and resources table
         url: /resource_table
+      - title: Supported by
+        url: /supported_by
   - title: Example pages
     subitems:
       - title: Contributor page
@@ -38,8 +40,6 @@ subitems:
         url: /events
       - title: News
         url: /news
-      - title: Logo page
-        url: /logo_page
       - title: Section overview
         url: /overview_tiles
         subitems:

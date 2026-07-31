@@ -17,7 +17,7 @@ Its key features:
 - Advanced content search
 - Create your own look with the many theme variables and support for custom classes
 - Support for a central tools table
-- Integrated attribution for contributors, editors and affiliations
+- Integrated attribution for contributors, editors and supporting organizations
 - Page tagging and listing of those tagged pages
 - Linking to ELIXIR resources including Bio.tools, FAIRsharing, FAIR Cookbook, RDMkit, TeSS and DSW
 - Easy side navigation, top navigation and footer management
@@ -176,12 +176,13 @@ This will start the docker container and serve the website locally. Make sure th
 - [Federated Learning toolkit (FLkit)](https://uhasselt-biomedicaldatasciences.github.io/federated-learning-toolkit/) (UHasselt)
 - [mTeSS-X](https://elixirtess.github.io/mTeSS-X/) (OSCARS project)
 - [Galaxy Codex](https://galaxyproject.github.io/galaxy_codex/) (Galaxy Community)
-- [ELIXIR Software Management Plan](https://elixir-europe.github.io/software-management-plans/community/) (ELIXIR SMP Community)
+- [ELIXIR Software Management Plan](https://elixir-europe.github.io/software-management-plans/) (ELIXIR SMP Community)
 - [FAIR Metroline](https://fairmetroline.org/) (Health-RI)
 - [Globus Community Australasia](https://aarnet.github.io/Globus-Community/) (AARNet)
 - [ELIXIR Research Software Ecosystem (RSEc)](https://research-software-ecosystem.github.io/) (ELIXIR Tools Platform)
 - [Knowledge Hub](https://knowledge.lnds.lu/) (Luxembourg National Data Service (LNDS))
 - [ELIXIR-ELITMa](https://elixir-europe-training.github.io/ELIXIR-ELITMa/) (ELIXIR Training platform)
+- [ELIXIR-GOBLET Train-the-Trainer](https://elixir-europe-training.github.io/ELIXIR-TrP-GOBLET-Train-the-Trainer/) (ELIXIR Training platform)
 - Want your instance here? [Open an issue](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/issues)
 
 ## Dependencies
