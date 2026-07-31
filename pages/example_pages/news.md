@@ -35,6 +35,7 @@ Becomes:
 * `title`: Visualize *What's new?* as title  (`true` or `false`). Use *true* as value to enable this.
 * `caption`: Show the "For more news please visit our news page." by using *true*  (`true` or `false`).
 * `caption_url`: Add a custom url if the main news page is not served at */news*
-* `truncate`: If longer event descriptions are used and this parameter is set to *true*, descriptions which are longer than 40 words will get collapsed behind a button (`true` or `false`). 
+* `truncate`: If longer event descriptions are used and this parameter is set to *true*, descriptions which are longer than 40 words will get collapsed behind a button (`true` or `false`).
+* `limit`: Integer to determine the amount of news items shown.
 
 

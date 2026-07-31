@@ -37,6 +37,7 @@ exclude:
 
 sass:
     style: compressed
+    sourcemap: never
 
 defaults:
 # Define here page metadata attributes for all pages at once or on specific directories. More information: https://jekyllrb.com/docs/configuration/front-matter-defaults/
