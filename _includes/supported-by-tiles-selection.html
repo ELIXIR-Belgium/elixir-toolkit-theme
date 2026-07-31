@@ -1,0 +1,22 @@
+{%- assign alllogos = site.data.supported_by | default: site.data.affiliations %}
+<div class="supported-by-tiles row row-cols-2 row-cols-sm-3 row-cols-md-4 g-4 my-3">
+  {%- assign filtered_logos = alllogos %}
+  {%- if include.type %}
+    {%- assign filtered_logos = filtered_logos | where: "type", include.type %}
+  {%- endif %}
+  {%- unless include.sort == false %}
+    {%- assign filtered_logos = filtered_logos | sort: "name" %}
+  {%- endunless %}
+  {%- for affiliation in filtered_logos %}
+  {%- if affiliation.image_url and affiliation.expose == true %}
+  <div class="col">
+    <div class="card h-100">
+      {% if affiliation.url %}<a class="h-100 d-flex align-items-center justify-content-center stretched-link rounded" href="{{ affiliation.url }}">{% else %}<div class="h-100 d-flex align-items-center justify-content-center">{% endif %}
+        <img class="p-3" src="{{ affiliation.image_url | relative_url }}" alt="{{ affiliation.name }}">
+        <span class="supported-by-name" aria-hidden="true">{{ affiliation.name }}</span>
+      {%- if affiliation.url %}</a>{% else %}</div>{% endif %}
+    </div>
+  </div>
+  {%- endif %}
+  {%- endfor %}
+</div>

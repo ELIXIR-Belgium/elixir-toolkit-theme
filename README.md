@@ -17,7 +17,7 @@ Its key features:
 - Advanced content search
 - Create your own look with the many theme variables and support for custom classes
 - Support for a central tools table
-- Integrated attribution for contributors, editors and affiliations
+- Integrated attribution for contributors, editors and supporting organizations
 - Page tagging and listing of those tagged pages
 - Linking to ELIXIR resources including Bio.tools, FAIRsharing, FAIR Cookbook, RDMkit, TeSS and DSW
 - Easy side navigation, top navigation and footer management

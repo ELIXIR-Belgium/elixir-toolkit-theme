@@ -12,7 +12,7 @@
   url: https://www.fwo.be/
 - name: ELIXIR Europe
   image_url: /images/infrastructures/ELIXIR-logo.svg
-  pid: 
+  pid:
   expose: true
   type: infrastructure
   url: https://elixir-europe.org/

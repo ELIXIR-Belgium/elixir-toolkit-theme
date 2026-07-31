@@ -7,7 +7,7 @@ editors: [Bert Droesbeke]
 page_citation: true
 description: This description is used when the page is listed
 page_id: gp1
-affiliations: [ELIXIR Europe, BE, SE]
+supported_by: [ELIXIR Europe, BE, SE]
 faircookbook:
 - name: Link towards a FAIRCOOKBOOK recipe
   url: https://fairplus.github.io/
@@ -41,4 +41,3 @@ Nam non sollicitudin sapien. Vestibulum ante ipsum primis in faucibus orci luctu
 ### Lorem Ipsum
 
 Suspendisse potenti. Aliquam molestie tortor ac semper imperdiet. Sed nec laoreet odio. Aliquam erat volutpat. Aenean odio velit, tristique et mauris ac, porta lacinia ipsum. Vivamus massa quam, egestas in dui eget, porta pharetra tellus. Aliquam blandit ante eu ligula molestie pellentesque. Morbi non diam at leo euismod sagittis quis in magna. Ut vitae ligula sit amet nulla rhoncus ultrices vitae quis odio. Nam euismod nunc interdum tellus pulvinar, et interdum magna gravida.
-

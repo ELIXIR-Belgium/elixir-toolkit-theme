@@ -12,17 +12,18 @@ A section is a collection of pages of the same `type`, see [page mechanics](page
 ## Section tiles with information
 ```
 {% raw %}
-{% include section-navigation-tiles.html type="Example_pages" affiliations=true search=true except="index.md" %}
+{% include section-navigation-tiles.html type="Example_pages" supported_by=true search=true except="index.md" %}
 {% endraw %}
 ```
 
 Becomes:
 
-{% include section-navigation-tiles.html type="Example_pages" affiliations=true search=true except="index.md" %}
+{% include section-navigation-tiles.html type="Example_pages" supported_by=true search=true except="index.md" %}
 
 ### Parameters
 
-* `affiliations`: Turn on filtering by affiliation (`true` or `false`)
+* `supported_by`: Turn on filtering by supporter (`true` or `false`).
+* `affiliations`: Deprecated alias for `supported_by`; it will be removed in ETT v8.0.0.
 * `type`: specify the tiles that are being shown by giving a page type (complimentary to custom).
 * `search`: enable search in the tiles (`true` or `false`)
 * `except`: `, ` separated list of page file names which should be excluded, including the file extension.

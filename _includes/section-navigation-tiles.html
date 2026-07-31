@@ -1,22 +1,26 @@
-{%- if include.affiliations == true or include.search == true %}
+{%- assign show_supported_by = include.supported_by -%}
+{%- if show_supported_by == nil -%}{%- assign show_supported_by = include.affiliations -%}{%- endif -%}
+{%- if show_supported_by == true or include.search == true %}
 {%- assign allcountries = site.data.countries %}
 {%- for current_page in site.pages | sorted %}
-{%- if current_page.affiliations and current_page.search_exclude != true and current_page.type == include.type %}
-{%- assign pageaffiliations = current_page.affiliations | join: ", " %}
+{%- assign current_page_supported_by = current_page.supported_by -%}
+{%- if current_page_supported_by == nil -%}{%- assign current_page_supported_by = current_page.affiliations -%}{%- endif -%}
+{%- if current_page_supported_by and current_page.search_exclude != true and current_page.type == include.type %}
+{%- assign pagesupporters = current_page_supported_by | join: ", " %}
 {%- if allaffiliations %}
-{%- assign allaffiliations = allaffiliations | append: ", " | append: pageaffiliations %}
+{%- assign allaffiliations = allaffiliations | append: ", " | append: pagesupporters %}
 {%- else %}
-{%- assign allaffiliations = allaffiliations | append: pageaffiliations %}
+{%- assign allaffiliations = allaffiliations | append: pagesupporters %}
 {%- endif %}
 {%- endif %}
 {%- endfor %}
 {%- assign allaffiliations = allaffiliations | split: ", " | uniq | sort %}
 <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-{{ include.col | default: 2 }} my-4">
-    {%- if include.affiliations == true %}
+    {%- if show_supported_by == true %}
     <div class="col">
         <div class="input-group">
-            <label class="input-group-text" for="affiliations-input">Filter by affiliation</label>
-            <select class="form-select" id="affiliations-input" aria-label="Example select with button addon">
+            <label class="input-group-text" for="affiliations-input">Supported by:</label>
+            <select class="form-select" id="affiliations-input" aria-label="Select a supporter">
                 <option selected="" value="reset">Choose...</option>
                 {%- for affiliation in allaffiliations %}
                 {%- if affiliation.size == 2 %}
@@ -27,7 +31,7 @@
                 {%- endif %}
                 {%- endfor %}
             </select>
-            <button class="btn btn-primary" title="Button to clear affiliations selection" type="button" id="clearfilter">
+            <button class="btn btn-primary" title="Clear supporter selection" type="button" id="clearfilter">
                 <i class="fa-solid fa-backspace"></i>
             </button>
         </div>
@@ -70,10 +74,12 @@
     {%- assign except = include.except | split: ", " %}
     {%- if current_page.title and current_page.search_exclude != true %}
     {%- unless except contains current_page.name %}
-    {%- if current_page.affiliations %}
+    {%- assign current_page_supported_by = current_page.supported_by -%}
+    {%- if current_page_supported_by == nil -%}{%- assign current_page_supported_by = current_page.affiliations -%}{%- endif -%}
+    {%- if current_page_supported_by %}
     {%- capture affiliations_classes -%}
     {%- assign affiliations_output = "" %}
-    {%- for affiliation in current_page.affiliations %}
+    {%- for affiliation in current_page_supported_by %}
     {%- assign group_affiliations = affiliation | slugify | prepend: " " %}
     {%- assign affiliations_output = affiliations_output | append: group_affiliations | strip %}
     {%- endfor %}{{affiliations_output}}
@@ -99,12 +105,12 @@
                 {%- if current_page.description %}
                 <p class="card-text h-100">{{ current_page.description}}</p>
                 {%- endif %}
-                {%- if current_page.affiliations %}
-                {%- assign pageaffil = current_page.affiliations | sort %}
-                {%- assign alllogos = site.data.affiliations %}
+                {%- if current_page_supported_by %}
+                {%- assign pageaffil = current_page_supported_by | sort %}
+                {%- assign alllogos = site.data.supported_by | default: site.data.affiliations %}
                 {%- assign allcountries = site.data.countries %}
                 <div class="d-flex align-items-center flex-wrap gap-2">
-                    <span><b><small>Affiliations:</small></b></span>
+                    <span><b><small>Supported by:</small></b></span>
                     {%- for affiliation in pageaffil %}
                     {%- assign filter_affiliation = alllogos | where: "name", affiliation | first %}
                     {%- assign country = affiliation | upcase %}
@@ -115,14 +121,14 @@
                     {%- else %}
                     <a role="button" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm bg-white hover-primary disabled border-white" aria-disabled="true">
                         {%- endif %}
-                        <div class="d-block affiliation-img-sm">
+                        <div class="d-block supported-by-img-sm">
                             <span class="fi fi-{{affiliation | downcase}} shadow-sm"></span>
                         </div>
                     </a>
                     {%- elsif filter_affiliation %}
                     <a role="button" href="{{filter_affiliation.url}}" data-bs-toggle="tooltip" data-bs-original-title="{{affiliation}}" class="btn btn-sm bg-white hover-primary">
                         {%- if filter_affiliation.image_url %}
-                        <img alt="logo of {{filter_affiliation.name}}" src="{{filter_affiliation.image_url | relative_url }}" class="d-inline affiliation-img-sm">
+                        <img alt="logo of {{filter_affiliation.name}}" src="{{filter_affiliation.image_url | relative_url }}" class="d-inline supported-by-img-sm">
                         {%- else %}
                         {{filter_affiliation.name}}
                         {%- endif %}
@@ -148,10 +154,10 @@
 </div>
 
 
-{%- if include.affiliations == true or include.search == true %}
+{%- if show_supported_by == true or include.search == true %}
 <script type="text/javascript">
     /** 
-     * Filter cards by affiliation
+     * Filter cards by supporter
      */
 
     $(document).ready(function () {

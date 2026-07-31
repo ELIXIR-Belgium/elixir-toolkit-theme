@@ -1,9 +1,12 @@
-_site/
 .sass-cache/
-.jekyll-cache/
 .jekyll-metadata
+.jekyll-cache/
+_pdf
+.DS_Store
+.idea
 .bundle/
-vendor/bundle/
-.vscode/launch.json
+_site/
+vendor/
+.vscode/
 .ruby-version
 Gemfile.lock
