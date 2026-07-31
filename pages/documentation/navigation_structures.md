@@ -32,7 +32,7 @@ subitems:
 ```
 
 {: .important }
-Make sure the given url follows the exact structure of the url your page is rendering to.
+> Make sure the given url follows the exact structure of the url your page is rendering to.
 
 Certain elements like the GitHub link have options in the `/_config.yml` file as described in the [configuring theme](configuring_theme) page. Style customizations are described in the [custom branding](custom_branding#branding-in-the-top-navigation) page.
 
@@ -160,4 +160,4 @@ By default, toc is enabled and will appear once the minimum amount of headings i
 
 
 {: .tip }
-To prevent the main content from resizing, when no TOC is present, it is suggested to add `toc: false` to improve the loading of the page.
+> To prevent the main content from resizing, when no TOC is present, it is suggested to add `toc: false` to improve the loading of the page.

@@ -248,23 +248,25 @@ $callout-icons: (
     warning: "\f071"
 );
 
+@mixin callout-heading {
+    color: var(--#{$prefix}alert-color);
+    font-size: .75em;
+    font-weight: $font-weight-bold;
+    padding-left: $alert-padding-x * 1.5;
+    padding-bottom: $spacer * .125;
+    text-transform: uppercase;
+}
+
 @each $callout, $variant in $callout-variants {
-    p.#{$callout},
     blockquote.#{$callout},
     .callout--#{$callout},
-    p.#{$callout}-title,
     blockquote.#{$callout}-title {
         @extend .alert;
         @extend .alert-#{$variant};
         border-left-width: $border-width * 4;
-        a {
-            color: var(--#{$prefix}alert-link-color);
-        }
     }
 
-    p.#{$callout},
     blockquote.#{$callout},
-    p.#{$callout}-title,
     blockquote.#{$callout}-title {
         position: relative;
         padding-left: $alert-padding-x;
@@ -277,38 +279,25 @@ $callout-icons: (
             font-weight: 900;
             left: $alert-padding-x;
             position: absolute;
-            // Font Awesome's glyph box is taller than the compact callout title.
-            // Raise it slightly so their visual centres align.
-            top: $alert-padding-y - .35rem;
+            top: $alert-padding-y - .3rem;
         }
     }
 
     @if map-has-key($callout-titles, $callout) {
-        p.#{$callout},
         blockquote.#{$callout} {
             &::before {
-                color: var(--#{$prefix}alert-color);
+                @include callout-heading;
                 content: map-get($callout-titles, $callout);
                 display: block;
-                font-size: .75em;
-                font-weight: $font-weight-bold;
-                padding-left: $alert-padding-x * 1.5;
-                padding-bottom: $spacer * .125;
-                text-transform: uppercase;
             }
         }
     }
 
-    p.#{$callout}-title,
     blockquote.#{$callout}-title {
         > p:first-child {
-            color: var(--#{$prefix}alert-color);
-            font-size: .75em;
-            font-weight: $font-weight-bold;
+            @include callout-heading;
             margin-bottom: 0;
-            padding-left: $alert-padding-x * 1.5;
-            padding-bottom: $spacer * .125;
-            text-transform: uppercase;
+            margin-top: -1.5px;
         }
     }
 
@@ -317,15 +306,33 @@ $callout-icons: (
         color: var(--#{$prefix}alert-color);
         margin-left: 0;
         margin-right: 0;
-
-        > p:last-child {
-            margin-bottom: 0;
-        }
     }
 
     blockquote.#{$callout} > p:first-child,
     blockquote.#{$callout}-title > p:nth-child(2) {
         margin-top: 0;
+    }
+}
+
+blockquote.important,
+blockquote.note,
+blockquote.tip,
+blockquote.warning,
+blockquote.important-title,
+blockquote.note-title,
+blockquote.tip-title,
+blockquote.warning-title {
+    > :last-child {
+        margin-bottom: 0;
+    }
+
+    > ol:last-child > li:last-child,
+    > ul:last-child > li:last-child {
+        margin-bottom: 0;
+    }
+
+    > .opaque:last-child > :last-child {
+        margin-bottom: 0;
     }
 }
 

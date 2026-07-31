@@ -81,82 +81,117 @@ You can use Multimarkdown syntax for tables. The following shows a sample:
 
 ## Callouts
 
-Callouts use the same [Kramdown block attribute syntax as Just the Docs](https://just-the-docs.com/docs/ui-components/callouts/). Put the attribute list on the line immediately before (or after) the paragraph or blockquote you want to highlight.
-
-{: .note }
-This is a note.
-
-{: .tip }
-This is a tip.
-
-{: .warning }
-This is a warning.
-
-{: .important }
-This is important information.
+Callouts use the same [Kramdown block attribute syntax as Just the Docs](https://just-the-docs.com/docs/ui-components/callouts/). Put the attribute list on the line immediately before the blockquote you want to highlight, and use `>` for the callout content.
 
 The built-in types are `tip`, `important`, `note`, and `warning`.
 
-### Basic callout
+### Basic callouts
 
 {% raw %}
 ```md
 {: .note }
-A paragraph.
+> This is a note.
+
+{: .tip }
+> This is a tip.
+
+{: .warning }
+> This is a warning.
+
+{: .important }
+> This is important information.
 ```
 {% endraw %}
 
-The type adds a standard heading and Font Awesome icon. Use `highlight` when you want the visual emphasis without a heading.
+This renders as:
+
+{: .note }
+> This is a note.
+
+{: .tip }
+> This is a tip.
+
+{: .warning }
+> This is a warning.
+
+{: .important }
+> This is important information.
 
 ### Custom title and longer content
 
 Add `-title` to provide your own heading. Use a blockquote when the callout needs more than one paragraph, a list, or another block element.
 
-{: .important-title }
-> Before you publish
->
-> Check that all links work and that the page metadata is complete.
->
-> - Confirm the page title.
-> - Preview the page on a narrow screen.
-
 {% raw %}
 ```md
 {: .important-title }
 > Before you publish
 >
-> Check that all links work and that the page metadata is complete.
+> Check the [example page](https://example.org/toolkit-page), review `inline code`, and confirm **bold text** renders correctly.
 >
 > - Confirm the page title.
 > - Preview the page on a narrow screen.
 ```
 {% endraw %}
+
+This renders as:
+
+{: .important-title }
+> Before you publish
+>
+> Check the [example page](https://example.org/toolkit-page), review `inline code`, and confirm **bold text** renders correctly.
+>
+> - Confirm the page title.
+> - Preview the page on a narrow screen.
 
 ### Nested callouts
 
-To place a callout inside another callout, use `div.opaque` exactly as in Just the Docs so the nested background remains readable.
+To place a callout inside another callout, add another blockquote level for the nested callout.
 
 {% raw %}
 ```md
-{: .important }
-> <div markdown="block" class="opaque">
-> {: .warning }
-> A nested callout.
-> </div>
+{: .important-title }
+> Release checklist
+>
+> Review the page before opening the pull request:
+>
+> - Confirm metadata and navigation.
+> - Preview desktop and mobile layout.
+>
+> {: .warning-title }
+> > Do not merge yet
+> >
+> > Hold the release if generated tables or search data are stale.
 ```
 {% endraw %}
+
+This renders as:
+
+{: .important-title }
+> Release checklist
+>
+> Review the page before opening the pull request:
+>
+> - Confirm metadata and navigation.
+> - Preview desktop and mobile layout.
+>
+> {: .warning-title }
+> > Do not merge yet
+> >
+> > Hold the release if generated tables or search data are stale.
 
 ### Legacy include
 
 The previous include remains supported, so existing pages do not need to change. New content should use the Markdown syntax above. Pass `title` to replace the standard callout heading.
-
-{% include callout.html type="note" title="Legacy callout" content="This note uses the legacy include." %}
 
 {% raw %}
 ```liquid
 {% include callout.html type="note" title="Legacy callout" content="This note uses the legacy include." %}
 ```
 {% endraw %}
+
+This renders as:
+
+{% include callout.html type="note" title="Legacy callout" content="This note uses the legacy include." %}
 
 ## Images
 
@@ -207,7 +242,7 @@ gives:
 ![ELIXIR logo](images/infrastructures/ELIXIR-logo.svg){: height="200px" width="200px"}
 
 {: .important }
-This way of including images does not work well when webpages are served using folders in its URL since absolute links towards images do no work on forks.
+> This way of including images does not work well when webpages are served using folders in its URL since absolute links towards images do no work on forks.
 
 ## Icons
 
