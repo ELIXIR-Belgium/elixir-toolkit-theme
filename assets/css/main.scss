@@ -850,7 +850,7 @@ footer {
 /*---- Page metadata ----*/
 .page-metadata {
     background-color: $page-metadata-bg;
-    .affiliation-link {
+    .supported-by-link {
         background-color: $page-metadata-link-bg;
     }
     .nav-link {
@@ -984,21 +984,59 @@ footer {
     color: $primary !important;
 }
 
-/*-----Affiliation sizes-----*/
+/*-----Supported by-----*/
 
-.affiliation-img-sm {
+.supported-by-tiles {
+    .card {
+        overflow: hidden;
+
+        .supported-by-name {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            padding: 0.5rem 0.75rem;
+            border-top-left-radius: $border-radius;
+            border-top-right-radius: $border-radius;
+            background-color: mix($primary, $white, 8%);
+            color: $nav-card-color-hover;
+            font-size: $font-size-sm;
+            font-weight: $font-weight-semibold;
+            text-align: center;
+            pointer-events: none;
+            transform: translateY(100%);
+            transition: transform 180ms ease-out;
+        }
+
+        &:hover,
+        &:focus-within {
+            .supported-by-name {
+                transform: translateY(0);
+            }
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .supported-by-tiles .supported-by-name {
+        transition: none;
+    }
+}
+
+.supported-by-img-sm {
     height: 24px;
 }
 
-.affiliation-img {
+.supported-by-img {
     height: 45px;
 }
 
-.affiliation-flag {
+.supported-by-flag {
     width: 50px;
 }
 
-.affiliation-flag .ratio {
+.supported-by-flag .ratio {
     width: 35px;
 }
 

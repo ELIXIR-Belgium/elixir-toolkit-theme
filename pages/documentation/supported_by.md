@@ -43,23 +43,24 @@ supported_by:
 
 The supporters are shown automatically in the **Supported by** tab in the page metadata.
 
-## Listing supporters by type
+## Listing supporters
 
-Use `supported-by-tiles-selection.html` to display the exposed supporters of one type:
+Use `supported-by-tiles-selection.html` without parameters to display all exposed supporters:
 
 ```
 {% raw %}
-{% include supported-by-tiles-selection.html type="funder" %}
+{% include supported-by-tiles-selection.html %}
 {% endraw %}
 ```
 
 Becomes:
 
-{% include supported-by-tiles-selection.html type="funder" %}
+{% include supported-by-tiles-selection.html %}
 
 ### Parameters
 
-* `type`: MANDATORY! Only supporters whose `type` field matches this value are shown. Entries must also have an `image_url` and `expose: true`.
+* `type`: Show only supporters whose `type` field matches this value. When omitted, all supporter types are shown. Entries must also have an `image_url` and `expose: true`.
+* `sort`: Sort supporters alphabetically by `name`. Default: `true`.
 
 For example, the infrastructure entries can be shown with:
 

@@ -14,18 +14,18 @@
       {%- assign country_name = site.data.countries[country_code] %}
 
       {%- if country_link %}
-        <a role="button" data-bs-toggle="tooltip" title="{{country_name}}" class="btn btn-sm d-flex align-items-center affiliation-link hover-primary" href="{{country_link.url | relative_url}}">
+        <a role="button" data-bs-toggle="tooltip" title="{{country_name}}" class="btn btn-sm d-flex align-items-center supported-by-link hover-primary" href="{{country_link.url | relative_url}}">
       {%- else %}
-        <a role="button" data-bs-toggle="tooltip" title="{{country_name}}" class="btn btn-sm affiliation-link d-flex align-items-center disabled border-0" aria-disabled="true">
+        <a role="button" data-bs-toggle="tooltip" title="{{country_name}}" class="btn btn-sm supported-by-link d-flex align-items-center disabled border-0" aria-disabled="true">
       {%- endif %}
-        <div class="d-flex justify-content-center affiliation-flag">
+        <div class="d-flex justify-content-center supported-by-flag">
           {%- include supported-by-logo.html country_code=country_code name=country_code -%}
         </div>
       </a>
     {%- else -%}
       {%- assign supporter_info = supporter_data | where:"name",supporter_name | first %}
-      <a class="btn btn-sm affiliation-link d-flex align-items-center justify-content-center hover-primary" data-bs-toggle="tooltip" title="{{supporter_info.name}}" href="{{supporter_info.url}}">
-        <img src="{{supporter_info.image_url | relative_url}}" alt="{{supporter_info.name}}" class="affiliation-img">
+      <a class="btn btn-sm supported-by-link d-flex align-items-center justify-content-center hover-primary" data-bs-toggle="tooltip" title="{{supporter_info.name}}" href="{{supporter_info.url}}">
+        <img src="{{supporter_info.image_url | relative_url}}" alt="{{supporter_info.name}}" class="supported-by-img">
       </a>
     {%- endif -%}
   {%- endfor -%}

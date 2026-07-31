@@ -121,14 +121,14 @@
                     {%- else %}
                     <a role="button" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm bg-white hover-primary disabled border-white" aria-disabled="true">
                         {%- endif %}
-                        <div class="d-block affiliation-img-sm">
+                        <div class="d-block supported-by-img-sm">
                             <span class="fi fi-{{affiliation | downcase}} shadow-sm"></span>
                         </div>
                     </a>
                     {%- elsif filter_affiliation %}
                     <a role="button" href="{{filter_affiliation.url}}" data-bs-toggle="tooltip" data-bs-original-title="{{affiliation}}" class="btn btn-sm bg-white hover-primary">
                         {%- if filter_affiliation.image_url %}
-                        <img alt="logo of {{filter_affiliation.name}}" src="{{filter_affiliation.image_url | relative_url }}" class="d-inline affiliation-img-sm">
+                        <img alt="logo of {{filter_affiliation.name}}" src="{{filter_affiliation.image_url | relative_url }}" class="d-inline supported-by-img-sm">
                         {%- else %}
                         {{filter_affiliation.name}}
                         {%- endif %}
