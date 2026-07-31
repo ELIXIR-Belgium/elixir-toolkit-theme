@@ -8,5 +8,5 @@ _pdf
 _site/
 vendor/
 .vscode/
-.ruby-version
 Gemfile.lock
+.ruby-version

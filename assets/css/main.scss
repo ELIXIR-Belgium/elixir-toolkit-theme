@@ -218,11 +218,148 @@ body img {
 /*-----Blockquote-----*/
 
 blockquote {
-    margin-left: 20px;
-    border-left: 5px solid $gray-600;
-    padding-left: 10px;
-    color: $gray-600;
+    @extend .alert;
+    @extend .alert-light;
+    border-left-width: $border-width * 4;
     border-radius: $border-radius;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/*-----Callouts-----*/
+
+$callout-variants: (
+    note: primary,
+    tip: success,
+    warning: danger,
+    important: warning
+);
+
+$callout-titles: (
+    note: "Note",
+    tip: "Tip",
+    warning: "Warning",
+    important: "Important"
+);
+
+$callout-icons: (
+    note: "\f05a",
+    tip: "\f0eb",
+    warning: "\f071",
+    important: "\f06a"
+);
+
+@mixin callout-heading {
+    color: var(--#{$prefix}alert-color);
+    font-size: .75em;
+    font-weight: $font-weight-bold;
+    padding-left: $alert-padding-x * 1.5;
+    padding-bottom: $spacer * .125;
+    text-transform: uppercase;
+}
+
+@each $callout, $variant in $callout-variants {
+    blockquote.#{$callout},
+    .callout--#{$callout},
+    blockquote.#{$callout}-title {
+        @extend .alert;
+        @extend .alert-#{$variant};
+        border-left-width: $border-width * 4;
+    }
+
+    blockquote.#{$callout},
+    blockquote.#{$callout}-title {
+        position: relative;
+        padding-left: $alert-padding-x;
+
+        &::after {
+            color: var(--#{$prefix}alert-color);
+            content: map-get($callout-icons, $callout);
+            font-family: "Font Awesome 6 Free";
+            font-size: 1.1em;
+            font-weight: 900;
+            left: $alert-padding-x;
+            position: absolute;
+            top: $alert-padding-y - .3rem;
+        }
+    }
+
+    @if map-has-key($callout-titles, $callout) {
+        blockquote.#{$callout} {
+            &::before {
+                @include callout-heading;
+                content: map-get($callout-titles, $callout);
+                display: block;
+            }
+        }
+    }
+
+    blockquote.#{$callout}-title {
+        > p:first-child {
+            @include callout-heading;
+            margin-bottom: 0;
+            margin-top: -1.5px;
+        }
+    }
+
+    blockquote.#{$callout},
+    blockquote.#{$callout}-title {
+        color: var(--#{$prefix}alert-color);
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    blockquote.#{$callout} > p:first-child,
+    blockquote.#{$callout}-title > p:nth-child(2) {
+        margin-top: 0;
+    }
+}
+
+blockquote,
+blockquote.important,
+blockquote.note,
+blockquote.tip,
+blockquote.warning,
+blockquote.important-title,
+blockquote.note-title,
+blockquote.tip-title,
+blockquote.warning-title {
+    > :last-child {
+        margin-bottom: 0;
+    }
+
+    > ol:last-child > li:last-child,
+    > ul:last-child > li:last-child {
+        margin-bottom: 0;
+    }
+
+    > .opaque:last-child > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+// Legacy include callouts supply their title and icon in the markup.
+.callout {
+    .callout__heading {
+        color: var(--#{$prefix}alert-color);
+        display: flex;
+        align-items: center;
+        font-size: .75em;
+        font-weight: $font-weight-bold;
+        gap: .5em;
+        padding-bottom: $spacer * .125;
+        text-transform: uppercase;
+    }
+
+    .callout__icon {
+        font-size: 1.5em;
+        text-align: center;
+        width: 1em;
+    }
+
+    .callout__content > :last-child {
+        margin-bottom: 0;
+    }
 }
 
 /*-----Selection color-----*/

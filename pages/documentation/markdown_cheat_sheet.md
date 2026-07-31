@@ -79,26 +79,119 @@ You can use Multimarkdown syntax for tables. The following shows a sample:
 | pink lady | jazz | macintosh |
 | honeycrisp | granny smith | fuji |
 
-## Message boxes
+## Callouts
 
-Change the content attribute in the code snippet to change the text in the message box
+Callouts in this theme are styled blockquotes with a title and icon. Put a supported callout class on the line immediately before the blockquote, and use `>` for each line of callout content. Regular blockquotes render as neutral message boxes without a title or icon.
 
-{% include callout.html type="note" content="This is my note." %}
+The built-in callout types are `note`, `tip`, `warning`, and `important`.
 
-{% include callout.html type="tip" content="This is my tip." %}
+### Basic callouts
 
-{% include callout.html type="warning" content="This is my warning." %}
-
-{% include callout.html type="important" content="This is my important info." %}
-
-
-This is done by using this snippet:
 {% raw %}
-```
-{% include callout.html type="note" content="This is my note." %}
+```md
+{: .note }
+> This is a note.
+
+{: .tip }
+> This is a tip.
+
+{: .warning }
+> This is a warning.
+
+{: .important }
+> This is important information.
 ```
 {% endraw %}
-note can be replaced with tip, warning, important, depending on the type of message you want. 
+
+This renders as:
+
+{: .note }
+> This is a note.
+
+{: .tip }
+> This is a tip.
+
+{: .warning }
+> This is a warning.
+
+{: .important }
+> This is important information.
+
+### Custom title and longer content
+
+Add `-title` to provide your own heading. Use a blockquote when the callout needs more than one paragraph, a list, or another block element.
+
+{% raw %}
+```md
+{: .note-title }
+> Before you publish
+>
+> Check the [example page](https://example.org/toolkit-page), review `inline code`, and confirm **bold text** renders correctly.
+>
+> - Confirm the page title.
+> - Preview the page on a narrow screen.
+```
+{% endraw %}
+
+This renders as:
+
+{: .note-title }
+> Before you publish
+>
+> Check the [example page](https://example.org/toolkit-page), review `inline code`, and confirm **bold text** renders correctly.
+>
+> - Confirm the page title.
+> - Preview the page on a narrow screen.
+
+### Nested callouts
+
+To place a callout inside another callout, add another blockquote level for the nested callout.
+
+{% raw %}
+```md
+{: .note-title }
+> Release checklist
+>
+> Review the page before opening the pull request:
+>
+> - Confirm metadata and navigation.
+> - Preview desktop and mobile layout.
+>
+> {: .warning-title }
+> > Do not merge yet
+> >
+> > Hold the release if generated tables or search data are stale.
+```
+{% endraw %}
+
+This renders as:
+
+{: .note-title }
+> Release checklist
+>
+> Review the page before opening the pull request:
+>
+> - Confirm metadata and navigation.
+> - Preview desktop and mobile layout.
+>
+> {: .warning-title }
+> > Do not merge yet
+> >
+> > Hold the release if generated tables or search data are stale.
+
+### Legacy include
+
+The previous include remains supported, so existing pages do not need to change. New content should use the Markdown syntax above. Pass `title` to replace the standard callout heading.
+
+{% raw %}
+```liquid
+{% include callout.html type="note" title="Legacy callout" content="This note uses the legacy include." %}
+```
+{% endraw %}
+
+This renders as:
+
+{% include callout.html type="note" title="Legacy callout" content="This note uses the legacy include." %}
 
 ## Images
 
@@ -148,7 +241,8 @@ gives:
 ![ELIXIR logo](images/infrastructures/ELIXIR-logo.svg)
 ![ELIXIR logo](images/infrastructures/ELIXIR-logo.svg){: height="200px" width="200px"}
 
-{% include callout.html type="important" content="This way of including images does not work well when webpages are served using folders in its URL since absolute links towards images do no work on forks." %}
+{: .important }
+> This way of including images does not work well when webpages are served using folders in its URL since absolute links towards images do no work on forks.
 
 ## Icons
 
@@ -281,17 +375,12 @@ and are made with:
 You can add a blockquote using:
 
 ```md
-> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 >
 > Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-
 ```
 
 Giving:
-
-> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 >
