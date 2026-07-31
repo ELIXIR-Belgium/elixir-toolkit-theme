@@ -218,34 +218,35 @@ body img {
 /*-----Blockquote-----*/
 
 blockquote {
-    margin-left: 20px;
-    border-left: 5px solid $gray-600;
-    padding-left: 10px;
-    color: $gray-600;
+    @extend .alert;
+    @extend .alert-light;
+    border-left-width: $border-width * 4;
     border-radius: $border-radius;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 /*-----Callouts-----*/
 
 $callout-variants: (
-    important: primary,
-    note: light,
+    note: primary,
     tip: success,
-    warning: danger
+    warning: danger,
+    important: warning
 );
 
 $callout-titles: (
-    important: "Important",
     note: "Note",
     tip: "Tip",
-    warning: "Warning"
+    warning: "Warning",
+    important: "Important"
 );
 
 $callout-icons: (
-    important: "\f06a",
     note: "\f05a",
     tip: "\f0eb",
-    warning: "\f071"
+    warning: "\f071",
+    important: "\f06a"
 );
 
 @mixin callout-heading {
@@ -314,6 +315,7 @@ $callout-icons: (
     }
 }
 
+blockquote,
 blockquote.important,
 blockquote.note,
 blockquote.tip,

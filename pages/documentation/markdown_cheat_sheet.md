@@ -81,9 +81,9 @@ You can use Multimarkdown syntax for tables. The following shows a sample:
 
 ## Callouts
 
-Callouts in this theme are styled blockquotes. Put a supported callout class on the line immediately before the blockquote, and use `>` for each line of callout content.
+Callouts in this theme are styled blockquotes with a title and icon. Put a supported callout class on the line immediately before the blockquote, and use `>` for each line of callout content. Regular blockquotes render as neutral message boxes without a title or icon.
 
-The built-in types are `tip`, `important`, `note`, and `warning`.
+The built-in callout types are `note`, `tip`, `warning`, and `important`.
 
 ### Basic callouts
 
@@ -123,7 +123,7 @@ Add `-title` to provide your own heading. Use a blockquote when the callout need
 
 {% raw %}
 ```md
-{: .important-title }
+{: .note-title }
 > Before you publish
 >
 > Check the [example page](https://example.org/toolkit-page), review `inline code`, and confirm **bold text** renders correctly.
@@ -135,7 +135,7 @@ Add `-title` to provide your own heading. Use a blockquote when the callout need
 
 This renders as:
 
-{: .important-title }
+{: .note-title }
 > Before you publish
 >
 > Check the [example page](https://example.org/toolkit-page), review `inline code`, and confirm **bold text** renders correctly.
@@ -149,7 +149,7 @@ To place a callout inside another callout, add another blockquote level for the 
 
 {% raw %}
 ```md
-{: .important-title }
+{: .note-title }
 > Release checklist
 >
 > Review the page before opening the pull request:
@@ -166,7 +166,7 @@ To place a callout inside another callout, add another blockquote level for the 
 
 This renders as:
 
-{: .important-title }
+{: .note-title }
 > Release checklist
 >
 > Review the page before opening the pull request:
@@ -375,17 +375,12 @@ and are made with:
 You can add a blockquote using:
 
 ```md
-> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 >
 > Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-
 ```
 
 Giving:
-
-> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 >
