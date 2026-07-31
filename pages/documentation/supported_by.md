@@ -8,6 +8,8 @@ redirect_from:
 
 Supporters can be defined once in `_data/supported_by.yml` and reused across the website. They can be linked to individual pages through front matter or displayed as an overview with an include.
 
+{% include callout.html type="warning" content="This feature was previously called **Affiliations**. The old page metadata, data file, section navigation parameter, and sorting option are deprecated and will be removed in ETT v8.0.0. They remain backwards compatible until then, but new and migrated sites should use the **Supported by** terminology. [More information](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/pull/427)." %}
+
 ## The main YAML file
 
 Each supporter in `_data/supported_by.yml` consists of the following fields:
