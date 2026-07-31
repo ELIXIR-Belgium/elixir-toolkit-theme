@@ -14,9 +14,9 @@ Each supporter in `_data/supported_by.yml` consists of the following fields:
 
 * **name**: The name of the supporter. This field is mandatory and must match the names used in page front matter.
 * **image_url**: Path or URL to the image shown for the supporter. This field is mandatory when the supporter is displayed in an overview.
-* **pid**: Persistent identifier for the supporter or funding source, such as a funder DOI or project URL.
+* **pid**: The Research Organization Registry (ROR) identifier for the supporter.
 * **expose**: Determines whether the supporter is shown by `supported-by-tiles-selection.html` (`true` or `false`).
-* **type**: Group used to select supporters in `supported-by-tiles-selection.html`, for example `funder` or `infrastructure`.
+* **type**: The kind of supporter, for example `funder` or `infrastructure`. This value can be passed to `supported-by-tiles-selection.html` to show only supporters of that type.
 * **url**: Link to the supporter's website.
 
 Example:
@@ -24,7 +24,6 @@ Example:
 ```yml
 - name: ELIXIR CONVERGE
   image_url: /images/funders/converge_logo.svg
-  pid: https://cordis.europa.eu/project/id/871075
   expose: true
   type: funder
   url: https://elixir-europe.org/about-us/how-funded/eu-projects/converge
