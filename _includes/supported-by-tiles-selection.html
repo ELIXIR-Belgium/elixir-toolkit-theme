@@ -1,4 +1,4 @@
-{%- assign alllogos = site.data.supported_by | default: site.data.affiliations %}
+{%- assign alllogos = site.data.affiliations | default: site.data.supported_by %}
 <div class="supported-by-tiles row row-cols-2 row-cols-sm-3 row-cols-md-4 g-4 my-3">
   {%- assign filtered_logos = alllogos %}
   {%- if include.type %}
