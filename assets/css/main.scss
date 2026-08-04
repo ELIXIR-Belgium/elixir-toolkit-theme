@@ -633,6 +633,7 @@ header .navbar {
     margin-bottom: 0;
 
     li {
+        color: $text-muted;
         padding: 0.25rem 0.5rem;
         position: relative;
         
@@ -674,6 +675,7 @@ header .navbar {
         }
 
         .sidebar-icon {
+            color: currentColor;
             flex: 0 0 1.15em;
             line-height: 1;
             text-align: center;
@@ -685,17 +687,18 @@ header .navbar {
 
         .btn-icon-round {
             --ett-btn-icon-bg-hover: #{$sidebar-link-bg-active};
-            --ett-btn-icon-color: inherit;
+            --ett-btn-icon-color: #{$text-muted};
             --ett-btn-icon-color-hover: #{$sidebar-link-color-active};
             --ett-btn-icon-size: 1.85rem;
             flex: 0 0 auto;
+            transition: background-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
             &:not(.collapsed) i {
                 transform: rotate(90deg);
             }
 
             i {
-                transition: $transition-base;
+                transition: transform .2s ease-in-out;
             }
         }
 
