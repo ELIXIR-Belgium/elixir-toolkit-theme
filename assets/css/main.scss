@@ -686,12 +686,16 @@ header .navbar {
         }
 
         .btn-icon-round {
-            --ett-btn-icon-bg-hover: #{$sidebar-link-bg-active};
-            --ett-btn-icon-color: #{$text-muted};
-            --ett-btn-icon-color-hover: #{$sidebar-link-color-active};
-            --ett-btn-icon-size: 1.85rem;
             flex: 0 0 auto;
+            height: 1.85rem;
             transition: background-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            width: 1.85rem;
+
+            &:hover,
+            &:focus {
+                background-color: $sidebar-link-bg-active !important;
+                color: $sidebar-link-color-active !important;
+            }
 
             &:not(.collapsed) i {
                 transform: rotate(90deg);
@@ -871,31 +875,19 @@ table {
 }
 
 .btn-icon-round {
-    --ett-btn-icon-bg-hover: #{$btn-icon-bg-hover};
-    --ett-btn-icon-color: #{$btn-icon-color};
-    --ett-btn-icon-color-hover: var(--ett-btn-icon-color);
-    --ett-btn-icon-size: 2.25rem;
-    align-items: center;
-    background-color: transparent;
-    border-radius: 50% !important;
-    color: var(--ett-btn-icon-color);
-    display: inline-flex;
-    height: var(--ett-btn-icon-size);
-    justify-content: center;
+    height: 2.25rem;
     line-height: 1;
-    padding: 0 !important;
-    transition: $btn-transition;
     vertical-align: middle;
-    width: var(--ett-btn-icon-size);
+    width: 2.25rem;
 
     &.btn-sm {
-        --ett-btn-icon-size: 2rem;
+        height: 2rem;
+        width: 2rem;
     }
 
     &:hover,
     &:focus {
-        background-color: var(--ett-btn-icon-bg-hover) !important;
-        color: var(--ett-btn-icon-color-hover) !important;
+        background-color: $btn-icon-bg-hover !important;
         text-decoration: none;
     }
 

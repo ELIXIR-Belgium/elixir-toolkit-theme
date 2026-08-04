@@ -4,9 +4,8 @@
 subitems:
   - title: About
     icon: icon-info
+    url: /about
     subitems:
-      - title: About this theme
-        url: /about
       - title: ELIXIR resources
         url: /elixir_resources
       - title: Accessibility
