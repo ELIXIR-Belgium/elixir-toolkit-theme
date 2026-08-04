@@ -246,7 +246,27 @@ gives:
 
 ## Icons
 
-Go to the [Font Awesome library](https://fontawesome.com/) to see the available icons.
+Go to the [Lucide icon library](https://lucide.dev/icons/) to see the available icons. The theme loads the Lucide icon font, so icons can be added with classes such as `icon-camera` or `icon-book-open`.
+
+Lucide icons inherit the surrounding text size. Use Bootstrap font-size utility classes such as `fs-5`, `fs-4`, and `fs-3` when you want to scale them.
+
+Here's an example of how to scale up a camera icon:
+
+```html
+<i class="icon-camera"></i> normal size
+<i class="icon-camera fs-5"></i> fs-5
+<i class="icon-camera fs-4"></i> fs-4
+<i class="icon-camera fs-3"></i> fs-3
+```
+
+Here's what they render to:
+
+<i class="icon-camera"></i> normal size
+<i class="icon-camera fs-5"></i> fs-5
+<i class="icon-camera fs-4"></i> fs-4
+<i class="icon-camera fs-3"></i> fs-3
+
+Font Awesome remains supported for existing content and for icons Lucide does not provide, such as brand icons. Go to the [Font Awesome library](https://fontawesome.com/) to see the available icons.
 
 The Font Awesome icons allow you to adjust their size by simply adding `fa-2x`, `fa-3x` and so forth as a class to the icon to adjust their size to two times or three times the original size. As vector icons, they scale crisply at any size.
 
@@ -405,32 +425,6 @@ Is made with this code snippet:
 Text
 </ol>
 </details>
-```
-
-## Add "Related pages" to a page 
-
-If you want pages from the specific sections Your tasks, Your domain and Tool assembly to be shown as Related pages, list their `page_id`. If you want to list multiple related pages, make sure to put them in a list like this: [page_id1, page_id2]. 
-
-An overview of all pages (belonging to the sections listed above) and their `page_id` can be found in the [Website overview page](website_overview).
-
-
-```yml
-related_pages: 
-   Example_pages: [page_id1, page_id2]
-```
-
-## Listing training material
-You can list training material by using the metadata fields as in the example below. Each training item will be automatically added as an entry to the table in the [All training resources page](all_training_resources).
-
-```yml
-training:
-   - name: Training in TeSS
-     registry: TeSS
-     url: https://tess.elixir-europe.org/search?q=data%20analysis
-
-   - name: Training in TeSS
-     registry: TeSS
-     url: https://tess.elixir-europe.org/search?q=data%20analysis
 ```
 
 ## Enforce space between two lines

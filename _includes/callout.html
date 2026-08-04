@@ -3,21 +3,17 @@
 {%- case type -%}
   {%- when "tip" -%}
     {%- assign default_title = "Tip" -%}
-    {%- assign icon = "fa-lightbulb" -%}
   {%- when "important" -%}
     {%- assign default_title = "Important" -%}
-    {%- assign icon = "fa-circle-exclamation" -%}
   {%- when "warning" -%}
     {%- assign default_title = "Warning" -%}
-    {%- assign icon = "fa-triangle-exclamation" -%}
   {%- else -%}
     {%- assign type = "note" -%}
     {%- assign default_title = "Note" -%}
-    {%- assign icon = "fa-circle-info" -%}
 {%- endcase -%}
 {%- assign title = include.title | default: default_title -%}
 <div class="callout callout--{{ type }}" role="alert">
-  <div class="callout__heading"><i class="callout__icon fa-solid {{ icon }}" aria-hidden="true"></i><strong>{{ title }}</strong></div>
+  <div class="callout__heading">{{ title }}</div>
   <div class="callout__content">
     {{ content }}
   </div>

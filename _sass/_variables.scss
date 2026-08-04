@@ -5,6 +5,8 @@ $h2-color: $primary;
 /*-----Buttons hover style-----*/
 $btn-primary-bg-hover: $primary;
 $btn-primary-color-hover: $white;
+$btn-icon-bg-hover: rgba($primary, 0.08) !default;
+$btn-icon-color: $primary !default;
 
 /*-----Top navigation-----*/
 $topnav-bg: $light;

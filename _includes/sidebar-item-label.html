@@ -1,0 +1,4 @@
+{%- if include.item.icon -%}
+<i class="{{ include.item.icon | escape }} sidebar-icon" aria-hidden="true"></i>
+{%- endif -%}
+<span class="sidebar-link-text">{{ include.item.title }}</span>

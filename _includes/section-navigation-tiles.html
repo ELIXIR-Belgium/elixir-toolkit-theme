@@ -32,7 +32,7 @@
                 {%- endfor %}
             </select>
             <button class="btn btn-primary" title="Clear supporter selection" type="button" id="clearfilter">
-                <i class="fa-solid fa-backspace"></i>
+                <i class="icon-delete"></i>
             </button>
         </div>
     </div>
@@ -40,10 +40,10 @@
     {%- if include.search == true %}
     <div class="col">
         <div class="input-group">
-            <span class="input-group-text" id="search-label-tiles"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <span class="input-group-text" id="search-label-tiles"><i class="icon-search"></i></span>
             <input type="text" id="title-search" class="form-control" onkeyup="StartSearch();" placeholder="Find your page..." aria-label="{{page.type | replace: '_', ' ' }}" aria-describedby="search-label-tiles">
             <button class="btn btn-primary" title="Button to clear search" type="button" id="clearsearch">
-                <i class="fa-solid fa-backspace"></i>
+                <i class="icon-delete"></i>
             </button>
         </div>
     </div>

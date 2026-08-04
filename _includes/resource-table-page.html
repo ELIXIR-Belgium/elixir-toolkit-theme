@@ -13,7 +13,7 @@
                 <th>Related pages</th>
                 <th>Registry
                     <a data-bs-toggle="tooltip" data-bs-original-title="Links to related information in ELIXIR registries: related policies and standards in FAIRsharing, scientific and technical descriptions of the resource in bio.tools, and related training in TeSS.">
-                        <i class="fa-solid fa-info-circle"></i>
+                        <i class="icon-info"></i>
                     </a>
                 </th>
             </tr>
@@ -35,7 +35,7 @@
                         <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="This resource is an instance of {{linked_tool.name}}"><span class="badge text-primary border border-primary">{{linked_tool.name}}</span></span>
                         {%- endif %}
                         {%- if tool.how_to_access %}
-                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="{{tool.how_to_access}}"><span class="badge text-primary border border-primary"> <i class="fa-solid fa-key"></i></span></span>
+                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="{{tool.how_to_access}}"><span class="badge text-primary border border-primary"><i class="icon-key-round"></i></span></span>
                         {%- endif %}
                     </div>
                     {%- endif %}
@@ -59,19 +59,19 @@
                 {%- endif %}
                 <td>
                     {%- if tool.registry.biotools %}
-                    <a data-bs-toggle="tooltip" data-bs-original-title="Bio.tools" href="https://bio.tools/{{tool.registry.biotools}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-info me-2"></i>Tool info</span></a>
+                    <a data-bs-toggle="tooltip" data-bs-original-title="Bio.tools" href="https://bio.tools/{{tool.registry.biotools}}"><span class="badge bg-dark text-white hover-primary"><i class="icon-info me-2"></i>Tool info</span></a>
                     {%- endif %}
                     {%- if tool.registry.fairsharing %}
-                    <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing" href="https://fairsharing.org/FAIRsharing.{{tool.registry.fairsharing}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-database me-2"></i>Standards/Databases</span></a>
+                    <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing" href="https://fairsharing.org/FAIRsharing.{{tool.registry.fairsharing}}"><span class="badge bg-dark text-white hover-primary"><i class="icon-database me-2"></i>Standards/Databases</span></a>
                     {%- endif %}
                     {%- if tool.registry.fairsharing-coll %}
-                    <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing collection" href="https://fairsharing.org/{{tool.registry.fairsharing-coll}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-database me-2"></i>Standards/Databases</span></a>
+                    <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing collection" href="https://fairsharing.org/{{tool.registry.fairsharing-coll}}"><span class="badge bg-dark text-white hover-primary"><i class="icon-database me-2"></i>Standards/Databases</span></a>
                     {%- endif %}
                     {%- if tool.registry.tess %}
-                    <a data-bs-toggle="tooltip" data-bs-original-title="TeSS" href='https://tess.elixir-europe.org/search?q="{{tool.registry.tess}}"'><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-graduation-cap me-2"></i>Training</span></a>
+                    <a data-bs-toggle="tooltip" data-bs-original-title="TeSS" href='https://tess.elixir-europe.org/search?q="{{tool.registry.tess}}"'><span class="badge bg-dark text-white hover-primary"><i class="icon-graduation-cap me-2"></i>Training</span></a>
                     {%- endif %}
                     {%- if tool.registry.europmc %}
-                    <a data-bs-toggle="tooltip" data-bs-original-title="EuroPMC" href="https://europepmc.org/article/MED/{{tool.registry.europmc}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-book me-2"></i>Publication</span></a>
+                    <a data-bs-toggle="tooltip" data-bs-original-title="EuroPMC" href="https://europepmc.org/article/MED/{{tool.registry.europmc}}"><span class="badge bg-dark text-white hover-primary"><i class="icon-book-open me-2"></i>Publication</span></a>
                     {%- endif %}
                 </td>
             </tr>
@@ -95,7 +95,7 @@
                 <th>Related pages</th>
                 <th>Registry
                     <a data-bs-toggle="tooltip" data-bs-original-title="Links to related information in ELIXIR registries: related policies and standards in FAIRsharing, scientific and technical descriptions of the resource in bio.tools, and related training in TeSS.">
-                        <i class="fa-solid fa-info-circle"></i>
+                        <i class="icon-info"></i>
                     </a>
                 </th>
             </tr>
@@ -117,7 +117,7 @@
                         {%- if linked_tool %}
                         <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="This resource is an instance of {{linked_tool.name}}"><span class="badge text-primary border border-primary">{{linked_tool.name}}</span></span>
                         {%- endif %}                        {%- if tool.how_to_access %}
-                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="{{tool.how_to_access}}"><span class="badge text-primary border border-primary"> <i class="fa-solid fa-key"></i></span></span>
+                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="{{tool.how_to_access}}"><span class="badge text-primary border border-primary"><i class="icon-key-round"></i></span></span>
                         {%- endif %}
                     </div>
                     {%- endif %}
@@ -133,19 +133,19 @@
                 <td>{{related_pages}}</td>
                 <td>
                     {%- if tool.registry.biotools %}
-                    <a data-bs-toggle="tooltip" data-bs-original-title="Bio.tools" href="https://bio.tools/{{tool.registry.biotools}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-info me-2"></i>Tool info</span></a>
+                    <a data-bs-toggle="tooltip" data-bs-original-title="Bio.tools" href="https://bio.tools/{{tool.registry.biotools}}"><span class="badge bg-dark text-white hover-primary"><i class="icon-info me-2"></i>Tool info</span></a>
                     {%- endif %}
                     {%- if tool.registry.fairsharing %}
-                    <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing" href="https://fairsharing.org/FAIRsharing.{{tool.registry.fairsharing}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-database me-2"></i>Standards/Databases</span></a>
+                    <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing" href="https://fairsharing.org/FAIRsharing.{{tool.registry.fairsharing}}"><span class="badge bg-dark text-white hover-primary"><i class="icon-database me-2"></i>Standards/Databases</span></a>
                     {%- endif %}
                     {%- if tool.registry.fairsharing-coll %}
-                    <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing collection" href="https://fairsharing.org/{{tool.registry.fairsharing-coll}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-database me-2"></i>Standards/Databases</span></a>
+                    <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing collection" href="https://fairsharing.org/{{tool.registry.fairsharing-coll}}"><span class="badge bg-dark text-white hover-primary"><i class="icon-database me-2"></i>Standards/Databases</span></a>
                     {%- endif %}
                     {%- if tool.registry.tess %}
-                    <a data-bs-toggle="tooltip" data-bs-original-title="TeSS" href='https://tess.elixir-europe.org/search?q={{tool.registry.tess}}"'><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-graduation-cap me-2"></i>Training</span></a>
+                    <a data-bs-toggle="tooltip" data-bs-original-title="TeSS" href='https://tess.elixir-europe.org/search?q={{tool.registry.tess}}"'><span class="badge bg-dark text-white hover-primary"><i class="icon-graduation-cap me-2"></i>Training</span></a>
                     {%- endif %}
                     {%- if tool.registry.europmc %}
-                    <a data-bs-toggle="tooltip" data-bs-original-title="EuroPMC" href="https://europepmc.org/article/MED/{{tool.registry.europmc}}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-book me-2"></i>Publication</span></a>
+                    <a data-bs-toggle="tooltip" data-bs-original-title="EuroPMC" href="https://europepmc.org/article/MED/{{tool.registry.europmc}}"><span class="badge bg-dark text-white hover-primary"><i class="icon-book-open me-2"></i>Publication</span></a>
                     {%- endif %}
                 </td>
             </tr>

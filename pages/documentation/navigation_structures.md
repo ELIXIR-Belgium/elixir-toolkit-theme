@@ -46,15 +46,32 @@ The attributes that define the structure are:
 - `external_url`: Use this instead of URL if you want to link to an external page.
 - `subitems`: to define a sublevel.
 - `hr`: This can be set as true to add a horizontal spacer (top) between 2 subitems in the sidebar. (example: `hr: true`)
+- `icon`: Classes to render an icon before the title. Sidebar icons support both [Lucide icon font](https://lucide.dev/guide/static/font/) classes such as `icon-book-open` and [Font Awesome](https://fontawesome.com/icons) classes such as `fa-solid fa-book` or `fa-brands fa-github`.
 
 Example:
 
 ```yaml
 - title: Level_1_title
+  icon: icon-book-open
   url: level_1_url
   subitems:
     - title: Level_2_title
+      icon: icon-file-text
       url: level_2_url
+      subitems:
+        - title: Level_3_title
+          icon: icon-external-link
+          external_url: https://example.url
+```
+
+Icons can be added to sidebar items at any supported level. They are decorative, so the sidebar title remains the accessible link text.
+
+Font Awesome is especially useful for brand icons, while Lucide is a good fit for general interface icons:
+
+```yaml
+- title: Project repository
+  icon: fa-brands fa-github
+  external_url: https://github.com/example/project
 ```
 
 The sidebar also allows you to specify a sidebar title, version and title url using following syntax:
