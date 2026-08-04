@@ -425,6 +425,16 @@ header .navbar {
     #search-label, #search-input {
         background-color: $topnav-searchbar;
     }
+    #search-label {
+        align-items: center;
+        display: inline-flex;
+
+        i {
+            line-height: 1;
+            vertical-align: 0;
+        }
+    }
+
     .navbar-brand {
         color: $topnav-title-color;
 
@@ -432,13 +442,20 @@ header .navbar {
             max-height: $topnav-brand-height;
         }
     }
+
+    .dropdown-toggle {
+        align-items: center;
+        display: inline-flex;
+    }
 }
 
 // More modern dropdown toggle
 .dropdown-toggle::after {
+    align-self: center;
     display: inline-block;
     font-style: normal;
     font-variant: normal;
+    line-height: 1;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     font-family: "lucide";
@@ -446,6 +463,7 @@ header .navbar {
     margin-left: 0.25rem;
     content: "\e06d";
     transition: transform 0.15s ease-in-out;
+    vertical-align: 0;
 }
 
 .dropdown-toggle[aria-expanded="true"]::after {
@@ -665,24 +683,15 @@ header .navbar {
             min-width: 0;
         }
 
-        .btn {
-            transition: $transition-base;
-            color: inherit;
-            width: 1.85rem;
-            height: 1.75rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .btn-icon-round {
+            --ett-btn-icon-bg-hover: #{$sidebar-link-bg-active};
+            --ett-btn-icon-color: inherit;
+            --ett-btn-icon-color-hover: #{$sidebar-link-color-active};
+            --ett-btn-icon-size: 1.85rem;
+            flex: 0 0 auto;
 
-            &:hover {
-                color: $sidebar-link-color-active;
-                background: $sidebar-link-bg-active;
-            }
-
-            &:not(.collapsed) {
-                i {
-                    transform: rotate(90deg);
-                }
+            &:not(.collapsed) i {
+                transform: rotate(90deg);
             }
 
             i {
@@ -801,6 +810,20 @@ table {
         font-size: 0.9em;
     }
 
+    th > a[data-bs-toggle="tooltip"] {
+        align-items: center;
+        color: inherit;
+        display: inline-flex;
+        line-height: 1;
+        margin-left: $spacer * .25;
+        vertical-align: middle;
+
+        > [class^="icon-"],
+        > [class*=" icon-"] {
+            vertical-align: 0;
+        }
+    }
+
     p {
         margin-bottom: 0;
     }
@@ -847,6 +870,7 @@ table {
 .btn-icon-round {
     --ett-btn-icon-bg-hover: #{$btn-icon-bg-hover};
     --ett-btn-icon-color: #{$btn-icon-color};
+    --ett-btn-icon-color-hover: var(--ett-btn-icon-color);
     --ett-btn-icon-size: 2.25rem;
     align-items: center;
     background-color: transparent;
@@ -868,7 +892,7 @@ table {
     &:hover,
     &:focus {
         background-color: var(--ett-btn-icon-bg-hover) !important;
-        color: var(--ett-btn-icon-color) !important;
+        color: var(--ett-btn-icon-color-hover) !important;
         text-decoration: none;
     }
 

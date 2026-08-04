@@ -2,7 +2,7 @@
 {%- assign show_github_history_button = site.theme_variables.github_buttons.history %}
 {%- assign show_github_open_issue_button = site.theme_variables.github_buttons.open_issue %}
 {%- unless show_github_edit_button and show_github_history_button and show_github_open_issue_button == false %}
-<div id="edit-me" class="d-inline-flex align-items-center">
+<div id="edit-me" class="d-inline-flex align-items-center align-middle ms-2">
     {%- unless show_github_edit_button == false %}
     {%- assign repo_url = page.github.repository_url | default: site.github.repository_url %}
     {%- assign repo_branch = page.github.branch | default: site.github.source.branch %}
