@@ -28,29 +28,20 @@ Its key features:
 
 ## Enabling the theme on your Jekyll project
 
-The quickest way to use the latest version of elixir-toolkit-theme is setting it as a [remote theme](https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/) in your `config.yml` file:
+Use the theme as a [remote theme](https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/) and lock it to a released version in your `_config.yml` file:
 
 ```yaml
-remote_theme: ELIXIR-Belgium/elixir-toolkit-theme
+remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@6.1.0
 ```
 
-You can lock it onto a specific version (recommended!) using:
-
-```yaml
-remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@6.0.0
-```
+An exact version is recommended so a website rebuild cannot silently pull a different theme. Before starting or upgrading, read the [release notes](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/releases) and use the `Gemfile` from the matching release tag. See [Versions and upgrades](versions_and_upgrades) for the complete workflow.
 
 ### Using Ruby Gems (alternative)
 
-Alternatively you can use the Ruby Gem of the theme (needed when using GitLab) by adding this line to your Jekyll site's Gemfile:
+Alternatively you can use the Ruby Gem of the theme (needed when using GitLab) by adding an exact version to your Jekyll site's `Gemfile`:
 
 ```ruby
-gem "elixir-toolkit-theme"
-```
-You can lock it onto a specific version like this:
-
-```ruby
-gem "elixir-toolkit-theme", "~> 6.0.0"
+gem "elixir-toolkit-theme", "6.1.0"
 ```
 
 And add this line to your Jekyll site's `_config.yml`:

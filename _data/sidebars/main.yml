@@ -33,6 +33,14 @@ subitems:
         url: /resource_table
       - title: Supported by
         url: /supported_by
+  - title: Versions and upgrades
+    subitems:
+      - title: Versioning overview
+        url: /versions_and_upgrades
+      - title: Upgrade procedure
+        url: /upgrading_theme
+      - title: Safe customization and overrides
+        url: /safe_customization
   - title: Example pages
     icon: icon-layers
     subitems:
