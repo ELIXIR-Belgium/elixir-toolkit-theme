@@ -43,6 +43,7 @@
          <button type="button" class="btn btn-sm btn-link rounded-circle{%- unless subfolder_active or page.url == folder.url or page.type == 'Data_life_cycle' and folder.title == 'Data life cycle' %} collapsed{% endunless %}" data-bs-toggle="collapse" data-bs-target="#sidebar-list-lvl-1-{{subitems_count}}" aria-expanded="{{subfolder_active}}" aria-controls="sidebar-list-lvl-1-{{subitems_count}}">
             <i class="fa-solid fa-chevron-right"></i><span class="visually-hidden">Expand sidebar</span>
           </button>
+        </li>
         <li class="py-0">
             <ul id="sidebar-list-lvl-1-{{subitems_count}}" class="list-unstyled collapse{%- if subfolder_active or page.url == folder.url or page.type == 'Data_life_cycle' and folder.title == 'Data life cycle' %} show{% endif %}" data-bs-parent="#sidebar-list-lvl-0">
                 {%- assign subsubitems_count = 0 %}
