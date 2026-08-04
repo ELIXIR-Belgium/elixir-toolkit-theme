@@ -24,16 +24,6 @@ Use the least invasive option that meets the website's needs:
 
 See [Configuring the theme](configuring_theme) and [Branding](custom_branding) for the available customization mechanisms.
 
-## Keep an override inventory
-
-For every unavoidable override, record at least:
-
-| Override | Based on theme version | Reason | Upstream issue or pull request |
-| --- | --- | --- | --- |
-| `_includes/example.html` | `6.1.0` | Describe the required behaviour | Link or issue number |
-
-During an upgrade, compare the overridden file with both the old and new versions in the theme. Reapply only the smallest necessary change to the new file, then test every page or feature that uses it. Remove the override when the theme provides the required behaviour directly.
-
 ## Propose reusable features upstream
 
 If an override adds behaviour that could benefit other websites, propose it to the theme maintainers through a [GitHub issue](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/issues) or [pull request](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/pulls). A configuration option, parameter or reusable include in the theme is easier to maintain than separate copies across multiple websites.

@@ -45,23 +45,4 @@ bundle exec jekyll build
 
 Commit the updated `Gemfile` and, when tracked by the website, `Gemfile.lock` together with the version-pin change.
 
-## 4. Test the website
 
-Preview the complete site, not only the page changed most recently. At minimum, verify:
-
-- the home page and representative content pages;
-- top and side navigation, breadcrumbs and the table of contents;
-- search, tables, events and other interactive components used by the website;
-- page metadata, contributor information and footer content;
-- custom styling and JavaScript;
-- every locally overridden include or layout;
-- the production build, including warnings and broken internal links; and
-- desktop and mobile layouts.
-
-When possible, let a second person review major-version upgrades or changes that affect navigation and accessibility.
-
-## 5. Deploy and monitor
-
-Deploy the upgrade only after the preview and production build pass. Check the deployed website once more and keep the upgrade in a separate commit or pull request so it can be reverted cleanly.
-
-If a problem is found, restore the previous exact version pin together with its `Gemfile` and `Gemfile.lock`. Do not point the site at `main` or an unversioned theme while troubleshooting.
