@@ -9,17 +9,17 @@
     {%- assign file_path = page.github.file_path | default: page.path %}
     <a role="button" data-bs-toggle="tooltip"
         title="Propose changes to the content of this page on {{site.theme_variables.git_host | default: 'GitHub' }}"
-        href="{{repo_url}}/blob/{{repo_branch}}/{{file_path}}" class="btn btn-sm btn-icon-round rounded-circle p-0 d-inline-flex align-items-center justify-content-center text-primary"><i
+        href="{{repo_url}}/blob/{{repo_branch}}/{{file_path}}" class="btn btn-sm btn-icon-round rounded-circle p-0 d-inline-flex align-items-center justify-content-center"><i
             class="icon-pencil"></i></a>
     {%- endunless %}
     {%- unless show_github_open_issue_button == false %}
     <a role="button" data-bs-toggle="tooltip" title="Report an issue"
         href="{{repo_url}}/issues/new?title={{'Issue on page: ' | url_encode }}{{page.title | url_encode }}&amp;body={{'I would like to report an issue on the ' | url_encode }}{{page.title | url_encode }}{{' page at `'| url_encode }}{{page.url | url_encode }}{{'`. Description of the issue:' | url_encode }}"
-        class="btn btn-sm btn-icon-round rounded-circle p-0 d-inline-flex align-items-center justify-content-center text-primary"><i class="icon-circle-alert"></i></a>
+        class="btn btn-sm btn-icon-round rounded-circle p-0 d-inline-flex align-items-center justify-content-center"><i class="icon-circle-alert"></i></a>
     {%- endunless %}
     {%- unless show_github_history_button == false %}
     <a role="button" data-bs-toggle="tooltip" title="Check out the history of this page"
-        href="{{repo_url}}/commits/{{repo_branch}}/{{file_path}}" class="btn btn-sm btn-icon-round rounded-circle p-0 d-inline-flex align-items-center justify-content-center text-primary"><i
+        href="{{repo_url}}/commits/{{repo_branch}}/{{file_path}}" class="btn btn-sm btn-icon-round rounded-circle p-0 d-inline-flex align-items-center justify-content-center"><i
             class="icon-history"></i></a>
     {%- endunless %}
 </div>

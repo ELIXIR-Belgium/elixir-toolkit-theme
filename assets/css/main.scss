@@ -737,16 +737,15 @@ D
         }
 
         .btn-icon-round {
+            --bs-btn-color: #{$text-muted};
+            --bs-btn-hover-color: #{$sidebar-link-color-active};
+            --bs-btn-active-color: #{$sidebar-link-color-active};
+            --bs-btn-hover-bg: #{$sidebar-link-bg-active};
+            --bs-btn-active-bg: #{$sidebar-link-bg-active};
             flex: 0 0 auto;
             height: 1.85rem;
             transition: background-color .15s ease-in-out, box-shadow .15s ease-in-out;
             width: 1.85rem;
-
-            &:hover,
-            &:focus {
-                background-color: $sidebar-link-bg-active !important;
-                color: $sidebar-link-color-active !important;
-            }
 
             &:not(.collapsed) i {
                 transform: rotate(90deg);
@@ -926,6 +925,18 @@ table {
 }
 
 .btn-icon-round {
+    --bs-btn-color: #{$btn-icon-color};
+    --bs-btn-hover-color: #{$btn-icon-color};
+    --bs-btn-active-color: #{$btn-icon-color};
+    --bs-btn-hover-bg: #{$btn-icon-bg-hover};
+    --bs-btn-active-bg: #{$btn-icon-bg-hover};
+    --bs-btn-border-color: transparent;
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-active-border-color: transparent;
+    --bs-btn-disabled-border-color: transparent;
+    --bs-btn-box-shadow: none;
+    --bs-btn-active-shadow: none;
+    --bs-btn-focus-box-shadow: none;
     height: 2.25rem;
     line-height: 1;
     vertical-align: middle;
@@ -934,12 +945,6 @@ table {
     &.btn-sm {
         height: 2rem;
         width: 2rem;
-    }
-
-    &:hover,
-    &:focus {
-        background-color: $btn-icon-bg-hover !important;
-        text-decoration: none;
     }
 
     > i {
