@@ -87,7 +87,6 @@ theme_variables:
     # min_headings: 1
     # headings: 'h2'
   # topnav:
-    # theme: light
     # brand_logo: assets/img/main_logo.svg
     # search: true
     # github: true
