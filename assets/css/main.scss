@@ -25,6 +25,8 @@ $input-border-width: 0 !default;
 $alert-border-width: 0 !default;
 $form-select-border-width: 0 !default;
 $card-border-width: 0 !default;
+$btn-icon-color: $primary !default;
+$btn-icon-bg-hover: rgba($primary, 0.08) !default;
 $enable-caret: false !default;
 $breadcrumb-font-size: 0.85rem !default;
 $breadcrumb-divider: '>' !default;
