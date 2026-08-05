@@ -438,11 +438,14 @@ header .navbar {
     .navbar-nav > .nav-item > .nav-link {
         color: $topnav-link-color;
         border-radius: $border-radius;
-        transition: $transition-base;
+        background-clip: padding-box;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
     }
 
     .navbar-nav > .nav-item > .nav-link:hover,
-    .navbar-nav > .nav-item > .nav-link.active {
+    .navbar-nav > .nav-item > .nav-link:focus,
+    .navbar-nav > .nav-item > .nav-link.active,
+    .navbar-nav > .nav-item > .nav-link.show {
         color: $topnav-link-color-active;
         background-color: $topnav-link-bg-active;
     }
@@ -450,13 +453,17 @@ header .navbar {
     .dropdown-menu {
         padding: $spacer * 0.5;
         border: 0;
-        box-shadow: $box-shadow;
+        box-shadow: none;
+
+        @include media-breakpoint-up(lg) {
+            box-shadow: $box-shadow;
+        }
     }
 
     .dropdown-item {
         color: $topnav-link-color;
         border-radius: $border-radius;
-        transition: $transition-base;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 
         &:hover,
         &:focus,
