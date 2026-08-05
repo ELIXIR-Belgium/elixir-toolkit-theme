@@ -435,6 +435,10 @@ header .navbar {
         }
     }
 
+    .navbar-nav > .nav-item > .nav-link {
+        color: $topnav-link-color;
+    }
+
     .navbar-nav > .nav-item > .nav-link:hover,
     .navbar-nav > .nav-item > .nav-link.active {
         color: $topnav-link-color-active;
@@ -449,6 +453,7 @@ header .navbar {
     }
 
     .dropdown-item {
+        color: $topnav-link-color;
         border-radius: $border-radius;
         transition: $transition-base;
 
@@ -483,12 +488,30 @@ header .navbar {
 // Break line in top navigation
 
 .nav-break {
+    flex: 0 0 auto;
+    background: linear-gradient(
+        to right,
+        transparent,
+        $topnav-break-color 30%,
+        $topnav-break-color 70%,
+        transparent
+    );
+
     @include media-breakpoint-up(lg) {
         width: 1px;
+        align-self: stretch;
+        background: linear-gradient(
+            to bottom,
+            transparent,
+            $topnav-break-color 30%,
+            $topnav-break-color 70%,
+            transparent
+        );
     }
 
     @include media-breakpoint-down(lg) {
         height: 1px;
+        width: 100%;
     }
 }
 

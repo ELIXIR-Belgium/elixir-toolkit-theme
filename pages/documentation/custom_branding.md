@@ -18,6 +18,8 @@ theme_variables:
 
 Certain elements like the GitHub link have options in the `/_config.yml` file as described in the [configuring theme](configuring_theme) page. 
 
+Top navigation colors are controlled with Sass variables in `/_sass/_custom_variables.scss` as described below.
+
 ## Theme styling using CSS
 
 Bootstrap 5 is used as css library with the goal of reusing as much as possible to prevent a wild growth of classes and to make the html-code more understandable. SASS is used as css-precursor, a more structured and flexible language to describe the css styling. More information about the SASS language can be found [here](https://sass-lang.com/documentation/).
@@ -26,7 +28,7 @@ The order in which the css style sheets are loaded is as follows: bootstrap_vari
 
 ### 1. Bootstrap variables
 
-In the `/_sass/bootstrap_variables.scss` file, you can declare variables that can be used by Bootstrap. This is the very first place where one wants to customize their theme for things like:
+In the `/_sass/_bootstrap_variables.scss` file, you can declare variables that can be used by Bootstrap. This is the very first place where one wants to customize their theme for things like:
 
 - Primary, secondary, light and dark theme colors ($primary, $secondary, $light and $dark)
 - The size of H1, H2, p,... ($h1-font-size, $h2-font-size)
@@ -38,12 +40,13 @@ The variables that you can define, and their respective defaults, can be found i
 
 ### 2. Custom variables
 
-In the `/_sass/custom_variables.scss` file, you can declare variables that can be used by the theme. These are variables that are used by the theme to define the color, background-color, size and more of components like:
+In the `/_sass/_custom_variables.scss` file, you can declare variables that can be used by the theme. These are variables that are used by the theme to define the color, background-color, size and more of components like:
 
 - Sidebar background color and sidebar color ($sidebar-bg and $sidebar-color)
 - Background color of the top-navigation ($topnav-bg)
+- Active and hover styles of the top-navigation ($topnav-link-color-active and $topnav-link-bg-active)
 - Background color of the footer ($footer-bg)
-- Size of the branding logo in the top-navigation ($topnav-brand-heigh)
+- Size of the branding logo in the top-navigation ($topnav-brand-height)
 
 The variables that you can define, and their respective defaults, can be found in the [theme variables file](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/main/_sass/_variables.scss). 
 
