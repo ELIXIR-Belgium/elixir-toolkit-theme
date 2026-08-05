@@ -435,10 +435,24 @@ header .navbar {
         }
     }
 
+    .navbar-toggler {
+        color: $topnav-link-color-active;
+        -webkit-tap-highlight-color: transparent;
+
+        &:focus {
+            box-shadow: 0 0 0 0.15rem rgba($topnav-link-color-active, 0.25);
+        }
+
+        &:focus:not(:focus-visible) {
+            box-shadow: none;
+        }
+    }
+
     .navbar-nav > .nav-item > .nav-link {
         color: $topnav-link-color;
         border-radius: $border-radius;
         background-clip: padding-box;
+        -webkit-tap-highlight-color: transparent;
         transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
     }
 
@@ -463,6 +477,7 @@ header .navbar {
     .dropdown-item {
         color: $topnav-link-color;
         border-radius: $border-radius;
+        -webkit-tap-highlight-color: transparent;
         transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 
         &:hover,
@@ -878,6 +893,7 @@ footer {
     a {
         color: $footer-link-color !important;
         font-weight: bold;
+        -webkit-tap-highlight-color: transparent;
     }
 
     a:hover {
