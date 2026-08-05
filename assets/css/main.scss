@@ -437,13 +437,14 @@ header .navbar {
 
     .navbar-nav > .nav-item > .nav-link {
         color: $topnav-link-color;
+        border-radius: $border-radius;
+        transition: $transition-base;
     }
 
     .navbar-nav > .nav-item > .nav-link:hover,
     .navbar-nav > .nav-item > .nav-link.active {
         color: $topnav-link-color-active;
         background-color: $topnav-link-bg-active;
-        border-radius: $border-radius;
     }
 
     .dropdown-menu {
