@@ -422,14 +422,48 @@ div.highlight {
 
 header .navbar {
     background-color: $topnav-bg;
+
     #search-label, #search-input {
         background-color: $topnav-searchbar;
     }
+
     .navbar-brand {
         color: $topnav-title-color;
 
         img {
             max-height: $topnav-brand-height;
+        }
+    }
+
+    .navbar-nav > .nav-item > .nav-link {
+        color: $topnav-link-color;
+        border-radius: $border-radius;
+        transition: $transition-base;
+    }
+
+    .navbar-nav > .nav-item > .nav-link:hover,
+    .navbar-nav > .nav-item > .nav-link.active {
+        color: $topnav-link-color-active;
+        background-color: $topnav-link-bg-active;
+    }
+
+    .dropdown-menu {
+        padding: $spacer * 0.5;
+        border: 0;
+        box-shadow: $box-shadow;
+    }
+
+    .dropdown-item {
+        color: $topnav-link-color;
+        border-radius: $border-radius;
+        transition: $transition-base;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: $topnav-link-color-active;
+            background-color: $topnav-link-bg-active;
         }
     }
 }
@@ -455,12 +489,30 @@ header .navbar {
 // Break line in top navigation
 
 .nav-break {
+    flex: 0 0 auto;
+    background: linear-gradient(
+        to right,
+        transparent,
+        $topnav-break-color 30%,
+        $topnav-break-color 70%,
+        transparent
+    );
+
     @include media-breakpoint-up(lg) {
         width: 1px;
+        align-self: stretch;
+        background: linear-gradient(
+            to bottom,
+            transparent,
+            $topnav-break-color 30%,
+            $topnav-break-color 70%,
+            transparent
+        );
     }
 
     @include media-breakpoint-down(lg) {
         height: 1px;
+        width: 100%;
     }
 }
 

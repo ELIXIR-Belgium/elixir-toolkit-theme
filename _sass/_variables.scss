@@ -11,6 +11,10 @@ $topnav-bg: $light;
 $topnav-title-color: $primary;
 $topnav-brand-height: 44px;
 $topnav-searchbar: $white;
+$topnav-link-color: $navbar-light-color !default;
+$topnav-link-color-active: $primary !default;
+$topnav-link-bg-active: rgba($primary, 0.08) !default;
+$topnav-break-color: rgba($dark, 0.25) !default;
 
 /*-----Search-----*/
 $search-result-color: $primary;

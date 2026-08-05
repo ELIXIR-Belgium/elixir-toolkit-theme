@@ -3,7 +3,7 @@
     <a class="visually-hidden-focusable" href='#side-nav'>Skip to aside</a>
     <a class="visually-hidden-focusable" href='#main'>Skip to content</a>
     <a class="visually-hidden-focusable" href='#footer'>Skip to footer</a>
-    <nav class="navbar navbar-{{ site.theme_variables.topnav.theme | default: 'light' }} navbar-expand-lg mb-3 mb-lg-5 shadow-sm">
+    <nav class="navbar navbar-expand-lg mb-3 mb-lg-5 shadow-sm">
         <div class="container g-lg-5">
             <a class="navbar-brand flex-grow-1 overflow-x-auto" href="{{ '/' | relative_url }}"><img class="{% if site.topnav_title %}me-3 {% endif %}img-fluid" alt="{{site.title}} logo" src="{{ site.theme_variables.topnav.brand_logo | default: 'assets/img/main_logo.svg' | relative_url }}">{% if site.topnav_title %}<span class="me-0 me-lg-3">{{site.topnav_title}}</span>{% endif %}</a>
             <button class="navbar-toggler text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,13 +44,7 @@
                     </li>
                     {%- endfor %}
                     {%- if topnav.subitems.size > 1 %}
-                    {%- assign topnav_theme = site.theme_variables.topnav.theme | default: "light" %}
-                    {%- if topnav_theme == "light" %}
-                    {%- assign break_color = "dark" %}
-                    {%- else %}
-                    {%- assign break_color = "light" %}
-                    {%- endif -%}
-                    <li class="nav-item nav-break bg-{{break_color}} opacity-25"></li>
+                    <li class="nav-item nav-break" aria-hidden="true"></li>
                     {%- endif %}
                     {%- if site.theme_variables.topnav.twitter %}
                     <li class="nav-item">
@@ -87,7 +81,7 @@
                     {%- endif %}
                     {%- unless include.search == false %}
                     <!--start search-->
-                    <li class="nav-item">
+                    <li class="nav-item d-lg-flex align-items-center">
                         <div class="position-relative">
                             <form role="search" class="input-group">
                                 <span class="input-group-text" id="search-label"><i class="fa-solid fa-magnifying-glass"></i></span><input type="search" id="search-input" class="search-input form-control" tabindex="0" placeholder="Search..." aria-label="Search..." autocomplete="off">
