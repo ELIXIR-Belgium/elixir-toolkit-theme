@@ -203,4 +203,9 @@ If you like our work, you can add following badge to the readme of your project:
 
 ## License
 
-The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The theme source code is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+Bundled third-party libraries and assets retain their upstream licenses. In particular:
+
+- [Lucide](https://github.com/lucide-icons/lucide) static icon font assets are distributed under the [ISC License](https://github.com/lucide-icons/lucide/blob/main/LICENSE). Some Lucide icons are derived from Feather and are covered by MIT as noted in the Lucide license file.
+- [Font Awesome Free](https://github.com/FortAwesome/Font-Awesome) assets use component-specific licenses: webfont files are under SIL OFL 1.1, CSS/code is under MIT, and SVG/JS icon assets are under CC BY 4.0. Brand icons are trademarks of their respective owners and should only be used to represent those brands.
