@@ -41,6 +41,8 @@
     <link rel="stylesheet" href="{{ 'assets/css/syntax.css' | relative_url }}">
     <!-- Country flags  -->
     <link rel="stylesheet" href="{{ 'assets/css/flag-icons.min.css' | relative_url }}">
+    <!-- Lucide icon font -->
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/css/lucide.css' | relative_url }}">
     <!-- Font Awesome -->
     <link rel="stylesheet" type="text/css" href="{{ 'assets/css/all.min.css' | relative_url }}">
     <!-- Main css file -->
@@ -92,13 +94,11 @@
                     language: {
                         searchPlaceholder: "Type here..."
                     },
-                    "drawCallback": function ( settings ){
-                        var tableId = settings.nTable.id;
-                        if(settings.fnRecordsTotal() < {{ pagelength }}){     
-                            $('#'+tableId+'_wrapper .dt-length').hide();
-                            $('#'+tableId+'_wrapper .dt-paging').hide();
-                            $('#'+tableId+'_wrapper .dt-search').hide();
-                            $('#'+tableId+'_wrapper .dt-info').hide();
+                    "drawCallback": function (){
+                        var api = this.api();
+                        var wrapper = $(api.table().container());
+                        if(api.page.info().recordsTotal < {{ pagelength }}){     
+                            wrapper.find('.dt-length, .dt-paging, .dt-search, .dt-info').hide();
                         }
                         $('.dt-layout-table .dt-layout-full').addClass('table-responsive');
                     }

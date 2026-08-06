@@ -144,7 +144,7 @@ $(document).ready(function () {
         code.setAttribute("id", "code" + countID);
         var btn = document.createElement('button');
         var div = document.createElement('div');
-        btn.innerHTML = '<i class="fa-regular fa-copy"></i>';
+        btn.innerHTML = '<i class="icon-copy"></i>';
         btn.className = "btn text-secondary m-1 btn-copy py-1 px-2";
         btn.title = "Copy to clipboard";
         btn.type = "button";

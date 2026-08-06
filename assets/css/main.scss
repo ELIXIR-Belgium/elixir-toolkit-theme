@@ -25,6 +25,8 @@ $input-border-width: 0 !default;
 $alert-border-width: 0 !default;
 $form-select-border-width: 0 !default;
 $card-border-width: 0 !default;
+$btn-icon-color: $primary !default;
+$btn-icon-bg-hover: rgba($primary, 0.08) !default;
 $enable-caret: false !default;
 $breadcrumb-font-size: 0.85rem !default;
 $breadcrumb-divider: '>' !default;
@@ -113,14 +115,22 @@ body img {
     font-family: $font-family-theme !important;
 }
 
+[class^="icon-"],
+[class*=" icon-"],
+.fa-brands {
+    font-size: 1.08em;
+    line-height: 1;
+    vertical-align: -.125em;
+}
+
 // Add external link icon to all urls
 #content a:is([href^="http"], [href^="//"]):not([href^="{{ site.url }}"]):not([href^="mailto:"]):not([href^="tel:"]):not(:has(> span:only-child)):not(:has(> img)):not(.btn):not(.no-ext-icon)::after {
-    content: "\f35d";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
+    content: "\e0b9";
+    font-family: "lucide";
+    font-weight: normal;
     display: inline-block;
     margin-left: .4em;
-    font-size: .60em;
+    font-size: .65em;
     line-height: 1;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
@@ -243,10 +253,10 @@ $callout-titles: (
 );
 
 $callout-icons: (
-    note: "\f05a",
-    tip: "\f0eb",
-    warning: "\f071",
-    important: "\f06a"
+    note: "\e0f9",
+    tip: "\e1c2",
+    warning: "\e193",
+    important: "\e077"
 );
 
 @mixin callout-heading {
@@ -268,6 +278,7 @@ $callout-icons: (
     }
 
     blockquote.#{$callout},
+    .callout--#{$callout},
     blockquote.#{$callout}-title {
         position: relative;
         padding-left: $alert-padding-x;
@@ -275,9 +286,9 @@ $callout-icons: (
         &::after {
             color: var(--#{$prefix}alert-color);
             content: map-get($callout-icons, $callout);
-            font-family: "Font Awesome 6 Free";
-            font-size: 1.1em;
-            font-weight: 900;
+            font-family: "lucide";
+            font-size: 1.18em;
+            font-weight: normal;
             left: $alert-padding-x;
             position: absolute;
             top: $alert-padding-y - .3rem;
@@ -338,27 +349,18 @@ blockquote.warning-title {
     }
 }
 
-// Legacy include callouts supply their title and icon in the markup.
+// Legacy include callouts use the same heading and pseudo-icon layout as Markdown callouts.
 .callout {
     .callout__heading {
-        color: var(--#{$prefix}alert-color);
-        display: flex;
-        align-items: center;
-        font-size: .75em;
-        font-weight: $font-weight-bold;
-        gap: .5em;
-        padding-bottom: $spacer * .125;
-        text-transform: uppercase;
-    }
-
-    .callout__icon {
-        font-size: 1.5em;
-        text-align: center;
-        width: 1em;
+        @include callout-heading;
     }
 
     .callout__content > :last-child {
         margin-bottom: 0;
+    }
+
+    .callout__content > :first-child {
+        margin-top: 0;
     }
 }
 
@@ -426,6 +428,16 @@ header .navbar {
     #search-label, #search-input {
         background-color: $topnav-searchbar;
     }
+D
+    #search-label {
+        align-items: center;
+        display: inline-flex;
+
+        i {
+            line-height: 1;
+            vertical-align: 0;
+        }
+    }
 
     .navbar-brand {
         color: $topnav-title-color;
@@ -433,6 +445,11 @@ header .navbar {
         img {
             max-height: $topnav-brand-height;
         }
+    }
+
+    .dropdown-toggle {
+        align-items: center;
+        display: inline-flex;
     }
 
     .navbar-nav > .nav-item > .nav-link {
@@ -470,16 +487,19 @@ header .navbar {
 
 // More modern dropdown toggle
 .dropdown-toggle::after {
+    align-self: center;
     display: inline-block;
     font-style: normal;
     font-variant: normal;
+    line-height: 1;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
+    font-family: "lucide";
+    font-weight: normal;
     margin-left: 0.25rem;
-    content: "\f0d7";
+    content: "\e06d";
     transition: transform 0.15s ease-in-out;
+    vertical-align: 0;
 }
 
 .dropdown-toggle[aria-expanded="true"]::after {
@@ -667,10 +687,14 @@ header .navbar {
     margin-bottom: 0;
 
     li {
+        color: $text-muted;
         padding: 0.25rem 0.5rem;
         position: relative;
         
         a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
             color: inherit;
             cursor: pointer;
             transition: $transition-base;
@@ -699,33 +723,38 @@ header .navbar {
             }
 
             &.active {
-                font-weight: 600;
                 color: $sidebar-link-color-active;
             }
         }
 
-        .btn {
-            transition: $transition-base;
-            color: inherit;
+        .sidebar-icon {
+            color: currentColor;
+            flex: 0 0 1.15em;
+            line-height: 1;
+            text-align: center;
+        }
+
+        .sidebar-link-text {
+            min-width: 0;
+        }
+
+        .btn-icon-round {
+            --bs-btn-color: #{$text-muted};
+            --bs-btn-hover-color: #{$sidebar-link-color-active};
+            --bs-btn-active-color: #{$sidebar-link-color-active};
+            --bs-btn-hover-bg: #{$sidebar-link-bg-active};
+            --bs-btn-active-bg: #{$sidebar-link-bg-active};
+            flex: 0 0 auto;
+            height: 1.85rem;
+            transition: background-color .15s ease-in-out, box-shadow .15s ease-in-out;
             width: 1.85rem;
-            height: 1.75rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
-            &:hover {
-                color: $sidebar-link-color-active;
-                background: $sidebar-link-bg-active;
-            }
-
-            &:not(.collapsed) {
-                i {
-                    transform: rotate(90deg);
-                }
+            &:not(.collapsed) i {
+                transform: rotate(90deg);
             }
 
             i {
-                transition: $transition-base;
+                transition: transform .2s ease-in-out;
             }
         }
 
@@ -840,8 +869,45 @@ table {
         font-size: 0.9em;
     }
 
+    th > a[data-bs-toggle="tooltip"] {
+        align-items: center;
+        color: inherit;
+        display: inline-flex;
+        line-height: 1;
+        margin-left: $spacer * .25;
+        vertical-align: middle;
+
+        > [class^="icon-"],
+        > [class*=" icon-"] {
+            vertical-align: 0;
+        }
+    }
+
     p {
         margin-bottom: 0;
+    }
+
+    .badge,
+    .btn-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: .45rem;
+        line-height: 1;
+        vertical-align: middle;
+    }
+
+    .badge > [class^="icon-"],
+    .badge > [class*=" icon-"],
+    .btn-badge > [class^="icon-"],
+    .btn-badge > [class*=" icon-"] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        width: 1em;
+        height: 1em;
+        margin-right: 0 !important;
+        vertical-align: 0;
     }
 }
 
@@ -858,7 +924,36 @@ table {
     --bs-btn-font-size: .75em;
     --bs-btn-line-height: 1;
     --bs-btn-font-weight: 700;
-  }
+}
+
+.btn-icon-round {
+    --bs-btn-color: #{$btn-icon-color};
+    --bs-btn-hover-color: #{$btn-icon-color};
+    --bs-btn-active-color: #{$btn-icon-color};
+    --bs-btn-hover-bg: #{$btn-icon-bg-hover};
+    --bs-btn-active-bg: #{$btn-icon-bg-hover};
+    --bs-btn-border-color: transparent;
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-active-border-color: transparent;
+    --bs-btn-disabled-border-color: transparent;
+    --bs-btn-box-shadow: none;
+    --bs-btn-active-shadow: none;
+    --bs-btn-focus-box-shadow: none;
+    height: 2.25rem;
+    line-height: 1;
+    vertical-align: middle;
+    width: 2.25rem;
+
+    &.btn-sm {
+        height: 2rem;
+        width: 2rem;
+    }
+
+    > i {
+        line-height: 1;
+        vertical-align: 0;
+    }
+}
 
 /*-----Footer-----*/
 
@@ -1294,12 +1389,26 @@ footer {
 }
 
 .news-timeline-date {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     font-size: .9rem;
     line-height: 1.45;
 
     i {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 1.15rem;
         width: 1.15rem;
+        height: 1.15rem;
         text-align: center;
+        vertical-align: 0;
+    }
+
+    .news-metadata-item {
+        display: inline-flex;
+        align-items: center;
     }
 }
 
@@ -1311,11 +1420,11 @@ footer {
     margin-top: -1rem;
 }
 
-.description-toggle .fa-chevron-right {
+.description-toggle .icon-chevron-right {
     transition: transform .2s ease-in-out;
 }
 
-.description-toggle[aria-expanded="true"] .fa-chevron-right {
+.description-toggle[aria-expanded="true"] .icon-chevron-right {
     transform: rotate(90deg);
 }
 

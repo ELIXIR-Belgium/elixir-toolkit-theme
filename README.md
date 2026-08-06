@@ -186,7 +186,8 @@ This theme would not be possible without following open source projects:
 - [lunr.js](https://github.com/olivernn/lunr.js) - Main tool behind the search bar enabling content search
 - [jQuery](https://github.com/jquery/jquery) - A fast, small, and feature-rich JavaScript library for easy scripting
 - [jekyll-table-of-contents](https://github.com/ghiculescu/jekyll-table-of-contents) - Lightweight JS script to render the table of contents
-- [Font-Awesome](https://github.com/FortAwesome/Font-Awesome) - The famous icon library
+- [Lucide](https://github.com/lucide-icons/lucide) - The main icon library used by the theme through its static icon font
+- [Font-Awesome](https://github.com/FortAwesome/Font-Awesome) - Icon library kept available for backwards compatibility, brand icons and markdown/sidebar content
 - [flag-icons](https://github.com/lipis/flag-icons) - A curated collection of all country flags in SVG + css integration
 - [clipboard.js](https://github.com/zenorocha/clipboard.js) - Modern copy to clipboard. No Flash. Just 3kb gzipped clipboard.
 
@@ -202,4 +203,9 @@ If you like our work, you can add following badge to the readme of your project:
 
 ## License
 
-The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The theme source code is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+Bundled third-party libraries and assets retain their upstream licenses. In particular:
+
+- [Lucide](https://github.com/lucide-icons/lucide) static icon font assets are distributed under the [ISC License](https://github.com/lucide-icons/lucide/blob/main/LICENSE). Some Lucide icons are derived from Feather and are covered by MIT as noted in the Lucide license file.
+- [Font Awesome Free](https://github.com/FortAwesome/Font-Awesome) assets use component-specific licenses: webfont files are under SIL OFL 1.1, CSS/code is under MIT, and SVG/JS icon assets are under CC BY 4.0. Brand icons are trademarks of their respective owners and should only be used to represent those brands.

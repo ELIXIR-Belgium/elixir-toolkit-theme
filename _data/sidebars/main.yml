@@ -3,9 +3,9 @@
 # title_url:  /events
 subitems:
   - title: About
+    icon: icon-info
+    url: /about
     subitems:
-      - title: About this theme
-        url: /about
       - title: ELIXIR resources
         url: /elixir_resources
       - title: Accessibility
@@ -13,6 +13,7 @@ subitems:
       - title: SEO
         url: /seo
   - title: Documentation
+    icon: icon-book-open
     subitems:
       - title: Getting started
         url: /getting_started
@@ -33,6 +34,7 @@ subitems:
       - title: Supported by
         url: /supported_by
   - title: Versions and upgrades
+    icon: icon-refresh-cw
     subitems:
       - title: Versioning overview
         url: /versions_and_upgrades
@@ -41,6 +43,7 @@ subitems:
       - title: Safe customization and overrides
         url: /safe_customization
   - title: Example pages
+    icon: icon-layers
     subitems:
       - title: Contributor page
         url: /contributors
@@ -70,6 +73,7 @@ subitems:
       - title: List of page IDs
         url: /list_page_ids
   - title: Example 404 page
+    icon: icon-triangle-alert
     url: /404
     hr: true
   
