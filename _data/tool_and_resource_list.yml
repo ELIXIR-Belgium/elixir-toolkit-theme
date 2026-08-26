@@ -21,7 +21,7 @@
   id: github
   name: GitHub
   registry:
-    fairsharing-coll: bsg-d001160
+    fairsharing: c55d5e
     tess: GitHub
   how_to_access: Zenodo
 - description:
