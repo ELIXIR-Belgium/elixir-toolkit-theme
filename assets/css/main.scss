@@ -1534,45 +1534,13 @@ a.info-collapse[aria-expanded="true"]:not(:has(~ a.info-collapse))+.show {
         background-color: rgba(#2a2e3d, .08);
     }
 
+    .info-logo-training {
+        background-color: rgba($primary, .08);
+    }
+
     // Do not show border on last row tools table
     .tooltable tbody tr:last-of-type {
         border-bottom-color: transparent;
-    }
-
-    .info-link-visual {
-        height: 2rem;
-        width: 2rem;
-
-        img {
-            max-height: 1.15rem;
-            max-width: 1.5rem;
-            object-fit: contain;
-        }
-    }
-
-    .training-link-list {
-        list-style: none;
-
-        .training-link-registry {
-            font-size: .75rem;
-            line-height: 1.2;
-        }
-
-        li {
-            position: relative;
-
-            &::before {
-                background-color: $primary;
-                border-radius: 50%;
-                content: "";
-                height: .35rem;
-                left: -1.2rem;
-                position: absolute;
-                top: 1rem;
-                transform: translateY(-50%);
-                width: .35rem;
-            }
-        }
     }
 }
 

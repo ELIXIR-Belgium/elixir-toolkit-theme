@@ -22,18 +22,8 @@ training:
   - name: Training in Zenodo
     registry: Zenodo
     url: https://zenodo.org/record/7277814
-  - name: Training on YouTube
-    registry: YouTube
-    url: https://www.youtube.com/
-  - name: Training in The Carpentries
-    registry: Carpentries
-    url: https://datacarpentry.org/
-  - name: Training in GitHub
-    registry: GitHub
+  - name: Training resource
     url: https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/
-  - name: Training
-    registry: 
-    url: https://github.com/ELIXIR-Belgium/
 
 
 ---

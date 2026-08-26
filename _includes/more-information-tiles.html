@@ -164,34 +164,20 @@
 </a>
 <div class="collapse info-card" id="training_collapse">
     <div class="mt-2 pb-4 pe-2">
-        <p class="mb-0">Training materials and tutorials related to this topic.</p>
-        <ul class="mb-0 mt-3 training-link-list">
+        <div class="d-flex align-items-start gap-3 gap-sm-4">
+            <p class="mb-0 flex-grow-1">Training materials, tutorials, and learning resources that help readers build practical skills and explore this topic in more depth.</p>
+            <span class="info-logo-tile info-logo-training d-inline-flex align-items-center justify-content-center ms-auto flex-shrink-0 rounded text-primary" aria-hidden="true">
+                <i class="icon-graduation-cap fs-2"></i>
+            </span>
+        </div>
+        <ul class="mb-0 mt-3">
             {%- for training in page.training %}
-            {%- assign registry = training.registry | downcase %}
+            {%- assign training_registry = training.registry | strip %}
             <li>
-                <span class="d-inline-flex {% if training.registry %}align-items-start{% else %}align-items-center{% endif %} gap-2">
-                    <span class="info-link-visual d-inline-flex align-items-center justify-content-center flex-shrink-0 bg-light rounded text-primary" aria-hidden="true">
-                        {%- if registry == "tess" %}
-                        <img alt="" src="{{ 'assets/img/tess_logo.svg' | relative_url }}">
-                        {%- elsif registry == "zenodo" %}
-                        <img alt="" src="{{ 'assets/img/zenodo_logo.svg' | relative_url }}">
-                        {%- elsif registry == "youtube" %}
-                        <img alt="" src="{{ 'assets/img/youtube_logo.svg' | relative_url }}">
-                        {%- elsif registry == "carpentries" %}
-                        <img alt="" src="{{ 'assets/img/carpentries_logo.svg' | relative_url }}">
-                        {%- elsif registry == "github" %}
-                        <i class="fa-brands fa-github"></i>
-                        {%- else %}
-                        <i class="icon-graduation-cap"></i>
-                        {%- endif %}
-                    </span>
-                    <span>
-                        <a href="{{ training.url }}">{{training.name}}</a>
-                        {%- if training.registry %}
-                        <span class="d-block text-secondary training-link-registry">{{training.registry}}</span>
-                        {%- endif %}
-                    </span>
-                </span>
+                <a href="{{ training.url }}">{{training.name}}</a>
+                {%- if training_registry != "" %}
+                <span class="badge bg-light text-secondary fw-semibold ms-2 align-middle">{{training_registry}}</span>
+                {%- endif %}
             </li>
             {%- endfor %}
         </ul>

@@ -91,9 +91,12 @@ github:
     - name: Training in TeSS
       registry: TeSS
       url: https://tess.elixir-europe.org/search?q=data%20analysis
+    - name: Training in an institutional learning platform
+      registry: Example LMS
+      url: https://example.org/training
   ```
 
-  The supported registries that can be used in the `registry` attribute are: *YouTube*, *Zenodo*, *Carpentries*, *GitHub*, and *TeSS*.
+  The optional `registry` attribute is free text. When provided, it is displayed as a small badge next to the training link.
 
 * `faircookbook`: List here all the links towards FAIR Cookbook recipes.
 
@@ -146,4 +149,3 @@ github:
         tess: Bioconda
       url:
   ```
-
