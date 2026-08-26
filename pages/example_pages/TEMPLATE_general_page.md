@@ -18,8 +18,9 @@ training:
   - name: Training in TeSS
     registry: TeSS
     url: https://tess.elixir-europe.org/
-  - name: Training not in TeSS
-    url: https://www.youtube.com
+  - name: Training in an institutional learning platform
+    registry: Example LMS
+    url: https://example.org/training
 related_pages: 
     Example_pages: [gp2]
 ---

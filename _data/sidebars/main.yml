@@ -1,6 +1,6 @@
-# title: About
+title: Home
 # version: 2.0
-# title_url:  /events
+title_url:  /
 subitems:
   - title: About
     icon: icon-info

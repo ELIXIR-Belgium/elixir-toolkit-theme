@@ -11,21 +11,32 @@ supported_by: [ELIXIR Europe, BE, SE]
 faircookbook:
 - name: Link towards a FAIRCOOKBOOK recipe
   url: https://fairplus.github.io/
+- name: Browse FAIR Cookbook recipes
+  url: https://faircookbook.elixir-europe.org/content/recipes.html
 rdmkit:
 - name: Title of an RDMkit page
   url: https://rdmkit.elixir-europe.org/compliance_monitoring
+- name: Data management plan guidance
+  url: https://rdmkit.elixir-europe.org/data_management_plan
 fairsharing:
 - name: ISO 20691
   url: https://fairsharing.org/3533
+- name: Browse FAIRsharing standards
+  url: https://fairsharing.org/search?fairsharingRegistry=Standard
 dsw:
 - name: Is there any pre-existing data?
   uuid: efc80cc8-8318-4f8c-acb7-dc1c60e491c1
+- name: Has sensitive data been identified?
+  uuid: 4c5e2b6d-8f40-4f4a-a32a-8ff5f2a381e6
 training:
   - name: Training in TeSS
     registry: TeSS
     url: https://tess.elixir-europe.org/
-  - name: Training not in TeSS
-    url: https://www.youtube.com
+  - name: Training in Zenodo
+    registry: Zenodo
+    url: https://zenodo.org/
+  - name: Training resource
+    url: https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/
 summary: This summary is used below the page title
 related_pages: 
     Example_pages: [gp2, gp3]
