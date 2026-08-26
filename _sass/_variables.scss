@@ -29,6 +29,10 @@ $nav-card-bg: $light;
 $nav-card-color: $dark;
 $nav-card-bg-hover: rgba($primary, 0.08) !default;
 $nav-card-color-hover: $dark;
+$nav-card-arrow-bg: rgba($primary, 0.08) !default;
+$nav-card-arrow-bg-hover: $primary !default;
+$nav-card-arrow-color: $primary !default;
+$nav-card-arrow-color-hover: $white !default;
 
 /*-----More information tiles-----*/
 $info-card-bg: $light;

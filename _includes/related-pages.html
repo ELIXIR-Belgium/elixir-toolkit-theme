@@ -16,24 +16,7 @@
     {%- assign page_hit = section_pages | where:"page_id", page_id | first %}
     {%- if page_hit %}
     <div class="col">
-        <div class="card h-100">
-            <div class="card-body d-flex flex-column">
-                <div class="d-flex align-items-center">
-                    {%- if page_hit.type_img %}
-                    <img src="{{page_hit.type_img | relative_url}}" class="type-icon me-2" alt="{{page_hit.type}} icon">
-                    {%- endif %}
-                    {%- if page_hit.type %}
-                    <span class=""><small>{{page_hit.type | replace: "_", " " }}</small></span>
-                    {%- endif %}
-                </div>
-                <a class="stretched-link section-title" aria-label="Go to the {{page_hit.title}} page" href="{{ page_hit.url | relative_url }}">
-                    <b>{{page_hit.title}}</b>
-                </a>
-                {%- if page_hit.description %}
-                <p class="card-text">{{ page_hit.description}}</p>
-                {%- endif %}
-            </div>
-        </div>
+        {% include navigation-tile-card.html tile_page=page_hit variant="related" %}
     </div>
     {%- endif %}
     {%- endfor %}
