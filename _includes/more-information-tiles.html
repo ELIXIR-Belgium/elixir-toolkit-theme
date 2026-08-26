@@ -66,17 +66,19 @@
     <h3 class="mb-0 flex-grow-1 mt-3 text-dark">Links to FAIRsharing</h3><i class="icon-chevron-right fs-5"></i>
 </a>
 <div class="collapse info-card" id="fairsharing_collapse">
-    <div class="mt-2 p-3 pb-5">
-        <img alt="FAIRsharing logo" class="img-fluid info-logo mb-4" src="{{ 'assets/img/fairsharing_logo.svg' | relative_url }}">
-        <p><a href="https://fairsharing.org/">FAIRsharing</a> is a curated, informative and educational resource on data and metadata standards, inter-related to databases and data policies.</p>
-        <ul>
-        {%- for standard in page.fairsharing %}
+    <div class="mt-2 pb-4">
+        <div class="d-flex align-items-start gap-3 gap-sm-4">
+            <p class="mb-0 flex-grow-1"><a href="https://fairsharing.org/">FAIRsharing</a> is a curated, informative and educational resource on data and metadata standards, inter-related to databases and data policies.</p>
+            <span class="info-logo-tile info-logo-fairsharing d-inline-flex align-items-center justify-content-center ms-auto flex-shrink-0 rounded">
+                <img alt="FAIRsharing logo" class="info-logo" src="{{ 'assets/img/fairsharing_compact_logo.svg' | relative_url }}">
+            </span>
+        </div>
+        <ul class="mb-0 mt-3">
+            {%- for standard in page.fairsharing %}
             <li>
-                <a class="align-items-center h-100" href="{{ standard.url }}">
-                    {{standard.name}}
-                </a>
+                <a href="{{ standard.url }}">{{standard.name}}</a>
             </li>
-        {%- endfor %}
+            {%- endfor %}
         </ul>
     </div>
 </div>
@@ -88,17 +90,19 @@
     <h3 class="mb-0 flex-grow-1 mt-3 text-dark">Links to FAIR Cookbook</h3><i class="icon-chevron-right fs-5"></i>
 </a>
 <div class="collapse info-card" id="faircookbook_collapse">
-    <div class="mt-2 p-3 pb-5">
-        <img alt="FAIR Cookbook logo" class="img-fluid info-logo mb-4" src="{{ 'assets/img/faircookbook_logo.svg' | relative_url }}">
-        <p><a href="https://faircookbook.elixir-europe.org/">FAIR Cookbook</a> is an online, open and live resource for the Life Sciences with recipes that help you to make and keep data Findable, Accessible, Interoperable and Reusable; in one word FAIR.</p>
-        <ul>
-        {%- for recipe in page.faircookbook %}
+    <div class="mt-2 pb-4">
+        <div class="d-flex align-items-start gap-3 gap-sm-4">
+            <p class="mb-0 flex-grow-1"><a href="https://faircookbook.elixir-europe.org/">FAIR Cookbook</a> is an online, open and live resource for the Life Sciences with recipes that help you to make and keep data Findable, Accessible, Interoperable and Reusable; in one word FAIR.</p>
+            <span class="info-logo-tile info-logo-faircookbook d-inline-flex align-items-center justify-content-center ms-auto flex-shrink-0 rounded">
+                <img alt="FAIR Cookbook logo" class="info-logo" src="{{ 'assets/img/faircookbook_compact_logo.svg' | relative_url }}">
+            </span>
+        </div>
+        <ul class="mb-0 mt-3">
+            {%- for recipe in page.faircookbook %}
             <li>
-                <a class="align-items-center h-100" href="{{ recipe.url }}">
-                    {{recipe.name}}
-                </a>
+                <a href="{{ recipe.url }}">{{recipe.name}}</a>
             </li>
-        {%- endfor %}
+            {%- endfor %}
         </ul>
     </div>
 </div>
@@ -110,17 +114,19 @@
     <h3 class="mb-0 flex-grow-1 mt-3 text-dark">Links to DSW</h3><i class="icon-chevron-right fs-5"></i>
 </a>
 <div class="collapse info-card" id="dsw_collapse">
-    <div class="mt-2 p-3 pb-5">
-        <img alt="DSW logo" class="img-fluid info-logo mb-4" src="{{ 'assets/img/dsw_logo.svg' | relative_url }}">
-        <p>With <a href="https://ds-wizard.org/">Data Stewardship Wizard</a> (DSW), you can create, plan, collaborate, and bring your data management plans to life with a tool trusted by thousands of people worldwide — from data management pioneers, to international research institutes.</p>
-        <ul>
-        {%- for question in page.dsw %}
+    <div class="mt-2 pb-4">
+        <div class="d-flex align-items-start gap-3 gap-sm-4">
+            <p class="mb-0 flex-grow-1">With <a href="https://ds-wizard.org/">Data Stewardship Wizard</a> (DSW), you can create, plan, collaborate, and bring your data management plans to life with a tool trusted by thousands of people worldwide — from data management pioneers, to international research institutes.</p>
+            <span class="info-logo-tile info-logo-dsw d-inline-flex align-items-center justify-content-center ms-auto flex-shrink-0 rounded">
+                <img alt="DSW logo" class="info-logo" src="{{ 'assets/img/dsw_compact_logo.svg' | relative_url }}">
+            </span>
+        </div>
+        <ul class="mb-0 mt-3">
+            {%- for question in page.dsw %}
             <li>
-                <a class="align-items-center h-100" href="{{ site.dsw_deep_link_prefix | append: question.uuid }}">
-                    {{question.name}}
-                </a>
+                <a href="{{ site.dsw_deep_link_prefix | append: question.uuid }}">{{question.name}}</a>
             </li>
-        {%- endfor %}
+            {%- endfor %}
         </ul>
     </div>
 </div>
@@ -132,17 +138,19 @@
     <h3 class="mb-0 flex-grow-1 mt-3 text-dark">Links to RDMkit</h3><i class="icon-chevron-right fs-5"></i>
 </a>
 <div class="collapse info-card" id="rdmkit_collapse">
-    <div class="mt-2 p-3 pb-5">
-        <img alt="RDMkit logo" class="img-fluid info-logo mb-4" src="{{ 'assets/img/rdmkit_logo.svg' | relative_url }}">
-        <p><a href="https://rdmkit.elixir-europe.org/">RDMkit</a> is the Research Data Management toolkit for Life Sciences describing best practices and guidelines to help you make your data FAIR (Findable, Accessible, Interoperable and Reusable)</p>
-        <ul>
-        {%- for rdmdoc in page.rdmkit %}
+    <div class="mt-2 pb-4">
+        <div class="d-flex align-items-start gap-3 gap-sm-4">
+            <p class="mb-0 flex-grow-1"><a href="https://rdmkit.elixir-europe.org/">RDMkit</a> is the Research Data Management toolkit for Life Sciences describing best practices and guidelines to help you make your data FAIR (Findable, Accessible, Interoperable and Reusable)</p>
+            <span class="info-logo-tile info-logo-rdmkit d-inline-flex align-items-center justify-content-center ms-auto flex-shrink-0 rounded">
+                <img alt="RDMkit logo" class="info-logo" src="{{ 'assets/img/rdmkit_compact_logo.svg' | relative_url }}">
+            </span>
+        </div>
+        <ul class="mb-0 mt-3">
+            {%- for rdmdoc in page.rdmkit %}
             <li>
-                <a class="align-items-center h-100" href="{{rdmdoc.url}}">
-                    {{rdmdoc.name}}
-                </a>
-            </li> 
-        {%- endfor %}
+                <a href="{{ rdmdoc.url }}">{{rdmdoc.name}}</a>
+            </li>
+            {%- endfor %}
         </ul>
     </div>
 </div>
@@ -155,16 +163,37 @@
     <h3 class="mb-0 flex-grow-1 mt-3 text-dark">Training</h3><i class="icon-chevron-right fs-5"></i>
 </a>
 <div class="collapse info-card" id="training_collapse">
-    <div class="p-3 pb-5">
-        <ul class="">
-        {%- for training in page.training %}
-        {%- assign registry = training.registry %}
+    <div class="mt-2 pb-4">
+        <p class="mb-0">Training materials and tutorials related to this topic.</p>
+        <ul class="mb-0 mt-3 training-link-list">
+            {%- for training in page.training %}
+            {%- assign registry = training.registry | downcase %}
             <li>
-                <a class="align-items-center h-100" href="{{ training.url }}">
-                    {{training.name}}
-                </a>{% if registry %}<span class="ms-2 badge bg-dark text-white hover-primary">{{registry}}</span>{% endif %}
+                <span class="d-inline-flex {% if training.registry %}align-items-start{% else %}align-items-center{% endif %} gap-2">
+                    <span class="info-link-visual d-inline-flex align-items-center justify-content-center flex-shrink-0 bg-light rounded text-primary" aria-hidden="true">
+                        {%- if registry == "tess" %}
+                        <img alt="" src="{{ 'assets/img/tess_logo.svg' | relative_url }}">
+                        {%- elsif registry == "zenodo" %}
+                        <img alt="" src="{{ 'assets/img/zenodo_logo.svg' | relative_url }}">
+                        {%- elsif registry == "youtube" %}
+                        <img alt="" src="{{ 'assets/img/youtube_logo.svg' | relative_url }}">
+                        {%- elsif registry == "carpentries" %}
+                        <img alt="" src="{{ 'assets/img/carpentries_logo.svg' | relative_url }}">
+                        {%- elsif registry == "github" %}
+                        <i class="fa-brands fa-github"></i>
+                        {%- else %}
+                        <i class="icon-graduation-cap"></i>
+                        {%- endif %}
+                    </span>
+                    <span>
+                        <a href="{{ training.url }}">{{training.name}}</a>
+                        {%- if training.registry %}
+                        <span class="d-block text-secondary training-link-registry">{{training.registry}}</span>
+                        {%- endif %}
+                    </span>
+                </span>
             </li>
-        {%- endfor %}
+            {%- endfor %}
         </ul>
     </div>
 </div>
