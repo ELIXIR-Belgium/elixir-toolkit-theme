@@ -64,26 +64,20 @@ Tools and resources specifically mentioned in the text of the pages should be pr
 
 1. Add the tool in the text by mentioning it using following syntax:
     ```
-    {% raw %}
-    {% tool "tool_id" %}
-    {% endraw %}
+    {% raw %}{% tool "tool_id" %}{% endraw %}
     ```
 
     **Examples:**
 
     ```
-    {% raw %}
-    {% tool "zenodo" %} is a powerful data publication service, which is supported by the European commission and focused on research data, including supplemental material like software, tables, figures or slides.
-    {% endraw %}
+    {% raw %}{% tool "zenodo" %} is a powerful data publication service, which is supported by the European commission and focused on research data, including supplemental material like software, tables, figures or slides.{% endraw %}
     ```
     Will give: 
     
     {% tool "zenodo" %} is a powerful data publication service, which is supported by the European commission and focused on research data, including supplemental material like software, tables, figures or slides.
 
     ```
-    {% raw %}
-    {% tool "beacon" %} is a GA4GH standard which enables standardised querying across multiple sources.
-    {% endraw %}
+    {% raw %}{% tool "beacon" %} is a GA4GH standard which enables standardised querying across multiple sources.{% endraw %}
     ```
     Will give: 
     
@@ -98,9 +92,7 @@ Tools and resources specifically mentioned in the text of the pages should be pr
 By default, the table at the bottom of the page will appear when tools are mentioned in the text/tagged with the correct page_id as seen at the bottom of this page under the "Tools and resources on this page" heading. To list manually all tools and resources that are described in your website, use following snippet:
 
 ```
-{% raw %}
-{% include resource-table-all.html %}
-{% endraw %}
+{% raw %}{% include resource-table-all.html %}{% endraw %}
 ```
 
 

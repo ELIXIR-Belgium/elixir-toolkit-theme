@@ -9,12 +9,9 @@ Nam non sollicitudin sapien. Vestibulum ante ipsum primis in faucibus orci luctu
 
 
 ```
-{% raw %}
-{% include training-table-all.html %}
-{% endraw %}
+{% raw %}{% include training-table-all.html %}{% endraw %}
 ```
 
 
 {% include training-table-all.html %}
-
 

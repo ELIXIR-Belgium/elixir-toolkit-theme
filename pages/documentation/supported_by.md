@@ -49,9 +49,7 @@ The supporters are shown automatically in the **Supported by** tab in the page m
 Use `supported-by-tiles-selection.html` without parameters to display all exposed supporters:
 
 ```
-{% raw %}
-{% include supported-by-tiles-selection.html %}
-{% endraw %}
+{% raw %}{% include supported-by-tiles-selection.html %}{% endraw %}
 ```
 
 Becomes:
@@ -66,9 +64,7 @@ Becomes:
 For example, the infrastructure entries can be shown with:
 
 ```
-{% raw %}
-{% include supported-by-tiles-selection.html type="infrastructure" %}
-{% endraw %}
+{% raw %}{% include supported-by-tiles-selection.html type="infrastructure" %}{% endraw %}
 ```
 
 {% include supported-by-tiles-selection.html type="infrastructure" %}

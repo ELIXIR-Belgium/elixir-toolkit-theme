@@ -7,9 +7,7 @@ Contributors are defined in two places: the [page-metadata](page_mechanics) and 
 ## List website contributors in a grid
 
 ```
-{% raw %}
-{% include contributor-tiles-all.html %}
-{% endraw %}
+{% raw %}{% include contributor-tiles-all.html %}{% endraw %}
 ```
 
 {% include contributor-tiles-all.html %}
@@ -25,9 +23,7 @@ Contributors are defined in two places: the [page-metadata](page_mechanics) and 
 ### Example with parameters
 
 ```
-{% raw %}
-{% include contributor-tiles-all.html custom="Example Contributor, Bert Droesbeke" col=3 sort=false %}
-{% endraw %}
+{% raw %}{% include contributor-tiles-all.html custom="Example Contributor, Bert Droesbeke" col=3 sort=false %}{% endraw %}
 ```
 
 {% include contributor-tiles-all.html custom="Example Contributor, Bert Droesbeke" col=3 sort=false %}
@@ -35,9 +31,7 @@ Contributors are defined in two places: the [page-metadata](page_mechanics) and 
 ## List website contributors in a carousel
 
 ```
-{% raw %}
-{% include contributor-carousel-selection.html %}
-{% endraw %}
+{% raw %}{% include contributor-carousel-selection.html %}{% endraw %}
 ```
 
 
@@ -54,9 +48,7 @@ Contributors are defined in two places: the [page-metadata](page_mechanics) and 
 ### Example with parameters
 
 ```
-{% raw %}
-{% include contributor-carousel-selection.html custom="Bert Droesbeke, Example Contributor" col=3 %}
-{% endraw %}
+{% raw %}{% include contributor-carousel-selection.html custom="Bert Droesbeke, Example Contributor" col=3 %}{% endraw %}
 ```
 
 {% include contributor-carousel-selection.html custom="Bert Droesbeke, Example Contributor" col=3 %}

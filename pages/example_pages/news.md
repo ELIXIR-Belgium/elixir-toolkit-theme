@@ -8,9 +8,7 @@ github:
 ## Simple example
 
 ```
-{% raw %}
-{% include news.html %}
-{% endraw %}
+{% raw %}{% include news.html %}{% endraw %}
 ```
 
 
@@ -20,9 +18,7 @@ Becomes:
 ## More complex example
 
 ```
-{% raw %}
-{% include news.html title=true truncate=true caption=true caption_url="/about/news" %}
-{% endraw %}
+{% raw %}{% include news.html title=true truncate=true caption=true caption_url="/about/news" %}{% endraw %}
 ```
 
 Becomes:
@@ -37,5 +33,4 @@ Becomes:
 * `caption_url`: Add a custom url if the main news page is not served at */news*
 * `truncate`: If longer event descriptions are used and this parameter is set to *true*, descriptions which are longer than 40 words will get collapsed behind a button (`true` or `false`).
 * `limit`: Integer to determine the amount of news items shown.
-
 
