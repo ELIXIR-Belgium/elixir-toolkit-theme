@@ -21,6 +21,9 @@ Each supporter in `_data/supported_by.yml` consists of the following fields:
 * **type**: The kind of supporter, for example `funder` or `infrastructure`. This value can be passed to `supported-by-tiles-selection.html` to show only supporters of that type.
 * **url**: Link to the supporter's website.
 
+{: .important }
+> SVG supporter logos should define a sensible `viewBox`. Avoid SVG files whose root `<svg>` element has very small `width` or `height` values unless the `viewBox` describes the full logo artwork. Small intrinsic dimensions can make the logo render too small or clipped in the supported-by tiles. When needed, remove the root `width` and `height` attributes or export the logo with dimensions that match its visible artwork.
+
 Example:
 
 ```yml
