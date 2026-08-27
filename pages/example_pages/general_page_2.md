@@ -1,14 +1,14 @@
 ---
-title: General page example 2
+title: General page 2
 type: Example_pages
 type_img: /assets/img/ett_compact_logo_bw.svg
 page_img: infrastructures/ELIXIR_BELGIUM_white_background.svg 
 coordinators: [Bert Droesbeke]
-description: This description is used when the page is listed
+description: shows page and type images together with compact more information links
 page_id: gp2
 faircookbook:
-- name: Link towards a FAIRCOOKBOOK recipe
-  url: https://fairplus.github.io/
+- name: Example FAIR Cookbook recipe
+  url: https://faircookbook.elixir-europe.org/content/recipes/reusability/miappe.html
 dsw:
 - name: Is there any pre-existing data?
   uuid: efc80cc8-8318-4f8c-acb7-dc1c60e491c1
@@ -28,12 +28,12 @@ training:
 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis fermentum velit, at vulputate sapien. Suspendisse efficitur id elit sed volutpat. Etiam luctus sem id finibus pulvinar. Morbi sit amet purus a velit pretium imperdiet ut et elit. Maecenas eleifend, urna a aliquam lobortis, erat ligula efficitur velit, aliquam accumsan odio turpis nec nibh. Suspendisse placerat porttitor neque, vitae consequat massa aliquam eu. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin sed velit vitae tellus egestas condimentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris pretium scelerisque dignissim. Maecenas ipsum nisl, pretium non mollis ac, varius pulvinar nibh. Donec venenatis pulvinar arcu, vitae interdum purus dictum in. Proin sed tempus mi.
+This example focuses on visual page metadata. It has a `type_img` used in section tiles and a `page_img` that appears next to the page title and in page cards. The page also keeps a short set of more information links so the compact version of those sections remains covered.
 
-## Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis fermentum velit, at vulputate sapien. Suspendisse efficitur id elit sed volutpat.
+## A deliberately longer heading for layout checks
 
-Nam non sollicitudin sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas consectetur nulla nec rutrum rhoncus. Sed non urna sem. Maecenas sed lobortis urna, hendrerit aliquet massa. Phasellus felis dui, feugiat ut sapien vel, mattis dictum eros. Suspendisse in felis sit amet dui elementum rutrum tristique eget velit. Sed hendrerit, ante sit amet hendrerit cursus, ante nibh accumsan nibh, vitae rhoncus quam ipsum placerat ante. 
+Longer headings help demonstrate how page content, anchor links and the table of contents behave when titles wrap. This keeps the example realistic without relying on filler text.
 
-### Lorem Ipsum
+### What to verify
 
-Suspendisse potenti. Aliquam molestie tortor ac semper imperdiet. Sed nec laoreet odio. Aliquam erat volutpat. Aenean odio velit, tristique et mauris ac, porta lacinia ipsum. Vivamus massa quam, egestas in dui eget, porta pharetra tellus. Aliquam blandit ante eu ligula molestie pellentesque. Morbi non diam at leo euismod sagittis quis in magna. Ut vitae ligula sit amet nulla rhoncus ultrices vitae quis odio. Nam euismod nunc interdum tellus pulvinar, et interdum magna gravida.
+Check that the ELIXIR Belgium page image is visible in the title area, that the compact theme icon is used in section cards and that the more information links still render as separate collapsible groups.

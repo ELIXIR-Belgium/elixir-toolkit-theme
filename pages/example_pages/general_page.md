@@ -1,20 +1,20 @@
 ---
-title: General page example
+title: General page 1
 type: Example_pages
 contributors: [Bert Droesbeke, Long Example Contributor , Example Contributor, Example Contributor2, Example Contributor3]
 coordinators: [Bert Droesbeke] 
 editors: [Bert Droesbeke] 
 page_citation: true
-description: This description is used when the page is listed
+description: showcases a fully annotated page with contributors, support logos, citations and linked guidance
 page_id: gp1
 supported_by: [ELIXIR Europe, BE, SE]
 faircookbook:
-- name: Link towards a FAIRCOOKBOOK recipe
-  url: https://fairplus.github.io/
-- name: Browse FAIR Cookbook recipes
-  url: https://faircookbook.elixir-europe.org/content/recipes.html
+- name: FAIR Cookbook home page
+  url: https://faircookbook.elixir-europe.org/
+- name: Example FAIR Cookbook recipe
+  url: https://faircookbook.elixir-europe.org/content/recipes/reusability/miappe.html
 rdmkit:
-- name: Title of an RDMkit page
+- name: RDMkit compliance monitoring guidance
   url: https://rdmkit.elixir-europe.org/compliance_monitoring
 - name: Data management plan guidance
   url: https://rdmkit.elixir-europe.org/data_management_plan
@@ -29,26 +29,34 @@ dsw:
 - name: Has sensitive data been identified?
   uuid: 4c5e2b6d-8f40-4f4a-a32a-8ff5f2a381e6
 training:
-  - name: Training in TeSS
+  - name: Training catalogue in TeSS
     registry: TeSS
     url: https://tess.elixir-europe.org/
-  - name: Training in Zenodo
+  - name: Training materials in Zenodo
     registry: Zenodo
     url: https://zenodo.org/
-  - name: Training resource
+  - name: ELIXIR Toolkit Theme repository
     url: https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/
-summary: This summary is used below the page title
+summary: A feature-rich example page used to check the metadata panel, generated citation, more information sections and related page tiles.
 related_pages: 
     Example_pages: [gp2, gp3]
 ---
 
 
-Lorem {% tool "github" %} dolor sit amet, consectetur adipiscing elit. Etiam quis fermentum velit, at vulputate sapien. Suspendisse efficitur id elit sed volutpat. Etiam luctus sem id finibus pulvinar. Morbi sit amet purus a velit pretium imperdiet ut et elit. Maecenas eleifend, urna a aliquam lobortis, erat ligula efficitur velit, aliquam accumsan odio turpis nec nibh. Suspendisse placerat porttitor neque, vitae consequat massa aliquam eu. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin sed velit vitae tellus egestas condimentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris pretium scelerisque dignissim. Maecenas ipsum nisl, pretium non mollis ac, varius pulvinar nibh. Donec venenatis pulvinar arcu, vitae interdum purus dictum in. Proin sed tempus mi.
+This page is the most complete general page example in this website. It combines contributor metadata, page citation, support information, related pages and several external guidance collections. It also mentions {% tool "github" %} in the body text so the tools and resources table can be tested from an inline tag.
 
-## Lorem Ipsum
+## What this page demonstrates
 
-Nam non sollicitudin sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas consectetur nulla nec rutrum rhoncus. Sed non urna sem. Maecenas sed lobortis urna, hendrerit aliquet massa. Phasellus felis dui, feugiat ut sapien vel, mattis dictum eros. Suspendisse in felis sit amet dui elementum rutrum tristique eget velit. Sed hendrerit, ante sit amet hendrerit cursus, ante nibh accumsan nibh, vitae rhoncus quam ipsum placerat ante.
+- Contributor, coordinator and editor tabs generated from page metadata.
+- Supporter logos loaded from `_data/supported_by.yml`.
+- A generated page citation.
+- More information sections for FAIR Cookbook, RDMkit, FAIRsharing, DSW and training links.
+- Related page tiles connected by `page_id`.
 
-### Lorem Ipsum
+## Suggested use
 
-Suspendisse potenti. Aliquam molestie tortor ac semper imperdiet. Sed nec laoreet odio. Aliquam erat volutpat. Aenean odio velit, tristique et mauris ac, porta lacinia ipsum. Vivamus massa quam, egestas in dui eget, porta pharetra tellus. Aliquam blandit ante eu ligula molestie pellentesque. Morbi non diam at leo euismod sagittis quis in magna. Ut vitae ligula sit amet nulla rhoncus ultrices vitae quis odio. Nam euismod nunc interdum tellus pulvinar, et interdum magna gravida.
+Use this pattern for documentation pages that need to gather several kinds of supporting material around one topic. The body copy can explain the page goal, while the metadata powers reusable navigation, attribution and contextual resource blocks.
+
+### Review checklist
+
+When changing this example, check that the metadata tabs, related page tiles, more information accordions and tools and resources table still appear. This keeps the page useful as both documentation and a regression test for theme features.

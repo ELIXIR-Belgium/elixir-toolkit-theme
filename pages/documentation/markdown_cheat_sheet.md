@@ -1,12 +1,12 @@
 ---
 title: Markdown cheat sheet
-summary: This is a cheat sheet to showcase what is possible within the markdown pages.
+summary: This cheat sheet shows what is possible in Markdown pages.
 contributors: [Bert Droesbeke]
 ---
 
-We use Markdown files to manage the content in the ELIXIR Toolkit Theme in a structured and easy to edit way. For more information about Markdown, please check the [Markdown guidelines](https://guides.github.com/features/mastering-markdown/). If you want more information about the specific markdown flavor we use, Kramdown, please checkout the [Kramdown documentation](https://kramdown.gettalong.org/parser/kramdown.html).
+We use Markdown files to manage content in the ELIXIR Toolkit Theme in a structured way that is easy to edit. For more information about Markdown, see the [GitHub Markdown documentation](https://docs.github.com/en/get-started/writing-on-github). For more information about the Markdown flavour used by the theme, Kramdown, see the [Kramdown documentation](https://kramdown.gettalong.org/parser/kramdown.html).
 
-Besides the syntax to describe the main content on which this page focuses, we also make use of metadata fields in the Markdown. If you want to know more about them and how they can unlock certain features on pages, please go to our [page metadata section](page_mechanics).
+Besides the syntax used for main content, the theme also uses metadata fields in Markdown files. To learn how metadata unlocks page features, see [Page mechanics](page_mechanics).
 
 ## Titles
 
@@ -15,18 +15,18 @@ Using:
 ## Title
 ```
 
-### Sub titles
+### Subtitles
 
 Using:
 ```
-### Sub titles
+### Subtitles
 ```
 
-#### Sub sub titles
+#### Sub-subtitles
 
 Using:
 ```
-#### Sub sub titles
+#### Sub-subtitles
 ```
 
 ## Bold text
@@ -51,7 +51,7 @@ Using:
 
 Make sure there are no spaces between the asterisks and the text you want to put in italic.
 
-## File names/ files / software names
+## File names, files and software names
 
 `Text` can be highlighted using:
 
@@ -126,7 +126,7 @@ Add `-title` to provide your own heading. Use a blockquote when the callout need
 {: .note-title }
 > Before you publish
 >
-> Check the [example page](https://example.org/toolkit-page), review `inline code`, and confirm **bold text** renders correctly.
+> Check the [Getting started](getting_started) page, review `inline code`, and confirm **bold text** renders correctly.
 >
 > - Confirm the page title.
 > - Preview the page on a narrow screen.
@@ -138,7 +138,7 @@ This renders as:
 {: .note-title }
 > Before you publish
 >
-> Check the [example page](https://example.org/toolkit-page), review `inline code`, and confirm **bold text** renders correctly.
+> Check the [Getting started](getting_started) page, review `inline code`, and confirm **bold text** renders correctly.
 >
 > - Confirm the page title.
 > - Preview the page on a narrow screen.
@@ -195,40 +195,40 @@ This renders as:
 
 ## Images
 
-{% include image.html file="/infrastructures/ELIXIR-logo.svg" caption="Figure 1. Say something about this pic." alt="ELIXIR logo" %}
+{% include image.html file="/infrastructures/ELIXIR-logo.svg" caption="Figure 1. ELIXIR logo rendered through the image include." alt="ELIXIR logo" %}
 
-This image is inserted in the markdown using following snippet:
-
-{% raw %}
-```
-{% include image.html file="/infrastructures/ELIXIR-logo.svg" caption="Figure 1. Say something about this pic." alt="ELIXIR logo" max-width="10" %}
-```
-{% endraw %}
-
-or a smaller image
-
-{% include image.html file="infrastructures/ELIXIR-logo.svg" alt="ELIXIR logo" max-width="3em" %}
-
-This image is inserted in the markdown using following snippet:
+This image is inserted in Markdown using the following snippet:
 
 {% raw %}
 ```
+{% include image.html file="/infrastructures/ELIXIR-logo.svg" caption="Figure 1. ELIXIR logo rendered through the image include." alt="ELIXIR logo" max-width="10" %}
+```
+{% endraw %}
+
+Or a smaller image:
+
+{% include image.html file="infrastructures/ELIXIR-logo.svg" alt="ELIXIR logo" max-width="3em" %}
+
+This image is inserted in Markdown using the following snippet:
+
+{% raw %}
+```
 {% include image.html file="infrastructures/ELIXIR-logo.svg" alt="ELIXIR logo" max-width="3em" %}
 ```
 {% endraw %}
 
-Make sure that you add the image to the `images` directory and give it an understanding filename. Adapt the snippet so it points towards you image (only the filename is needed). In the case of the example, the image exampleImage.png is loaded. Supported attributes are:
+Add images to the `images` directory and give them descriptive filenames. Adapt the snippet so it points to your image. Only the filename is needed when the image is stored in the expected directory. Supported attributes are:
 
-* `click`: if true, the image will be clickable -> the image will be loaded in another tab
-* `url`: f you want the image to link to anther page
-* `alt`: describes the image and is used for people that are visually impaired
-* `caption`: Text that will appear under the image
-* `inline`: if true this image can be used in a list
-* `max-width`: Max width in px or em
-* `class`: add a custom CSS class
+* **`click`**: When set to `true`, the image opens in another tab.
+* **`url`**: Link the image to another page.
+* **`alt`**: Describe the image for screen readers and other assistive technologies.
+* **`caption`**: Text that appears under the image.
+* **`inline`**: When set to `true`, the image can be used in a list.
+* **`max-width`**: Maximum width in `px` or `em`.
+* **`class`**: Custom CSS class.
 
 
-or using following markdown syntax:
+Or use the following Markdown syntax:
 {% raw %}
 ```
 ![ELIXIR logo](images/infrastructures/ELIXIR-logo.svg)
@@ -236,13 +236,13 @@ or using following markdown syntax:
 ```
 {% endraw %}
 
-gives:
+This renders as:
 
 ![ELIXIR logo](images/infrastructures/ELIXIR-logo.svg)
 ![ELIXIR logo](images/infrastructures/ELIXIR-logo.svg){: height="200px" width="200px"}
 
 {: .important }
-> This way of including images does not work well when webpages are served using folders in its URL since absolute links towards images do no work on forks.
+> This way of including images does not work well when webpages are served from folder-style URLs, because absolute image links do not work reliably on forks.
 
 ## Icons
 
@@ -250,7 +250,7 @@ Go to the [Lucide icon library](https://lucide.dev/icons/) to see the available 
 
 Lucide icons inherit the surrounding text size. Use Bootstrap font-size utility classes such as `fs-5`, `fs-4`, and `fs-3` when you want to scale them.
 
-Here's an example of how to scale up a camera icon:
+Here is an example of how to scale up a camera icon:
 
 ```html
 <i class="icon-camera"></i> normal size
@@ -259,7 +259,7 @@ Here's an example of how to scale up a camera icon:
 <i class="icon-camera fs-3"></i> fs-3
 ```
 
-Here's what they render to:
+Here is what they render to:
 
 <i class="icon-camera"></i> normal size
 <i class="icon-camera fs-5"></i> fs-5
@@ -270,7 +270,7 @@ Font Awesome remains supported for existing content and for icons Lucide does no
 
 The Font Awesome icons allow you to adjust their size by simply adding `fa-2x`, `fa-3x` and so forth as a class to the icon to adjust their size to two times or three times the original size. As vector icons, they scale crisply at any size.
 
-Here's an example of how to scale up a camera icon:
+Here is an example of how to scale up a camera icon:
 
 ```html
 <i class="fa-solid fa-camera-retro"></i> normal size (1x)
@@ -281,7 +281,7 @@ Here's an example of how to scale up a camera icon:
 <i class="fa-solid fa-camera-retro fa-5x"></i> fa-5x
 ```
 
-Here's what they render to:
+Here is what they render to:
 
 <i class="fa-solid fa-camera-retro"></i> 1x
 <i class="fa-solid fa-camera-retro fa-lg"></i> fa-lg
@@ -312,9 +312,9 @@ Will link to the planning page.
 
 If you change the file name, you'll have to update all of your links.
 
-## Emoji's
+## Emojis
 
-Use GitHub emoticons! This [github page about emoticons](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md) has a cheat sheet for all the emoticons.
+Use GitHub emoticons. This [GitHub page about emoticons](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md) has a cheat sheet for all supported emoticons.
 :+1: is made with `:+1:`
 
 ## Code snippets
@@ -338,7 +338,7 @@ public class ScannerAndKeyboard
 ```
 </pre>
 
-This looks as follows:
+This renders as:
 
 ```java
 import java.util.Scanner;
@@ -356,7 +356,7 @@ public class ScannerAndKeyboard
 ```
 
 
-## List and sub-list 
+## Lists and sub-lists
 
 * List line 1
 * List line 2
@@ -395,16 +395,16 @@ and are made with:
 You can add a blockquote using:
 
 ```md
-> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+> Use blockquotes to highlight quoted guidance, important context or a longer note that should stand apart from the surrounding text.
 >
-> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+> Keep the quoted text concise, and prefer a callout when the content needs a title or a specific visual treatment.
 ```
 
 Giving:
 
-> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+> Use blockquotes to highlight quoted guidance, important context or a longer note that should stand apart from the surrounding text.
 >
-> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+> Keep the quoted text concise, and prefer a callout when the content needs a title or a specific visual treatment.
 
 
 ## A collapsible piece of text

@@ -1,7 +1,7 @@
 ---
-title: General page example 3
+title: General page 3
 type: Example_pages
-description: This page has page level resources
+description: demonstrates country-specific resource metadata without a table of contents
 country_code: BE
 page_id: gp3
 toc: false
@@ -10,9 +10,9 @@ ref_to_main_resources:
   - github
 
 national_resources:
-  - name: Resource name
-    description: A general description about the resource
-    how_to_access: explantation on how you can access this resource
+  - name: Belgian workflow repository
+    description: Example country-level resource with a URL, registry mappings and related pages.
+    how_to_access: Available through the public GitHub link listed below.
     instance_of: github
     url: https://github.com
     related_pages:
@@ -20,14 +20,14 @@ national_resources:
     registry:
       biotools: bioconda
       tess: Bioconda
-  - name: Resource name 2
-    description: A general description about the resource
+  - name: National training catalogue
+    description: Example resource without an external URL, useful for checking how optional links are hidden.
     how_to_access: 
     instance_of: 
     related_pages:
       Example_pages: [gp5]
-  - name: Resource name 3
-    description: A general description about the resource
+  - name: Local support contact
+    description: Example resource with only a name and description.
     how_to_access: 
     instance_of: 
 related_pages: 
@@ -35,12 +35,12 @@ related_pages:
 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis fermentum velit, at vulputate sapien. Suspendisse efficitur id elit sed volutpat. Etiam luctus sem id finibus pulvinar. Morbi sit amet purus a velit pretium imperdiet ut et elit. Maecenas eleifend, urna a aliquam lobortis, erat ligula efficitur velit, aliquam accumsan odio turpis nec nibh. Suspendisse placerat porttitor neque, vitae consequat massa aliquam eu. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin sed velit vitae tellus egestas condimentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris pretium scelerisque dignissim. Maecenas ipsum nisl, pretium non mollis ac, varius pulvinar nibh. Donec venenatis pulvinar arcu, vitae interdum purus dictum in. Proin sed tempus mi.
+This page demonstrates the metadata used for country-specific tools and resources. It links a page to main resources, shows how local resources can point back to related pages and includes registry identifiers that can be rendered in resource tables. It also sets `toc: false`, so no table of contents is shown.
 
-## Lorem Ipsum
+## Resource metadata
 
-Nam non sollicitudin sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas consectetur nulla nec rutrum rhoncus. Sed non urna sem. Maecenas sed lobortis urna, hendrerit aliquet massa. Phasellus felis dui, feugiat ut sapien vel, mattis dictum eros. Suspendisse in felis sit amet dui elementum rutrum tristique eget velit. Sed hendrerit, ante sit amet hendrerit cursus, ante nibh accumsan nibh, vitae rhoncus quam ipsum placerat ante.
+The first resource contains the full set of fields: name, description, access information, URL, registry mappings and related pages. The following resources intentionally omit some optional fields so the page can show how the layout behaves when data is incomplete.
 
-### Lorem Ipsum
+### Feature coverage
 
-Suspendisse potenti. Aliquam molestie tortor ac semper imperdiet. Sed nec laoreet odio. Aliquam erat volutpat. Aenean odio velit, tristique et mauris ac, porta lacinia ipsum. Vivamus massa quam, egestas in dui eget, porta pharetra tellus. Aliquam blandit ante eu ligula molestie pellentesque. Morbi non diam at leo euismod sagittis quis in magna. Ut vitae ligula sit amet nulla rhoncus ultrices vitae quis odio. Nam euismod nunc interdum tellus pulvinar, et interdum magna gravida.
+Use this page to test flags, country metadata, page-level resources, disabled table of contents behaviour and empty optional fields in the resource table.

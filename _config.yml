@@ -10,7 +10,7 @@ title: ELIXIR Toolkit Theme
 description: "Flexible Jekyll theme using bootstrap 5 as CSS framework."
 # Metadata description of the website
 
-dsw_deep_link_prefix:
+dsw_deep_link_prefix: https://researchers.ds-wizard.org/knowledge-models/dsw:root:latest/preview?questionUuid=
 # prefix for DSW deep links to a certain question
 
 gtag:
@@ -96,11 +96,11 @@ theme_variables:
     # fosstodon: false
   # theme_color: 0d6efd
   # fonts:
-    # - url towards a font
+    # - url to a font
   # breadcrumb: false
 
 # --- Missing in gitlab: ---
-# github:
-  # repository_url: https://github.com/ELIXIR-Belgium/elixir-toolkit-theme
-  # source:
-    # branch: main
+github:
+  repository_url: https://github.com/ELIXIR-Belgium/elixir-toolkit-theme
+  source:
+    branch: main

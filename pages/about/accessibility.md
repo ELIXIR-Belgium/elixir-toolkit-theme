@@ -9,7 +9,7 @@ We appreciate people have different preferences and abilities when using website
   * navigate the website using just a keyboard
   * listen to most of the website using a screen reader.
 
-We aim to conform to the to the 'AA' standard of the [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/). This is not just a legal requirement in the European Union, but a best practice that will enable as many people as possible to use the site.
+We aim to conform to the 'AA' standard of the [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/). This is not just a legal requirement in the European Union, but a best practice that enables as many people as possible to use the site.
 
 ## How to report problems
 If you have any difficulties or annoyances using the site, or feel that we are not meeting accessibility requirements, then please open an issue on our [GitHub repository](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme).
@@ -25,4 +25,3 @@ The theme is a community effort, so unfortunately we do not have the resources t
 
 ## Level of compliance
 As far as we can ascertain, this website is compliant with the Web Content Accessibility Guidelines version 2.1 AA standard. If you feel there are issues to address, however, then please open an issue on our [GitHub repository](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme).
-

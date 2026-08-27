@@ -9,7 +9,7 @@
   pid: http://dx.doi.org/10.13039/501100003130
   expose: true
   type: funder
-  url: https://www.fwo.be/
+  url: https://www.fwo.be/en/
 - name: ELIXIR Europe
   image_url: /images/infrastructures/ELIXIR-logo.svg
   pid:

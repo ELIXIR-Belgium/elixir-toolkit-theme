@@ -1,9 +1,9 @@
 ---
-title: General page example 5
+title: General page 6
 type: Example_pages
 contributors: [Bert Droesbeke, Long Example Contributor , Example Contributor, Example Contributor2, Example Contributor3]
 coordinators: [Bert Droesbeke] 
-description: This description is used when the page is listed
+description: shows a general page layout without the sidebar
 sidebar: false
 page_id: gp6
 related_pages: 
@@ -11,13 +11,12 @@ related_pages:
 ---
 
 
-Lorem dolor sit amet, consectetur adipiscing elit. Etiam quis fermentum velit, at vulputate sapien. Suspendisse efficitur id elit sed volutpat. Etiam luctus sem id finibus pulvinar. Morbi sit amet purus a velit pretium imperdiet ut et elit. Maecenas eleifend, urna a aliquam lobortis, erat ligula efficitur velit, aliquam accumsan odio turpis nec nibh. Suspendisse placerat porttitor neque, vitae consequat massa aliquam eu. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin sed velit vitae tellus egestas condimentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris pretium scelerisque dignissim. Maecenas ipsum nisl, pretium non mollis ac, varius pulvinar nibh. Donec venenatis pulvinar arcu, vitae interdum purus dictum in. Proin sed tempus mi.
+This page uses the same contributor, coordinator and related page metadata as other examples, but sets `sidebar: false`. It demonstrates how the content area expands when no sidebar is rendered.
 
-## Lorem Ipsum
+## Full-width content
 
-Nam non sollicitudin sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas consectetur nulla nec rutrum rhoncus. Sed non urna sem. Maecenas sed lobortis urna, hendrerit aliquet massa. Phasellus felis dui, feugiat ut sapien vel, mattis dictum eros. Suspendisse in felis sit amet dui elementum rutrum tristique eget velit. Sed hendrerit, ante sit amet hendrerit cursus, ante nibh accumsan nibh, vitae rhoncus quam ipsum placerat ante.
+A page without a sidebar can be useful for landing-style documentation, tables, wide diagrams or short pages that do not need local navigation. The surrounding metadata still renders below the content.
 
-### Lorem Ipsum
+### What to verify
 
-Suspendisse potenti. Aliquam molestie tortor ac semper imperdiet. Sed nec laoreet odio. Aliquam erat volutpat. Aenean odio velit, tristique et mauris ac, porta lacinia ipsum. Vivamus massa quam, egestas in dui eget, porta pharetra tellus. Aliquam blandit ante eu ligula molestie pellentesque. Morbi non diam at leo euismod sagittis quis in magna. Ut vitae ligula sit amet nulla rhoncus ultrices vitae quis odio. Nam euismod nunc interdum tellus pulvinar, et interdum magna gravida.
-
+Check that the title, generated metadata, related pages and page width all remain consistent when the sidebar is disabled.

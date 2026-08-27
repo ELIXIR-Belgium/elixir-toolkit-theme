@@ -3,15 +3,16 @@ title: List of page IDs
 ---
 
 
-You can generate an overview table listing all pages that have a `page_id` in their frontmatter, grouped per per section. Pages also need to have `search_exclude` **not** *true* in order to be listed. This can be useful for contributors to know what the `page_id` is of a page since this `page_id` is used to list related pages of a page or tagging national tools.
+You can generate an overview table listing all pages that have a `page_id` in their front matter, grouped by section. Pages also need to have `search_exclude` **not** set to `true` in order to be listed. This helps contributors find the `page_id` values used for related pages and national tools.
 
-Use following snippet
+## Page ID overview
 
-```
+Use this snippet:
+
+```liquid
 {% raw %}{% include pageids-overview.html sidebar="main"%}{% endraw %}
 ```
 
-Which will render into:
+This renders as:
 
 {% include pageids-overview.html sidebar="main" %}
-
