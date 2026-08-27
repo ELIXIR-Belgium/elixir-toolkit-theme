@@ -1622,6 +1622,7 @@ a.info-collapse[aria-expanded="true"]:not(:has(~ a.info-collapse))+.show {
         justify-content: center;
         line-height: 1;
         pointer-events: none;
+        transition: $transition-base;
         width: 2rem;
         z-index: 2;
     }
