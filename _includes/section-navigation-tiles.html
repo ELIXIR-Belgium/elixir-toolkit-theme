@@ -18,32 +18,36 @@
 <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-{{ include.col | default: 2 }} my-4">
     {%- if show_supported_by == true %}
     <div class="col">
-        <div class="input-group">
-            <label class="input-group-text" for="affiliations-input">Supported by:</label>
-            <select class="form-select" id="affiliations-input" aria-label="Select a supporter">
-                <option selected="" value="reset">Choose...</option>
-                {%- for affiliation in allaffiliations %}
-                {%- if affiliation.size == 2 %}
-                {%- assign country = affiliation | upcase %}
-                <option value="{{country | slugify}}">{{allcountries[country]}}</option>
-                {%- else %}
-                <option value="{{affiliation | slugify}}">{{affiliation}}</option>
-                {%- endif %}
-                {%- endfor %}
-            </select>
-            <button class="btn btn-primary" title="Clear supporter selection" type="button" id="clearfilter">
-                <i class="icon-delete"></i>
+        <div class="navigation-tile-filter d-flex align-items-center gap-2">
+            <div class="input-group flex-grow-1">
+                <label class="input-group-text" for="affiliations-input">Supported by:</label>
+                <select class="form-select" id="affiliations-input" aria-label="Select a supporter">
+                    <option selected="" value="reset">Choose...</option>
+                    {%- for affiliation in allaffiliations %}
+                    {%- if affiliation.size == 2 %}
+                    {%- assign country = affiliation | upcase %}
+                    <option value="{{country | slugify}}">{{allcountries[country]}}</option>
+                    {%- else %}
+                    <option value="{{affiliation | slugify}}">{{affiliation}}</option>
+                    {%- endif %}
+                    {%- endfor %}
+                </select>
+            </div>
+            <button class="btn btn-sm btn-icon-round rounded-circle p-0 d-inline-flex align-items-center justify-content-center flex-shrink-0" data-bs-toggle="tooltip" title="Clear supporter selection" aria-label="Clear supporter selection" type="button" id="clearfilter">
+                <i class="icon-trash-2"></i>
             </button>
         </div>
     </div>
     {%- endif %}
     {%- if include.search == true %}
     <div class="col">
-        <div class="input-group">
-            <span class="input-group-text" id="search-label-tiles"><i class="icon-search"></i></span>
-            <input type="text" id="title-search" class="form-control" onkeyup="StartSearch();" placeholder="Find your page..." aria-label="{{page.type | replace: '_', ' ' }}" aria-describedby="search-label-tiles">
-            <button class="btn btn-primary" title="Button to clear search" type="button" id="clearsearch">
-                <i class="icon-delete"></i>
+        <div class="navigation-tile-filter d-flex align-items-center gap-2">
+            <div class="input-group flex-grow-1">
+                <span class="input-group-text" id="search-label-tiles"><i class="icon-search"></i></span>
+                <input type="text" id="title-search" class="form-control" onkeyup="StartSearch();" placeholder="Find your page..." aria-label="{{page.type | replace: '_', ' ' }}" aria-describedby="search-label-tiles">
+            </div>
+            <button class="btn btn-sm btn-icon-round rounded-circle p-0 d-inline-flex align-items-center justify-content-center flex-shrink-0" data-bs-toggle="tooltip" title="Clear search" aria-label="Clear search" type="button" id="clearsearch">
+                <i class="icon-trash-2"></i>
             </button>
         </div>
     </div>
@@ -86,67 +90,7 @@
     {%- endcapture -%}
     {%- endif %}
     <div class="col" data-affiliations="{{affiliations_classes}}">
-        <div class="card h-100">
-            {%- if current_page.page_img %}
-            <div class="d-flex">
-            {%- endif %}
-            <div class="card-body d-flex flex-column">
-                <div class="d-flex align-items-center">
-                    {%- if current_page.type_img %}
-                    <img src="{{current_page.type_img | relative_url}}" class="type-icon me-2" alt="{{current_page.type}} icon">
-                    {%- endif %}
-                    {%- if current_page.type %}
-                    <span class=""><small>{{current_page.type | replace: "_", " " }}</small></span>
-                    {%- endif %}
-                </div>
-                <a class="stretched-link section-title" aria-label="Go to the {{current_page.title}} page" href="{{ current_page.url | relative_url }}">
-                    <b>{{current_page.title}}</b>
-                </a>
-                {%- if current_page.description %}
-                <p class="card-text h-100">{{ current_page.description}}</p>
-                {%- endif %}
-                {%- if current_page_supported_by %}
-                {%- assign pageaffil = current_page_supported_by | sort %}
-                {%- assign alllogos = site.data.affiliations | default: site.data.supported_by %}
-                {%- assign allcountries = site.data.countries %}
-                <div class="d-flex align-items-center flex-wrap gap-2">
-                    <span><b><small>Supported by:</small></b></span>
-                    {%- for affiliation in pageaffil %}
-                    {%- assign filter_affiliation = alllogos | where: "name", affiliation | first %}
-                    {%- assign country = affiliation | upcase %}
-                    {%- if affiliation.size == 2 %}
-                    {%- assign country_link = site.pages | where:"country_code",country | first %}
-                    {%- if country_link %}
-                    <a role="button" href="{{country_link.url | relative_url}}" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm bg-white hover-primary">
-                    {%- else %}
-                    <a role="button" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm bg-white hover-primary disabled border-white" aria-disabled="true">
-                        {%- endif %}
-                        <div class="d-block supported-by-img-sm">
-                            <span class="fi fi-{{affiliation | downcase}} shadow-sm"></span>
-                        </div>
-                    </a>
-                    {%- elsif filter_affiliation %}
-                    <a role="button" href="{{filter_affiliation.url}}" data-bs-toggle="tooltip" data-bs-original-title="{{affiliation}}" class="btn btn-sm bg-white hover-primary">
-                        {%- if filter_affiliation.image_url %}
-                        <img alt="logo of {{filter_affiliation.name}}" src="{{filter_affiliation.image_url | relative_url }}" class="d-inline supported-by-img-sm">
-                        {%- else %}
-                        {{filter_affiliation.name}}
-                        {%- endif %}
-                    </a>
-                    {%- endif %}
-                    {%- endfor %}
-
-                </div>
-                {%- endif %}
-            </div>
-            {%- if current_page.page_img %}
-            {%- capture file_url -%}
-            {{ "/images/" | append: current_page.page_img | relative_url }}
-            {%- endcapture -%}
-                <img alt="logo of {{current_page.title}}" src="{{ file_url }}" class="page-img-sm pt-3 pe-3" />   
-            </div>
-            {%- endif %}
-        </div>
+        {% include navigation-tile-card.html tile_page=current_page variant="section" %}
     </div>
     {% endunless %}
     {%- endif %}

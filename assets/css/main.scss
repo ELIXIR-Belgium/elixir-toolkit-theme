@@ -1552,21 +1552,34 @@ a.info-collapse[aria-expanded="true"]:not(:has(~ a.info-collapse))+.show {
 }
 
 /*-----Section navigation tiles-----*/
+.navigation-tile-filter {
+    .input-group {
+        min-width: 0;
+    }
+
+    .btn-icon-round {
+        @include button-variant($primary, $primary);
+        --#{$prefix}btn-active-shadow: none;
+    }
+}
+
 .navigation-tiles {
 
     .card,
     .btn {
         background-color: $nav-card-bg;
         color: $nav-card-color;
-        transition: $btn-transition;
+        position: relative;
+        transition: $transition-base;
 
-        &:hover {
+        &:hover,
+        &:focus-visible,
+        &:focus-within {
             background-color: $nav-card-bg-hover;
             color: $nav-card-color-hover;
 
             a.section-title {
                 text-decoration: none;
-                transition: $btn-transition;
                 color: $nav-card-color-hover;
             }
         }
@@ -1591,6 +1604,36 @@ a.info-collapse[aria-expanded="true"]:not(:has(~ a.info-collapse))+.show {
 
         .page-img-sm {
             max-height: 3.2em;
+        }
+    }
+
+    .navigation-tile-heading {
+        margin-top: $spacer * .25;
+    }
+
+    .navigation-tile-arrow {
+        align-items: center;
+        background-color: $nav-card-arrow-bg;
+        border-radius: 50%;
+        color: $nav-card-arrow-color;
+        display: inline-flex;
+        font-size: 1rem;
+        height: 2rem;
+        justify-content: center;
+        line-height: 1;
+        pointer-events: none;
+        transition: $transition-base;
+        width: 2rem;
+        z-index: 2;
+    }
+
+    .card:hover,
+    .card:focus-within,
+    >.col>.btn.section-title:hover,
+    >.col>.btn.section-title:focus-visible {
+        .navigation-tile-arrow {
+            background-color: $nav-card-arrow-bg-hover;
+            color: $nav-card-arrow-color-hover;
         }
     }
 }

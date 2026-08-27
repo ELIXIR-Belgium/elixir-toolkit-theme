@@ -5,9 +5,7 @@ title: Events
 ## Simple example with past events
 
 ```
-{% raw %}
-{% include events.html event_type="past_event" col=2 %}
-{% endraw %}
+{% raw %}{% include events.html event_type="past_event" col=2 %}{% endraw %}
 ```
 
 Becomes:
@@ -17,9 +15,7 @@ Becomes:
 ## More complex example with upcoming events
 
 ```
-{% raw %}
-{% include events.html caption=true title=true event_type="upcoming_event" caption_url="/about/events" truncate=true limit=3 %}
-{% endraw %}
+{% raw %}{% include events.html caption=true title=true event_type="upcoming_event" caption_url="/about/events" truncate=true limit=3 %}{% endraw %}
 ```
 
 Becomes:
@@ -41,9 +37,7 @@ Becomes:
 
 
 ```
-{% raw %}
-{% include events.html event_type="upcoming_event" related_pages="gp5" %}
-{% endraw %}
+{% raw %}{% include events.html event_type="upcoming_event" related_pages="gp5" %}{% endraw %}
 ```
 
 Becomes:
