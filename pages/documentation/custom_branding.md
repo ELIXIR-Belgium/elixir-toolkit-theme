@@ -1,14 +1,14 @@
 ---
-title: Branding
+title: Custom branding
 ---
 
 
-The theme is made so one can easily customize the styling and add personal branding to the website.
+The theme is designed so you can customize the styling and add your own branding to the website.
 
 ## Branding in the top navigation
 
 Change the icon in the topnav by adding a `main_logo.svg` file in the `/assets/img/` directory.
-If you want to use another file format or use a different filename, please specify this in the theme variable section of the `_config.yml` file. For more info on this config file please visit our [Configuring the theme](configuring_theme) - page.
+If you want to use another file format or a different filename, specify this in the theme variable section of the `_config.yml` file. For more information, see [Configuring the theme](configuring_theme).
 
 ```yml
 theme_variables: 
@@ -22,13 +22,13 @@ Top navigation colors are controlled with Sass variables in `/_sass/_custom_vari
 
 ## Theme styling using CSS
 
-Bootstrap 5 is used as css library with the goal of reusing as much as possible to prevent a wild growth of classes and to make the html-code more understandable. SASS is used as css-precursor, a more structured and flexible language to describe the css styling. More information about the SASS language can be found [here](https://sass-lang.com/documentation/).
+Bootstrap 5 is used as the CSS library, with the goal of reusing existing utilities and preventing uncontrolled growth in custom classes. Sass is used as the CSS preprocessor. More information about Sass can be found [here](https://sass-lang.com/documentation/).
 
-The order in which the css style sheets are loaded is as follows: bootstrap_variables > bootstrap > variables > custom_variables > main_theme_classes > custom_classes. The theme allows you to intervene and customize at different levels. It is recommended to customize on Bootstrap level, and only work your way down the ladder if needed.
+The CSS stylesheets are loaded in this order: `bootstrap_variables` > `bootstrap` > `variables` > `custom_variables` > `main_theme_classes` > `custom_classes`. The theme allows you to customize at different levels. Start with Bootstrap variables, and only move further down the chain when needed.
 
 ### 1. Bootstrap variables
 
-In the `/_sass/_bootstrap_variables.scss` file, you can declare variables that can be used by Bootstrap. This is the very first place where one wants to customize their theme for things like:
+In the `/_sass/_bootstrap_variables.scss` file, you can declare variables that are used by Bootstrap. This is the first place to customize theme-wide basics such as:
 
 - Primary, secondary, light and dark theme colors ($primary, $secondary, $light and $dark)
 - The size of H1, H2, p,... ($h1-font-size, $h2-font-size)
@@ -52,14 +52,14 @@ The variables that you can define, and their respective defaults, can be found i
 
 ### 3. Custom classes
 
-In situations where the bootstrap and theme variables are not sufficient, one can add/overwrite css rules using the `/_sass/custom_classes.scss` file.
-This file is loaded as last and can overwrite everything in the theme if needed. This is more used for customizations for theme users that are familiar with css to change things like:
+When Bootstrap and theme variables are not sufficient, add or override CSS rules using the `/_sass/custom_classes.scss` file.
+This file is loaded last and can override the rest of the theme if needed. It is mostly useful for theme users familiar with CSS who want to change things like:
 
 - The distance between headings
 - Adding a shadow to pictures
 - Making sure the branding logo goes smaller in mobile mode
 
-To have some inspiration on what is possible here, go to the [RDMkit custom classes stylesheet](https://github.com/elixir-europe/rdmkit/blob/master/_sass/_custom_classes.scss).
+For inspiration, see the [RDMkit custom classes stylesheet](https://github.com/elixir-europe/rdmkit/blob/main/_sass/_custom_classes.scss).
 
 ## Favicon logo
 
@@ -75,15 +75,15 @@ The one from the ELIXIR Toolkit Theme are defined in the `/assets/img` as:
 - /assets/img/favicon.ico
 - /assets/img/site.webmanifest
 
-These files can be overwritten in your own project by placing them in the same directory with the same name. These files can be easily generated out of an image of your square logo (preferably in svg) with for example the [Favicon generator](https://realfavicongenerator.net/).
+These files can be overwritten in your own project by placing replacements in the same directory with the same names. They can be generated from a square logo, preferably SVG, with tools such as the [Favicon generator](https://realfavicongenerator.net/).
 
 {: .note }
 > Since v6.0.0 `/assets/img/favicon-96x96.png` is added and the `assets/img/android-chrome-xxxxxxx.png` files have been replaced with `/assets/img/web-app-manifest-xxxxxxx.png`. See above list for reference.
 
-## Custom Java Script
+## Custom JavaScript
 
-Sometimes it is needed to inject some custom Java Script code. This is possible by creating a file `/assets/js/custom.js`. Be aware that this javascript code will be loaded on every page.
+Sometimes you need to inject custom JavaScript. You can do this by creating `/assets/js/custom.js`. Be aware that this JavaScript code is loaded on every page.
 
 ## Branding in footer
 
-The footer is one more place to add branding or important logo's. For more information on how to customize the footer, visit our [navigation structures](navigation_structures#footer) page.
+The footer is another place to add branding or important logos. For more information on customizing the footer, see [Navigation structures](navigation_structures#footer).

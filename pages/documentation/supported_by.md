@@ -49,13 +49,17 @@ The supporters are shown automatically in the **Supported by** tab in the page m
 
 ## Listing supporters
 
+### All supporters
+
 Use `supported-by-tiles-selection.html` without parameters to display all exposed supporters:
 
-```
+Use this snippet:
+
+```liquid
 {% raw %}{% include supported-by-tiles-selection.html %}{% endraw %}
 ```
 
-Becomes:
+This renders as:
 
 {% include supported-by-tiles-selection.html %}
 
@@ -64,10 +68,14 @@ Becomes:
 * `type`: Show only supporters whose `type` field matches this value. When omitted, all supporter types are shown. Entries must also have an `image_url` and `expose: true`.
 * `sort`: Sort supporters alphabetically by `name`. Default: `true`.
 
-For example, the infrastructure entries can be shown with:
+### Infrastructure supporters
 
-```
+Use this snippet:
+
+```liquid
 {% raw %}{% include supported-by-tiles-selection.html type="infrastructure" %}{% endraw %}
 ```
+
+This renders as:
 
 {% include supported-by-tiles-selection.html type="infrastructure" %}

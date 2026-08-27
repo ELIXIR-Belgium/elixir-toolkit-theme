@@ -203,7 +203,7 @@ If you like our work, you can add following badge to the readme of your project:
 
 ## License
 
-The theme source code is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The theme source code is available as open source under the terms of the [MIT License](https://opensource.org/license/mit).
 
 Bundled third-party libraries and assets retain their upstream licenses. In particular:
 

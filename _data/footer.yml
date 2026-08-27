@@ -1,4 +1,4 @@
-copyright: Copyright notice
+copyright: Copyright (c) 2026 ELIXIR Toolkit Theme contributors. Content is available under the repository license unless noted otherwise.
 extra_line: 
 columns:
   - type: image
@@ -7,18 +7,19 @@ columns:
     src: 'images/infrastructures/ELIXIR_BELGIUM_white_background.svg'
     alt: ELIXIR Belgium logo
   - type: links
-    title: Title
+    title: Theme
     width: 3
     children: 
+      - url_text: Documentation
+        url: /getting_started
+      - url_text: Example pages
+        url: /overview_tiles
       - url_text: Contributors
         url: /contributors
-      - url_text: Getting started
-        url: /getting_started
   - type: text
     width: 3
     content: |
-      This is a multiline \
-      example test snippet.
+      A documentation theme for project, training, tools and service websites.
   - type: image
     image_width: 100px
     width: 2
@@ -29,4 +30,3 @@ columns:
     width: 2
     src: 'assets/img/ett_compact_logo.svg'
     alt: Jekyll Bootstrap theme logo
-

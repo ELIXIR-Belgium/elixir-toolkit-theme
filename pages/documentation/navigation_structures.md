@@ -1,19 +1,19 @@
 ---
-title: Navigation structure
+title: Navigation structures
 ---
 
-The theme tries to minimize the need to change html code as much as possible, and for the top navigation, sidebar and footer, this is not different. These navigation structures are all defined by YAML files as  explained below.
+The theme tries to minimize the need to change HTML. Top navigation, sidebar and footer structures are all defined by YAML files, as explained below.
 
 ## Top navigation
 
-The top navigation links are defined by the the `/_data/topnav.yml` file under the `subitems:` object. 
+The top navigation links are defined in the `subitems:` object in `/_data/topnav.yml`.
 ```yml
 subitems:
 - title: Home
   url: /
 ```
 
-Dropdown can be added in a similar way by nesting subitems:
+Dropdowns can be added in a similar way by nesting subitems:
 
 ```yml
 subitems:
@@ -23,7 +23,7 @@ subitems:
     url: /events
 ```
 
-External urls can be specified using:
+External URLs can be specified using:
 
 ```yml
 subitems:
@@ -32,20 +32,20 @@ subitems:
 ```
 
 {: .important }
-> Make sure the given url follows the exact structure of the url your page is rendering to.
+> Make sure the given URL follows the exact structure of the URL your page renders to.
 
 Certain elements like the GitHub link have options in the `/_config.yml` file as described in the [configuring theme](configuring_theme) page. Style customizations are described in the [custom branding](custom_branding#branding-in-the-top-navigation) page.
 
 ## Sidebar
 
-This theme supports multiple sidebars, defined by YAML files in the `/_data/sidebars` directory. Changing these yaml file will immediately impact the sidebars and the frontpage of the website without the need of changing any HTML code. The sidebar that will be displayed on a specific page is defined by the [metadata of that page](page_mechanics). The sidebar supports multiple levels (up to 3) and each level in the hierarchy can contain a URL to a page within this website or an external URL.
+This theme supports multiple sidebars, defined by YAML files in the `/_data/sidebars` directory. Changing these YAML files immediately updates the sidebars and the front page of the website without requiring HTML changes. The sidebar displayed on a specific page is defined by the [metadata of that page](page_mechanics). The sidebar supports multiple levels, up to three, and each level can link to a page in this website or to an external URL.
 
 The attributes that define the structure are:
-- `title`: This is the text that will show up in the sidebar.
-- `url`: The URL to the internal page you want to link to. This is mostly in the form of: */markdown_file_name.html*.
-- `external_url`: Use this instead of URL if you want to link to an external page.
-- `subitems`: to define a sublevel.
-- `hr`: This can be set as true to add a horizontal spacer (top) between 2 subitems in the sidebar. (example: `hr: true`)
+- `title`: Text shown in the sidebar.
+- `url`: URL of the internal page you want to link to. This is usually in the form `markdown_file_name.html`.
+- `external_url`: Use this instead of `url` when linking to an external page.
+- `subitems`: Nested items used to define a lower navigation level.
+- `hr`: Set to `true` to add a horizontal spacer above an item. Example: `hr: true`.
 - `icon`: Classes to render an icon before the title. Sidebar icons support both [Lucide icon font](https://lucide.dev/guide/static/font/) classes such as `icon-book-open` and [Font Awesome](https://fontawesome.com/icons) classes such as `fa-solid fa-book` or `fa-brands fa-github`.
 
 Example:
@@ -74,7 +74,7 @@ Font Awesome is especially useful for brand icons, while Lucide is a good fit fo
   external_url: https://github.com/example/project
 ```
 
-The sidebar also allows you to specify a sidebar title, version and title url using following syntax:
+The sidebar also allows you to specify a sidebar title, version and title URL using the following syntax:
 
 
 ```yml
@@ -83,11 +83,11 @@ version: 2.0
 title_url:  /events
 ```
 
-If no sidebar should be displayed, add `sidebar: false` to the frontmatter of the page or don't specify one at all.
+If no sidebar should be displayed, add `sidebar: false` to the front matter of the page or leave `sidebar` unspecified.
 
 ## Top navigation and sidebar relationship
 
-Top navigation titles can be used to switch between different high level sections on the website, each having their own sidebar. As described before, sidebars are defined by the `sidebar` metadata attribute in a page, so linking in the topnav YAML towards this page is one part of the job. To make sure that all pages within that sidebar have this topnav item on active, one has to name its sidebar file in the same way as the topnav title (spaces, hyphens and underscores get ignored). 
+Top navigation titles can be used to switch between high-level website sections, each with its own sidebar. As described above, sidebars are defined by the `sidebar` metadata attribute in a page. To make sure all pages within that sidebar mark the top navigation item as active, name the sidebar file in the same way as the top navigation title. Spaces, hyphens and underscores are ignored.
 
 Example: `/_data/sidebars/main_sidebar.yml` and in the `/_data/topnav.yml`:
 
@@ -99,38 +99,35 @@ subitems:
 
 ## Footer
 
-Just like the other navigation structures, is the footer defined by a YAML file, `/_data/footer.yml`.
-The footer is composed out of columns, of which the width is defined by integers **between 1 and 12**, and the total of all columns should not exceed 12.
+Just like the other navigation structures, the footer is defined by a YAML file, `/_data/footer.yml`.
+The footer is composed of columns. Each column width is defined by an integer **between 1 and 12**, and the total of all columns should not exceed 12.
 
 
-Lets dissect the footer structure using the example below: 
+The example below shows a footer with logo, link, text and funder columns:
 
 ```yml
-copyright: Copyright notice
+copyright: Copyright (c) 2026 ELIXIR Toolkit Theme contributors. Content is available under the repository license unless noted otherwise.
 extra_line: 
 columns:
   - type: image
     image_width: 150px
-    width: 3
+    width: 2
     src: 'images/infrastructures/ELIXIR_BELGIUM_white_background.svg'
     alt: ELIXIR Belgium logo
   - type: links
-    title: Title
+    title: Theme
     width: 3
     children: 
+      - url_text: Documentation
+        url: /getting_started
+      - url_text: Example pages
+        url: /overview_tiles
       - url_text: Contributors
         url: /contributors
-      - url_text: Getting started
-        url: /getting_started
-  - type: links
+  - type: text
     width: 3
-    children: 
-      - url_text: About
-        url: /about
-      - url_text: Accessibility
-        url: /accessibility
-      - url_text: Privacy
-        url: /privacy
+    content: |
+      A documentation theme for ELIXIR-related training, tools and service websites.
   - type: image
     image_width: 100px
     width: 2
@@ -138,31 +135,33 @@ columns:
     alt: European flag
   - type: image
     image_width: 88px
-    width: 1
+    width: 2
     src: 'assets/img/ett_compact_logo.svg'
     alt: Jekyll Bootstrap theme logo
 ```
 
-### High level attributes:
+### High-level attributes
 
-* `copyright`: Define the text in the most bottom part of the footer, usually with a darker background and describing the license.
-* `extra_line`: Add a extra line in the top part, spanning the full width of the footer (optional)
-* `columns`: Key to list columns
+* `copyright`: Text shown in the bottom part of the footer, usually with a darker background and license information.
+* `extra_line`: Optional extra line in the top part of the footer, spanning the full footer width.
+* `columns`: List of footer columns.
 
-None of these attributes are mandatory, leaving them empty will make them disappear. Do not remove the `footer.yml` file in order to have no footer, but rather leave the high level attributes empty.
+None of these attributes are mandatory. Leave them empty to hide them. Do not remove the `footer.yml` file to disable the footer; leave the high-level attributes empty instead.
 
 
-### Column attributes:
+### Column attributes
 
-* `type:`: This defines the purpose of the column and can be *links* or *image*
-* `image_width`: To be specified when it is an *image* column, don't forget to add the unit.
-* `width`: Integer, defining the width of the column. Total sum of all columns should be 12.
-* `src`: Absolute path to the image. To be specified when it is an *image* column
-* `alt`: Alt text of the image. To be specified when it is an *image* column
-* `title`: Title of a column with type *links* (optional)
-* `children`: Key to list links in a column with type *links*
-* `url_text`: Title of a link.
-* `url`: Absolute path of a page.
+* `type`: Defines the purpose of the column. Supported values are `links`, `image` and `text`.
+* `image_width`: Width for an `image` column. Include the unit, for example `150px`.
+* `width`: Integer defining the column width. The total width of all columns should be `12`.
+* `src`: Path to the image. Required for an `image` column.
+* `alt`: Alt text for the image. Required for an `image` column.
+* `title`: Optional title for a `links` column.
+* `children`: List of links in a `links` column.
+* `url_text`: Label of a link.
+* `url`: Internal page path.
+* `external_url`: External page URL.
+* `content`: Markdown content for a `text` column.
 
 ## Table of Contents (TOC)
 
@@ -173,7 +172,7 @@ Currently, 2 settings can be configured related to the TOC, `min_headings` and `
 
 ### Usage
 
-By default, toc is enabled and will appear once the minimum amount of headings is reached, of the correct type. Disable on site-level (using Jekyll defaults) or on page level, by adding the `toc: false` when you don't wan't the TOC to appear, or when there will never be a heading. 
+By default, the table of contents is enabled and appears once the minimum number of configured headings is reached. Disable it site-wide using Jekyll defaults, or on a page by adding `toc: false` when you do not want the TOC to appear.
 
 
 {: .tip }

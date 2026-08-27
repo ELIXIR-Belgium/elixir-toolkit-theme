@@ -2,7 +2,7 @@
 title: Page mechanics
 ---
 
-In order to render the website, each markdown file contains a specific frontmatter/metadata section. This section is located at the top of the markdown file, is delimited by two times `---` and contains all key value pairs. This can be seen as settings on pagelevel to enable/disable certain page functions are to deliver extra information which can be displayed in a structured way. An example of how this can look like:
+Each Markdown file can contain a front matter metadata section. This section sits at the top of the file, is delimited by two `---` lines and contains key-value pairs. These values enable or disable page features and provide extra information that can be displayed in a structured way. A minimal example looks like this:
 
 ```yaml
 ---
@@ -10,22 +10,22 @@ title: Title of the page
 ---
 ```
 
-It is important to know that you can also set the these key-value pairs on multiple pages at the same time by specifying them in the `_config.yml` file as described in the [Jekyll documentation](https://jekyllrb.com/docs/configuration/front-matter-defaults/).
+You can also set these key-value pairs for multiple pages at once in `_config.yml`, as described in the [Jekyll documentation](https://jekyllrb.com/docs/configuration/front-matter-defaults/).
 
 ## Possible metadata attributes of a page
 
 
-* `title`: Specify here the title of the page. This wil be the H1 title (replacing the top level title using the # in markdown )
+* `title`: Page title. This becomes the H1 title and replaces a top-level `#` heading in Markdown.
 
-* `summary`: Using this attribute it is possible to specify a summary which will be displayed under the title of the page.
+* `summary`: Short summary displayed under the page title.
 
-* `description`: Short sentence about the page starting with a lowercase. This sentence is visualized in the section navigation tiles, the related pages tiles and in the HTML metadata tag of the page (this tag is used when sharing urls in chats).
+* `description`: Short sentence about the page. This sentence is shown in section navigation tiles, related page tiles and the HTML metadata tag used when sharing URLs in chats.
 
-* `contributors`: List here all the contributors that helped in establishing the page. This will be the full name of the person. Make sure that the person name that is listed can be found in the CONTRIBUTORS.yaml file in the _data directory if you want to link the github id and other contact information.
+* `contributors`: Full names of the people who contributed to the page. Make sure each listed person can be found in `_data/CONTRIBUTORS.yml` if you want to show GitHub IDs and other contact information.
 
-* `coordinators`: List here all the coordinators of the page. Use the full name of the person. Make sure that the person name that is listed can be found in the *_data/CONTRIBUTORS.yaml* file in the _data directory if you want to link the github id and other contact information.
+* `coordinators`: Full names of the page coordinators. Make sure each listed person can be found in `_data/CONTRIBUTORS.yml` if you want to show GitHub IDs and other contact information.
 
-* `editors`: List here all the editors of the page. Use the full name of the person. Make sure that the person name that is listed can be found in the *_data/CONTRIBUTORS.yaml* file in the _data directory if you want to link the github id and other contact information.
+* `editors`: Full names of the page editors. Make sure each listed person can be found in `_data/CONTRIBUTORS.yml` if you want to show GitHub IDs and other contact information.
 
 * `supported_by`: List the organizations that support the page. Each organization name must match an entry in [*_data/supported_by.yml*](supported_by). Supporters are displayed in the **Supported by** tab at the bottom of the page and in the page's section navigation tile.
 
@@ -33,25 +33,25 @@ It is important to know that you can also set the these key-value pairs on multi
 
 The *_data/affiliations.yml* data file is likewise deprecated in favor of *_data/supported_by.yml* and will be removed in ETT v8.0.0.
 
-* `search_exclude`: By setting this field true, the page will not end up in the search results of the searchbar. By default this is false.
+* `search_exclude`: When set to `true`, the page is excluded from search results. Default: `false`.
 
-* `sitemap`: Let the page appear in the sitemap.xml. Default: *true*
+* `sitemap`: Include the page in `sitemap.xml`. Default: `true`.
 
-* `no_robots`: By setting this field to true, the page will not end up in the search results of google or any other search engine. Default: *false*
+* `no_robots`: When set to `true`, the page asks search engines not to index it. Default: `false`.
 
-* `sidebar`: Specify here an alternative sidebar, which corresponds to the filename in the *_data/sidebars/* directory. Default: *main*. If no sidebar is set, or *sidebar: false*, no sidebar will be shown.
+* `sidebar`: Alternative sidebar name, corresponding to a filename in `_data/sidebars/`. Default: `main`. If no sidebar is set, or `sidebar: false`, no sidebar is shown.
 
-* `toc`: When set to *false*, the table of contents at the right side of the page will not be generated. This is recommended when you know in advance no table of contents will ever be needed, and improves page loading times.
+* `toc`: When set to `false`, the table of contents on the right side of the page is not generated. This is recommended when you know no table of contents will be needed, and improves page loading times.
 
-* `page_id`: Unique identifier of a page used to list Related pages or to tag tools in the *tool_and_resource_list.yml* file. It is usually a shortened version of the page name or title, with small letters, or an acronym, with capital and small letters. Make sure it does not contain hyphens if you want to make use of the Tools and resources table. .
+* `page_id`: Unique identifier used to list related pages or tag tools in `tool_and_resource_list.yml`. It is usually a shortened version of the page name or title. Do not use hyphens if you want to use the tools and resources table.
 
-* `page_img`: Specify here an image to represent the page, which corresponds to a filename in the *images/* directory. This image will appear small to the right of the page title and in the section navigation tiles. It may be used with logos for products or services. Example: infrastructures/ELIXIR_BELGIUM_white_background.svg
+* `page_img`: Image representing the page, corresponding to a filename in the `images/` directory. This image appears next to the page title and in section navigation tiles. Example: `infrastructures/ELIXIR_BELGIUM_white_background.svg`.
 
-* `datatable`: use this attribute to activate the pagination + sorting + searching in tables.
+* `datatable`: Activate pagination, sorting and searching in tables.
 
-* `type`: The type of page, used for [website sections](website_sections). Case the value is case sensitive and spaces should get replaced with underscores.
+* `type`: Page type used for [website sections](website_sections). The value is case-sensitive, and spaces should be replaced with underscores.
 
-* `type_img`: Specify an icon that is shown in front of the page title in the section navigation tiles (See [Website sections](website_sections)) and related pages. It can be used as a "Section" specific icon to visually group.
+* `type_img`: Icon shown before the page title in section navigation tiles and related pages. It can be used as a section-specific icon.
 
 * `page_citation`: When set to true, it will cause the citation section for the page to be generated in the format: `<author names>. <page title>. <site domain>. <page URL>. <date accessed>.`
 
@@ -91,9 +91,9 @@ github:
     - name: Training in TeSS
       registry: TeSS
       url: https://tess.elixir-europe.org/search?q=data%20analysis
-    - name: Training in an institutional learning platform
-      registry: Example LMS
-      url: https://example.org/training
+    - name: Training material in Zenodo
+      registry: Zenodo
+      url: https://zenodo.org/
   ```
 
   The optional `registry` attribute is free text. When provided, it is displayed as a small badge next to the training link.
@@ -103,7 +103,7 @@ github:
   ```yml
   faircookbook:
   - name: Data licenses
-    url: https://fairplus.github.io/the-fair-cookbook/content/recipes/reusability/ATI_licensing_data.html
+    url: https://faircookbook.elixir-europe.org/content/recipes/reusability/miappe.html
   ```
 
 * `dsw`: Here all relevant Data Stewardship Wizard questions in the Researcher knowledge model are listed.
@@ -128,19 +128,19 @@ github:
 
 ### Tools and resources
 
-* `ref_to_main_resources`: Refer to entries of the "main_tool_ and_resource_table" if institutions, organizations and projects from the country contribute to the development of international tools and resources. List the id of the tool your refer to in the main tools table.
+* `ref_to_main_resources`: Refer to entries in the main tools and resources table if institutions, organizations and projects from the country contribute to international tools and resources. List the ID of the tool you refer to in the main tools table.
 
   ```yml
   ref_to_main_resources:
     -  resource-id
   ```
-* `national_resources`: List here tools and resources mainly relevant for the specific country
+* `national_resources`: Country-specific tools and resources.
 
   ```yml
   national_resources:
     - name: Resource name
       description: A general description about the resource
-      how_to_access: explantation on how you can access this resource
+      how_to_access: explanation of how you can access this resource
       instance_of: github
       related_pages:
         Example_pages: [gp3, gp1, gp2]
