@@ -1570,7 +1570,7 @@ a.info-collapse[aria-expanded="true"]:not(:has(~ a.info-collapse))+.show {
         background-color: $nav-card-bg;
         color: $nav-card-color;
         position: relative;
-        transition: background-color .2s ease-in-out, color .2s ease-in-out, transform .2s ease-in-out;
+        transition: $transition-base;
 
         &:hover,
         &:focus-visible,
@@ -1580,7 +1580,6 @@ a.info-collapse[aria-expanded="true"]:not(:has(~ a.info-collapse))+.show {
 
             a.section-title {
                 text-decoration: none;
-                transition: $btn-transition;
                 color: $nav-card-color-hover;
             }
         }
@@ -1608,15 +1607,6 @@ a.info-collapse[aria-expanded="true"]:not(:has(~ a.info-collapse))+.show {
         }
     }
 
-    .card,
-    >.col>.btn.section-title {
-
-        &:hover,
-        &:focus-within {
-            transform: translateY(-.125rem);
-        }
-    }
-
     .navigation-tile-heading {
         margin-top: $spacer * .25;
     }
@@ -1632,7 +1622,6 @@ a.info-collapse[aria-expanded="true"]:not(:has(~ a.info-collapse))+.show {
         justify-content: center;
         line-height: 1;
         pointer-events: none;
-        transition: background-color .2s ease-in-out, color .2s ease-in-out, transform .2s ease-in-out;
         width: 2rem;
         z-index: 2;
     }
@@ -1644,34 +1633,6 @@ a.info-collapse[aria-expanded="true"]:not(:has(~ a.info-collapse))+.show {
         .navigation-tile-arrow {
             background-color: $nav-card-arrow-bg-hover;
             color: $nav-card-arrow-color-hover;
-            transform: translateX(.25rem);
-        }
-    }
-
-    >.col>.btn.section-title {
-
-        &:focus-visible {
-            transform: translateY(-.125rem);
-        }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-
-        .card,
-        .btn,
-        .navigation-tile-arrow {
-            transition: none;
-        }
-
-        .card:hover,
-        .card:focus-within,
-        >.col>.btn.section-title:hover,
-        >.col>.btn.section-title:focus-visible {
-            transform: none;
-
-            .navigation-tile-arrow {
-                transform: none;
-            }
         }
     }
 }
