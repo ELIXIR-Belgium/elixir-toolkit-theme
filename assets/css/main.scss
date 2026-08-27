@@ -1552,8 +1552,15 @@ a.info-collapse[aria-expanded="true"]:not(:has(~ a.info-collapse))+.show {
 }
 
 /*-----Section navigation tiles-----*/
-.navigation-tile-filter .input-group {
-    min-width: 0;
+.navigation-tile-filter {
+    .input-group {
+        min-width: 0;
+    }
+
+    .btn-icon-round {
+        @include button-variant($primary, $primary);
+        --#{$prefix}btn-active-shadow: none;
+    }
 }
 
 .navigation-tiles {

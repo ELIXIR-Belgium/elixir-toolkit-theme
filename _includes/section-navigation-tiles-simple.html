@@ -1,8 +1,26 @@
 {%- assign allcountries = site.data.countries %}
 {%- assign except = include.except | split: ", " %}
+{%- if include.custom %}
+{%- assign section_pages = include.custom | split: ", " %}
+{%- unless include.sort == false %}
+{%- assign section_pages = section_pages | sort_natural %}
+{%- endunless %}
+{%- elsif include.type %}
+{%- assign section_pages = site.pages | where:"type", include.type %}
+{%- else %}
+{%- assign section_pages = site.pages %}
+{%- endif %}
+{%- unless include.sort == false or include.custom %}
+{%- assign section_pages = section_pages | sort_natural: "title" %}
+{%- endunless %}
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-{{ include.col | default: 2 }} gy-4 navigation-tiles">
-    {%- for current_page in site.pages | sorted %}
-    {%- if current_page.title and current_page.search_exclude != true and current_page.type == include.type %}
+    {%- for section_page in section_pages %}
+    {%- if include.custom %}
+    {%- assign current_page = site.pages | where:"page_id", section_page | first %}
+    {%- else %}
+    {%- assign current_page = section_page %}
+    {%- endif %}
+    {%- if current_page.title and current_page.search_exclude != true %}
     {%- unless except contains current_page.name %}
     <div class="col d-grid">
         <a role="button" class="btn p-4 fs-4 section-title navigation-tile-simple-link d-flex align-items-center justify-content-between gap-3 text-start lh-sm h-100" href="{{ current_page.url | relative_url }}">
