@@ -314,7 +314,7 @@ If you change the file name, you'll have to update all of your links.
 
 ## Emojis
 
-Use GitHub emoticons. This [GitHub page about emoticons](https://github.com/ikatyang/emoji-cheat-sheet/blob/main/README.md) has a cheat sheet for all supported emoticons.
+Use GitHub emoticons. This [GitHub page about emoticons](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md) has a cheat sheet for all supported emoticons.
 :+1: is made with `:+1:`
 
 ## Code snippets

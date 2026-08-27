@@ -59,7 +59,7 @@ This file is loaded last and can override the rest of the theme if needed. It is
 - Adding a shadow to pictures
 - Making sure the branding logo goes smaller in mobile mode
 
-For inspiration, see the [RDMkit custom classes stylesheet](https://github.com/elixir-europe/rdmkit/blob/main/_sass/_custom_classes.scss).
+For inspiration, see the [RDMkit custom classes stylesheet](https://github.com/elixir-europe/rdmkit/blob/master/_sass/_custom_classes.scss).
 
 ## Favicon logo
 
