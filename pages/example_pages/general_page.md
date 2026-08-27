@@ -43,7 +43,7 @@ related_pages:
 ---
 
 
-This page is the most complete general page example in the demo site. It combines contributor metadata, page citation, support information, related pages and several external guidance collections. It also mentions {% tool "github" %} in the body text so the tools and resources table can be tested from an inline tag.
+This page is the most complete general page example in this website. It combines contributor metadata, page citation, support information, related pages and several external guidance collections. It also mentions {% tool "github" %} in the body text so the tools and resources table can be tested from an inline tag.
 
 ## What this page demonstrates
 

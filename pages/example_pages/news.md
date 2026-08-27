@@ -35,8 +35,8 @@ This renders as:
 
 ### Parameters
 
-* `title`: Show *What's new?* as a heading (`true` or `false`).
-* `caption`: Show the "For more news please visit our news page." caption (`true` or `false`).
-* `caption_url`: Use a custom URL when the main news page is not served at `/news`.
-* `truncate`: Collapse descriptions longer than 40 words behind a button (`true` or `false`).
-* `limit`: Limit the number of news items shown.
+* **`title`**: Show *What's new?* as a heading (`true` or `false`).
+* **`caption`**: Show the "For more news please visit our news page." caption (`true` or `false`).
+* **`caption_url`**: Use a custom URL when the main news page is not served at `/news`.
+* **`truncate`**: Collapse descriptions longer than 40 words behind a button (`true` or `false`).
+* **`limit`**: Limit the number of news items shown.

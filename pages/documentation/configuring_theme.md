@@ -86,40 +86,40 @@ theme_variables:
 
 More detailed information about these settings can be found here:
 
-* `git_host`: This can be `GitHub` or `GitLab` and customizes the text in the top navigation.
-* `back_to_top`: Enables the back to top button.
-* `dev-info-banner`: Show a development banner including the commit and branch the website is deployed from, when the [Jekyll environment](https://jekyllrb.com/docs/configuration/environments/) is "development". Default: *false*
-* `privacy_statement_url`: Custom path to the privacy page. This is used in the cookie banner.
+* **`git_host`**: This can be `GitHub` or `GitLab` and customizes the text in the top navigation.
+* **`back_to_top`**: Enables the back to top button.
+* **`dev-info-banner`**: Show a development banner including the commit and branch the website is deployed from, when the [Jekyll environment](https://jekyllrb.com/docs/configuration/environments/) is "development". Default: *false*
+* **`privacy_statement_url`**: Custom path to the privacy page. This is used in the cookie banner.
 * **github_buttons**: Buttons that link to GitHub actions.
-  * `position`: Can be `top`, next to the title, or `bottom`, under the page content.
-  * `edit_me`: Enable the "propose an edit on this page" button.
-  * `open_issue`: Enable the "open an issue on this page" button.
-  * `history`: Enable the "history of this page" button.
+  * **`position`**: Can be `top`, next to the title, or `bottom`, under the page content.
+  * **`edit_me`**: Enable the "propose an edit on this page" button.
+  * **`open_issue`**: Enable the "open an issue on this page" button.
+  * **`history`**: Enable the "history of this page" button.
 * **datatables**: Settings related to the DataTables JS library
-  * `searchbuilder`: SearchBuilder provides the end user with an easy to use UI for them to create their own complex custom search expression for a DataTable. Default: *false*.
-  * `pagelength`: Number of rows to display on a single page. The entries-per-page dropdown uses `pagelength` multiplied by 2, 5 and 10. Default: `10`.
+  * **`searchbuilder`**: SearchBuilder provides the end user with an easy to use UI for them to create their own complex custom search expression for a DataTable. Default: *false*.
+  * **`pagelength`**: Number of rows to display on a single page. The entries-per-page dropdown uses `pagelength` multiplied by 2, 5 and 10. Default: `10`.
 * **headings**: Change the subtitles or collapse the page sections that are automatically generated
-  * `related-pages`: Default: Related pages
-  * `more-information-tiles`:  Default: More information
-  * `resource-table-all`: Default: Tools and resources on this page
-  * `resource-table-all-collapse`: Make the tools and resources table collapsed like the other more information sections. This will also make the tools and resources table and National resources part of the More information heading. Default: *false*
+  * **`related-pages`**: Default: Related pages
+  * **`more-information-tiles`**:  Default: More information
+  * **`resource-table-all`**: Default: Tools and resources on this page
+  * **`resource-table-all-collapse`**: Make the tools and resources table collapsed like the other more information sections. This will also make the tools and resources table and National resources part of the More information heading. Default: *false*
 * **page_metadata**: Configure options related to the page metadata panel at the bottom of the page.
-  * `contributors_sort`: Default: *true*
-  * `coordinators_sort`: Default: *true*
-  * `editors_sort`: Default: *true*
-  * `supported_by_sort`: Default: *true*
-  * `affiliations_sort`: Deprecated alias for `supported_by_sort`; it will be removed in ETT v8.0.0.
+  * **`contributors_sort`**: Default: *true*
+  * **`coordinators_sort`**: Default: *true*
+  * **`editors_sort`**: Default: *true*
+  * **`supported_by_sort`**: Default: *true*
+  * **`affiliations_sort`**: Deprecated alias for `supported_by_sort`; it will be removed in ETT v8.0.0.
 * **toc**: Settings related to the table of contents.
-  * `min_headings`: The minimum number of headings on a page before the table of contents appears. This has to be an integer. Default: `1`.
-  * `headings`: The headings indexed by the table of contents. This can be a list or one value, for example `h1, h2, h3` or `h2`. Default: `main h2`.
+  * **`min_headings`**: The minimum number of headings on a page before the table of contents appears. This has to be an integer. Default: `1`.
+  * **`headings`**: The headings indexed by the table of contents. This can be a list or one value, for example `h1, h2, h3` or `h2`. Default: `main h2`.
 * **topnav**: Settings related to the top navigation.
-  * `brand_logo`: Custom path to the brand logo, in case `assets/img/main_logo.svg` cannot be used.
-  * `search`: Enable or disable the search bar. Default: `true`.
-  * `github`: Enable or disable the GitHub repository navigation link. Default: `true`.
-  * `twitter`: Add the URL to a Twitter page. Default: `false`.
-  * `bluesky`: Add the URL to a Bluesky page. Default: `false`.
-  * `linkedin`: Add the URL to a LinkedIn page. Default: `false`.
-  * `fosstodon`: Add the URL to a Fosstodon page. Default: `false`.
-* `theme_color`: This is the primary theme color which is used in the metadata of the website. Please use the hex color without the hashtag as value.
-* `fonts`: List URLs to Google Fonts or other custom fonts for your website.
-* `breadcrumb`: Adds a breadcrumb above the title of every page. The breadcrumb will always represent the URL pattern and works best in combination with [permalink style](https://jekyllrb.com/docs/permalinks/#built-in-formats) *pretty*. Default: *false*
+  * **`brand_logo`**: Custom path to the brand logo, in case `assets/img/main_logo.svg` cannot be used.
+  * **`search`**: Enable or disable the search bar. Default: `true`.
+  * **`github`**: Enable or disable the GitHub repository navigation link. Default: `true`.
+  * **`twitter`**: Add the URL to a Twitter page. Default: `false`.
+  * **`bluesky`**: Add the URL to a Bluesky page. Default: `false`.
+  * **`linkedin`**: Add the URL to a LinkedIn page. Default: `false`.
+  * **`fosstodon`**: Add the URL to a Fosstodon page. Default: `false`.
+* **`theme_color`**: This is the primary theme color which is used in the metadata of the website. Please use the hex color without the hashtag as value.
+* **`fonts`**: List URLs to Google Fonts or other custom fonts for your website.
+* **`breadcrumb`**: Adds a breadcrumb above the title of every page. The breadcrumb will always represent the URL pattern and works best in combination with [permalink style](https://jekyllrb.com/docs/permalinks/#built-in-formats) *pretty*. Default: *false*

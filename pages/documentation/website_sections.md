@@ -24,14 +24,14 @@ This renders as:
 
 ### Parameters
 
-* `supported_by`: Turn on filtering by supporter (`true` or `false`).
-* `affiliations`: Deprecated alias for `supported_by`; it will be removed in ETT v8.0.0.
-* `type`: Page `type` to list. Use this when you want to show all pages in a section. Use either `type` or `custom`.
-* `search`: Enable search in the tiles (`true` or `false`).
-* `except`: Comma-separated list of source file names to hide from the generated tiles, including the file extension. For example: `index.md, TEMPLATE_general_page.md`. Use file names, not page titles or `page_id` values.
-* `col`: Set the number of section cards per row. Default: `2`.
-* `sort`: Disable section tile sorting by adding `false`. Default: `true`.
-* `custom`: Comma-separated list of `page_id` values if you only want to show specific pages. Use either `custom` or `type`.
+* **`supported_by`**: Turn on filtering by supporter (`true` or `false`).
+* **`affiliations`**: Deprecated alias for `supported_by`; it will be removed in ETT v8.0.0.
+* **`type`**: Page `type` to list. Use this when you want to show all pages in a section. Use either `type` or `custom`.
+* **`search`**: Enable search in the tiles (`true` or `false`).
+* **`except`**: Comma-separated list of source file names to hide from the generated tiles, including the file extension. For example: `index.md, TEMPLATE_general_page.md`. Use file names, not page titles or `page_id` values.
+* **`col`**: Set the number of section cards per row. Default: `2`.
+* **`sort`**: Disable section tile sorting by adding `false`. Default: `true`.
+* **`custom`**: Comma-separated list of `page_id` values if you only want to show specific pages. Use either `custom` or `type`.
 
 
 ### Section tiles with custom page order
@@ -61,11 +61,11 @@ This renders as:
 
 ### Parameters
 
-* `type`: Page `type` to list. Use this when you want to show all pages in a section. Use either `type` or `custom`.
-* `custom`: Comma-separated list of `page_id` values if you only want to show specific pages. Use either `custom` or `type`.
-* `except`: Comma-separated list of source file names to hide from the generated tiles, including the file extension. For example: `index.md, TEMPLATE_general_page.md`. Use file names, not page titles or `page_id` values.
-* `col`: Set the number of section cards per row. Default: `2`.
-* `sort`: Disable section tile sorting by adding `false`. Default: `true`.
+* **`type`**: Page `type` to list. Use this when you want to show all pages in a section. Use either `type` or `custom`.
+* **`custom`**: Comma-separated list of `page_id` values if you only want to show specific pages. Use either `custom` or `type`.
+* **`except`**: Comma-separated list of source file names to hide from the generated tiles, including the file extension. For example: `index.md, TEMPLATE_general_page.md`. Use file names, not page titles or `page_id` values.
+* **`col`**: Set the number of section cards per row. Default: `2`.
+* **`sort`**: Disable section tile sorting by adding `false`. Default: `true`.
 
 
 ### Simple tiles with custom page order

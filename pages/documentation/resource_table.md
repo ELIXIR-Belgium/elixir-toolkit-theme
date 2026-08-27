@@ -26,13 +26,13 @@ The [all tools and resources](#listing-all-resources) list is based on the [YAML
 ## The main YAML file
 
 Each tool or resource mentioned in the text has metadata stored in the [main YAML file](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/main/_data/tool_and_resource_list.yml). The metadata block for each tool can contain the following attributes:
-- **id**: The ID of a tool, in kebab-case, lowercase with hyphens.
-- **name**: Name of the tool or resource.
-- **url**: Main URL of the tool or resource. Make sure it starts with `https://`.
-- **description**: Short description of the tool or resource. Avoid the characters `"` and `'`.
-- **registry**: Four registries are supported: [Bio.tools](https://bio.tools), [FAIRsharing.org](https://fairsharing.org/), [TeSS](https://tess.elixir-europe.org/) and [Europe PMC](https://europepmc.org/). Use the keys `biotools`, `fairsharing`, `tess` and `europmc`, specifying the ID or query after a colon. FAIRsharing records should use the DOI suffix, without the `FAIRsharing.` prefix. List registries under the `registry` attribute as key-value pairs.
-- **related_pages**: List of `page_id` values. Avoid using this together with the `{% raw %}{% tool "tool_id" %}{% endraw %}` snippet in the page text.
-- **how_to_access**: Free-text field describing how the tool or resource can be accessed.
+- **`id`**: The ID of a tool, in kebab-case, lowercase with hyphens.
+- **`name`**: Name of the tool or resource.
+- **`url`**: Main URL of the tool or resource. Make sure it starts with `https://`.
+- **`description`**: Short description of the tool or resource. Avoid the characters `"` and `'`.
+- **`registry`**: Four registries are supported: [Bio.tools](https://bio.tools), [FAIRsharing.org](https://fairsharing.org/), [TeSS](https://tess.elixir-europe.org/) and [Europe PMC](https://europepmc.org/). Use the keys `biotools`, `fairsharing`, `tess` and `europmc`, specifying the ID or query after a colon. FAIRsharing records should use the DOI suffix, without the `FAIRsharing.` prefix. List registries under the `registry` attribute as key-value pairs.
+- **`related_pages`**: List of `page_id` values. Avoid using this together with the `{% raw %}{% tool "tool_id" %}{% endraw %}` snippet in the page text.
+- **`how_to_access`**: Free-text field describing how the tool or resource can be accessed.
 
 
 Example:

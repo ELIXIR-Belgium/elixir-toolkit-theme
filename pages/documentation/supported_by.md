@@ -14,12 +14,12 @@ Supporters can be defined once in `_data/supported_by.yml` and reused across the
 
 Each supporter in `_data/supported_by.yml` consists of the following fields:
 
-* **name**: The name of the supporter. This field is mandatory and must match the names used in page front matter.
-* **image_url**: Path or URL to the image shown for the supporter. This field is mandatory when the supporter is displayed in an overview.
-* **pid**: The Research Organization Registry (ROR) identifier for the supporter.
-* **expose**: Determines whether the supporter is shown by `supported-by-tiles-selection.html` (`true` or `false`).
-* **type**: The kind of supporter, for example `funder` or `infrastructure`. This value can be passed to `supported-by-tiles-selection.html` to show only supporters of that type.
-* **url**: Link to the supporter's website.
+* **`name`**: The name of the supporter. This field is mandatory and must match the names used in page front matter.
+* **`image_url`**: Path or URL to the image shown for the supporter. This field is mandatory when the supporter is displayed in an overview.
+* **`pid`**: The Research Organization Registry (ROR) identifier for the supporter.
+* **`expose`**: Determines whether the supporter is shown by `supported-by-tiles-selection.html` (`true` or `false`).
+* **`type`**: The kind of supporter, for example `funder` or `infrastructure`. This value can be passed to `supported-by-tiles-selection.html` to show only supporters of that type.
+* **`url`**: Link to the supporter's website.
 
 {: .important }
 > SVG supporter logos should define a sensible `viewBox`. Avoid SVG files whose root `<svg>` element has very small `width` or `height` values unless the `viewBox` describes the full logo artwork. Small intrinsic dimensions can make the logo render too small or clipped in the supported-by tiles. When needed, remove the root `width` and `height` attributes or export the logo with dimensions that match its visible artwork.
@@ -65,8 +65,8 @@ This renders as:
 
 ### Parameters
 
-* `type`: Show only supporters whose `type` field matches this value. When omitted, all supporter types are shown. Entries must also have an `image_url` and `expose: true`.
-* `sort`: Sort supporters alphabetically by `name`. Default: `true`.
+* **`type`**: Show only supporters whose `type` field matches this value. When omitted, all supporter types are shown. Entries must also have an `image_url` and `expose: true`.
+* **`sort`**: Sort supporters alphabetically by `name`. Default: `true`.
 
 ### Infrastructure supporters
 

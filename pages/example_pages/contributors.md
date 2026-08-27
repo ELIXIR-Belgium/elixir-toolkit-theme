@@ -21,10 +21,10 @@ This renders as:
 
 ### Grid parameters
 
-* `custom`: Comma-separated list of contributor names if you only want to show a specific collection of contributors.
-* `role`: Filter contributors by role. This cannot be combined with `custom`.
-* `sort`: Disable contributor sorting by adding `false`. Default: `true`.
-* `col`: Set the number of contributor cards per row. Default: `4`.
+* **`custom`**: Comma-separated list of contributor names if you only want to show a specific collection of contributors.
+* **`role`**: Filter contributors by role. This cannot be combined with `custom`.
+* **`sort`**: Disable contributor sorting by adding `false`. Default: `true`.
+* **`col`**: Set the number of contributor cards per row. Default: `4`.
 
 ### Grid with selected contributors
 
@@ -55,10 +55,10 @@ This renders as:
 
 ### Carousel parameters
 
-* `custom`: Comma-separated list of contributor names if you only want to show a specific collection of contributors.
-* `role`: Filter contributors by role. This cannot be combined with `custom`.
-* `sort`: Disable contributor sorting by adding `false`. Default: `true`.
-* `col`: Set the number of contributor cards per row. Default: `4`.
+* **`custom`**: Comma-separated list of contributor names if you only want to show a specific collection of contributors.
+* **`role`**: Filter contributors by role. This cannot be combined with `custom`.
+* **`sort`**: Disable contributor sorting by adding `false`. Default: `true`.
+* **`col`**: Set the number of contributor cards per row. Default: `4`.
 
 ### Carousel with selected contributors
 

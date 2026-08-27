@@ -219,13 +219,13 @@ This image is inserted in Markdown using the following snippet:
 
 Add images to the `images` directory and give them descriptive filenames. Adapt the snippet so it points to your image. Only the filename is needed when the image is stored in the expected directory. Supported attributes are:
 
-* `click`: When set to `true`, the image opens in another tab.
-* `url`: Link the image to another page.
-* `alt`: Describe the image for screen readers and other assistive technologies.
-* `caption`: Text that appears under the image.
-* `inline`: When set to `true`, the image can be used in a list.
-* `max-width`: Maximum width in `px` or `em`.
-* `class`: Custom CSS class.
+* **`click`**: When set to `true`, the image opens in another tab.
+* **`url`**: Link the image to another page.
+* **`alt`**: Describe the image for screen readers and other assistive technologies.
+* **`caption`**: Text that appears under the image.
+* **`inline`**: When set to `true`, the image can be used in a list.
+* **`max-width`**: Maximum width in `px` or `em`.
+* **`class`**: Custom CSS class.
 
 
 Or use the following Markdown syntax:

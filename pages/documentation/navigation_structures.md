@@ -41,12 +41,12 @@ Certain elements like the GitHub link have options in the `/_config.yml` file as
 This theme supports multiple sidebars, defined by YAML files in the `/_data/sidebars` directory. Changing these YAML files immediately updates the sidebars and the front page of the website without requiring HTML changes. The sidebar displayed on a specific page is defined by the [metadata of that page](page_mechanics). The sidebar supports multiple levels, up to three, and each level can link to a page in this website or to an external URL.
 
 The attributes that define the structure are:
-- `title`: Text shown in the sidebar.
-- `url`: URL of the internal page you want to link to. This is usually in the form `markdown_file_name.html`.
-- `external_url`: Use this instead of `url` when linking to an external page.
-- `subitems`: Nested items used to define a lower navigation level.
-- `hr`: Set to `true` to add a horizontal spacer above an item. Example: `hr: true`.
-- `icon`: Classes to render an icon before the title. Sidebar icons support both [Lucide icon font](https://lucide.dev/guide/static/font/) classes such as `icon-book-open` and [Font Awesome](https://fontawesome.com/icons) classes such as `fa-solid fa-book` or `fa-brands fa-github`.
+- **`title`**: Text shown in the sidebar.
+- **`url`**: URL of the internal page you want to link to. This is usually in the form `markdown_file_name.html`.
+- **`external_url`**: Use this instead of `url` when linking to an external page.
+- **`subitems`**: Nested items used to define a lower navigation level.
+- **`hr`**: Set to `true` to add a horizontal spacer above an item. Example: `hr: true`.
+- **`icon`**: Classes to render an icon before the title. Sidebar icons support both [Lucide icon font](https://lucide.dev/guide/static/font/) classes such as `icon-book-open` and [Font Awesome](https://fontawesome.com/icons) classes such as `fa-solid fa-book` or `fa-brands fa-github`.
 
 Example:
 
@@ -142,26 +142,26 @@ columns:
 
 ### High-level attributes
 
-* `copyright`: Text shown in the bottom part of the footer, usually with a darker background and license information.
-* `extra_line`: Optional extra line in the top part of the footer, spanning the full footer width.
-* `columns`: List of footer columns.
+* **`copyright`**: Text shown in the bottom part of the footer, usually with a darker background and license information.
+* **`extra_line`**: Optional extra line in the top part of the footer, spanning the full footer width.
+* **`columns`**: List of footer columns.
 
 None of these attributes are mandatory. Leave them empty to hide them. Do not remove the `footer.yml` file to disable the footer; leave the high-level attributes empty instead.
 
 
 ### Column attributes
 
-* `type`: Defines the purpose of the column. Supported values are `links`, `image` and `text`.
-* `image_width`: Width for an `image` column. Include the unit, for example `150px`.
-* `width`: Integer defining the column width. The total width of all columns should be `12`.
-* `src`: Path to the image. Required for an `image` column.
-* `alt`: Alt text for the image. Required for an `image` column.
-* `title`: Optional title for a `links` column.
-* `children`: List of links in a `links` column.
-* `url_text`: Label of a link.
-* `url`: Internal page path.
-* `external_url`: External page URL.
-* `content`: Markdown content for a `text` column.
+* **type**: Defines the purpose of the column. Supported values are `links`, `image` and `text`.
+* **`image_width`**: Width for an `image` column. Include the unit, for example `150px`.
+* **`width`**: Integer defining the column width. The total width of all columns should be `12`.
+* **`src`**: Path to the image. Required for an `image` column.
+* **`alt`**: Alt text for the image. Required for an `image` column.
+* **`title`**: Optional title for a `links` column.
+* **`children`**: List of links in a `links` column.
+* **`url_text`**: Label of a link.
+* **`url`**: Internal page path.
+* **`external_url`**: External page URL.
+* **content**: Markdown content for a `text` column.
 
 ## Table of Contents (TOC)
 
