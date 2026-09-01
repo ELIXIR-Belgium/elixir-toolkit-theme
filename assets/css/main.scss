@@ -1084,14 +1084,11 @@ footer {
         }
 
         .social-icons {
-            line-height: 2ex;
             width: 2.2ex;
             height: 2.2ex;
 
             i {
                 font-size: 0.625em;
-                line-height: 0.1em;
-                vertical-align: 0.225em;
             }
         }
     }
@@ -1112,10 +1109,22 @@ footer {
 /*-----------Social icons----------*/
 
 .social-icons {
-    line-height: 4ex;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
     width: 4ex;
     height: 4ex;
+    aspect-ratio: 1 / 1;
+    line-height: 1;
     text-align: center;
+    vertical-align: middle;
+
+    i {
+        display: block;
+        line-height: 1;
+        vertical-align: 0;
+    }
 }
 
 /*---- Page metadata ----*/
