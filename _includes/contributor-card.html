@@ -17,7 +17,7 @@
   </div>
   {%- if include.git or include.email or include.orcid %}
   <div class="card-footer">
-    <div class="d-flex justify-content-center gap-2">
+    <div class="d-flex justify-content-center gap-2 flex-wrap">
       {%- if include.git %}
       <a class="btn bg-white text-primary hover-primary rounded-circle social-icons p-0" href="https://github.com/{{ include.git }}"><i class="fa-brands fa-github"></i><span class="visually-hidden">GitHub</span></a>
       {%- endif -%}
