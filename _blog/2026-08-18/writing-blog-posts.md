@@ -2,7 +2,7 @@
 title:  "Writing a blog post - template"
 contributors: ["Eli Chadwick"]
 date: 2026-08-18
-summary: How to set up a new blog post, including special behavior for links and images.
+summary: How to set up a new blog post, including special behavior for links.
 ---
 
 ## Setting up the file
@@ -42,27 +42,7 @@ This formatting is necessary because the blog posts have automatically-generated
 
 External pages can be linked in the usual fashion: `[link text](url)`.
 
-## Including images
-
-If you want to include an image in your blog post, add the image to the same folder as the post's Markdown file:
-
-```
-_blog/
-├─ yyyy-mm-dd/
-│  ├─ post-name.md
-│  ├─ blog_image.svg
-```
-
- You can then include the image in the Markdown text with the following code:
-
-```
-{% raw %}
-{% include image.html file="blog_image.svg" caption="Figure 1. The ELIXIR logo." alt="ELIXIR logo" max-width="10" %}
-{% endraw %}
-```
-
-{% include image.html file="blog_image.svg" caption="Figure 1. The ELIXIR logo." alt="ELIXIR logo" max-width="10" %}
 
 ## Markdown cheat sheet
 
-For everything else, see the [Markdown cheat sheet]({% link pages/documentation/markdown_cheat_sheet.md %}).
+For everything else, including images, see the [Markdown cheat sheet]({% link pages/documentation/markdown_cheat_sheet.md %}).
