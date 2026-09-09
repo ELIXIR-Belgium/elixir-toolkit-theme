@@ -5,37 +5,38 @@ github:
 ---
 
 
-## Simple example
+## Examples
 
+### Default news timeline
+
+Use this snippet:
+
+```liquid
+{% raw %}{% include news.html %}{% endraw %}
 ```
-{% raw %}
+
+
+This renders as:
+
 {% include news.html %}
-{% endraw %}
+
+### News timeline with title, caption and truncation
+
+Use this snippet:
+
+```liquid
+{% raw %}{% include news.html title=true truncate=true caption=true caption_url="/news" %}{% endraw %}
 ```
 
+This renders as:
 
-Becomes:
-{% include news.html %}
-
-## More complex example
-
-```
-{% raw %}
-{% include news.html title=true truncate=true caption=true caption_url="/about/news" %}
-{% endraw %}
-```
-
-Becomes:
-
-{% include news.html title=true truncate=true caption=true caption_url="/about/news" %}
+{% include news.html title=true truncate=true caption=true caption_url="/news" %}
 
 
 ### Parameters
 
-* `title`: Visualize *What's new?* as title  (`true` or `false`). Use *true* as value to enable this.
-* `caption`: Show the "For more news please visit our news page." by using *true*  (`true` or `false`).
-* `caption_url`: Add a custom url if the main news page is not served at */news*
-* `truncate`: If longer event descriptions are used and this parameter is set to *true*, descriptions which are longer than 40 words will get collapsed behind a button (`true` or `false`).
-* `limit`: Integer to determine the amount of news items shown.
-
-
+* **`title`**: Show *What's new?* as a heading (`true` or `false`).
+* **`caption`**: Show the "For more news please visit our news page." caption (`true` or `false`).
+* **`caption_url`**: Use a custom URL when the main news page is not served at `/news`.
+* **`truncate`**: Collapse descriptions longer than 40 words behind a button (`true` or `false`).
+* **`limit`**: Limit the number of news items shown.

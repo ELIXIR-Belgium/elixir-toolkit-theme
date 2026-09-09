@@ -1,28 +1,29 @@
-- name: Test event 2
+- name: Past community workshop
   startDate: 2021-11-08
   endDate: 2021-11-12
-  description: Example Description with [link](about)
-  location: "[Barcelona](test)"
-- name: Test event 1
+  description: A past event with an [internal link](about) in the description.
+  location: Barcelona, Spain
+- name: Theme maintenance clinic
   startDate: 2025-06-23
   startTime: '9:00'
   endDate: 2025-06-24
   endTime: 13:30 CET
-  description: The description of this event
+  description: A short past event used to verify date ranges, time display and online locations.
   location: Online
-- name: Test event 3
+- name: Documentation sprint
   startDate: 2030-06-23
   startTime: '9:00'
   endDate: 2030-06-24
   endTime: 13:30 CET
   related_pages: [gp5]
-  description: >
-   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna massa, vestibulum ut leo eget, fermentum molestie mauris. Cras facilisis libero non sodales lobortis. Proin eu ultricies lacus. Sed posuere orci id tincidunt sollicitudin. Phasellus sit amet justo turpis. Vestibulum non volutpat libero. Donec mattis elementum sem nec posuere. Donec vitae libero sed mi faucibus tempus.
-   Talks included<span>:</span>
-      * Curabitur faucibus lectus a sem posuere tempus
-      * [Vivamus et dignissim nulla](/)
-      * Curabitur faucibus lectus a sem posuere tempus
-      * [Vivamus et dignissim nulla](/)
-  
-   Donec sagittis laoreet leo, eu tincidunt nulla pulvinar a. Aenean diam orci, rhoncus et imperdiet eget, sodales eget massa. Pellentesque lobortis egestas consequat.
+  description: |
+   An upcoming event with a longer description, related page metadata and enough text to exercise the collapsed description pattern.
+
+   Sessions include:
+      * improving page metadata for generated tiles
+      * reviewing contributor and supporter displays
+      * checking event cards on mobile and desktop layouts
+      * linking the event to a relevant example page
+
+   The event is intentionally scheduled in the future so the upcoming events example has stable content to display.
   location: Online

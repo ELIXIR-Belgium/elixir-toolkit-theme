@@ -1,16 +1,16 @@
-# title: About
+title: Home
 # version: 2.0
-# title_url:  /events
+title_url:  /
 subitems:
   - title: About
     icon: icon-info
     url: /about
     subitems:
-      - title: ELIXIR resources
+      - title: Links to other ELIXIR resources
         url: /elixir_resources
       - title: Accessibility
         url: /accessibility
-      - title: SEO
+      - title: Search Engine Optimization
         url: /seo
   - title: Documentation
     icon: icon-book-open
@@ -38,7 +38,7 @@ subitems:
   - title: Versions and upgrades
     icon: icon-refresh-cw
     subitems:
-      - title: Versioning overview
+      - title: Versions and upgrades
         url: /versions_and_upgrades
       - title: Upgrade procedure
         url: /upgrading_theme
@@ -47,7 +47,7 @@ subitems:
   - title: Example pages
     icon: icon-layers
     subitems:
-      - title: Contributor page
+      - title: Contributors
         url: /contributors
       - title: Events
         url: /events
@@ -56,7 +56,7 @@ subitems:
       - title: Section overview
         url: /overview_tiles
         subitems:
-          - title: General page
+          - title: General page 1
             url: /general_page
           - title: General page 2
             url: /general_page_2
@@ -70,11 +70,11 @@ subitems:
             url: /general_page_6
           - title: General page 7
             url: /general_page_7
-      - title: All trainings
+      - title: All training
         url: /all_trainings
       - title: List of page IDs
         url: /list_page_ids
-  - title: Example 404 page
+  - title: Page Not Found
     icon: icon-triangle-alert
     url: /404
     hr: true

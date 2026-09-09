@@ -3,18 +3,16 @@ title: All training
 datatable: true
 ---
 
-Nam non sollicitudin sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas consectetur nulla nec rutrum rhoncus. Sed non urna sem. Maecenas sed lobortis urna, hendrerit aliquet massa. Phasellus felis dui, feugiat ut sapien vel, mattis dictum eros. Suspendisse in felis sit amet dui elementum rutrum tristique eget velit. Sed hendrerit, ante sit amet hendrerit cursus, ante nibh accumsan nibh, vitae rhoncus quam ipsum placerat ante.
+This page demonstrates the site-wide training table. It gathers training links from page metadata and displays them in a sortable, searchable DataTable.
 
-## Listing all resources
+## Listing all training materials
 
+Use this snippet:
 
+```liquid
+{% raw %}{% include training-table-all.html %}{% endraw %}
 ```
-{% raw %}
-{% include training-table-all.html %}
-{% endraw %}
-```
 
+This renders as:
 
 {% include training-table-all.html %}
-
-

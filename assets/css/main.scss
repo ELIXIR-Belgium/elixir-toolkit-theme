@@ -1084,14 +1084,11 @@ footer {
         }
 
         .social-icons {
-            line-height: 2ex;
             width: 2.2ex;
             height: 2.2ex;
 
             i {
                 font-size: 0.625em;
-                line-height: 0.1em;
-                vertical-align: 0.225em;
             }
         }
     }
@@ -1112,10 +1109,22 @@ footer {
 /*-----------Social icons----------*/
 
 .social-icons {
-    line-height: 4ex;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
     width: 4ex;
     height: 4ex;
+    aspect-ratio: 1 / 1;
+    line-height: 1;
     text-align: center;
+    vertical-align: middle;
+
+    i {
+        display: block;
+        line-height: 1;
+        vertical-align: 0;
+    }
 }
 
 /*---- Page metadata ----*/
@@ -1500,47 +1509,47 @@ a.info-collapse {
 }
 
 // Add a bottom border to the last accordion.
-a.info-collapse[aria-expanded="false"]:last-of-type,
-a.info-collapse[aria-expanded="true"]:last-of-type+.show {
+a.info-collapse[aria-expanded="false"]:not(:has(~ a.info-collapse)),
+a.info-collapse[aria-expanded="true"]:not(:has(~ a.info-collapse))+.show {
     border-bottom: 1px solid $border-color;
 }
 
 // Collapsed content styling
 .info-card {
+    .info-logo-tile {
+        height: 3.25rem;
+        width: 3.25rem;
+    }
+
     .info-logo {
-        max-width: 250px;
-        max-height: 40px;
+        max-height: 2.25rem;
+        max-width: 2.65rem;
+        object-fit: contain;
+    }
+
+    .info-logo-fairsharing {
+        background-color: rgba(#35a9e1, .08);
+    }
+
+    .info-logo-faircookbook {
+        background-color: rgba(#ef4358, .08);
+    }
+
+    .info-logo-dsw {
+        background-color: rgba(#f05a24, .08);
+    }
+
+    .info-logo-rdmkit {
+        background-color: rgba(#2a2e3d, .08);
+    }
+
+    .info-logo-training {
+        background-color: rgba($primary, .08);
     }
 
     // Do not show border on last row tools table
     .tooltable tbody tr:last-of-type {
         border-bottom-color: transparent;
-    }
-
-    .info-links {
-        a.btn {
-            background-color: $info-card-bg;
-            color: $info-card-color;
-
-            i {
-                transition: $btn-transition;
-                color: $info-card-color !important;
-            }
-
-            &:hover {
-                background-color: $info-card-bg-hover;
-                color: $info-card-color-hover !important;
-
-                i {
-                    color: $info-card-color-hover !important;
-                }
-            }
-        }
-
-        img {
-            height: 30px;
-            max-width: 35px;
-        }
     }
 }
 
@@ -1552,21 +1561,34 @@ a.info-collapse[aria-expanded="true"]:last-of-type+.show {
 }
 
 /*-----Section navigation tiles-----*/
+.navigation-tile-filter {
+    .input-group {
+        min-width: 0;
+    }
+
+    .btn-icon-round {
+        @include button-variant($primary, $primary);
+        --#{$prefix}btn-active-shadow: none;
+    }
+}
+
 .navigation-tiles {
 
     .card,
     .btn {
         background-color: $nav-card-bg;
         color: $nav-card-color;
-        transition: $btn-transition;
+        position: relative;
+        transition: $transition-base;
 
-        &:hover {
+        &:hover,
+        &:focus-visible,
+        &:focus-within {
             background-color: $nav-card-bg-hover;
             color: $nav-card-color-hover;
 
             a.section-title {
                 text-decoration: none;
-                transition: $btn-transition;
                 color: $nav-card-color-hover;
             }
         }
@@ -1591,6 +1613,36 @@ a.info-collapse[aria-expanded="true"]:last-of-type+.show {
 
         .page-img-sm {
             max-height: 3.2em;
+        }
+    }
+
+    .navigation-tile-heading {
+        margin-top: $spacer * .25;
+    }
+
+    .navigation-tile-arrow {
+        align-items: center;
+        background-color: $nav-card-arrow-bg;
+        border-radius: 50%;
+        color: $nav-card-arrow-color;
+        display: inline-flex;
+        font-size: 1rem;
+        height: 2rem;
+        justify-content: center;
+        line-height: 1;
+        pointer-events: none;
+        transition: $transition-base;
+        width: 2rem;
+        z-index: 2;
+    }
+
+    .card:hover,
+    .card:focus-within,
+    >.col>.btn.section-title:hover,
+    >.col>.btn.section-title:focus-visible {
+        .navigation-tile-arrow {
+            background-color: $nav-card-arrow-bg-hover;
+            color: $nav-card-arrow-color-hover;
         }
     }
 }
