@@ -9,7 +9,7 @@ Treat the theme version, its release notes and the `Gemfile` published with that
 
 ## Choose a released version
 
-All supported versions and their release notes are listed on the [ELIXIR Toolkit Theme releases page](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/releases). For example, the files belonging to version `6.1.0` can be viewed under the [`6.1.0` tag](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/tree/6.1.0), including its [released `Gemfile`](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/6.1.0/Gemfile).
+All supported versions and their release notes are listed on the [ELIXIR Toolkit Theme releases page](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/releases). For example, the files belonging to version `7.0.0` can be viewed under the [`7.0.0` tag](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/tree/7.0.0), including its [released `Gemfile`](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/7.0.0/Gemfile).
 
 When a site needs additional gems, merge those site-specific entries into the released `Gemfile` instead of discarding them.
 
@@ -20,7 +20,7 @@ Always use an exact release number. This prevents a rebuild from silently pullin
 For a remote theme, pin the tag in `_config.yml`:
 
 ```yml
-remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@6.1.0
+remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@7.0.0
 ```
 
 Do not use an unversioned reference or a moving branch such as `main` for a production website.
@@ -28,7 +28,7 @@ Do not use an unversioned reference or a moving branch such as `main` for a prod
 When installing the theme as a Ruby gem, use an exact version in the website's `Gemfile`:
 
 ```ruby
-gem "elixir-toolkit-theme", "6.1.0"
+gem "elixir-toolkit-theme", "7.0.0"
 ```
 
 An exact constraint is more predictable than a range such as `~> 6.1`. If the website tracks a `Gemfile.lock`, regenerate and commit it after changing dependencies so local, continuous integration and production builds use the same resolved versions.
@@ -39,9 +39,9 @@ The ELIXIR Toolkit Theme uses [Semantic Versioning](https://semver.org/):
 
 | Version change | Meaning | Example |
 | --- | --- | --- |
-| Major | May contain incompatible or breaking changes | `6.1.0` to `7.0.0` |
-| Minor | Adds functionality in a backward-compatible way | `6.1.0` to `6.2.0` |
-| Patch | Contains backward-compatible fixes | `6.1.0` to `6.1.1` |
+| Major | May contain incompatible or breaking changes | `7.0.0` to `8.0.0` |
+| Minor | Adds functionality in a backward-compatible way | `7.0.0` to `7.1.0` |
+| Patch | Contains backward-compatible fixes | `7.0.0` to `7.0.1` |
 
 Semantic versioning helps estimate the likely impact of an upgrade, but it does not replace reading the release notes or testing the website. Always check every release note between the installed and target versions, paying particular attention to sections labelled **Breaking changes**, **Deprecated** or **Migration**.
 
