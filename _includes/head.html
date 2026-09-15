@@ -107,6 +107,9 @@
         });
     </script>
     {%- endif %}
+    {% unless site.future == true %}
+    <script src="{{ 'assets/js/hide-future-blog-posts.js' | relative_url }}?{{site.time | date: '%s'}}" defer></script>
+    {% endunless %}
     <script src="{{ 'assets/js/custom.js' | relative_url }}?{{site.time | date: '%s'}}"></script>
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ 'assets/img/apple-touch-icon.png' | relative_url }}">

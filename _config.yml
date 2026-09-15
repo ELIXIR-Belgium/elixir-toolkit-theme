@@ -10,6 +10,9 @@ title: ELIXIR Toolkit Theme
 description: "Flexible Jekyll theme using bootstrap 5 as CSS framework."
 # Metadata description of the website
 
+date_format: "%-d %B %Y"
+# default format for displaying dates
+
 dsw_deep_link_prefix: https://researchers.ds-wizard.org/knowledge-models/dsw:root:latest/preview?questionUuid=
 # prefix for DSW deep links to a certain question
 
@@ -36,19 +39,30 @@ exclude:
   - LICENSE
 
 sass:
-    style: compressed
-    sourcemap: never
+  style: compressed
+  sourcemap: never
+
+collections:
+  blog: # corresponds to the _blog folder
+    permalink: /blog/:path # e.g. /blog/2026-07-20/example-post.html
+    output: true
 
 defaults:
-# Define here page metadata attributes for all pages at once or on specific directories. More information: https://jekyllrb.com/docs/configuration/front-matter-defaults/
-  -
-    scope:
+  # Define here page metadata attributes for all pages at once or on specific directories. More information: https://jekyllrb.com/docs/configuration/front-matter-defaults/
+  - scope:
       path: ""
       type: "pages"
     values:
       permalink: /:basename
       layout: "page"
       sidebar: main
+
+  - scope:
+      path: "_blog" # default settings for blog pages
+    values:
+      layout: "page"
+      sidebar: blog # show separate sidebar for the blog
+      dateline: true # show date below title
 
 plugins:
   - elixir-toolkit-theme-plugins
@@ -59,44 +73,43 @@ plugins:
   - jemoji
   - webrick
 
-
 theme_variables:
   # git_host: GitHub
   # back_to_top: true
   # dev-info-banner: false
   # privacy_statement_url: /privacy
   # github_buttons:
-    # position: top
-    # edit_me: true
-    # open_issue: true
-    # history: true
+  # position: top
+  # edit_me: true
+  # open_issue: true
+  # history: true
   # datatables:
-    # searchbuilder: false
-    # pagelength: 10
+  # searchbuilder: false
+  # pagelength: 10
   # headings:
-    # related-pages: Related pages
-    # more-information-tiles: More information
-    # resource-table-all: Tools and resources on this page
-    # resource-table-all-collapse: false
+  # related-pages: Related pages
+  # more-information-tiles: More information
+  # resource-table-all: Tools and resources on this page
+  # resource-table-all-collapse: false
   # page_metadata:
-    # contributors_sort: true
-    # coordinators_sort: true
-    # editors_sort: true
-    # supported_by_sort: true
+  # contributors_sort: true
+  # coordinators_sort: true
+  # editors_sort: true
+  # supported_by_sort: true
   # toc:
-    # min_headings: 1
-    # headings: 'h2'
+  # min_headings: 1
+  # headings: 'h2'
   # topnav:
-    # brand_logo: assets/img/main_logo.svg
-    # search: true
-    # github: true
-    # twitter: false
-    # bluesky: false
-    # linkedin: false
-    # fosstodon: false
+  # brand_logo: assets/img/main_logo.svg
+  # search: true
+  # github: true
+  # twitter: false
+  # bluesky: false
+  # linkedin: false
+  # fosstodon: false
   # theme_color: 0d6efd
   # fonts:
-    # - url to a font
+  # - url to a font
   # breadcrumb: false
 
 # --- Missing in gitlab: ---
