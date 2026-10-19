@@ -448,14 +448,17 @@ details {
 
         > summary {
             @include callout-heading-typography;
-            padding-left: $alert-padding-x * 3.75;
+            padding-left: $alert-padding-x * 4;
+            &::before,
+            &::after {
+                font-size: calc(1.18em / .75);
+            }
 
             &::before {
                 content: map-get($callout-icons, $callout);
                 font-family: "lucide";
-                font-size: 1.18em;
                 font-weight: normal;
-                left: $alert-padding-x * 2.25;
+                left: $alert-padding-x * 2.5;
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
