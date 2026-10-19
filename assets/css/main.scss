@@ -259,13 +259,17 @@ $callout-icons: (
     important: "\e077"
 );
 
-@mixin callout-heading {
+@mixin callout-heading-typography {
     color: var(--#{$prefix}alert-color);
     font-size: .75em;
     font-weight: $font-weight-bold;
+    text-transform: uppercase;
+}
+
+@mixin callout-heading {
+    @include callout-heading-typography;
     padding-left: $alert-padding-x * 1.5;
     padding-bottom: $spacer * .125;
-    text-transform: uppercase;
 }
 
 @each $callout, $variant in $callout-variants {
@@ -361,6 +365,102 @@ blockquote.warning-title {
 
     .callout__content > :first-child {
         margin-top: 0;
+    }
+}
+
+/*-----Collapsible blocks-----*/
+
+$details-chevron: "\e06f";
+// Matches the .35s of a Bootstrap collapse, and of the script in main.js.
+$details-duration: .35s;
+
+details {
+    @extend .alert;
+    @extend .alert-light;
+    border-left-width: $border-width * 4;
+    border-radius: $border-radius;
+    margin-left: 0;
+    margin-right: 0;
+    overflow: hidden;
+    padding: 0;
+
+    > summary {
+        background-image: linear-gradient(var(--#{$prefix}alert-border-color), var(--#{$prefix}alert-border-color));
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: 0 $border-width;
+        cursor: pointer;
+        display: block;
+        list-style: none;
+        padding: $alert-padding-y $alert-padding-x $alert-padding-y ($alert-padding-x * 2.25);
+        position: relative;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        &::after {
+            @include transition(transform $details-duration ease);
+            content: $details-chevron;
+            font-family: "lucide";
+            font-size: 1.18em;
+            font-weight: normal;
+            left: $alert-padding-x;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &:focus-visible {
+            outline: $border-width * 2 solid var(--#{$prefix}alert-color);
+            outline-offset: -#{$border-width * 2};
+        }
+    }
+
+    // The content keeps its distance with margins instead of box padding: margins
+    // sit inside the collapsing region and are clipped while the block is closed.
+    > :not(summary) {
+        margin-left: $alert-padding-x;
+        margin-right: $alert-padding-x;
+    }
+
+    > summary + * {
+        margin-top: $alert-padding-y * .75;
+    }
+
+    > :last-child:not(summary) {
+        margin-bottom: $alert-padding-y;
+    }
+
+    &[open] > summary {
+        background-size: calc(100% - #{$alert-padding-x * 2}) $border-width;
+
+        &::after {
+            transform: translateY(-50%) rotate(90deg);
+        }
+    }
+}
+
+// Typed collapsible blocks pick up the colours and icon of the matching callout.
+@each $callout, $variant in $callout-variants {
+    details.#{$callout} {
+        @extend .alert-#{$variant};
+
+        > summary {
+            @include callout-heading-typography;
+            padding-left: $alert-padding-x * 3.75;
+
+            &::before {
+                content: map-get($callout-icons, $callout);
+                font-family: "lucide";
+                font-size: 1.18em;
+                font-weight: normal;
+                left: $alert-padding-x * 2.25;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
     }
 }
 

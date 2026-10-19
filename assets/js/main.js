@@ -286,3 +286,36 @@ $(document).ready(function() {
         }, 250);
     });
 });
+
+/**
+ * Collapsible blocks: slide <details> open and closed at the same pace as a
+ * Bootstrap collapse. Without this, browsers jump straight to the end state.
+ */
+$(document).ready(function () {
+    document.querySelectorAll('details').forEach(function (details) {
+        var summary = details.querySelector(':scope > summary');
+        if (!summary || typeof details.animate !== 'function') return;
+
+        summary.addEventListener('click', function (event) {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            event.preventDefault();
+
+            var opening = !details.open;
+            var from = details.offsetHeight;
+
+            if (details.collapseAnimation) details.collapseAnimation.cancel();
+            if (opening) details.open = true;
+
+            var to = opening ? details.scrollHeight : summary.offsetHeight;
+
+            details.collapseAnimation = details.animate(
+                { height: [from + 'px', to + 'px'] },
+                { duration: 350, easing: 'ease' }
+            );
+            details.collapseAnimation.onfinish = function () {
+                details.collapseAnimation = null;
+                if (!opening) details.open = false;
+            };
+        });
+    });
+});

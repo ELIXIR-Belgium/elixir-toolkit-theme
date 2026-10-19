@@ -83,7 +83,7 @@ You can use Multimarkdown syntax for tables. The following shows a sample:
 
 Callouts in this theme are styled blockquotes with a title and icon. Put a supported callout class on the line immediately before the blockquote, and use `>` for each line of callout content. Regular blockquotes render as neutral message boxes without a title or icon.
 
-The built-in callout types are `note`, `tip`, `warning`, and `important`.
+The built-in callout types are `note`, `tip`, `warning`, and `important`. To hide the callout content behind a clickable heading, use a [typed collapsible block](#typed-collapsible-blocks).
 
 ### Basic callouts
 
@@ -407,25 +407,71 @@ Giving:
 > Keep the quoted text concise, and prefer a callout when the content needs a title or a specific visual treatment.
 
 
-## A collapsible piece of text
+## Collapsible blocks
 
-<details>
-  <summary>Click to expand!</summary>
-<ol>
-Text
-</ol>
-</details>
-<br>
-Is made with this code snippet:
+Collapsible blocks hide content behind a clickable heading. They use the HTML `<details>` element and share the look of the [block quotes](#block-quotes): a light box with a thick left border and the summary in regular text. The chevron turns when the block opens.
+
+Add `markdown="1"` to the `<details>` tag to write the hidden content in Markdown.
 
 ```html
-<details>
-  <summary>Click to expand!</summary>
-<ol>
-Text
-</ol>
+<details markdown="1">
+  <summary>Click to expand</summary>
+
+Collapsed content, written in **Markdown**.
+
+- Use a collapsible block for optional detail, long examples or troubleshooting steps.
+- Keep the summary short: it is the only thing visible when the block is closed.
+
 </details>
 ```
+
+This renders as:
+
+<details markdown="1">
+  <summary>Click to expand</summary>
+
+Collapsed content, written in **Markdown**.
+
+- Use a collapsible block for optional detail, long examples or troubleshooting steps.
+- Keep the summary short: it is the only thing visible when the block is closed.
+
+</details>
+
+### Typed collapsible blocks
+
+Add a callout type (`note`, `tip`, `warning` or `important`) as a class to give the block the look of the matching [callout](#callouts): its colour, icon and an uppercase heading. Add the `open` attribute to render the block expanded.
+
+```html
+<details class="note" markdown="1">
+  <summary>Speed up the build</summary>
+
+Run `bundle exec jekyll serve --incremental` while you are editing a single page.
+
+</details>
+
+<details class="warning" open markdown="1">
+  <summary>Check before you merge</summary>
+
+Generated tables and search data are rebuilt on every deploy. Preview the page first.
+
+</details>
+```
+
+This renders as:
+
+<details class="note" markdown="1">
+  <summary>Speed up the build</summary>
+
+Run `bundle exec jekyll serve --incremental` while you are editing a single page.
+
+</details>
+
+<details class="warning" open markdown="1">
+  <summary>Check before you merge</summary>
+
+Generated tables and search data are rebuilt on every deploy. Preview the page first.
+
+</details>
 
 ## Enforce space between two lines
 
