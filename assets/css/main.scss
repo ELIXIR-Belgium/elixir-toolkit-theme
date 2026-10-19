@@ -385,6 +385,7 @@ details {
     padding: 0;
 
     > summary {
+        @include callout-heading-typography;
         background-image: linear-gradient(var(--#{$prefix}alert-border-color), var(--#{$prefix}alert-border-color));
         background-position: center bottom;
         background-repeat: no-repeat;
@@ -392,7 +393,7 @@ details {
         cursor: pointer;
         display: block;
         list-style: none;
-        padding: $alert-padding-y $alert-padding-x $alert-padding-y ($alert-padding-x * 2.25);
+        padding: $alert-padding-y $alert-padding-x $alert-padding-y ($alert-padding-x * 2.5);
         position: relative;
 
         &::-webkit-details-marker {
@@ -403,7 +404,7 @@ details {
             @include transition(transform $details-duration ease);
             content: $details-chevron;
             font-family: "lucide";
-            font-size: 1.18em;
+            font-size: calc(1.18em / .75);
             font-weight: normal;
             left: $alert-padding-x;
             position: absolute;
@@ -447,15 +448,14 @@ details {
         @extend .alert-#{$variant};
 
         > summary {
-            @include callout-heading-typography;
-            padding-left: $alert-padding-x * 3.75;
+            padding-left: $alert-padding-x * 4;
 
             &::before {
                 content: map-get($callout-icons, $callout);
                 font-family: "lucide";
-                font-size: 1.18em;
+                font-size: calc(1.18em / .75);
                 font-weight: normal;
-                left: $alert-padding-x * 2.25;
+                left: $alert-padding-x * 2.5;
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
