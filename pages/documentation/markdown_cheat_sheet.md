@@ -83,7 +83,7 @@ You can use Multimarkdown syntax for tables. The following shows a sample:
 
 Callouts in this theme are styled blockquotes with a title and icon. Put a supported callout class on the line immediately before the blockquote, and use `>` for each line of callout content. Regular blockquotes render as neutral message boxes without a title or icon.
 
-The built-in callout types are `note`, `tip`, `warning`, and `important`.
+The built-in callout types are `note`, `tip`, `warning`, and `important`. To hide the callout content behind a clickable heading, use a [typed collapsible block](#typed-collapsible-blocks).
 
 ### Basic callouts
 
@@ -409,7 +409,7 @@ Giving:
 
 ## Collapsible blocks
 
-Collapsible blocks hide content behind a clickable heading. They use the HTML `<details>` element and share the look of the [callouts](#callouts): a tinted box with a coloured left border and an uppercase heading. The chevron turns when the block opens.
+Collapsible blocks hide content behind a clickable heading. They use the HTML `<details>` element and share the look of the [block quotes](#block-quotes): a light box with a thick left border and the summary in regular text. The chevron turns when the block opens.
 
 Add `markdown="1"` to the `<details>` tag to write the hidden content in Markdown.
 
@@ -439,7 +439,7 @@ Collapsed content, written in **Markdown**.
 
 ### Typed collapsible blocks
 
-Add a callout type (`note`, `tip`, `warning` or `important`) as a class to colour the block and show the matching icon. Add the `open` attribute to render the block expanded.
+Add a callout type (`note`, `tip`, `warning` or `important`) as a class to give the block the look of the matching [callout](#callouts): its colour, icon and an uppercase heading. Add the `open` attribute to render the block expanded.
 
 ```html
 <details class="note" markdown="1">
