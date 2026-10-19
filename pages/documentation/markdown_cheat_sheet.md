@@ -409,7 +409,7 @@ Giving:
 
 ## Collapsible blocks
 
-Collapsible blocks hide content behind a clickable heading. They use the HTML `<details>` element and share the look of the [block quotes](#block-quotes): a light box with a thick left border and the summary in regular text. The chevron turns when the block opens.
+Collapsible blocks hide content behind a clickable heading. They use the HTML `<details>` element and share the look of the [block quotes](#block-quotes).
 
 Add `markdown="1"` to the `<details>` tag to write the hidden content in Markdown.
 
@@ -439,7 +439,7 @@ Collapsed content, written in **Markdown**.
 
 ### Typed collapsible blocks
 
-Add a callout type (`note`, `tip`, `warning` or `important`) as a class to give the block the look of the matching [callout](#callouts): its colour, icon and an uppercase heading. Add the `open` attribute to render the block expanded.
+Add a callout type (`note`, `tip`, `warning` or `important`) as a class to give the block the colour and icon of the matching [callout](#callouts). Add the `open` attribute to render the block expanded.
 
 ```html
 <details class="note" markdown="1">
