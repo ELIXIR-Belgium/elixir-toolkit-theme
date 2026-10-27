@@ -10,6 +10,9 @@ title: ELIXIR Toolkit Theme
 description: "Flexible Jekyll theme using bootstrap 5 as CSS framework."
 # Metadata description of the website
 
+date_format: "%-d %B %Y"
+# default format for displaying dates
+
 dsw_deep_link_prefix: https://researchers.ds-wizard.org/knowledge-models/dsw:root:latest/preview?questionUuid=
 # prefix for DSW deep links to a certain question
 
@@ -36,19 +39,30 @@ exclude:
   - LICENSE
 
 sass:
-    style: compressed
-    sourcemap: never
+  style: compressed
+  sourcemap: never
+
+collections:
+  blog: # corresponds to the _blog folder
+    permalink: /blog/:path # e.g. /blog/2026-07-20/example-post.html
+    output: true
 
 defaults:
-# Define here page metadata attributes for all pages at once or on specific directories. More information: https://jekyllrb.com/docs/configuration/front-matter-defaults/
-  -
-    scope:
+  # Define here page metadata attributes for all pages at once or on specific directories. More information: https://jekyllrb.com/docs/configuration/front-matter-defaults/
+  - scope:
       path: ""
       type: "pages"
     values:
       permalink: /:basename
       layout: "page"
       sidebar: main
+
+  - scope:
+      path: "_blog" # default settings for blog pages
+    values:
+      layout: "page"
+      sidebar: blog # show separate sidebar for the blog
+      dateline: true # show date below title
 
 plugins:
   - elixir-toolkit-theme-plugins
@@ -58,7 +72,6 @@ plugins:
   - jekyll-github-metadata
   - jemoji
   - webrick
-
 
 theme_variables:
   # git_host: GitHub

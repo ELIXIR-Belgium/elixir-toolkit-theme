@@ -4,6 +4,8 @@
 subitems:
 - title: About
   url: /about
+- title: Blog
+  url: /blog
 - title: Example dropdown
   subitems:
   - title: Events
