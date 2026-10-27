@@ -1290,17 +1290,17 @@ footer {
 /*-----Cookie consent banner-----*/
 
 .cookiealert {
-    position: fixed;
     background-color: $footer-bg;
     color: $footer-color;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    margin: 0 !important;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    max-width: 24rem;
+    font-size: 0.9em;
     z-index: 1071;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(100%);
+    transform: translateY(calc(100% + 1rem));
     transition: all 500ms ease-out;
 
     a {
@@ -1316,6 +1316,9 @@ footer {
     opacity: 1;
     visibility: visible;
     transform: translateY(0%);
+}
+
+.cookiealert.show.delay {
     transition-delay: 1000ms;
 }
 

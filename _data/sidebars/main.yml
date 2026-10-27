@@ -10,6 +10,8 @@ subitems:
         url: /elixir_resources
       - title: Accessibility
         url: /accessibility
+      - title: Privacy and cookies
+        url: /privacy
       - title: Search Engine Optimization
         url: /seo
   - title: Documentation

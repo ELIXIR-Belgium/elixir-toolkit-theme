@@ -116,33 +116,6 @@
     <link rel="shortcut icon" href="{{ 'assets/img/favicon.ico' | relative_url }}">
     <!-- Schema.org metadata -->
     {% include schemasorg.html %}
-    {%- if site.gtag and jekyll.environment == "production"%}
-    <!-- Google analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gtag }}"></script>
-    <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', '{{ site.gtag }}');</script>
-    {%- endif %}
-    {%- if site.plausible and jekyll.environment == "production"%}
-    <!-- Plausible -->
-    <script defer data-domain="{{site.plausible}}" src="{{site.plausible_src | default: 'https://plausible.io/js/plausible.js'}}"></script>
-    {%- endif %}
-    {%- if site.matomo and jekyll.environment == "production"%}
-    <!-- Matomo -->
-    <script>
-        var _paq = window._paq = window._paq || [];
-        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-        {%- if site.matomo_cookies == false %}
-        _paq.push(['disableCookies']);
-        {%- endif %}
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-        var u="{{site.matomo}}";
-        _paq.push(['setTrackerUrl', u+'matomo.php']);
-        _paq.push(['setSiteId', '{{site.matomo_id}}']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-        })();
-    </script>
-    <!-- End Matomo Code -->
-    {%- endif %}
+    <!-- Analytics and cookie consent -->
+    {% include analytics.html %}
 </head>

@@ -1,23 +1,55 @@
-{%- if site.gtag %}
-<!-- START Bootstrap-Cookie-Alert -->
-<div class="alert text-center cookiealert rounded-0" role="alert">
-    <p>
-        We use cookies to ensure you get the best experience on our website. Read our
-        <a class="fw-bold" href="{{ site.theme_variables.privacy_statement_url | default: '/privacy' | relative_url}}">privacy policy</a> to find out more.
-    </p>
-    <div class="d-flex justify-content-center">
-        <button type="button" id="acceptcookies" class="btn btn-primary">
-            Got it!
-        </button>
+{%- assign ett_consent_needed = false %}
+{%- if site.gtag %}{% assign ett_consent_needed = true %}{% endif %}
+{%- if site.matomo and site.matomo_cookies != false %}{% assign ett_consent_needed = true %}{% endif %}
+{%- if ett_consent_needed %}
+{%- assign privacy_url = site.theme_variables.privacy_statement_url | default: '/privacy' | relative_url %}
+<!-- START Cookie consent banner -->
+<div class="cookiealert position-fixed p-4 rounded-4 shadow-lg" role="region" aria-label="Cookie consent">
+    <p class="d-flex align-items-center gap-2 mb-2 fs-6 fw-semibold"><i class="icon-cookie" aria-hidden="true"></i> Cookies</p>
+    <div>
+        {%- if site.theme_variables.cookie_banner_text %}
+        {{ site.theme_variables.cookie_banner_text | markdownify }}
+        {%- else %}
+        <p>
+            We would like to use cookies to understand how this website is used and to improve it.
+            {%- if site.matomo and site.matomo_cookies != false %}
+            If you decline, we only collect anonymous visit statistics without cookies.
+            {%- else %}
+            If you decline, no analytics cookies are set.
+            {%- endif %}
+            Read our <a class="fw-bold" href="{{ privacy_url }}">privacy policy</a> to find out more.
+        </p>
+        {%- endif %}
+    </div>
+    <div class="d-flex gap-2">
+        <button type="button" class="btn btn-sm btn-outline-primary flex-fill rounded-pill" data-cookie-choice="declined">Decline</button>
+        <button type="button" class="btn btn-sm btn-primary flex-fill rounded-pill" data-cookie-choice="accepted">Accept cookies</button>
     </div>
 </div>
 <script>
-    /*
-     * Bootstrap Cookie Alert by Wruczek
-     * https://github.com/Wruczek/Bootstrap-Cookie-Alert
-     * Released under MIT license
-     */
-    !function () { "use strict"; var n = document.querySelector(".cookiealert"), e = document.querySelector("#acceptcookies"); n && (n.offsetHeight, function (e) { for (var t = e + "=", o = decodeURIComponent(document.cookie).split(";"), c = 0; c < o.length; c++) { for (var n = o[c]; " " === n.charAt(0);)n = n.substring(1); if (0 === n.indexOf(t)) return n.substring(t.length, n.length) } return "" }("acceptCookies") || n.classList.add("show"), e.addEventListener("click", function () { var e, t, o, c; e = "acceptCookies", t = !0, o = 365, (c = new Date).setTime(c.getTime() + 24 * o * 60 * 60 * 1e3), c = "expires=" + c.toUTCString(), document.cookie = e + "=" + t + ";" + c + ";path=/", n.classList.remove("show"), window.dispatchEvent(new Event("cookieAlertAccept")) })) }();
+    (function () {
+        var banner = document.querySelector('.cookiealert');
+        function show() { banner.classList.add('show'); }
+        function hide() { banner.classList.remove('show'); }
+        if (!ettConsent.get()) {
+            banner.offsetHeight;
+            banner.classList.add('delay');
+            show();
+        }
+        banner.querySelectorAll('[data-cookie-choice]').forEach(function (button) {
+            button.addEventListener('click', function () {
+                ettConsent.set(button.dataset.cookieChoice);
+                hide();
+            });
+        });
+        // Any element with data-cookie-settings reopens the banner
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('[data-cookie-settings]')) return;
+            e.preventDefault();
+            banner.classList.remove('delay');
+            show();
+        });
+    })();
 </script>
-<!-- END Bootstrap-Cookie-Alert -->
+<!-- END Cookie consent banner -->
 {%- endif %}
