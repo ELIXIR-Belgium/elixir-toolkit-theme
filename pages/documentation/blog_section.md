@@ -78,7 +78,7 @@ To show the most recent posts on another page, for example the homepage, include
 | `limit` | Only show this number of most recent posts, without year headings. |
 | `caption` | Set to `true` to show a link to the blog overview page below the list. |
 | `caption_url` | URL of the blog overview page. Defaults to the `title_url` in `_data/sidebars/blog.yml`. |
-
+{% include blog_posts.html limit=3 caption=true %}
 ## Creating a post
 
 See [Writing a blog post - template]({% link _blog/2026-08-18-writing-blog-posts.md %}).
