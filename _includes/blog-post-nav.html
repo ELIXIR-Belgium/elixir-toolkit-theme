@@ -10,18 +10,18 @@
 {%- if newer_post or older_post %}
 <nav class="blog-post-nav" aria-label="Blog post navigation">
   <div class="blog-post-nav-item">
-    {%- if newer_post %}
-    <a class="blog-post-nav-link" href="{{ newer_post.url | relative_url }}" data-blog-date="{{ newer_post.date | date: '%Y-%m-%d' }}">
-      <span class="blog-post-nav-label"><i class="icon-chevron-left" aria-hidden="true"></i>Newer post</span>
-      <span class="blog-post-nav-title">{{ newer_post.title }}</span>
+    {%- if older_post %}
+    <a class="blog-post-nav-link" href="{{ older_post.url | relative_url }}" data-blog-date="{{ older_post.date | date: '%Y-%m-%d' }}">
+      <span class="blog-post-nav-label"><i class="icon-chevron-left" aria-hidden="true"></i>Older post</span>
+      <span class="blog-post-nav-title">{{ older_post.title }}</span>
     </a>
     {%- endif %}
   </div>
-  <div class="blog-post-nav-item blog-post-nav-older">
-    {%- if older_post %}
-    <a class="blog-post-nav-link" href="{{ older_post.url | relative_url }}" data-blog-date="{{ older_post.date | date: '%Y-%m-%d' }}">
-      <span class="blog-post-nav-label">Older post<i class="icon-chevron-right" aria-hidden="true"></i></span>
-      <span class="blog-post-nav-title">{{ older_post.title }}</span>
+  <div class="blog-post-nav-item blog-post-nav-newer">
+    {%- if newer_post %}
+    <a class="blog-post-nav-link" href="{{ newer_post.url | relative_url }}" data-blog-date="{{ newer_post.date | date: '%Y-%m-%d' }}">
+      <span class="blog-post-nav-label">Newer post<i class="icon-chevron-right" aria-hidden="true"></i></span>
+      <span class="blog-post-nav-title">{{ newer_post.title }}</span>
     </a>
     {%- endif %}
   </div>

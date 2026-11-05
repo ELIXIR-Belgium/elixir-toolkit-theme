@@ -11,6 +11,12 @@ $(function () {
         }
     });
 
+    // Lists with a limit contain all posts: only keep the first published ones
+    $('[data-blog-limit]').each(function () {
+        var limit = parseInt($(this).attr('data-blog-limit'), 10);
+        $(this).find('[data-blog-date]').not('.blog-unpublished').slice(limit).hide();
+    });
+
     // Hide the years that are left without a published post. Collapsed sidebar
     // items are not visible, so count the hidden posts instead.
     $('[data-blog-year]').each(function () {

@@ -1,8 +1,12 @@
 {%- assign blog_posts = site.blog | sort: "date" | reverse %}
 <div class="blog">
   {%- if include.limit %}
+  {%- if site.future == true %}
   {%- assign latest_posts = blog_posts | slice: 0, include.limit %}
-  <ul class="blog-list navigation-tiles list-unstyled">
+  {%- else %}
+  {%- assign latest_posts = blog_posts %}
+  {%- endif %}
+  <ul class="blog-list navigation-tiles list-unstyled"{% unless site.future == true %} data-blog-limit="{{ include.limit }}"{% endunless %}>
     {%- for post in latest_posts %}
     {% include blog-card.html post=post %}
     {%- endfor %}
