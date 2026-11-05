@@ -35,6 +35,8 @@ If you want to link to another page on the website, or from another page to a bl
 {% endraw %}
 ```
 
+This renders as:
+
 [About ETT]({{baseurl}}{% link pages/about/about.md %})
 
 Here the path should be relative to the root folder of the source code. If your site does not have `baseurl` set in `_config.yml`, you can remove the {% raw %}`{{ baseurl }}`{% endraw %} part.
@@ -61,6 +63,8 @@ Include the image in the Markdown text with the path relative to the `images` fo
 {% include image.html file="blog/blog_image.svg" caption="Figure 1. The ELIXIR logo." alt="ELIXIR logo" max-width="10em" %}
 {% endraw %}
 ```
+
+This renders as:
 
 {% include image.html file="blog/blog_image.svg" caption="Figure 1. The ELIXIR logo." alt="ELIXIR logo" max-width="10em" %}
 
