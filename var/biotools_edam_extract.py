@@ -68,6 +68,7 @@ def build_all_tools_list():
         contents = None
         frontmatter_start = None
         frontmatter_end = None
+        print(all_tools)
         return all_tools
 
 def main():
