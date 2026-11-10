@@ -58,12 +58,6 @@ def build_all_tools_list():
         if not title:
             print(f"\tPage {path} has no frontmatter 'title' — skipping.")
             continue
-        if isinstance(existing_fs, list) and existing_fs:
-            for entry in existing_fs:
-                if isinstance(entry, dict) and "url" in entry:
-                    existing_record_id = extract_fairsharing_id_from_url(entry["url"])
-                if existing_record_id is not None:
-                    break
 
         # Determine tools from the body using post.content
         tools_in_page = find_tools_in_markdown(post.content)
