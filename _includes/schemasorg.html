@@ -13,7 +13,22 @@
         "@type": "WebSite",
         "name": "{{ site.title }}",
         "url": "{{ site.url }}",
-        "about": "{{ site.description }}"{% if page.contributors %},
+        "about": [
+            {%- for tool in tools %}
+            {
+                "name": "{{ tool.name }}",
+                "description": "{{ tool.description | strip_newlines | strip }}",
+                "identifier": [
+                    {%- if tool.registry.biotools %}
+                    "https://bio.tools/{{ tool.registry.biotools }}"{% if tool.registry.tess %},{% endif %}
+                    {%- endif %}
+                    {%- if tool.registry.tess %}
+                    "https://tess.elixir-europe.org/search?q={{ tool.registry.tess | url_encode }}"
+                    {%- endif %}
+                ]
+            }{% unless forloop.last %},{% endunless %}
+            {%- endfor %}
+        ]{% if page.contributors %},
         {%- assign contributors = site.data.CONTRIBUTORS %}
         {%- assign contributor_count = page.contributors.size %}
         {%- assign count = 1 %}
@@ -45,7 +60,7 @@
             }{% unless count == contributor_count - 1 %},{% endunless %}
             {%- assign count = count | plus:1 %}
             {%- endfor %}
-        ]
+        ],
         {%- endif %}
     }
 </script>
