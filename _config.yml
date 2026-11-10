@@ -99,6 +99,9 @@ theme_variables:
     # - url to a font
   # breadcrumb: false
 
+# Set to false if building via GitHub pages
+related_pages_enabled: true
+
 # --- Missing in gitlab: ---
 github:
   repository_url: https://github.com/ELIXIR-Belgium/elixir-toolkit-theme

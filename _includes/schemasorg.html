@@ -1,3 +1,12 @@
+{%- if include.tag %}
+{%- if site.related_pages_enabled %}
+{%- assign tools = site.data.tool_and_resource_list | add_related_pages | where:"related_pages", include.tag | sort_natural: "name" %}
+{%- else %}
+{%- assign tools = site.data.tool_and_resource_list  | where:"related_pages", include.tag | sort_natural: "name" %}
+{%- endif %}
+{%- else %}
+{%- assign tools = "" %}
+{%- endif %}
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
