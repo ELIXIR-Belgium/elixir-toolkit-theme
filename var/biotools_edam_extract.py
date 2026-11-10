@@ -43,3 +43,5 @@ for subdir, dirs, files in os.walk(PAGES_DIR):
     path = os.path.join(subdir, file_name)
     print(f"Reading out {filename_stripped}")
     post = frontmatter.load(path)
+    metadata = post.metadata or {}
+    print(metadata)
