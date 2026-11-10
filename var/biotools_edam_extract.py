@@ -77,7 +77,5 @@ def build_all_tools_list():
         frontmatter_end = None
         return all_tools
 
-all_tools = build_all_tools_list()
-if not collections_to_check:
-    print("No pages to process.")
-    return
+def main():
+    all_tools = build_all_tools_list()
