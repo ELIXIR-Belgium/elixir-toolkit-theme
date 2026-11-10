@@ -79,3 +79,5 @@ def build_all_tools_list():
 def main():
     all_tools = build_all_tools_list()
     print(all_tools)
+if __name__ == "__main__":
+    main()
