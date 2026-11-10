@@ -10,7 +10,6 @@ from urllib3.util.retry import Retry
 import frontmatter
 from urllib.parse import urlparse
 
-
 PAGES_DIR = "pages/example_pages"
 
 def find_tools_in_markdown(text):
@@ -79,3 +78,4 @@ def build_all_tools_list():
 
 def main():
     all_tools = build_all_tools_list()
+    print(all_tools)
