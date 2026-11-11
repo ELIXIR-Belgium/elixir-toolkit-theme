@@ -1,0 +1,41 @@
+---
+layout: default
+---
+{%- assign subtitle = page.type | replace: "_", " " %}
+<main id="main" class="min-vh-100{%- if page.toc or page.toc == nil or page.page_img %} add-grid{% endif %}">
+    <div id="intro">
+        {%- if page.title %}
+        {%- if page.type %}
+        <h1 class="has-subtitle order-1 order-md-0"><span class="d-block text-secondary fs-4 ff-body">{{subtitle}}</span><span class="visually-hidden">:</span> {{ page.title }}
+        {%- else %}
+        <h1>{{ page.title }}
+        {%- endif %}
+        {%- if site.theme_variables.github_buttons.position == "top" or site.theme_variables.github_buttons.position == nil %}
+        {% include github-buttons.html %}
+        {%- endif %}
+        </h1>
+        {%- endif %}
+        <p class="blog-meta d-flex align-items-center gap-2 text-muted">
+            <i class="icon-calendar" aria-hidden="true"></i><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: site.date_format }}</time>
+        </p>
+        {%- if page.description %}
+        <p class="blog-post-lead">{{page.description}}</p>
+        {%- endif %}
+    </div>
+    {%- if page.toc or page.toc == nil or page.page_img %}
+    <div id="toc" class="text-muted sticky-xl-top">
+        {%- include toc.html %}
+    </div>
+    {%- endif %}
+    <div id="content" class="mb-5">
+        {{content}}
+        {% include related-pages.html %}
+        {% include page-metadata-tabs.html %}
+        {% include blog-post-nav.html %}
+        {%- if site.theme_variables.github_buttons.position == "bottom" %}
+        <div id="github-buttons-wrapper" class="d-flex mt-5">
+            {% include github-buttons.html %}
+        </div>
+        {%- endif %}
+    </div>
+</main>

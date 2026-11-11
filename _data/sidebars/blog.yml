@@ -1,0 +1,4 @@
+title: Blog
+title_url: /blog
+# No subitems: the blog sidebar is generated from the blog collection,
+# grouped per year, when a page sets `sidebar: blog`.
