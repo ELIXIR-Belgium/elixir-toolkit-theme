@@ -44,8 +44,9 @@ sass:
 
 collections:
   blog: # corresponds to the _blog folder
-    permalink: /blog/:path # e.g. /blog/2026-07-20/example-post.html
+    permalink: /blog/:year-:month-:day/:title # e.g. /blog/2026-07-20/example-post
     output: true
+future: true # also build and show blog posts with a publication date in the future
 
 defaults:
   # Define here page metadata attributes for all pages at once or on specific directories. More information: https://jekyllrb.com/docs/configuration/front-matter-defaults/
@@ -58,11 +59,10 @@ defaults:
       sidebar: main
 
   - scope:
-      path: "_blog" # default settings for blog pages
+      path: "_blog" # default settings for blog posts
     values:
-      layout: "page"
-      sidebar: blog # show separate sidebar for the blog
-      dateline: true # show date below title
+      layout: "blog_post"
+      sidebar: blog # show the automatically generated blog sidebar
 
 plugins:
   - elixir-toolkit-theme-plugins

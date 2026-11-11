@@ -1,0 +1,35 @@
+{%- assign post = include.post %}
+{%- assign excerpt = post.description %}
+{%- unless excerpt %}
+{%- assign body = post.content | strip %}
+{%- assign opening_tag = body | slice: 0, 3 %}
+{%- if opening_tag == '<h1' or opening_tag == '<h2' or opening_tag == '<h3' %}
+{%- assign closing_tag = opening_tag | replace: '<', '</' | append: '>' %}
+{%- assign body_parts = body | split: closing_tag %}
+{%- assign body = body_parts | slice: 1, body_parts.size | join: closing_tag %}
+{%- endif %}
+{%- assign excerpt = body | strip_html | normalize_whitespace | truncatewords: 30 %}
+{%- endunless %}
+<li class="blog-card-wrapper" data-blog-date="{{ post.date | date: '%Y-%m-%d' }}">
+  <article class="card h-100 blog-card navigation-tile-card-with-side flex-row">
+    <div class="card-body d-flex flex-column">
+      <span class="blog-meta d-inline-flex align-items-center gap-2 text-muted">
+        <i class="icon-calendar" aria-hidden="true"></i><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: site.date_format }}</time>
+      </span>
+      <div class="navigation-tile-heading">
+        <a class="stretched-link section-title" href="{{ post.url | relative_url }}"><b>{{ post.title }}</b></a>
+      </div>
+      {%- if excerpt != "" %}
+      <p class="card-text">{{ excerpt }}</p>
+      {%- endif %}
+      {%- if post.contributors.size > 0 %}
+      <div class="blog-card-contributors">{% include contributor-minitiles-page.html contributors_list=post.contributors sort=false %}</div>
+      {%- endif %}
+    </div>
+    <div class="navigation-tile-side d-flex flex-column align-items-end justify-content-end flex-shrink-0 ms-auto p-3">
+      <span class="navigation-tile-arrow" aria-hidden="true">
+        <i class="icon-arrow-right"></i>
+      </span>
+    </div>
+  </article>
+</li>

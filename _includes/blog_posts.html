@@ -1,16 +1,31 @@
-<ul class="blog-list list-unstyled">
-  {% for post in site.blog reversed %}
-    <!-- note: posts with a date in the future are hidden by hide-future-posts.js -->
-    <li date="{{ post.date | date: '%Y-%m-%d' }}" class="blog-list-item pb-3">
-      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a><br/></h2>
-      <p><em>
-        <time datetime="{{ post.date | date_to_xmlschema }}">
-           {{ post.date | date: site.date_format }}</time> 
-      </em></p>
-      {% include contributor-minitiles-page.html contributors_list=post.contributors sort=false%}
-      {%- if post.summary %}
-        <div class="summary">{{post.summary}}</div>
-      {%- endif %}
-    </li>
-  {% endfor %}
-</ul>
+{%- assign blog_posts = site.blog | sort: "date" | reverse %}
+<div class="blog">
+  {%- if include.limit %}
+  {%- if site.future == true %}
+  {%- assign latest_posts = blog_posts | slice: 0, include.limit %}
+  {%- else %}
+  {%- assign latest_posts = blog_posts %}
+  {%- endif %}
+  <ul class="blog-list navigation-tiles list-unstyled"{% unless site.future == true %} data-blog-limit="{{ include.limit }}"{% endunless %}>
+    {%- for post in latest_posts %}
+    {% include blog-card.html post=post %}
+    {%- endfor %}
+  </ul>
+  {%- else %}
+  {%- assign blog_years = blog_posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {%- for year in blog_years %}
+  <section class="blog-year-group" data-blog-year="{{ year.name }}">
+    <h2 class="blog-year-heading" id="{{ year.name }}"><span>{{ year.name }}</span></h2>
+    <ul class="blog-list navigation-tiles list-unstyled">
+      {%- for post in year.items %}
+      {% include blog-card.html post=post %}
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endfor %}
+  {%- endif %}
+  {%- if include.caption == true %}
+  {%- assign caption_url = include.caption_url | default: site.data.sidebars.blog.title_url | default: "/blog" %}
+  <small>All posts can be found on our <a href="{{ caption_url | relative_url }}">blog page</a>.</small>
+  {%- endif %}
+</div>

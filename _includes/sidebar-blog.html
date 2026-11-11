@@ -1,0 +1,30 @@
+{%- assign sidebar = site.data.sidebars.blog %}
+{%- assign blog_posts = site.blog | sort: "date" | reverse %}
+{%- assign blog_years = blog_posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{%- assign open_year = nil %}
+{%- for post in blog_posts %}
+{%- if page.url == post.url %}{%- assign open_year = post.date | date: '%Y' %}{%- endif %}
+{%- endfor %}
+<ul id="sidebar-list-lvl-0" class="list-unstyled mb-4{%- unless sidebar.title or sidebar.version %} pt-2{%- endunless %}">
+    {%- for year in blog_years %}
+    {%- assign year_open = false %}
+    {%- if year.name == open_year %}{%- assign year_open = true %}{%- endif %}
+    <li class="d-flex align-items-center blog-sidebar-year" data-blog-year-heading="{{ year.name }}">
+        <a class="text-start w-100" data-bs-toggle="collapse" data-bs-target="#sidebar-blog-{{ year.name }}" aria-expanded="{{ year_open }}" aria-controls="sidebar-blog-{{ year.name }}">
+            <i class="icon-calendar-days sidebar-icon" aria-hidden="true"></i><span class="sidebar-link-text">{{ year.name }}</span>
+        </a>
+        <button type="button" class="btn btn-sm btn-icon-round rounded-circle p-0 d-inline-flex align-items-center justify-content-center{%- unless year_open %} collapsed{% endunless %}" data-bs-toggle="collapse" data-bs-target="#sidebar-blog-{{ year.name }}" aria-expanded="{{ year_open }}" aria-controls="sidebar-blog-{{ year.name }}">
+            <i class="icon-chevron-right"></i><span class="visually-hidden">Expand posts of {{ year.name }}</span>
+        </button>
+    </li>
+    <li class="py-0" data-blog-year="{{ year.name }}">
+        <ul id="sidebar-blog-{{ year.name }}" class="list-unstyled collapse{%- if year_open %} show{% endif %}" data-bs-parent="#sidebar-list-lvl-0">
+            {%- for post in year.items %}
+            <li class="d-flex align-items-center" data-blog-date="{{ post.date | date: '%Y-%m-%d' }}">
+                <a class="text-start w-100{%- if page.url == post.url %} active{% endif %}" href="{{ post.url | relative_url }}"><span class="sidebar-link-text">{{ post.title }}</span></a>
+            </li>
+            {%- endfor %}
+        </ul>
+    </li>
+    {%- endfor %}
+</ul>

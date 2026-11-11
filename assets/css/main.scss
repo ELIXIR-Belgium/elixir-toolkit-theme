@@ -1481,6 +1481,144 @@ li.past_event,
     }
 }
 
+/*-----Blog-----*/
+
+.blog {
+    /*-----Grid gaps are not applied to the years that are hidden-----*/
+    display: grid;
+    gap: $spacer * 2.5;
+}
+
+#main .blog-year-heading {
+    display: flex;
+    align-items: center;
+    gap: $spacer;
+    margin-top: 0;
+    margin-bottom: $spacer;
+    color: $secondary;
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    &::after {
+        flex: 1 1 auto;
+        height: 1px;
+        background: $gray-300;
+        content: "";
+    }
+}
+
+.blog-list {
+    /*-----Same gutter as the g-4 rows of the section navigation tiles-----*/
+    display: grid;
+    gap: $spacer * 1.5;
+    margin-bottom: 0;
+}
+
+#main .blog-list > li {
+    margin: 0;
+}
+
+.blog-card {
+    .card-text:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.blog-card-contributors {
+    /*-----Line the contributor tiles up with the text of the card-----*/
+    margin-left: -0.5rem;
+    /*-----Keep the contributor tiles clickable above the stretched link-----*/
+    position: relative;
+    z-index: 2;
+}
+
+/*-----Keep the contributor tiles white, the tile styling turns buttons grey-----*/
+.blog-card .blog-card-contributors .contributor-link {
+    background-color: $page-metadata-link-bg;
+}
+
+.blog-meta {
+    font-size: .9rem;
+    line-height: 1.45;
+
+    /*-----Center the icon on the date, like the news timeline-----*/
+    i {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 1.15rem;
+        width: 1.15rem;
+        height: 1.15rem;
+        text-align: center;
+        vertical-align: 0;
+    }
+}
+
+.blog-post-lead {
+    color: $gray-600;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 44em;
+}
+
+/*-----Blog post navigation-----*/
+
+.blog-post-nav {
+    display: grid;
+    gap: $spacer;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: $spacer * 3;
+}
+
+.blog-post-nav-link {
+    display: flex;
+    flex-direction: column;
+    gap: .15rem;
+    height: 100%;
+    padding: $spacer;
+    border: $border-width solid $border-color;
+    border-radius: $border-radius;
+    transition: $transition-base;
+
+    &:hover {
+        background-color: $nav-card-bg-hover;
+    }
+}
+
+.blog-post-nav-label {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    color: $text-muted;
+    font-size: .85rem;
+}
+
+.blog-post-nav-title {
+    font-weight: 600;
+}
+
+.blog-post-nav-newer {
+    text-align: right;
+
+    .blog-post-nav-link {
+        align-items: flex-end;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .blog-post-nav {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .blog-post-nav-newer {
+        text-align: left;
+
+        .blog-post-nav-link {
+            align-items: flex-start;
+        }
+    }
+}
+
 /*-----More information tiles-----*/
 // Main accordion style
 a.info-collapse {

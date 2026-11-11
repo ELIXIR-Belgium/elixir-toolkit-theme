@@ -15,17 +15,13 @@
         <a class="text-start d-block sidebar-title text-dark{% if page.url == sidebar.title_url %} active{%- endif %}{% unless sidebar.title_url %} disabled{%- endunless %}" {%- if sidebar.title_url %}href="{{ sidebar.title_url | relative_url }}"{%- endif %}>{{sidebar.title}} {{sidebar.version}}</a>
     </div>    
     {%- endif %}
+    {%- if page.sidebar == 'blog' %}
+    {% include sidebar-blog.html %}
+    {%- else %}
     <ul id="sidebar-list-lvl-0"  class="list-unstyled mb-4{%- unless sidebar.title or sidebar.version %} pt-2{%- endunless %}">
         {%- assign subitems_count = 0 %}
-        {%- comment %} Get sidebar subitems - blog subitems are fetched from the collection {%- endcomment %}
-        {%- assign subitems_from_anywhere = sidebar.subitems %}
-        {%- if page.sidebar == 'blog' -%}
-        {% assign subitems_from_anywhere = site.blog | reverse %}
-        {%- endif -%}
-        {%- for folder in subitems_from_anywhere %}
-        <li class="d-flex align-items-center{%- if folder.hr %} mt-3{% endif %}{%- if page.sidebar=='blog' %} blog-list-item{% endif %}"
-            {%- if page.sidebar=='blog' %}date="{{ folder.date | date: '%Y-%m-%d' }}"{% endif %}
-        >
+        {%- for folder in sidebar.subitems %}
+        <li class="d-flex align-items-center{%- if folder.hr %} mt-3{% endif %}">
         {%- if folder.subitems %}
         {%- assign subfolder_active = false %}
         {%- for subfolder in folder.subitems %}
@@ -258,4 +254,5 @@
         {%- assign subitems_count = subitems_count | plus: 1 %}
         {%- endfor %}
     </ul>
+    {%- endif %}
 </nav>

@@ -1,4 +1,4 @@
 title: Blog
-title_url: blog
-subitems:
-  # leave empty - this list is populated automatically when the site is generated
+title_url: /blog
+# No subitems: the blog sidebar is generated from the blog collection,
+# grouped per year, when a page sets `sidebar: blog`.
