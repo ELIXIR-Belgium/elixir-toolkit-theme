@@ -3,6 +3,7 @@ title: General page 2
 type: Example_pages
 type_img: /assets/img/ett_compact_logo_bw.svg
 page_img: infrastructures/ELIXIR_BELGIUM_white_background.svg 
+img_alt: Logo of Elixir Belgium
 coordinators: [Bert Droesbeke]
 description: shows page and type images together with compact more information links
 page_id: gp2
