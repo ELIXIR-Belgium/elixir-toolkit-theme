@@ -58,3 +58,9 @@
   id: idtk
   name: Infectious Diseases Toolkit (IDTk)
   url: https://www.infectious-diseases-toolkit.org/
+- description: Protein structure prediction workflow from the nf-core community.
+  id: nf-core-proteinfold
+  name: nf-core/proteinfold
+  url: https://github.com/nf-core/proteinfold
+  registry:
+    workflowhub: 1011

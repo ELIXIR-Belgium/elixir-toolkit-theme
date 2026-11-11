@@ -70,6 +70,9 @@
                     {%- if tool.registry.europmc %}
                     <a data-bs-toggle="tooltip" data-bs-original-title="EuroPMC" href="https://europepmc.org/article/MED/{{tool.registry.europmc}}"><span class="badge bg-dark text-white hover-primary"><i class="icon-book-open me-2"></i>Publication</span></a>
                     {%- endif %}
+                    {%- if tool.registry.workflowhub and tool.registry.workflowhub != "NA" %}
+                    <a data-bs-toggle="tooltip" data-bs-original-title="WorkflowHub" href="https://workflowhub.eu/workflows/{{tool.registry.workflowhub}}"><span class="badge bg-dark text-white hover-primary"><i class="icon-workflow me-2"></i>Workflow</span></a>
+                    {%- endif %}
                 </td>
             </tr>
             {%- endfor %}
@@ -140,6 +143,9 @@
                     {%- endif %}
                     {%- if tool.registry.europmc %}
                     <a data-bs-toggle="tooltip" data-bs-original-title="EuroPMC" href="https://europepmc.org/article/MED/{{tool.registry.europmc}}"><span class="badge bg-dark text-white hover-primary"><i class="icon-book-open me-2"></i>Publication</span></a>
+                    {%- endif %}
+                    {%- if tool.registry.workflowhub and tool.registry.workflowhub != "NA" %}
+                    <a data-bs-toggle="tooltip" data-bs-original-title="WorkflowHub" href="https://workflowhub.eu/workflows/{{tool.registry.workflowhub}}"><span class="badge bg-dark text-white hover-primary"><i class="icon-workflow me-2"></i>Workflow</span></a>
                     {%- endif %}
                 </td>
             </tr>

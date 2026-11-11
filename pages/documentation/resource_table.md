@@ -9,7 +9,7 @@ One of the key features of the theme is support for a central tool and resource 
 
 ## Way of working
 
-The [all tools and resources](#listing-all-resources) list is based on the [YAML file](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/main/_data/tool_and_resource_list.yml) in the `_data` directory. Tools and resources can be manually linked to [FAIRsharing.org](https://fairsharing.org/), [Bio.tools](https://bio.tools), [TeSS](https://tess.elixir-europe.org/) and [Europe PMC](https://europepmc.org/).
+The [all tools and resources](#listing-all-resources) list is based on the [YAML file](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/main/_data/tool_and_resource_list.yml) in the `_data` directory. Tools and resources can be manually linked to [FAIRsharing.org](https://fairsharing.org/), [Bio.tools](https://bio.tools), [TeSS](https://tess.elixir-europe.org/), [Europe PMC](https://europepmc.org/) and [WorkflowHub](https://workflowhub.eu/).
 
 
 ## Prerequisites
@@ -17,7 +17,7 @@ The [all tools and resources](#listing-all-resources) list is based on the [YAML
 * The main YAML file describing the tools is `tool_and_resource_list.yml` in `/_data` and must use valid YAML syntax.
 * Make sure Markdown pages where you mention tools have a `page_id` in their front matter. The `page_id` should not contain hyphens; see the metadata [documentation](page_mechanics).
 * When using the tool tag:
-  * `gem "elixir-toolkit-theme-plugins"` is added to the `/Gemfile`
+  * `gem "elixir-toolkit-theme-plugins"` version 2.1.0 or newer is added to the `/Gemfile`
   * `- elixir-toolkit-theme-plugins` is added to the plugins block in the `_config.yml` file
   * A recent version of the ELIXIR Toolkit Theme is used. See the `remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@VERSION` line in the `_config.yml` file.
   * GitHub Actions is used to deploy the website. See [instructions](https://elixir-belgium.github.io/elixir-toolkit-theme/#deployment).
@@ -30,7 +30,7 @@ Each tool or resource mentioned in the text has metadata stored in the [main YAM
 - **`name`**: Name of the tool or resource.
 - **`url`**: Main URL of the tool or resource. Make sure it starts with `https://`.
 - **`description`**: Short description of the tool or resource. Avoid the characters `"` and `'`.
-- **`registry`**: Four registries are supported: [Bio.tools](https://bio.tools), [FAIRsharing.org](https://fairsharing.org/), [TeSS](https://tess.elixir-europe.org/) and [Europe PMC](https://europepmc.org/). Use the keys `biotools`, `fairsharing`, `tess` and `europmc`, specifying the ID or query after a colon. FAIRsharing records should use the DOI suffix, without the `FAIRsharing.` prefix. List registries under the `registry` attribute as key-value pairs.
+- **`registry`**: Five registries are supported: [Bio.tools](https://bio.tools), [FAIRsharing.org](https://fairsharing.org/), [TeSS](https://tess.elixir-europe.org/), [Europe PMC](https://europepmc.org/) and [WorkflowHub](https://workflowhub.eu/). Use the keys `biotools`, `fairsharing`, `tess`, `europmc` and `workflowhub`, specifying the ID or query after a colon. FAIRsharing records should use the DOI suffix, without the `FAIRsharing.` prefix. WorkflowHub records should use the stable numeric workflow ID. List registries under the `registry` attribute as key-value pairs.
 - **`related_pages`**: List of `page_id` values. Avoid using this together with the `{% raw %}{% tool "tool_id" %}{% endraw %}` snippet in the page text.
 - **`how_to_access`**: Free-text field describing how the tool or resource can be accessed.
 
