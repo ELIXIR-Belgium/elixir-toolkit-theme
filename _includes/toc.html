@@ -4,7 +4,7 @@
 {%- capture file_url -%}
 {{ "/images/" | append: page.page_img | relative_url }}
 {%- endcapture -%}
-<div class="mb-4"><img src="{{ file_url }}" alt="Page image" class="page-img-lg"/></div>
+<div class="mb-4"><img src="{{ file_url }}" {%- if page.img_alt %} alt="{{page.img_alt}}" {%- else %} alt="" {%- endif %} class="page-img-lg"/></div>
 {% endif %}
 {%- if page.page_img %}
 </div>
