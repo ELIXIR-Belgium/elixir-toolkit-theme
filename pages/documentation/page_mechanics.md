@@ -50,6 +50,8 @@ This website includes focused examples you can compare while reading this page: 
 
 * **`page_img`**: Image representing the page, corresponding to a filename in the `images` directory. This image appears next to the page title and in section navigation tiles. Example: `infrastructures/ELIXIR_BELGIUM_white_background.svg`. See [General page 2](general_page_2) and [General page 4](general_page_4) for page images.
 
+* **`img_alt`**: Alternative text for `page_img`. This is used to fill in the page image's `alt` attribute. Leave blank or unset for decorative images. Examples: [General page 2](general_page_2) with alternative text used, and [General page 4](general_page_4) which doesn't use this attribute.
+
 * **`datatable`**: Activate pagination, sorting and searching in tables. See [All training](all_trainings) and [Tools and resources table](resource_table) for table pages with this enabled.
 
 * **`type`**: Page type used for [website sections](website_sections). The value is case-sensitive, and spaces should be replaced with underscores. See [Section overview](overview_tiles) for a page listing all pages with `type: Example_pages`.
