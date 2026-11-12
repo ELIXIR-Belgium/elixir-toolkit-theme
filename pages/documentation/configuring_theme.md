@@ -39,6 +39,27 @@ plausible_src:
 
 ```
 
+## Web analytics and cookie consent
+
+The theme supports Matomo, Google Analytics and Plausible. Analytics scripts are only included when the [Jekyll environment](https://jekyllrb.com/docs/configuration/environments/) is "production". A cookie banner with **Accept** and **Decline** buttons appears when the website uses analytics cookies, which is the case when `gtag` is set, or when `matomo` is set and `matomo_cookies` is not `false`.
+
+| Service | No choice made or declined | Accepted |
+|---|---|---|
+| Matomo (`matomo_cookies: true`) | Tracks visits without cookies | Tracks visits with cookies |
+| Matomo (`matomo_cookies: false`) | Tracks visits without cookies, no banner needed | Tracks visits without cookies |
+| Google Analytics | Not loaded, no data is sent to Google | Loaded with analytics storage granted |
+| Plausible | Cookieless, not affected by the banner | Cookieless, not affected by the banner |
+
+The choice is stored for one year in the `ett_cookie_consent` cookie. To let visitors change their choice, add an element with the `data-cookie-settings` attribute, for example on your privacy page. Clicking it reopens the banner:
+
+```html
+<a href="#" data-cookie-settings>Change your cookie settings</a>
+```
+
+### Privacy page
+
+The banner links to the page set in `theme_variables.privacy_statement_url` (default: `/privacy`). Use the [privacy page of this website](privacy) as a starting point: copy [its source](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/blob/main/pages/about/privacy.md) to your own project and adapt it.
+
 ## Additional settings
 
 Certain features are not always needed and can be disabled or changed in your deployment. The example below lists the available options and their **default** values. Only specify the settings that you want to change.
@@ -49,6 +70,7 @@ theme_variables:
   back_to_top: true
   dev-info-banner: false
   privacy_statement_url: /privacy
+  cookie_banner_text:
   github_buttons:
     position: top
     edit_me: true
@@ -90,6 +112,7 @@ More detailed information about these settings can be found here:
 * **`back_to_top`**: Enables the back to top button.
 * **`dev-info-banner`**: Show a development banner including the commit and branch the website is deployed from, when the [Jekyll environment](https://jekyllrb.com/docs/configuration/environments/) is "development". Default: *false*
 * **`privacy_statement_url`**: Custom path to the privacy page. This is used in the cookie banner.
+* **`cookie_banner_text`**: Custom text for the cookie banner, written in Markdown. Default: a short message that adapts to the configured analytics service and links to the privacy page.
 * **github_buttons**: Buttons that link to GitHub actions.
   * **`position`**: Can be `top`, next to the title, or `bottom`, under the page content.
   * **`edit_me`**: Enable the "propose an edit on this page" button.

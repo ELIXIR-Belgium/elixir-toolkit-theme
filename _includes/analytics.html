@@ -1,0 +1,100 @@
+{%- assign ett_consent_needed = false %}
+{%- if site.gtag %}{% assign ett_consent_needed = true %}{% endif %}
+{%- if site.matomo and site.matomo_cookies != false %}{% assign ett_consent_needed = true %}{% endif %}
+{%- if ett_consent_needed %}
+<!-- Cookie consent helper -->
+<script>
+    window.ettConsent = (function () {
+        var name = 'ett_cookie_consent';
+        function get() {
+            var match = document.cookie.match(/(?:^|;\s*)ett_cookie_consent=(accepted|declined)/);
+            if (match) return match[1];
+            // Choice stored by the previous cookie banner
+            if (/(?:^|;\s*)acceptCookies=true/.test(document.cookie)) return 'accepted';
+            return null;
+        }
+        function expire(cookie, domain) {
+            document.cookie = cookie + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/' + (domain ? ';domain=' + domain : '');
+        }
+        function clear(pattern) {
+            var parts = location.hostname.split('.');
+            document.cookie.split(';').forEach(function (c) {
+                var cookie = c.split('=')[0].trim();
+                if (!pattern.test(cookie)) return;
+                expire(cookie);
+                for (var i = 0; i < parts.length - 1; i++) expire(cookie, '.' + parts.slice(i).join('.'));
+            });
+        }
+        function set(value) {
+            var expires = new Date(Date.now() + 365 * 864e5).toUTCString();
+            document.cookie = name + '=' + value + ';expires=' + expires + ';path=/;SameSite=Lax';
+            expire('acceptCookies');
+            window.dispatchEvent(new CustomEvent('ett:consent', { detail: value }));
+        }
+        return { get: get, set: set, clear: clear, granted: function () { return get() === 'accepted'; } };
+    })();
+</script>
+{%- endif %}
+{%- if jekyll.environment == "production" %}
+{%- if site.gtag %}
+<!-- Google analytics: only loaded after consent -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+    (function () {
+        var loaded = false;
+        function load() {
+            if (loaded) return;
+            loaded = true;
+            gtag('consent', 'update', { analytics_storage: 'granted' });
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.gtag }}';
+            document.head.appendChild(s);
+            gtag('js', new Date());
+            gtag('config', '{{ site.gtag }}');
+        }
+        if (ettConsent.granted()) load();
+        window.addEventListener('ett:consent', function (e) {
+            if (e.detail === 'accepted') return load();
+            if (loaded) gtag('consent', 'update', { analytics_storage: 'denied' });
+            ettConsent.clear(/^_ga/);
+        });
+    })();
+</script>
+{%- endif %}
+{%- if site.plausible %}
+<!-- Plausible -->
+<script defer data-domain="{{site.plausible}}" src="{{site.plausible_src | default: 'https://plausible.io/js/plausible.js'}}"></script>
+{%- endif %}
+{%- if site.matomo %}
+<!-- Matomo -->
+<script>
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    {%- if site.matomo_cookies == false %}
+    _paq.push(['disableCookies']);
+    {%- else %}
+    /* Track without cookies until the visitor accepts them */
+    _paq.push(['requireCookieConsent']);
+    if (ettConsent.granted()) _paq.push(['setCookieConsentGiven']);
+    window.addEventListener('ett:consent', function (e) {
+        if (e.detail === 'accepted') return _paq.push(['setCookieConsentGiven']);
+        _paq.push(['forgetCookieConsentGiven']);
+        ettConsent.clear(/^_pk_/);
+    });
+    {%- endif %}
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+    var u="{{site.matomo}}";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '{{site.matomo_id}}']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+</script>
+<!-- End Matomo Code -->
+{%- endif %}
+{%- endif %}
