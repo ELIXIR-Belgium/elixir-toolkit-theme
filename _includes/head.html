@@ -115,7 +115,7 @@
     <link rel="manifest" href="{{ 'assets/img/site.webmanifest' | relative_url }}">
     <link rel="shortcut icon" href="{{ 'assets/img/favicon.ico' | relative_url }}">
     <!-- Schema.org metadata -->
-    {% include schemasorg.html %}
+    {% include schemasorg.html tag=page.page_id %}
     {%- if site.gtag and jekyll.environment == "production"%}
     <!-- Google analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gtag }}"></script>
