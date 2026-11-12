@@ -1,0 +1,21 @@
+name: Biotools EDAM extract
+on:
+  pull_request:
+    branches: [ master, main ]
+  workflow_dispatch:
+
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version-file: .python-version
+          enable-cache: true
+      - name: Install locked dependencies
+        run: uv sync --locked
+      - name: Run tool validator script
+        run: uv run --locked python var/biotools_edam_extract.py
