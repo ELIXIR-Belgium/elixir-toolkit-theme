@@ -99,7 +99,6 @@ theme_variables:
     # - url to a font
   # breadcrumb: false
 
-
 # --- Missing in gitlab: ---
 github:
   repository_url: https://github.com/ELIXIR-Belgium/elixir-toolkit-theme
