@@ -4,10 +4,15 @@ from collections.abc import MutableMapping
 from pathlib import Path
 from ruamel.yaml import YAML
 from ruamel.yaml.error import YAMLError
+from xml.etree import ElementTree
 
 DATA_FILE = Path(__file__).resolve().parent.parent / "_data" / "tool_and_resource_list.yml"
 API_URL = "https://bio.tools/api/tool/{}/?format=json"
+EDAM_ONTOLOGY_URL = "https://edamontology.org/EDAM.owl"
 REQUEST_TIMEOUT = 10
+OWL_NAMESPACE = "http://www.w3.org/2002/07/owl#"
+RDF_NAMESPACE = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+RDFS_NAMESPACE = "http://www.w3.org/2000/01/rdf-schema#"
 
 
 def load_tool_data(data_path=DATA_FILE):
@@ -129,6 +134,68 @@ def fetch_edam_annotations(identifier, session=requests):
     return annotations
 
 
+def _ontology_uri_key(uri):
+    """Normalize HTTP and HTTPS variants of an EDAM URI for matching."""
+    if uri.startswith("http://edamontology.org/"):
+        return uri.replace("http://", "https://", 1)
+    if uri.startswith("https://edamontology.org/"):
+        return uri
+    return None
+
+
+def fetch_edam_labels(session=requests):
+    """Fetch current EDAM labels from the official RDF/XML ontology."""
+    response = session.get(EDAM_ONTOLOGY_URL, timeout=REQUEST_TIMEOUT)
+    response.raise_for_status()
+
+    try:
+        root = ElementTree.fromstring(response.content)
+    except (ElementTree.ParseError, TypeError) as error:
+        raise ValueError(f"edamontology.org returned invalid RDF/XML: {error}") from error
+
+    labels = {}
+    class_tag = f"{{{OWL_NAMESPACE}}}Class"
+    about_attribute = f"{{{RDF_NAMESPACE}}}about"
+    label_tag = f"{{{RDFS_NAMESPACE}}}label"
+    language_attribute = "{http://www.w3.org/XML/1998/namespace}lang"
+    for edam_class in root.iter(class_tag):
+        uri = edam_class.get(about_attribute)
+        key = _ontology_uri_key(uri) if uri else None
+        if key is None:
+            continue
+
+        candidates = []
+        for label in edam_class.findall(label_tag):
+            text = (label.text or "").strip()
+            if text:
+                candidates.append((label.get(language_attribute, "").lower(), text))
+        if not candidates:
+            continue
+
+        english = next(
+            (text for language, text in candidates if language == "en" or language.startswith("en-")),
+            None,
+        )
+        untagged = next((text for language, text in candidates if not language), None)
+        labels[key] = english or untagged or candidates[0][1]
+
+    return labels
+
+
+def annotations_with_current_labels(annotations, labels):
+    """Replace bio.tools terms with labels from the current EDAM ontology."""
+    updated = {}
+    for annotation_type, terms in annotations.items():
+        updated[annotation_type] = []
+        for annotation in terms:
+            key = _ontology_uri_key(annotation["uri"])
+            label = labels.get(key) if key else None
+            if label is None:
+                raise ValueError(f"No current EDAM label found for {annotation['uri']}")
+            updated[annotation_type].append({**annotation, "term": label})
+    return updated
+
+
 def keywords_from_annotations(annotations):
     """Convert EDAM annotations into unique label-to-URI keyword mappings."""
     keywords = []
@@ -151,6 +218,9 @@ def main(data_path=DATA_FILE, session=requests):
         return 1
 
     changed = False
+    ontology_labels = None
+    ontology_error = None
+    ontology_loaded = False
     for name, identifier, tool in load_biotools_entries(data):
         if identifier is None:
             print(f"[WARN] Skipping {name}: no usable biotools registry identifier.")
@@ -161,6 +231,24 @@ def main(data_path=DATA_FILE, session=requests):
         except (requests.RequestException, ValueError) as error:
             print(f"  Error looking up {name}: {error}")
             continue
+
+        if any(annotations.values()):
+            if not ontology_loaded:
+                ontology_loaded = True
+                try:
+                    ontology_labels = fetch_edam_labels(session=session)
+                except (requests.RequestException, ValueError) as error:
+                    ontology_error = error
+
+            if ontology_error is not None:
+                print(f"[WARN] Could not verify EDAM labels for {name}: {ontology_error}")
+                continue
+
+            try:
+                annotations = annotations_with_current_labels(annotations, ontology_labels)
+            except ValueError as error:
+                print(f"[WARN] Could not verify EDAM labels for {name}: {error}")
+                continue
 
         keywords = keywords_from_annotations(annotations)
         if tool.get("keywords") != keywords:
