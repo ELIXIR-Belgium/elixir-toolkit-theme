@@ -1,5 +1,5 @@
 {%- if include.tag %}
-{%- if site.related_pages_enabled %}
+{% if site.plugins contains 'elixir-toolkit-theme-plugins' %}
 {%- assign tools = site.data.tool_and_resource_list | add_related_pages | where:"related_pages", include.tag | sort_natural: "name" %}
 {%- else %}
 {%- assign tools = site.data.tool_and_resource_list  | where:"related_pages", include.tag | sort_natural: "name" %}
