@@ -1,0 +1,75 @@
+- id: data_curator
+  label: data curator
+  curie: obo:T4FS_0000389
+- id: data_custodian
+  label: data custodian
+  curie: obo:T4FS_0000276
+- id: data_librarian
+  label: data librarian
+  curie: obo:T4FS_0000202
+- id: data_manager
+  label: data manager
+  curie: obo:T4FS_0000520
+- id: data_scientist
+  label: data scientist
+  curie: obo:TF4S_0000566
+- id: data_steward
+  label: data steward
+  curie: obo:T4FS_0000178
+- id: database_developer
+  label: database developer
+  curie: obo:T4FS_0000034
+- id: information_management_advisor
+  label: information management advisor
+  curie: obo:T4FS_0000195
+- id: information_management_specialist
+  label: information management specialist
+  curie: obo:T4FS_0000437
+- id: information_technology_specialist
+  label: information technology specialist
+  curie: obo:T4FS_0000155
+- id: manager
+  label: manager
+  curie: obo:T4FS_0000415
+- id: ontologist
+  label: ontologist
+  curie: obo:TF4S_0000567
+- id: principal_investigator
+  label: principal investigator
+  curie: obo:T4FS_0000441
+- id: procurement_officer
+  label: procurement officer
+  curie: obo:TF4S_0000572
+- id: program_manager
+  label: program manager
+  curie: obo:T4FS_0000442
+- id: project_manager
+  label: project manager
+  curie: obo:T4FS_0000105
+- id: project_team_member
+  label: project team member
+  curie: obo:T4FS_0000530
+- id: research_manager
+  label: research manager
+  curie: obo:T4FS_0000486
+- id: research_scientist
+  label: research scientist
+  curie: obo:T4FS_0000433
+- id: researcher
+  label: researcher
+  curie: obo:T4FS_0000220
+- id: scientist
+  label: scientist
+  curie: obo:T4FS_0000454
+- id: software_engineer
+  label: software engineer
+  curie: obo:TF4S_0000569
+- id: system_administrator
+  label: system administrator
+  curie: obo:TF4S_0000570
+- id: terminology_manager
+  label: terminology manager
+  curie: obo:TF4S_0000568
+- id: trainer_teacher
+  label: trainer/teacher
+  curie: obo:T4FS_0000122
