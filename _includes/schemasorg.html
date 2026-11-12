@@ -28,10 +28,31 @@
                 ]
             }{% unless forloop.last %},{% endunless %}
             {%- endfor %}
+        ],
+        "keywords": [
+            {%- assign seen_keyword_ids = "|" -%}
+            {%- assign first_keyword = true -%}
+            {%- for tool in tools -%}
+                {%- for keyword_entry in tool.keywords -%}
+                    {%- for keyword in keyword_entry -%}
+                        {%- assign keyword_name = keyword[0] -%}
+                        {%- assign keyword_id = keyword[1] -%}
+                        {%- assign keyword_token = keyword_id | prepend: "|" | append: "|" -%}
+                        {%- unless seen_keyword_ids contains keyword_token -%}
+                            {%- unless first_keyword -%},{%- endunless -%}
+                            {
+                                "@type": "DefinedTerm",
+                                "@id": {{ keyword_id | jsonify }},
+                                "name": {{ keyword_name | jsonify }}
+                            }
+                            {%- assign seen_keyword_ids = seen_keyword_ids | append: keyword_id | append: "|" -%}
+                            {%- assign first_keyword = false -%}
+                        {%- endunless -%}
+                    {%- endfor -%}
+                {%- endfor -%}
+            {%- endfor -%}
         ]{% if page.contributors %},
         {%- assign contributors = site.data.CONTRIBUTORS %}
-        {%- assign contributor_count = page.contributors.size %}
-        {%- assign count = 1 %}
         "author": [
             {%- for people in page.contributors %}
             {
@@ -57,10 +78,9 @@
                 "jobTitle": "{{contributors[people].role}}",
                 {%- endif %}
                 "name": "{{people}}"
-            }{% unless count == contributor_count - 1 %},{% endunless %}
-            {%- assign count = count | plus:1 %}
+            }{% unless forloop.last %},{% endunless %}
             {%- endfor %}
-        ],
+        ]
         {%- endif %}
     }
 </script>
