@@ -1,0 +1,88 @@
+- ontology: t4fs
+  branch: http://purl.obolibrary.org/obo/BFO_0000023
+  terms:
+  - id: data_curator
+    label: data curator
+    curie: obo:T4FS_0000389
+  - id: data_custodian
+    label: data custodian
+    curie: obo:T4FS_0000276
+  - id: data_librarian
+    label: data librarian
+    curie: obo:T4FS_0000202
+  - id: database_developer
+    curie: T4FS:0000034
+    label: database developer
+  - id: project_manager
+    curie: T4FS:0000105
+    label: project manager
+  - id: trainer/teacher
+    curie: T4FS:0000122
+    label: trainer/teacher
+  - id: information_technology_specialist
+    curie: T4FS:0000155
+    label: information technology specialist
+  - id: data_steward
+    curie: T4FS:0000178
+    label: data steward
+  - id: information_management_advisor
+    curie: T4FS:0000195
+    label: information management advisor
+  - id: data_librarian
+    curie: T4FS:0000202
+    label: data librarian
+  - id: researcher
+    curie: T4FS:0000220
+    label: researcher
+  - id: data_custodian
+    curie: T4FS:0000276
+    label: data custodian
+  - id: data_curator
+    curie: T4FS:0000389
+    label: data curator
+  - id: manager
+    curie: T4FS:0000415
+    label: manager
+  - id: research_scientist
+    curie: T4FS:0000433
+    label: research scientist
+  - id: information_management_specialist
+    curie: T4FS:0000437
+    label: information management specialist
+  - id: principal_investigator
+    curie: T4FS:0000441
+    label: principal investigator
+  - id: program_manager
+    curie: T4FS:0000442
+    label: program manager
+  - id: scientist
+    curie: T4FS:0000454
+    label: scientist
+  - id: research_manager
+    curie: T4FS:0000486
+    label: research manager
+  - id: data_manager
+    curie: T4FS:0000520
+    label: data manager
+  - id: project_team_member
+    curie: T4FS:0000530
+    label: project team member
+  - id: data_scientist
+    curie: TF4S:0000566
+    label: data scientist
+  - id: ontologist
+    curie: TF4S:0000567
+    label: ontologist
+  - id: terminology_manager
+    curie: TF4S:0000568
+    label: terminology manager
+  - id: software_engineer
+    curie: TF4S:0000569
+    label: software engineer
+  - id: system_administrator
+    curie: TF4S:0000570
+    label: system administrator
+  - id: procurement_officer
+    curie: TF4S:0000572
+    label: procurement officer
+
